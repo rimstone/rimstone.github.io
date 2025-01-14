@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>Get req</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="HandheldFriendly" content="True"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<style>
+
+
+body, html {
+    color:black;
+    text-rendering: optimizelegibility;
+    background-color: white;
+    min-height: 150%;
+    font-family: "Times New Roman";
+    font-weight:400;
+    font-size:18px;
+    line-height:27px;
+    letter-spacing: 2px;
+    z-index: 1;
+    height: 100%;
+    text-align:left;
+    width:80%;
+    margin-left:auto;
+    margin-right:auto;
+    padding:0;
+    /*font-family: Helvetica, Arial, sans-serif;*/
+}
+
+body {
+    padding-left:1vw;
+    padding-right:1vw;
+}
+    
+.ncode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.shcode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.sqlcode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.htmlcode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.code {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+/*Just like h1 but for pdf conversion it would be indented this way it's not*/
+.vhub {
+    display: block;
+   font-size: 1.6em;
+   margin-top: 0.63em;
+   margin-bottom: 0.63em;
+   margin-left: 0;
+   margin-right: 0;
+   font-weight: bold;
+}
+
+/*Just like h2 but for pdf conversion it would be indented this way it's not*/
+.vsub {
+    display: block;
+   font-size: 1.25em;
+   margin-top: 0.53em;
+   margin-bottom: 0.53em;
+   margin-left: 0;
+   margin-right: 0;
+   font-weight: bold;
+}
+
+ul {
+  margin-left: 0.75vw;
+  padding-left: 0;
+}
+li {
+  margin-left: 0.75vw;
+  padding-left: 0;
+}
+
+/* this must be last, as it overrides previous settings, for mobile */
+@media (hover: none) {
+a {
+   display: inline-block;
+   padding-top: 3px;
+   padding-bottom: 2px;
+}
+body {
+    padding-left:2vw;
+    padding-right:2vw;
+    font-size:14px;
+    line-height:22px;
+    letter-spacing: 1px;
+}
+}
+
+/*The following is for code snippets that are highlighted by 2html vim*/
+pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
+.Identifier { color: #008b8b; }
+.Statement { color: #af5f00; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
+/*end of highlighted snippets*/
+
+a {
+    text-decoration:none;
+    padding-bottom: 0px; 
+    color:inherit;
+    border-bottom: 2px solid #ab9e9e;
+}
+a:hover {
+    text-decoration: none;
+    color:black;
+    border-bottom: 1px solid red;
+}
+/*do not underline links nor should they be active*/
+pre a {
+    text-decoration:none;
+    color:black;
+    border-bottom: none;
+    pointer-events: none;
+    cursor: default;
+}
+
+
+.gliimSnippet {display:none;}
+
+ul {
+  list-style-type:square;
+  list-style-position: outside;
+}
+
+</style>
+
+
+</head>
+<body>
+
+<script>
+function gg_copy(gt, eid, gc) {
+  gt.textContent = eid.textContent;
+  gt.select();
+  document.execCommand("copy");
+  gc.style.visibility="visible"
+  setTimeout(()=>{ gc.style.visibility="hidden"; }, 1000);
+}
+
+</script>
+
+<!--GLIIMMENU13-->
+
+<!--GLIIMENDMENU13-->
+
+
+
+<!--BEGVDOC90-->
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Get req</div><hr/><span style="font-weight:bold;">Purpose</span>: Obtain data that describes the input request.<br/>
+<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_412'>
+<span class="Statement"> get-req</span> \
+        <span class="Identifier"> errno</span> |<span class="Identifier"> error</span> |<span class="Identifier"> cookie-count</span> |<span class="Identifier"> cookie</span> &lt;cookie index&gt; \
+         |<span class="Identifier"> arg-count</span> |<span class="Identifier"> arg-value</span> &lt;arg index&gt; \
+         |<span class="Identifier"> header</span> &lt;header&gt; |<span class="Identifier"> referring-url</span> |<span class="Identifier"> method</span> \
+         |<span class="Identifier"> content-type</span> |<span class="Identifier"> trace-file</span> |<span class="Identifier"> process-id</span> |<span class="Identifier"> name</span> \
+         |<span class="Identifier"> external-call</span>
+     to &lt;variable&gt;</pre>
+<span id=gliim_copied_412 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_412' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_412, code_412, gliim_copied_412)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Information related to an input request can be obtained with get-req statement and the result stored into &lt;variable&gt; (in "to" clause). The following can be obtained (all are strings except where stated otherwise):<br/>
+<ul><li>"errno" obtains the integer value of operating system "errno" tied to a last Gliimly statement that can return a status code. The "errno" value is saved internally; and restored here. It means that if "errno" changed for whatever reason since such Gliimly statement (such as with <a href='http://gliimly.github.io/call-extended.html'>call-extended</a>), you will still obtain the correct value. See <a href='http://gliimly.github.io/error-code.html'>error-code</a> for an example. Note that errno value is undefined if there is no error, and can be 0 if the error is reported by Gliimly and not by operating system.<br/>
+<br/>
+</li><li>"error" returns the error message that correlates to "errno" value. <br/>
+<br/>
+</li><li>"cookie-count" returns the number of cookies. This means any cookies received from the client plus any cookies added (with <a href='http://gliimly.github.io/set-cookie.html'>set-cookie</a>) in the application minus any cookies deleted (with <a href='http://gliimly.github.io/delete-cookie.html'>delete-cookie</a>). <br/>
+<br/>
+</li><li>"cookie" returns the cookie value specified by &lt;cookie index&gt; (a sequential number starting with 1 up to the number of cookies), for instance:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_413'>
+<span class="Statement"> get-req</span><span class="Identifier"> cookie-count</span><span class="Type"> to</span> cookie_c
+<span class="Statement"> start-loop</span><span class="Identifier"> repeat</span> cookie_c<span class="Type"> use</span> i
+<span class="Statement">     get-req</span><span class="Identifier"> cookie</span> i<span class="Type"> to</span> cookie_val
+<span class="Statement">     pf-web</span> <span class="Constant">&quot;cookie </span><span class="Special">%s</span><span class="Special">\n</span><span class="Constant">&quot;</span>, cookie_val
+<span class="Statement">     @</span>&lt;br/&gt;
+<span class="Statement"> end-loop</span></pre>
+<span id=gliim_copied_413 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_413' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_413, code_413, gliim_copied_413)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+In this example, we get the number of cookies, and then print out each cookie value.<br/>
+<br/>
+</li><li>"arg-count" is the number of input arguments to your application (passed from a program caller, see "-a" option in <a href='http://gliimly.github.io/mgrg.html'>mgrg</a> and "--arg" in <a href='http://gliimly.github.io/gg.html'>gg</a>).<br/>
+<br/>
+</li><li>"arg-value" is the string value of a single element from the array of input arguments, specified by &lt;arg_index&gt;. This array is indexed from 1 to the value obtained by "arg-count". Here is an example of using arg-count and arg-value:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_414'>
+<span class="Statement"> get-req</span><span class="Identifier"> arg-count</span><span class="Type"> to</span> ac
+<span class="Statement"> pf-out</span> <span class="Constant">&quot;Total args [</span><span class="Special">%ld</span><span class="Constant">]&quot;</span>, ac
+<span class="Statement"> start-loop</span><span class="Identifier"> repeat</span> ac<span class="Type"> use</span> i
+<span class="Statement">     get-req</span><span class="Identifier"> arg-value</span> i<span class="Type"> to</span> av
+<span class="Statement">     pf-out</span> <span class="Constant">&quot;</span><span class="Special">%s</span><span class="Special">\n</span><span class="Constant">&quot;</span>, av
+<span class="Statement"> end-loop</span></pre>
+<span id=gliim_copied_414 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_414' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_414, code_414, gliim_copied_414)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+This code will display the number of input arguments (as passed to main() function of your program, excluding the first argument which is the name of the program), and then all the arguments. If there are no arguments, then variable 'ac' would be 0. <br/>
+<br/>
+</li><li>"header" is the value of HTTP request header &lt;header&gt; that is set by the client. For example, if the HTTP request contains header "My-Header:30", then hval would be "30":<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_415'>
+<span class="Statement"> get-req</span><span class="Identifier"> header</span> <span class="Constant">&quot;My-Header&quot;</span><span class="Type"> to</span> hval</pre>
+<span id=gliim_copied_415 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_415' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_415, code_415, gliim_copied_415)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Note that not all HTTP request headers are set by the caller. For example, SERVER_NAME or QUERY_STRING are set by the web server, and to get such headers, use <a href='http://gliimly.github.io/get-sys.html'>get-sys</a>.<br/>
+<br/>
+</li><li>"method" is the request method. This is a number with values of GG_GET, GG_POST, GG_PUT, GG_PATCH or GG_DELETE for GET, POST, PUT, PATCH or DELETE requests, respectively. If it is not any of those commonly used ones, then the value is GG_OTHER and you can use <a href='http://gliimly.github.io/get-sys.html'>get-sys</a> with "environment" clause to obtain "REQUEST_METHOD" variable.<br/>
+<br/>
+</li><li>"content-type" is the request content type. It is a string and generally denotes the content type of a <a href='http://gliimly.github.io/request-body.html'>request-body</a>, if included in the request. Common examples are "application/x-www-form-urlencoded", "multipart/form-data" or "application/json".<br/>
+<br/>
+</li><li>"referring-url" is the referring URL (i.e. the page from which this request was called, for example by clicking a link). <br/>
+<br/>
+</li><li>"trace-file" is the full path of the trace file for this request (if enabled, see <a href='http://gliimly.github.io/trace-run.html'>trace-run</a>).<br/>
+<br/>
+</li><li>"process-id" is the "PID" (process ID) number of the currently executing process, as a number.<br/>
+<br/>
+</li><li>"external-call" is a boolean that is true if the call to the current request handler is from an external caller, or false if called from another handler.<br/>
+<br/>
+</li><li>"name" is the request name as specified in the <a href='http://gliimly.github.io/request.html'>request</a> URL.</li></ul>
+<div class="vsub"><a id="Examples"></a>Examples</div>
+Get the name of current trace file:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_416'>
+<span class="Statement"> get-req</span><span class="Identifier"> trace-file</span><span class="Type"> to</span> trace_file</pre>
+<span id=gliim_copied_416 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_416' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_416, code_416, gliim_copied_416)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+<!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
+ <span style="font-weight:bold;">Request information</span><br/>
+<a href='http://gliimly.github.io/get-req.html'>get-req</a> &nbsp; <br/>
+<span style="font-weight:bold;">See all</span> <br/>
+<a href='http://gliimly.github.io/documentation.html'>documentation</a><br/>
+<!--ENDVDOC90-->
+<br/><div style='width:100%;clear:both;'>
+<hr/>
+<!--GLIIMFOOT77--><span style='font-size:80%'><a href="http://gliimly.github.io/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+</div><br/></body></html>
+
+

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>123 hello world</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="HandheldFriendly" content="True"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<style>
+
+
+body, html {
+    color:black;
+    text-rendering: optimizelegibility;
+    background-color: white;
+    min-height: 150%;
+    font-family: "Times New Roman";
+    font-weight:400;
+    font-size:18px;
+    line-height:27px;
+    letter-spacing: 2px;
+    z-index: 1;
+    height: 100%;
+    text-align:left;
+    width:80%;
+    margin-left:auto;
+    margin-right:auto;
+    padding:0;
+    /*font-family: Helvetica, Arial, sans-serif;*/
+}
+
+body {
+    padding-left:1vw;
+    padding-right:1vw;
+}
+    
+.ncode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.shcode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.sqlcode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.htmlcode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.code {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+/*Just like h1 but for pdf conversion it would be indented this way it's not*/
+.vhub {
+    display: block;
+   font-size: 1.6em;
+   margin-top: 0.63em;
+   margin-bottom: 0.63em;
+   margin-left: 0;
+   margin-right: 0;
+   font-weight: bold;
+}
+
+/*Just like h2 but for pdf conversion it would be indented this way it's not*/
+.vsub {
+    display: block;
+   font-size: 1.25em;
+   margin-top: 0.53em;
+   margin-bottom: 0.53em;
+   margin-left: 0;
+   margin-right: 0;
+   font-weight: bold;
+}
+
+ul {
+  margin-left: 0.75vw;
+  padding-left: 0;
+}
+li {
+  margin-left: 0.75vw;
+  padding-left: 0;
+}
+
+/* this must be last, as it overrides previous settings, for mobile */
+@media (hover: none) {
+a {
+   display: inline-block;
+   padding-top: 3px;
+   padding-bottom: 2px;
+}
+body {
+    padding-left:2vw;
+    padding-right:2vw;
+    font-size:14px;
+    line-height:22px;
+    letter-spacing: 1px;
+}
+}
+
+/*The following is for code snippets that are highlighted by 2html vim*/
+pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
+.Identifier { color: #008b8b; }
+.Statement { color: #af5f00; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
+/*end of highlighted snippets*/
+
+a {
+    text-decoration:none;
+    padding-bottom: 0px; 
+    color:inherit;
+    border-bottom: 2px solid #ab9e9e;
+}
+a:hover {
+    text-decoration: none;
+    color:black;
+    border-bottom: 1px solid red;
+}
+/*do not underline links nor should they be active*/
+pre a {
+    text-decoration:none;
+    color:black;
+    border-bottom: none;
+    pointer-events: none;
+    cursor: default;
+}
+
+
+.gliimSnippet {display:none;}
+
+ul {
+  list-style-type:square;
+  list-style-position: outside;
+}
+
+</style>
+
+
+</head>
+<body>
+
+<script>
+function gg_copy(gt, eid, gc) {
+  gt.textContent = eid.textContent;
+  gt.select();
+  document.execCommand("copy");
+  gc.style.visibility="visible"
+  setTimeout(()=>{ gc.style.visibility="hidden"; }, 1000);
+}
+
+</script>
+
+<!--GLIIMMENU13-->
+
+<!--GLIIMENDMENU13-->
+
+
+
+<!--BEGVDOC90-->
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;123 hello world</div><hr/><div class="vsub"><a id="Step 1: Install Gliimly"></a>Step 1: Install Gliimly</div>
+First <a href='http://gliimly.github.io/install.html'>install</a> Gliimly.<br/>
+<div class="vsub"><a id="Step 2: Build it"></a>Step 2: Build it</div>
+Create Hello World source file (hello.gliim) in a new directory; note it's all one bash command:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_2'>
+<span class="Statement">echo</span><span class="Constant"> </span><span class="Statement">'</span><span class="Constant">begin-handler /hello public</span>
+<span class="Constant">    @Hello World!</span>
+<span class="Constant">end-handler</span><span class="Statement">'</span><span class="Constant"> </span><span class="Statement">&gt;</span> hello.gliim</pre>
+<span id=gliim_copied_2 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_2' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_2, code_2, gliim_copied_2)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Create Hello World application:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_3'>
+sudo mgrg <span class="Special">-i</span> <span class="Special">-u</span> <span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span> helloworld</pre>
+<span id=gliim_copied_3 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_3' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_3, code_3, gliim_copied_3)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Make Hello World application:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_4'>
+gg <span class="Special">-q</span></pre>
+<span id=gliim_copied_4 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_4' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_4, code_4, gliim_copied_4)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+<div class="vsub"><a id="Step 3: Run it"></a>Step 3: Run it</div>
+You can run Hello World both as a service and from command line:<br/>
+<ul><li>As a service, first start your Hello World application server:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_5'>
+mgrg <span class="Special">-w</span> <span class="Constant">3</span> helloworld</pre>
+<span id=gliim_copied_5 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_5' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_5, code_5, gliim_copied_5)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+then connect to the <a href='http://gliimly.github.io/service.html'>service</a>:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_6'>
+gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/hello</span><span class="Statement">&quot;</span> <span class="Special">--silent-header</span> <span class="Special">--service</span> <span class="Special">--exec</span></pre>
+<span id=gliim_copied_6 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_6' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_6, code_6, gliim_copied_6)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+</li><li>Execute as <a href='http://gliimly.github.io/command-line.html'>command-line</a> program:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_7'>
+gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/hello</span><span class="Statement">&quot;</span> <span class="Special">--silent-header</span> <span class="Special">--exec</span></pre>
+<span id=gliim_copied_7 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_7' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_7, code_7, gliim_copied_7)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+</li></ul>
+<div class="vsub"><a id="Expected result"></a>Expected result</div>
+<div class='ncode' style='position:relative;padding-right:16px;'>
+<pre id='code_1'>
+Hello World!</pre>
+<span id=gliim_copied_1 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_1' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_1, code_1, gliim_copied_1)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+<!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
+ <span style="font-weight:bold;">Quick start</span><br/>
+<a href='http://gliimly.github.io/123-hello-world.html'>123-hello-world</a> &nbsp; <br/>
+<span style="font-weight:bold;">See all</span> <br/>
+<a href='http://gliimly.github.io/documentation.html'>documentation</a><br/>
+<!--ENDVDOC90-->
+<br/><div style='width:100%;clear:both;'>
+<hr/>
+<!--GLIIMFOOT77--><span style='font-size:80%'><a href="http://gliimly.github.io/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+</div><br/></body></html>
+
+

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>Gliimly official web site</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="HandheldFriendly" content="True"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<style>
+
+
+body, html {
+    color:black;
+    text-rendering: optimizelegibility;
+    background-color: white;
+    min-height: 150%;
+    font-family: "Times New Roman";
+    font-weight:400;
+    font-size:18px;
+    line-height:27px;
+    letter-spacing: 2px;
+    z-index: 1;
+    height: 100%;
+    text-align:left;
+    width:80%;
+    margin-left:auto;
+    margin-right:auto;
+    padding:0;
+    /*font-family: Helvetica, Arial, sans-serif;*/
+}
+
+body {
+    padding-left:1vw;
+    padding-right:1vw;
+}
+    
+.ncode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.shcode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.sqlcode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.htmlcode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.code {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+/*Just like h1 but for pdf conversion it would be indented this way it's not*/
+.vhub {
+    display: block;
+   font-size: 1.6em;
+   margin-top: 0.63em;
+   margin-bottom: 0.63em;
+   margin-left: 0;
+   margin-right: 0;
+   font-weight: bold;
+}
+
+/*Just like h2 but for pdf conversion it would be indented this way it's not*/
+.vsub {
+    display: block;
+   font-size: 1.25em;
+   margin-top: 0.53em;
+   margin-bottom: 0.53em;
+   margin-left: 0;
+   margin-right: 0;
+   font-weight: bold;
+}
+
+ul {
+  margin-left: 0.75vw;
+  padding-left: 0;
+}
+li {
+  margin-left: 0.75vw;
+  padding-left: 0;
+}
+
+/* this must be last, as it overrides previous settings, for mobile */
+@media (hover: none) {
+a {
+   display: inline-block;
+   padding-top: 3px;
+   padding-bottom: 2px;
+}
+body {
+    padding-left:2vw;
+    padding-right:2vw;
+    font-size:14px;
+    line-height:22px;
+    letter-spacing: 1px;
+}
+}
+
+/*The following is for code snippets that are highlighted by 2html vim*/
+pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
+.Identifier { color: #008b8b; }
+.Statement { color: #af5f00; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
+/*end of highlighted snippets*/
+
+a {
+    text-decoration:none;
+    padding-bottom: 0px; 
+    color:inherit;
+    border-bottom: 2px solid #ab9e9e;
+}
+a:hover {
+    text-decoration: none;
+    color:black;
+    border-bottom: 1px solid red;
+}
+/*do not underline links nor should they be active*/
+pre a {
+    text-decoration:none;
+    color:black;
+    border-bottom: none;
+    pointer-events: none;
+    cursor: default;
+}
+
+
+.gliimSnippet {display:none;}
+
+ul {
+  list-style-type:square;
+  list-style-position: outside;
+}
+
+</style>
+
+
+</head>
+<body>
+
+<script>
+function gg_copy(gt, eid, gc) {
+  gt.textContent = eid.textContent;
+  gt.select();
+  document.execCommand("copy");
+  gc.style.visibility="visible"
+  setTimeout(()=>{ gc.style.visibility="hidden"; }, 1000);
+}
+
+</script>
+
+<!--GLIIMMENU13-->
+
+<!--GLIIMENDMENU13-->
+
+
+
+<!--BEGVDOC90-->
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div>GLIIMLY HAS BEEN RENAMED TO GOLF! You can find new github repo at: https://github.com/golf-lang/golf and email is golf-lang@proton.me<br/>
+PLEASE NOTE IT WILL TAKE A FEW DAYS TO CHANGE THE NAME IN THE DOCUMENTATION AND ELSEWHERE. THANK YOU FOR YOUR PATIENCE.<br/>
+<br/>
+Gliimly is a programming language for web services. It includes compiler, application server and tools for a complete web development platform. Gliimly is simple, memory-safe, high-performance, built with industry-standard Free Open Source libraries, extensible, and licensed under <a href='http://gliimly.github.io/license.html'>Apache 2</a> Free Open Source.<br/>
+<br/>
+<a href='http://gliimly.github.io/install.html'>Install Gliimly</a>. See <a href='http://gliimly.github.io/documentation.html'>Documentation</a>. Source at <a href='https://github.com/golf-lang/golf'>github.com</a> (note version comments are the same as their numbers; each change log is described on <a href='https://golf-lang.blogspot.com'>Gliimly blog</a>). <br/>
+<br/>
+Current version is 142. Check <a href='https://golf-lang.blogspot.com/'>Blog</a> for change log.<br/>
+<br/>
+Example of Gliimly code (from <a href='https://golf-lang.blogspot.com/2024/11/multi-tenant-saas-notes-web-application.html'>SaaS example</a>):<br/>
+<br/><div class='vimg'><img class='imgs' src='home-example.png' alt='Gliimly'></img>
+</div><br/>
+<br/>
+<a href='https://golf-lang.blogspot.com/'>Blog</a> release updates, articles and examples:<br/>
+<ul><li>2025-01-03 <a href='https://golf-lang.blogspot.com/2025/01/what-is-application-server.html'>What is application server?</a></li>
+<li>2024-12-26 <a href='https://golf-lang.blogspot.com/2024/12/encryption-ciphers-digests-salt-iv.html'>Encryption: ciphers, digests, salt, IV</a></li>
+<li>2024-12-25 <a href='https://golf-lang.blogspot.com/2024/12/gliimly-136-released.html'>Gliimly 136 released</a></li>
+<li>2024-12-24 <a href='https://golf-lang.blogspot.com/2024/12/gliimly-132-released.html'>Gliimly 132 released</a></li>
+<li>2024-12-15 <a href='https://golf-lang.blogspot.com/2024/12/distributed-computing-made-easy.html'>Distributed computing made easy</a></li>
+<li>2024-12-12 <a href='https://golf-lang.blogspot.com/2024/12/how-is-memory-organized-in-gliimly.html'>How is memory organized in Gliimly</a></li>
+<li>2024-12-08 <a href='https://golf-lang.blogspot.com/2024/12/web-file-manager-in-less-than-100-lines.html'>Web file manager in less than 100 lines of code</a></li>
+<li>2024-12-08 <a href='https://golf-lang.blogspot.com/2024/12/gliimly-124-released.html'>Gliimly 124 released</a></li>
+<li>2024-12-04 <a href='https://golf-lang.blogspot.com/2024/12/gliimly-121-released.html'>Gliimly 121 released</a></li>
+<li>2024-12-02 <a href='https://golf-lang.blogspot.com/2024/12/passing-parameters-between-local.html'>Passing parameters between local request handlers</a></li>
+<li>2024-11-29 <a href='https://golf-lang.blogspot.com/2024/11/gliimly-117-released.html'>Gliimly 117 released</a></li>
+<li>2024-11-26 <a href='https://golf-lang.blogspot.com/2024/11/gliimly-114-released.html'>Gliimly 114 released</a></li>
+<li>2024-11-22 <a href='https://golf-lang.blogspot.com/2024/11/gliimly-109-released.html'>Gliimly 109 released</a></li>
+<li>2024-11-22 <a href='https://golf-lang.blogspot.com/2024/11/how-to-create-gliimly-application.html'>How to create Gliimly application</a></li>
+<li>2024-11-21 <a href='https://golf-lang.blogspot.com/2024/11/getting-help-for-gliimly-with-man-pages.html'>Getting help for Gliimly with man pages</a></li>
+<li>2024-11-12 <a href='https://golf-lang.blogspot.com/2024/11/multi-tenant-saas-notes-web-application.html'>Multi-tenant SaaS (Notes web application) in 200 lines of code</a></li>
+<li>2024-11-10 <a href='https://golf-lang.blogspot.com/2024/11/gliimly-91-released.html'>Gliimly 91 released</a></li>
+<li>2024-11-05 <a href='https://golf-lang.blogspot.com/2024/11/gliimly-87-released.html'>Gliimly 87 released</a></li>
+<li>2024-10-28 <a href='https://golf-lang.blogspot.com/2024/10/gliimly-76-released.html'>Gliimly 76 released</a></li>
+<li>2024-10-28 <a href='https://golf-lang.blogspot.com/2024/10/web-services-security.html'>Web Services Security</a></li>
+<li>2024-10-23 <a href='https://golf-lang.blogspot.com/2024/10/gliimly-70-released.html'>Gliimly 70 released</a></li>
+<li>2024-10-21 <a href='https://golf-lang.blogspot.com/2024/10/web-service-with-mariadb.html'>Web services with MariaDB</a></li>
+<li>2024-10-19 <a href='https://golf-lang.blogspot.com/2024/10/gliimly-65-released.html'>Gliimly 65 released</a></li>
+<li>2024-10-17 <a href='https://golf-lang.blogspot.com/2024/10/web-service-calling-web-service.html'>Web service calling web service</a></li>
+<li>2024-10-14 <a href='https://golf-lang.blogspot.com/2024/10/gliimly-56-released.html'>Gliimly 56 released</a></li>
+<li>2024-10-13 <a href='https://golf-lang.blogspot.com/2024/10/what-is-web-service.html'>What is Web Service</a></li>
+<li>2024-10-11 <a href='https://golf-lang.blogspot.com/2024/10/cache-as-web-service.html'>Cache as a web service</a></li>
+<li>2024-10-09 <a href='https://golf-lang.blogspot.com/2024/10/cache-server-as-web-service-in-30-lines.html'>Cache server in 30 lines </a></li>
+<li>2024-10-08 <a href='https://golf-lang.blogspot.com/2024/10/gliimly-54-released.html'>Gliimly 54 released</a></li>
+<li>2024-10-06 <a href='https://golf-lang.blogspot.com/2024/10/memory-safety-cost-in-performance.html'>Memory safety: the cost in performance</a></li>
+<li>2024-10-01 <a href='https://golf-lang.blogspot.com/2024/10/gliimly-50-released.html'>Gliimly 50 released</a></li>
+<li>2024-09-29 <a href='https://golf-lang.blogspot.com/2024/09/sqlite-with-gliimly.html'>SQLite with Gliimly</a></li>
+<li>2024-09-29 <a href='https://golf-lang.blogspot.com/2024/09/copy-code-icon-added.html'>Copy-code icon added</a></li>
+<li>2024-09-27 <a href='https://golf-lang.blogspot.com/2024/09/gliimly-44-released.html'>Gliimly 44 released</a></li>
+<li>2024-09-26 <a href='https://golf-lang.blogspot.com/2024/09/overview-of-gliimly.html'>Overview of Gliimly</a></li>
+<li>2024-09-24 <a href='https://golf-lang.blogspot.com/2024/09/gliimly-37-released.html'>Gliimly 37 released</a></li>
+<li>2024-09-21 <a href='https://golf-lang.blogspot.com/2024/09/web-service-hello-world.html'>Web service Hello World</a></li>
+<li>2024-09-21 <a href='https://golf-lang.blogspot.com/2024/09/hello-world-as-service.html'>Hello World as a Service</a></li>
+<li>2024-09-20 <a href='https://golf-lang.blogspot.com/2024/09/gliimly-32-released.html'>Gliimly 32 released</a></li>
+<li>2024-09-19 <a href='https://golf-lang.blogspot.com/2024/09/using-vim-color-schemes-with-gliimly.html'>Using Vim color schemes with Gliimly</a></li>
+<li>2024-09-17 <a href='https://golf-lang.blogspot.com/2024/09/hello-world-in-gliimly.html'>Hello World in Gliimly</a></li>
+<li>2024-09-13 <a href='https://golf-lang.blogspot.com/2024/09/introduction-to-gliim-body-html.html'>Introduction to Gliimly</a></li>
+<li>2024-09-12 <a href='https://golf-lang.blogspot.com/2024/09/12-is-initial-gliim-release-formerly.html'>Initial Gliimly release</a></li></ul>
+<!--ENDVDOC90-->
+<br/><div style='width:100%;clear:both;'>
+<hr/>
+<!--GLIIMFOOT77--><span style='font-size:80%'><a href="http://gliimly.github.io/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+</div><br/></body></html>
+
+

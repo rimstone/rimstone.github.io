@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>P out</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="HandheldFriendly" content="True"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<style>
+
+
+body, html {
+    color:black;
+    text-rendering: optimizelegibility;
+    background-color: white;
+    min-height: 150%;
+    font-family: "Times New Roman";
+    font-weight:400;
+    font-size:18px;
+    line-height:27px;
+    letter-spacing: 2px;
+    z-index: 1;
+    height: 100%;
+    text-align:left;
+    width:80%;
+    margin-left:auto;
+    margin-right:auto;
+    padding:0;
+    /*font-family: Helvetica, Arial, sans-serif;*/
+}
+
+body {
+    padding-left:1vw;
+    padding-right:1vw;
+}
+    
+.ncode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.shcode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.sqlcode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.htmlcode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.code {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+/*Just like h1 but for pdf conversion it would be indented this way it's not*/
+.vhub {
+    display: block;
+   font-size: 1.6em;
+   margin-top: 0.63em;
+   margin-bottom: 0.63em;
+   margin-left: 0;
+   margin-right: 0;
+   font-weight: bold;
+}
+
+/*Just like h2 but for pdf conversion it would be indented this way it's not*/
+.vsub {
+    display: block;
+   font-size: 1.25em;
+   margin-top: 0.53em;
+   margin-bottom: 0.53em;
+   margin-left: 0;
+   margin-right: 0;
+   font-weight: bold;
+}
+
+ul {
+  margin-left: 0.75vw;
+  padding-left: 0;
+}
+li {
+  margin-left: 0.75vw;
+  padding-left: 0;
+}
+
+/* this must be last, as it overrides previous settings, for mobile */
+@media (hover: none) {
+a {
+   display: inline-block;
+   padding-top: 3px;
+   padding-bottom: 2px;
+}
+body {
+    padding-left:2vw;
+    padding-right:2vw;
+    font-size:14px;
+    line-height:22px;
+    letter-spacing: 1px;
+}
+}
+
+/*The following is for code snippets that are highlighted by 2html vim*/
+pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
+.Identifier { color: #008b8b; }
+.Statement { color: #af5f00; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
+/*end of highlighted snippets*/
+
+a {
+    text-decoration:none;
+    padding-bottom: 0px; 
+    color:inherit;
+    border-bottom: 2px solid #ab9e9e;
+}
+a:hover {
+    text-decoration: none;
+    color:black;
+    border-bottom: 1px solid red;
+}
+/*do not underline links nor should they be active*/
+pre a {
+    text-decoration:none;
+    color:black;
+    border-bottom: none;
+    pointer-events: none;
+    cursor: default;
+}
+
+
+.gliimSnippet {display:none;}
+
+ul {
+  list-style-type:square;
+  list-style-position: outside;
+}
+
+</style>
+
+
+</head>
+<body>
+
+<script>
+function gg_copy(gt, eid, gc) {
+  gt.textContent = eid.textContent;
+  gt.select();
+  document.execCommand("copy");
+  gc.style.visibility="visible"
+  setTimeout(()=>{ gc.style.visibility="hidden"; }, 1000);
+}
+
+</script>
+
+<!--GLIIMMENU13-->
+
+<!--GLIIMENDMENU13-->
+
+
+
+<!--BEGVDOC90-->
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;P out</div><hr/><span style="font-weight:bold;">Purpose</span>: Outputs a string without encoding.<br/>
+<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_570'>
+<span class="Statement"> p-out</span> &lt;string&gt; [<span class="Identifier"> length</span> &lt;length&gt; ] [<span class="Identifier"> new-line</span> ]</pre>
+<span id=gliim_copied_570 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_570' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_570, code_570, gliim_copied_570)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+p-out outputs a &lt;string&gt;, without any encoding (meaning a string is output exactly as it appears). <br/>
+<br/>
+If "length" clause is used, then only &lt;length&gt; leading bytes of &lt;string&gt; are output. <br/>
+<br/>
+If "new-line" clause is used, then a new line ("\n") is output after &lt;string&gt;.<br/>
+<br/>
+Note that all bytes of &lt;string&gt; are output, even if &lt;string&gt; contains null-bytes.<br/>
+<div class="vsub"><a id="Examples"></a>Examples</div>
+To output data verbatim to a client:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_571'>
+<span class="Statement"> set-string</span> mydata=<span class="Constant">&quot;Hello world&quot;</span>
+<span class="Statement"> p-out</span> mydata</pre>
+<span id=gliim_copied_571 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_571' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_571, code_571, gliim_copied_571)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Writing to client, outputting text followed by a horizontal rule - the text is output to a client (such as browser) as it is, and the browser will interpret tags "&lt;br/&gt;" and "&lt;hr/&gt;" as a line break and a horizonal line and display them as such:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_572'>
+<span class="Statement"> p-out</span> <span class="Constant">&quot;This is a non-encoded output&lt;br/&gt;&quot;</span><span class="Identifier"> new-line</span>
+<span class="Statement"> p-out</span> <span class="Constant">&quot;&lt;hr/&gt;&quot;</span></pre>
+<span id=gliim_copied_572 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_572' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_572, code_572, gliim_copied_572)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Create a query text string by means of <a href='http://gliimly.github.io/write-string.html'>write-string</a> statement:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_573'>
+ <span class="Comment">//</span>
+ <span class="Comment">// Construct the run-time text of dynamic SQL</span>
+ <span class="Comment">//</span>
+<span class="Statement"> write-string</span> qry_txt
+<span class="Statement">    @</span>select * from <span class="Statement">&lt;&lt;p-out</span> table_name<span class="Statement">&gt;&gt;</span>
+<span class="Statement"> end-write-string</span></pre>
+<span id=gliim_copied_573 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_573' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_573, code_573, gliim_copied_573)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+<!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
+ <span style="font-weight:bold;">Output</span><br/>
+<a href='http://gliimly.github.io/finish-output.html'>finish-output</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/flush-output.html'>flush-output</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/output-statement.html'>output-statement</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/pf-out.html'>pf-out</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/pf-url.html'>pf-url</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/pf-web.html'>pf-web</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/p-num.html'>p-num</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/p-out.html'>p-out</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/p-path.html'>p-path</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/p-source-file.html'>p-source-file</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/p-source-line.html'>p-source-line</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/p-url.html'>p-url</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/p-web.html'>p-web</a> &nbsp; <br/>
+<span style="font-weight:bold;">See all</span> <br/>
+<a href='http://gliimly.github.io/documentation.html'>documentation</a><br/>
+<!--ENDVDOC90-->
+<br/><div style='width:100%;clear:both;'>
+<hr/>
+<!--GLIIMFOOT77--><span style='font-size:80%'><a href="http://gliimly.github.io/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+</div><br/></body></html>
+
+

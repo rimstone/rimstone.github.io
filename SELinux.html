@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>SELinux</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="HandheldFriendly" content="True"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<style>
+
+
+body, html {
+    color:black;
+    text-rendering: optimizelegibility;
+    background-color: white;
+    min-height: 150%;
+    font-family: "Times New Roman";
+    font-weight:400;
+    font-size:18px;
+    line-height:27px;
+    letter-spacing: 2px;
+    z-index: 1;
+    height: 100%;
+    text-align:left;
+    width:80%;
+    margin-left:auto;
+    margin-right:auto;
+    padding:0;
+    /*font-family: Helvetica, Arial, sans-serif;*/
+}
+
+body {
+    padding-left:1vw;
+    padding-right:1vw;
+}
+    
+.ncode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.shcode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.sqlcode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.htmlcode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.code {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+/*Just like h1 but for pdf conversion it would be indented this way it's not*/
+.vhub {
+    display: block;
+   font-size: 1.6em;
+   margin-top: 0.63em;
+   margin-bottom: 0.63em;
+   margin-left: 0;
+   margin-right: 0;
+   font-weight: bold;
+}
+
+/*Just like h2 but for pdf conversion it would be indented this way it's not*/
+.vsub {
+    display: block;
+   font-size: 1.25em;
+   margin-top: 0.53em;
+   margin-bottom: 0.53em;
+   margin-left: 0;
+   margin-right: 0;
+   font-weight: bold;
+}
+
+ul {
+  margin-left: 0.75vw;
+  padding-left: 0;
+}
+li {
+  margin-left: 0.75vw;
+  padding-left: 0;
+}
+
+/* this must be last, as it overrides previous settings, for mobile */
+@media (hover: none) {
+a {
+   display: inline-block;
+   padding-top: 3px;
+   padding-bottom: 2px;
+}
+body {
+    padding-left:2vw;
+    padding-right:2vw;
+    font-size:14px;
+    line-height:22px;
+    letter-spacing: 1px;
+}
+}
+
+/*The following is for code snippets that are highlighted by 2html vim*/
+pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
+.Identifier { color: #008b8b; }
+.Statement { color: #af5f00; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
+/*end of highlighted snippets*/
+
+a {
+    text-decoration:none;
+    padding-bottom: 0px; 
+    color:inherit;
+    border-bottom: 2px solid #ab9e9e;
+}
+a:hover {
+    text-decoration: none;
+    color:black;
+    border-bottom: 1px solid red;
+}
+/*do not underline links nor should they be active*/
+pre a {
+    text-decoration:none;
+    color:black;
+    border-bottom: none;
+    pointer-events: none;
+    cursor: default;
+}
+
+
+.gliimSnippet {display:none;}
+
+ul {
+  list-style-type:square;
+  list-style-position: outside;
+}
+
+</style>
+
+
+</head>
+<body>
+
+<script>
+function gg_copy(gt, eid, gc) {
+  gt.textContent = eid.textContent;
+  gt.select();
+  document.execCommand("copy");
+  gc.style.visibility="visible"
+  setTimeout(()=>{ gc.style.visibility="hidden"; }, 1000);
+}
+
+</script>
+
+<!--GLIIMMENU13-->
+
+<!--GLIIMENDMENU13-->
+
+
+
+<!--BEGVDOC90-->
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;SELinux</div><hr/>If you do not use SELinux, you can ignore this. <br/>
+<br/>
+SELinux is MAC (Mandatory Access Control) system, which means anything that isn't allowed is prohibited. This is as opposed to DAC, Discretionary Access Control, where everything is allowed except what's prohibited. MAC generally works on top of DAC, and they are expected to work in a complementary fashion. Gliimly deploys both methods for enhanced security.<br/>
+<br/>
+Gliimly comes with a SELinux policy out-of-the-box, which covers its general functioning. However, you can write any code with Gliimly, and if you are using SELinux, you may run afoul of its other policies, which may not be conducive to your code. In that case, use temporarily a permissive mode (via setenforce), and then audit2allow to get a clue on what is the issue and then take action to allow what's requested.<br/>
+<br/>
+Note that OpenSUSE package does not come with SELinux policy as of this release, because OpenSUSE at this time does not come with a default base policy and SELinux installation.<br/>
+<br/>
+<div class="vsub"><a id="General"></a>General</div>
+Gliimly policy files (including .te, .fc files, while .if file is empty) can be found here:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_665'>
+<span class="Statement">ls</span> <span class="PreProc">$(</span><span class="Special">gg </span><span class="Special">-l</span><span class="PreProc">)</span>/selinux/*.<span class="Special">{</span>te,<span class="Statement">fc</span><span class="Special">}</span></pre>
+<span id=gliim_copied_665 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_665' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_665, code_665, gliim_copied_665)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+As a part of installing Gliimly, the following SELinux types will be installed:<br/>
+<ul><li>ggfile_t: all files within Gliimly directory (/var/lib/gg) are labeled with this type.<br/>
+</li><li>gg_t: domain type (process type) of all Gliimly executables that communicate with other processes (be it Unix or TCP sockets). Only files labeled ggfile_t can run as this process type.<br/>
+</li><li>ggport_t: port type that any Gliimly process is allowed to bind to, accept and listen. No other process types are allowed to do so.</ul>
+Gliimly policy:<br/>
+<ul><li>allows Gliimly processes unconfined access. This is expected as Gliimly is a general purpose framework. It means you do not have to do anything to connect to database, use files, connect to other servers etc.<br/>
+</li><li>allows web servers (httpd_t domain type) to connect to sockets labeled with ggfile_t, but does not allow any other access. This allows communication between reverse-proxy web servers and Gliimly applications.<br/>
+</li><li>allows web servers to connect to any Gliimly process that is listening on a TCP port (see <a href='http://gliimly.github.io/gg.html'>gg</a>), but does not allow any other access (i.e. to any other ports).</ul>
+Gliimly policy allows normal functioning of Gliimly features only, but does not introduce any unnecessary privileges to the rest of the system.<br/>
+<br/>
+Note: Gliimly installation does not distribute .pp (compile) policy files, because it is not currently part of distro repos. Due to changes in SELinux and difference in versions installed across derived distros, Gliimly will compile source .te and .fc files during the installation, ensuring the best possibility of successful SELinux policy setup.<br/>
+<div class="vsub"><a id="Unix domain sockets"></a>Unix domain sockets</div>
+Using Unix domain sockets for Gliimly processes to communicate with a web server (see <a href='http://gliimly.github.io/gg.html'>gg</a>) is the default method and no further action is needed.<br/>
+<div class="vsub"><a id="Unix TCP sockets"></a>Unix TCP sockets</div>
+Using TCP sockets for Gliimly processes to communicate with a web server (see <a href='http://gliimly.github.io/gg.html'>gg</a>) requires you to label such ports as ggport_t, for example if you plan to use port 2109:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_666'>
+sudo semanage port <span class="Special">-a</span> <span class="Special">-t</span> ggport_t <span class="Special">-p</span> tcp  <span class="Constant">2109</span></pre>
+<span id=gliim_copied_666 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_666' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_666, code_666, gliim_copied_666)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+When you no longer need a port, for example if you are switching to another port (for instance 2209), remove the old one and add the new one:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_667'>
+sudo semanage port <span class="Special">-d</span> <span class="Special">-t</span> ggport_t <span class="Special">-p</span> tcp  <span class="Constant">2109</span>
+sudo semanage port <span class="Special">-a</span> <span class="Special">-t</span> ggport_t <span class="Special">-p</span> tcp  <span class="Constant">2209</span></pre>
+<span id=gliim_copied_667 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_667' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_667, code_667, gliim_copied_667)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+<div class="vsub"><a id="Changing or adding directories"></a>Changing or adding directories</div>
+If you are adding directories to be used by Gliimly program, or changing a directory, for example using a different storage instead of /var/lib/gg (see <a href='http://gliimly.github.io/directories.html'>directories</a>), you need to label files in new directories:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_668'>
+sudo semanage fcontext <span class="Special">-a</span> <span class="Special">-t</span> ggfile_t <span class="Statement">&quot;</span><span class="Constant">/your/new/dir(/.*)?</span><span class="Statement">&quot;</span>
+sudo restorecon <span class="Special">-R</span> /your/new/dir</pre>
+<span id=gliim_copied_668 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_668' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_668, code_668, gliim_copied_668)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+To remove context from such directories (if you are not using them anymore), use:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_669'>
+sudo semanage fcontext <span class="Special">-d</span> <span class="Special">-t</span> ggfile_t <span class="Statement">&quot;</span><span class="Constant">/your/new/dir(/.*)?</span><span class="Statement">&quot;</span>
+sudo restorecon <span class="Special">-R</span> /your/new/dir</pre>
+<span id=gliim_copied_669 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_669' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_669, code_669, gliim_copied_669)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+<!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
+ <span style="font-weight:bold;">General</span><br/>
+<a href='http://gliimly.github.io/about-gliimly.html'>about-gliimly</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/directories.html'>directories</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/SELinux.html'>SELinux</a> &nbsp; <br/>
+<span style="font-weight:bold;">See all</span> <br/>
+<a href='http://gliimly.github.io/documentation.html'>documentation</a><br/>
+<!--ENDVDOC90-->
+<br/><div style='width:100%;clear:both;'>
+<hr/>
+<!--GLIIMFOOT77--><span style='font-size:80%'><a href="http://gliimly.github.io/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+</div><br/></body></html>
+
+

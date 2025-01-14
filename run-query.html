@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>Run query</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="HandheldFriendly" content="True"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<style>
+
+
+body, html {
+    color:black;
+    text-rendering: optimizelegibility;
+    background-color: white;
+    min-height: 150%;
+    font-family: "Times New Roman";
+    font-weight:400;
+    font-size:18px;
+    line-height:27px;
+    letter-spacing: 2px;
+    z-index: 1;
+    height: 100%;
+    text-align:left;
+    width:80%;
+    margin-left:auto;
+    margin-right:auto;
+    padding:0;
+    /*font-family: Helvetica, Arial, sans-serif;*/
+}
+
+body {
+    padding-left:1vw;
+    padding-right:1vw;
+}
+    
+.ncode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.shcode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.sqlcode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.htmlcode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.code {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+/*Just like h1 but for pdf conversion it would be indented this way it's not*/
+.vhub {
+    display: block;
+   font-size: 1.6em;
+   margin-top: 0.63em;
+   margin-bottom: 0.63em;
+   margin-left: 0;
+   margin-right: 0;
+   font-weight: bold;
+}
+
+/*Just like h2 but for pdf conversion it would be indented this way it's not*/
+.vsub {
+    display: block;
+   font-size: 1.25em;
+   margin-top: 0.53em;
+   margin-bottom: 0.53em;
+   margin-left: 0;
+   margin-right: 0;
+   font-weight: bold;
+}
+
+ul {
+  margin-left: 0.75vw;
+  padding-left: 0;
+}
+li {
+  margin-left: 0.75vw;
+  padding-left: 0;
+}
+
+/* this must be last, as it overrides previous settings, for mobile */
+@media (hover: none) {
+a {
+   display: inline-block;
+   padding-top: 3px;
+   padding-bottom: 2px;
+}
+body {
+    padding-left:2vw;
+    padding-right:2vw;
+    font-size:14px;
+    line-height:22px;
+    letter-spacing: 1px;
+}
+}
+
+/*The following is for code snippets that are highlighted by 2html vim*/
+pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
+.Identifier { color: #008b8b; }
+.Statement { color: #af5f00; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
+/*end of highlighted snippets*/
+
+a {
+    text-decoration:none;
+    padding-bottom: 0px; 
+    color:inherit;
+    border-bottom: 2px solid #ab9e9e;
+}
+a:hover {
+    text-decoration: none;
+    color:black;
+    border-bottom: 1px solid red;
+}
+/*do not underline links nor should they be active*/
+pre a {
+    text-decoration:none;
+    color:black;
+    border-bottom: none;
+    pointer-events: none;
+    cursor: default;
+}
+
+
+.gliimSnippet {display:none;}
+
+ul {
+  list-style-type:square;
+  list-style-position: outside;
+}
+
+</style>
+
+
+</head>
+<body>
+
+<script>
+function gg_copy(gt, eid, gc) {
+  gt.textContent = eid.textContent;
+  gt.select();
+  document.execCommand("copy");
+  gc.style.visibility="visible"
+  setTimeout(()=>{ gc.style.visibility="hidden"; }, 1000);
+}
+
+</script>
+
+<!--GLIIMMENU13-->
+
+<!--GLIIMENDMENU13-->
+
+
+
+<!--BEGVDOC90-->
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Run query</div><hr/><span style="font-weight:bold;">Purpose</span>: Execute a query and loop through result set.<br/>
+<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_656'>
+<span class="Statement"> run-query</span> \
+     [ @&lt;database&gt; ] \
+     = &lt;query text&gt; \
+     [<span class="Identifier"> input</span> &lt;input parameter&gt; [ , ... ] ] \
+     [<span class="Type"> output</span> ( &lt;column name&gt; [<span class="Identifier"> noencode</span> |<span class="Identifier"> urlencode</span> |<span class="Identifier"> webencode</span> ] ) [ , ... ] ] \
+     [<span class="Identifier"> no-loop</span> ] \
+     [<span class="Type"> error</span> &lt;error&gt; ] \
+     [<span class="Type"> error-text</span> &lt;error text&gt; ] \
+     [<span class="Type"> affected-rows</span> &lt;affected rows&gt; ] \
+     [<span class="Type"> row-count</span> &lt;row count&gt; ] \
+     [<span class="Identifier"> on-error-continue</span> |<span class="Identifier"> on-error-exit</span> ]
+
+     &lt;any code&gt;
+
+ [ end-query ]
+
+<span class="Statement"> run-prepared-query</span> \
+     ... ( the same as run-query ) ...</pre>
+<span id=gliim_copied_656 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_656' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_656, code_656, gliim_copied_656)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+run-query executes a query specified with string &lt;query text&gt;.<br/>
+<div class="vsub"><a id="Database"></a>Database</div>
+&lt;database&gt; is specified in "@" clause and is the name of the <a href='http://gliimly.github.io/database-config-file.html'>database-config-file</a>. If ommited, your program must use exactly one database (see --db option in <a href='http://gliimly.github.io/gg.html'>gg</a>).<br/>
+<div class="vsub"><a id="Output"></a>Output</div>
+<span style="font-weight:bold;">- output clause</span><br/>
+"output" clause is a comma-delimited list of the query's output columns. The column names do not need to match the actual query column names, rather you can name them anyway you want, as long as they positionally correspond. String variables with the same name are created for each column name and query's output assigned to them. For example:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_658'>
+<span class="Statement"> run-query</span> @db = <span class="Constant">&quot;select firstName, lastName from employees&quot;</span><span class="Type"> output</span> first_name, last_name
+<span class="Statement">     @</span>First name <span class="Statement">&lt;&lt;p-out</span> first_name<span class="Statement">&gt;&gt;</span>
+<span class="Statement">     @</span>Last name <span class="Statement">&lt;&lt;p-out</span> last_name<span class="Statement">&gt;&gt;</span>
+<span class="Statement"> end-loop</span></pre>
+<span id=gliim_copied_658 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_658' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_658, code_658, gliim_copied_658)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Note that the output is by default web-encoded. You can set the encoding of column output by using either "noencode" (for no encoding), "urlencode" (for URL-encoding) or "webencode" (for web-encoding) clause right after column name (see <a href='http://gliimly.github.io/encode-web.html'>encode-web</a>, <a href='http://gliimly.github.io/encode-url.html'>encode-url</a> for description of encodings). For example, here the first output column will not be encoded, and the second will be URL-encoded:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_659'>
+<span class="Statement"> run-query</span> @db = <span class="Constant">&quot;select firstName, lastName from employees&quot;</span><span class="Type"> output</span> first_name<span class="Identifier"> noencode</span>, last_name<span class="Identifier"> urlencode</span>
+<span class="Statement">     @</span>First name <span class="Statement">&lt;&lt;p-out</span> first_name<span class="Statement">&gt;&gt;</span>
+<span class="Statement">     @</span>Last name <span class="Statement">&lt;&lt;p-out</span> last_name<span class="Statement">&gt;&gt;</span>
+<span class="Statement"> end-loop</span></pre>
+<span id=gliim_copied_659 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_659' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_659, code_659, gliim_copied_659)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+<div class="vsub"><a id="Input"></a>Input</div>
+The query's input parameters (if any) are specified with '%s' in the &lt;query text&gt; (note that single quotes must be included). The actual input parameters are provided after "input" clause (you can instead use semicolon, i.e. ":"), in a comma-separated list. Each input variable is a string regardless of the actual column type, as the database engine will interpret the data according to its usage. Each input variable is trimmed (left and right) before used in a query. <br/>
+<div class="vsub"><a id="Looping through data"></a>Looping through data</div>
+"end-query" statement ends the loop in which query results are available through "output" clause. "no-loop" clause includes implicit "end-query", and in that case no "end-query" statement can be used. This is useful if you don't want to access any output columns (or there aren't any), but rather only affected rows (in INSERT or UPDATE for example), row count (in SELECT) or error code. "end-query" is also unnecessary for DDL statements like "CREATE INDEX" for instance.<br/>
+<div class="vsub"><a id="Affected rows"></a>Affected rows</div>
+"affected-rows" clause provides the number of &lt;affected rows&gt; (such as number of rows inserted by INSERT). The number of rows affected is typically used for DML operations such as INSERT, UPDATE or DELETE. For SELECT, it may or may not be the same as "row-count" which returns the number of rows from a query. See your database documentation for more. <br/>
+<div class="vsub"><a id="Rows returned"></a>Rows returned</div>
+The number of rows returned by a query can be obtained in &lt;row count&gt; in "row-count" clause. <br/>
+<div class="vsub"><a id="Error handling"></a>Error handling</div>
+The error code is available in &lt;error&gt; variable in "error" clause - this code is always "0" if successful. The &lt;error&gt; code may or may not be a number but is always returned as a string value. In case of error, error text is available in "error-text" clause in &lt;error text&gt; string.<br/>
+<br/>
+"on-error-continue" clause specifies that <a href='http://gliimly.github.io/request.html'>request</a> processing will continue in case of an error, whereas "on-error-exit" clause specifies that it will exit. This setting overrides database-level <a href='http://gliimly.github.io/db-error.html'>db-error</a> for this specific statement only. If you use "on-error-continue", be sure to check the error code.<br/>
+<br/>
+Note that if database connection was lost, and could not be reestablished, the request will error out (see <a href='http://gliimly.github.io/error-handling.html'>error-handling</a>).<br/>
+<div class="vsub"><a id="Space before = and @"></a>Space before = and @</div>
+"=" and "@" clauses may or may not have a space before the data that follows. So for example, these are both valid:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_660'>
+ <span class="Comment">// No space after </span><span class="Constant">&quot;@&quot;</span><span class="Comment"> and </span><span class="Constant">&quot;=&quot;</span>
+<span class="Statement"> run-query</span> @db =<span class="Constant">&quot;select firstName, lastName from employee where employeeId='</span><span class="Special">%s</span><span class="Constant">'&quot;</span><span class="Type"> output</span> firstName, lastName<span class="Identifier"> input</span> empid
+
+ <span class="Comment">// Space after </span><span class="Constant">&quot;@&quot;</span><span class="Comment"> and </span><span class="Constant">&quot;=&quot;</span>
+<span class="Statement"> run-query</span><span class="Identifier"> @</span> db = <span class="Constant">&quot;select firstName, lastName from employee where employeeId='</span><span class="Special">%s</span><span class="Constant">'&quot;</span><span class="Type"> output</span> firstName, lastName<span class="Identifier"> input</span> empid</pre>
+<span id=gliim_copied_660 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_660' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_660, code_660, gliim_copied_660)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+<div class="vsub"><a id="run-prepared-query"></a>run-prepared-query</div>
+run-prepared-query is the same as run-query except that a &lt;query&gt; is prepared. That means it is pre-compiled and its execution plan is created once, instead of each time a query executes. The statement is cached going forward for the life of the process (with the rare exception of re-establishing a lost database connection). It means effectively an unlimited number of requests will be reusing the query statement, which generally implies higher performance. Note that databases do not allow prepared queries for DDL (Data Definition Language), as there is not much benefit in general, hence only DML queries (such as INSERT, DELETE etc.) and SELECT can be prepared.<br/>
+<br/>
+In order for database to cache a query statement, Gliimly will save query text that actually executes the very first time it runs. Then, regardless of what query text you supply in the following executions, it will not mutate anymore. It means from that moment onward, the query will always execute that very same query text, just with different input parameters. In practicallity it means that &lt;query&gt; should be a string constant if you are using a prepared query (which is usually the case).<br/>
+<br/>
+In some cases, you might not want to use prepared statements. Some reasons may be: <br/>
+<ul><li>your statements are often changing and dynamically constructed to the point where managing a great many equivalent prepared statements may be impractical - for example there may be a part of your query text that comes from outside your code,<br/>
+</li><li>your dynamic statements do not execute as many times, which makes prepared statements slower, since they require two trips to the database server to begin with,<br/>
+</li><li>your query cannot be written as a prepared statement due to database restrictions,<br/>
+</li><li>in some cases prepared statements are slower because the execution plan depends on the actual data used, in which case non-prepared statement may be a better choice,<br/>
+</li><li>in some cases the database support for prepared statements may still have issues compared to non-prepared,<br/>
+</li><li>typically prepared statements do not use database query cache, so repeating identical queries with identical input data may be faster without them.</li></ul>
+Note that in Postgres, with prepared statements you may get an error like "could not determine data type of parameter $N". This is an issue with Postgres server. In this case you can use "::&lt;type&gt;" qualifier, such as for instance to tell Postgres the input parameter is text:<br/>
+<div class='sqlcode' style='position:relative;padding-right:16px;'>
+<pre id='code_657'>
+<span class="Statement">select</span> col1 <span class="Special">from</span> test <span class="Special">where</span> someId&gt;=<span class="Special">'</span><span class="Constant">%s</span><span class="Special">'</span> <span class="Statement">and</span> col1 <span class="Statement">like</span> <span class="Identifier">concat</span>( <span class="Special">'</span><span class="Constant">%s</span><span class="Special">'</span>::text ,<span class="Special">'</span><span class="Constant">%</span><span class="Special">'</span>)</pre>
+<span id=gliim_copied_657 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_657' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_657, code_657, gliim_copied_657)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Note that SQL statements in SQLite are always prepared regardless of whether you use "run-query" or "run-prepared-query" due to how SQLite native interface works.<br/>
+<div class="vsub"><a id="Examples"></a>Examples</div>
+Select first and last name (output is firstName and lastName) based on employee ID (specified by input parameter empid):<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_661'>
+<span class="Statement"> get-param</span> empid
+<span class="Statement"> run-query</span> @db = <span class="Constant">&quot;select firstName, lastName from employee where employeeId='</span><span class="Special">%s</span><span class="Constant">'&quot;</span><span class="Type"> output</span> firstName, lastName<span class="Identifier"> input</span> empid
+<span class="Statement">     @</span>Employee is <span class="Statement">&lt;&lt;p-out</span>  firstName<span class="Statement">&gt;&gt;</span> <span class="Statement">&lt;&lt;p-out</span> lastName<span class="Statement">&gt;&gt;</span>
+<span class="Statement"> end-query</span></pre>
+<span id=gliim_copied_661 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_661' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_661, code_661, gliim_copied_661)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Prepared query without a loop and obtain error code and affected rows:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_662'>
+<span class="Statement"> run-prepared-query</span> @db = qry<span class="Identifier"> no-loop</span> \
+    <span class="Type"> error</span> ecode<span class="Type"> affected-rows</span> arows<span class="Identifier"> input</span> stock_name, stock_price, stock_price</pre>
+<span id=gliim_copied_662 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_662' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_662, code_662, gliim_copied_662)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+<!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
+ <span style="font-weight:bold;">Database</span><br/>
+<a href='http://gliimly.github.io/begin-transaction.html'>begin-transaction</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/commit-transaction.html'>commit-transaction</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/current-row.html'>current-row</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/database-config-file.html'>database-config-file</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/db-error.html'>db-error</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/mariadb-database.html'>mariadb-database</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/postgresql-database.html'>postgresql-database</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/rollback-transaction.html'>rollback-transaction</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/run-query.html'>run-query</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/sqlite-database.html'>sqlite-database</a> &nbsp; <br/>
+<span style="font-weight:bold;">See all</span> <br/>
+<a href='http://gliimly.github.io/documentation.html'>documentation</a><br/>
+<!--ENDVDOC90-->
+<br/><div style='width:100%;clear:both;'>
+<hr/>
+<!--GLIIMFOOT77--><span style='font-size:80%'><a href="http://gliimly.github.io/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+</div><br/></body></html>
+
+

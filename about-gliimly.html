@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>About gliimly</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="HandheldFriendly" content="True"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<style>
+
+
+body, html {
+    color:black;
+    text-rendering: optimizelegibility;
+    background-color: white;
+    min-height: 150%;
+    font-family: "Times New Roman";
+    font-weight:400;
+    font-size:18px;
+    line-height:27px;
+    letter-spacing: 2px;
+    z-index: 1;
+    height: 100%;
+    text-align:left;
+    width:80%;
+    margin-left:auto;
+    margin-right:auto;
+    padding:0;
+    /*font-family: Helvetica, Arial, sans-serif;*/
+}
+
+body {
+    padding-left:1vw;
+    padding-right:1vw;
+}
+    
+.ncode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.shcode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.sqlcode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.htmlcode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.code {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+/*Just like h1 but for pdf conversion it would be indented this way it's not*/
+.vhub {
+    display: block;
+   font-size: 1.6em;
+   margin-top: 0.63em;
+   margin-bottom: 0.63em;
+   margin-left: 0;
+   margin-right: 0;
+   font-weight: bold;
+}
+
+/*Just like h2 but for pdf conversion it would be indented this way it's not*/
+.vsub {
+    display: block;
+   font-size: 1.25em;
+   margin-top: 0.53em;
+   margin-bottom: 0.53em;
+   margin-left: 0;
+   margin-right: 0;
+   font-weight: bold;
+}
+
+ul {
+  margin-left: 0.75vw;
+  padding-left: 0;
+}
+li {
+  margin-left: 0.75vw;
+  padding-left: 0;
+}
+
+/* this must be last, as it overrides previous settings, for mobile */
+@media (hover: none) {
+a {
+   display: inline-block;
+   padding-top: 3px;
+   padding-bottom: 2px;
+}
+body {
+    padding-left:2vw;
+    padding-right:2vw;
+    font-size:14px;
+    line-height:22px;
+    letter-spacing: 1px;
+}
+}
+
+/*The following is for code snippets that are highlighted by 2html vim*/
+pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
+.Identifier { color: #008b8b; }
+.Statement { color: #af5f00; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
+/*end of highlighted snippets*/
+
+a {
+    text-decoration:none;
+    padding-bottom: 0px; 
+    color:inherit;
+    border-bottom: 2px solid #ab9e9e;
+}
+a:hover {
+    text-decoration: none;
+    color:black;
+    border-bottom: 1px solid red;
+}
+/*do not underline links nor should they be active*/
+pre a {
+    text-decoration:none;
+    color:black;
+    border-bottom: none;
+    pointer-events: none;
+    cursor: default;
+}
+
+
+.gliimSnippet {display:none;}
+
+ul {
+  list-style-type:square;
+  list-style-position: outside;
+}
+
+</style>
+
+
+</head>
+<body>
+
+<script>
+function gg_copy(gt, eid, gc) {
+  gt.textContent = eid.textContent;
+  gt.select();
+  document.execCommand("copy");
+  gc.style.visibility="visible"
+  setTimeout(()=>{ gc.style.visibility="hidden"; }, 1000);
+}
+
+</script>
+
+<!--GLIIMMENU13-->
+
+<!--GLIIMENDMENU13-->
+
+
+
+<!--BEGVDOC90-->
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;About gliimly</div><hr/><div class="vsub"><a id="Modeling language"></a>Modeling language</div>
+Gliimly is a very high-level modeling language. It's about solving problems by modeling the solution and connecting the components to create high-performance, low-footprint executables; and not about managing memory, manipulating bits and bytes or writing complex code.<br/>
+<div class="vsub"><a id="Syntax matters: expressionless"></a>Syntax matters: expressionless</div>
+Syntax of a language matters, not just for writing code now, but for someone else reading it years later. Gliimly language is designed to be intuitive, easy and rapid, and to be close to the way humans are wired, rather than machines. Gliimly is near-expressionless, featuring only very limited integer expressions. This is by design: it's simpler to use programmable features to build desired functionality then to build them yourself.<br/>
+<div class="vsub"><a id="Service oriented"></a>Service oriented</div>
+A Gliimly program works as a service provider, meaning it handles service <a href='http://gliimly.github.io/request.html'>request</a>s by providing a reply. It can be either a <a href='http://gliimly.github.io/service.html'>service</a> or a <a href='http://gliimly.github.io/command-line.html'>command-line</a> program that processes GET, POST, PUT, PATCH, DELETE or any other HTTP requests. <br/>
+<br/>
+The URL for a request must state the application name, and a also request name which is the source file handling it. So, "/app-name/my-request" means that application name is "app-name" and that "request_name.gliim" file will implement a request handler. A request executes in this order:<br/>
+<ul><li>An optional before-handler handler executes (see <a href='http://gliimly.github.io/before-handler.html'>before-handler</a>). <br/>
+</li><li>Gliimly's <a href='http://gliimly.github.io/request.html'>request dispatcher</a> executes a <a href='http://gliimly.github.io/request.html'>request</a> handler. <br/>
+</li><li>An optional after-handler handler executes (see <a href='http://gliimly.github.io/after-handler.html'>after-handler</a>).</li></ul>
+<div class="vsub"><a id="Running as a service"></a>Running as a service</div>
+A Gliimly service is served by either<br/>
+<ul><li>a fixed number of service processes, or<br/>
+</li><li>a dynamic number based on the request load, from 0 to any maximum number specified.</li></ul>Each Gliimly service process handles one request at a time, and all such processes work in parallel. This means you do not need to worry about thread-safety with Gliimly. Server processes generally stay up across any number of requests, increasing response time. The balance between the number of processes and the memory usage during high request loads can be achieved with adaptive feature of <a href='http://gliimly.github.io/mgrg.html'>mgrg</a>, Gliimly's service process manager. <br/>
+<br/>
+A service can be requested by:<br/>
+<ul><li>reverse proxies, such as Apache, Nginx, HAProxy etc.,<br/>
+</li><li>programs written in any language using <a href='http://gliimly.github.io/Client-API.html'>Client-API</a>,<br/>
+</li><li>Gliimly's own <a href='http://gliimly.github.io/gg.html'>gg</a> utility (see -r option)<br/>
+</li><li>another Gliimly service by means of <a href='http://gliimly.github.io/call-remote.html'>call-remote</a> (on secure networks) and <a href='http://gliimly.github.io/call-web.html'>call-web</a> (on the web via SSL/TSL secure connections).</li></ul>
+With <a href='http://gliimly.github.io/call-remote.html'>call-remote</a>, you can execute remote requests in parallel, and get results, error messages and exit status in a single statement. This makes it easy to distribute and parallelize your application logic and/or build application tiers on a local or any number of remote machines, without having to write any multi-threaded code.<br/>
+<div class="vsub"><a id="Command-line program"></a>Command-line program</div>
+A <a href='http://gliimly.github.io/command-line.html'>command-line</a> program handles a single request before it exits. This may be suitable for batch jobs, for use in shell scripts, for testing/mocking, as well as any other situation where it is more useful or convenient to execute a command-line program. Note that a command-line program can double as <a href='http://gliimly.github.io/CGI.html'>CGI</a> (Common Gateway Interface) as well.<br/>
+<div class="vsub"><a id="Usage"></a>Usage</div>
+Gliimly services and command-line programs can implement most back-end application layers, including <br/>
+<ul><li>presentation (eg. building a web page), <br/>
+</li><li>application logic,<br/>
+</li><li>data (eg. database) layers, and any others.</li></ul>
+<div class="vsub"><a id="Language"></a>Language</div>
+Gliimly programming language is memory-safe, meaning it will prevent you from accidentally overwriting memory or freeing it when it shouldn't be. Gliimly's <a href='http://gliimly.github.io/memory-handling.html'>memory-handling</a> is not limited to just memory safety; it also includes automatic freeing of memory at the end of a request, preventing memory leaks which can be fatal to long running processes. Similarly, files open with file-handling statements are automatically closed at the end of each request, serving the same purpose. <br/>
+<div class="vsub"><a id="Types"></a>Types</div>
+Gliimly is a strongly-typed language, with only three primitive types (numbers, strings and booleans) and a number of structured types (message, split-string, array, index, index-cursor, fifo, lifo, list, file and service). Gliimly is a declarative language, with a few lines of code implementing large functionalities. Gliimly is also very simple - it's near expression-free! That's because it's designed to achieve application goals with less coding.<br/>
+<br/>
+The number type is a signed 64-bit integer. The boolean type evaluates to true (non-zero) or false (zero). The string type evaluates to any sequence of bytes (binary or text) that is always trailed with a null character regardless, which is not counted in string's length. All constants follow C rules of formatting.<br/>
+<div class="vsub"><a id="Statements"></a>Statements</div>
+Gliimly <a href='http://gliimly.github.io/statements.html'>statements</a> are designed for safety, ease of use, and ability to write stable code. Most statements typically perform common complex tasks with options to easily customize them; such options are compile-time whenever possible, increasing run-time performance.<br/>
+<div class="vsub"><a id="Variables, scope"></a>Variables, scope</div>
+A variable is created the first time it's encountered in any given scope, and is never created again in the same or inner scopes, which avoids common bugs involving more than one variable with the same name in related scopes. You can still of course create variables with the same name in unrelated scopes. <br/>
+<br/>
+Some structured types (array, index, list) as well as primitive types (numbers, strings and booleans) can be created with process-scope, meaning their value persists throughout any requests served by the same process. This is useful for making services that allow keeping and fast quering of data (such as caches).<br/>
+<br/>
+Numbers and booleans are assigned by value, while strings are assigned by reference (for obvious reason to avoid unnecessary copying).<br/>
+<div class="vsub"><a id="Infrastructure"></a>Infrastructure</div>
+Gliimly includes request-processing and all the necessary infrastructure, such as for process management, files, networking, service protocols, database, string processing etc.<br/>
+<div class="vsub"><a id="Performance"></a>Performance</div>
+Gliimly applications are high-performance native executables by design, hence absolutely no byte-code, interpreters and similar. Since Gliimly is declarative, just a few <a href='http://gliimly.github.io/statements.html'>statements</a> are needed to implement lots of functionality. These statements are implemented in pure C, and are not slowed down by memory checks as they are safe internally by implementation. Only developer-facing Gliimly code needs additional logic to enforce memory safety, and that's a very small part of overall run-time cost. This means Gliimly can truly be memory-safe and high-performance at the same time.<br/>
+<div class="vsub"><a id="Database access"></a>Database access</div>
+Gliimly provides access to a number of popular databases, such as MariaDB/mySQL, PostgreSQL and SQLite. (see <a href='http://gliimly.github.io/database-config-file.html'>database-config-file</a>):<br/>
+<ul><li>transactional support (begin, commit, rollback),<br/>
+</li><li>protection against SQL injections for safety, <br/>
+</li><li>automatic and persistent database connections with unlimited reuse across all SQL queries for high performance,<br/>
+</li><li>prepared SQL statements for high performance.</li></ul>
+<div class="vsub"><a id="Proven libraries"></a>Proven libraries</div>
+Gliimly uses well-known and widely used Free Open Source libraries like cURL, OpenSSL, crypto, FastCGI, standard database-connectivity libraries from MariaDB, PostgreSQL, SQLite etc., for compliance, performance and reliability.<br/>
+<div class="vsub"><a id="Names of objects"></a>Names of objects</div>
+Do not use object names (such as variables and request names) that start with "_gg_", "_gg_", "gg_" or "gg_" (including upper-case variations) as those are reserved by Gliimly.<br/>
+<!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
+ <span style="font-weight:bold;">General</span><br/>
+<a href='http://gliimly.github.io/about-gliimly.html'>about-gliimly</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/directories.html'>directories</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/SELinux.html'>SELinux</a> &nbsp; <br/>
+<span style="font-weight:bold;">See all</span> <br/>
+<a href='http://gliimly.github.io/documentation.html'>documentation</a><br/>
+<!--ENDVDOC90-->
+<br/><div style='width:100%;clear:both;'>
+<hr/>
+<!--GLIIMFOOT77--><span style='font-size:80%'><a href="http://gliimly.github.io/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+</div><br/></body></html>
+
+

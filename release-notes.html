@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>Release notes</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="HandheldFriendly" content="True"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<style>
+
+
+body, html {
+    color:black;
+    text-rendering: optimizelegibility;
+    background-color: white;
+    min-height: 150%;
+    font-family: "Times New Roman";
+    font-weight:400;
+    font-size:18px;
+    line-height:27px;
+    letter-spacing: 2px;
+    z-index: 1;
+    height: 100%;
+    text-align:left;
+    width:80%;
+    margin-left:auto;
+    margin-right:auto;
+    padding:0;
+    /*font-family: Helvetica, Arial, sans-serif;*/
+}
+
+body {
+    padding-left:1vw;
+    padding-right:1vw;
+}
+    
+.ncode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.shcode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.sqlcode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.htmlcode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.code {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+/*Just like h1 but for pdf conversion it would be indented this way it's not*/
+.vhub {
+    display: block;
+   font-size: 1.6em;
+   margin-top: 0.63em;
+   margin-bottom: 0.63em;
+   margin-left: 0;
+   margin-right: 0;
+   font-weight: bold;
+}
+
+/*Just like h2 but for pdf conversion it would be indented this way it's not*/
+.vsub {
+    display: block;
+   font-size: 1.25em;
+   margin-top: 0.53em;
+   margin-bottom: 0.53em;
+   margin-left: 0;
+   margin-right: 0;
+   font-weight: bold;
+}
+
+ul {
+  margin-left: 0.75vw;
+  padding-left: 0;
+}
+li {
+  margin-left: 0.75vw;
+  padding-left: 0;
+}
+
+/* this must be last, as it overrides previous settings, for mobile */
+@media (hover: none) {
+a {
+   display: inline-block;
+   padding-top: 3px;
+   padding-bottom: 2px;
+}
+body {
+    padding-left:2vw;
+    padding-right:2vw;
+    font-size:14px;
+    line-height:22px;
+    letter-spacing: 1px;
+}
+}
+
+/*The following is for code snippets that are highlighted by 2html vim*/
+pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
+.Identifier { color: #008b8b; }
+.Statement { color: #af5f00; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
+/*end of highlighted snippets*/
+
+a {
+    text-decoration:none;
+    padding-bottom: 0px; 
+    color:inherit;
+    border-bottom: 2px solid #ab9e9e;
+}
+a:hover {
+    text-decoration: none;
+    color:black;
+    border-bottom: 1px solid red;
+}
+/*do not underline links nor should they be active*/
+pre a {
+    text-decoration:none;
+    color:black;
+    border-bottom: none;
+    pointer-events: none;
+    cursor: default;
+}
+
+
+.gliimSnippet {display:none;}
+
+ul {
+  list-style-type:square;
+  list-style-position: outside;
+}
+
+</style>
+
+
+</head>
+<body>
+
+<script>
+function gg_copy(gt, eid, gc) {
+  gt.textContent = eid.textContent;
+  gt.select();
+  document.execCommand("copy");
+  gc.style.visibility="visible"
+  setTimeout(()=>{ gc.style.visibility="hidden"; }, 1000);
+}
+
+</script>
+
+<!--GLIIMMENU13-->
+
+<!--GLIIMENDMENU13-->
+
+
+
+<!--BEGVDOC90-->
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Release notes</div><hr/>Release notes (prior to version 9 were internal builds):<br/>
+<ul><br/>
+<li><a id="20.1.0"></a><span style="font-weight:bold;">2024-04-24</span><br/>
+Vely release notes for 20.1.0<br/>
+- Notes: added conversion from string to number as well as define-number, define-string and if-number statements.<br/>
+- Minor: added if-number statement.<br/>
+- Minor: added define-number and define-string statements.<br/>
+- Minor: added conversion from string to number with string-num statement.<br/>
+</li>
+<li><a id="20.0.0"></a><span style="font-weight:bold;">2024-04-12</span><br/>
+Vely release notes for 20.0.0<br/>
+- Notes: first Vely version toward memory-safe language and licensed under Apache license. Major feature is if-string statement.<br/>
+- Minor: added if-string statement for easy to implement/read string comparisons.<br/>
+- Major: removed 'other' clause in if-task for better notation.<br/>
+- Release: removed docker example, hard to maintain and generally unnecessary due to how many different way containerization can be accomplished.<br/>
+- Major: Vely is now Apache 2 licensed.<br/>
+</li>
+<li><a id="19.1.0"></a><span style="font-weight:bold;">2023-12-28</span><br/>
+Vely release notes for 19.1.0<br/>
+- Notes: this release adds double-linked list, including the process-scope feature that allows building list application servers. FIFO statements have been re-written for better performance and delete-fifo (long-standng missing statement) was added. Also, new Mageia 9 build is now available. Various bugs fixed and documentation issues corrected. An exciting addition to the web site coinciding with this release is a Search button that lets you find relevant documentation, examples etc. very quickly.<br/>
+- Minor: new feature for double-linked lists: new-list, write-list, read-list, position-list, delete-list, purge-list.<br/>
+- Minor: added delete-fifo statement to delete elements up to the last one read (including) in FIFO list.<br/>
+- Release: added list example.<br/>
+- Release: fixed various issues with man documentation.<br/>
+- Release: new README.md that mirrors Vely homepage.<br/>
+- Release: removed LICENSE files from examples, now they fall under the same license as everything else.<br/>
+- Release: added build for Mageia 9, removed Mageia 8.<br/>
+- Release: fifo statements re-implemented for better performance and memory utilization.<br/>
+- Release: bug fix: -s flag in vv now shows execution tracing for all flags, now just compilation ones.<br/>
+- Release: bug fix: memory leak in new-fifo.<br/>
+- Release: new Search button on web site to search the Vely documentation and examples.<br/>
+</li>
+<li><a id="19.0.0"></a><span style="font-weight:bold;">2023-11-08</span><br/>
+Vely release notes for 19.0.0<br/>
+- Notes: Vely 19 brings major new feature: balanced binary (AVL/B) memory trees, which enable fast data access even in very large data sets (with O(log N)). Tree support includes inserting, updating, deleting and searching of data in a variety of ways (equal, lesser, greater, lesser or equal, greater or equal, minimum, maximum), and also provides a fast (with O(1)) access for range-searches due to a double-linked sorted list (optional). Also included is cursor support, where searching of lesser or greater keys can be done with best possible performance, something that is important for range searches. Additionally, new "process-scope" clause is added for trees and hashes, which makes it easier to build in-memory key servers that allow for a wide range of capabilities. do-once statement is added to allow for simple execution of code that runs only once in a process, such as initializations and creation of structures such as trees or hashes etc. The only change that forced bumping up version to 19 is that num-string no longer allows fixed buffers as a result, but rather always allocates memory, which was done to make this statement the same as a number of similar others and to improve safety. A convenience of not having to write "include vely.h" has been added, as Vely will do that automatically. Improvements have been made to memory handling, reducing the memory usage. A number of bug fixes is included in this release. Full list of changes below.<br/>
+- Minor: added AVL/B memory tree statements: new-tree, write-tree, read-tree, delete-tree, purge-tree, get-tree, as well as tree cursor statement use-cursor.<br/>
+- Minor: added process-scoped memory for hash and tree statements, allowing easy creation of hash and tree servers.<br/>
+- Release: improved error reporting to emit a proper error when statement object is not specified.<br/>
+- Release: added mechanisms for easier handling of deprecated features in the future.<br/>
+- Major: num-string now always allocates memory, in order to be consistent with other similar features and prevent accidental buffer overflows.<br/>
+- Release: added warnings to diagnostics.<br/>
+- Minor: added do-once statement to allow code that executes only once in process.<br/>
+- Minor: including "vely.h" file is no longer necessary.<br/>
+- Release: fixed a bug in comment processing where @ and ! output statements would not be processed with C-style comments.<br/>
+- Release: fixed a bug in processing of request-handler statement where request name is sometimes not recognized.<br/>
+- Release: fixed bug where realloc-ed memory would cause a small memory leak.<br/>
+- Release: improved write-string to use less memory.<br/>
+- Release: random-string is about 5% faster now.<br/>
+- Release: fixed a bug in 'vv -r --req --exec' where status code from executed program is passed to caller.<br/>
+- Release: fixed a bug where specifying --lflag would not work due to incorrect placement in the make call.<br/>
+</li>
+</ul>
+<!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
+<span style="font-weight:bold;">See all</span> <br/>
+<a href='http://gliimly.github.io/documentation.html'>documentation</a><br/>
+<!--ENDVDOC90-->
+<br/><div style='width:100%;clear:both;'>
+<hr/>
+<!--GLIIMFOOT77--><span style='font-size:80%'><a href="http://gliimly.github.io/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+</div><br/></body></html>
+
+

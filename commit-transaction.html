@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>Commit transaction</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="HandheldFriendly" content="True"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<style>
+
+
+body, html {
+    color:black;
+    text-rendering: optimizelegibility;
+    background-color: white;
+    min-height: 150%;
+    font-family: "Times New Roman";
+    font-weight:400;
+    font-size:18px;
+    line-height:27px;
+    letter-spacing: 2px;
+    z-index: 1;
+    height: 100%;
+    text-align:left;
+    width:80%;
+    margin-left:auto;
+    margin-right:auto;
+    padding:0;
+    /*font-family: Helvetica, Arial, sans-serif;*/
+}
+
+body {
+    padding-left:1vw;
+    padding-right:1vw;
+}
+    
+.ncode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.shcode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.sqlcode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.htmlcode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.code {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+/*Just like h1 but for pdf conversion it would be indented this way it's not*/
+.vhub {
+    display: block;
+   font-size: 1.6em;
+   margin-top: 0.63em;
+   margin-bottom: 0.63em;
+   margin-left: 0;
+   margin-right: 0;
+   font-weight: bold;
+}
+
+/*Just like h2 but for pdf conversion it would be indented this way it's not*/
+.vsub {
+    display: block;
+   font-size: 1.25em;
+   margin-top: 0.53em;
+   margin-bottom: 0.53em;
+   margin-left: 0;
+   margin-right: 0;
+   font-weight: bold;
+}
+
+ul {
+  margin-left: 0.75vw;
+  padding-left: 0;
+}
+li {
+  margin-left: 0.75vw;
+  padding-left: 0;
+}
+
+/* this must be last, as it overrides previous settings, for mobile */
+@media (hover: none) {
+a {
+   display: inline-block;
+   padding-top: 3px;
+   padding-bottom: 2px;
+}
+body {
+    padding-left:2vw;
+    padding-right:2vw;
+    font-size:14px;
+    line-height:22px;
+    letter-spacing: 1px;
+}
+}
+
+/*The following is for code snippets that are highlighted by 2html vim*/
+pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
+.Identifier { color: #008b8b; }
+.Statement { color: #af5f00; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
+/*end of highlighted snippets*/
+
+a {
+    text-decoration:none;
+    padding-bottom: 0px; 
+    color:inherit;
+    border-bottom: 2px solid #ab9e9e;
+}
+a:hover {
+    text-decoration: none;
+    color:black;
+    border-bottom: 1px solid red;
+}
+/*do not underline links nor should they be active*/
+pre a {
+    text-decoration:none;
+    color:black;
+    border-bottom: none;
+    pointer-events: none;
+    cursor: default;
+}
+
+
+.gliimSnippet {display:none;}
+
+ul {
+  list-style-type:square;
+  list-style-position: outside;
+}
+
+</style>
+
+
+</head>
+<body>
+
+<script>
+function gg_copy(gt, eid, gc) {
+  gt.textContent = eid.textContent;
+  gt.select();
+  document.execCommand("copy");
+  gc.style.visibility="visible"
+  setTimeout(()=>{ gc.style.visibility="hidden"; }, 1000);
+}
+
+</script>
+
+<!--GLIIMMENU13-->
+
+<!--GLIIMENDMENU13-->
+
+
+
+<!--BEGVDOC90-->
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Commit transaction</div><hr/><span style="font-weight:bold;">Purpose</span>: Commits a database transaction.<br/>
+<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_252'>
+<span class="Statement"> commit-transaction</span> [ @&lt;database&gt; ] \
+     [<span class="Identifier"> on-error-continue</span> |<span class="Identifier"> on-error-exit</span> ] \
+     [<span class="Type"> error</span> &lt;error&gt; ] [<span class="Type"> error-text</span> &lt;error text&gt; ] \
+     [<span class="Identifier"> options</span> &lt;options&gt; ]</pre>
+<span id=gliim_copied_252 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_252' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_252, code_252, gliim_copied_252)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Database transaction started with <a href='http://gliimly.github.io/begin-transaction.html'>begin-transaction</a> is committed with commit-transaction. <br/>
+<br/>
+&lt;options&gt; (in "options" clause) is any additional options to send to database you wish to supply for this functionality.<br/>
+<br/>
+Once you start a transaction with <a href='http://gliimly.github.io/begin-transaction.html'>begin-transaction</a>, you must either commit it with <a href='http://gliimly.github.io/commit-transaction.html'>commit-transaction</a> or rollback with <a href='http://gliimly.github.io/rollback-transaction.html'>rollback-transaction</a>. If you do neither, your transaction will be rolled back once the <a href='http://gliimly.github.io/request.html'>request</a> has completed and your program will stop with an error message. This is because opening a transaction and leaving without committing or a rollback is a bug in your program. &nbsp;<br/>
+<br/>
+You must use begin-transaction, commit-transaction and rollback-transaction instead of calling this functionality through <a href='http://gliimly.github.io/run-query.html'>run-query</a>.<br/>
+<div class="vsub"><a id="Database"></a>Database</div>
+&lt;database&gt; is specified in "@" clause and is the name of the <a href='http://gliimly.github.io/database-config-file.html'>database-config-file</a>. If ommited, your program must use exactly one database (see --db option in <a href='http://gliimly.github.io/gg.html'>gg</a>).<br/>
+<div class="vsub"><a id="Error handling"></a>Error handling</div>
+The error code is available in &lt;error&gt; variable in "error" clause - this code is always "0" if successful. The &lt;error&gt; code may or may not be a number but is always returned as a string value. In case of error, error text is available in "error-text" clause in &lt;error text&gt; string.<br/>
+<br/>
+"on-error-continue" clause specifies that <a href='http://gliimly.github.io/request.html'>request</a> processing will continue in case of an error, whereas "on-error-exit" clause specifies that it will exit. This setting overrides database-level <a href='http://gliimly.github.io/db-error.html'>db-error</a> for this specific statement only. If you use "on-error-continue", be sure to check the error code.<br/>
+<br/>
+Note that if database connection was lost, and could not be reestablished, the request will error out (see <a href='http://gliimly.github.io/error-handling.html'>error-handling</a>).<br/>
+<div class="vsub"><a id="Examples"></a>Examples</div>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_253'>
+<span class="Statement"> begin-transaction</span> @mydb
+<span class="Statement"> run-query</span> @mydb=<span class="Constant">&quot;insert into employee (name, dateOfHire) values ('Terry', now())&quot;</span>
+<span class="Statement"> run-query</span> @mydb=<span class="Constant">&quot;insert into payroll (name, salary) values ('Terry', 100000)&quot;</span>
+<span class="Statement"> commit-transaction</span> @mydb</pre>
+<span id=gliim_copied_253 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_253' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_253, code_253, gliim_copied_253)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+<!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
+ <span style="font-weight:bold;">Database</span><br/>
+<a href='http://gliimly.github.io/begin-transaction.html'>begin-transaction</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/commit-transaction.html'>commit-transaction</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/current-row.html'>current-row</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/database-config-file.html'>database-config-file</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/db-error.html'>db-error</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/mariadb-database.html'>mariadb-database</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/postgresql-database.html'>postgresql-database</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/rollback-transaction.html'>rollback-transaction</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/run-query.html'>run-query</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/sqlite-database.html'>sqlite-database</a> &nbsp; <br/>
+<span style="font-weight:bold;">See all</span> <br/>
+<a href='http://gliimly.github.io/documentation.html'>documentation</a><br/>
+<!--ENDVDOC90-->
+<br/><div style='width:100%;clear:both;'>
+<hr/>
+<!--GLIIMFOOT77--><span style='font-size:80%'><a href="http://gliimly.github.io/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+</div><br/></body></html>
+
+

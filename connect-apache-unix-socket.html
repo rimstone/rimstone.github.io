@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>Connect apache unix socket</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="HandheldFriendly" content="True"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<style>
+
+
+body, html {
+    color:black;
+    text-rendering: optimizelegibility;
+    background-color: white;
+    min-height: 150%;
+    font-family: "Times New Roman";
+    font-weight:400;
+    font-size:18px;
+    line-height:27px;
+    letter-spacing: 2px;
+    z-index: 1;
+    height: 100%;
+    text-align:left;
+    width:80%;
+    margin-left:auto;
+    margin-right:auto;
+    padding:0;
+    /*font-family: Helvetica, Arial, sans-serif;*/
+}
+
+body {
+    padding-left:1vw;
+    padding-right:1vw;
+}
+    
+.ncode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.shcode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.sqlcode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.htmlcode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.code {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+/*Just like h1 but for pdf conversion it would be indented this way it's not*/
+.vhub {
+    display: block;
+   font-size: 1.6em;
+   margin-top: 0.63em;
+   margin-bottom: 0.63em;
+   margin-left: 0;
+   margin-right: 0;
+   font-weight: bold;
+}
+
+/*Just like h2 but for pdf conversion it would be indented this way it's not*/
+.vsub {
+    display: block;
+   font-size: 1.25em;
+   margin-top: 0.53em;
+   margin-bottom: 0.53em;
+   margin-left: 0;
+   margin-right: 0;
+   font-weight: bold;
+}
+
+ul {
+  margin-left: 0.75vw;
+  padding-left: 0;
+}
+li {
+  margin-left: 0.75vw;
+  padding-left: 0;
+}
+
+/* this must be last, as it overrides previous settings, for mobile */
+@media (hover: none) {
+a {
+   display: inline-block;
+   padding-top: 3px;
+   padding-bottom: 2px;
+}
+body {
+    padding-left:2vw;
+    padding-right:2vw;
+    font-size:14px;
+    line-height:22px;
+    letter-spacing: 1px;
+}
+}
+
+/*The following is for code snippets that are highlighted by 2html vim*/
+pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
+.Identifier { color: #008b8b; }
+.Statement { color: #af5f00; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
+/*end of highlighted snippets*/
+
+a {
+    text-decoration:none;
+    padding-bottom: 0px; 
+    color:inherit;
+    border-bottom: 2px solid #ab9e9e;
+}
+a:hover {
+    text-decoration: none;
+    color:black;
+    border-bottom: 1px solid red;
+}
+/*do not underline links nor should they be active*/
+pre a {
+    text-decoration:none;
+    color:black;
+    border-bottom: none;
+    pointer-events: none;
+    cursor: default;
+}
+
+
+.gliimSnippet {display:none;}
+
+ul {
+  list-style-type:square;
+  list-style-position: outside;
+}
+
+</style>
+
+
+</head>
+<body>
+
+<script>
+function gg_copy(gt, eid, gc) {
+  gt.textContent = eid.textContent;
+  gt.select();
+  document.execCommand("copy");
+  gc.style.visibility="visible"
+  setTimeout(()=>{ gc.style.visibility="hidden"; }, 1000);
+}
+
+</script>
+
+<!--GLIIMMENU13-->
+
+<!--GLIIMENDMENU13-->
+
+
+
+<!--BEGVDOC90-->
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Connect apache unix socket</div><hr/>This shows how to connect your application listening on a Unix socket (started with <a href='http://gliimly.github.io/mgrg.html'>mgrg</a>) to Apache web server.<br/>
+<br/>
+<span style="font-weight:bold;">- Step 1</span>:<br/>
+To setup Apache as a reverse proxy and connect your application to it, you need to enable FastCGI proxy support, which generally means "proxy" and "proxy_fcgi" modules - this is done <span style="font-style:italic">only once</span>:<br/>
+<ul><li>For Debian (like Ubuntu) and OpenSUSE systems you need to enable proxy and proxy_fcgi modules:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_265'>
+sudo a2enmod proxy
+sudo a2enmod proxy_fcgi</pre>
+<span id=gliim_copied_265 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_265' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_265, code_265, gliim_copied_265)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+</li>
+<li>For Fedora systems (or others like Archlinux) enable proxy and proxy_fcgi modules by adding (or uncommenting) LoadModule directives in the Apache configuration file - the default location of this file on Linux depends on the distribution. For Fedora (such as RedHat), Archlinux:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_267'>
+sudo vi /etc/httpd/conf/httpd.conf</pre>
+<span id=gliim_copied_267 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_267' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_267, code_267, gliim_copied_267)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+For OpenSUSE:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_268'>
+sudo vi /etc/apache2/httpd.conf</pre>
+<span id=gliim_copied_268 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_268' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_268, code_268, gliim_copied_268)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Add this to the end of the file:<br/>
+<div class='ncode' style='position:relative;padding-right:16px;'>
+<pre id='code_264'>
+LoadModule proxy_module modules/mod_proxy.so
+LoadModule proxy_fcgi_module modules/mod_proxy_fcgi.so</pre>
+<span id=gliim_copied_264 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_264' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_264, code_264, gliim_copied_264)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+</li></ul>
+<span style="font-weight:bold;">- Step 2</span>:<br/>
+Edit the Apache configuration file:<br/>
+<ul><li>For Debian (such as Ubuntu):<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_269'>
+sudo vi /etc/apache2/apache2.conf</pre>
+<span id=gliim_copied_269 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_269' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_269, code_269, gliim_copied_269)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+</li>
+<li>for Fedora (such as RedHat), Archlinux:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_270'>
+sudo vi /etc/httpd/conf/httpd.conf</pre>
+<span id=gliim_copied_270 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_270' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_270, code_270, gliim_copied_270)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+</li>
+<li>and for OpenSUSE:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_271'>
+sudo vi /etc/apache2/httpd.conf</pre>
+<span id=gliim_copied_271 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_271' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_271, code_271, gliim_copied_271)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+</li></ul>
+Add this to the end of file ("/&lt;app path&gt;" is the application path (see <a href='http://gliimly.github.io/request.html'>request</a>) and "&lt;app name&gt;" is your application name):<br/>
+<div class='ncode' style='position:relative;padding-right:16px;'>
+<pre id='code_266'>
+ProxyPass &quot;/&lt;app path&gt;/&quot; unix:///var/lib/gg/&lt;app name&gt;/sock/sock|fcgi://localhost/&lt;app path&gt;</pre>
+<span id=gliim_copied_266 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_266' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_266, code_266, gliim_copied_266)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+<span style="font-weight:bold;">- Step 3</span>:<br/>
+Finally, restart Apache. On Debian systems (like Ubuntu) or OpenSUSE:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_272'>
+sudo systemctl restart apache2</pre>
+<span id=gliim_copied_272 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_272' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_272, code_272, gliim_copied_272)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+On Fedora systems (like RedHat) and Arch Linux:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_273'>
+sudo systemctl restart httpd</pre>
+<span id=gliim_copied_273 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_273' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_273, code_273, gliim_copied_273)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Note: you must not have any other URL resource that starts with "/&lt;app path&gt;/" (such as for example "/&lt;app path&gt;/something") as the web server will attempt to pass them as a reverse proxy request, and they will likely not work. If you need to, you can change the application path to be different from "/&lt;app path&gt;", see <a href='http://gliimly.github.io/request.html'>request</a>.<br/>
+<!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
+ <span style="font-weight:bold;">Web servers</span><br/>
+<a href='http://gliimly.github.io/connect-apache-tcp-socket.html'>connect-apache-tcp-socket</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/connect-apache-unix-socket.html'>connect-apache-unix-socket</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/connect-haproxy-tcp-socket.html'>connect-haproxy-tcp-socket</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/connect-nginx-tcp-socket.html'>connect-nginx-tcp-socket</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/connect-nginx-unix-socket.html'>connect-nginx-unix-socket</a> &nbsp; <br/>
+<span style="font-weight:bold;">See all</span> <br/>
+<a href='http://gliimly.github.io/documentation.html'>documentation</a><br/>
+<!--ENDVDOC90-->
+<br/><div style='width:100%;clear:both;'>
+<hr/>
+<!--GLIIMFOOT77--><span style='font-size:80%'><a href="http://gliimly.github.io/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+</div><br/></body></html>
+
+
