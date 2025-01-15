@@ -202,7 +202,7 @@ pre a {
 }
 
 
-.gliimSnippet {display:none;}
+.golfSnippet {display:none;}
 
 ul {
   list-style-type:square;
@@ -226,35 +226,35 @@ function gg_copy(gt, eid, gc) {
 
 </script>
 
-<!--GLIIMMENU13-->
+<!--GOLFMENU13-->
 
-<!--GLIIMENDMENU13-->
+<!--GOLFENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Call extended</div><hr/><span style="font-weight:bold;">Purpose</span>: Call external function or macro (extended mode only).<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://golf-lang.github.io' style='border-bottom:0px'><img src='http://golf-lang.github.io/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Call extended</div><hr/><span style="font-weight:bold;">Purpose</span>: Call external function or macro (extended mode only).<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_187'>
 <span class="Statement"> call-extended</span> &lt;function&gt; <span class="Constant">&quot;( &quot;</span> [ &amp; ]&lt;variable&gt;  [ , ... ]  <span class="Constant">&quot; )&quot;</span></pre>
-<span id=gliim_copied_187 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_187' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_187, code_187, gliim_copied_187)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_187 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_187' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_187, code_187, golf_copied_187)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 call-extended calls &lt;function&gt; (which can be a function or macro) with a list of parameter variables. The &lt;function&gt; is defined either in:<br/>
 <ul><li>a library with C interop - note that such library can be written in many different languages. Most compiled languages can produce such libraries (such as Rust, C/C++ and others),<br/>
 </li><li>a ".c" file residing in the directory that contains application source code - again such a C file can in turn call code from libraries produced by any language that supports C interop (most do).<br/>
 </li><li>if a macro, in a ".h" file residing in the directory that contains application source code.</li></ul>
-The &lt;function&gt; must be declared via C-style declaration in a ".h" file residing in the application source code directory. You can use "--lflag" and "--cflag" options of <a href='http://gliimly.github.io/gg.html'>gg</a> to supply libraries used. In addition, if you need to, you can also have any number of ".c" and ".h" files which will be automatically included in your project. A macro must be defined in ".h" file.<br/>
+The &lt;function&gt; must be declared via C-style declaration in a ".h" file residing in the application source code directory. You can use "--lflag" and "--cflag" options of <a href='http://golf-lang.github.io/gg.html'>gg</a> to supply libraries used. In addition, if you need to, you can also have any number of ".c" and ".h" files which will be automatically included in your project. A macro must be defined in ".h" file.<br/>
 <br/>
-call-extended statement can only be used in extended mode (see <a href='http://gliimly.github.io/extended-mode.html'>extended-mode</a>). By default, Gliimly code runs in safe mode which does not allow use of call-extended statement. Note that using call-extended statement does not automatically make your application unsafe; rather, extended code can be written in a memory-safe language (such as Rust), or even if written in C it can be made in such a way not to cause out-of-band memory reads and writes. <br/>
+call-extended statement can only be used in extended mode (see <a href='http://golf-lang.github.io/extended-mode.html'>extended-mode</a>). By default, Golf code runs in safe mode which does not allow use of call-extended statement. Note that using call-extended statement does not automatically make your application unsafe; rather, extended code can be written in a memory-safe language (such as Rust), or even if written in C it can be made in such a way not to cause out-of-band memory reads and writes. <br/>
 <div class="vsub"><a id="C signature, input/output variables, types"></a>C signature, input/output variables, types</div>
 Each &lt;variable&gt; can be of C type (or a pointer to C type):<br/>
-<ul><li>"gg_num" which is a signed integer 8 bytes in length (int64_t type). This represents Gliimly number.<br/>
-</li><li>"char *" which is a pointer to an array of characters. This represents Gliimly string value.<br/>
-</li><li>"bool" which is a boolean variable. This represents Gliimly boolean.</li></ul>
-A &lt;function&gt; should not return a value. Rather, use a variable passed as a pointer if you wish to pass the function's output back to your Gliimly code.<br/>
+<ul><li>"gg_num" which is a signed integer 8 bytes in length (int64_t type). This represents Golf number.<br/>
+</li><li>"char *" which is a pointer to an array of characters. This represents Golf string value.<br/>
+</li><li>"bool" which is a boolean variable. This represents Golf boolean.</li></ul>
+A &lt;function&gt; should not return a value. Rather, use a variable passed as a pointer if you wish to pass the function's output back to your Golf code.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 For instance, consider C file "calc.c":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
@@ -270,17 +270,17 @@ For instance, consider C file "calc.c":<br/>
          *res *= i;
 <span class="Statement">     }</span>
 <span class="Statement"> }</span></pre>
-<span id=gliim_copied_188 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_188' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_188, code_188, gliim_copied_188)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_188 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_188' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_188, code_188, golf_copied_188)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Declare this C function in a header file, for instance "calc.h":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_189'>
  <span class="Type">void</span> factorial(gg_num f, gg_num *res);</pre>
-<span id=gliim_copied_189 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_189' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_189, code_189, gliim_copied_189)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_189 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_189' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_189, code_189, golf_copied_189)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 You can also have macros in a header file, so for example "calc.h" could be:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
@@ -288,13 +288,13 @@ You can also have macros in a header file, so for example "calc.h" could be:<br/
  <span class="Type">void</span> factorial(gg_num f, gg_num *res);
 
  <span class="PreProc">#</span>define<span class="PreProc"> </span>mod10<span class="PreProc">(n, m) m=(n)%</span><span class="Constant">10</span></pre>
-<span id=gliim_copied_190 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_190' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_190, code_190, gliim_copied_190)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_190 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_190' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_190, code_190, golf_copied_190)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In this case you have defined a macro that calculates the moduo of 10 and stores a result into another variable.<br/>
 <br/>
-Use these in your Gliimly code with call-extended statement, for instance to use a function "factorial()":<br/>
+Use these in your Golf code with call-extended statement, for instance to use a function "factorial()":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_191'>
 <span class="Statement"> extended-mode</span>
@@ -304,9 +304,9 @@ Use these in your Gliimly code with call-extended statement, for instance to use
 <span class="Statement">     call-extended</span> factorial (<span class="Constant">10</span>, &amp;fact)
 <span class="Statement">     p-num</span> fact
 <span class="Statement"> end-handler</span></pre>
-<span id=gliim_copied_191 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_191' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_191, code_191, gliim_copied_191)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_191 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_191' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_191, code_191, golf_copied_191)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In the above example, number "fact" is passed by reference (as a pointer), and it will contain the value of factorial of 10 on return. The result printed out is "3628800".<br/>
 <br/>
@@ -320,21 +320,21 @@ To use macro "mod10()":<br/>
 <span class="Statement">     call-extended</span> mod10(<span class="Constant">103</span>, mod)
 <span class="Statement">     p-num</span> mod
 <span class="Statement"> end-handler</span></pre>
-<span id=gliim_copied_192 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_192' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_192, code_192, gliim_copied_192)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_192 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_192' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_192, code_192, golf_copied_192)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In this example, you are using a C macro, so number "fact" is assigned a value directly, per C language rules. The result printed out is "3".<br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Safety</span><br/>
-<a href='http://gliimly.github.io/call-extended.html'>call-extended</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/extended-mode.html'>extended-mode</a> &nbsp; <br/>
+<a href='http://golf-lang.github.io/call-extended.html'>call-extended</a> &nbsp;<br/>
+<a href='http://golf-lang.github.io/extended-mode.html'>extended-mode</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
-<a href='http://gliimly.github.io/documentation.html'>documentation</a><br/>
+<a href='http://golf-lang.github.io/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
-<!--GLIIMFOOT77--><span style='font-size:80%'><a href="http://gliimly.github.io/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="http://golf-lang.github.io/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
 </div><br/></body></html>
 
 

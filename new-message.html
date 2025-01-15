@@ -202,7 +202,7 @@ pre a {
 }
 
 
-.gliimSnippet {display:none;}
+.golfSnippet {display:none;}
 
 ul {
   list-style-type:square;
@@ -226,27 +226,27 @@ function gg_copy(gt, eid, gc) {
 
 </script>
 
-<!--GLIIMMENU13-->
+<!--GOLFMENU13-->
 
-<!--GLIIMENDMENU13-->
+<!--GOLFENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;New message</div><hr/><span style="font-weight:bold;">Purpose</span>: Create new message.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://golf-lang.github.io' style='border-bottom:0px'><img src='http://golf-lang.github.io/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;New message</div><hr/><span style="font-weight:bold;">Purpose</span>: Create new message.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_521'>
 <span class="Statement"> new-message</span> &lt;message&gt; [<span class="Identifier"> from</span> &lt;string&gt; ]</pre>
-<span id=gliim_copied_521 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_521' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_521, code_521, gliim_copied_521)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_521 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_521' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_521, code_521, golf_copied_521)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 new-message will create a new &lt;message&gt; object.<br/>
 <br/>
-If &lt;string&gt; is specified (in "from" clause), then it is used to create a &lt;message&gt; from it. The &lt;string&gt; must be in <a href='http://gliimly.github.io/SEMI.html'>SEMI</a> format, which may be in request's input, from <a href='http://gliimly.github.io/get-message.html'>get-message</a>, from reading a file etc; in this case &lt;message&gt; can only be read from with <a href='http://gliimly.github.io/read-message.html'>read-message</a>.<br/>
+If &lt;string&gt; is specified (in "from" clause), then it is used to create a &lt;message&gt; from it. The &lt;string&gt; must be in <a href='http://golf-lang.github.io/SEMI.html'>SEMI</a> format, which may be in request's input, from <a href='http://golf-lang.github.io/get-message.html'>get-message</a>, from reading a file etc; in this case &lt;message&gt; can only be read from with <a href='http://golf-lang.github.io/read-message.html'>read-message</a>.<br/>
 <br/>
-If new-message is used without "from" clause, data can be added to &lt;message&gt; with <a href='http://gliimly.github.io/write-message.html'>write-message</a>. <br/>
+If new-message is used without "from" clause, data can be added to &lt;message&gt; with <a href='http://golf-lang.github.io/write-message.html'>write-message</a>. <br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_522'>
@@ -262,23 +262,23 @@ If new-message is used without "from" clause, data can be added to &lt;message&g
 <span class="Statement">         @</span>Key is <span class="Statement">&lt;&lt;p-out</span> k<span class="Statement">&gt;&gt;</span> and value is <span class="Statement">&lt;&lt;p-out</span> v<span class="Statement">&gt;&gt;</span>
 <span class="Statement">     end-loop</span>
 <span class="Statement"> end-handler</span></pre>
-<span id=gliim_copied_522 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_522' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_522, code_522, gliim_copied_522)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_522 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_522' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_522, code_522, golf_copied_522)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Messages</span><br/>
-<a href='http://gliimly.github.io/get-message.html'>get-message</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/new-message.html'>new-message</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/read-message.html'>read-message</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/SEMI.html'>SEMI</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/write-message.html'>write-message</a> &nbsp; <br/>
+<a href='http://golf-lang.github.io/get-message.html'>get-message</a> &nbsp;<br/>
+<a href='http://golf-lang.github.io/new-message.html'>new-message</a> &nbsp;<br/>
+<a href='http://golf-lang.github.io/read-message.html'>read-message</a> &nbsp;<br/>
+<a href='http://golf-lang.github.io/SEMI.html'>SEMI</a> &nbsp;<br/>
+<a href='http://golf-lang.github.io/write-message.html'>write-message</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
-<a href='http://gliimly.github.io/documentation.html'>documentation</a><br/>
+<a href='http://golf-lang.github.io/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
-<!--GLIIMFOOT77--><span style='font-size:80%'><a href="http://gliimly.github.io/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="http://golf-lang.github.io/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
 </div><br/></body></html>
 
 

@@ -202,7 +202,7 @@ pre a {
 }
 
 
-.gliimSnippet {display:none;}
+.golfSnippet {display:none;}
 
 ul {
   list-style-type:square;
@@ -226,54 +226,54 @@ function gg_copy(gt, eid, gc) {
 
 </script>
 
-<!--GLIIMMENU13-->
+<!--GOLFMENU13-->
 
-<!--GLIIMENDMENU13-->
+<!--GOLFENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;File storage</div><hr/>Gliimly provides a file directory that you can use for any general purpose, including for storing <a href='http://gliimly.github.io/temporary-file.html'>temporary-file</a>s. This directory is also used for automatic upload of files from clients. It provides a two-tier directory system, with sub-directories automatically created to spread the files for faster access.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://golf-lang.github.io' style='border-bottom:0px'><img src='http://golf-lang.github.io/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;File storage</div><hr/>Golf provides a file directory that you can use for any general purpose, including for storing <a href='http://golf-lang.github.io/temporary-file.html'>temporary-file</a>s. This directory is also used for automatic upload of files from clients. It provides a two-tier directory system, with sub-directories automatically created to spread the files for faster access.<br/>
 <br/>
-Files in Gliimly file directory are located in the sub-directories of:<br/>
+Files in Golf file directory are located in the sub-directories of:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
 <pre id='code_382'>
 /var/lib/gg/&lt;app_name&gt;/app/file</pre>
-<span id=gliim_copied_382 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_382' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_382, code_382, gliim_copied_382)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_382 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_382' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_382, code_382, golf_copied_382)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-If you wish to place this directory in another physical location, see <a href='http://gliimly.github.io/gg.html'>gg</a>.<br/>
+If you wish to place this directory in another physical location, see <a href='http://golf-lang.github.io/gg.html'>gg</a>.<br/>
 <br/>
-You can create files here by means of <a href='http://gliimly.github.io/uniq-file.html'>uniq-file</a>, where a new unique file is created - with the file name made available to you. This directory is also used for uploading of files from clients (such as web browsers or mobile device cameras) - the uploading is handled automatically by Gliimly (see <a href='http://gliimly.github.io/get-param.html'>get-param</a>).<br/>
+You can create files here by means of <a href='http://golf-lang.github.io/uniq-file.html'>uniq-file</a>, where a new unique file is created - with the file name made available to you. This directory is also used for uploading of files from clients (such as web browsers or mobile device cameras) - the uploading is handled automatically by Golf (see <a href='http://golf-lang.github.io/get-param.html'>get-param</a>).<br/>
 <br/>
 In general, a number of sub-directories is created within the file directory that contain files, with (currently) the maximum of 40,000 directories with unlimited files per each directory (so if you had 50,000 files per each directory, then you could store a total of about 2 billion files). This scheme also allows for faster access to file nodes due to relatively low number of sub-directories and files randomly spread per each such sub-directory. The random spreading of files across subdirectories is done automatically.<br/>
 <br/>
 Do not rename file names or sub-directory names stored under file directory.<br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Files</span><br/>
-<a href='http://gliimly.github.io/close-file.html'>close-file</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/copy-file.html'>copy-file</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/delete-file.html'>delete-file</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/file-position.html'>file-position</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/file-storage.html'>file-storage</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/file-uploading.html'>file-uploading</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/lock-file.html'>lock-file</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/open-file.html'>open-file</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/read-file.html'>read-file</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/read-line.html'>read-line</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/rename-file.html'>rename-file</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/stat-file.html'>stat-file</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/temporary-file.html'>temporary-file</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/uniq-file.html'>uniq-file</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/unlock-file.html'>unlock-file</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/write-file.html'>write-file</a> &nbsp; <br/>
+<a href='http://golf-lang.github.io/close-file.html'>close-file</a> &nbsp;<br/>
+<a href='http://golf-lang.github.io/copy-file.html'>copy-file</a> &nbsp;<br/>
+<a href='http://golf-lang.github.io/delete-file.html'>delete-file</a> &nbsp;<br/>
+<a href='http://golf-lang.github.io/file-position.html'>file-position</a> &nbsp;<br/>
+<a href='http://golf-lang.github.io/file-storage.html'>file-storage</a> &nbsp;<br/>
+<a href='http://golf-lang.github.io/file-uploading.html'>file-uploading</a> &nbsp;<br/>
+<a href='http://golf-lang.github.io/lock-file.html'>lock-file</a> &nbsp;<br/>
+<a href='http://golf-lang.github.io/open-file.html'>open-file</a> &nbsp;<br/>
+<a href='http://golf-lang.github.io/read-file.html'>read-file</a> &nbsp;<br/>
+<a href='http://golf-lang.github.io/read-line.html'>read-line</a> &nbsp;<br/>
+<a href='http://golf-lang.github.io/rename-file.html'>rename-file</a> &nbsp;<br/>
+<a href='http://golf-lang.github.io/stat-file.html'>stat-file</a> &nbsp;<br/>
+<a href='http://golf-lang.github.io/temporary-file.html'>temporary-file</a> &nbsp;<br/>
+<a href='http://golf-lang.github.io/uniq-file.html'>uniq-file</a> &nbsp;<br/>
+<a href='http://golf-lang.github.io/unlock-file.html'>unlock-file</a> &nbsp;<br/>
+<a href='http://golf-lang.github.io/write-file.html'>write-file</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
-<a href='http://gliimly.github.io/documentation.html'>documentation</a><br/>
+<a href='http://golf-lang.github.io/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
-<!--GLIIMFOOT77--><span style='font-size:80%'><a href="http://gliimly.github.io/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="http://golf-lang.github.io/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
 </div><br/></body></html>
 
 

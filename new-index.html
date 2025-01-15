@@ -202,7 +202,7 @@ pre a {
 }
 
 
-.gliimSnippet {display:none;}
+.golfSnippet {display:none;}
 
 ul {
   list-style-type:square;
@@ -226,14 +226,14 @@ function gg_copy(gt, eid, gc) {
 
 </script>
 
-<!--GLIIMMENU13-->
+<!--GOLFMENU13-->
 
-<!--GLIIMENDMENU13-->
+<!--GOLFENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;New index</div><hr/><span style="font-weight:bold;">Purpose</span>: Create new index structure for fast key searching.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://golf-lang.github.io' style='border-bottom:0px'><img src='http://golf-lang.github.io/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;New index</div><hr/><span style="font-weight:bold;">Purpose</span>: Create new index structure for fast key searching.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_515'>
@@ -241,9 +241,9 @@ function gg_copy(gt, eid, gc) {
      [<span class="Identifier"> key-as</span> <span class="Constant">&quot;positive integer&quot;</span> ] \
      [<span class="Identifier"> unsorted</span> ]
      [<span class="Identifier"> process-scope</span> ]</pre>
-<span id=gliim_copied_515 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_515' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_515, code_515, gliim_copied_515)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_515 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_515' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_515, code_515, golf_copied_515)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 new-index initializes a new &lt;index&gt;. <br/>
 <br/>
@@ -251,7 +251,7 @@ An index is a hierarchical balanced binary tree structure that allows data acces
 <br/>
 Information in an index can be inserted, updated or deleted in any order, and accessed in any order as well.<br/>
 <br/>
-Information in an index is organized in nodes. Each node has a key and a value. A key is used to search for a node in a index. By default (if "unsorted" is omitted), all nodes in a Gliimly index are also connected in an ordered linked list, allowing for very fast range searches.<br/>
+Information in an index is organized in nodes. Each node has a key and a value. A key is used to search for a node in a index. By default (if "unsorted" is omitted), all nodes in a Golf index are also connected in an ordered linked list, allowing for very fast range searches.<br/>
 <div class="vsub"><a id="Keys and data"></a>Keys and data</div>
 A node in a index consists of two strings: key and value. There is no limit on the number of nodes in the index, other than available memory. Each key in the index must be unique. Keys should be as short as possible. Generally, longer keys take longer to search for, insert or delete. <br/>
 <div class="vsub"><a id="Key comparison"></a>Key comparison</div>
@@ -261,37 +261,37 @@ In order for any data index structure to function, a key comparison must be perf
 <br/>
 Note that when using "positive integer", you can use numbers in any base (from 2 to 36). In fact, numbers expressed in a higher base are generally faster to search for, because they are shorter in length.<br/>
 <div class="vsub"><a id="Unsorted index"></a>Unsorted index</div>
-If "unsorted" clause is used, &lt;index&gt; will not be sorted in a double-linked list, which means that finding the next smaller or next greater node in repetition (i.e. range search) will be done by using the index structure and not a linked list. This is slower, as each such search is generally done in O(log N) time. Regardless, you can perform range searches in either case (see <a href='http://gliimly.github.io/use-cursor.html'>use-cursor</a>).<br/>
+If "unsorted" clause is used, &lt;index&gt; will not be sorted in a double-linked list, which means that finding the next smaller or next greater node in repetition (i.e. range search) will be done by using the index structure and not a linked list. This is slower, as each such search is generally done in O(log N) time. Regardless, you can perform range searches in either case (see <a href='http://golf-lang.github.io/use-cursor.html'>use-cursor</a>).<br/>
 <br/>
 As a rule of thumb, if you do not need range searches or your memory is scarce, use "unsorted" as it will save 2 pointers (i.e. 16 bytes) per key and insertion/deletion will be a bit faster, but be aware that range searches will be slower. <br/>
 <br/>
 If you need faster range searches or the extra memory is not an issue (it would be for instance extra 16MB per 1,0000,0000 keys), then do not use "unsorted", as your range searches will be faster. Note that in this case, insertion and deletion are a bit slower because they need to maintain a double linked list, however in general the effect is minimized by faster range searches. <br/>
 <div class="vsub"><a id="Scope"></a>Scope</div>
-An index is accessible to the current process only, unless "process-scope" clause is used, in which case all requests served by the process can use it (see <a href='http://gliimly.github.io/do-once.html'>do-once</a> for a typical way to create an object with a process scope). If "process-scope" is used, then &lt;index&gt; that will keep its nodes between all requests served by the same process; otherwise &lt;index&gt; is purged at the end of request. <br/>
+An index is accessible to the current process only, unless "process-scope" clause is used, in which case all requests served by the process can use it (see <a href='http://golf-lang.github.io/do-once.html'>do-once</a> for a typical way to create an object with a process scope). If "process-scope" is used, then &lt;index&gt; that will keep its nodes between all requests served by the same process; otherwise &lt;index&gt; is purged at the end of request. <br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Create a new index:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_516'>
 <span class="Statement"> new-index</span> my_index</pre>
-<span id=gliim_copied_516 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_516' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_516, code_516, gliim_copied_516)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_516 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_516' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_516, code_516, golf_copied_516)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Index</span><br/>
-<a href='http://gliimly.github.io/delete-index.html'>delete-index</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/get-index.html'>get-index</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/new-index.html'>new-index</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/purge-index.html'>purge-index</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/read-index.html'>read-index</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/use-cursor.html'>use-cursor</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/write-index.html'>write-index</a> &nbsp; <br/>
+<a href='http://golf-lang.github.io/delete-index.html'>delete-index</a> &nbsp;<br/>
+<a href='http://golf-lang.github.io/get-index.html'>get-index</a> &nbsp;<br/>
+<a href='http://golf-lang.github.io/new-index.html'>new-index</a> &nbsp;<br/>
+<a href='http://golf-lang.github.io/purge-index.html'>purge-index</a> &nbsp;<br/>
+<a href='http://golf-lang.github.io/read-index.html'>read-index</a> &nbsp;<br/>
+<a href='http://golf-lang.github.io/use-cursor.html'>use-cursor</a> &nbsp;<br/>
+<a href='http://golf-lang.github.io/write-index.html'>write-index</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
-<a href='http://gliimly.github.io/documentation.html'>documentation</a><br/>
+<a href='http://golf-lang.github.io/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
-<!--GLIIMFOOT77--><span style='font-size:80%'><a href="http://gliimly.github.io/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="http://golf-lang.github.io/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
 </div><br/></body></html>
 
 

@@ -202,7 +202,7 @@ pre a {
 }
 
 
-.gliimSnippet {display:none;}
+.golfSnippet {display:none;}
 
 ul {
   list-style-type:square;
@@ -226,27 +226,27 @@ function gg_copy(gt, eid, gc) {
 
 </script>
 
-<!--GLIIMMENU13-->
+<!--GOLFMENU13-->
 
-<!--GLIIMENDMENU13-->
+<!--GOLFENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;After handler</div><hr/><span style="font-weight:bold;">Purpose</span>: Execute your code after a request is handled.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://golf-lang.github.io' style='border-bottom:0px'><img src='http://golf-lang.github.io/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;After handler</div><hr/><span style="font-weight:bold;">Purpose</span>: Execute your code after a request is handled.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_8'>
 <span class="Statement"> after-handler</span>
 <span class="Statement"> .</span>..
 <span class="Statement"> end-after-handler</span></pre>
-<span id=gliim_copied_8 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_8' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_8, code_8, gliim_copied_8)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_8 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_8' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_8, code_8, golf_copied_8)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Every Gliimly request goes through a request dispatcher (see <a href='http://gliimly.github.io/request.html'>request</a>()). In order to specify your code to execute after a request is handled, create source file "after-handler.gliim" and implement a handler that starts with "after-handler" and ends with "end-after-handler", which will be automatically picked up and compiled with your application. <br/>
+Every Golf request goes through a request dispatcher (see <a href='http://golf-lang.github.io/request.html'>request</a>()). In order to specify your code to execute after a request is handled, create source file "after-handler.golf" and implement a handler that starts with "after-handler" and ends with "end-after-handler", which will be automatically picked up and compiled with your application. <br/>
 <br/>
-If no request executes (for example if your application does not handle a given <a href='http://gliimly.github.io/request.html'>request</a>), after-handler handler does not execute either. If you use <a href='http://gliimly.github.io/exit-handler.html'>exit-handler</a> to exit current request handling, after-handler handler still executes.<br/>
+If no request executes (for example if your application does not handle a given <a href='http://golf-lang.github.io/request.html'>request</a>), after-handler handler does not execute either. If you use <a href='http://golf-lang.github.io/exit-handler.html'>exit-handler</a> to exit current request handling, after-handler handler still executes.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Here is a simple implementation of after-handler handler that just outputs "Hi there!!":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
@@ -254,22 +254,22 @@ Here is a simple implementation of after-handler handler that just outputs "Hi t
 <span class="Statement"> after-handler</span>
 <span class="Statement">      @</span>Hi there!!
 <span class="Statement"> end-after-handler</span></pre>
-<span id=gliim_copied_9 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_9' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_9, code_9, gliim_copied_9)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_9 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_9' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_9, code_9, golf_copied_9)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Service processing</span><br/>
-<a href='http://gliimly.github.io/after-handler.html'>after-handler</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/before-handler.html'>before-handler</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/begin-handler.html'>begin-handler</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/call-handler.html'>call-handler</a> &nbsp; <br/>
+<a href='http://golf-lang.github.io/after-handler.html'>after-handler</a> &nbsp;<br/>
+<a href='http://golf-lang.github.io/before-handler.html'>before-handler</a> &nbsp;<br/>
+<a href='http://golf-lang.github.io/begin-handler.html'>begin-handler</a> &nbsp;<br/>
+<a href='http://golf-lang.github.io/call-handler.html'>call-handler</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
-<a href='http://gliimly.github.io/documentation.html'>documentation</a><br/>
+<a href='http://golf-lang.github.io/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
-<!--GLIIMFOOT77--><span style='font-size:80%'><a href="http://gliimly.github.io/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="http://golf-lang.github.io/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
 </div><br/></body></html>
 
 

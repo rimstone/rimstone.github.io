@@ -202,7 +202,7 @@ pre a {
 }
 
 
-.gliimSnippet {display:none;}
+.golfSnippet {display:none;}
 
 ul {
   list-style-type:square;
@@ -226,14 +226,14 @@ function gg_copy(gt, eid, gc) {
 
 </script>
 
-<!--GLIIMMENU13-->
+<!--GOLFMENU13-->
 
-<!--GLIIMENDMENU13-->
+<!--GOLFENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Match regex</div><hr/><span style="font-weight:bold;">Purpose</span>: Find, or find and replace patterns in strings using regex (regular expressions).<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://golf-lang.github.io' style='border-bottom:0px'><img src='http://golf-lang.github.io/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Match regex</div><hr/><span style="font-weight:bold;">Purpose</span>: Find, or find and replace patterns in strings using regex (regular expressions).<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_493'>
@@ -250,9 +250,9 @@ function gg_copy(gt, eid, gc) {
      ] \
      [<span class="Identifier"> cache</span> ] \
      [<span class="Identifier"> clear-cache</span> &lt;clear cache&gt; )</pre>
-<span id=gliim_copied_493 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_493' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_493, code_493, gliim_copied_493)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_493 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_493' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_493, code_493, golf_copied_493)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 match-regex searches &lt;target&gt; string for regex &lt;pattern&gt;. If "replace-with" is specified, then instance(s) of &lt;pattern&gt; in &lt;target&gt; are replaced with &lt;replace pattern&gt; string, and the result is stored in &lt;result&gt; string.<br/>
 <br/>
@@ -268,9 +268,9 @@ If "utf8" is used, then the pattern itself and all data strings used for matchin
 <br/>
 &lt;result&gt; and &lt;status&gt; variables can be created within the statement.<br/>
 <br/>
-If the pattern is bad (i.e. &lt;pattern&gt; is not a correct regular expression), Gliimly will <a href='http://gliimly.github.io/error-handling.html'>error out</a> with a message.<br/>
+If the pattern is bad (i.e. &lt;pattern&gt; is not a correct regular expression), Golf will <a href='http://golf-lang.github.io/error-handling.html'>error out</a> with a message.<br/>
 <div class="vsub"><a id="PCRE2 and Posix Regex"></a>PCRE2 and Posix Regex</div>
-By default, <a href='https://www.pcre.org/current/doc/html/pcre2pattern.html'>PCRE2 regex syntax</a> (Perl-compatible Regular Expressions v2) is used. To use <a href='https://en.wikibooks.org/wiki/Regular_Expressions/POSIX-Extended_Regular_Expressions'>extended regex syntax</a> (Posix ERE), specify "--posix-regex" when building your application with <a href='http://gliimly.github.io/gg.html'>gg</a>. See more below in Limitations about differences.<br/>
+By default, <a href='https://www.pcre.org/current/doc/html/pcre2pattern.html'>PCRE2 regex syntax</a> (Perl-compatible Regular Expressions v2) is used. To use <a href='https://en.wikibooks.org/wiki/Regular_Expressions/POSIX-Extended_Regular_Expressions'>extended regex syntax</a> (Posix ERE), specify "--posix-regex" when building your application with <a href='http://golf-lang.github.io/gg.html'>gg</a>. See more below in Limitations about differences.<br/>
 <div class="vsub"><a id="Caching and performance"></a>Caching and performance</div>
 If "cache" clause is used, then regex compilation of &lt;pattern&gt; will be done only once and saved for future use. There is a significant performance benefit when match-regex executes repeatedly with "cache" (such as in case of web applications or in any kind of loop). If &lt;pattern&gt; changes and you need to recompile it once in a while, use "clear-cache" clause. &lt;clear cache&gt; is a "bool" variable; the regex cache is cleared if it is true, and stays if it is false. For example:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
@@ -280,9 +280,9 @@ If "cache" clause is used, then regex compilation of &lt;pattern&gt; will be don
 <span class="Statement">     set-bool</span> cl_c = <span class="Constant">true</span>
 <span class="Statement"> end-if</span>
 <span class="Statement"> match-regex</span> ps<span class="Identifier"> in</span> look_in<span class="Identifier"> replace-with</span> <span class="Constant">&quot;Yes it is </span><span class="Special">\\</span><span class="Constant">1!&quot;</span><span class="Type"> result</span> res<span class="Identifier"> cache clear-cache</span> cl_c</pre>
-<span id=gliim_copied_494 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_494' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_494, code_494, gliim_copied_494)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_494 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_494' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_494, code_494, golf_copied_494)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In this case, when "q" is 0, cache will be cleared, and the pattern in variable "ps" will be recompiled. In all other cases, the last computed regex stays the same. <br/>
 <br/>
@@ -295,44 +295,44 @@ Subexpressions are referenced via a backslash followed by a number. Because in s
     <span class="Identifier"> in</span> <span class="Constant">&quot;Hello, good day!&quot;</span> \
     <span class="Identifier"> replace-with</span> <span class="Constant">&quot;</span><span class="Special">\\</span><span class="Constant">2 </span><span class="Special">\\</span><span class="Constant">1&quot;</span> \
     <span class="Type"> result</span> res</pre>
-<span id=gliim_copied_495 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_495' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_495, code_495, gliim_copied_495)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_495 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_495' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_495, code_495, golf_copied_495)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 will produce string "Hello, day good!" as a result in "res" variable. Each subexpression is within () parenthesis, so for instance "day" in the above pattern is the 2nd subexpression, and is back-referenced as \\2 in replacement.<br/>
 <br/>
 There can be a maximum of 23 subexpressions. <br/>
 <br/>
-Note that backreferences to non-existing subexpressions are ignored - for example \\4 when there are only 3 subexpressions. Gliimly is "smart" about using two digits and differentiating between \\1 and \\10 for instance - it takes into account the actual number of subexpressions and their validity, and selects a proper subexpression even when two digits are used in a backreference.<br/>
+Note that backreferences to non-existing subexpressions are ignored - for example \\4 when there are only 3 subexpressions. Golf is "smart" about using two digits and differentiating between \\1 and \\10 for instance - it takes into account the actual number of subexpressions and their validity, and selects a proper subexpression even when two digits are used in a backreference.<br/>
 <div class="vsub"><a id="Lookaheads and lookbehinds"></a>Lookaheads and lookbehinds</div>
 match-regex supports syntax for lookaheads (i.e. "(?=...)" and "(?!...)") and lookbehinds (i.e. "(?&lt;=...)" and "(?&lt;!...)"). See <a href='https://www.pcre.org/current/doc/html/pcre2pattern.html'>PCRE2 pattern matching</a> for more details. For instance, the following matches "bar" only if preceded by "foo":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_496'>
 <span class="Statement"> match-regex</span> <span class="Constant">&quot;</span><span class="Special">\\</span><span class="Constant">w*(?&lt;=foo)bar&quot;</span><span class="Identifier"> in</span> <span class="Constant">&quot;foobar&quot;</span><span class="Type"> status</span> st<span class="Identifier"> single-match</span></pre>
-<span id=gliim_copied_496 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_496' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_496, code_496, gliim_copied_496)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_496 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_496' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_496, code_496, golf_copied_496)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 and the following matches "foo" if followed by "bar":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_497'>
 <span class="Statement"> match-regex</span> <span class="Constant">&quot;</span><span class="Special">\\</span><span class="Constant">w*foo(?=bar)&quot;</span><span class="Identifier"> in</span> <span class="Constant">&quot;foofoo&quot;</span><span class="Type"> status</span> st<span class="Identifier"> single-match</span></pre>
-<span id=gliim_copied_497 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_497' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_497, code_497, gliim_copied_497)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_497 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_497' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_497, code_497, golf_copied_497)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Limitations"></a>Limitations</div>
 If you are using older versions of PCRE2 (10.36 or earlier) such as by default in Debian 10 or Ubuntu 18, then instead of PCRE2, an <a href='https://en.wikibooks.org/wiki/Regular_Expressions/POSIX-Extended_Regular_Expressions'>Extended Regex Expressions</a> (ERE) from the &nbsp;built-in Linux regex library is used, due to older PCRE2 versions having name conflicts with other libraries. In this case, "utf8" clause will have no effect, and lookaheads/lookbehinds functionality will not work; possibly a few others as well, however for the most part the two are compatible. If your system uses an older PCRE2 library, you can upgrade to 10.37 or later to use PCRE2.<br/>
 <br/>
-In any case, if you need to use Posix ERE instead of PCRE2 (for compatibility, to reduce memory footprint or some other reason), you can use "--posix-regex" option of <a href='http://gliimly.github.io/gg.html'>gg</a>; the same limitations as above apply. Note that PCRE2 (the default) is generally faster than ERE.<br/>
+In any case, if you need to use Posix ERE instead of PCRE2 (for compatibility, to reduce memory footprint or some other reason), you can use "--posix-regex" option of <a href='http://golf-lang.github.io/gg.html'>gg</a>; the same limitations as above apply. Note that PCRE2 (the default) is generally faster than ERE.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Use match-regex statement to find out if a string matches a pattern, for example:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_498'>
 <span class="Statement"> match-regex</span> <span class="Constant">&quot;SOME (.*) IS (.*)&quot;</span><span class="Identifier"> in</span> <span class="Constant">&quot;WOW SOME THING IS GOOD HERE&quot;</span><span class="Type"> status</span> st</pre>
-<span id=gliim_copied_498 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_498' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_498, code_498, gliim_copied_498)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_498 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_498' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_498, code_498, golf_copied_498)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In this case, the first parameter ("SOME (.*) IS (.*)") is a pattern and you're matching it with string ("WOW SOME THING IS GOOD HERE"). Since there is a match, status variable (defined on the fly as integer) "st" will be "1" (meaning one match was found) - in general it will contain the number of patterns matched. <br/>
 <br/>
@@ -340,17 +340,17 @@ Search for patterns and replace them by using replace-with clause, for example:<
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_499'>
 <span class="Statement"> match-regex</span> <span class="Constant">&quot;SOME (.*) IS ([^ ]+)&quot;</span><span class="Identifier"> in</span> <span class="Constant">&quot;WOW SOME THING IS GOOD HERE FOR SURE&quot;</span><span class="Identifier"> replace-with</span> <span class="Constant">&quot;THINGS ARE </span><span class="Special">\\</span><span class="Constant">2 YES!&quot;</span><span class="Type"> result</span> res<span class="Type"> status</span> st</pre>
-<span id=gliim_copied_499 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_499' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_499, code_499, gliim_copied_499)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_499 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_499' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_499, code_499, golf_copied_499)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In this case, the result from replacement will be in a new string variable "res" specified with the result clause, and it will be <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_500'>
  WOW THINGS ARE GOOD YES! HERE FOR SURE</pre>
-<span id=gliim_copied_500 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_500' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_500, code_500, gliim_copied_500)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_500 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_500' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_500, code_500, golf_copied_500)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The above demonstrates a typical use of subexpressions in regex (meaning "()" statements) and their referencing with "\\1", "\\2" etc. in the order in which they appear. Consult regex documentation for more information. &nbsp;Status variable specified with status clause ("st" in this example) will contain the number of patterns matched and replaced. <br/>
 <br/>
@@ -358,9 +358,9 @@ Matching is by default case sensitive. Use "case-insensitive" clause to change i
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_501'>
 <span class="Statement"> match-regex</span> <span class="Constant">&quot;SOME (.*) IS (.*)&quot;</span><span class="Identifier"> in</span> <span class="Constant">&quot;WOW some THING IS GOOD HERE&quot;</span><span class="Type"> status</span> st<span class="Identifier"> case-insensitive</span></pre>
-<span id=gliim_copied_501 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_501' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_501, code_501, gliim_copied_501)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_501 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_501' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_501, code_501, golf_copied_501)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In the above case, the pattern would not be found without "case-insensitive" clause because "SOME" and "some" would not match. This clause works the same in matching-only as well as replacing strings.<br/>
 <br/>
@@ -368,20 +368,20 @@ If you want to match only the first occurrence of a pattern, use "single-match" 
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_492'>
 <span class="Statement"> match-regex</span> <span class="Constant">&quot;SOME ([^ ]+) IS ([^ ]+)&quot;</span><span class="Identifier"> in</span> <span class="Constant">&quot;WOW SOME THING IS GOOD HERE AND SOME STUFF IS GOOD TOO&quot;</span><span class="Type"> status</span> st<span class="Identifier"> single-match</span></pre>
-<span id=gliim_copied_492 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_492' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_492, code_492, gliim_copied_492)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_492 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_492' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_492, code_492, golf_copied_492)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In this case there would be two matches by default ("SOME THING IS GOOD" and "SOME STUFF IS GOOD") but only the first would be found. This clause works the same for replacing as well - only the first occurrence would be replaced.<br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Regex</span><br/>
-<a href='http://gliimly.github.io/match-regex.html'>match-regex</a> &nbsp; <br/>
+<a href='http://golf-lang.github.io/match-regex.html'>match-regex</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
-<a href='http://gliimly.github.io/documentation.html'>documentation</a><br/>
+<a href='http://golf-lang.github.io/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
-<!--GLIIMFOOT77--><span style='font-size:80%'><a href="http://gliimly.github.io/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="http://golf-lang.github.io/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
 </div><br/></body></html>
 
 

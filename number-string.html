@@ -202,7 +202,7 @@ pre a {
 }
 
 
-.gliimSnippet {display:none;}
+.golfSnippet {display:none;}
 
 ul {
   list-style-type:square;
@@ -226,23 +226,23 @@ function gg_copy(gt, eid, gc) {
 
 </script>
 
-<!--GLIIMMENU13-->
+<!--GOLFMENU13-->
 
-<!--GLIIMENDMENU13-->
+<!--GOLFENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Number string</div><hr/><span style="font-weight:bold;">Purpose</span>: Convert number to string.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://golf-lang.github.io' style='border-bottom:0px'><img src='http://golf-lang.github.io/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Number string</div><hr/><span style="font-weight:bold;">Purpose</span>: Convert number to string.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_534'>
 <span class="Statement"> number-string</span> &lt;number&gt; [<span class="Type"> to</span> &lt;string&gt; ] \
      [<span class="Identifier"> base</span> &lt;base&gt; ] \
      [<span class="Type"> status</span> &lt;status&gt; ]</pre>
-<span id=gliim_copied_534 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_534' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_534, code_534, gliim_copied_534)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_534 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_534' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_534, code_534, golf_copied_534)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 &lt;number&gt; is converted to &lt;string&gt; in "to" clause, using &lt;base&gt; in "base" clause, where &lt;base&gt; is by default 10. &lt;base&gt; can be between 2 and 36, inclusive. &lt;number&gt; can be positive or negative (i.e. signed) and can be of any integer type up to 64-bit (char, int, long, long long etc.). &nbsp;If "to" clause is omitted, then &lt;number&gt; is printed out.<br/>
 <br/>
@@ -250,47 +250,47 @@ Note that any letters in &lt;string&gt; (depending on the &lt;base&gt;) are alwa
 <br/>
 If there is an error, such as if &lt;base&gt; is incorrect, then &lt;status&gt; number (in "status" clause) is GG_ERR_FAILED, otherwise it's GG_OKAY.<br/>
 <br/>
-Use of number-string (and <a href='http://gliimly.github.io/p-num.html'>p-num</a> which is based on it) for converting and outputting numbers is high-performance and recommended if your application needs to do that often. If number-string prints out a number (i.e. "to" clause is omitted), and this is within <a href='http://gliimly.github.io/write-string.html'>write-string</a>, then &lt;number&gt; is output into the buffer that builds a new string.<br/>
+Use of number-string (and <a href='http://golf-lang.github.io/p-num.html'>p-num</a> which is based on it) for converting and outputting numbers is high-performance and recommended if your application needs to do that often. If number-string prints out a number (i.e. "to" clause is omitted), and this is within <a href='http://golf-lang.github.io/write-string.html'>write-string</a>, then &lt;number&gt; is output into the buffer that builds a new string.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 The following will allocate memory for string "x" to be "801":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_535'>
 <span class="Statement"> set-number</span> x = <span class="Constant">801</span>
 <span class="Statement"> number-string</span> x<span class="Type"> to</span> res</pre>
-<span id=gliim_copied_535 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_535' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_535, code_535, gliim_copied_535)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_535 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_535' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_535, code_535, golf_copied_535)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The following will store "-238f" to string "res":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_536'>
 <span class="Statement"> set-number</span> x = -<span class="Constant">9103</span>
 <span class="Statement"> number-string</span> x<span class="Type"> to</span> res<span class="Identifier"> base</span> <span class="Constant">16</span></pre>
-<span id=gliim_copied_536 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_536' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_536, code_536, gliim_copied_536)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_536 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_536' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_536, code_536, golf_copied_536)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 To print out a number -131:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_537'>
 <span class="Statement"> set-number</span> x = -<span class="Constant">131</span>
 <span class="Statement"> number-string</span> x</pre>
-<span id=gliim_copied_537 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_537' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_537, code_537, gliim_copied_537)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_537 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_537' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_537, code_537, golf_copied_537)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Numbers</span><br/>
-<a href='http://gliimly.github.io/number-expressions.html'>number-expressions</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/number-string.html'>number-string</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/set-number.html'>set-number</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/string-number.html'>string-number</a> &nbsp; <br/>
+<a href='http://golf-lang.github.io/number-expressions.html'>number-expressions</a> &nbsp;<br/>
+<a href='http://golf-lang.github.io/number-string.html'>number-string</a> &nbsp;<br/>
+<a href='http://golf-lang.github.io/set-number.html'>set-number</a> &nbsp;<br/>
+<a href='http://golf-lang.github.io/string-number.html'>string-number</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
-<a href='http://gliimly.github.io/documentation.html'>documentation</a><br/>
+<a href='http://golf-lang.github.io/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
-<!--GLIIMFOOT77--><span style='font-size:80%'><a href="http://gliimly.github.io/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="http://golf-lang.github.io/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
 </div><br/></body></html>
 
 

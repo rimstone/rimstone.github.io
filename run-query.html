@@ -202,7 +202,7 @@ pre a {
 }
 
 
-.gliimSnippet {display:none;}
+.golfSnippet {display:none;}
 
 ul {
   list-style-type:square;
@@ -226,14 +226,14 @@ function gg_copy(gt, eid, gc) {
 
 </script>
 
-<!--GLIIMMENU13-->
+<!--GOLFMENU13-->
 
-<!--GLIIMENDMENU13-->
+<!--GOLFENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Run query</div><hr/><span style="font-weight:bold;">Purpose</span>: Execute a query and loop through result set.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://golf-lang.github.io' style='border-bottom:0px'><img src='http://golf-lang.github.io/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Run query</div><hr/><span style="font-weight:bold;">Purpose</span>: Execute a query and loop through result set.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_656'>
@@ -255,13 +255,13 @@ function gg_copy(gt, eid, gc) {
 
 <span class="Statement"> run-prepared-query</span> \
      ... ( the same as run-query ) ...</pre>
-<span id=gliim_copied_656 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_656' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_656, code_656, gliim_copied_656)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_656 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_656' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_656, code_656, golf_copied_656)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 run-query executes a query specified with string &lt;query text&gt;.<br/>
 <div class="vsub"><a id="Database"></a>Database</div>
-&lt;database&gt; is specified in "@" clause and is the name of the <a href='http://gliimly.github.io/database-config-file.html'>database-config-file</a>. If ommited, your program must use exactly one database (see --db option in <a href='http://gliimly.github.io/gg.html'>gg</a>).<br/>
+&lt;database&gt; is specified in "@" clause and is the name of the <a href='http://golf-lang.github.io/database-config-file.html'>database-config-file</a>. If ommited, your program must use exactly one database (see --db option in <a href='http://golf-lang.github.io/gg.html'>gg</a>).<br/>
 <div class="vsub"><a id="Output"></a>Output</div>
 <span style="font-weight:bold;">- output clause</span><br/>
 "output" clause is a comma-delimited list of the query's output columns. The column names do not need to match the actual query column names, rather you can name them anyway you want, as long as they positionally correspond. String variables with the same name are created for each column name and query's output assigned to them. For example:<br/>
@@ -271,20 +271,20 @@ run-query executes a query specified with string &lt;query text&gt;.<br/>
 <span class="Statement">     @</span>First name <span class="Statement">&lt;&lt;p-out</span> first_name<span class="Statement">&gt;&gt;</span>
 <span class="Statement">     @</span>Last name <span class="Statement">&lt;&lt;p-out</span> last_name<span class="Statement">&gt;&gt;</span>
 <span class="Statement"> end-loop</span></pre>
-<span id=gliim_copied_658 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_658' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_658, code_658, gliim_copied_658)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_658 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_658' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_658, code_658, golf_copied_658)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Note that the output is by default web-encoded. You can set the encoding of column output by using either "noencode" (for no encoding), "urlencode" (for URL-encoding) or "webencode" (for web-encoding) clause right after column name (see <a href='http://gliimly.github.io/encode-web.html'>encode-web</a>, <a href='http://gliimly.github.io/encode-url.html'>encode-url</a> for description of encodings). For example, here the first output column will not be encoded, and the second will be URL-encoded:<br/>
+Note that the output is by default web-encoded. You can set the encoding of column output by using either "noencode" (for no encoding), "urlencode" (for URL-encoding) or "webencode" (for web-encoding) clause right after column name (see <a href='http://golf-lang.github.io/encode-web.html'>encode-web</a>, <a href='http://golf-lang.github.io/encode-url.html'>encode-url</a> for description of encodings). For example, here the first output column will not be encoded, and the second will be URL-encoded:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_659'>
 <span class="Statement"> run-query</span> @db = <span class="Constant">&quot;select firstName, lastName from employees&quot;</span><span class="Type"> output</span> first_name<span class="Identifier"> noencode</span>, last_name<span class="Identifier"> urlencode</span>
 <span class="Statement">     @</span>First name <span class="Statement">&lt;&lt;p-out</span> first_name<span class="Statement">&gt;&gt;</span>
 <span class="Statement">     @</span>Last name <span class="Statement">&lt;&lt;p-out</span> last_name<span class="Statement">&gt;&gt;</span>
 <span class="Statement"> end-loop</span></pre>
-<span id=gliim_copied_659 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_659' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_659, code_659, gliim_copied_659)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_659 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_659' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_659, code_659, golf_copied_659)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Input"></a>Input</div>
 The query's input parameters (if any) are specified with '%s' in the &lt;query text&gt; (note that single quotes must be included). The actual input parameters are provided after "input" clause (you can instead use semicolon, i.e. ":"), in a comma-separated list. Each input variable is a string regardless of the actual column type, as the database engine will interpret the data according to its usage. Each input variable is trimmed (left and right) before used in a query. <br/>
@@ -297,9 +297,9 @@ The number of rows returned by a query can be obtained in &lt;row count&gt; in "
 <div class="vsub"><a id="Error handling"></a>Error handling</div>
 The error code is available in &lt;error&gt; variable in "error" clause - this code is always "0" if successful. The &lt;error&gt; code may or may not be a number but is always returned as a string value. In case of error, error text is available in "error-text" clause in &lt;error text&gt; string.<br/>
 <br/>
-"on-error-continue" clause specifies that <a href='http://gliimly.github.io/request.html'>request</a> processing will continue in case of an error, whereas "on-error-exit" clause specifies that it will exit. This setting overrides database-level <a href='http://gliimly.github.io/db-error.html'>db-error</a> for this specific statement only. If you use "on-error-continue", be sure to check the error code.<br/>
+"on-error-continue" clause specifies that <a href='http://golf-lang.github.io/request.html'>request</a> processing will continue in case of an error, whereas "on-error-exit" clause specifies that it will exit. This setting overrides database-level <a href='http://golf-lang.github.io/db-error.html'>db-error</a> for this specific statement only. If you use "on-error-continue", be sure to check the error code.<br/>
 <br/>
-Note that if database connection was lost, and could not be reestablished, the request will error out (see <a href='http://gliimly.github.io/error-handling.html'>error-handling</a>).<br/>
+Note that if database connection was lost, and could not be reestablished, the request will error out (see <a href='http://golf-lang.github.io/error-handling.html'>error-handling</a>).<br/>
 <div class="vsub"><a id="Space before = and @"></a>Space before = and @</div>
 "=" and "@" clauses may or may not have a space before the data that follows. So for example, these are both valid:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
@@ -309,14 +309,14 @@ Note that if database connection was lost, and could not be reestablished, the r
 
  <span class="Comment">// Space after </span><span class="Constant">&quot;@&quot;</span><span class="Comment"> and </span><span class="Constant">&quot;=&quot;</span>
 <span class="Statement"> run-query</span><span class="Identifier"> @</span> db = <span class="Constant">&quot;select firstName, lastName from employee where employeeId='</span><span class="Special">%s</span><span class="Constant">'&quot;</span><span class="Type"> output</span> firstName, lastName<span class="Identifier"> input</span> empid</pre>
-<span id=gliim_copied_660 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_660' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_660, code_660, gliim_copied_660)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_660 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_660' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_660, code_660, golf_copied_660)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="run-prepared-query"></a>run-prepared-query</div>
 run-prepared-query is the same as run-query except that a &lt;query&gt; is prepared. That means it is pre-compiled and its execution plan is created once, instead of each time a query executes. The statement is cached going forward for the life of the process (with the rare exception of re-establishing a lost database connection). It means effectively an unlimited number of requests will be reusing the query statement, which generally implies higher performance. Note that databases do not allow prepared queries for DDL (Data Definition Language), as there is not much benefit in general, hence only DML queries (such as INSERT, DELETE etc.) and SELECT can be prepared.<br/>
 <br/>
-In order for database to cache a query statement, Gliimly will save query text that actually executes the very first time it runs. Then, regardless of what query text you supply in the following executions, it will not mutate anymore. It means from that moment onward, the query will always execute that very same query text, just with different input parameters. In practicallity it means that &lt;query&gt; should be a string constant if you are using a prepared query (which is usually the case).<br/>
+In order for database to cache a query statement, Golf will save query text that actually executes the very first time it runs. Then, regardless of what query text you supply in the following executions, it will not mutate anymore. It means from that moment onward, the query will always execute that very same query text, just with different input parameters. In practicallity it means that &lt;query&gt; should be a string constant if you are using a prepared query (which is usually the case).<br/>
 <br/>
 In some cases, you might not want to use prepared statements. Some reasons may be: <br/>
 <ul><li>your statements are often changing and dynamically constructed to the point where managing a great many equivalent prepared statements may be impractical - for example there may be a part of your query text that comes from outside your code,<br/>
@@ -329,9 +329,9 @@ Note that in Postgres, with prepared statements you may get an error like "could
 <div class='sqlcode' style='position:relative;padding-right:16px;'>
 <pre id='code_657'>
 <span class="Statement">select</span> col1 <span class="Special">from</span> test <span class="Special">where</span> someId&gt;=<span class="Special">'</span><span class="Constant">%s</span><span class="Special">'</span> <span class="Statement">and</span> col1 <span class="Statement">like</span> <span class="Identifier">concat</span>( <span class="Special">'</span><span class="Constant">%s</span><span class="Special">'</span>::text ,<span class="Special">'</span><span class="Constant">%</span><span class="Special">'</span>)</pre>
-<span id=gliim_copied_657 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_657' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_657, code_657, gliim_copied_657)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_657 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_657' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_657, code_657, golf_copied_657)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Note that SQL statements in SQLite are always prepared regardless of whether you use "run-query" or "run-prepared-query" due to how SQLite native interface works.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
@@ -342,37 +342,37 @@ Select first and last name (output is firstName and lastName) based on employee 
 <span class="Statement"> run-query</span> @db = <span class="Constant">&quot;select firstName, lastName from employee where employeeId='</span><span class="Special">%s</span><span class="Constant">'&quot;</span><span class="Type"> output</span> firstName, lastName<span class="Identifier"> input</span> empid
 <span class="Statement">     @</span>Employee is <span class="Statement">&lt;&lt;p-out</span>  firstName<span class="Statement">&gt;&gt;</span> <span class="Statement">&lt;&lt;p-out</span> lastName<span class="Statement">&gt;&gt;</span>
 <span class="Statement"> end-query</span></pre>
-<span id=gliim_copied_661 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_661' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_661, code_661, gliim_copied_661)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_661 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_661' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_661, code_661, golf_copied_661)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Prepared query without a loop and obtain error code and affected rows:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_662'>
 <span class="Statement"> run-prepared-query</span> @db = qry<span class="Identifier"> no-loop</span> \
     <span class="Type"> error</span> ecode<span class="Type"> affected-rows</span> arows<span class="Identifier"> input</span> stock_name, stock_price, stock_price</pre>
-<span id=gliim_copied_662 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_662' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_662, code_662, gliim_copied_662)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_662 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_662' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_662, code_662, golf_copied_662)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Database</span><br/>
-<a href='http://gliimly.github.io/begin-transaction.html'>begin-transaction</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/commit-transaction.html'>commit-transaction</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/current-row.html'>current-row</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/database-config-file.html'>database-config-file</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/db-error.html'>db-error</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/mariadb-database.html'>mariadb-database</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/postgresql-database.html'>postgresql-database</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/rollback-transaction.html'>rollback-transaction</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/run-query.html'>run-query</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/sqlite-database.html'>sqlite-database</a> &nbsp; <br/>
+<a href='http://golf-lang.github.io/begin-transaction.html'>begin-transaction</a> &nbsp;<br/>
+<a href='http://golf-lang.github.io/commit-transaction.html'>commit-transaction</a> &nbsp;<br/>
+<a href='http://golf-lang.github.io/current-row.html'>current-row</a> &nbsp;<br/>
+<a href='http://golf-lang.github.io/database-config-file.html'>database-config-file</a> &nbsp;<br/>
+<a href='http://golf-lang.github.io/db-error.html'>db-error</a> &nbsp;<br/>
+<a href='http://golf-lang.github.io/mariadb-database.html'>mariadb-database</a> &nbsp;<br/>
+<a href='http://golf-lang.github.io/postgresql-database.html'>postgresql-database</a> &nbsp;<br/>
+<a href='http://golf-lang.github.io/rollback-transaction.html'>rollback-transaction</a> &nbsp;<br/>
+<a href='http://golf-lang.github.io/run-query.html'>run-query</a> &nbsp;<br/>
+<a href='http://golf-lang.github.io/sqlite-database.html'>sqlite-database</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
-<a href='http://gliimly.github.io/documentation.html'>documentation</a><br/>
+<a href='http://golf-lang.github.io/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
-<!--GLIIMFOOT77--><span style='font-size:80%'><a href="http://gliimly.github.io/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="http://golf-lang.github.io/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
 </div><br/></body></html>
 
 

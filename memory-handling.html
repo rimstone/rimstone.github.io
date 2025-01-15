@@ -202,7 +202,7 @@ pre a {
 }
 
 
-.gliimSnippet {display:none;}
+.golfSnippet {display:none;}
 
 ul {
   list-style-type:square;
@@ -226,37 +226,37 @@ function gg_copy(gt, eid, gc) {
 
 </script>
 
-<!--GLIIMMENU13-->
+<!--GOLFMENU13-->
 
-<!--GLIIMENDMENU13-->
+<!--GOLFENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Memory handling</div><hr/>Gliimly is a memory-safe language. <br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://golf-lang.github.io' style='border-bottom:0px'><img src='http://golf-lang.github.io/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Memory handling</div><hr/>Golf is a memory-safe language. <br/>
 <br/>
-Your application cannot access memory outside of valid statement results. Trying to do so will result in your program <a href='http://gliimly.github.io/error-handling.html'>erroring out</a>. <br/>
+Your application cannot access memory outside of valid statement results. Trying to do so will result in your program <a href='http://golf-lang.github.io/error-handling.html'>erroring out</a>. <br/>
 <br/>
-Memory allocated by Gliimly statements is tracked and freed at the end of the request. You can also use a memory-optimizer (see "--optimize-memory" in <a href='http://gliimly.github.io/gg.html'>gg</a>) which frees memory as soon as possible, however keep in mind that it comes with a performance penalty and is not recommended unless you have very little available memory. <br/>
+Memory allocated by Golf statements is tracked and freed at the end of the request. You can also use a memory-optimizer (see "--optimize-memory" in <a href='http://golf-lang.github.io/gg.html'>gg</a>) which frees memory as soon as possible, however keep in mind that it comes with a performance penalty and is not recommended unless you have very little available memory. <br/>
 <br/>
-With Gliimly there is no need to free memory manually. Memory is automatically freed even if it is no longer accessible to the program, thus preventing memory leaks; this is important for stability of long-running processes. <br/>
+With Golf there is no need to free memory manually. Memory is automatically freed even if it is no longer accessible to the program, thus preventing memory leaks; this is important for stability of long-running processes. <br/>
 <br/>
-Some statements (<a href='http://gliimly.github.io/new-index.html'>new-index</a>, <a href='http://gliimly.github.io/new-array.html'>new-array</a>, <a href='http://gliimly.github.io/new-list.html'>new-list</a> and <a href='http://gliimly.github.io/set-string.html'>set-string</a>) have the option of allocating memory that won't get freed at the end of the request and is available to any request served by the same process. This kind of memory is called "process-scoped". A process-scoped string can be manually freed.<br/>
+Some statements (<a href='http://golf-lang.github.io/new-index.html'>new-index</a>, <a href='http://golf-lang.github.io/new-array.html'>new-array</a>, <a href='http://golf-lang.github.io/new-list.html'>new-list</a> and <a href='http://golf-lang.github.io/set-string.html'>set-string</a>) have the option of allocating memory that won't get freed at the end of the request and is available to any request served by the same process. This kind of memory is called "process-scoped". A process-scoped string can be manually freed.<br/>
 <br/>
-Gliimly handles memory references and assignments automatically, preventing dangling memory.<br/>
+Golf handles memory references and assignments automatically, preventing dangling memory.<br/>
 <br/>
-String results of any Gliimly <a href='http://gliimly.github.io/statements.html'>statements</a> will always create new memory, unless stated otherwise.<br/>
+String results of any Golf <a href='http://golf-lang.github.io/statements.html'>statements</a> will always create new memory, unless stated otherwise.<br/>
 <div class="vsub"><a id="Open file descriptors"></a>Open file descriptors</div>
-Any files opened by <a href='http://gliimly.github.io/open-file.html'>open-file</a> statement are automatically closed by Gliimly at the end of the request. This enhances stability of long-running server processes because Linux system by default offers only about 1000 open files to a process. A bug can quickly exhaust this pool and cause a malfunction or a crash - Gliimly prevents this by closing any such open files when the request ends. <br/>
+Any files opened by <a href='http://golf-lang.github.io/open-file.html'>open-file</a> statement are automatically closed by Golf at the end of the request. This enhances stability of long-running server processes because Linux system by default offers only about 1000 open files to a process. A bug can quickly exhaust this pool and cause a malfunction or a crash - Golf prevents this by closing any such open files when the request ends. <br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Memory</span><br/>
-<a href='http://gliimly.github.io/memory-handling.html'>memory-handling</a> &nbsp; <br/>
+<a href='http://golf-lang.github.io/memory-handling.html'>memory-handling</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
-<a href='http://gliimly.github.io/documentation.html'>documentation</a><br/>
+<a href='http://golf-lang.github.io/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
-<!--GLIIMFOOT77--><span style='font-size:80%'><a href="http://gliimly.github.io/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="http://golf-lang.github.io/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
 </div><br/></body></html>
 
 

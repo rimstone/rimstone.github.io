@@ -202,7 +202,7 @@ pre a {
 }
 
 
-.gliimSnippet {display:none;}
+.golfSnippet {display:none;}
 
 ul {
   list-style-type:square;
@@ -226,14 +226,14 @@ function gg_copy(gt, eid, gc) {
 
 </script>
 
-<!--GLIIMMENU13-->
+<!--GOLFMENU13-->
 
-<!--GLIIMENDMENU13-->
+<!--GOLFENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Call remote</div><hr/><span style="font-weight:bold;">Purpose</span>: Make a remote service call.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://golf-lang.github.io' style='border-bottom:0px'><img src='http://golf-lang.github.io/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Call remote</div><hr/><span style="font-weight:bold;">Purpose</span>: Make a remote service call.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_199'>
@@ -241,11 +241,11 @@ function gg_copy(gt, eid, gc) {
      [<span class="Type"> status</span> &lt;status&gt; ]  \
      [<span class="Type"> started</span> &lt;started&gt; ] \
      [<span class="Type"> finished-okay</span> &lt;finished okay&gt; ]</pre>
-<span id=gliim_copied_199 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_199' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_199, code_199, gliim_copied_199)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_199 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_199' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_199, code_199, golf_copied_199)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-call-remote will make service call(s) as described in a single &lt;service&gt; or a list of &lt;service&gt;s. Unless only a single &lt;service&gt; is specified, each call will execute in parallel with others (as multiple threads). call-remote finishes when all &lt;service&gt; calls do. Each &lt;service&gt; must have beed created with <a href='http://gliimly.github.io/new-remote.html'>new-remote</a>.<br/>
+call-remote will make service call(s) as described in a single &lt;service&gt; or a list of &lt;service&gt;s. Unless only a single &lt;service&gt; is specified, each call will execute in parallel with others (as multiple threads). call-remote finishes when all &lt;service&gt; calls do. Each &lt;service&gt; must have beed created with <a href='http://golf-lang.github.io/new-remote.html'>new-remote</a>.<br/>
 <br/>
 A &lt;service&gt; call is made to a remote service. "Remote service" means a process accepting requests that is not the same process executing call-remote; it may be running on the same or a different computer, or it may be a different process started by the very same application. <br/>
 <br/>
@@ -260,18 +260,18 @@ There is no limit on how many &lt;service&gt;s you can call at the same time; it
 Note that GG_OKAY does not mean that the reply is considered a success in any logical sense; only that the request was made and a reply was received according to the service protocol. <br/>
 <br/>
 <span style="font-weight:bold;">- Request(s) status</span><br/>
-Note that the actual application status for each &lt;service&gt;, as well as data returned and any application errors can be obtained via "handler-status", "data" and "error" clauses of <a href='http://gliimly.github.io/read-remote.html'>read-remote</a> statement, respectively.<br/>
+Note that the actual application status for each &lt;service&gt;, as well as data returned and any application errors can be obtained via "handler-status", "data" and "error" clauses of <a href='http://golf-lang.github.io/read-remote.html'>read-remote</a> statement, respectively.<br/>
 <br/>
 <span style="font-weight:bold;">- Request(s) duration</span><br/>
-call-remote will wait for all &lt;service&gt; requests to finish. For that reason, it is a good idea to specify "timeout" clause in <a href='http://gliimly.github.io/new-remote.html'>new-remote</a> for each &lt;service&gt; used, in order to limit the time you would wait. Use <a href='http://gliimly.github.io/read-remote.html'>read-remote</a> to detect a timeout, in which case "handler-status" clause would produce GG_CLI_ERR_TIMEOUT.<br/>
+call-remote will wait for all &lt;service&gt; requests to finish. For that reason, it is a good idea to specify "timeout" clause in <a href='http://golf-lang.github.io/new-remote.html'>new-remote</a> for each &lt;service&gt; used, in order to limit the time you would wait. Use <a href='http://golf-lang.github.io/read-remote.html'>read-remote</a> to detect a timeout, in which case "handler-status" clause would produce GG_CLI_ERR_TIMEOUT.<br/>
 <br/>
 <span style="font-weight:bold;">- How many calls started and finished</span><br/>
 &lt;started&gt; (in "started" clause) will be the number of service calls that have started. &lt;finished okay&gt; (in "finished-okay" clause) is the number of calls that have finished with return value of GG_OKAY as described above. By using &lt;status&gt;, &lt;started&gt; and &lt;finished okay&gt; you may surmise whether the results of call-remote meet your expectations.<br/>
 <br/>
 <span style="font-weight:bold;">- Performance, security</span><br/>
-call-remote is faster than <a href='http://gliimly.github.io/call-web.html'>call-web</a> because it does not use HTTP protocol; rather it only uses small and binary protocol, which is extremenly fast, especially when using Unix sockets on the same machine (see <a href='http://gliimly.github.io/new-remote.html'>new-remote</a>). Note that the binary protocol does not have any inherent security built-in; that is part of the reason why it is fast. As such, it is very well suited for remote service calls on the same machine or between networked machines on a secure network. <br/>
+call-remote is faster than <a href='http://golf-lang.github.io/call-web.html'>call-web</a> because it does not use HTTP protocol; rather it only uses small and binary protocol, which is extremenly fast, especially when using Unix sockets on the same machine (see <a href='http://golf-lang.github.io/new-remote.html'>new-remote</a>). Note that the binary protocol does not have any inherent security built-in; that is part of the reason why it is fast. As such, it is very well suited for remote service calls on the same machine or between networked machines on a secure network. <br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
-This example will connect to local Unix socket file "/var/lib/gg/app_name/sock/sock" (a Gliimly application named "app_name"), and make a request named "server" (i.e. it will be processed by source code file "server.gliim") with URL path of "/op=add/key=2" (meaning with input parameters "op=add" and "key=2"). Then, service reply is read and displayed.<br/>
+This example will connect to local Unix socket file "/var/lib/gg/app_name/sock/sock" (a Golf application named "app_name"), and make a request named "server" (i.e. it will be processed by source code file "server.golf") with URL path of "/op=add/key=2" (meaning with input parameters "op=add" and "key=2"). Then, service reply is read and displayed.<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_200'>
  <span class="Comment">// Create single call</span>
@@ -284,35 +284,35 @@ This example will connect to local Unix socket file "/var/lib/gg/app_name/sock/s
 <span class="Statement"> read-remote</span> srv<span class="Type"> data</span> rdata
  <span class="Comment">// Display results</span>
 <span class="Statement"> @</span>Data from service is <span class="Statement">&lt;&lt;p-out</span> rdata<span class="Statement">&gt;&gt;</span></pre>
-<span id=gliim_copied_200 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_200' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_200, code_200, gliim_copied_200)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_200 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_200' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_200, code_200, golf_copied_200)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-If you are connecting to a service via TCP (and not with a Unix socket like in the example above), the "location" clause in <a href='http://gliimly.github.io/new-remote.html'>new-remote</a> might be:<br/>
+If you are connecting to a service via TCP (and not with a Unix socket like in the example above), the "location" clause in <a href='http://golf-lang.github.io/new-remote.html'>new-remote</a> might be:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_201'>
 <span class="Statement"> new-remote</span> srv<span class="Identifier"> location</span> <span class="Constant">&quot;192.168.0.28:2400&quot;</span> \
     <span class="Identifier"> method</span> <span class="Constant">&quot;GET&quot;</span><span class="Identifier"> app-path</span> <span class="Constant">&quot;/app_name&quot;</span><span class="Identifier"> request-path</span> <span class="Constant">&quot;/server&quot;</span> \
     <span class="Identifier"> url-params</span> <span class="Constant">&quot;/op=add/key=2&quot;</span></pre>
-<span id=gliim_copied_201 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_201' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_201, code_201, gliim_copied_201)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_201 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_201' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_201, code_201, golf_copied_201)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-In this case, you are connecting to another service (running on IP "192.168.0.28") on port 2400. See <a href='http://gliimly.github.io/mgrg.html'>mgrg</a> on how to start a service that listens on a TCP port. You would likely use TCP connectivity only if a service you're connecting to is on a different computer.<br/>
+In this case, you are connecting to another service (running on IP "192.168.0.28") on port 2400. See <a href='http://golf-lang.github.io/mgrg.html'>mgrg</a> on how to start a service that listens on a TCP port. You would likely use TCP connectivity only if a service you're connecting to is on a different computer.<br/>
 <br/>
-See also <a href='http://gliimly.github.io/new-remote.html'>new-remote</a>.<br/>
+See also <a href='http://golf-lang.github.io/new-remote.html'>new-remote</a>.<br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Distributed computing</span><br/>
-<a href='http://gliimly.github.io/call-remote.html'>call-remote</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/new-remote.html'>new-remote</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/read-remote.html'>read-remote</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/run-remote.html'>run-remote</a> &nbsp; <br/>
+<a href='http://golf-lang.github.io/call-remote.html'>call-remote</a> &nbsp;<br/>
+<a href='http://golf-lang.github.io/new-remote.html'>new-remote</a> &nbsp;<br/>
+<a href='http://golf-lang.github.io/read-remote.html'>read-remote</a> &nbsp;<br/>
+<a href='http://golf-lang.github.io/run-remote.html'>run-remote</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
-<a href='http://gliimly.github.io/documentation.html'>documentation</a><br/>
+<a href='http://golf-lang.github.io/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
-<!--GLIIMFOOT77--><span style='font-size:80%'><a href="http://gliimly.github.io/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="http://golf-lang.github.io/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
 </div><br/></body></html>
 
 

@@ -202,7 +202,7 @@ pre a {
 }
 
 
-.gliimSnippet {display:none;}
+.golfSnippet {display:none;}
 
 ul {
   list-style-type:square;
@@ -226,35 +226,35 @@ function gg_copy(gt, eid, gc) {
 
 </script>
 
-<!--GLIIMMENU13-->
+<!--GOLFMENU13-->
 
-<!--GLIIMENDMENU13-->
+<!--GOLFENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;New array</div><hr/><span style="font-weight:bold;">Purpose</span>: Create array.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://golf-lang.github.io' style='border-bottom:0px'><img src='http://golf-lang.github.io/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;New array</div><hr/><span style="font-weight:bold;">Purpose</span>: Create array.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_511'>
 <span class="Statement"> new-array</span> &lt;array&gt; \
      [<span class="Identifier"> process-scope</span> ] \
      [<span class="Identifier"> hash-size</span> &lt;hash size&gt; ]</pre>
-<span id=gliim_copied_511 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_511' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_511, code_511, gliim_copied_511)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_511 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_511' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_511, code_511, golf_copied_511)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 new-array creates new array named &lt;array&gt;. An array is a set of key/value pairs, called "elements". A value of an element is obtained based on its key value.<br/>
 <div class="vsub"><a id="Scope"></a>Scope</div>
-Note that an array is accessible to the current request only, unless "process-scope" clause is used, in which case all requests served by a process can use it (see <a href='http://gliimly.github.io/do-once.html'>do-once</a> for a typical way to create an array with a process scope). <br/>
+Note that an array is accessible to the current request only, unless "process-scope" clause is used, in which case all requests served by a process can use it (see <a href='http://golf-lang.github.io/do-once.html'>do-once</a> for a typical way to create an array with a process scope). <br/>
 <br/>
-If "process-scope" is used, then &lt;array&gt; will keep its data across all requests in a given process. See <a href='http://gliimly.github.io/write-array.html'>write-array</a> for an example of a process-scoped array.<br/>
+If "process-scope" is used, then &lt;array&gt; will keep its data across all requests in a given process. See <a href='http://golf-lang.github.io/write-array.html'>write-array</a> for an example of a process-scoped array.<br/>
 <div class="vsub"><a id="Sizing an array"></a>Sizing an array</div>
 An array can be of any size, as long as there is enough memory for it. The "hash-size" of an array refers to the size of a hash table used to provide high-performance access to array elements based on a key.<br/>
 <br/>
 &lt;hash size&gt; is the number of "buckets" used by the hash table underlying the array (it is 10 by default). All array elements with the same hash code are stored in a linked list within the same hash bucket. Greater &lt;hash size&gt; generally means less array elements per bucket and better performance. However, memory usage grows with a bigger hash table, so &lt;hash size&gt; should be balanced based on the program needs.<br/>
 <br/>
-Gliimly uses high-performing <a href='https://en.wikipedia.org/wiki/Fowler%E2%80%93Noll%E2%80%93Vo_hash_function'>FNV1_a</a> hash algorithm. Each element in a bucket list is lightweight, containing pointers to a key, value and next element in the linked list.<br/>
+Golf uses high-performing <a href='https://en.wikipedia.org/wiki/Fowler%E2%80%93Noll%E2%80%93Vo_hash_function'>FNV1_a</a> hash algorithm. Each element in a bucket list is lightweight, containing pointers to a key, value and next element in the linked list.<br/>
 <br/>
 &lt;hash size&gt; must be at least 10; if less, it will be set to 10.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
@@ -262,25 +262,25 @@ Create a new array with a hash table with 500 buckets:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_512'>
 <span class="Statement"> new-array</span> h<span class="Identifier"> hash-size</span> <span class="Constant">500</span></pre>
-<span id=gliim_copied_512 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_512' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_512, code_512, gliim_copied_512)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_512 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_512' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_512, code_512, golf_copied_512)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-See <a href='http://gliimly.github.io/read-array.html'>read-array</a> for more examples.<br/>
+See <a href='http://golf-lang.github.io/read-array.html'>read-array</a> for more examples.<br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Array</span><br/>
-<a href='http://gliimly.github.io/get-array.html'>get-array</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/new-array.html'>new-array</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/purge-array.html'>purge-array</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/read-array.html'>read-array</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/resize-array.html'>resize-array</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/write-array.html'>write-array</a> &nbsp; <br/>
+<a href='http://golf-lang.github.io/get-array.html'>get-array</a> &nbsp;<br/>
+<a href='http://golf-lang.github.io/new-array.html'>new-array</a> &nbsp;<br/>
+<a href='http://golf-lang.github.io/purge-array.html'>purge-array</a> &nbsp;<br/>
+<a href='http://golf-lang.github.io/read-array.html'>read-array</a> &nbsp;<br/>
+<a href='http://golf-lang.github.io/resize-array.html'>resize-array</a> &nbsp;<br/>
+<a href='http://golf-lang.github.io/write-array.html'>write-array</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
-<a href='http://gliimly.github.io/documentation.html'>documentation</a><br/>
+<a href='http://golf-lang.github.io/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
-<!--GLIIMFOOT77--><span style='font-size:80%'><a href="http://gliimly.github.io/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="http://golf-lang.github.io/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
 </div><br/></body></html>
 
 

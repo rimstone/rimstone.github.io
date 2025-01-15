@@ -202,7 +202,7 @@ pre a {
 }
 
 
-.gliimSnippet {display:none;}
+.golfSnippet {display:none;}
 
 ul {
   list-style-type:square;
@@ -226,85 +226,85 @@ function gg_copy(gt, eid, gc) {
 
 </script>
 
-<!--GLIIMMENU13-->
+<!--GOLFMENU13-->
 
-<!--GLIIMENDMENU13-->
+<!--GOLFENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Gg</div><hr/><span style="font-weight:bold;">Purpose</span>: Gliimly general purpose utility: build, test, run, miscellaneous (pronounced "gigi").<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://golf-lang.github.io' style='border-bottom:0px'><img src='http://golf-lang.github.io/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Gg</div><hr/><span style="font-weight:bold;">Purpose</span>: Golf general purpose utility: build, test, run, miscellaneous (pronounced "gigi").<br/>
 <br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_427'>
 gg <span class="Statement">&lt;</span>options<span class="Statement">&gt;</span></pre>
-<span id=gliim_copied_427 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_427' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_427, code_427, gliim_copied_427)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_427 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_427' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_427, code_427, golf_copied_427)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Command-line options"></a>Command-line options</div>
 <ul><li>-k &lt;app name&gt;<br/>
-Create Gliimly application &lt;app name&gt; with default settings (see <a href='http://gliimly.github.io/mgrg.html'>mgrg</a> with "-i" option on creating applications with non-default settings). The default settings mean that your application is owned by the currently-logged on Operating System user (see "-u" option in mgrg), and that a Unix socket connecting to your application server isn't restricted by any group (see "-r" option in mgrg). You must have sudo privilege to create an application (this is the only option that requires it). This option does nothing if the application already exists. You can combine this option with "-q" to create and then build an application in the same step.<br/>
+Create Golf application &lt;app name&gt; with default settings (see <a href='http://golf-lang.github.io/mgrg.html'>mgrg</a> with "-i" option on creating applications with non-default settings). The default settings mean that your application is owned by the currently-logged on Operating System user (see "-u" option in mgrg), and that a Unix socket connecting to your application server isn't restricted by any group (see "-r" option in mgrg). You must have sudo privilege to create an application (this is the only option that requires it). This option does nothing if the application already exists. You can combine this option with "-q" to create and then build an application in the same step.<br/>
 <br/>
-</li><li>-q Build Gliimly application from source code in the current directory. <a href='http://gliimly.github.io/mgrg.html'>mgrg</a> must run first in this directory with "-i" option to create the application. You must have at least one Gliimly source file (.gliim file), with each such file implementing a single <a href='http://gliimly.github.io/request.html'>request</a> handler. All application source files must be contained in a flat directory; however, each request handler can handle any hierarchical path, so your API can be fully hierarchical.<br/>
+</li><li>-q Build Golf application from source code in the current directory. <a href='http://golf-lang.github.io/mgrg.html'>mgrg</a> must run first in this directory with "-i" option to create the application. You must have at least one Golf source file (.golf file), with each such file implementing a single <a href='http://golf-lang.github.io/request.html'>request</a> handler. All application source files must be contained in a flat directory; however, each request handler can handle any hierarchical path, so your API can be fully hierarchical.<br/>
 <br/>
 The following options can be used when building an application:<br/>
 <br/>
 <ul><li>--db="&lt;database vendor&gt;:&lt;db config file&gt; ..."<br/>
-Specify a list of databases used in your application. Each element of the list is &lt;database vendor&gt; (which is 'mariadb', 'postgres' or 'sqlite'), followed by a colon (:) and then &lt;db config file&gt;, where &lt;db config file&gt; is used to refer to a database in <a href='http://gliimly.github.io/statements.html'>statements</a> such as <a href='http://gliimly.github.io/run-query.html'>run-query</a>. <br/>
+Specify a list of databases used in your application. Each element of the list is &lt;database vendor&gt; (which is 'mariadb', 'postgres' or 'sqlite'), followed by a colon (:) and then &lt;db config file&gt;, where &lt;db config file&gt; is used to refer to a database in <a href='http://golf-lang.github.io/statements.html'>statements</a> such as <a href='http://golf-lang.github.io/run-query.html'>run-query</a>. <br/>
 <br/>
-Each &lt;database vendor&gt;:&lt;db config file&gt; is separated by a space. You can list any number of databases for use in your application. A file in current directory with name &lt;db config file&gt; must exist and contain the connection parameters for database access, and is copied to Gliimly's database configuration directory (see <a href='http://gliimly.github.io/directories.html'>directories</a>). See <a href='http://gliimly.github.io/database-config-file.html'>database-config-file</a> for more details on the content of this file.<br/>
+Each &lt;database vendor&gt;:&lt;db config file&gt; is separated by a space. You can list any number of databases for use in your application. A file in current directory with name &lt;db config file&gt; must exist and contain the connection parameters for database access, and is copied to Golf's database configuration directory (see <a href='http://golf-lang.github.io/directories.html'>directories</a>). See <a href='http://golf-lang.github.io/database-config-file.html'>database-config-file</a> for more details on the content of this file.<br/>
 <br/>
 </li><li>--lflag=&lt;linker flags&gt;<br/>
-If you wish to add any additional linker flags (such as any non-Gliimly libraries), specify them quoted under this option. <br/>
+If you wish to add any additional linker flags (such as any non-Golf libraries), specify them quoted under this option. <br/>
 <br/>
 </li><li>--cflag=&lt;C flags&gt;<br/>
 If you wish to add any additional C compiler (gcc) flags, specify them quoted under this option. <br/>
 <br/>
 </li><li>--trace<br/>
-If specified, tracing information code will be generated (without it, tracing is not available and <a href='http://gliimly.github.io/trace-run.html'>trace-run</a> statement is ignored). Tracing only works when debugging mode is enabled, so --debug option must be used as well.<br/>
+If specified, tracing information code will be generated (without it, tracing is not available and <a href='http://golf-lang.github.io/trace-run.html'>trace-run</a> statement is ignored). Tracing only works when debugging mode is enabled, so --debug option must be used as well.<br/>
 <br/>
 </li><li>--path=&lt;application path&gt;<br/>
-This option lets you specify the <a href='http://gliimly.github.io/request.html'>application path</a> for your request URLs. It is a leading path of a URL prior to request name and any parameters. If empty, the default is the application name preceded by a forward slash:<br/>
+This option lets you specify the <a href='http://golf-lang.github.io/request.html'>application path</a> for your request URLs. It is a leading path of a URL prior to request name and any parameters. If empty, the default is the application name preceded by a forward slash:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
 <pre id='code_426'>
 /&lt;app name&gt;</pre>
-<span id=gliim_copied_426 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_426' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_426, code_426, gliim_copied_426)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_426 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_426' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_426, code_426, golf_copied_426)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li><li>--maxupload=&lt;max upload size&gt;<br/>
 Specify maximum upload size for a file (in bytes). The default is approximately 25MB. <br/>
 <br/>
 </li><li>--max-errors=&lt;max errors&gt;<br/>
-During building of an application, emit a maximum of &lt;max errors&gt; diagnostic messages per .gliim source file. The default is 5.<br/>
+During building of an application, emit a maximum of &lt;max errors&gt; diagnostic messages per .golf source file. The default is 5.<br/>
 <br/>
 </li><li>--debug<br/>
-Generate debugging information when compiling your application. Debugging information is required to produce a backtrace file with the stack that contains source code line numbers, in order to pinpoint the exact location where report-error statement was used, or where the application crashed. It is also needed to use gdb for debugging purposes. Note that stack information is produced only when Gliimly is built in debugging mode (see "DI=1" option when <a href='http://gliimly.github.io/install.html'>install</a>ing Gliimly).<br/>
+Generate debugging information when compiling your application. Debugging information is required to produce a backtrace file with the stack that contains source code line numbers, in order to pinpoint the exact location where report-error statement was used, or where the application crashed. It is also needed to use gdb for debugging purposes. Note that stack information is produced only when Golf is built in debugging mode (see "DI=1" option when <a href='http://golf-lang.github.io/install.html'>install</a>ing Golf).<br/>
 <br/>
 </li><li>--c-lines<br/>
-Skip generating line information when compiling .gliim files. By default line information is included, which allows errors to be reported with line numbers in .gliim files. If you want only generated C code line numbers to be used, use this option. This output will omit certain color-coded and other details that are normally present without this option.<br/>
+Skip generating line information when compiling .golf files. By default line information is included, which allows errors to be reported with line numbers in .golf files. If you want only generated C code line numbers to be used, use this option. This output will omit certain color-coded and other details that are normally present without this option.<br/>
 <br/>
 </li><li>--optimize-memory<br/>
 Use memory-optimizing garbage collection, which counts memory references and frees memory as soon as possible. Default is without memory optimization, which frees memory at the end of the request. Do not use this option unless your system is seriously starved for memory because it imposes a performance penatly.<br/>
 <br/>
 </li><li>--public<br/>
-Change the default behavior of request handler safety so that request handlers without "public" or "private" clause are by default "public"; see <a href='http://gliimly.github.io/begin-handler.html'>begin-handler</a> for more details.<br/>
+Change the default behavior of request handler safety so that request handlers without "public" or "private" clause are by default "public"; see <a href='http://golf-lang.github.io/begin-handler.html'>begin-handler</a> for more details.<br/>
 <br/>
 </li><li>--single-file<br/>
-A request handler is written in a source file whose path matches fully or partially that of the <a href='http://gliimly.github.io/request.html'>request</a>, and such a file can contain any number of request handlers that match, see <a href='http://gliimly.github.io/request.html'>request</a>. If, however "--single-file" is used, each request has to be in its own file whose path matches fully the request path, and no other request can be implemented in such file. For example, with "--single-file", request "/myreq" has to be in file "myreq.gliim" in the source directory, while request "/other/newreq" has to be in file "other/newreq.gliim" (meaning in file "newreq.gliim" in subdirectory "other" in the source directory).<br/>
+A request handler is written in a source file whose path matches fully or partially that of the <a href='http://golf-lang.github.io/request.html'>request</a>, and such a file can contain any number of request handlers that match, see <a href='http://golf-lang.github.io/request.html'>request</a>. If, however "--single-file" is used, each request has to be in its own file whose path matches fully the request path, and no other request can be implemented in such file. For example, with "--single-file", request "/myreq" has to be in file "myreq.golf" in the source directory, while request "/other/newreq" has to be in file "other/newreq.golf" (meaning in file "newreq.golf" in subdirectory "other" in the source directory).<br/>
 <br/>
 </li><li>--exclude-dir<br/>
-By default, all ".gliim" files (including in all subdirectories regardless of how many levels there may be), are picked up for compilation. If "--exclude-dir" is used, then you can specify any number of subdirectories, separated by commas, to be excluded. <br/>
+By default, all ".golf" files (including in all subdirectories regardless of how many levels there may be), are picked up for compilation. If "--exclude-dir" is used, then you can specify any number of subdirectories, separated by commas, to be excluded. <br/>
 <br/>
 </li><li>--parallel=&lt;threads&gt;<br/>
 Use &lt;threads&gt; number of threads to compile application. By default, the number of threads is equal to the number of CPUs (including virtual), allowing each CPU to compile one source files at a time; this is usually the fastest way. You can serialize compilation with "--parallel=1"; or you can set &lt;threads&gt; to any number between 1 and three time the number of CPUs in order to reach your performance and CPU utilization goals.<br/>
 <br/>
 </li><li>--posix-regex<br/>
-Use ERE (Extended Regular Expression) POSIX regex library built into Linux instead of default PCRE2, see <a href='http://gliimly.github.io/match-regex.html'>match-regex</a>. While the two are largely compatibile, you can use either one depending on your needs.<br/>
+Use ERE (Extended Regular Expression) POSIX regex library built into Linux instead of default PCRE2, see <a href='http://golf-lang.github.io/match-regex.html'>match-regex</a>. While the two are largely compatibile, you can use either one depending on your needs.<br/>
 <br/>
 </li><li>--plain-diag<br/>
-Do not use color-coded and more detailed Gliimly diagnostic output. While rare, you may need this option in cases when there may be a Gliimly or underlying compiler bug, or for some other reason.<br/>
+Do not use color-coded and more detailed Golf diagnostic output. While rare, you may need this option in cases when there may be a Golf or underlying compiler bug, or for some other reason.<br/>
 <br/>
 </li><li>-c,--clean <br/>
 Clean all object and other intermediate files, so that consequent application build is a full recompilation. Use it alone and prior to rebuilding the application.</li></ul>
@@ -312,25 +312,25 @@ Clean all object and other intermediate files, so that consequent application bu
 Note that when any gg compilation options change, the application is rebuilt (i.e. the change has the effect of "--clean").<br/>
 <br/>
 </li><li>-i<br/>
-Display both include and linking flags for an application that uses <a href='http://gliimly.github.io/Client-API.html'>Client-API</a> to connect to Gliimly <a href='http://gliimly.github.io/service.html'>service</a>. The flags are for C compiler (gcc). If "--include" option is used in addition, then only include flags are displayed. If "--link" option is used in addition, then only linking flags are displayed. Use this to automate building of client applications with tools like Makefile.<br/>
+Display both include and linking flags for an application that uses <a href='http://golf-lang.github.io/Client-API.html'>Client-API</a> to connect to Golf <a href='http://golf-lang.github.io/service.html'>service</a>. The flags are for C compiler (gcc). If "--include" option is used in addition, then only include flags are displayed. If "--link" option is used in addition, then only linking flags are displayed. Use this to automate building of client applications with tools like Makefile.<br/>
 <br/>
 </li><li>-v<br/>
-Display Gliimly version as well as the Operating System version. <br/>
+Display Golf version as well as the Operating System version. <br/>
 <br/>
 </li><li>-s<br/>
 Trace the execution of gg utility and display all the steps in making your application. <br/>
 <br/>
 </li><li>-e &lt;num of errors&gt;<br/>
-Show the last &lt;num of errors&gt; from the backtrace file, which receives error message and stack trace when program crashes or <a href='http://gliimly.github.io/report-error.html'>report-error</a> is issued. Also display the path to backtrace file which contains the stack details.<br/>
+Show the last &lt;num of errors&gt; from the backtrace file, which receives error message and stack trace when program crashes or <a href='http://golf-lang.github.io/report-error.html'>report-error</a> is issued. Also display the path to backtrace file which contains the stack details.<br/>
 <br/>
 </li><li>-t &lt;num of trace files&gt;<br/>
-Show the last &lt;num of trace files&gt; most recent trace files for the application. This is useful when tracing (see <a href='http://gliimly.github.io/trace-run.html'>trace-run</a>) to quickly find the trace files where Gliimly writes to. Also display the path to backtrace file which contains the stack details.<br/>
+Show the last &lt;num of trace files&gt; most recent trace files for the application. This is useful when tracing (see <a href='http://golf-lang.github.io/trace-run.html'>trace-run</a>) to quickly find the trace files where Golf writes to. Also display the path to backtrace file which contains the stack details.<br/>
 <br/>
 </li><li>-o<br/>
 Show documentation directory - web page documentation is located here in the form of a gliimdoc.html file.<br/>
 <br/>
 </li><li>-l<br/>
-Show library directory - Gliimly's libraries and v1 code processor are located there.<br/>
+Show library directory - Golf's libraries and v1 code processor are located there.<br/>
 <br/>
 </li><li>-r [ --req="/&lt;request name&gt;[&lt;url parameters&gt;]" <br/>
  &nbsp; &nbsp;[ --app="application path" ] <br/>
@@ -340,23 +340,23 @@ Show library directory - Gliimly's libraries and v1 code processor are located t
  &nbsp; &nbsp;[ --silent-header ] <br/>
  &nbsp; &nbsp;[ --arg="&lt;arguments&gt;" ] <br/>
  &nbsp; &nbsp;[ --exec ] <br/>
-Run a <a href='http://gliimly.github.io/command-line.html'>command-line</a> program, or make a <a href='http://gliimly.github.io/service.html'>service</a> request, or display bash code to do the same for use in scripts. <br/>
+Run a <a href='http://golf-lang.github.io/command-line.html'>command-line</a> program, or make a <a href='http://golf-lang.github.io/service.html'>service</a> request, or display bash code to do the same for use in scripts. <br/>
 <br/>
-If you are not in application's source code directory, then you must specify "--app" option to supply the application path (typically "/&lt;application name&gt;", see <a href='http://gliimly.github.io/request.html'>request</a>). You can use "--req" option to specify the request name and optional URL parameters (see <a href='http://gliimly.github.io/request.html'>request</a>), for example it may be:<br/>
+If you are not in application's source code directory, then you must specify "--app" option to supply the application path (typically "/&lt;application name&gt;", see <a href='http://golf-lang.github.io/request.html'>request</a>). You can use "--req" option to specify the request name and optional URL parameters (see <a href='http://golf-lang.github.io/request.html'>request</a>), for example it may be:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
 <pre id='code_428'>
 gg -r --req=&quot;/encrypt&quot; --exec</pre>
-<span id=gliim_copied_428 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_428' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_428, code_428, gliim_copied_428)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_428 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_428' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_428, code_428, golf_copied_428)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 to execute request "encrypt", or<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
 <pre id='code_430'>
 gg -r --req=&quot;/encrypt/data=somedata?method=aes256&quot; --exec</pre>
-<span id=gliim_copied_430 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_430' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_430, code_430, gliim_copied_430)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_430 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_430' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_430, code_430, golf_copied_430)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 where "/encrypt" is the request name, and "/data=somedata?method=aes256" represents the URL parameters. <br/>
 <br/>
@@ -364,15 +364,15 @@ Use --method to specify the HTTP request method, for instance:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
 <pre id='code_432'>
 gg -r --req=&quot;/encrypt/data=somedata?method=aes256&quot; --method=POST --exec</pre>
-<span id=gliim_copied_432 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_432' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_432, code_432, gliim_copied_432)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_432 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_432' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_432, code_432, golf_copied_432)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 If not specified, the default method is "GET". <br/>
 <br/>
-If "--service" is not used, then <a href='http://gliimly.github.io/command-line.html'>command-line</a> program will execute and you can specify program arguments with "--arg" option, in which case "&lt;arguments&gt;" is a string (double or single quoted) that contains any number of program arguments. To specify arguments for a service see "-a" option in <a href='http://gliimly.github.io/mgrg.html'>mgrg</a>.<br/>
+If "--service" is not used, then <a href='http://golf-lang.github.io/command-line.html'>command-line</a> program will execute and you can specify program arguments with "--arg" option, in which case "&lt;arguments&gt;" is a string (double or single quoted) that contains any number of program arguments. To specify arguments for a service see "-a" option in <a href='http://golf-lang.github.io/mgrg.html'>mgrg</a>.<br/>
 <br/>
-If "--service" is used, then application server will be contacted to execute a service; in this case if "--remote" is not specified, a local Unix socket is used to contact the server; otherwise "server:port" specified in "--remote" is the IP/name and port of the server to call, separated by a colon (":"). In case of a local Unix socket, the socket path is by default "/var/lib/gg/&lt;app name&gt;/sock/sock", where "/&lt;app name&gt;" is given by the last path segment in "--app" option, or if not specified it is derived from the name of a Gliimly application built in the current directory; otherwise the socket path is given by "--socket" option.<br/>
+If "--service" is used, then application server will be contacted to execute a service; in this case if "--remote" is not specified, a local Unix socket is used to contact the server; otherwise "server:port" specified in "--remote" is the IP/name and port of the server to call, separated by a colon (":"). In case of a local Unix socket, the socket path is by default "/var/lib/gg/&lt;app name&gt;/sock/sock", where "/&lt;app name&gt;" is given by the last path segment in "--app" option, or if not specified it is derived from the name of a Golf application built in the current directory; otherwise the socket path is given by "--socket" option.<br/>
 <br/>
 By default, the output in any case will have the HTTP headers. If you don't want those to appear, use "--silent-header" option.<br/>
 <br/>
@@ -380,11 +380,11 @@ If "--content" is used, then file &lt;input file&gt; is either piped to the stan
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_429'>
 gg <span class="Special">-r</span> <span class="Special">-app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/my_app</span><span class="Statement">&quot;</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/some_request?par1=val1&amp;par2=20&amp;par3=4</span><span class="Statement">&quot;</span> <span class="Special">--method</span><span class="Statement">=</span>PATCH <span class="Special">--content</span><span class="Statement">=</span>something.json <span class="Special">--content-type</span><span class="Statement">=</span>application/json <span class="Special">--exec</span></pre>
-<span id=gliim_copied_429 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_429' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_429, code_429, gliim_copied_429)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_429 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_429' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_429, code_429, golf_copied_429)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Examples of using "-r" option to execute <a href='http://gliimly.github.io/command-line.html'>command-line</a> program or to call a <a href='http://gliimly.github.io/service.html'>service</a>:<br/>
+Examples of using "-r" option to execute <a href='http://golf-lang.github.io/command-line.html'>command-line</a> program or to call a <a href='http://golf-lang.github.io/service.html'>service</a>:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_431'>
 <span class="Comment">#Execute current application as a command-line program, request &quot;json&quot;</span>
@@ -400,9 +400,9 @@ gg <span class="Special">-r</span> <span class="Special">--req</span><span class
 <span class="Comment">#Execute application &quot;app_name&quot;, service &quot;json&quot; by calling the application server running with a TCP socket on port 2301</span>
 <span class="Comment">#Request has input parameter &quot;act&quot; with value &quot;perf&quot;</span>
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/json/act=perf</span><span class="Statement">&quot;</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/app_name</span><span class="Statement">&quot;</span> <span class="Special">--service</span> <span class="Special">--remote</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">192.168.0.21:2301</span><span class="Statement">&quot;</span>  <span class="Special">--exec</span></pre>
-<span id=gliim_copied_431 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_431' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_431, code_431, gliim_copied_431)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_431 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_431' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_431, code_431, golf_copied_431)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <span style="font-weight:bold;">- Performance</span><br/>
 "gg -r" can be used both for testing and in production, however for maximum performance, skip "--exec" option to display direct bash code that you can copy and paste to use in production. This direct code is about 300% faster than using "gg -r"; keep this in mind if performance of using "gg -r" is important. When "--exec" is not used, the output may look like this:<br/>
@@ -417,11 +417,11 @@ gg <span class="Special">-r</span> <span class="Special">--req</span><span class
 <span class="Statement">export</span> <span class="Identifier">PATH_INFO</span>=<span class="Statement">&quot;</span><span class="Constant">/encrypt/data/somedata</span><span class="Statement">&quot;</span>
 <span class="Statement">export</span> <span class="Identifier">QUERY_STRING</span>=<span class="Statement">&quot;</span><span class="Constant">method=aes256</span><span class="Statement">&quot;</span>
 /var/lib/gg/bld/enc/enc</pre>
-<span id=gliim_copied_433 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_433' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_433, code_433, gliim_copied_433)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_433 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_433' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_433, code_433, golf_copied_433)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-If you copy the above and paste into bash shell, it will execute the command line program which handles the request specified (which gg would do when "--exec" is specified, but not as fast). Note that SCRIPT_NAME will be set to whatever application path you use (i.e. the default or if set with "--path" option when making the application; or with "--app" option here), see <a href='http://gliimly.github.io/request.html'>request</a>. <br/>
+If you copy the above and paste into bash shell, it will execute the command line program which handles the request specified (which gg would do when "--exec" is specified, but not as fast). Note that SCRIPT_NAME will be set to whatever application path you use (i.e. the default or if set with "--path" option when making the application; or with "--app" option here), see <a href='http://golf-lang.github.io/request.html'>request</a>. <br/>
 <br/>
 If you need to have run-time parameter(s) to "gg -r", escape them when displaying the direct bash code and run with "eval", for instance:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
@@ -434,16 +434,16 @@ If you need to have run-time parameter(s) to "gg -r", escape them when displayin
     ...
     <span class="Statement">echo</span><span class="Constant"> </span><span class="Statement">&quot;</span><span class="Constant">Result is </span><span class="PreProc">$RES</span><span class="Statement">&quot;</span>
 <span class="Statement">done</span></pre>
-<span id=gliim_copied_434 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_434' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_434, code_434, gliim_copied_434)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_434 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_434' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_434, code_434, golf_copied_434)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In this example, the code with "$i" variable is created, and then evaluated in a bash loop of 1000 iterations, with each execution of your service using dynamic run-time input parameter "$i", but without executing "gg -r" 1000 times.<br/>
 </li><li>-u <br/>
 Read stdin (standard input) and substitute any environment variables in the form of ${&lt;var name&gt;} with their values, and output to stdout (stdout). This is useful in processing configuration files that do not have parameter values hardcoded, but rather take them from the environment.<br/>
 <br/>
 </li><li>-m<br/>
-Add Gliimly syntax and keyword highlighting rules for files with .gliim extension to Vim editor for the currently logged on user. Note that you must have Vim installed; vi alone will not work.<br/>
+Add Golf syntax and keyword highlighting rules for files with .golf extension to Vim editor for the currently logged on user. Note that you must have Vim installed; vi alone will not work.<br/>
 <br/>
 </li><li>-h<br/>
 Display help. </li></ul>
@@ -452,36 +452,36 @@ Display help. </li></ul>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_435'>
 gg <span class="Special">-q</span> <span class="Special">--db</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">mariadb:mdb postgres:pdb sqlite:sdb</span><span class="Statement">&quot;</span> <span class="Special">--debug</span> <span class="Special">--trace</span></pre>
-<span id=gliim_copied_435 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_435' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_435, code_435, gliim_copied_435)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_435 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_435' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_435, code_435, golf_copied_435)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li><li>make application, use MariaDB database db (--db), specify linker and C compilation flags, specify maximum upload size of about 18M:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_436'>
 gg <span class="Special">-q</span> <span class="Special">--db</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">mariadb:db</span><span class="Statement">&quot;</span> <span class="Special">--lflag</span> <span class="Statement">&quot;</span><span class="Constant">-Wl,-z,defs</span><span class="Statement">&quot;</span> <span class="Special">--cflag</span> <span class="Statement">&quot;</span><span class="Constant">-DXYZ123</span><span class="Statement">&quot;</span> <span class="Special">--maxupload</span> <span class="Constant">18000000</span></pre>
-<span id=gliim_copied_436 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_436' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_436, code_436, gliim_copied_436)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_436 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_436' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_436, code_436, golf_copied_436)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li><li>Make application that doesn't use any databases:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_437'>
 gg <span class="Special">-q</span></pre>
-<span id=gliim_copied_437 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_437' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_437, code_437, gliim_copied_437)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_437 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_437' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_437, code_437, golf_copied_437)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li></ul>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
- <span style="font-weight:bold;">Gliimly compiler and utility</span><br/>
-<a href='http://gliimly.github.io/gg.html'>gg</a> &nbsp; <br/>
+ <span style="font-weight:bold;">Golf compiler and utility</span><br/>
+<a href='http://golf-lang.github.io/gg.html'>gg</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
-<a href='http://gliimly.github.io/documentation.html'>documentation</a><br/>
+<a href='http://golf-lang.github.io/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
-<!--GLIIMFOOT77--><span style='font-size:80%'><a href="http://gliimly.github.io/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="http://golf-lang.github.io/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
 </div><br/></body></html>
 
 

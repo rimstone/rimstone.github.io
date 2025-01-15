@@ -202,7 +202,7 @@ pre a {
 }
 
 
-.gliimSnippet {display:none;}
+.golfSnippet {display:none;}
 
 ul {
   list-style-type:square;
@@ -226,14 +226,14 @@ function gg_copy(gt, eid, gc) {
 
 </script>
 
-<!--GLIIMMENU13-->
+<!--GOLFMENU13-->
 
-<!--GLIIMENDMENU13-->
+<!--GOLFENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Write array</div><hr/><span style="font-weight:bold;">Purpose</span>: Store key/value pair into an array.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://golf-lang.github.io' style='border-bottom:0px'><img src='http://golf-lang.github.io/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Write array</div><hr/><span style="font-weight:bold;">Purpose</span>: Store key/value pair into an array.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_765'>
@@ -242,11 +242,11 @@ function gg_copy(gt, eid, gc) {
     <span class="Identifier"> value</span> &lt;value&gt; \
      [<span class="Type"> status</span> &lt;status&gt; ] \
      [<span class="Type"> old-value</span> &lt;old value&gt; ]</pre>
-<span id=gliim_copied_765 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_765' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_765, code_765, gliim_copied_765)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_765 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_765' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_765, code_765, golf_copied_765)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-write-array will store string &lt;key&gt; (in "key" clause) and &lt;value&gt; (in "value" clause) into array &lt;array&gt;, which must be created with <a href='http://gliimly.github.io/new-array.html'>new-array</a>. <br/>
+write-array will store string &lt;key&gt; (in "key" clause) and &lt;value&gt; (in "value" clause) into array &lt;array&gt;, which must be created with <a href='http://golf-lang.github.io/new-array.html'>new-array</a>. <br/>
 <br/>
 &lt;key&gt; and &lt;value&gt; are collectively called an "element". <br/>
 <br/>
@@ -254,16 +254,16 @@ If &lt;key&gt; already exists in the array table, then the old value associated 
 <br/>
 If &lt;key&gt; did not exist, &lt;status&gt; will be GG_OKAY and &lt;old value&gt; is unchanged.<br/>
 <br/>
-If an &lt;array&gt; was created with "process-scope" clause (see <a href='http://gliimly.github.io/new-array.html'>new-array</a>), then the element (including &lt;key&gt; and &lt;value&gt;) will not be freed when the current request ends, rather it will persist while the process runs, unless deleted (see <a href='http://gliimly.github.io/read-array.html'>read-array</a> with delete clause).<br/>
+If an &lt;array&gt; was created with "process-scope" clause (see <a href='http://golf-lang.github.io/new-array.html'>new-array</a>), then the element (including &lt;key&gt; and &lt;value&gt;) will not be freed when the current request ends, rather it will persist while the process runs, unless deleted (see <a href='http://golf-lang.github.io/read-array.html'>read-array</a> with delete clause).<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Writing data to array:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_767'>
 <span class="Statement"> new-array</span> h
 <span class="Statement"> write-array</span> h<span class="Identifier"> key</span> <span class="Constant">&quot;mykey&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;some data&quot;</span></pre>
-<span id=gliim_copied_767 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_767' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_767, code_767, gliim_copied_767)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_767 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_767' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_767, code_767, golf_copied_767)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Writing new value with the same key and obtaining the previous value (which is "some data"):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
@@ -272,9 +272,9 @@ Writing new value with the same key and obtaining the previous value (which is "
 <span class="Statement"> if-true</span> st<span class="Identifier"> equal</span> GG_INFO_EXIST
 <span class="Statement">     @</span>Previous value for this key is <span class="Statement">&lt;&lt;p-out</span> od<span class="Statement">&gt;&gt;</span>
 <span class="Statement"> end-if</span></pre>
-<span id=gliim_copied_769 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_769' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_769, code_769, gliim_copied_769)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_769 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_769' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_769, code_769, golf_copied_769)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The following is an array key/value service, where a process-scoped array is created. It provides inserting, deleting and querying key/value pairs. Such a service process can run indefinitely:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
@@ -313,9 +313,9 @@ The following is an array key/value service, where a process-scoped array is cre
 <span class="Statement">         end-if</span>
 <span class="Statement">     end-if</span>
 <span class="Statement"> %%</span></pre>
-<span id=gliim_copied_770 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_770' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_770, code_770, gliim_copied_770)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_770 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_770' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_770, code_770, golf_copied_770)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Create and make the application, then run it as service:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
@@ -326,11 +326,11 @@ sudo mgrg <span class="Special">-i</span> <span class="Special">-u</span> <span 
 gg <span class="Special">-q</span>
 // Start application <span class="PreProc">(</span><span class="Special">single process key service</span><span class="PreProc">)</span>
 mgrg <span class="Special">-w</span> <span class="Constant">1</span> arr</pre>
-<span id=gliim_copied_766 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_766' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_766, code_766, gliim_copied_766)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_766 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_766' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_766, code_766, golf_copied_766)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Try it from a command line client (see <a href='http://gliimly.github.io/gg.html'>gg</a>):<br/>
+Try it from a command line client (see <a href='http://golf-lang.github.io/gg.html'>gg</a>):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_768'>
 // Add data
@@ -339,25 +339,25 @@ gg <span class="Special">-r</span> <span class="Special">--req</span><span class
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/arraysrv/op=query/key=15</span><span class="Statement">&quot;</span> <span class="Special">--service</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/arr</span><span class="Statement">&quot;</span> <span class="Special">--exec</span>
 // Delete data
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/arraysrv/op=delete/key=15</span><span class="Statement">&quot;</span> <span class="Special">--service</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/arr</span><span class="Statement">&quot;</span> <span class="Special">--exec</span></pre>
-<span id=gliim_copied_768 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_768' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_768, code_768, gliim_copied_768)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_768 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_768' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_768, code_768, golf_copied_768)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-See <a href='http://gliimly.github.io/read-array.html'>read-array</a> for more examples.<br/>
+See <a href='http://golf-lang.github.io/read-array.html'>read-array</a> for more examples.<br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Array</span><br/>
-<a href='http://gliimly.github.io/get-array.html'>get-array</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/new-array.html'>new-array</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/purge-array.html'>purge-array</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/read-array.html'>read-array</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/resize-array.html'>resize-array</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/write-array.html'>write-array</a> &nbsp; <br/>
+<a href='http://golf-lang.github.io/get-array.html'>get-array</a> &nbsp;<br/>
+<a href='http://golf-lang.github.io/new-array.html'>new-array</a> &nbsp;<br/>
+<a href='http://golf-lang.github.io/purge-array.html'>purge-array</a> &nbsp;<br/>
+<a href='http://golf-lang.github.io/read-array.html'>read-array</a> &nbsp;<br/>
+<a href='http://golf-lang.github.io/resize-array.html'>resize-array</a> &nbsp;<br/>
+<a href='http://golf-lang.github.io/write-array.html'>write-array</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
-<a href='http://gliimly.github.io/documentation.html'>documentation</a><br/>
+<a href='http://golf-lang.github.io/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
-<!--GLIIMFOOT77--><span style='font-size:80%'><a href="http://gliimly.github.io/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="http://golf-lang.github.io/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
 </div><br/></body></html>
 
 
