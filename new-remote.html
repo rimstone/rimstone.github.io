@@ -236,7 +236,7 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://golf-lang.github.io' style='border-bottom:0px'><img src='http://golf-lang.github.io/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;New remote</div><hr/><span style="font-weight:bold;">Purpose</span>: Create resources for a service call.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_523'>
+<pre id='code_521'>
 <span class="Statement"> new-remote</span> &lt;service&gt; \
      (<span class="Identifier"> local</span> &lt;app name&gt; ) | (<span class="Identifier"> location</span> &lt;location&gt; ) \
     <span class="Identifier"> url-path</span> &lt;service URL&gt; |
@@ -251,9 +251,9 @@ function gg_copy(gt, eid, gc) {
      [<span class="Identifier"> method</span> &lt;request method&gt; ] \
      [<span class="Identifier"> environment</span> &lt;name&gt;=&lt;value&gt; [<span class="Statement"> ,</span> ... ] ] \
      [<span class="Identifier"> timeout</span> &lt;timeout&gt; ]</pre>
-<span id=golf_copied_523 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_523' style='position: absolute;left: -500%;'></textarea>
-<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_523, code_523, golf_copied_523)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_521 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_521' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_521, code_521, golf_copied_521)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 new-remote will create resources needed for a service call (see <a href='http://golf-lang.github.io/call-remote.html'>call-remote</a>); these resources are contained in variable &lt;service&gt;.<br/>
 <div class="vsub"><a id="Local or location"></a>Local or location</div>
@@ -287,10 +287,10 @@ A full URL path of a service request (for "srv1" for example), would be "/app/ma
 <br/>
 Copy this to "manage_keys.golf" source file:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_526'>
+<pre id='code_524'>
 <span class="Statement"> %%</span> /manage-keys<span class="Identifier"> public</span>
 <span class="Statement">    do-once</span>
-<span class="Statement">    new-array</span> h<span class="Identifier"> hash-size</span> <span class="Constant">1024</span><span class="Identifier"> process-scope</span>
+<span class="Statement">    new-set</span> h<span class="Identifier"> hash-size</span> <span class="Constant">1024</span><span class="Identifier"> process-scope</span>
 <span class="Statement">    end-do-once</span>
 
     <span class="Comment">// Get input parameters</span>
@@ -299,10 +299,10 @@ Copy this to "manage_keys.golf" source file:<br/>
 <span class="Statement">    get-param</span> data
 
 <span class="Statement">    if-true</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;add&quot;</span> <span class="Comment">// Add data to hash,</span>
-<span class="Statement">        write-array</span> h<span class="Identifier"> key</span> (key)<span class="Identifier"> value</span> data<span class="Type"> status</span> st
+<span class="Statement">        write-set</span> h<span class="Identifier"> key</span> (key)<span class="Identifier"> value</span> data<span class="Type"> status</span> st
 <span class="Statement">        @</span>Added [<span class="Statement">&lt;&lt;p-out</span> key<span class="Statement">&gt;&gt;</span>]
 <span class="Statement">    else-if</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;delete&quot;</span> <span class="Comment">// Delete data and obtain the value deleted</span>
-<span class="Statement">        read-array</span> h<span class="Type"> key</span> (key)<span class="Type"> value</span> val \
+<span class="Statement">        read-set</span> h<span class="Type"> key</span> (key)<span class="Type"> value</span> val \
            <span class="Identifier"> delete</span> \
            <span class="Type"> status</span> st
 <span class="Statement">        if-true</span> st<span class="Identifier"> equal</span> GG_ERR_EXIST
@@ -313,7 +313,7 @@ Copy this to "manage_keys.golf" source file:<br/>
 <span class="Statement">            delete-string</span> val
 <span class="Statement">        end-if</span>
 <span class="Statement">    else-if</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;query&quot;</span> <span class="Comment">// Query hash based on key value</span>
-<span class="Statement">        read-array</span> h<span class="Type"> key</span> (key)<span class="Type"> value</span> val<span class="Type"> status</span> st
+<span class="Statement">        read-set</span> h<span class="Type"> key</span> (key)<span class="Type"> value</span> val<span class="Type"> status</span> st
 <span class="Statement">        if-true</span> st<span class="Identifier"> equal</span> GG_ERR_EXIST
 <span class="Statement">            @</span>Not found, queried [<span class="Statement">&lt;&lt;p-out</span> key<span class="Statement">&gt;&gt;</span>]
 <span class="Statement">        else-if</span>
@@ -321,15 +321,15 @@ Copy this to "manage_keys.golf" source file:<br/>
 <span class="Statement">        end-if</span>
 <span class="Statement">    end-if</span>
 <span class="Statement"> %%</span></pre>
-<span id=golf_copied_526 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_526' style='position: absolute;left: -500%;'></textarea>
-<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_526, code_526, golf_copied_526)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_524 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_524' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_524, code_524, golf_copied_524)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Then <a href='http://golf-lang.github.io/call-remote.html'>call-remote</a> will make three service calls to the above request handler in parallel (i.e. as threads executing at the same time). You can examine if everything went okay, how many threads have started, and how many finished with a reply from the service (this means any kind of reply, even if an error). Finally, the output from each call is displayed (that's "data" clause in <a href='http://golf-lang.github.io/read-remote.html'>read-remote</a> statement at the end).<br/>
 <br/>
 Create file "srv.golf" and copy to it this code:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_528'>
+<pre id='code_526'>
 <span class="Statement"> begin-handler</span> /srv<span class="Identifier"> public</span>
   <span class="Comment">// Create resources (prepare) for 3 service calls</span>
   <span class="Comment">// We pass environment variable GG_SILENT_HEADER to these calls</span>
@@ -367,44 +367,44 @@ Create file "srv.golf" and copy to it this code:<br/>
 <span class="Statement">  p-out</span> rdata3
 <span class="Statement">  @</span>
 <span class="Statement"> end-handler</span></pre>
-<span id=golf_copied_528 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_528' style='position: absolute;left: -500%;'></textarea>
-<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_528, code_528, golf_copied_528)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_526 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_526' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_526, code_526, golf_copied_526)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Create the application:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_525'>
+<pre id='code_523'>
 sudo mgrg <span class="Special">-i</span> <span class="Special">-u</span> <span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span> app</pre>
+<span id=golf_copied_523 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_523' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_523, code_523, golf_copied_523)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Make it:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_525'>
+gg <span class="Special">-q</span></pre>
 <span id=golf_copied_525 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_525' style='position: absolute;left: -500%;'></textarea>
 <img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_525, code_525, golf_copied_525)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Make it:<br/>
+Run it:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_527'>
-gg <span class="Special">-q</span></pre>
+mgrg <span class="Special">-w</span> <span class="Constant">1</span> app</pre>
 <span id=golf_copied_527 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_527' style='position: absolute;left: -500%;'></textarea>
 <img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_527, code_527, golf_copied_527)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Run it:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_529'>
-mgrg <span class="Special">-w</span> <span class="Constant">1</span> app</pre>
-<span id=golf_copied_529 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_529' style='position: absolute;left: -500%;'></textarea>
-<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_529, code_529, golf_copied_529)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-<div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_530'>
+<pre id='code_528'>
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/srv</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--silent-header</span></pre>
-<span id=golf_copied_530 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_530' style='position: absolute;left: -500%;'></textarea>
-<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_530, code_530, golf_copied_530)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_528 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_528' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_528, code_528, golf_copied_528)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 And the result is (assuming you have started hash example above):<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_524'>
+<pre id='code_522'>
 No errors from call-remote
 All three service calls started.
 All three service calls finished.
@@ -413,9 +413,9 @@ Added [key1]
 Added [key2]
 
 Added [key3]</pre>
-<span id=golf_copied_524 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_524' style='position: absolute;left: -500%;'></textarea>
-<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_524, code_524, golf_copied_524)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_522 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_522' style='position: absolute;left: -500%;'></textarea>
+<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_522, code_522, golf_copied_522)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Distributed computing</span><br/>

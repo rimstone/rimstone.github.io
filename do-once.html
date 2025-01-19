@@ -253,14 +253,14 @@ Typical use of do-once may be making any calls that need to be performed only on
 <br/>
 &lt;any statements&gt; execute in the nested scope relative to the code surrounding do-once/end-do-once, except that any process-scoped variables are created in the same scope as the code surrounding do-once/end-do-once; this simplifies creation of process-scoped variables, if needed.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
-In this example, a process-scoped array (that is available to multiple requests of a single process) is created in the very first request a process serves and data is written to it; the subsequent requests do not create a new array but rather just write to it.<br/>
+In this example, a process-scoped set (that is available to multiple requests of a single process) is created in the very first request a process serves and data is written to it; the subsequent requests do not create a new set but rather just write to it.<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_349'>
 <span class="Statement"> .</span>..
 <span class="Statement">  do-once</span>
-<span class="Statement">     new-array</span> my_array<span class="Identifier"> hash-size</span> <span class="Constant">1024</span><span class="Identifier"> process-scope</span>
+<span class="Statement">     new-set</span> my_set<span class="Identifier"> hash-size</span> <span class="Constant">1024</span><span class="Identifier"> process-scope</span>
 <span class="Statement">  end-do-once</span>
-<span class="Statement">  write-array</span> my_array<span class="Identifier"> key</span> my_key<span class="Identifier"> value</span> my_data
+<span class="Statement">  write-set</span> my_set<span class="Identifier"> key</span> my_key<span class="Identifier"> value</span> my_data
 <span class="Statement">  .</span>..</pre>
 <span id=golf_copied_349 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_349' style='position: absolute;left: -500%;'></textarea>

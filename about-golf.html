@@ -265,7 +265,7 @@ Golf services and command-line programs can implement most back-end application 
 <div class="vsub"><a id="Language"></a>Language</div>
 Golf programming language is memory-safe, meaning it will prevent you from accidentally overwriting memory or freeing it when it shouldn't be. Golf's <a href='http://golf-lang.github.io/memory-handling.html'>memory-handling</a> is not limited to just memory safety; it also includes automatic freeing of memory at the end of a request, preventing memory leaks which can be fatal to long running processes. Similarly, files open with file-handling statements are automatically closed at the end of each request, serving the same purpose. <br/>
 <div class="vsub"><a id="Types"></a>Types</div>
-Golf is a strongly-typed language, with only three primitive types (numbers, strings and booleans) and a number of structured types (message, split-string, array, index, index-cursor, fifo, lifo, list, file and service). Golf is a declarative language, with a few lines of code implementing large functionalities. Golf is also very simple - it's near expression-free! That's because it's designed to achieve application goals with less coding.<br/>
+Golf is a strongly-typed language, with only three primitive types (numbers, strings and booleans) and a number of structured types (message, split-string, set, index, index-cursor, fifo, lifo, list, file and service). Golf is a declarative language, with a few lines of code implementing large functionalities. Golf is also very simple - it's near expression-free! That's because it's designed to achieve application goals with less coding.<br/>
 <br/>
 The number type is a signed 64-bit integer. The boolean type evaluates to true (non-zero) or false (zero). The string type evaluates to any sequence of bytes (binary or text) that is always trailed with a null character regardless, which is not counted in string's length. All constants follow C rules of formatting.<br/>
 <div class="vsub"><a id="Statements"></a>Statements</div>
@@ -273,7 +273,7 @@ Golf <a href='http://golf-lang.github.io/statements.html'>statements</a> are des
 <div class="vsub"><a id="Variables, scope"></a>Variables, scope</div>
 A variable is created the first time it's encountered in any given scope, and is never created again in the same or inner scopes, which avoids common bugs involving more than one variable with the same name in related scopes. You can still of course create variables with the same name in unrelated scopes. <br/>
 <br/>
-Some structured types (array, index, list) as well as primitive types (numbers, strings and booleans) can be created with process-scope, meaning their value persists throughout any requests served by the same process. This is useful for making services that allow keeping and fast quering of data (such as caches).<br/>
+Some structured types (set, index, list) as well as primitive types (numbers, strings and booleans) can be created with process-scope, meaning their value persists throughout any requests served by the same process. This is useful for making services that allow keeping and fast quering of data (such as caches).<br/>
 <br/>
 Numbers and booleans are assigned by value, while strings are assigned by reference (for obvious reason to avoid unnecessary copying).<br/>
 <div class="vsub"><a id="Infrastructure"></a>Infrastructure</div>

@@ -241,7 +241,7 @@ Memory allocated by Golf statements is tracked and freed at the end of the reque
 <br/>
 With Golf there is no need to free memory manually. Memory is automatically freed even if it is no longer accessible to the program, thus preventing memory leaks; this is important for stability of long-running processes. <br/>
 <br/>
-Some statements (<a href='http://golf-lang.github.io/new-index.html'>new-index</a>, <a href='http://golf-lang.github.io/new-array.html'>new-array</a>, <a href='http://golf-lang.github.io/new-list.html'>new-list</a> and <a href='http://golf-lang.github.io/set-string.html'>set-string</a>) have the option of allocating memory that won't get freed at the end of the request and is available to any request served by the same process. This kind of memory is called "process-scoped". A process-scoped string can be manually freed.<br/>
+Some statements (<a href='http://golf-lang.github.io/new-index.html'>new-index</a>, <a href='http://golf-lang.github.io/new-set.html'>new-set</a>, <a href='http://golf-lang.github.io/new-list.html'>new-list</a> and <a href='http://golf-lang.github.io/set-string.html'>set-string</a>) have the option of allocating memory that won't get freed at the end of the request and is available to any request served by the same process. This kind of memory is called "process-scoped". A process-scoped string can be manually freed.<br/>
 <br/>
 Golf handles memory references and assignments automatically, preventing dangling memory.<br/>
 <br/>
