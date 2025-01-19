@@ -492,7 +492,11 @@ Hello World!</pre>
 <span style="font-weight:bold;">See all</span> <br/>
 <a href='/documentation.html'>documentation</a><br/>
 <a id='about-golf.html'></a>
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://golf-lang.github.io' style='border-bottom:0px'><img src='http://golf-lang.github.io/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;About golf</div><hr/><div class="vsub"><a id="Modeling language"></a>Modeling language</div>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://golf-lang.github.io' style='border-bottom:0px'><img src='http://golf-lang.github.io/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;About golf</div><hr/><div class="vsub"><a id="What is it"></a>What is it</div>
+Golf is a language, tools and application server for building and deploying web services and back-end solutions for any business. Its purpose is rapid and easy development of low-maintenance, memory-safe and high-performance business applications. It's about much less coding and much higher readability of code.<br/>
+<br/>
+Golf is built with industry-standard Free Open Source libraries, extensible, and licensed under <a href='/license.html'>Apache 2</a> Free Open Source.<br/>
+<div class="vsub"><a id="Modeling language"></a>Modeling language</div>
 Golf is a very high-level modeling language. It's about solving problems by modeling the solution and connecting the components to create high-performance, low-footprint executables; and not about managing memory, manipulating bits and bytes or writing complex code.<br/>
 <div class="vsub"><a id="Syntax matters: expressionless"></a>Syntax matters: expressionless</div>
 Syntax of a language matters, not just for writing code now, but for someone else reading it years later. Golf language is designed to be intuitive, easy and rapid, and to be close to the way humans are wired, rather than machines. Golf is near-expressionless, featuring only very limited integer expressions. This is by design: it's simpler to use programmable features to build desired functionality then to build them yourself.<br/>
@@ -538,7 +542,7 @@ Numbers and booleans are assigned by value, while strings are assigned by refere
 <div class="vsub"><a id="Infrastructure"></a>Infrastructure</div>
 Golf includes request-processing and all the necessary infrastructure, such as for process management, files, networking, service protocols, database, string processing etc.<br/>
 <div class="vsub"><a id="Performance"></a>Performance</div>
-Golf applications are high-performance native executables by design, hence absolutely no byte-code, interpreters and similar. Since Golf is declarative, just a few <a href='/statements.html'>statements</a> are needed to implement lots of functionality. These statements are implemented in pure C, and are not slowed down by memory checks as they are safe internally by implementation. Only developer-facing Golf code needs additional logic to enforce memory safety, and that's a very small part of overall run-time cost. This means Golf can truly be memory-safe and high-performance at the same time.<br/>
+Golf is a compiled languaged. Golf applications are high-performance native executables by design, hence absolutely no byte-code, interpreters and similar. Since Golf is declarative, just a few <a href='/statements.html'>statements</a> are needed to implement lots of functionality. These statements are implemented in pure C, and are not slowed down by memory checks as they are safe internally by implementation. Only developer-facing Golf code needs additional logic to enforce memory safety, and that's a very small part of overall run-time cost. This means Golf can truly be memory-safe and high-performance at the same time.<br/>
 <div class="vsub"><a id="Database access"></a>Database access</div>
 Golf provides access to a number of popular databases, such as MariaDB/mySQL, PostgreSQL and SQLite. (see <a href='/database-config-file.html'>database-config-file</a>):<br/>
 <ul><li>transactional support (begin, commit, rollback),<br/>
