@@ -2,10 +2,11 @@
 <html lang="en">
 
 <head>
-<title>New index</title>
+<title>New tree</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="canonical" href="https://golf-lang.com/new-tree.html" />
 <style>
 
 
@@ -233,65 +234,65 @@ function gg_copy(gt, eid, gc) {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://golf-lang.github.io' style='border-bottom:0px'><img src='http://golf-lang.github.io/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;New index</div><hr/><span style="font-weight:bold;">Purpose</span>: Create new index structure for fast key searching.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;New tree</div><hr/><span style="font-weight:bold;">Purpose</span>: Create new tree structure for fast key searching.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_513'>
-<span class="Statement"> new-index</span> &lt;index&gt; \
+<pre id='code_531'>
+<span class="Statement"> new-tree</span> &lt;tree&gt; \
      [<span class="Identifier"> key-as</span> <span class="Constant">&quot;positive integer&quot;</span> ] \
      [<span class="Identifier"> unsorted</span> ]
      [<span class="Identifier"> process-scope</span> ]</pre>
-<span id=golf_copied_513 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_513' style='position: absolute;left: -500%;'></textarea>
-<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_513, code_513, golf_copied_513)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_531 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_531' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_531, code_531, golf_copied_531)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-new-index initializes a new &lt;index&gt;. <br/>
+new-tree initializes a new &lt;tree&gt;. <br/>
 <br/>
-An index is a hierarchical balanced binary tree structure that allows data access in O(log N) time, meaning that at most approximately "log N" comparisons are needed to find a key in it. For instance, that would mean to find a key among 1,000,000 keys it would take at most about 20 comparisons. By default (if "unsorted" is omitted), finding the next lesser or greater key is O(1), meaning iterating in a sorted order is nearly instantaneous. An index is a hybrid tree structure (taking elements from both B and AVL varieties) optimized for in-memory access.<br/>
+An tree is a hierarchical balanced binary tree structure that allows data access in O(log N) time, meaning that at most approximately "log N" comparisons are needed to find a key in it. For instance, that would mean to find a key among 1,000,000 keys it would take at most about 20 comparisons. By default (if "unsorted" is omitted), finding the next lesser or greater key is O(1), meaning iterating in a sorted order is nearly instantaneous. A tree is a hybrid tree structure (taking elements from both B and AVL varieties) optimized for in-memory access.<br/>
 <br/>
-Information in an index can be inserted, updated or deleted in any order, and accessed in any order as well.<br/>
+Information in a tree can be inserted, updated or deleted in any order, and accessed in any order as well.<br/>
 <br/>
-Information in an index is organized in nodes. Each node has a key and a value. A key is used to search for a node in a index. By default (if "unsorted" is omitted), all nodes in a Golf index are also connected in an ordered linked list, allowing for very fast range searches.<br/>
+Information in a tree is organized in nodes. Each node has a key and a value. A key is used to search for a node in a tree. By default (if "unsorted" is omitted), all nodes in a Golf tree are also connected in an ordered linked list, allowing for very fast range searches.<br/>
 <div class="vsub"><a id="Keys and data"></a>Keys and data</div>
-A node in a index consists of two strings: key and value. There is no limit on the number of nodes in the index, other than available memory. Each key in the index must be unique. Keys should be as short as possible. Generally, longer keys take longer to search for, insert or delete. <br/>
+A node in a tree consists of two strings: key and value. There is no limit on the number of nodes in the tree, other than available memory. Each key in the tree must be unique. Keys should be as short as possible. Generally, longer keys take longer to search for, insert or delete. <br/>
 <div class="vsub"><a id="Key comparison"></a>Key comparison</div>
-In order for any data index structure to function, a key comparison must be performed certain number of times in order to find a specific key. Keys are compared using C's strcmp() function, meaning using ASCII lexicographic order.<br/>
+In order for any data tree structure to function, a key comparison must be performed certain number of times in order to find a specific key. Keys are compared using C's strcmp() function, meaning using ASCII lexicographic order.<br/>
 <div class="vsub"><a id="Number keys"></a>Number keys</div>
 "key-as" clause allows to treat a key as something other than a string when it comes to ordering. When "positive integer" value is used, it will treat a key as a string representation of a positive integer number. Such numbers must be zero or positive integers in the 64 bit range, and they must not contain leading zeros, spaces or other prefix (or suffix) characters. For example, key strings may be "0", "123" or "891347". With this clause, sorting these strings according to their converted numerical values is much faster than using schemes such as prefixing numbers with zeros or spaces.<br/>
 <br/>
 Note that when using "positive integer", you can use numbers in any base (from 2 to 36). In fact, numbers expressed in a higher base are generally faster to search for, because they are shorter in length.<br/>
-<div class="vsub"><a id="Unsorted index"></a>Unsorted index</div>
-If "unsorted" clause is used, &lt;index&gt; will not be sorted in a double-linked list, which means that finding the next smaller or next greater node in repetition (i.e. range search) will be done by using the index structure and not a linked list. This is slower, as each such search is generally done in O(log N) time. Regardless, you can perform range searches in either case (see <a href='http://golf-lang.github.io/use-cursor.html'>use-cursor</a>).<br/>
+<div class="vsub"><a id="Unsorted tree"></a>Unsorted tree</div>
+If "unsorted" clause is used, &lt;tree&gt; will not be sorted in a double-linked list, which means that finding the next smaller or next greater node in repetition (i.e. range search) will be done by using the tree structure and not a linked list. This is slower, as each such search is generally done in O(log N) time. Regardless, you can perform range searches in either case (see <a href='https://golf-lang.com/use-cursor.html'>use-cursor</a>).<br/>
 <br/>
 As a rule of thumb, if you do not need range searches or your memory is scarce, use "unsorted" as it will save 2 pointers (i.e. 16 bytes) per key and insertion/deletion will be a bit faster, but be aware that range searches will be slower. <br/>
 <br/>
 If you need faster range searches or the extra memory is not an issue (it would be for instance extra 16MB per 1,0000,0000 keys), then do not use "unsorted", as your range searches will be faster. Note that in this case, insertion and deletion are a bit slower because they need to maintain a double linked list, however in general the effect is minimized by faster range searches. <br/>
 <div class="vsub"><a id="Scope"></a>Scope</div>
-An index is accessible to the current process only, unless "process-scope" clause is used, in which case all requests served by the process can use it (see <a href='http://golf-lang.github.io/do-once.html'>do-once</a> for a typical way to create an object with a process scope). If "process-scope" is used, then &lt;index&gt; that will keep its nodes between all requests served by the same process; otherwise &lt;index&gt; is purged at the end of request. <br/>
+A tree is accessible to the current process only, unless "process-scope" clause is used, in which case all requests served by the process can use it (see <a href='https://golf-lang.com/do-once.html'>do-once</a> for a typical way to create an object with a process scope). If "process-scope" is used, then &lt;tree&gt; that will keep its nodes between all requests served by the same process; otherwise &lt;tree&gt; is purged at the end of request. <br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
-Create a new index:<br/>
+Create a new tree:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_514'>
-<span class="Statement"> new-index</span> my_index</pre>
-<span id=golf_copied_514 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_514' style='position: absolute;left: -500%;'></textarea>
-<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_514, code_514, golf_copied_514)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_532'>
+<span class="Statement"> new-tree</span> my_tree</pre>
+<span id=golf_copied_532 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_532' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_532, code_532, golf_copied_532)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
- <span style="font-weight:bold;">Index</span><br/>
-<a href='http://golf-lang.github.io/delete-index.html'>delete-index</a> &nbsp;<br/>
-<a href='http://golf-lang.github.io/get-index.html'>get-index</a> &nbsp;<br/>
-<a href='http://golf-lang.github.io/new-index.html'>new-index</a> &nbsp;<br/>
-<a href='http://golf-lang.github.io/purge-index.html'>purge-index</a> &nbsp;<br/>
-<a href='http://golf-lang.github.io/read-index.html'>read-index</a> &nbsp;<br/>
-<a href='http://golf-lang.github.io/use-cursor.html'>use-cursor</a> &nbsp;<br/>
-<a href='http://golf-lang.github.io/write-index.html'>write-index</a> &nbsp; <br/>
+ <span style="font-weight:bold;">Tree</span><br/>
+<a href='https://golf-lang.com/delete-tree.html'>delete-tree</a> &nbsp;<br/>
+<a href='https://golf-lang.com/get-tree.html'>get-tree</a> &nbsp;<br/>
+<a href='https://golf-lang.com/new-tree.html'>new-tree</a> &nbsp;<br/>
+<a href='https://golf-lang.com/purge-tree.html'>purge-tree</a> &nbsp;<br/>
+<a href='https://golf-lang.com/read-tree.html'>read-tree</a> &nbsp;<br/>
+<a href='https://golf-lang.com/use-cursor.html'>use-cursor</a> &nbsp;<br/>
+<a href='https://golf-lang.com/write-tree.html'>write-tree</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
-<a href='http://golf-lang.github.io/documentation.html'>documentation</a><br/>
+<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
-<!--GOLFFOOT77--><span style='font-size:80%'><a href="http://golf-lang.github.io/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://golf-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
 </div><br/></body></html>
 
 

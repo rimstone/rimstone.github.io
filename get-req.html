@@ -6,6 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="canonical" href="https://golf-lang.com/get-req.html" />
 <style>
 
 
@@ -233,7 +234,7 @@ function gg_copy(gt, eid, gc) {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://golf-lang.github.io' style='border-bottom:0px'><img src='http://golf-lang.github.io/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Get req</div><hr/><span style="font-weight:bold;">Purpose</span>: Obtain data that describes the input request.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Get req</div><hr/><span style="font-weight:bold;">Purpose</span>: Obtain data that describes the input request.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_410'>
@@ -246,14 +247,14 @@ function gg_copy(gt, eid, gc) {
      to &lt;variable&gt;</pre>
 <span id=golf_copied_410 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_410' style='position: absolute;left: -500%;'></textarea>
-<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_410, code_410, golf_copied_410)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_410, code_410, golf_copied_410)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Information related to an input request can be obtained with get-req statement and the result stored into &lt;variable&gt; (in "to" clause). The following can be obtained (all are strings except where stated otherwise):<br/>
-<ul><li>"errno" obtains the integer value of operating system "errno" tied to a last Golf statement that can return a status code. The "errno" value is saved internally; and restored here. It means that if "errno" changed for whatever reason since such Golf statement (such as with <a href='http://golf-lang.github.io/call-extended.html'>call-extended</a>), you will still obtain the correct value. See <a href='http://golf-lang.github.io/error-code.html'>error-code</a> for an example. Note that errno value is undefined if there is no error, and can be 0 if the error is reported by Golf and not by operating system.<br/>
+<ul><li>"errno" obtains the integer value of operating system "errno" tied to a last Golf statement that can return a status code. The "errno" value is saved internally; and restored here. It means that if "errno" changed for whatever reason since such Golf statement (such as with <a href='https://golf-lang.com/call-extended.html'>call-extended</a>), you will still obtain the correct value. See <a href='https://golf-lang.com/error-code.html'>error-code</a> for an example. Note that errno value is undefined if there is no error, and can be 0 if the error is reported by Golf and not by operating system.<br/>
 <br/>
 </li><li>"error" returns the error message that correlates to "errno" value. <br/>
 <br/>
-</li><li>"cookie-count" returns the number of cookies. This means any cookies received from the client plus any cookies added (with <a href='http://golf-lang.github.io/set-cookie.html'>set-cookie</a>) in the application minus any cookies deleted (with <a href='http://golf-lang.github.io/delete-cookie.html'>delete-cookie</a>). <br/>
+</li><li>"cookie-count" returns the number of cookies. This means any cookies received from the client plus any cookies added (with <a href='https://golf-lang.com/set-cookie.html'>set-cookie</a>) in the application minus any cookies deleted (with <a href='https://golf-lang.com/delete-cookie.html'>delete-cookie</a>). <br/>
 <br/>
 </li><li>"cookie" returns the cookie value specified by &lt;cookie index&gt; (a sequential number starting with 1 up to the number of cookies), for instance:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
@@ -266,11 +267,11 @@ Information related to an input request can be obtained with get-req statement a
 <span class="Statement"> end-loop</span></pre>
 <span id=golf_copied_411 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_411' style='position: absolute;left: -500%;'></textarea>
-<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_411, code_411, golf_copied_411)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_411, code_411, golf_copied_411)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In this example, we get the number of cookies, and then print out each cookie value.<br/>
 <br/>
-</li><li>"arg-count" is the number of input arguments to your application (passed from a program caller, see "-a" option in <a href='http://golf-lang.github.io/mgrg.html'>mgrg</a> and "--arg" in <a href='http://golf-lang.github.io/gg.html'>gg</a>).<br/>
+</li><li>"arg-count" is the number of input arguments to your application (passed from a program caller, see "-a" option in <a href='https://golf-lang.com/mgrg.html'>mgrg</a> and "--arg" in <a href='https://golf-lang.com/gg.html'>gg</a>).<br/>
 <br/>
 </li><li>"arg-value" is the string value of a single element from the array of input arguments, specified by &lt;arg_index&gt;. This array is indexed from 1 to the value obtained by "arg-count". Here is an example of using arg-count and arg-value:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
@@ -283,7 +284,7 @@ In this example, we get the number of cookies, and then print out each cookie va
 <span class="Statement"> end-loop</span></pre>
 <span id=golf_copied_412 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_412' style='position: absolute;left: -500%;'></textarea>
-<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_412, code_412, golf_copied_412)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_412, code_412, golf_copied_412)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 This code will display the number of input arguments (as passed to main() function of your program, excluding the first argument which is the name of the program), and then all the arguments. If there are no arguments, then variable 'ac' would be 0. <br/>
 <br/>
@@ -293,23 +294,23 @@ This code will display the number of input arguments (as passed to main() functi
 <span class="Statement"> get-req</span><span class="Identifier"> header</span> <span class="Constant">&quot;My-Header&quot;</span><span class="Type"> to</span> hval</pre>
 <span id=golf_copied_413 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_413' style='position: absolute;left: -500%;'></textarea>
-<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_413, code_413, golf_copied_413)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_413, code_413, golf_copied_413)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Note that not all HTTP request headers are set by the caller. For example, SERVER_NAME or QUERY_STRING are set by the web server, and to get such headers, use <a href='http://golf-lang.github.io/get-sys.html'>get-sys</a>.<br/>
+Note that not all HTTP request headers are set by the caller. For example, SERVER_NAME or QUERY_STRING are set by the web server, and to get such headers, use <a href='https://golf-lang.com/get-sys.html'>get-sys</a>.<br/>
 <br/>
-</li><li>"method" is the request method. This is a number with values of GG_GET, GG_POST, GG_PUT, GG_PATCH or GG_DELETE for GET, POST, PUT, PATCH or DELETE requests, respectively. If it is not any of those commonly used ones, then the value is GG_OTHER and you can use <a href='http://golf-lang.github.io/get-sys.html'>get-sys</a> with "environment" clause to obtain "REQUEST_METHOD" variable.<br/>
+</li><li>"method" is the request method. This is a number with values of GG_GET, GG_POST, GG_PUT, GG_PATCH or GG_DELETE for GET, POST, PUT, PATCH or DELETE requests, respectively. If it is not any of those commonly used ones, then the value is GG_OTHER and you can use <a href='https://golf-lang.com/get-sys.html'>get-sys</a> with "environment" clause to obtain "REQUEST_METHOD" variable.<br/>
 <br/>
-</li><li>"content-type" is the request content type. It is a string and generally denotes the content type of a <a href='http://golf-lang.github.io/request-body.html'>request-body</a>, if included in the request. Common examples are "application/x-www-form-urlencoded", "multipart/form-data" or "application/json".<br/>
+</li><li>"content-type" is the request content type. It is a string and generally denotes the content type of a <a href='https://golf-lang.com/request-body.html'>request-body</a>, if included in the request. Common examples are "application/x-www-form-urlencoded", "multipart/form-data" or "application/json".<br/>
 <br/>
 </li><li>"referring-url" is the referring URL (i.e. the page from which this request was called, for example by clicking a link). <br/>
 <br/>
-</li><li>"trace-file" is the full path of the trace file for this request (if enabled, see <a href='http://golf-lang.github.io/trace-run.html'>trace-run</a>).<br/>
+</li><li>"trace-file" is the full path of the trace file for this request (if enabled, see <a href='https://golf-lang.com/trace-run.html'>trace-run</a>).<br/>
 <br/>
 </li><li>"process-id" is the "PID" (process ID) number of the currently executing process, as a number.<br/>
 <br/>
 </li><li>"external-call" is a boolean that is true if the call to the current request handler is from an external caller, or false if called from another handler.<br/>
 <br/>
-</li><li>"name" is the request name as specified in the <a href='http://golf-lang.github.io/request.html'>request</a> URL.</li></ul>
+</li><li>"name" is the request name as specified in the <a href='https://golf-lang.com/request.html'>request</a> URL.</li></ul>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Get the name of current trace file:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
@@ -317,17 +318,17 @@ Get the name of current trace file:<br/>
 <span class="Statement"> get-req</span><span class="Identifier"> trace-file</span><span class="Type"> to</span> trace_file</pre>
 <span id=golf_copied_414 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_414' style='position: absolute;left: -500%;'></textarea>
-<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_414, code_414, golf_copied_414)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_414, code_414, golf_copied_414)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Request information</span><br/>
-<a href='http://golf-lang.github.io/get-req.html'>get-req</a> &nbsp; <br/>
+<a href='https://golf-lang.com/get-req.html'>get-req</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
-<a href='http://golf-lang.github.io/documentation.html'>documentation</a><br/>
+<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
-<!--GOLFFOOT77--><span style='font-size:80%'><a href="http://golf-lang.github.io/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://golf-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
 </div><br/></body></html>
 
 

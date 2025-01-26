@@ -2,10 +2,11 @@
 <html lang="en">
 
 <head>
-<title>Read index</title>
+<title>Read tree</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="canonical" href="https://golf-lang.com/read-tree.html" />
 <style>
 
 
@@ -233,11 +234,11 @@ function gg_copy(gt, eid, gc) {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://golf-lang.github.io' style='border-bottom:0px'><img src='http://golf-lang.github.io/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Read index</div><hr/><span style="font-weight:bold;">Purpose</span>: Search/update an index.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Read tree</div><hr/><span style="font-weight:bold;">Purpose</span>: Search/update a tree.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_604'>
-<span class="Statement"> read-index</span> &lt;index&gt; \
+<pre id='code_625'>
+<span class="Statement"> read-tree</span> &lt;tree&gt; \
      (<span class="Identifier"> equal</span> &lt;search key&gt; |<span class="Identifier"> lesser</span> &lt;search key&gt; |<span class="Identifier"> greater</span> &lt;search key&gt; | \
         <span class="Identifier"> lesser-equal</span> &lt;search key&gt; |<span class="Identifier"> greater-equal</span> &lt;search key&gt; | \
         <span class="Identifier"> min-key</span> |<span class="Identifier"> max-key</span> ) \
@@ -246,44 +247,44 @@ function gg_copy(gt, eid, gc) {
      [<span class="Type"> key</span> &lt;key&gt; ] \
      [<span class="Type"> status</span> &lt;status&gt; ] \
      [<span class="Type"> new-cursor</span> &lt;cursor&gt; ]</pre>
-<span id=golf_copied_604 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_604' style='position: absolute;left: -500%;'></textarea>
-<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_604, code_604, golf_copied_604)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_625 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_625' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_625, code_625, golf_copied_625)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-read-index will search &lt;index&gt; (created with <a href='http://golf-lang.github.io/new-index.html'>new-index</a>) for a node with the string key that is:<br/>
+read-tree will search &lt;tree&gt; (created with <a href='https://golf-lang.com/new-tree.html'>new-tree</a>) for a node with the string key that is:<br/>
 <ul><li>equal to &lt;search key&gt; ("equal" clause)<br/>
 </li><li>lesser than &lt;search key&gt; ("lesser" clause)<br/>
 </li><li>greater than &lt;search key&gt; ("greater" clause)<br/>
 </li><li>lesser or equal than &lt;search key&gt; ("lesser-equal" clause)<br/>
 </li><li>greater or equal than &lt;search key&gt; ("greater-equal" clause)<br/>
-</li><li>a minimum key in the index ("min-key" clause)<br/>
-</li><li>a maximum key in the index ("max-key" clause)</li></ul>
+</li><li>a minimum key in the tree ("min-key" clause)<br/>
+</li><li>a maximum key in the tree ("max-key" clause)</li></ul>
 The &lt;status&gt; in "status" clause will be GG_OKAY if a key conforming to one of these criteria is found, and GG_ERR_EXIST if not. <br/>
 <br/>
-If a key is found, the value associated with the key can be obtained with "value" clause in &lt;value&gt;; an existing key used to originally insert this value into the index can be obtained with "key" clause in string &lt;key&gt;. If a key is not found, both &lt;value&gt; and &lt;key&gt; are unchanged. <br/>
+If a key is found, the value associated with the key can be obtained with "value" clause in &lt;value&gt;; an existing key used to originally insert this value into the tree can be obtained with "key" clause in string &lt;key&gt;. If a key is not found, both &lt;value&gt; and &lt;key&gt; are unchanged. <br/>
 <br/>
 You can update the value associated with a found key with "update-value" clause by specifying &lt;update value&gt; string. This update is performed after &lt;value&gt; has been retrieved, allowing you to obtain the previous value in the same statement. <br/>
 <br/>
-If you'd like to iterate the ordered list of keys in an index, create a &lt;cursor&gt; by using "new-cursor" clause, in which case &lt;cursor&gt; will be positioned on a found index node. See <a href='http://golf-lang.github.io/use-cursor.html'>use-cursor</a> for more on using cursors. Cursors are useful in range searches; typically you'd find a key that is an upper or lower bound of a range and then keep iterating to a lesser or greater value until some criteria is met, such as when the opposite bound is found. Golf indexes are by default constructed so that such iterations are O(1) in complexity, meaning each is a single index node access (see <a href='http://golf-lang.github.io/new-index.html'>new-index</a>). <br/>
+If you'd like to iterate the ordered list of keys in a tree, create a &lt;cursor&gt; by using "new-cursor" clause, in which case &lt;cursor&gt; will be positioned on a found tree node. See <a href='https://golf-lang.com/use-cursor.html'>use-cursor</a> for more on using cursors. Cursors are useful in range searches; typically you'd find a key that is an upper or lower bound of a range and then keep iterating to a lesser or greater value until some criteria is met, such as when the opposite bound is found. Golf treees are by default constructed so that such iterations are O(1) in complexity, meaning each is a single tree node access (see <a href='https://golf-lang.com/new-tree.html'>new-tree</a>). <br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
-In this example, a million key/value pairs are inserted into an index, and then each of them is searched for and then displayed back (see <a href='http://golf-lang.github.io/write-index.html'>write-index</a> for more on inserting into a index). Both the key and the data are a numerical value of a key:<br/>
+In this example, a million key/value pairs are inserted into a tree, and then each of them is searched for and then displayed back (see <a href='https://golf-lang.com/write-tree.html'>write-tree</a> for more on inserting into a tree). Both the key and the data are a numerical value of a key:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_605'>
-<span class="Statement"> %%</span> /index-example<span class="Identifier"> public</span>
+<pre id='code_626'>
+<span class="Statement"> %%</span> /tree-example<span class="Identifier"> public</span>
 
-<span class="Statement">     new-index</span> myindex<span class="Identifier"> key-as</span> <span class="Constant">&quot;positive integer&quot;</span> <span class="Comment">// create new index</span>
+<span class="Statement">     new-tree</span> mytree<span class="Identifier"> key-as</span> <span class="Constant">&quot;positive integer&quot;</span> <span class="Comment">// create new tree</span>
 
 <span class="Statement">     set-number</span> i
 <span class="Statement">     start-loop</span><span class="Type"> use</span> i<span class="Identifier"> start-with</span> <span class="Constant">0</span><span class="Identifier"> repeat</span> <span class="Constant">1000000</span>
 <span class="Statement">         number-string</span> i<span class="Type"> to</span> key
 <span class="Statement">         set-string</span> data=key
-<span class="Statement">         write-index</span> myindex<span class="Identifier"> key</span> (key)<span class="Identifier"> value</span> data <span class="Comment">// insert key/data to the index</span>
+<span class="Statement">         write-tree</span> mytree<span class="Identifier"> key</span> (key)<span class="Identifier"> value</span> data <span class="Comment">// insert key/data to the tree</span>
 <span class="Statement">     end-loop</span>
 
 <span class="Statement">     start-loop</span><span class="Type"> use</span> i<span class="Identifier"> start-with</span> <span class="Constant">0</span><span class="Identifier"> repeat</span> <span class="Constant">1000000</span>
 <span class="Statement">         number-string</span> i<span class="Type"> to</span> key
-         <span class="Comment">// search index for each key previously inserted</span>
-<span class="Statement">         read-index</span> myindex<span class="Identifier"> equal</span> (key)<span class="Type"> status</span> st<span class="Type"> value</span> data
+         <span class="Comment">// search tree for each key previously inserted</span>
+<span class="Statement">         read-tree</span> mytree<span class="Identifier"> equal</span> (key)<span class="Type"> status</span> st<span class="Type"> value</span> data
 <span class="Statement">         if-true</span> st<span class="Identifier"> not-equal</span> GG_OKAY
 <span class="Statement">             @</span>Could not find key <span class="Statement">&lt;&lt;p-out</span> key<span class="Statement">&gt;&gt;</span>
 <span class="Statement">         else-if</span>
@@ -292,25 +293,25 @@ In this example, a million key/value pairs are inserted into an index, and then 
 <span class="Statement">         delete-string</span> key
 <span class="Statement">     end-loop</span>
 <span class="Statement"> %%</span></pre>
-<span id=golf_copied_605 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_605' style='position: absolute;left: -500%;'></textarea>
-<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_605, code_605, golf_copied_605)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_626 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_626' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_626, code_626, golf_copied_626)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
- <span style="font-weight:bold;">Index</span><br/>
-<a href='http://golf-lang.github.io/delete-index.html'>delete-index</a> &nbsp;<br/>
-<a href='http://golf-lang.github.io/get-index.html'>get-index</a> &nbsp;<br/>
-<a href='http://golf-lang.github.io/new-index.html'>new-index</a> &nbsp;<br/>
-<a href='http://golf-lang.github.io/purge-index.html'>purge-index</a> &nbsp;<br/>
-<a href='http://golf-lang.github.io/read-index.html'>read-index</a> &nbsp;<br/>
-<a href='http://golf-lang.github.io/use-cursor.html'>use-cursor</a> &nbsp;<br/>
-<a href='http://golf-lang.github.io/write-index.html'>write-index</a> &nbsp; <br/>
+ <span style="font-weight:bold;">Tree</span><br/>
+<a href='https://golf-lang.com/delete-tree.html'>delete-tree</a> &nbsp;<br/>
+<a href='https://golf-lang.com/get-tree.html'>get-tree</a> &nbsp;<br/>
+<a href='https://golf-lang.com/new-tree.html'>new-tree</a> &nbsp;<br/>
+<a href='https://golf-lang.com/purge-tree.html'>purge-tree</a> &nbsp;<br/>
+<a href='https://golf-lang.com/read-tree.html'>read-tree</a> &nbsp;<br/>
+<a href='https://golf-lang.com/use-cursor.html'>use-cursor</a> &nbsp;<br/>
+<a href='https://golf-lang.com/write-tree.html'>write-tree</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
-<a href='http://golf-lang.github.io/documentation.html'>documentation</a><br/>
+<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
-<!--GOLFFOOT77--><span style='font-size:80%'><a href="http://golf-lang.github.io/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://golf-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
 </div><br/></body></html>
 
 

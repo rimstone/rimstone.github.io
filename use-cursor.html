@@ -6,6 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="canonical" href="https://golf-lang.com/use-cursor.html" />
 <style>
 
 
@@ -233,36 +234,36 @@ function gg_copy(gt, eid, gc) {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://golf-lang.github.io' style='border-bottom:0px'><img src='http://golf-lang.github.io/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Use cursor</div><hr/><span style="font-weight:bold;">Purpose</span>: Iterate to a lesser or greater key in an index.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Use cursor</div><hr/><span style="font-weight:bold;">Purpose</span>: Iterate to a lesser or greater key in a tree.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_761'>
+<pre id='code_767'>
 <span class="Statement"> use-cursor</span> &lt;cursor&gt; (<span class="Identifier"> current</span> |<span class="Identifier"> get-lesser</span> |<span class="Identifier"> get-greater</span> ) \
      [<span class="Type"> key</span> &lt;key&gt; ] \
      [<span class="Type"> value</span> &lt;value&gt; ] \
      [<span class="Identifier"> update-value</span> &lt;update value&gt; ] \
      [<span class="Type"> status</span> &lt;status&gt; ]</pre>
-<span id=golf_copied_761 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_761' style='position: absolute;left: -500%;'></textarea>
-<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_761, code_761, golf_copied_761)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_767 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_767' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_767, code_767, golf_copied_767)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-use-cursor uses &lt;cursor&gt; previously created (see <a href='http://golf-lang.github.io/read-index.html'>read-index</a>, <a href='http://golf-lang.github.io/write-index.html'>write-index</a>) for iteration over index nodes with lesser or greater key values. It can also obtain keys and values for such nodes, as well as update their values.<br/>
+use-cursor uses &lt;cursor&gt; previously created (see <a href='https://golf-lang.com/read-tree.html'>read-tree</a>, <a href='https://golf-lang.com/write-tree.html'>write-tree</a>) for iteration over tree nodes with lesser or greater key values. It can also obtain keys and values for such nodes, as well as update their values.<br/>
 <div class="vsub"><a id="Current node"></a>Current node</div>
 A &lt;cursor&gt; has a current node, which is first computed by using "current", "get-lesser" or "get-greater" clauses, and then any other clauses are applied to it (such as "key", "value" and "update-value"). <br/>
 <br/>
 The computation of a current node is performed by using a &lt;cursor&gt;'s "previous current node", i.e. the current node just before use-cursor executes. If "current" clause is used, the current node remains the same as previous current node. If "get-lesser" clause is used, a node with a key that is the next lesser from the previous current will become the new current. If "get-greater" clause is used, a node with a key that is the next greater from the previous current will become the new current. <br/>
 <br/>
-If the new current node can be found, then other use-cursor clauses are applied to it, such as to obtain a &lt;key&gt; or &lt;value&gt;, or to &lt;update value&gt;. If, as a result of either of these clauses, the new current node cannot be found (for instance there is no lesser or greater key in the index), the current node will be unchanged and &lt;status&gt; (in "status" clause) will be GG_ERR_EXIST.<br/>
+If the new current node can be found, then other use-cursor clauses are applied to it, such as to obtain a &lt;key&gt; or &lt;value&gt;, or to &lt;update value&gt;. If, as a result of either of these clauses, the new current node cannot be found (for instance there is no lesser or greater key in the tree), the current node will be unchanged and &lt;status&gt; (in "status" clause) will be GG_ERR_EXIST.<br/>
 <div class="vsub"><a id="Key, value, updating value, status"></a>Key, value, updating value, status</div>
 "key" clause will obtain the key in a current node into &lt;key&gt; string. The value of current node can be obtained in &lt;value&gt; in "value" clause; &lt;value&gt; is a string. The value of current node can be updated to &lt;update value&gt; in "update-value" clause; &lt;update value&gt; is a string. This update is performed after &lt;value&gt; has been retrieved, allowing you to obtain the previous value in the same statement. <br/>
 <br/>
 "status" clause can be used to obtain &lt;status&gt; number, which is GG_ERR_EXIST if the new current node cannot be found, in which case the current node, &lt;key&gt; and &lt;value&gt; are unchanged. Otherwise, &lt;status&gt; is GG_OKAY.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
-The following will find a value with key "999", and then iterate in the index to find all lesser values (in descending order):<br/>
+The following will find a value with key "999", and then iterate in the tree to find all lesser values (in descending order):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_762'>
+<pre id='code_768'>
 <span class="Statement"> set-string</span> k = <span class="Constant">&quot;999&quot;</span>
-<span class="Statement"> read-index</span> myindex<span class="Identifier"> equal</span> k<span class="Type"> status</span> st \
+<span class="Statement"> read-tree</span> mytree<span class="Identifier"> equal</span> k<span class="Type"> status</span> st \
     <span class="Type"> value</span> val<span class="Type"> new-cursor</span> cur
 <span class="Statement"> start-loop</span>
 <span class="Statement">     if-true</span> st<span class="Identifier"> equal</span> GG_OKAY
@@ -272,26 +273,26 @@ The following will find a value with key "999", and then iterate in the index to
 <span class="Statement">         break-loop</span>
 <span class="Statement">     end-if</span>
 <span class="Statement"> end-loop</span></pre>
-<span id=golf_copied_762 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_762' style='position: absolute;left: -500%;'></textarea>
-<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_762, code_762, golf_copied_762)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_768 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_768' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_768, code_768, golf_copied_768)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-For more examples, see <a href='http://golf-lang.github.io/new-index.html'>new-index</a>.<br/>
+For more examples, see <a href='https://golf-lang.com/new-tree.html'>new-tree</a>.<br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
- <span style="font-weight:bold;">Index</span><br/>
-<a href='http://golf-lang.github.io/delete-index.html'>delete-index</a> &nbsp;<br/>
-<a href='http://golf-lang.github.io/get-index.html'>get-index</a> &nbsp;<br/>
-<a href='http://golf-lang.github.io/new-index.html'>new-index</a> &nbsp;<br/>
-<a href='http://golf-lang.github.io/purge-index.html'>purge-index</a> &nbsp;<br/>
-<a href='http://golf-lang.github.io/read-index.html'>read-index</a> &nbsp;<br/>
-<a href='http://golf-lang.github.io/use-cursor.html'>use-cursor</a> &nbsp;<br/>
-<a href='http://golf-lang.github.io/write-index.html'>write-index</a> &nbsp; <br/>
+ <span style="font-weight:bold;">Tree</span><br/>
+<a href='https://golf-lang.com/delete-tree.html'>delete-tree</a> &nbsp;<br/>
+<a href='https://golf-lang.com/get-tree.html'>get-tree</a> &nbsp;<br/>
+<a href='https://golf-lang.com/new-tree.html'>new-tree</a> &nbsp;<br/>
+<a href='https://golf-lang.com/purge-tree.html'>purge-tree</a> &nbsp;<br/>
+<a href='https://golf-lang.com/read-tree.html'>read-tree</a> &nbsp;<br/>
+<a href='https://golf-lang.com/use-cursor.html'>use-cursor</a> &nbsp;<br/>
+<a href='https://golf-lang.com/write-tree.html'>write-tree</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
-<a href='http://golf-lang.github.io/documentation.html'>documentation</a><br/>
+<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
-<!--GOLFFOOT77--><span style='font-size:80%'><a href="http://golf-lang.github.io/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://golf-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
 </div><br/></body></html>
 
 

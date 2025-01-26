@@ -2,10 +2,11 @@
 <html lang="en">
 
 <head>
-<title>Write set</title>
+<title>Write hash</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="canonical" href="https://golf-lang.com/write-hash.html" />
 <style>
 
 
@@ -233,55 +234,55 @@ function gg_copy(gt, eid, gc) {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://golf-lang.github.io' style='border-bottom:0px'><img src='http://golf-lang.github.io/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Write set</div><hr/><span style="font-weight:bold;">Purpose</span>: Store key/value pair into a set.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Write hash</div><hr/><span style="font-weight:bold;">Purpose</span>: Store key/value pair into a hash.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_789'>
-<span class="Statement"> write-set</span> &lt;set&gt; \
+<pre id='code_784'>
+<span class="Statement"> write-hash</span> &lt;hash&gt; \
     <span class="Identifier"> key</span> &lt;key&gt; \
     <span class="Identifier"> value</span> &lt;value&gt; \
      [<span class="Type"> status</span> &lt;status&gt; ] \
      [<span class="Type"> old-value</span> &lt;old value&gt; ]</pre>
-<span id=golf_copied_789 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_789' style='position: absolute;left: -500%;'></textarea>
-<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_789, code_789, golf_copied_789)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_784 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_784' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_784, code_784, golf_copied_784)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-write-set will store string &lt;key&gt; (in "key" clause) and &lt;value&gt; (in "value" clause) into &lt;set&gt;, which must be created with <a href='http://golf-lang.github.io/new-set.html'>new-set</a>. <br/>
+write-hash will store string &lt;key&gt; (in "key" clause) and &lt;value&gt; (in "value" clause) into &lt;hash&gt;, which must be created with <a href='https://golf-lang.com/new-hash.html'>new-hash</a>. <br/>
 <br/>
 &lt;key&gt; and &lt;value&gt; are collectively called an "element". <br/>
 <br/>
-If &lt;key&gt; already exists in the set, then the old value associated with it is returned in string &lt;old value&gt; (in "old-value" clause) and &lt;value&gt; will replace the old value - in this case &lt;status&gt; number (in "status" clause) has a value of GG_INFO_EXIST. <br/>
+If &lt;key&gt; already exists in the hash, then the old value associated with it is returned in string &lt;old value&gt; (in "old-value" clause) and &lt;value&gt; will replace the old value - in this case &lt;status&gt; number (in "status" clause) has a value of GG_INFO_EXIST. <br/>
 <br/>
 If &lt;key&gt; did not exist, &lt;status&gt; will be GG_OKAY and &lt;old value&gt; is unchanged.<br/>
 <br/>
-If a &lt;set&gt; was created with "process-scope" clause (see <a href='http://golf-lang.github.io/new-set.html'>new-set</a>), then the element (including &lt;key&gt; and &lt;value&gt;) will not be freed when the current request ends, rather it will persist while the process runs, unless deleted (see <a href='http://golf-lang.github.io/read-set.html'>read-set</a> with delete clause).<br/>
+If a &lt;hash&gt; was created with "process-scope" clause (see <a href='https://golf-lang.com/new-hash.html'>new-hash</a>), then the element (including &lt;key&gt; and &lt;value&gt;) will not be freed when the current request ends, rather it will persist while the process runs, unless deleted (see <a href='https://golf-lang.com/read-hash.html'>read-hash</a> with delete clause).<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
-Writing data to a set:<br/>
+Writing data to a hash:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_791'>
-<span class="Statement"> new-set</span> h
-<span class="Statement"> write-set</span> h<span class="Identifier"> key</span> <span class="Constant">&quot;mykey&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;some data&quot;</span></pre>
-<span id=golf_copied_791 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_791' style='position: absolute;left: -500%;'></textarea>
-<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_791, code_791, golf_copied_791)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_786'>
+<span class="Statement"> new-hash</span> h
+<span class="Statement"> write-hash</span> h<span class="Identifier"> key</span> <span class="Constant">&quot;mykey&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;some data&quot;</span></pre>
+<span id=golf_copied_786 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_786' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_786, code_786, golf_copied_786)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Writing new value with the same key and obtaining the previous value (which is "some data"):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_793'>
-<span class="Statement"> write-set</span> h<span class="Identifier"> key</span> <span class="Constant">&quot;mykey&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;new data&quot;</span><span class="Type"> status</span> st<span class="Type"> old-value</span> od
+<pre id='code_788'>
+<span class="Statement"> write-hash</span> h<span class="Identifier"> key</span> <span class="Constant">&quot;mykey&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;new data&quot;</span><span class="Type"> status</span> st<span class="Type"> old-value</span> od
 <span class="Statement"> if-true</span> st<span class="Identifier"> equal</span> GG_INFO_EXIST
 <span class="Statement">     @</span>Previous value for this key is <span class="Statement">&lt;&lt;p-out</span> od<span class="Statement">&gt;&gt;</span>
 <span class="Statement"> end-if</span></pre>
-<span id=golf_copied_793 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_793' style='position: absolute;left: -500%;'></textarea>
-<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_793, code_793, golf_copied_793)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_788 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_788' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_788, code_788, golf_copied_788)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-The following is a &nbsp;key/value service, where a process-scoped set is created. It provides inserting, deleting and querying key/value pairs. Such a service process can run indefinitely. Create file keysrv.golf:<br/>
+The following is a key/value service, where a process-scoped hash is created. It provides inserting, deleting and querying key/value pairs. Such a service process can run indefinitely. Create file keysrv.golf:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_794'>
+<pre id='code_789'>
 <span class="Statement"> %%</span> /keysrv<span class="Identifier"> public</span>
 <span class="Statement">     do-once</span>
-<span class="Statement">     new-set</span> h<span class="Identifier"> hash-size</span> <span class="Constant">1024</span><span class="Identifier"> process-scope</span>
+<span class="Statement">     new-hash</span> h<span class="Identifier"> hash-size</span> <span class="Constant">1024</span><span class="Identifier"> process-scope</span>
 <span class="Statement">     end-do-once</span>
 
      <span class="Comment">// Get input parameters</span>
@@ -289,14 +290,14 @@ The following is a &nbsp;key/value service, where a process-scoped set is create
 <span class="Statement">     get-param</span> key
 <span class="Statement">     get-param</span> data
 
-<span class="Statement">     if-true</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;add&quot;</span> <span class="Comment">// Add data to set make a copy as input params are request-scoped</span>
-<span class="Statement">         write-set</span> h<span class="Identifier"> key key value</span> data<span class="Type"> old-value</span> old_data<span class="Type"> status</span> st
+<span class="Statement">     if-true</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;add&quot;</span> <span class="Comment">// Add data to hash </span>
+<span class="Statement">         write-hash</span> h<span class="Identifier"> key key value</span> data<span class="Type"> old-value</span> old_data<span class="Type"> status</span> st
 <span class="Statement">         if-true</span> st<span class="Identifier"> equal</span> GG_INFO_EXIST
 <span class="Statement">             delete-string</span> old_data
 <span class="Statement">         end-if</span>
 <span class="Statement">         @</span>Added [<span class="Statement">&lt;&lt;p-out</span> key<span class="Statement">&gt;&gt;</span>]
 <span class="Statement">     else-if</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;delete&quot;</span> <span class="Comment">// Delete data and obtain the value deleted</span>
-<span class="Statement">         read-set</span> h<span class="Type"> key</span> (key)<span class="Type"> value</span> val<span class="Identifier"> delete</span><span class="Type"> status</span> st
+<span class="Statement">         read-hash</span> h<span class="Type"> key</span> (key)<span class="Type"> value</span> val<span class="Identifier"> delete</span><span class="Type"> status</span> st
 <span class="Statement">         if-true</span> st<span class="Identifier"> equal</span> GG_ERR_EXIST
 <span class="Statement">             @</span>Not found [<span class="Statement">&lt;&lt;p-out</span> key<span class="Statement">&gt;&gt;</span>]
 <span class="Statement">         else-if</span>
@@ -304,8 +305,8 @@ The following is a &nbsp;key/value service, where a process-scoped set is create
 <span class="Statement">             @</span>Deleted [<span class="Statement">&lt;&lt;p-out</span> val<span class="Statement">&gt;&gt;</span>]
 <span class="Statement">             delete-string</span> val
 <span class="Statement">         end-if</span>
-<span class="Statement">     else-if</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;query&quot;</span> <span class="Comment">// Query set based on key value</span>
-<span class="Statement">         read-set</span> h<span class="Type"> key</span> (key)<span class="Type"> value</span> val<span class="Type"> status</span> st
+<span class="Statement">     else-if</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;query&quot;</span> <span class="Comment">// Query hash based on key value</span>
+<span class="Statement">         read-hash</span> h<span class="Type"> key</span> (key)<span class="Type"> value</span> val<span class="Type"> status</span> st
 <span class="Statement">         if-true</span> st<span class="Identifier"> equal</span> GG_ERR_EXIST
 <span class="Statement">             @</span>Not found, queried [<span class="Statement">&lt;&lt;p-out</span> key<span class="Statement">&gt;&gt;</span>]
 <span class="Statement">         else-if</span>
@@ -313,51 +314,51 @@ The following is a &nbsp;key/value service, where a process-scoped set is create
 <span class="Statement">         end-if</span>
 <span class="Statement">     end-if</span>
 <span class="Statement"> %%</span></pre>
-<span id=golf_copied_794 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_794' style='position: absolute;left: -500%;'></textarea>
-<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_794, code_794, golf_copied_794)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_789 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_789' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_789, code_789, golf_copied_789)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Create and make the application, then run it as service:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_790'>
+<pre id='code_785'>
 // Create application
-gg <span class="Special">-k</span> arr
+gg <span class="Special">-k</span> <span class="Statement">hash</span>
 // Make application
 gg <span class="Special">-q</span>
 // Start application <span class="PreProc">(</span><span class="Special">single process key service</span><span class="PreProc">)</span>
-mgrg <span class="Special">-w</span> <span class="Constant">1</span> arr</pre>
-<span id=golf_copied_790 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_790' style='position: absolute;left: -500%;'></textarea>
-<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_790, code_790, golf_copied_790)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+mgrg <span class="Special">-w</span> <span class="Constant">1</span> <span class="Statement">hash</span></pre>
+<span id=golf_copied_785 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_785' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_785, code_785, golf_copied_785)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Try it from a command line client (see <a href='http://golf-lang.github.io/gg.html'>gg</a>):<br/>
+Try it from a command line client (see <a href='https://golf-lang.com/gg.html'>gg</a>):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_792'>
+<pre id='code_787'>
 // Add data
-gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/keysrv/op=add/key=15/data=15</span><span class="Statement">&quot;</span> <span class="Special">--service</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/arr</span><span class="Statement">&quot;</span> <span class="Special">--exec</span>
+gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/keysrv/op=add/key=15/data=15</span><span class="Statement">&quot;</span> <span class="Special">--service</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/hash</span><span class="Statement">&quot;</span> <span class="Special">--exec</span>
 // Query data
-gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/keysrv/op=query/key=15</span><span class="Statement">&quot;</span> <span class="Special">--service</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/arr</span><span class="Statement">&quot;</span> <span class="Special">--exec</span>
+gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/keysrv/op=query/key=15</span><span class="Statement">&quot;</span> <span class="Special">--service</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/hash</span><span class="Statement">&quot;</span> <span class="Special">--exec</span>
 // Delete data
-gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/keysrv/op=delete/key=15</span><span class="Statement">&quot;</span> <span class="Special">--service</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/arr</span><span class="Statement">&quot;</span> <span class="Special">--exec</span></pre>
-<span id=golf_copied_792 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_792' style='position: absolute;left: -500%;'></textarea>
-<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_792, code_792, golf_copied_792)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/keysrv/op=delete/key=15</span><span class="Statement">&quot;</span> <span class="Special">--service</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/hash</span><span class="Statement">&quot;</span> <span class="Special">--exec</span></pre>
+<span id=golf_copied_787 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_787' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_787, code_787, golf_copied_787)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-See <a href='http://golf-lang.github.io/read-set.html'>read-set</a> for more examples.<br/>
+See <a href='https://golf-lang.com/read-hash.html'>read-hash</a> for more examples.<br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
- <span style="font-weight:bold;">Set</span><br/>
-<a href='http://golf-lang.github.io/get-set.html'>get-set</a> &nbsp;<br/>
-<a href='http://golf-lang.github.io/new-set.html'>new-set</a> &nbsp;<br/>
-<a href='http://golf-lang.github.io/purge-set.html'>purge-set</a> &nbsp;<br/>
-<a href='http://golf-lang.github.io/read-set.html'>read-set</a> &nbsp;<br/>
-<a href='http://golf-lang.github.io/resize-set.html'>resize-set</a> &nbsp;<br/>
-<a href='http://golf-lang.github.io/write-set.html'>write-set</a> &nbsp; <br/>
+ <span style="font-weight:bold;">Hash</span><br/>
+<a href='https://golf-lang.com/get-hash.html'>get-hash</a> &nbsp;<br/>
+<a href='https://golf-lang.com/new-hash.html'>new-hash</a> &nbsp;<br/>
+<a href='https://golf-lang.com/purge-hash.html'>purge-hash</a> &nbsp;<br/>
+<a href='https://golf-lang.com/read-hash.html'>read-hash</a> &nbsp;<br/>
+<a href='https://golf-lang.com/resize-hash.html'>resize-hash</a> &nbsp;<br/>
+<a href='https://golf-lang.com/write-hash.html'>write-hash</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
-<a href='http://golf-lang.github.io/documentation.html'>documentation</a><br/>
+<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
-<!--GOLFFOOT77--><span style='font-size:80%'><a href="http://golf-lang.github.io/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://golf-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
 </div><br/></body></html>
 
 

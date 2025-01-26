@@ -6,6 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="canonical" href="https://golf-lang.com/return-handler.html" />
 <style>
 
 
@@ -233,59 +234,59 @@ function gg_copy(gt, eid, gc) {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://golf-lang.github.io' style='border-bottom:0px'><img src='http://golf-lang.github.io/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Return handler</div><hr/><span style="font-weight:bold;">Purpose</span>: Return from current request handler back to its caller.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Return handler</div><hr/><span style="font-weight:bold;">Purpose</span>: Return from current request handler back to its caller.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_649'>
+<pre id='code_655'>
 <span class="Statement"> return-handler</span></pre>
-<span id=golf_copied_649 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_649' style='position: absolute;left: -500%;'></textarea>
-<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_649, code_649, golf_copied_649)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_655 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_655' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_655, code_655, golf_copied_655)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Returns from current request handler by transferring control back to its caller. If the current request handler was called from an outside caller (such as web browser, API, command line etc.), then return-handler is equivalent to <a href='http://golf-lang.github.io/exit-handler.html'>exit-handler</a>. If the current request handler was called from another request handler with <a href='http://golf-lang.github.io/call-handler.html'>call-handler</a>, then control transfers back to that handler immediately after call-handler.<br/>
+Returns from current request handler by transferring control back to its caller. If the current request handler was called from an outside caller (such as web browser, API, command line etc.), then return-handler is equivalent to <a href='https://golf-lang.com/exit-handler.html'>exit-handler</a>. If the current request handler was called from another request handler with <a href='https://golf-lang.com/call-handler.html'>call-handler</a>, then control transfers back to that handler immediately after call-handler.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 In this example, "req-handler" (the caller) will call "other-handler" (the callee), which will return to the caller (immediately after call-handler). Here's the caller:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_650'>
+<pre id='code_656'>
 <span class="Statement"> begin-handler</span> /req-handler<span class="Identifier"> public</span>
 <span class="Statement">     .</span>..
 <span class="Statement">     call-handler</span> other-handler
 <span class="Statement">     .</span>..
 <span class="Statement"> end-handler</span></pre>
-<span id=golf_copied_650 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_650' style='position: absolute;left: -500%;'></textarea>
-<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_650, code_650, golf_copied_650)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_656 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_656' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_656, code_656, golf_copied_656)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The callee handler:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_651'>
+<pre id='code_657'>
 <span class="Statement"> begin-handler</span> /other-handler<span class="Identifier"> public</span>
 <span class="Statement">     .</span>..
 <span class="Statement">     return-handler</span>
 <span class="Statement">     .</span>..
 <span class="Statement"> end-handler</span></pre>
-<span id=golf_copied_651 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_651' style='position: absolute;left: -500%;'></textarea>
-<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_651, code_651, golf_copied_651)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_657 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_657' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_657, code_657, golf_copied_657)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Program flow</span><br/>
-<a href='http://golf-lang.github.io/break-loop.html'>break-loop</a> &nbsp;<br/>
-<a href='http://golf-lang.github.io/code-blocks.html'>code-blocks</a> &nbsp;<br/>
-<a href='http://golf-lang.github.io/continue-loop.html'>continue-loop</a> &nbsp;<br/>
-<a href='http://golf-lang.github.io/do-once.html'>do-once</a> &nbsp;<br/>
-<a href='http://golf-lang.github.io/exit-handler.html'>exit-handler</a> &nbsp;<br/>
-<a href='http://golf-lang.github.io/if-defined.html'>if-defined</a> &nbsp;<br/>
-<a href='http://golf-lang.github.io/if-true.html'>if-true</a> &nbsp;<br/>
-<a href='http://golf-lang.github.io/return-handler.html'>return-handler</a> &nbsp;<br/>
-<a href='http://golf-lang.github.io/set-bool.html'>set-bool</a> &nbsp;<br/>
-<a href='http://golf-lang.github.io/start-loop.html'>start-loop</a> &nbsp; <br/>
+<a href='https://golf-lang.com/break-loop.html'>break-loop</a> &nbsp;<br/>
+<a href='https://golf-lang.com/code-blocks.html'>code-blocks</a> &nbsp;<br/>
+<a href='https://golf-lang.com/continue-loop.html'>continue-loop</a> &nbsp;<br/>
+<a href='https://golf-lang.com/do-once.html'>do-once</a> &nbsp;<br/>
+<a href='https://golf-lang.com/exit-handler.html'>exit-handler</a> &nbsp;<br/>
+<a href='https://golf-lang.com/if-defined.html'>if-defined</a> &nbsp;<br/>
+<a href='https://golf-lang.com/if-true.html'>if-true</a> &nbsp;<br/>
+<a href='https://golf-lang.com/return-handler.html'>return-handler</a> &nbsp;<br/>
+<a href='https://golf-lang.com/set-bool.html'>set-bool</a> &nbsp;<br/>
+<a href='https://golf-lang.com/start-loop.html'>start-loop</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
-<a href='http://golf-lang.github.io/documentation.html'>documentation</a><br/>
+<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
-<!--GOLFFOOT77--><span style='font-size:80%'><a href="http://golf-lang.github.io/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://golf-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
 </div><br/></body></html>
 
 

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>Write array</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="HandheldFriendly" content="True"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="canonical" href="https://golf-lang.com/write-array.html" />
+<style>
+
+
+body, html {
+    color:black;
+    text-rendering: optimizelegibility;
+    background-color: white;
+    min-height: 150%;
+    font-family: "Times New Roman";
+    font-weight:400;
+    font-size:18px;
+    line-height:27px;
+    letter-spacing: 2px;
+    z-index: 1;
+    height: 100%;
+    text-align:left;
+    width:80%;
+    margin-left:auto;
+    margin-right:auto;
+    padding:0;
+    /*font-family: Helvetica, Arial, sans-serif;*/
+}
+
+body {
+    padding-left:1vw;
+    padding-right:1vw;
+}
+    
+.ncode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.shcode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.sqlcode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.htmlcode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.code {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+/*Just like h1 but for pdf conversion it would be indented this way it's not*/
+.vhub {
+    display: block;
+   font-size: 1.6em;
+   margin-top: 0.63em;
+   margin-bottom: 0.63em;
+   margin-left: 0;
+   margin-right: 0;
+   font-weight: bold;
+}
+
+/*Just like h2 but for pdf conversion it would be indented this way it's not*/
+.vsub {
+    display: block;
+   font-size: 1.25em;
+   margin-top: 0.53em;
+   margin-bottom: 0.53em;
+   margin-left: 0;
+   margin-right: 0;
+   font-weight: bold;
+}
+
+ul {
+  margin-left: 0.75vw;
+  padding-left: 0;
+}
+li {
+  margin-left: 0.75vw;
+  padding-left: 0;
+}
+
+/* this must be last, as it overrides previous settings, for mobile */
+@media (hover: none) {
+a {
+   display: inline-block;
+   padding-top: 3px;
+   padding-bottom: 2px;
+}
+body {
+    padding-left:2vw;
+    padding-right:2vw;
+    font-size:14px;
+    line-height:22px;
+    letter-spacing: 1px;
+}
+}
+
+/*The following is for code snippets that are highlighted by 2html vim*/
+pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
+.Identifier { color: #008b8b; }
+.Statement { color: #af5f00; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
+/*end of highlighted snippets*/
+
+a {
+    text-decoration:none;
+    padding-bottom: 0px; 
+    color:inherit;
+    border-bottom: 2px solid #ab9e9e;
+}
+a:hover {
+    text-decoration: none;
+    color:black;
+    border-bottom: 1px solid red;
+}
+/*do not underline links nor should they be active*/
+pre a {
+    text-decoration:none;
+    color:black;
+    border-bottom: none;
+    pointer-events: none;
+    cursor: default;
+}
+
+
+.golfSnippet {display:none;}
+
+ul {
+  list-style-type:square;
+  list-style-position: outside;
+}
+
+</style>
+
+
+</head>
+<body>
+
+<script>
+function gg_copy(gt, eid, gc) {
+  gt.textContent = eid.textContent;
+  gt.select();
+  document.execCommand("copy");
+  gc.style.visibility="visible"
+  setTimeout(()=>{ gc.style.visibility="hidden"; }, 1000);
+}
+
+</script>
+
+<!--GOLFMENU13-->
+
+<!--GOLFENDMENU13-->
+
+
+
+<!--BEGVDOC90-->
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Write array</div><hr/><span style="font-weight:bold;">Purpose</span>: Store value into an array.<br/>
+<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_771'>
+<span class="Statement"> write-array</span> &lt;array&gt; \
+    <span class="Identifier"> key</span> &lt;key&gt; \
+    <span class="Identifier"> value</span> &lt;value&gt; \
+     [<span class="Type"> status</span> &lt;status&gt; ] \
+     [<span class="Type"> old-value</span> &lt;old value&gt; ]</pre>
+<span id=golf_copied_771 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_771' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_771, code_771, golf_copied_771)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+write-array will store string &lt;value&gt; (in "value" clause) under index &lt;key&gt; (in "key" clause) into &lt;array&gt;, which must be created with <a href='https://golf-lang.com/new-array.html'>new-array</a>. &lt;key&gt; is a number from 0 up to (excluding) the currently allocated array size (see <a href='https://golf-lang.com/new-array.html'>new-array</a>).<br/>
+<br/>
+&lt;key&gt; and &lt;value&gt; are collectively called an "element". <br/>
+<br/>
+If value under index &lt;key&gt; already exists in the array, then &lt;status&gt; number (in "status" clause) has a value of GG_INFO_EXIST and the old value associated under index &lt;key&gt; is returned in string &lt;old value&gt; (in "old-value" clause) and &lt;value&gt; will replace the old value.<br/>
+<br/>
+If there was no value under index &lt;key&gt;, &lt;status&gt; will be GG_OKAY and &lt;old value&gt; is unchanged.<br/>
+<br/>
+If an &lt;array&gt; was created with "process-scope" clause (see <a href='https://golf-lang.com/new-array.html'>new-array</a>), then the element &lt;value&gt; will not be freed when the current request ends, rather it will persist while the process runs, unless deleted (see <a href='https://golf-lang.com/read-array.html'>read-array</a> with delete clause).<br/>
+<div class="vsub"><a id="Examples"></a>Examples</div>
+Writing data to an array:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_773'>
+<span class="Statement"> new-array</span> arr
+<span class="Statement"> write-array</span> arr<span class="Identifier"> key</span> <span class="Constant">100</span><span class="Identifier"> value</span> <span class="Constant">&quot;some data&quot;</span></pre>
+<span id=golf_copied_773 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_773' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_773, code_773, golf_copied_773)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Writing new value with the same key index and obtaining the previous value (which is "some data"):<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_775'>
+<span class="Statement"> write-array</span> arr<span class="Identifier"> key</span> <span class="Constant">100</span><span class="Identifier"> value</span> <span class="Constant">&quot;new data&quot;</span><span class="Type"> status</span> st<span class="Type"> old-value</span> od
+<span class="Statement"> if-true</span> st<span class="Identifier"> equal</span> GG_INFO_EXIST
+<span class="Statement">     @</span>Previous value for this key index is <span class="Statement">&lt;&lt;p-out</span> od<span class="Statement">&gt;&gt;</span>
+<span class="Statement"> end-if</span></pre>
+<span id=golf_copied_775 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_775' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_775, code_775, golf_copied_775)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+The following is an array service, where a process-scoped array is created. It provides inserting, deleting and querying indexed keys. Maximum number of keys it holds is 10,000,000 (indexed from 0 to 9,999,999). Such a service process can run indefinitely. Create file arrsrv.golf:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_776'>
+<span class="Statement"> %%</span> /arrsrv<span class="Identifier"> public</span>
+<span class="Statement">     do-once</span>
+<span class="Statement">     new-array</span> arr<span class="Identifier"> max-size</span> <span class="Constant">10000000</span><span class="Identifier"> process-scope</span>
+<span class="Statement">     end-do-once</span>
+
+     <span class="Comment">// Get input parameters</span>
+<span class="Statement">     get-param</span> op
+<span class="Statement">     get-param</span> key
+<span class="Statement">     get-param</span> data
+     <span class="Comment">// Convert string keye to number</span>
+<span class="Statement">     string-number</span> key<span class="Type"> to</span> key_n
+
+<span class="Statement">     if-true</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;add&quot;</span> <span class="Comment">// Add data to array</span>
+<span class="Statement">         write-array</span> arr<span class="Identifier"> key</span> key_n<span class="Identifier"> value</span> data<span class="Type"> old-value</span> old_data<span class="Type"> status</span> st
+<span class="Statement">         if-true</span> st<span class="Identifier"> equal</span> GG_INFO_EXIST
+<span class="Statement">             @</span>Old data was [<span class="Statement">&lt;&lt;p-out</span> old_data<span class="Statement">&gt;&gt;</span>]
+<span class="Statement">             delete-string</span> old_data
+<span class="Statement">         end-if</span>
+<span class="Statement">         @</span>Added [<span class="Statement">&lt;&lt;p-out</span> key<span class="Statement">&gt;&gt;</span>]
+<span class="Statement">     else-if</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;delete&quot;</span> <span class="Comment">// Delete data and obtain the value deleted</span>
+<span class="Statement">         read-array</span> arr<span class="Identifier"> key</span> key_n<span class="Type"> value</span> val<span class="Identifier"> delete</span><span class="Type"> status</span> st
+<span class="Statement">         if-true</span> st<span class="Identifier"> equal</span> GG_ERR_EXIST
+<span class="Statement">             @</span>Not found [<span class="Statement">&lt;&lt;p-out</span> key<span class="Statement">&gt;&gt;</span>]
+<span class="Statement">         else-if</span>
+             <span class="Comment">// If found, then delete key and value</span>
+<span class="Statement">             @</span>Deleted [<span class="Statement">&lt;&lt;p-out</span> val<span class="Statement">&gt;&gt;</span>]
+<span class="Statement">             delete-string</span> val
+<span class="Statement">         end-if</span>
+<span class="Statement">     else-if</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;query&quot;</span> <span class="Comment">// Query hash based on key value</span>
+<span class="Statement">         read-array</span> arr<span class="Identifier"> key</span> key_n<span class="Type"> value</span> val<span class="Type"> status</span> st
+<span class="Statement">         if-true</span> st<span class="Identifier"> equal</span> GG_ERR_EXIST
+<span class="Statement">             @</span>Not found, queried [<span class="Statement">&lt;&lt;p-out</span> key<span class="Statement">&gt;&gt;</span>]
+<span class="Statement">         else-if</span>
+<span class="Statement">             @</span>Value [<span class="Statement">&lt;&lt;p-out</span> val<span class="Statement">&gt;&gt;</span>]
+<span class="Statement">         end-if</span>
+<span class="Statement">     end-if</span>
+<span class="Statement"> %%</span></pre>
+<span id=golf_copied_776 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_776' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_776, code_776, golf_copied_776)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Create and make the application, then run it as service:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_772'>
+// Create application
+gg <span class="Special">-k</span> arr
+// Make application
+gg <span class="Special">-q</span>
+// Start application <span class="PreProc">(</span><span class="Special">single process key service</span><span class="PreProc">)</span>
+mgrg <span class="Special">-w</span> <span class="Constant">1</span> arr</pre>
+<span id=golf_copied_772 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_772' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_772, code_772, golf_copied_772)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Try it from a command line client (see <a href='https://golf-lang.com/gg.html'>gg</a>):<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_774'>
+// Add data
+gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/arrsrv/op=add/key=15/data=15</span><span class="Statement">&quot;</span> <span class="Special">--service</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/arr</span><span class="Statement">&quot;</span> <span class="Special">--exec</span>
+// Query data
+gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/arrsrv/op=query/key=15</span><span class="Statement">&quot;</span> <span class="Special">--service</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/arr</span><span class="Statement">&quot;</span> <span class="Special">--exec</span>
+// Delete data
+gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/arrsrv/op=delete/key=15</span><span class="Statement">&quot;</span> <span class="Special">--service</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/arr</span><span class="Statement">&quot;</span> <span class="Special">--exec</span></pre>
+<span id=golf_copied_774 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_774' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_774, code_774, golf_copied_774)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+See <a href='https://golf-lang.com/read-array.html'>read-array</a> for more examples.<br/>
+<!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
+ <span style="font-weight:bold;">Array</span><br/>
+<a href='https://golf-lang.com/new-array.html'>new-array</a> &nbsp;<br/>
+<a href='https://golf-lang.com/purge-array.html'>purge-array</a> &nbsp;<br/>
+<a href='https://golf-lang.com/read-array.html'>read-array</a> &nbsp;<br/>
+<a href='https://golf-lang.com/write-array.html'>write-array</a> &nbsp; <br/>
+<span style="font-weight:bold;">See all</span> <br/>
+<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
+<!--ENDVDOC90-->
+<br/><div style='width:100%;clear:both;'>
+<hr/>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://golf-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+</div><br/></body></html>
+
+

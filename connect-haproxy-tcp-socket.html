@@ -6,6 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="canonical" href="https://golf-lang.com/connect-haproxy-tcp-socket.html" />
 <style>
 
 
@@ -233,7 +234,7 @@ function gg_copy(gt, eid, gc) {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://golf-lang.github.io' style='border-bottom:0px'><img src='http://golf-lang.github.io/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Connect haproxy tcp socket</div><hr/>This shows how to connect your application listening on TCP port &lt;port number&gt; (started with "-p" option in <a href='http://golf-lang.github.io/mgrg.html'>mgrg</a>) to HAProxy load balancer.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Connect haproxy tcp socket</div><hr/>This shows how to connect your application listening on TCP port &lt;port number&gt; (started with "-p" option in <a href='https://golf-lang.com/mgrg.html'>mgrg</a>) to HAProxy load balancer.<br/>
 <br/>
 HAProxy can balance the load between different web servers, which in turn are connected to your applications. Since in this case HAProxy does not directly communicate with a Golf application (which is behind a web server), you may lookup examples of this online.<br/>
 <br/>
@@ -276,7 +277,7 @@ backend backend_servers
     server s1 127.0.0.1:2301 proto fcgi</pre>
 <span id=golf_copied_274 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_274' style='position: absolute;left: -500%;'></textarea>
-<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_274, code_274, golf_copied_274)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_274, code_274, golf_copied_274)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Restart HAProxy:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
@@ -284,11 +285,11 @@ Restart HAProxy:<br/>
 sudo systemctl restart haproxy</pre>
 <span id=golf_copied_275 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_275' style='position: absolute;left: -500%;'></textarea>
-<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_275, code_275, golf_copied_275)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_275, code_275, golf_copied_275)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Note that Golf application path is "/func_test" (and the application name may or may not be the same, see <a href='http://golf-lang.github.io/request.html'>request</a>). The TCP port of the application is "2301" (could be any port number you choose that's greater than 1000 and lower than 65535). <br/>
+Note that Golf application path is "/func_test" (and the application name may or may not be the same, see <a href='https://golf-lang.com/request.html'>request</a>). The TCP port of the application is "2301" (could be any port number you choose that's greater than 1000 and lower than 65535). <br/>
 <br/>
-HAProxy itself is bound to port 90, and "path_reg" specifies which URLs will be passed to your Golf application (i.e. they must have "/func_test/" in the URL). "path-info" specifies SCRIPT_NAME and PATH_INFO (as "()" regular sub-expressions), which are as such passed to your Golf application. "docroot" is set to the application home directory (see <a href='http://golf-lang.github.io/directories.html'>directories</a>).<br/>
+HAProxy itself is bound to port 90, and "path_reg" specifies which URLs will be passed to your Golf application (i.e. they must have "/func_test/" in the URL). "path-info" specifies SCRIPT_NAME and PATH_INFO (as "()" regular sub-expressions), which are as such passed to your Golf application. "docroot" is set to the application home directory (see <a href='https://golf-lang.com/directories.html'>directories</a>).<br/>
 <br/>
 A Golf aplication (named "func_test") would have been started with (using the same application name "func_test" and TCP port "2301"):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
@@ -296,22 +297,22 @@ A Golf aplication (named "func_test") would have been started with (using the sa
 mgrg <span class="Special">-p</span> <span class="Constant">2301</span> func_test</pre>
 <span id=golf_copied_276 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_276' style='position: absolute;left: -500%;'></textarea>
-<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_276, code_276, golf_copied_276)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_276, code_276, golf_copied_276)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Now you should be able to connect and load-balance your Golf application servers directly from HAProxy.<br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Web servers</span><br/>
-<a href='http://golf-lang.github.io/connect-apache-tcp-socket.html'>connect-apache-tcp-socket</a> &nbsp;<br/>
-<a href='http://golf-lang.github.io/connect-apache-unix-socket.html'>connect-apache-unix-socket</a> &nbsp;<br/>
-<a href='http://golf-lang.github.io/connect-haproxy-tcp-socket.html'>connect-haproxy-tcp-socket</a> &nbsp;<br/>
-<a href='http://golf-lang.github.io/connect-nginx-tcp-socket.html'>connect-nginx-tcp-socket</a> &nbsp;<br/>
-<a href='http://golf-lang.github.io/connect-nginx-unix-socket.html'>connect-nginx-unix-socket</a> &nbsp; <br/>
+<a href='https://golf-lang.com/connect-apache-tcp-socket.html'>connect-apache-tcp-socket</a> &nbsp;<br/>
+<a href='https://golf-lang.com/connect-apache-unix-socket.html'>connect-apache-unix-socket</a> &nbsp;<br/>
+<a href='https://golf-lang.com/connect-haproxy-tcp-socket.html'>connect-haproxy-tcp-socket</a> &nbsp;<br/>
+<a href='https://golf-lang.com/connect-nginx-tcp-socket.html'>connect-nginx-tcp-socket</a> &nbsp;<br/>
+<a href='https://golf-lang.com/connect-nginx-unix-socket.html'>connect-nginx-unix-socket</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
-<a href='http://golf-lang.github.io/documentation.html'>documentation</a><br/>
+<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
-<!--GOLFFOOT77--><span style='font-size:80%'><a href="http://golf-lang.github.io/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://golf-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
 </div><br/></body></html>
 
 

@@ -6,6 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="canonical" href="https://golf-lang.com/decrypt-data.html" />
 <style>
 
 
@@ -233,7 +234,7 @@ function gg_copy(gt, eid, gc) {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://golf-lang.github.io' style='border-bottom:0px'><img src='http://golf-lang.github.io/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Decrypt data</div><hr/><span style="font-weight:bold;">Purpose</span>: Decrypt data.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Decrypt data</div><hr/><span style="font-weight:bold;">Purpose</span>: Decrypt data.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_326'>
@@ -250,36 +251,36 @@ function gg_copy(gt, eid, gc) {
      [<span class="Identifier"> init-vector</span> &lt;init vector&gt; ]</pre>
 <span id=golf_copied_326 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_326' style='position: absolute;left: -500%;'></textarea>
-<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_326, code_326, golf_copied_326)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_326, code_326, golf_copied_326)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-decrypt-data will decrypt &lt;data&gt; which must have been encrypted with <a href='http://golf-lang.github.io/encrypt-data.html'>encrypt-data</a>, or other software using the same algorithms and clauses as specified. <br/>
+decrypt-data will decrypt &lt;data&gt; which must have been encrypted with <a href='https://golf-lang.com/encrypt-data.html'>encrypt-data</a>, or other software using the same algorithms and clauses as specified. <br/>
 <br/>
-If "input-length" clause is not used, then the number of bytes decrypted is the length of &lt;data&gt; (see <a href='http://golf-lang.github.io/string-length.html'>string-length</a>); if "input-length" is specified, then exactly &lt;input length&gt; bytes are decrypted. Password used for decryption is string &lt;password&gt; (in "password" clause) and it must match the password used in <a href='http://golf-lang.github.io/encrypt-data.html'>encrypt-data</a>. If "salt" clause is used, then string &lt;salt&gt; must match the salt used in encryption. If "init-vector" clause is used, then string &lt;init vector&gt; must match the IV (initialization vector) used in encryption. If "iterations" clause is used, then &lt;iterations&gt; must match the number used in encryption.<br/>
+If "input-length" clause is not used, then the number of bytes decrypted is the length of &lt;data&gt; (see <a href='https://golf-lang.com/string-length.html'>string-length</a>); if "input-length" is specified, then exactly &lt;input length&gt; bytes are decrypted. Password used for decryption is string &lt;password&gt; (in "password" clause) and it must match the password used in <a href='https://golf-lang.com/encrypt-data.html'>encrypt-data</a>. If "salt" clause is used, then string &lt;salt&gt; must match the salt used in encryption. If "init-vector" clause is used, then string &lt;init vector&gt; must match the IV (initialization vector) used in encryption. If "iterations" clause is used, then &lt;iterations&gt; must match the number used in encryption.<br/>
 <br/>
 The result of decryption is in &lt;result&gt; (in "to" clause).<br/>
 <br/>
-If data was encrypted in binary mode (see <a href='http://golf-lang.github.io/encrypt-data.html'>encrypt-data</a>), you must decrypt it with the same, and if it wasn't, then you must not use it in decrypt-data either. The reason for this is obvious - binary mode of encryption is encrypted data in its shortest form, and character mode (without "binary" or if &lt;binary&gt; evaluates to false) is the same data converted to a hexadecimal string - thus decryption must first convert such data back to binary before decrypting.<br/>
+If data was encrypted in binary mode (see <a href='https://golf-lang.com/encrypt-data.html'>encrypt-data</a>), you must decrypt it with the same, and if it wasn't, then you must not use it in decrypt-data either. The reason for this is obvious - binary mode of encryption is encrypted data in its shortest form, and character mode (without "binary" or if &lt;binary&gt; evaluates to false) is the same data converted to a hexadecimal string - thus decryption must first convert such data back to binary before decrypting.<br/>
 <br/>
-The cipher and digest algorithms (if specified as &lt;cipher algorithm&gt; and &lt;digest algorithm&gt; in "cipher" and "digest" clauses respectively) must match what was used in <a href='http://golf-lang.github.io/encrypt-data.html'>encrypt-data</a>.<br/>
+The cipher and digest algorithms (if specified as &lt;cipher algorithm&gt; and &lt;digest algorithm&gt; in "cipher" and "digest" clauses respectively) must match what was used in <a href='https://golf-lang.com/encrypt-data.html'>encrypt-data</a>.<br/>
 <br/>
-"cache" clause is used to cache the result of key computation, so it is not computed each time decryption takes place, while "clear-cache" allows key to be re-computed every time &lt;clear cache&gt; evaluates to boolean true; re-computation of a key, if used, must match the usage during encryption. For more on "cache" and "clear-cache" clauses, as well as safety of encrypting/decrypting, see "Caching key" and "Safety" in <a href='http://golf-lang.github.io/encrypt-data.html'>encrypt-data</a>.<br/>
+"cache" clause is used to cache the result of key computation, so it is not computed each time decryption takes place, while "clear-cache" allows key to be re-computed every time &lt;clear cache&gt; evaluates to boolean true; re-computation of a key, if used, must match the usage during encryption. For more on "cache" and "clear-cache" clauses, as well as safety of encrypting/decrypting, see "Caching key" and "Safety" in <a href='https://golf-lang.com/encrypt-data.html'>encrypt-data</a>.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
-See <a href='http://golf-lang.github.io/encrypt-data.html'>encrypt-data</a>.<br/>
+See <a href='https://golf-lang.com/encrypt-data.html'>encrypt-data</a>.<br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Encryption</span><br/>
-<a href='http://golf-lang.github.io/decrypt-data.html'>decrypt-data</a> &nbsp;<br/>
-<a href='http://golf-lang.github.io/derive-key.html'>derive-key</a> &nbsp;<br/>
-<a href='http://golf-lang.github.io/encrypt-data.html'>encrypt-data</a> &nbsp;<br/>
-<a href='http://golf-lang.github.io/hash-string.html'>hash-string</a> &nbsp;<br/>
-<a href='http://golf-lang.github.io/hmac-string.html'>hmac-string</a> &nbsp;<br/>
-<a href='http://golf-lang.github.io/random-crypto.html'>random-crypto</a> &nbsp;<br/>
-<a href='http://golf-lang.github.io/random-string.html'>random-string</a> &nbsp; <br/>
+<a href='https://golf-lang.com/decrypt-data.html'>decrypt-data</a> &nbsp;<br/>
+<a href='https://golf-lang.com/derive-key.html'>derive-key</a> &nbsp;<br/>
+<a href='https://golf-lang.com/encrypt-data.html'>encrypt-data</a> &nbsp;<br/>
+<a href='https://golf-lang.com/hash-string.html'>hash-string</a> &nbsp;<br/>
+<a href='https://golf-lang.com/hmac-string.html'>hmac-string</a> &nbsp;<br/>
+<a href='https://golf-lang.com/random-crypto.html'>random-crypto</a> &nbsp;<br/>
+<a href='https://golf-lang.com/random-string.html'>random-string</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
-<a href='http://golf-lang.github.io/documentation.html'>documentation</a><br/>
+<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
-<!--GOLFFOOT77--><span style='font-size:80%'><a href="http://golf-lang.github.io/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://golf-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
 </div><br/></body></html>
 
 

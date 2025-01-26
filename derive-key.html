@@ -6,6 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="canonical" href="https://golf-lang.com/derive-key.html" />
 <style>
 
 
@@ -233,7 +234,7 @@ function gg_copy(gt, eid, gc) {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://golf-lang.github.io' style='border-bottom:0px'><img src='http://golf-lang.github.io/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Derive key</div><hr/><span style="font-weight:bold;">Purpose</span>: Derive a key.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Derive key</div><hr/><span style="font-weight:bold;">Purpose</span>: Derive a key.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_342'>
@@ -245,9 +246,9 @@ function gg_copy(gt, eid, gc) {
      [<span class="Identifier"> iterations</span> &lt;iterations&gt; ]</pre>
 <span id=golf_copied_342 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_342' style='position: absolute;left: -500%;'></textarea>
-<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_342, code_342, golf_copied_342)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_342, code_342, golf_copied_342)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-derive-key derives &lt;key&gt; from string &lt;source&gt; in "from" clause. If &lt;source length&gt; in "from-length" clause is specified, exactly &lt;source length&gt; bytes of &lt;source&gt; are used. Otherwise, the length of &lt;source&gt; string is used as the number of bytes (see <a href='http://golf-lang.github.io/string-length.html'>string-length</a>). <br/>
+derive-key derives &lt;key&gt; from string &lt;source&gt; in "from" clause. If &lt;source length&gt; in "from-length" clause is specified, exactly &lt;source length&gt; bytes of &lt;source&gt; are used. Otherwise, the length of &lt;source&gt; string is used as the number of bytes (see <a href='https://golf-lang.com/string-length.html'>string-length</a>). <br/>
 <br/>
 The desired length of derived key is given by &lt;length&gt; in "length" clause. The method for key generation is PBKDF2. By default the digest used is "SHA256". You can use a different &lt;digest algorithm&gt; in "digest" clause (for example "SHA3-256"). To see a list of available digests:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
@@ -256,9 +257,9 @@ The desired length of derived key is given by &lt;length&gt; in "length" clause.
 openssl list <span class="Special">-digest-algorithms</span></pre>
 <span id=golf_copied_343 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_343' style='position: absolute;left: -500%;'></textarea>
-<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_343, code_343, golf_copied_343)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_343, code_343, golf_copied_343)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-The salt for key derivation can be given with &lt;salt&gt; in "salt" clause. If "salt-length" clause is not specified, then the entire length of salt is used (see <a href='http://golf-lang.github.io/string-length.html'>string-length</a>), otherwise &lt;salt length&gt; bytes are used as salt.<br/>
+The salt for key derivation can be given with &lt;salt&gt; in "salt" clause. If "salt-length" clause is not specified, then the entire length of salt is used (see <a href='https://golf-lang.com/string-length.html'>string-length</a>), otherwise &lt;salt length&gt; bytes are used as salt.<br/>
 <br/>
 The number of iterations is given by &lt;iterations&gt; in "iterations" clause. The default is 1000 per <a href='https://www.rfc-editor.org/rfc/rfc8018'>RFC 8018</a>, though depending on your needs and the quality of &lt;source&gt; you may choose a different value.<br/>
 <br/>
@@ -273,23 +274,23 @@ Derived key is in variable "mk":<br/>
 <span class="Statement"> derive-key</span> mk<span class="Identifier"> from</span> <span class="Constant">&quot;clave secreta&quot;</span><span class="Identifier"> digest</span> <span class="Constant">&quot;sha-256&quot;</span><span class="Identifier"> salt</span> rs9<span class="Identifier"> salt-length</span> <span class="Constant">10</span><span class="Identifier"> iterations</span> <span class="Constant">2000</span><span class="Identifier"> length</span> <span class="Constant">16</span></pre>
 <span id=golf_copied_344 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_344' style='position: absolute;left: -500%;'></textarea>
-<img src='http://golf-lang.github.io/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_344, code_344, golf_copied_344)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_344, code_344, golf_copied_344)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Encryption</span><br/>
-<a href='http://golf-lang.github.io/decrypt-data.html'>decrypt-data</a> &nbsp;<br/>
-<a href='http://golf-lang.github.io/derive-key.html'>derive-key</a> &nbsp;<br/>
-<a href='http://golf-lang.github.io/encrypt-data.html'>encrypt-data</a> &nbsp;<br/>
-<a href='http://golf-lang.github.io/hash-string.html'>hash-string</a> &nbsp;<br/>
-<a href='http://golf-lang.github.io/hmac-string.html'>hmac-string</a> &nbsp;<br/>
-<a href='http://golf-lang.github.io/random-crypto.html'>random-crypto</a> &nbsp;<br/>
-<a href='http://golf-lang.github.io/random-string.html'>random-string</a> &nbsp; <br/>
+<a href='https://golf-lang.com/decrypt-data.html'>decrypt-data</a> &nbsp;<br/>
+<a href='https://golf-lang.com/derive-key.html'>derive-key</a> &nbsp;<br/>
+<a href='https://golf-lang.com/encrypt-data.html'>encrypt-data</a> &nbsp;<br/>
+<a href='https://golf-lang.com/hash-string.html'>hash-string</a> &nbsp;<br/>
+<a href='https://golf-lang.com/hmac-string.html'>hmac-string</a> &nbsp;<br/>
+<a href='https://golf-lang.com/random-crypto.html'>random-crypto</a> &nbsp;<br/>
+<a href='https://golf-lang.com/random-string.html'>random-string</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
-<a href='http://golf-lang.github.io/documentation.html'>documentation</a><br/>
+<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
-<!--GOLFFOOT77--><span style='font-size:80%'><a href="http://golf-lang.github.io/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://golf-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
 </div><br/></body></html>
 
 
