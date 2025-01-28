@@ -36,6 +36,7 @@ body {
 }
     
 .ncode {
+    line-height:20px;
     letter-spacing: 0px;
     font-size:14px;
     font-family: monospace;
@@ -54,6 +55,7 @@ body {
 }
 
 .shcode {
+    line-height:23px;
     letter-spacing: 0px;
     font-size:14px;
     font-family: monospace;
@@ -72,6 +74,7 @@ body {
 }
 
 .sqlcode {
+    line-height:23px;
     letter-spacing: 0px;
     font-size:14px;
     font-family: monospace;
@@ -90,6 +93,7 @@ body {
 }
 
 .htmlcode {
+    line-height:23px;
     letter-spacing: 0px;
     font-size:14px;
     font-family: monospace;
@@ -108,6 +112,7 @@ body {
 }
 
 .code {
+    line-height:23px;
     letter-spacing: 0px;
     font-size:14px;
     font-family: monospace;
@@ -237,11 +242,11 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Delete string</div><hr/><span style="font-weight:bold;">Purpose</span>: Free string memory.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_343'>
+<pre id='code_344'>
 <span class="Statement"> delete-string</span> &lt;string&gt;</pre>
-<span id=golf_copied_343 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_343' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_343, code_343, golf_copied_343)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_344 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_344' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_344, code_344, golf_copied_344)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 delete-string frees &lt;string&gt; variable previously allocated by a Golf statement. <br/>
 <br/>
@@ -251,17 +256,17 @@ Golf keeps count of &lt;string&gt; references. So if &lt;string&gt; is reference
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Allocate and free random string:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_344'>
+<pre id='code_345'>
 <span class="Statement"> random-string</span><span class="Type"> to</span> ran_str
 <span class="Statement"> .</span>..
 <span class="Statement"> delete-string</span> ran_str</pre>
-<span id=golf_copied_344 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_344' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_344, code_344, golf_copied_344)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_345 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_345' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_345, code_345, golf_copied_345)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Free string allocated by write-string (consisting of 100 "Hello World"s):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_345'>
+<pre id='code_346'>
 <span class="Statement"> write-string</span> ws
 <span class="Statement">     start-loop</span><span class="Identifier"> repeat</span> <span class="Constant">100</span>
 <span class="Statement">         @</span>Hello World
@@ -269,9 +274,9 @@ Free string allocated by write-string (consisting of 100 "Hello World"s):<br/>
 <span class="Statement"> end-write-string</span>
 <span class="Statement"> .</span>..
 <span class="Statement"> delete-string</span> ws</pre>
-<span id=golf_copied_345 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_345' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_345, code_345, golf_copied_345)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_346 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_346' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_346, code_346, golf_copied_346)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <a name='Strings'></a><span style="font-weight:bold;">Strings</span><br/>

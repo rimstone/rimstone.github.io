@@ -36,6 +36,7 @@ body {
 }
     
 .ncode {
+    line-height:20px;
     letter-spacing: 0px;
     font-size:14px;
     font-family: monospace;
@@ -54,6 +55,7 @@ body {
 }
 
 .shcode {
+    line-height:23px;
     letter-spacing: 0px;
     font-size:14px;
     font-family: monospace;
@@ -72,6 +74,7 @@ body {
 }
 
 .sqlcode {
+    line-height:23px;
     letter-spacing: 0px;
     font-size:14px;
     font-family: monospace;
@@ -90,6 +93,7 @@ body {
 }
 
 .htmlcode {
+    line-height:23px;
     letter-spacing: 0px;
     font-size:14px;
     font-family: monospace;
@@ -108,6 +112,7 @@ body {
 }
 
 .code {
+    line-height:23px;
     letter-spacing: 0px;
     font-size:14px;
     font-family: monospace;
@@ -238,41 +243,41 @@ function gg_copy(gt, eid, gc) {
 For Fedora-like distributions (like Rocky or RedHat):<br/>
 <span style="font-weight:bold;">- Install git</span><br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_481'>
-sudo dnf <span class="Special">-y</span> install git</pre>
-<span id=golf_copied_481 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_481' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_481, code_481, golf_copied_481)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-<span style="font-weight:bold;">- Download Golf</span><br/>
-<div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_482'>
-git clone <a href="https://github.com/golf-lang/golf.git">https://github.com/golf-lang/golf.git</a>
-<span class="Statement">cd</span> golf
-git checkout <span class="Constant">191</span></pre>
+sudo dnf <span class="Special">-y</span> install git</pre>
 <span id=golf_copied_482 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_482' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_482, code_482, golf_copied_482)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-<span style="font-weight:bold;">- Install dependencies</span><br/>
+<span style="font-weight:bold;">- Download Golf</span><br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_483'>
-sudo dnf <span class="Special">-y</span> install <a href="https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm">https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm</a>
-sudo dnf <span class="Special">-y</span> install make gcc openssl-devel curl tar pkg-config libxml2-devel libcurl-devel pcre2-devel fcgi-devel fcgi libpq-devel policycoreutils policycoreutils-devel libselinux-utils sqlite-devel mariadb-connector-c-devel</pre>
+git clone <a href="https://github.com/golf-lang/golf.git">https://github.com/golf-lang/golf.git</a>
+<span class="Statement">cd</span> golf
+git checkout <span class="Constant">193</span></pre>
 <span id=golf_copied_483 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_483' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_483, code_483, golf_copied_483)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-<span style="font-weight:bold;">- Build Golf</span><br/>
-Use DI=1 to build debug version, leave it as is for production:<br/>
+<span style="font-weight:bold;">- Install dependencies</span><br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_484'>
-make clean
-make <span class="Identifier">DI</span>=<span class="Constant">0</span>
-sudo make install</pre>
+sudo dnf <span class="Special">-y</span> install <a href="https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm">https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm</a>
+sudo dnf <span class="Special">-y</span> install make gcc openssl-devel curl tar pkg-config libxml2-devel libcurl-devel pcre2-devel fcgi-devel fcgi libpq-devel policycoreutils policycoreutils-devel libselinux-utils sqlite-devel mariadb-connector-c-devel</pre>
 <span id=golf_copied_484 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_484' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_484, code_484, golf_copied_484)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+<span style="font-weight:bold;">- Build Golf</span><br/>
+Use DI=1 to build debug version, leave it as is for production:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_485'>
+make clean
+make <span class="Identifier">DI</span>=<span class="Constant">0</span>
+sudo make install</pre>
+<span id=golf_copied_485 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_485' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_485, code_485, golf_copied_485)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <a name='Download and build'></a><span style="font-weight:bold;">Download and build</span><br/>

@@ -36,6 +36,7 @@ body {
 }
     
 .ncode {
+    line-height:20px;
     letter-spacing: 0px;
     font-size:14px;
     font-family: monospace;
@@ -54,6 +55,7 @@ body {
 }
 
 .shcode {
+    line-height:23px;
     letter-spacing: 0px;
     font-size:14px;
     font-family: monospace;
@@ -72,6 +74,7 @@ body {
 }
 
 .sqlcode {
+    line-height:23px;
     letter-spacing: 0px;
     font-size:14px;
     font-family: monospace;
@@ -90,6 +93,7 @@ body {
 }
 
 .htmlcode {
+    line-height:23px;
     letter-spacing: 0px;
     font-size:14px;
     font-family: monospace;
@@ -108,6 +112,7 @@ body {
 }
 
 .code {
+    line-height:23px;
     letter-spacing: 0px;
     font-size:14px;
     font-family: monospace;
@@ -237,13 +242,13 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Stat file</div><hr/><span style="font-weight:bold;">Purpose</span>: Get information about a file.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_740'>
+<pre id='code_741'>
 <span class="Statement"> stat-file</span> &lt;file&gt; \
     <span class="Identifier"> size</span> |<span class="Identifier"> type</span> |<span class="Identifier"> path</span> |<span class="Identifier"> name</span> \
     <span class="Type"> to</span> &lt;variable&gt;</pre>
-<span id=golf_copied_740 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_740' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_740, code_740, golf_copied_740)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_741 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_741' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_741, code_741, golf_copied_741)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 stat-file obtains information about &lt;file&gt;, which is either the full path of a file or directory, or a name relative to the application home directory (see <a href='https://golf-lang.com/directories.html'>directories</a>). <br/>
 <br/>
@@ -255,15 +260,15 @@ Clause "path" (in string &lt;variable&gt;) obtains the fully resolved path of th
 <div class="vsub"><a id="Examples"></a>Examples</div>
 To get file size in variable "sz", which is created here:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_741'>
+<pre id='code_742'>
 <span class="Statement"> stat-file</span> <span class="Constant">&quot;/home/user/file&quot;</span><span class="Identifier"> size</span><span class="Type"> to</span> sz</pre>
-<span id=golf_copied_741 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_741' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_741, code_741, golf_copied_741)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_742 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_742' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_742, code_742, golf_copied_742)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 To determine if the object is a file or a directory:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_742'>
+<pre id='code_743'>
 <span class="Statement"> stat-file</span> <span class="Constant">&quot;/home/user/some_name&quot;</span><span class="Identifier"> type</span><span class="Type"> to</span> what
 <span class="Statement"> if-true</span> what<span class="Identifier"> equal</span> GG_FILE
 <span class="Statement">    @</span>It's a file!
@@ -272,17 +277,17 @@ To determine if the object is a file or a directory:<br/>
 <span class="Statement"> else-if</span>
 <span class="Statement">    @</span>Doesn't exist!
 <span class="Statement"> end-if</span></pre>
-<span id=golf_copied_742 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_742' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_742, code_742, golf_copied_742)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-Get the fully resolved path of a file to string variable "fp", which is created here.<br/>
-<div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_743'>
-<span class="Statement"> stat-file</span> <span class="Constant">&quot;../file&quot;</span><span class="Identifier"> path</span><span class="Type"> to</span> fp</pre>
 <span id=golf_copied_743 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_743' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_743, code_743, golf_copied_743)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Get the fully resolved path of a file to string variable "fp", which is created here.<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_744'>
+<span class="Statement"> stat-file</span> <span class="Constant">&quot;../file&quot;</span><span class="Identifier"> path</span><span class="Type"> to</span> fp</pre>
+<span id=golf_copied_744 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_744' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_744, code_744, golf_copied_744)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <a name='Files'></a><span style="font-weight:bold;">Files</span><br/>

@@ -36,6 +36,7 @@ body {
 }
     
 .ncode {
+    line-height:20px;
     letter-spacing: 0px;
     font-size:14px;
     font-family: monospace;
@@ -54,6 +55,7 @@ body {
 }
 
 .shcode {
+    line-height:23px;
     letter-spacing: 0px;
     font-size:14px;
     font-family: monospace;
@@ -72,6 +74,7 @@ body {
 }
 
 .sqlcode {
+    line-height:23px;
     letter-spacing: 0px;
     font-size:14px;
     font-family: monospace;
@@ -90,6 +93,7 @@ body {
 }
 
 .htmlcode {
+    line-height:23px;
     letter-spacing: 0px;
     font-size:14px;
     font-family: monospace;
@@ -108,6 +112,7 @@ body {
 }
 
 .code {
+    line-height:23px;
     letter-spacing: 0px;
     font-size:14px;
     font-family: monospace;
@@ -237,15 +242,15 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Read line</div><hr/><span style="font-weight:bold;">Purpose</span>: Read text file line by line in a loop.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_623'>
+<pre id='code_624'>
 <span class="Statement"> read-line</span> &lt;file&gt;<span class="Type"> to</span> &lt;line content&gt; [<span class="Type"> status</span> &lt;status&gt; ] [<span class="Identifier"> delimiter</span> &lt;delimiter&gt; ]
 
  &lt;any code&gt;
 
 <span class="Statement"> end-read-line</span></pre>
-<span id=golf_copied_623 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_623' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_623, code_623, golf_copied_623)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_624 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_624' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_624, code_624, golf_copied_624)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 read-line starts the loop in which a text &lt;file&gt; is read line by line into string &lt;line content&gt;, with end-read-line ending this loop. Once the end of &lt;file&gt; has been reached, or an error occurs, the loop exits. <br/>
 <br/>
@@ -264,7 +269,7 @@ Use <a href='https://golf-lang.com/break-loop.html'>break-loop</a> and <a href='
 <div class="vsub"><a id="Examples"></a>Examples</div>
 To read a text file line by line, and display as a web page with line breaks:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_624'>
+<pre id='code_625'>
 <span class="Statement"> read-line</span> <span class="Constant">&quot;/home/bear/tmp/ll/filexx&quot;</span><span class="Type"> to</span> one_line<span class="Type"> status</span> st
 <span class="Statement">     string-length</span> one_line<span class="Type"> to</span> line_len
 <span class="Statement">     @</span>Line length is <span class="Statement">&lt;&lt;p-num</span> line_len<span class="Statement">&gt;&gt;</span>, line is <span class="Statement">&lt;&lt;p-web</span> one_line<span class="Statement">&gt;&gt;</span> status <span class="Statement">&lt;&lt;p-num</span> st<span class="Statement">&gt;&gt;</span>&lt;br/&gt;
@@ -273,18 +278,18 @@ To read a text file line by line, and display as a web page with line breaks:<br
 <span class="Statement">     get-req</span><span class="Identifier"> error</span><span class="Type"> to</span> err
 <span class="Statement">     @</span>Error in reading, error [<span class="Statement">&lt;&lt;p-out</span> err<span class="Statement">&gt;&gt;</span>]
 <span class="Statement"> end-if</span></pre>
-<span id=golf_copied_624 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_624' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_624, code_624, golf_copied_624)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-To read a text file delimited by "|" character:<br/>
-<div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_625'>
-<span class="Statement"> read-line</span> <span class="Constant">&quot;/home/user/dir/file&quot;</span><span class="Type"> to</span> one_line<span class="Type"> status</span> len<span class="Identifier"> delimiter</span> '|'
-<span class="Statement"> .</span>..</pre>
 <span id=golf_copied_625 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_625' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_625, code_625, golf_copied_625)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+To read a text file delimited by "|" character:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_626'>
+<span class="Statement"> read-line</span> <span class="Constant">&quot;/home/user/dir/file&quot;</span><span class="Type"> to</span> one_line<span class="Type"> status</span> len<span class="Identifier"> delimiter</span> '|'
+<span class="Statement"> .</span>..</pre>
+<span id=golf_copied_626 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_626' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_626, code_626, golf_copied_626)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <a name='Files'></a><span style="font-weight:bold;">Files</span><br/>

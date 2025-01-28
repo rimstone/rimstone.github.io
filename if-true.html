@@ -36,6 +36,7 @@ body {
 }
     
 .ncode {
+    line-height:20px;
     letter-spacing: 0px;
     font-size:14px;
     font-family: monospace;
@@ -54,6 +55,7 @@ body {
 }
 
 .shcode {
+    line-height:23px;
     letter-spacing: 0px;
     font-size:14px;
     font-family: monospace;
@@ -72,6 +74,7 @@ body {
 }
 
 .sqlcode {
+    line-height:23px;
     letter-spacing: 0px;
     font-size:14px;
     font-family: monospace;
@@ -90,6 +93,7 @@ body {
 }
 
 .htmlcode {
+    line-height:23px;
     letter-spacing: 0px;
     font-size:14px;
     font-family: monospace;
@@ -108,6 +112,7 @@ body {
 }
 
 .code {
+    line-height:23px;
     letter-spacing: 0px;
     font-size:14px;
     font-family: monospace;
@@ -237,7 +242,7 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;If true</div><hr/><span style="font-weight:bold;">Purpose</span>: Conditional statement.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_462'>
+<pre id='code_463'>
 <span class="Statement"> if-true</span> &lt;condition&gt;
      &lt;any code&gt;
  [
@@ -249,23 +254,23 @@ function gg_copy(gt, eid, gc) {
      &lt;any code&gt;
  ]
 <span class="Statement"> end-if</span></pre>
-<span id=golf_copied_462 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_462' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_462, code_462, golf_copied_462)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-where &lt;condition&gt; is:<br/>
-<div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_463'>
- ( &lt;comparison&gt; [<span class="Identifier"> and</span> &lt;comparison&gt; [<span class="Statement"> ,</span> ... ] ] )
- |
- ( &lt;comparison&gt; [<span class="Identifier"> or</span> &lt;comparison&gt; [<span class="Statement"> ,</span> ... ] ] )</pre>
 <span id=golf_copied_463 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_463' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_463, code_463, golf_copied_463)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-&lt;comparison&gt; is for strings:<br/>
+where &lt;condition&gt; is:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_464'>
+ ( &lt;comparison&gt; [<span class="Identifier"> and</span> &lt;comparison&gt; [<span class="Statement"> ,</span> ... ] ] )
+ |
+ ( &lt;comparison&gt; [<span class="Identifier"> or</span> &lt;comparison&gt; [<span class="Statement"> ,</span> ... ] ] )</pre>
+<span id=golf_copied_464 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_464' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_464, code_464, golf_copied_464)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+&lt;comparison&gt; is for strings:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_465'>
  &lt;string&gt; \
     (<span class="Identifier"> equal</span> |<span class="Identifier"> not-equal</span> | \
    <span class="Identifier"> lesser-than</span> |<span class="Identifier"> lesser-equal</span> | \
@@ -273,30 +278,30 @@ where &lt;condition&gt; is:<br/>
    <span class="Identifier"> contain</span> |<span class="Identifier"> not-contain</span> ) \
  &lt;check string&gt; \
   [<span class="Identifier"> case-insensitive</span> ] [<span class="Statement"> length</span> &lt;length&gt; ]</pre>
-<span id=golf_copied_464 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_464' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_464, code_464, golf_copied_464)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_465 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_465' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_465, code_465, golf_copied_465)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 &lt;comparison&gt; is for numbers<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_465'>
+<pre id='code_466'>
  &lt;number&gt; \
     (<span class="Identifier"> equal</span> |<span class="Identifier"> not-equal</span> | \
    <span class="Identifier"> lesser-than</span> |<span class="Identifier"> lesser-equal</span> | \
    <span class="Identifier"> greater-than</span> |<span class="Identifier"> greater-equal</span> | \
    <span class="Identifier"> every</span> |<span class="Identifier"> not-every</span> ) \
  &lt;check number&gt;  ...</pre>
-<span id=golf_copied_465 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_465' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_465, code_465, golf_copied_465)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-&lt;comparison&gt; is for booleans:<br/>
-<div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_466'>
- &lt;boolean&gt; (<span class="Identifier"> equal</span> |<span class="Identifier"> not-equal</span> ) &lt;check boolean&gt;  ...</pre>
 <span id=golf_copied_466 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_466' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_466, code_466, golf_copied_466)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+&lt;comparison&gt; is for booleans:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_467'>
+ &lt;boolean&gt; (<span class="Identifier"> equal</span> |<span class="Identifier"> not-equal</span> ) &lt;check boolean&gt;  ...</pre>
+<span id=golf_copied_467 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_467' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_467, code_467, golf_copied_467)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 if-true will evaluate a &lt;condition&gt; and execute code associated with the match. If the &lt;condition&gt; in if-true or "else-if" succeeds, then &lt;any code&gt; below is executed. If it is not a match, then the next condition in "else-if" statement is evaluated, one by one until a match is found and code under that statement executes. If no match is found, then code under "else-if" statement without a &lt;condition&gt; executes (if specified), otherwise program control passes outside of "end-if".<br/>
 <br/>
@@ -317,7 +322,7 @@ With a given if-true, there can be only one "else-if" statement without a condit
 if-true can be nested, which can be up to 30 levels deep.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_467'>
+<pre id='code_468'>
 <span class="Statement"> %%</span> /if-test<span class="Identifier"> public</span>
 <span class="Statement">     get-param</span> inp
 
@@ -340,9 +345,9 @@ if-true can be nested, which can be up to 30 levels deep.<br/>
 <span class="Statement">         @</span>Found something else
 <span class="Statement">     end-if</span>
 <span class="Statement"> %%</span></pre>
-<span id=golf_copied_467 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_467' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_467, code_467, golf_copied_467)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_468 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_468' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_468, code_468, golf_copied_468)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <a name='Program flow'></a><span style="font-weight:bold;">Program flow</span><br/>

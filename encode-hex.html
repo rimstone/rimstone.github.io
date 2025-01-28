@@ -36,6 +36,7 @@ body {
 }
     
 .ncode {
+    line-height:20px;
     letter-spacing: 0px;
     font-size:14px;
     font-family: monospace;
@@ -54,6 +55,7 @@ body {
 }
 
 .shcode {
+    line-height:23px;
     letter-spacing: 0px;
     font-size:14px;
     font-family: monospace;
@@ -72,6 +74,7 @@ body {
 }
 
 .sqlcode {
+    line-height:23px;
     letter-spacing: 0px;
     font-size:14px;
     font-family: monospace;
@@ -90,6 +93,7 @@ body {
 }
 
 .htmlcode {
+    line-height:23px;
     letter-spacing: 0px;
     font-size:14px;
     font-family: monospace;
@@ -108,6 +112,7 @@ body {
 }
 
 .code {
+    line-height:23px;
     letter-spacing: 0px;
     font-size:14px;
     font-family: monospace;
@@ -237,13 +242,13 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Encode hex</div><hr/><span style="font-weight:bold;">Purpose</span>: Encode data into hexadecimal string.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_359'>
+<pre id='code_360'>
 <span class="Statement"> encode-hex</span> &lt;data&gt;<span class="Type"> to</span> &lt;output&gt; \
      [<span class="Identifier"> input-length</span> &lt;input length&gt; ] \
      [<span class="Identifier"> prefix</span> &lt;prefix&gt; ]</pre>
-<span id=golf_copied_359 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_359' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_359, code_359, golf_copied_359)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_360 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_360' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_360, code_360, golf_copied_360)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 encode-hex will encode string &lt;data&gt; to hexadecimal string &lt;output&gt; given in "to" clause which consists of digits "0"-"9" and letters "a"-"f". <br/>
 <br/>
@@ -251,20 +256,20 @@ The length of &lt;data&gt; to encode may be given with &lt;input length&gt; numb
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Create hexadecimal string from binary data "mydata" of length 7, prefixed with string "\\\\x" (which is typically needed for PostgreSQL binary input to queries). The output string "hexout" is created:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_360'>
+<pre id='code_361'>
 <span class="Statement"> set-string</span> mydata = <span class="Constant">&quot;</span><span class="Special">\x00</span><span class="Constant">&quot;&quot;A&quot;&quot;</span><span class="Special">\x00</span><span class="Constant">&quot;&quot;</span><span class="Special">\xF</span><span class="Constant">&quot;&quot;AB&quot;&quot;</span><span class="Special">\x00</span><span class="Constant">&quot;&quot;</span><span class="Special">\x04</span><span class="Constant">&quot;</span>
 <span class="Statement"> encode-hex</span> mydata<span class="Type"> to</span> hexout<span class="Identifier"> input-length</span> <span class="Constant">7</span><span class="Identifier"> prefix</span> <span class="Constant">&quot;</span><span class="Special">\\\\</span><span class="Constant">x&quot;</span></pre>
-<span id=golf_copied_360 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_360' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_360, code_360, golf_copied_360)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-The value of "hexout" will be:<br/>
-<div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_361'>
- \\x0041000F414200</pre>
 <span id=golf_copied_361 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_361' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_361, code_361, golf_copied_361)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+The value of "hexout" will be:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_362'>
+ \\x0041000F414200</pre>
+<span id=golf_copied_362 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_362' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_362, code_362, golf_copied_362)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <a name='Hex encoding'></a><span style="font-weight:bold;">Hex encoding</span><br/>

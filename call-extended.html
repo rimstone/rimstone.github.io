@@ -36,6 +36,7 @@ body {
 }
     
 .ncode {
+    line-height:20px;
     letter-spacing: 0px;
     font-size:14px;
     font-family: monospace;
@@ -54,6 +55,7 @@ body {
 }
 
 .shcode {
+    line-height:23px;
     letter-spacing: 0px;
     font-size:14px;
     font-family: monospace;
@@ -72,6 +74,7 @@ body {
 }
 
 .sqlcode {
+    line-height:23px;
     letter-spacing: 0px;
     font-size:14px;
     font-family: monospace;
@@ -90,6 +93,7 @@ body {
 }
 
 .htmlcode {
+    line-height:23px;
     letter-spacing: 0px;
     font-size:14px;
     font-family: monospace;
@@ -108,6 +112,7 @@ body {
 }
 
 .code {
+    line-height:23px;
     letter-spacing: 0px;
     font-size:14px;
     font-family: monospace;
@@ -237,11 +242,11 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Call extended</div><hr/><span style="font-weight:bold;">Purpose</span>: Call external function or macro (extended mode only).<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_193'>
+<pre id='code_194'>
 <span class="Statement"> call-extended</span> &lt;function&gt; <span class="Constant">&quot;( &quot;</span> [ &amp; ]&lt;variable&gt;  [ , ... ]  <span class="Constant">&quot; )&quot;</span></pre>
-<span id=golf_copied_193 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_193' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_193, code_193, golf_copied_193)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_194 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_194' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_194, code_194, golf_copied_194)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 call-extended calls &lt;function&gt; (which can be a function or macro) with a list of parameter variables. The &lt;function&gt; is defined either in:<br/>
 <ul><li>a library with C interop - note that such library can be written in many different languages. Most compiled languages can produce such libraries (such as Rust, C/C++ and others),<br/>
@@ -259,7 +264,7 @@ A &lt;function&gt; should not return a value. Rather, use a variable passed as a
 <div class="vsub"><a id="Examples"></a>Examples</div>
 For instance, consider C file "calc.c":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_194'>
+<pre id='code_195'>
  <span class="PreProc">#include </span><span class="Constant">&quot;gliim.h&quot;</span>
 
  <span class="Comment">// Compute factorial of f, and store result into res</span>
@@ -271,33 +276,33 @@ For instance, consider C file "calc.c":<br/>
          *res *= i;
 <span class="Statement">     }</span>
 <span class="Statement"> }</span></pre>
-<span id=golf_copied_194 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_194' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_194, code_194, golf_copied_194)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-Declare this C function in a header file, for instance "calc.h":<br/>
-<div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_195'>
- <span class="Type">void</span> factorial(gg_num f, gg_num *res);</pre>
 <span id=golf_copied_195 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_195' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_195, code_195, golf_copied_195)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-You can also have macros in a header file, so for example "calc.h" could be:<br/>
+Declare this C function in a header file, for instance "calc.h":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_196'>
- <span class="Type">void</span> factorial(gg_num f, gg_num *res);
-
- <span class="PreProc">#</span>define<span class="PreProc"> </span>mod10<span class="PreProc">(n, m) m=(n)%</span><span class="Constant">10</span></pre>
+ <span class="Type">void</span> factorial(gg_num f, gg_num *res);</pre>
 <span id=golf_copied_196 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_196' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_196, code_196, golf_copied_196)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+You can also have macros in a header file, so for example "calc.h" could be:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_197'>
+ <span class="Type">void</span> factorial(gg_num f, gg_num *res);
+
+ <span class="PreProc">#</span>define<span class="PreProc"> </span>mod10<span class="PreProc">(n, m) m=(n)%</span><span class="Constant">10</span></pre>
+<span id=golf_copied_197 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_197' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_197, code_197, golf_copied_197)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In this case you have defined a macro that calculates the moduo of 10 and stores a result into another variable.<br/>
 <br/>
 Use these in your Golf code with call-extended statement, for instance to use a function "factorial()":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_197'>
+<pre id='code_198'>
 <span class="Statement"> extended-mode</span>
 
 <span class="Statement"> begin-handler</span> /fact<span class="Identifier"> public</span>
@@ -305,15 +310,15 @@ Use these in your Golf code with call-extended statement, for instance to use a 
 <span class="Statement">     call-extended</span> factorial (<span class="Constant">10</span>, &amp;fact)
 <span class="Statement">     p-num</span> fact
 <span class="Statement"> end-handler</span></pre>
-<span id=golf_copied_197 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_197' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_197, code_197, golf_copied_197)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_198 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_198' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_198, code_198, golf_copied_198)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In the above example, number "fact" is passed by reference (as a pointer), and it will contain the value of factorial of 10 on return. The result printed out is "3628800".<br/>
 <br/>
 To use macro "mod10()":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_198'>
+<pre id='code_199'>
 <span class="Statement"> extended-mode</span>
 
 <span class="Statement"> begin-handler</span> /mod<span class="Identifier"> public</span>
@@ -321,9 +326,9 @@ To use macro "mod10()":<br/>
 <span class="Statement">     call-extended</span> mod10(<span class="Constant">103</span>, mod)
 <span class="Statement">     p-num</span> mod
 <span class="Statement"> end-handler</span></pre>
-<span id=golf_copied_198 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_198' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_198, code_198, golf_copied_198)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_199 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_199' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_199, code_199, golf_copied_199)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In this example, you are using a C macro, so number "fact" is assigned a value directly, per C language rules. The result printed out is "3".<br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>

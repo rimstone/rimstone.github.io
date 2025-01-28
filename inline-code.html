@@ -36,6 +36,7 @@ body {
 }
     
 .ncode {
+    line-height:20px;
     letter-spacing: 0px;
     font-size:14px;
     font-family: monospace;
@@ -54,6 +55,7 @@ body {
 }
 
 .shcode {
+    line-height:23px;
     letter-spacing: 0px;
     font-size:14px;
     font-family: monospace;
@@ -72,6 +74,7 @@ body {
 }
 
 .sqlcode {
+    line-height:23px;
     letter-spacing: 0px;
     font-size:14px;
     font-family: monospace;
@@ -90,6 +93,7 @@ body {
 }
 
 .htmlcode {
+    line-height:23px;
     letter-spacing: 0px;
     font-size:14px;
     font-family: monospace;
@@ -108,6 +112,7 @@ body {
 }
 
 .code {
+    line-height:23px;
     letter-spacing: 0px;
     font-size:14px;
     font-family: monospace;
@@ -237,11 +242,11 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Inline code</div><hr/><span style="font-weight:bold;">Purpose</span>: Inline Golf code in an output statement.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_468'>
+<pre id='code_469'>
  &lt;&lt;gliim code&gt;&gt;</pre>
-<span id=golf_copied_468 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_468' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_468, code_468, golf_copied_468)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_469 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_469' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_469, code_469, golf_copied_469)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 You can write Golf statements within an <a href='https://golf-lang.com/output-statement.html'>output-statement</a> by using them between &lt;&lt; and &gt;&gt; delimiters. <br/>
 <br/>
@@ -249,7 +254,7 @@ The following statements can be inlined: <a href='https://golf-lang.com/p-path.h
 <div class="vsub"><a id="Examples"></a>Examples</div>
 <a href='https://golf-lang.com/p-out.html'>p-out</a> statement displays a string, and in the following code it's used to display a result within an <a href='https://golf-lang.com/output-statement.html'>output-statement</a> (i.e. within "@" statement):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_469'>
+<pre id='code_470'>
 <span class="Statement"> run-query</span> =<span class="Constant">&quot;select firstName, lastName from people&quot;</span><span class="Type"> output</span> firstName, lastName
 <span class="Statement">    @</span>&lt;tr&gt;
 <span class="Statement">    @</span>    &lt;td&gt;
@@ -260,38 +265,38 @@ The following statements can be inlined: <a href='https://golf-lang.com/p-path.h
 <span class="Statement">    @</span>    &lt;/td&gt;
 <span class="Statement">    @</span>&lt;/tr&gt;
 <span class="Statement"> end-query</span></pre>
-<span id=golf_copied_469 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_469' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_469, code_469, golf_copied_469)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-In the code below, "some_req" is a request handler that outputs some text, and it's used inline to output "Hello world":<br/>
-<div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_470'>
-<span class="Statement"> @</span>Hello <span class="Statement">&lt;&lt;call-handler</span> <span class="Constant">&quot;/some-req&quot;</span><span class="Statement">&gt;&gt;</span></pre>
 <span id=golf_copied_470 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_470' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_470, code_470, golf_copied_470)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-<a href='https://golf-lang.com/call-handler.html'>call-handler</a> "some-req" would simply output "world":<br/>
+In the code below, "some_req" is a request handler that outputs some text, and it's used inline to output "Hello world":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_471'>
-<span class="Statement"> %%</span> /some-req<span class="Identifier"> public</span>
-<span class="Statement">     @</span>world
-<span class="Statement"> %%</span></pre>
+<span class="Statement"> @</span>Hello <span class="Statement">&lt;&lt;call-handler</span> <span class="Constant">&quot;/some-req&quot;</span><span class="Statement">&gt;&gt;</span></pre>
 <span id=golf_copied_471 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_471' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_471, code_471, golf_copied_471)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-A <a href='https://golf-lang.com/write-string.html'>write-string</a> is typically used with output statements; in this case we print the value of another string, resulting in "There is 42 minutes left!":<br/>
+<a href='https://golf-lang.com/call-handler.html'>call-handler</a> "some-req" would simply output "world":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_472'>
+<span class="Statement"> %%</span> /some-req<span class="Identifier"> public</span>
+<span class="Statement">     @</span>world
+<span class="Statement"> %%</span></pre>
+<span id=golf_copied_472 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_472' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_472, code_472, golf_copied_472)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+A <a href='https://golf-lang.com/write-string.html'>write-string</a> is typically used with output statements; in this case we print the value of another string, resulting in "There is 42 minutes left!":<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_473'>
 <span class="Statement"> set-string</span> mins=<span class="Constant">&quot;42&quot;</span>
 <span class="Statement"> ((</span> my_string
 <span class="Statement"> @</span>There is <span class="Statement">&lt;&lt;p-out</span> mins<span class="Statement">&gt;&gt;</span> minutes left!
 <span class="Statement"> ))</span></pre>
-<span id=golf_copied_472 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_472' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_472, code_472, golf_copied_472)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_473 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_473' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_473, code_473, golf_copied_473)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <a name='Language'></a><span style="font-weight:bold;">Language</span><br/>

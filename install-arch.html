@@ -36,6 +36,7 @@ body {
 }
     
 .ncode {
+    line-height:20px;
     letter-spacing: 0px;
     font-size:14px;
     font-family: monospace;
@@ -54,6 +55,7 @@ body {
 }
 
 .shcode {
+    line-height:23px;
     letter-spacing: 0px;
     font-size:14px;
     font-family: monospace;
@@ -72,6 +74,7 @@ body {
 }
 
 .sqlcode {
+    line-height:23px;
     letter-spacing: 0px;
     font-size:14px;
     font-family: monospace;
@@ -90,6 +93,7 @@ body {
 }
 
 .htmlcode {
+    line-height:23px;
     letter-spacing: 0px;
     font-size:14px;
     font-family: monospace;
@@ -108,6 +112,7 @@ body {
 }
 
 .code {
+    line-height:23px;
     letter-spacing: 0px;
     font-size:14px;
     font-family: monospace;
@@ -238,40 +243,40 @@ function gg_copy(gt, eid, gc) {
 For Arch-like distributions (like Arch or Manjaro):<br/>
 <span style="font-weight:bold;">- Install git</span><br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_473'>
-sudo pacman <span class="Special">--noconfirm</span> <span class="Special">-Sy</span> <span class="Special">--overwrite</span> <span class="Statement">&quot;</span><span class="Constant">*</span><span class="Statement">&quot;</span> git</pre>
-<span id=golf_copied_473 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_473' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_473, code_473, golf_copied_473)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-<span style="font-weight:bold;">- Download Golf</span><br/>
-<div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_474'>
-git clone <a href="https://github.com/golf-lang/golf.git">https://github.com/golf-lang/golf.git</a>
-<span class="Statement">cd</span> golf
-git checkout <span class="Constant">191</span></pre>
+sudo pacman <span class="Special">--noconfirm</span> <span class="Special">-Sy</span> <span class="Special">--overwrite</span> <span class="Statement">&quot;</span><span class="Constant">*</span><span class="Statement">&quot;</span> git</pre>
 <span id=golf_copied_474 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_474' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_474, code_474, golf_copied_474)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-<span style="font-weight:bold;">- Install dependencies</span><br/>
+<span style="font-weight:bold;">- Download Golf</span><br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_475'>
-sudo pacman <span class="Special">--noconfirm</span> <span class="Special">-Sy</span> <span class="Special">--overwrite</span> <span class="Statement">&quot;</span><span class="Constant">*</span><span class="Statement">&quot;</span> make gcc openssl curl tar pkg-config libxml2 <span class="Statement">'</span><span class="Constant">mariadb-connector-c</span><span class="Statement">'</span> fcgi <span class="Statement">'</span><span class="Constant">postgresql-libs</span><span class="Statement">'</span> sqlite3 pcre2</pre>
+git clone <a href="https://github.com/golf-lang/golf.git">https://github.com/golf-lang/golf.git</a>
+<span class="Statement">cd</span> golf
+git checkout <span class="Constant">193</span></pre>
 <span id=golf_copied_475 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_475' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_475, code_475, golf_copied_475)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-<span style="font-weight:bold;">- Build Golf</span><br/>
-Use DI=1 to build debug version, leave it as is for production:<br/>
+<span style="font-weight:bold;">- Install dependencies</span><br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_476'>
-make clean
-make <span class="Identifier">DI</span>=<span class="Constant">0</span>
-sudo make install</pre>
+sudo pacman <span class="Special">--noconfirm</span> <span class="Special">-Sy</span> <span class="Special">--overwrite</span> <span class="Statement">&quot;</span><span class="Constant">*</span><span class="Statement">&quot;</span> make gcc openssl curl tar pkg-config libxml2 <span class="Statement">'</span><span class="Constant">mariadb-connector-c</span><span class="Statement">'</span> fcgi <span class="Statement">'</span><span class="Constant">postgresql-libs</span><span class="Statement">'</span> sqlite3 pcre2</pre>
 <span id=golf_copied_476 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_476' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_476, code_476, golf_copied_476)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+<span style="font-weight:bold;">- Build Golf</span><br/>
+Use DI=1 to build debug version, leave it as is for production:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_477'>
+make clean
+make <span class="Identifier">DI</span>=<span class="Constant">0</span>
+sudo make install</pre>
+<span id=golf_copied_477 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_477' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_477, code_477, golf_copied_477)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <a name='Download and build'></a><span style="font-weight:bold;">Download and build</span><br/>
