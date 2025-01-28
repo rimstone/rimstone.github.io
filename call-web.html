@@ -237,7 +237,7 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Call web</div><hr/><span style="font-weight:bold;">Purpose</span>: Get content of URL resource (call a web address).<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_204'>
+<pre id='code_210'>
 <span class="Statement"> call-web</span> &lt;URL&gt; \
     <span class="Type"> response</span> &lt;result&gt; \
      [<span class="Type"> response-code</span> &lt;response code&gt; ] \
@@ -258,9 +258,9 @@ function gg_copy(gt, eid, gc) {
      [<span class="Identifier"> cert</span> &lt;certificate&gt; |<span class="Identifier"> no-cert</span> ] \
      [<span class="Identifier"> cookie-jar</span> &lt;cookie jar&gt; ] \
      [<span class="Identifier"> timeout</span> &lt;timeout&gt; ]</pre>
-<span id=golf_copied_204 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_204' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_204, code_204, golf_copied_204)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_210 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_210' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_210, code_210, golf_copied_210)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 With call-web, you can get the content of any accessible URL resource, for example web page, image, PDF document, XML document, REST API etc. It allows you to programmatically download URL's content, including the header. For instance, you might want to obtain (i.e. download) the source code of a web page and its HTTP headers. You can then save such downloaded items into files, analyze them, or do anything else.<br/>
 <br/>
@@ -289,39 +289,39 @@ In order to include request body, for instance to send files, use "request-body"
 <span style="font-weight:bold;">- Structured content</span><br/>
 Use "fields" and/or "files" subclauses to send a structured body request in the form of name/value pairs, the same as sent from an HTML form. To do that, you can specify fields with "fields" subclause in the form of &lt;field name&gt;=&lt;field value&gt; pairs separated by a comma. For instance, here two fields are set (field "source" with value "web" and field "act" with value "setcookie"):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_205'>
+<pre id='code_211'>
 <span class="Statement"> call-web</span> <span class="Constant">&quot;<a href="http://website.com/app_name/some_request">http://website.com/app_name/some_request</a>&quot;</span><span class="Type"> response</span> resp<span class="Type"> response-code</span> rc<span class="Type"> status</span> len \
     <span class="Identifier"> request-body fields</span> <span class="Constant">&quot;source&quot;</span>=<span class="Constant">&quot;web&quot;</span>,<span class="Constant">&quot;act&quot;</span>=<span class="Constant">&quot;setcookie&quot;</span></pre>
-<span id=golf_copied_205 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_205' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_205, code_205, golf_copied_205)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_211 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_211' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_211, code_211, golf_copied_211)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 To include files, use "files" subclause in the form of &lt;file name&gt;=&lt;file location&gt; separated by commas. For example, here "file1" is the file name sent (which can be anything), and local file "uploadtest.jpg" is the file whose contents is sent; and "file23" is the file name sent (which can be anything), &nbsp;and "fileup4.pdf" is the actual local file read and sent. In this case files are in the application home directory (see <a href='https://golf-lang.com/directories.html'>directories</a>), but in general you can specify a relative or absolute path:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_206'>
+<pre id='code_212'>
 <span class="Statement"> call-web</span> <span class="Constant">&quot;<a href="http://website.com">http://website.com</a>&quot;</span><span class="Type"> response</span> resp<span class="Type"> response-code</span> rc<span class="Type"> status</span> len \
     <span class="Identifier"> request-body files</span> <span class="Constant">&quot;file1&quot;</span>=<span class="Constant">&quot;uploadtest.jpg&quot;</span>, <span class="Constant">&quot;file23&quot;</span>=<span class="Constant">&quot;fileup4.pdf&quot;</span></pre>
-<span id=golf_copied_206 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_206' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_206, code_206, golf_copied_206)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_212 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_212' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_212, code_212, golf_copied_212)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 You can specify both "files" and "fields" fields, for instance (along with getting error text and status):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_207'>
+<pre id='code_213'>
 <span class="Statement"> call-web</span> <span class="Constant">&quot;<a href="http://website.com/app_name/some_request">http://website.com/app_name/some_request</a>&quot;</span><span class="Type"> response</span> resp<span class="Type"> response-code</span> rc
 <span class="Statement">     request-body</span> fields <span class="Constant">&quot;source&quot;</span>=<span class="Constant">&quot;web&quot;</span>,<span class="Constant">&quot;act&quot;</span>=<span class="Constant">&quot;setcookie&quot;</span> \
          files <span class="Constant">&quot;file1&quot;</span>=<span class="Constant">&quot;uploadtest.jpg&quot;</span>, <span class="Constant">&quot;file23&quot;</span>=<span class="Constant">&quot;fileup4.pdf&quot;</span> \
      status st error err</pre>
-<span id=golf_copied_207 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_207' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_207, code_207, golf_copied_207)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_213 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_213' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_213, code_213, golf_copied_213)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 There is no limit on the number of files and fields you can specify, other than of the underlying HTTP protocol.<br/>
 <br/>
 <span style="font-weight:bold;">- Non-structured content</span><br/>
 To send any arbitrary (non-structured) content in the request body, such as JSON text for example, use "content" subclause:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_208'>
+<pre id='code_214'>
 <span class="Statement"> call-web</span> <span class="Constant">&quot;<a href="https://website.com">https://website.com</a>&quot;</span><span class="Type"> response</span> resp \
     <span class="Identifier"> request-headers content-type</span> <span class="Constant">&quot;application/json&quot;</span> \
     <span class="Identifier"> request-body content</span> <span class="Constant">&quot;{ </span><span class="Special">\</span>
@@ -331,72 +331,72 @@ To send any arbitrary (non-structured) content in the request body, such as JSON
 <span class="Constant">             </span><span class="Special">\&quot;</span><span class="Constant">married</span><span class="Special">\&quot;</span><span class="Constant">:    true </span><span class="Special">\</span>
 <span class="Constant">         } </span><span class="Special">\</span>
 <span class="Constant">     }&quot;</span></pre>
-<span id=golf_copied_208 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_208' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_208, code_208, golf_copied_208)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_214 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_214' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_214, code_214, golf_copied_214)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 &lt;content length&gt; number in "content-length" subclause (in "request-headers" clause) can be specified to denote the length of body content:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_209'>
+<pre id='code_215'>
 <span class="Statement"> read-file</span> <span class="Constant">&quot;somefile&quot;</span><span class="Type"> to</span> file_contents<span class="Type"> status</span> file_length
 <span class="Statement"> call-web</span> <span class="Constant">&quot;<a href="https://website.com">https://website.com</a>&quot;</span><span class="Type"> response</span> resp \
     <span class="Identifier"> request-headers content-type</span> <span class="Constant">&quot;image/jpeg&quot;</span> \
     <span class="Identifier"> request-headers content-length</span> file_length \
     <span class="Identifier"> request-body content</span> file_contents</pre>
-<span id=golf_copied_209 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_209' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_209, code_209, golf_copied_209)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_215 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_215' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_215, code_215, golf_copied_215)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 If "content-length" is not used, then it is assumed to be the length of string &lt;content&gt;.<br/>
 <div class="vsub"><a id="Request headers"></a>Request headers</div>
 If your request has a body (i.e. "request-body" clause is used), you can set the content type with "content-type" subclause of a request-headers clause:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_210'>
+<pre id='code_216'>
 <span class="Statement"> call-web</span> <span class="Constant">&quot;<a href="https://">https://</a>&lt;web address&gt;/resource&quot;</span> \
     <span class="Identifier"> request-headers content-type</span> <span class="Constant">&quot;application/json&quot;</span> \
     <span class="Identifier"> request-body content</span> some_json</pre>
-<span id=golf_copied_210 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_210' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_210, code_210, golf_copied_210)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_216 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_216' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_216, code_216, golf_copied_216)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Note that using "content-type" without the request body may be ignored by the server processing your request or may cause it to consider the request invalid. If "content-type" is not used, the default is "multipart/form-data" if "fields" or "files" subclause(s) are used with "body-request" clause. Otherwise, if you use "content" subclause to send other types of data, you must set content type explicitly via "content-type" subclause of "request-headers" clause.<br/>
 <br/>
 You can also specify custom request headers with "request-headers" clause, using "custom" subclause with a list of &lt;header name&gt;=&lt;header value&gt; pairs separated by a comma. For example, here custom header "Golf-header" has value of "Some_ID", and "Another-Header" a value of "New_ID":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_211'>
+<pre id='code_217'>
 <span class="Statement"> call-web</span> <span class="Constant">&quot;<a href="http://website.com/">http://website.com/</a>&lt;app name&gt;/&lt;request name&gt;?act=get_file&quot;</span><span class="Type"> response</span> resp<span class="Type"> response-code</span> rc<span class="Type"> status</span> len \
     <span class="Identifier"> request-headers custom</span> <span class="Constant">&quot;Golf-header&quot;</span>=<span class="Constant">&quot;Some_ID&quot;</span>, <span class="Constant">&quot;Another-Header&quot;</span>=<span class="Constant">&quot;New_ID&quot;</span></pre>
-<span id=golf_copied_211 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_211' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_211, code_211, golf_copied_211)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_217 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_217' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_217, code_217, golf_copied_217)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 On the receiving side you can get any such custom header by using "header" clause of the <a href='https://golf-lang.com/get-req.html'>get-req</a> statement:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_212'>
+<pre id='code_218'>
 <span class="Statement"> get-req</span><span class="Identifier"> header</span> <span class="Constant">&quot;Golf-header&quot;</span><span class="Type"> to</span> hvh0
 <span class="Statement"> get-req</span><span class="Identifier"> header</span> <span class="Constant">&quot;Another-Header&quot;</span><span class="Type"> to</span> hvh1</pre>
-<span id=golf_copied_212 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_212' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_212, code_212, golf_copied_212)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_218 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_218' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_218, code_218, golf_copied_218)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Get the web page and print it out:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_202'>
+<pre id='code_208'>
 <span class="Statement"> call-web</span> <span class="Constant">&quot;<a href="https://website.com/page.html">https://website.com/page.html</a>&quot;</span><span class="Type"> response</span> resp
 <span class="Statement"> p-out</span> resp</pre>
-<span id=golf_copied_202 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_202' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_202, code_202, golf_copied_202)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_208 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_208' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_208, code_208, golf_copied_208)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Get the "JPG" image from the web and save it to a file "pic.jpg":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_203'>
+<pre id='code_209'>
 <span class="Statement"> call-web</span> <span class="Constant">&quot;<a href="https://website.com/images/someimg.jpg">https://website.com/images/someimg.jpg</a>&quot;</span><span class="Type"> status</span> wlen<span class="Type"> response</span> resp
 <span class="Statement"> write-file</span> <span class="Constant">&quot;pic.jpg&quot;</span><span class="Identifier"> from</span> resp<span class="Identifier"> length</span> wlen</pre>
-<span id=golf_copied_203 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_203' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_203, code_203, golf_copied_203)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_209 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_209' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_209, code_209, golf_copied_209)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <a name='Web'></a><span style="font-weight:bold;">Web</span><br/>
