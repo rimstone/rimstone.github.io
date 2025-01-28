@@ -253,8 +253,6 @@ The length of &lt;text&gt; may be specified with "length" clause in &lt;length&g
 <br/>
 The "status" clause specifies the return &lt;status&gt; number, which is GG_OKAY if successful or GG_ERR_JSON if there is an error. The number &lt;error position&gt; in "error-position" clause is the byte position in &lt;text&gt; where error was found (starting with "0"), in which case &lt;error text&gt; in "error-text" clause is the error message.<br/>
 <br/>
-String &lt;text&gt; is modified during parsing for performance reasons, to minimize memory copying. If you don't wish &lt;text&gt; to be modified, make a copy of it before parsing it (see <a href='https://golf-lang.com/copy-string.html'>copy-string</a>). In many cases though, this is not necessary, allowing for better performance.<br/>
-<br/>
 "noencode" clause will not encode strings, i.e. convert from JSON Unicode strings to UTF8, nor will it perform any validity checks on strings. This may be useful as a performance boost, however it is not recommended in general.<br/>
 <br/>
 "no-enum" clause will not include indexing of arrays in normalized names (with "[..]"), see <a href='https://golf-lang.com/read-json.html'>read-json</a>. This is useful if you want to check the path of each data element, and not worry about counting them; this happens often when using JSON in a structured way to transfer arrays when data elements repeat in a predictable fashion. Parsing of JSON is also faster with "no-enum".<br/>
