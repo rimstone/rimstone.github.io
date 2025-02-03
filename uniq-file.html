@@ -243,11 +243,11 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Uniq file</div><hr/><span style="font-weight:bold;">Purpose</span>: Create a new empty file with a unique name.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_774'>
+<pre id='code_776'>
 <span class="Statement"> uniq-file</span> &lt;file name&gt; [<span class="Identifier"> temporary</span> ]</pre>
-<span id=golf_copied_774 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_774' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_774, code_774, golf_copied_774)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_776 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_776' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_776, code_776, golf_copied_776)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 One of the common tasks in many applications is creating a unique file (of any kind, including temporary). uniq-file statement does that - it creates a new unique file of zero size, with &lt;file name&gt; being its fully qualified name, which is always within the <a href='https://golf-lang.com/file-storage.html'>file-storage</a>. <br/>
 <br/>
@@ -259,24 +259,24 @@ All files created are setup with owner and group read/write only permissions.<br
 <div class="vsub"><a id="Examples"></a>Examples</div>
 The following creates an empty file with auto-generated name that will be stored in "mydoc" variable. String variable "mydoc" is defined in the statement. The string "some data" is written to a newly created file:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_775'>
+<pre id='code_777'>
 <span class="Statement"> uniq-file</span> mydoc
 <span class="Statement"> write-file</span> mydoc<span class="Identifier"> from</span> <span class="Constant">&quot;some data&quot;</span></pre>
-<span id=golf_copied_775 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_775' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_775, code_775, golf_copied_775)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_777 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_777' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_777, code_777, golf_copied_777)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 To create a temporary file:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_776'>
+<pre id='code_778'>
 <span class="Statement"> uniq-file</span> temp_file<span class="Identifier"> temporary</span>
 <span class="Statement"> .</span>..
  <span class="Comment">// use file named </span><span class="Constant">&quot;temp_file&quot;</span>
 <span class="Statement"> .</span>.
 <span class="Statement"> delete-file</span> temp_file</pre>
-<span id=golf_copied_776 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_776' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_776, code_776, golf_copied_776)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_778 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_778' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_778, code_778, golf_copied_778)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <a name='Files'></a><span style="font-weight:bold;">Files</span><br/>
