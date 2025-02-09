@@ -244,7 +244,7 @@ function gg_copy(gt, eid, gc) {
 <br/>
 Your application cannot access memory outside of valid statement results. Trying to do so will result in your program <a href='https://golf-lang.com/error-handling.html'>erroring out</a>. <br/>
 <br/>
-Memory allocated by Golf statements is tracked and freed at the end of the request. You can also use a memory-optimizer (see "--optimize-memory" in <a href='https://golf-lang.com/gg.html'>gg</a>) which frees memory as soon as possible, however keep in mind that it comes with a performance penalty and is not recommended unless you have very little available memory. <br/>
+Memory allocated by Golf statements is tracked and freed at the end of the request. <br/>
 <br/>
 With Golf there is no need to free memory manually. Memory is automatically freed even if it is no longer accessible to the program, thus preventing memory leaks; this is important for stability of long-running processes. <br/>
 <br/>

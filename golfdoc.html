@@ -2120,7 +2120,7 @@ Golf performs memory-safety check only at the entrance of a statement, meaning a
 <br/>
 This is in contrast to general purpose memory-safe languages where libraries, modules, methods etc. are implemented in the memory-safe language and the entire implementation is subject to memory-safe instrumentation and/or other methods, such as bounds checking etc. It means that inherently such languages will perform more work doing such safe-memory checks and likely experience lower performance.<br/>
 <br/>
-Finally, by default memory is not deallocated immediately after it's out of scope. Rather, the freeing happens when a request is complete, because the <a href='/request.html'>request</a> is really the "unit" of work in a web-service based language like Golf. However, if your available memory is very low to begin with, you can use "--optimize-memory" flag when compiling your application with <a href='/gg.html'>gg</a> tool; this will free memory as soon as it's out of scope. Note that this option is not default for a few reasons: the overall performance is better when memory is released in a single go at the end of the request, and more frequent memory checks slow down the performance; hence use this option sparingly and only when necessary.<br/>
+Finally, by default memory is not deallocated immediately after it's out of scope. Rather, the freeing happens when a request is complete, because the <a href='/request.html'>request</a> is really the "unit" of work in a web-service based language like Golf. <br/>
 <a id='article-memory-safety-web.html'></a>
 <br/>
 Memory safety guards against software security risks and malfunctions by assuring data isn't written to or read from unintended areas of memory. It prevents leaks, and that's important for web services which are long-running processes - memory leaks usually lead to running out of memory and crashes.<br/>
@@ -9338,7 +9338,7 @@ In this case there would be two matches by default ("SOME THING IS GOOD" and "SO
 <br/>
 Your application cannot access memory outside of valid statement results. Trying to do so will result in your program <a href='/error-handling.html'>erroring out</a>. <br/>
 <br/>
-Memory allocated by Golf statements is tracked and freed at the end of the request. You can also use a memory-optimizer (see "--optimize-memory" in <a href='/gg.html'>gg</a>) which frees memory as soon as possible, however keep in mind that it comes with a performance penalty and is not recommended unless you have very little available memory. <br/>
+Memory allocated by Golf statements is tracked and freed at the end of the request. <br/>
 <br/>
 With Golf there is no need to free memory manually. Memory is automatically freed even if it is no longer accessible to the program, thus preventing memory leaks; this is important for stability of long-running processes. <br/>
 <br/>
