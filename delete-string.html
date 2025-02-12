@@ -253,7 +253,9 @@ delete-string frees &lt;string&gt; variable previously allocated by a Golf state
 <br/>
 Note that freeing memory is in most cases unnecessary as Golf will automatically do so at the end of each request. You should have a good reason for using delete-string otherwise.<br/>
 <br/>
-Golf keeps count of &lt;string&gt; references. So if &lt;string&gt; is referenced by other Golf statements (for instance it was assigned to another string variable in <a href='https://golf-lang.com/set-string.html'>set-string</a>, or was used in statements like <a href='https://golf-lang.com/write-tree.html'>write-tree</a> or <a href='https://golf-lang.com/write-hash.html'>write-hash</a>), then &lt;string&gt; may not be deleted; in such a case, unless string was declared to be of process-scope and still used in such statements, it will be deleted when the <a href='https://golf-lang.com/request.html'>request</a> ends. Otherwise, &lt;string&gt; becomes an empty string ("") after it was deleted.<br/>
+Golf keeps count of &lt;string&gt; references for process-scoped memory (see <a href='https://golf-lang.com/memory-handling.html'>memory-handling</a>), and such memory will be deleted at the end of the request once reference count reaches zero. <br/>
+<br/>
+For non-process-scoped memory, if &lt;string&gt; is referenced by other variables, then &lt;string&gt; may not be deleted. Regardless of whether the memory referenced by &lt;string&gt; is actually deleted or not, &lt;string&gt; becomes an empty string ("") after delete-string.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Allocate and free random string:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
