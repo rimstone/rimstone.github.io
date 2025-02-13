@@ -245,37 +245,37 @@ function gg_copy(gt, eid, gc) {
 <span style="font-weight:bold;">- Step 1</span>:<br/>
 You will need to edit the Nginx configuration file. For Ubuntu and similar:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_293'>
+<pre id='code_303'>
 sudo vi /etc/nginx/sites-enabled/default</pre>
-<span id=golf_copied_293 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_293' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_293, code_293, golf_copied_293)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_303 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_303' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_303, code_303, golf_copied_303)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 while on Fedora and other systems it might be at:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_294'>
+<pre id='code_304'>
 sudo vi /etc/nginx/nginx.conf</pre>
-<span id=golf_copied_294 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_294' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_294, code_294, golf_copied_294)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_304 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_304' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_304, code_304, golf_copied_304)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <br/>
 Add the following in the "server {}" section ("/&lt;app path&gt;" is the application path, see <a href='https://golf-lang.com/request.html'>request</a>):<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_292'>
+<pre id='code_302'>
 location /&lt;app path&gt;/ { include /etc/nginx/fastcgi_params; fastcgi_pass  127.0.0.1:&lt;port number&gt;; }</pre>
-<span id=golf_copied_292 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_292' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_292, code_292, golf_copied_292)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_302 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_302' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_302, code_302, golf_copied_302)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <span style="font-weight:bold;">- Step 2</span>:<br/>
 Finally, restart Nginx:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_295'>
+<pre id='code_305'>
 sudo systemctl restart nginx</pre>
-<span id=golf_copied_295 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_295' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_295, code_295, golf_copied_295)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_305 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_305' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_305, code_305, golf_copied_305)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Note: you must not have any other URL resource that starts with "/&lt;app path&gt;/" (such as for example "/&lt;app path&gt;/something") as the web server will attempt to pass them as a reverse proxy request, and they will likely not work. If you need to, you can change the application path to be different from "/&lt;app path&gt;", see <a href='https://golf-lang.com/request.html'>request</a>.<br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>

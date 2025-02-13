@@ -243,11 +243,11 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Exit handler</div><hr/><span style="font-weight:bold;">Purpose</span>: Exit current request processing.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_389'>
+<pre id='code_399'>
 <span class="Statement"> exit-handler</span> [ &lt;request status&gt; ]</pre>
-<span id=golf_copied_389 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_389' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_389, code_389, golf_copied_389)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_399 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_399' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_399, code_399, golf_copied_399)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Exits current request by transferring control directly after the top-level <a href='https://golf-lang.com/request.html'>request</a> dispatcher. If there is an <a href='https://golf-lang.com/after-handler.html'>after-handler</a>, it will still execute, unless exit-handler is called from <a href='https://golf-lang.com/before-handler.html'>before-handler</a>.<br/>
 <br/>
@@ -255,7 +255,7 @@ Exits current request by transferring control directly after the top-level <a hr
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Returning status of 20:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_390'>
+<pre id='code_400'>
 <span class="Statement"> begin-handler</span> /req-handler<span class="Identifier"> public</span>
 <span class="Statement">     .</span>..
 <span class="Statement">     handler-status</span> <span class="Constant">20</span>
@@ -263,33 +263,33 @@ Returning status of 20:<br/>
 <span class="Statement">     exit-handler</span>
 <span class="Statement">     .</span>..
 <span class="Statement"> end-handler</span></pre>
-<span id=golf_copied_390 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_390' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_390, code_390, golf_copied_390)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_400 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_400' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_400, code_400, golf_copied_400)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Returning status of 0:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_391'>
+<pre id='code_401'>
 <span class="Statement"> begin-handler</span> /req-handler<span class="Identifier"> public</span>
 <span class="Statement">     .</span>..
 <span class="Statement">     exit-handler</span>
 <span class="Statement">     .</span>..
 <span class="Statement"> end-handler</span></pre>
-<span id=golf_copied_391 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_391' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_391, code_391, golf_copied_391)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_401 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_401' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_401, code_401, golf_copied_401)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Returning status of 10:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_392'>
+<pre id='code_402'>
 <span class="Statement"> begin-handler</span> /req-handler<span class="Identifier"> public</span>
 <span class="Statement">     .</span>..
 <span class="Statement">     exit-handler</span> <span class="Constant">10</span>
 <span class="Statement">     .</span>..
 <span class="Statement"> end-handler</span></pre>
-<span id=golf_copied_392 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_392' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_392, code_392, golf_copied_392)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_402 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_402' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_402, code_402, golf_copied_402)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <a name='Program flow'></a><span style="font-weight:bold;">Program flow</span><br/>

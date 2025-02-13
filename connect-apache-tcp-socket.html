@@ -246,93 +246,93 @@ function gg_copy(gt, eid, gc) {
 To setup Apache as a reverse proxy and connect your application to it, you need to enable FastCGI proxy support, which generally means "proxy" and "proxy_fcgi" modules - this is done <span style="font-style:italic">only once</span>:<br/>
 <ul><li>For Debian (like Ubuntu) and OpenSUSE systems you need to enable proxy and proxy_fcgi modules:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_270'>
+<pre id='code_280'>
 sudo a2enmod proxy
 sudo a2enmod proxy_fcgi</pre>
-<span id=golf_copied_270 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_270' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_270, code_270, golf_copied_270)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_280 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_280' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_280, code_280, golf_copied_280)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li>
 <li>For Fedora systems (or others like Archlinux) enable proxy and proxy_fcgi modules by adding (or uncommenting) LoadModule directives in the Apache configuration file - the default location of this file on Linux depends on the distribution. For Fedora (such as RedHat), Archlinux:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_272'>
+<pre id='code_282'>
 sudo vi /etc/httpd/conf/httpd.conf</pre>
-<span id=golf_copied_272 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_272' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_272, code_272, golf_copied_272)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_282 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_282' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_282, code_282, golf_copied_282)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 For OpenSUSE:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_273'>
+<pre id='code_283'>
 sudo vi /etc/apache2/httpd.conf</pre>
-<span id=golf_copied_273 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_273' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_273, code_273, golf_copied_273)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_283 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_283' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_283, code_283, golf_copied_283)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Add this to the end of the file:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_269'>
+<pre id='code_279'>
 LoadModule proxy_module modules/mod_proxy.so
 LoadModule proxy_fcgi_module modules/mod_proxy_fcgi.so</pre>
-<span id=golf_copied_269 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_269' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_269, code_269, golf_copied_269)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_279 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_279' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_279, code_279, golf_copied_279)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li></ul>
 <span style="font-weight:bold;">- Step 2</span>:<br/>
 Edit the Apache configuration file:<br/>
 <ul><li>For Debian (such as Ubuntu):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_274'>
+<pre id='code_284'>
 sudo vi /etc/apache2/apache2.conf</pre>
-<span id=golf_copied_274 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_274' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_274, code_274, golf_copied_274)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_284 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_284' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_284, code_284, golf_copied_284)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li>
 <li>for Fedora (such as RedHat), Archlinux:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_275'>
+<pre id='code_285'>
 sudo vi /etc/httpd/conf/httpd.conf</pre>
-<span id=golf_copied_275 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_275' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_275, code_275, golf_copied_275)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_285 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_285' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_285, code_285, golf_copied_285)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li>
 <li>and for OpenSUSE:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_276'>
+<pre id='code_286'>
 sudo vi /etc/apache2/httpd.conf</pre>
-<span id=golf_copied_276 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_276' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_276, code_276, golf_copied_276)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_286 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_286' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_286, code_286, golf_copied_286)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li></ul>
 Add this to the end of file ("/&lt;app path&gt;" is the application path, see <a href='https://golf-lang.com/request.html'>request</a>):<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_271'>
+<pre id='code_281'>
 ProxyPass &quot;/&lt;app path&gt;/&quot; fcgi://127.0.0.1:&lt;port number&gt;/</pre>
-<span id=golf_copied_271 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_271' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_271, code_271, golf_copied_271)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_281 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_281' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_281, code_281, golf_copied_281)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <span style="font-weight:bold;">- Step 3</span>:<br/>
 Finally, restart Apache. On Debian systems (like Ubuntu) or OpenSUSE:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_277'>
+<pre id='code_287'>
 sudo systemctl restart apache2</pre>
-<span id=golf_copied_277 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_277' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_277, code_277, golf_copied_277)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_287 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_287' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_287, code_287, golf_copied_287)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 On Fedora systems (like RedHat) and Arch Linux:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_278'>
+<pre id='code_288'>
 sudo systemctl restart httpd</pre>
-<span id=golf_copied_278 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_278' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_278, code_278, golf_copied_278)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_288 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_288' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_288, code_288, golf_copied_288)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Note: you must not have any other URL resource that starts with "/&lt;app path&gt;/" (such as for example "/&lt;app path&gt;/something") as the web server will attempt to pass them as a reverse proxy request, and they will likely not work. If you need to, you can change the application path to be different from "/&lt;app path&gt;", see <a href='https://golf-lang.com/request.html'>request</a>.<br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
