@@ -243,70 +243,70 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Write string</div><hr/><span style="font-weight:bold;">Purpose</span>: Create complex strings.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_829'>
+<pre id='code_837'>
 <span class="Statement"> write-string</span> &lt;string&gt;
 
  &lt;any code&gt;
 
 <span class="Statement"> end-write-string</span> [<span class="Identifier"> notrim</span> ]</pre>
-<span id=golf_copied_829 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_829' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_829, code_829, golf_copied_829)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_837 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_837' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_837, code_837, golf_copied_837)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Output of any Golf code can be written into &lt;string&gt; with write-string. In between write-string and end-write-string you can write &lt;any Golf code&gt;. For instance you can use database queries, conditional statements etc., just as you would for any other Golf code. <br/>
 <div class="vsub"><a id="Shortcut code"></a>Shortcut code</div>
 Note that instead of write-string you can also use a shortcut "((" &nbsp;(and instead of end-write-string you can use "))" &nbsp;), for example here a string "fname" holds a full path of a file named "config-install.golf" under the application home directory (see <a href='https://golf-lang.com/directories.html'>directories</a>):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_831'>
+<pre id='code_839'>
 <span class="Statement"> get-app</span><span class="Identifier"> directory</span><span class="Type"> to</span> home_dir
 <span class="Statement"> ((</span> fname
 <span class="Statement"> @</span><span class="Statement">&lt;&lt;p-out</span> home_dir<span class="Statement">&gt;&gt;</span>/config-install.golf
 <span class="Statement"> ))</span></pre>
-<span id=golf_copied_831 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_831' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_831, code_831, golf_copied_831)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_839 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_839' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_839, code_839, golf_copied_839)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Trimming"></a>Trimming</div>
 Just like with all other Golf code, every line is trimmed both on left and write, so this:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_833'>
+<pre id='code_841'>
 <span class="Statement"> ((</span> mystr
 <span class="Statement"> @</span>Some string
 <span class="Statement"> ))</span></pre>
-<span id=golf_copied_833 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_833' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_833, code_833, golf_copied_833)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_841 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_841' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_841, code_841, golf_copied_841)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 is the same as:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_835'>
+<pre id='code_843'>
 <span class="Statement"> ((</span> mystr
 <span class="Statement">         @</span>Some string &lt;whitespaces&gt;
 <span class="Statement"> ))</span></pre>
-<span id=golf_copied_835 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_835' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_835, code_835, golf_copied_835)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_843 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_843' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_843, code_843, golf_copied_843)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 write-string (or "((") statement must always be on a line by itself (and so does end-write-string, or "))" statement). The string being built starts with the line following write-string, and ends with the line immediately prior to end-write-string. <br/>
 <br/>
 All trailing empty lines are removed, for example:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_837'>
+<pre id='code_845'>
 <span class="Statement"> ((</span> mystr
 <span class="Statement">         @</span>My string
 <span class="Statement">         @</span>
 <span class="Statement">         @</span>
 <span class="Statement"> ))</span></pre>
-<span id=golf_copied_837 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_837' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_837, code_837, golf_copied_837)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_845 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_845' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_845, code_845, golf_copied_845)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 the above string would have two trailing empty lines, however they will be removed. If you want to skip trimming the trailing whitespaces, use "notrim" clause in end-write-string.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 <span style="font-weight:bold;">- Simple</span><br/>
 A simple example:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_839'>
+<pre id='code_847'>
 <span class="Statement"> set-string</span> my_str=<span class="Constant">&quot;world&quot;</span>
 <span class="Statement"> set-string</span> my_str1=<span class="Constant">&quot;and have a nice day too!&quot;</span>
 
@@ -315,23 +315,23 @@ A simple example:<br/>
 <span class="Statement"> end-write-string</span>
 
 <span class="Statement"> p-out</span> result_str</pre>
-<span id=golf_copied_839 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_839' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_839, code_839, golf_copied_839)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_847 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_847' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_847, code_847, golf_copied_847)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The output is <br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_830'>
+<pre id='code_838'>
 Hello world (and have a nice day too!)</pre>
-<span id=golf_copied_830 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_830' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_830, code_830, golf_copied_830)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_838 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_838' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_838, code_838, golf_copied_838)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <br/>
 <span style="font-weight:bold;">- Using code inside</span><br/>
 Here is using Golf code inside write-string, including database query and conditional statements to produce different strings at run-time:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_841'>
+<pre id='code_849'>
 <span class="Statement"> get-param</span> selector
 
 <span class="Statement"> set-string</span> my_str=<span class="Constant">&quot;world&quot;</span>
@@ -350,49 +350,14 @@ Here is using Golf code inside write-string, including database query and condit
 <span class="Statement"> end-write-string</span>
 
 <span class="Statement"> p-out</span> result_str</pre>
-<span id=golf_copied_841 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_841' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_841, code_841, golf_copied_841)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_849 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_849' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_849, code_849, golf_copied_849)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 If selector variable is "simple", as in URL <br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_832'>
-https://mysite.com/&lt;app name&gt;/some-service?selector=simple</pre>
-<span id=golf_copied_832 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_832' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_832, code_832, golf_copied_832)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-the result is <br/>
-<div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_834'>
-Hello world (and have a nice day too!)</pre>
-<span id=golf_copied_834 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_834' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_834, code_834, golf_copied_834)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-If selector variable is "database", as in URL <br/>
-<div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_836'>
-https://mysite.com/&lt;app name&gt;/some-service?selector=database</pre>
-<span id=golf_copied_836 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_836' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_836, code_836, golf_copied_836)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-the result may be (assuming "Linda" and "John" are the two employees selected):<br/>
-<div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_838'>
-Hello Linda
-&lt;br/&gt;
-Hello John
-&lt;br/&gt;</pre>
-<span id=golf_copied_838 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_838' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_838, code_838, golf_copied_838)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-If selector variable is anything else, as in URL <br/>
-<div class='ncode' style='position:relative;padding-right:16px;'>
 <pre id='code_840'>
-https://mysite.com/&lt;app name&gt;/some-service?selector=something_else</pre>
+https://mysite.com/&lt;app name&gt;/some-service?selector=simple</pre>
 <span id=golf_copied_840 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_840' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_840, code_840, golf_copied_840)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
@@ -400,47 +365,82 @@ https://mysite.com/&lt;app name&gt;/some-service?selector=something_else</pre>
 the result is <br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
 <pre id='code_842'>
-No message</pre>
+Hello world (and have a nice day too!)</pre>
 <span id=golf_copied_842 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_842' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_842, code_842, golf_copied_842)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
+If selector variable is "database", as in URL <br/>
+<div class='ncode' style='position:relative;padding-right:16px;'>
+<pre id='code_844'>
+https://mysite.com/&lt;app name&gt;/some-service?selector=database</pre>
+<span id=golf_copied_844 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_844' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_844, code_844, golf_copied_844)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+the result may be (assuming "Linda" and "John" are the two employees selected):<br/>
+<div class='ncode' style='position:relative;padding-right:16px;'>
+<pre id='code_846'>
+Hello Linda
+&lt;br/&gt;
+Hello John
+&lt;br/&gt;</pre>
+<span id=golf_copied_846 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_846' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_846, code_846, golf_copied_846)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+If selector variable is anything else, as in URL <br/>
+<div class='ncode' style='position:relative;padding-right:16px;'>
+<pre id='code_848'>
+https://mysite.com/&lt;app name&gt;/some-service?selector=something_else</pre>
+<span id=golf_copied_848 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_848' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_848, code_848, golf_copied_848)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+the result is <br/>
+<div class='ncode' style='position:relative;padding-right:16px;'>
+<pre id='code_850'>
+No message</pre>
+<span id=golf_copied_850 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_850' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_850, code_850, golf_copied_850)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
 <span style="font-weight:bold;">- Using call-handlers calls inside</span><br/>
 The following uses a call-handler inside write-string:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_843'>
+<pre id='code_851'>
 <span class="Statement"> set-string</span> result_str=<span class="Constant">&quot;&quot;</span>
 <span class="Statement"> write-string</span> result_str
 <span class="Statement">     @</span><span class="Statement">&lt;&lt;p-out</span> <span class="Constant">&quot;Result from other-service&quot;</span><span class="Statement">&gt;&gt;</span> is <span class="Statement">&lt;&lt;call-handler</span> <span class="Constant">&quot;/other-service&quot;</span><span class="Statement">&gt;&gt;</span>
 <span class="Statement"> end-write-string</span>
 <span class="Statement"> p-out</span> result_str</pre>
-<span id=golf_copied_843 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_843' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_843, code_843, golf_copied_843)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_851 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_851' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_851, code_851, golf_copied_851)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The "other-service" may be:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_845'>
+<pre id='code_853'>
 <span class="Statement"> begin-handler</span> /other-service<span class="Identifier"> public</span>
 <span class="Statement">     @</span>&quot;Hello from other service&quot;
 <span class="Statement"> end-handler</span></pre>
-<span id=golf_copied_845 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_845' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_845, code_845, golf_copied_845)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_853 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_853' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_853, code_853, golf_copied_853)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The output:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_844'>
+<pre id='code_852'>
 Result from other-service is Hello from other service</pre>
-<span id=golf_copied_844 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_844' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_844, code_844, golf_copied_844)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_852 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_852' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_852, code_852, golf_copied_852)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <br/>
 <span style="font-weight:bold;">- Nesting</span><br/>
 An example to nest write-strings:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_828'>
+<pre id='code_836'>
 <span class="Statement"> write-string</span> str1
 <span class="Statement">     @</span>Hi!
 <span class="Statement">     write-string</span> str2
@@ -449,18 +449,18 @@ An example to nest write-strings:<br/>
 <span class="Statement">    p-out</span> str2
 <span class="Statement"> end-write-string</span>
 <span class="Statement"> p-out</span> str1</pre>
-<span id=golf_copied_828 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_828' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_828, code_828, golf_copied_828)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_836 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_836' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_836, code_836, golf_copied_836)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The result is <br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_846'>
+<pre id='code_854'>
 Hi!
 Hi Again!</pre>
-<span id=golf_copied_846 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_846' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_846, code_846, golf_copied_846)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_854 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_854' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_854, code_854, golf_copied_854)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <a name='Strings'></a><span style="font-weight:bold;">Strings</span><br/>
