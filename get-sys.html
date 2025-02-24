@@ -243,23 +243,23 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Get sys</div><hr/><span style="font-weight:bold;">Purpose</span>: Obtain data that describes the system.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_448'>
+<pre id='code_449'>
 <span class="Statement"> get-sys</span> \
     <span class="Identifier"> environment</span> &lt;var name&gt; \
         <span class="Identifier"> directory</span> |<span class="Identifier"> os-name</span> |<span class="Identifier"> os-version</span> \
     <span class="Type"> to</span> &lt;variable&gt;</pre>
-<span id=golf_copied_448 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_448' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_448, code_448, golf_copied_448)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_449 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_449' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_449, code_449, golf_copied_449)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 System-describing variables can be obtained with get-sys statement and the result stored into &lt;variable&gt;. The following system variables can be obtained:<br/>
 <ul><li>"environment" returns the name of a given environment variable &lt;var name&gt;. If this is a server program, then the environment passed from a remote caller (such as web proxy) is queried. If this is a <a href='https://golf-lang.com/command-line.html'>command-line</a> program, then the environment from the Operating System is queried. In the following example,the QUERY_STRING variable (i.e. the actual query string from URL) is obtained:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_449'>
+<pre id='code_450'>
 <span class="Statement"> get-sys</span><span class="Identifier"> environment</span> <span class="Constant">&quot;QUERY_STRING&quot;</span><span class="Type"> to</span> qstr</pre>
-<span id=golf_copied_449 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_449' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_449, code_449, golf_copied_449)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_450 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_450' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_450, code_450, golf_copied_450)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <br/>
 </li><li>"directory" is the execution directory of the <a href='https://golf-lang.com/command-line.html'>command-line</a> program, i.e. the current working directory when the program was executed. Note that Golf will change the current working directory immediately afterwards to the application home directory (see <a href='https://golf-lang.com/directories.html'>directories</a>). You can use this clause to work with files in the directory where the program was started. If your program runs as a <a href='https://golf-lang.com/service.html'>service</a>, then "directory" clause always returns application home directory, regardless of which directory <a href='https://golf-lang.com/mgrg.html'>mgrg</a> program manager started your application from.<br/>
@@ -270,11 +270,11 @@ System-describing variables can be obtained with get-sys statement and the resul
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Get the name of the Operating System<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_450'>
+<pre id='code_451'>
 <span class="Statement"> get-sys</span><span class="Identifier"> os-name</span><span class="Type"> to</span> os_name</pre>
-<span id=golf_copied_450 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_450' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_450, code_450, golf_copied_450)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_451 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_451' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_451, code_451, golf_copied_451)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <a name='System information'></a><span style="font-weight:bold;">System information</span><br/>

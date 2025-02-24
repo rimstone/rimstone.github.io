@@ -244,11 +244,11 @@ function gg_copy(gt, eid, gc) {
 <br/>
 When making a Golf application, you specify a database vendor and the database configuration file for each database your application uses (see <a href='https://golf-lang.com/gg.html'>gg</a>), for instance:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_330'>
+<pre id='code_331'>
  gg ... --db=<span class="Constant">&quot;mariadb:db1 postgres:db2 sqlite:db3&quot;</span>  ...</pre>
-<span id=golf_copied_330 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_330' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_330, code_330, golf_copied_330)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_331 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_331' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_331, code_331, golf_copied_331)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 in which case there are three database configuration files (db1, db2 and db3), with db1 being MariaDB, db2 being PostgreSQL and db3 being SQLite database.<br/>
 <br/>
@@ -258,7 +258,7 @@ Each such file contains connection information and authentication to a database,
 <br/>
 An example of database configuration file (in this case MariaDB):<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_331'>
+<pre id='code_332'>
 [client]
 user=mydbuser
 password=somepwd
@@ -266,40 +266,40 @@ database=mydbname
 protocol=TCP
 host=127.0.0.1
 port=3306</pre>
-<span id=golf_copied_331 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_331' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_331, code_331, golf_copied_331)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_332 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_332' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_332, code_332, golf_copied_332)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Using in your queries"></a>Using in your queries</div>
 Database statements that perform queries (such as <a href='https://golf-lang.com/run-query.html'>run-query</a>) must specify the database configuration file used, unless your application uses only a single database. Such configuration is given by "@&lt;database config file&gt;" (for instance in <a href='https://golf-lang.com/run-query.html'>run-query</a> or <a href='https://golf-lang.com/begin-transaction.html'>begin-transaction</a>). For example, in:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_333'>
+<pre id='code_334'>
 <span class="Statement"> run-query</span> @mydb=<span class="Constant">&quot;select name from employees&quot;</span>
 <span class="Statement"> .</span>..
 <span class="Statement"> end-query</span></pre>
-<span id=golf_copied_333 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_333' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_333, code_333, golf_copied_333)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_334 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_334' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_334, code_334, golf_copied_334)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 the query is performed on a database specified by the configuration file "mydb", as in (assuming it's PostgreSQL database):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_336'>
+<pre id='code_337'>
  gg ... --db=<span class="Constant">&quot;postgres:mydb&quot;</span>  ...</pre>
-<span id=golf_copied_336 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_336' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_336, code_336, golf_copied_336)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_337 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_337' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_337, code_337, golf_copied_337)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 You do not need to manually connect to the database; when your application uses it for the first time, a connection is automatically established, and lost connection is automatically re-established when needed. <br/>
 <br/>
 If a database is the only one used by your application, you can omit it, as in:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_338'>
+<pre id='code_339'>
 <span class="Statement"> run-query</span> =<span class="Constant">&quot;select name from employees&quot;</span>
 <span class="Statement"> .</span>..
 <span class="Statement"> end-query</span></pre>
-<span id=golf_copied_338 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_338' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_338, code_338, golf_copied_338)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_339 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_339' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_339, code_339, golf_copied_339)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Connection settings"></a>Connection settings</div>
 The contents of a configuration file depends on the database used:<br/>
@@ -310,7 +310,7 @@ The contents of a configuration file depends on the database used:<br/>
 <div class="vsub"><a id="Substituting environment variables"></a>Substituting environment variables</div>
 You can use environment variables in database configuration files by means of substitution, in the form of "${VAR_NAME}". For example in file "mydb":<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_334'>
+<pre id='code_335'>
 [client]
 user=${DB_USER}
 password=${DB_PWD}
@@ -318,13 +318,13 @@ database=${DB_NAME}
 protocol=TCP
 host=127.0.0.1
 port=${DB_PORT}</pre>
-<span id=golf_copied_334 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_334' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_334, code_334, golf_copied_334)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_335 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_335' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_335, code_335, golf_copied_335)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Here, environment variables DB_USER, DB_PWD, DB_NAME and DB_PORT are used. They must be defined in the shell environment prior to calling <a href='https://golf-lang.com/gg.html'>gg</a> to make your application (if not defined the value will be empty):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_332'>
+<pre id='code_333'>
 <span class="Comment">#Define environment variables for a configuration file</span>
 <span class="Statement">export</span> <span class="Identifier">DB_USER</span>=<span class="Statement">&quot;</span><span class="Constant">my_user</span><span class="Statement">&quot;</span>
 <span class="Statement">export</span> <span class="Identifier">DB_PWD</span>=<span class="Statement">&quot;</span><span class="Constant">my_password</span><span class="Statement">&quot;</span>
@@ -333,13 +333,13 @@ Here, environment variables DB_USER, DB_PWD, DB_NAME and DB_PORT are used. They 
 
 <span class="Comment">#Make application using the above database configuration file with the environment variables specified</span>
 gg <span class="Special">-q</span> <span class="Special">--db</span><span class="Statement">=</span>mariadb:mydb</pre>
-<span id=golf_copied_332 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_332' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_332, code_332, golf_copied_332)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_333 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_333' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_333, code_333, golf_copied_333)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 which results in file /var/lib/gg/&lt;app name&gt;/app/db/mydb:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_337'>
+<pre id='code_338'>
 [client]
 user=my_user
 password=my_password
@@ -347,9 +347,9 @@ database=my_database
 protocol=TCP
 host=127.0.0.1
 port=3307</pre>
-<span id=golf_copied_337 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_337' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_337, code_337, golf_copied_337)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_338 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_338' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_338, code_338, golf_copied_338)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Besides making application deployment easier, this also adds to its security as the information such as above (including the database password) does not need to be a part of source code and reside in source code control system (such as git).<br/>
 <br/>
@@ -357,21 +357,21 @@ Your environment variables can have any names, except that they cannot start wit
 <br/>
 Note that if your data actually has a dollar sign and is a part of the configuration file, then you can create a variable for it:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_335'>
+<pre id='code_336'>
 <span class="Statement">export</span> <span class="Identifier">DOLLAR_SIGN</span>=<span class="Statement">'</span><span class="Constant">$</span><span class="Statement">'</span></pre>
-<span id=golf_copied_335 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_335' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_335, code_335, golf_copied_335)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_336 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_336' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_336, code_336, golf_copied_336)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 and in the configuration file:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_339'>
+<pre id='code_340'>
 ..
 database=my${DOLLAR_SIGN}database
 ..</pre>
-<span id=golf_copied_339 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_339' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_339, code_339, golf_copied_339)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_340 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_340' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_340, code_340, golf_copied_340)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In this case the database name is "my$database".<br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>

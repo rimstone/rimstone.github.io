@@ -243,7 +243,7 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Json doc</div><hr/><span style="font-weight:bold;">Purpose</span>: Parse JSON text.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_519'>
+<pre id='code_523'>
 <span class="Statement"> json-doc</span> &lt;text&gt;<span class="Type"> to</span> &lt;json&gt; \
      [<span class="Type"> status</span> &lt;status&gt; ] [<span class="Identifier"> length</span> &lt;length&gt; ] [<span class="Identifier"> noencode</span> ] [<span class="Identifier"> no-enum</span> ] \
      [<span class="Type"> error-text</span> &lt;status&gt; ] \
@@ -252,9 +252,9 @@ function gg_copy(gt, eid, gc) {
          [<span class="Type"> error-char</span> &lt;<span class="Type">char</span>&gt; ]
 
 <span class="Statement"> json-doc</span> <span class="Identifier"> delete</span> &lt;json&gt;</pre>
-<span id=golf_copied_519 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_519' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_519, code_519, golf_copied_519)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_523 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_523' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_523, code_523, golf_copied_523)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 json-doc will parse JSON &lt;text&gt; into &lt;json&gt; variable, which can be used with <a href='https://golf-lang.com/read-json.html'>read-json</a> to get the data.<br/>
 <br/>
@@ -270,7 +270,7 @@ The maximum depth of nested structures in JSON document (i.e. objects and arrays
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Parse the following JSON document and display all keys and values from it. You can use them as they come along, or store them into <a href='https://golf-lang.com/new-hash.html'>new-hash</a> or <a href='https://golf-lang.com/new-tree.html'>new-tree</a> for instance for searching of large documents. This also demonstrates usage of UTF8 characters:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_521'>
+<pre id='code_525'>
 
  <span class="Comment">// JSON to parse</span>
 <span class="Statement"> set-string</span> jd<span class="Identifier"> unquoted</span> = {<span class="Constant">&quot;menu&quot;</span>:\
@@ -311,13 +311,13 @@ Parse the following JSON document and display all keys and values from it. You c
 
  <span class="Comment">// Delete JSON document</span>
 <span class="Statement"> json-doc</span><span class="Identifier"> delete</span> nj</pre>
-<span id=golf_copied_521 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_521' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_521, code_521, golf_copied_521)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_525 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_525' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_525, code_525, golf_copied_525)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The output would be:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_520'>
+<pre id='code_524'>
 Key [&quot;menu&quot;.&quot;id&quot;]
 Value [file]
 Type [0]
@@ -354,9 +354,9 @@ Key [&quot;menu&quot;.&quot;popup&quot;.&quot;menuitem&quot;[2].&quot;onclick&qu
 Value [𝄞CloseDoc()]
 Type [0]
 --------</pre>
-<span id=golf_copied_520 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_520' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_520, code_520, golf_copied_520)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_524 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_524' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_524, code_524, golf_copied_524)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Note that if "no-enum" were used in json-doc, then all keys with arrays would not have "[..]", for instance the very last key above would be "menu"."popup"."menuitem"."onclick", i.e. there would be no indexing of arrays.<br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
