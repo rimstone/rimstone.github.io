@@ -269,8 +269,8 @@ The following will find a value with key "999", and then iterate in the tree to 
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_808'>
 <span class="Statement"> set-string</span> k = <span class="Constant">&quot;999&quot;</span>
-<span class="Statement"> read-tree</span> mytree<span class="Identifier"> equal</span> k<span class="Type"> status</span> st \
-    <span class="Type"> value</span> val<span class="Type"> new-cursor</span> cur
+ read-tree mytree equal k status st \
+     value val new-cursor cur
 <span class="Statement"> start-loop</span>
 <span class="Statement">     if-true</span> st<span class="Identifier"> equal</span> GG_OKAY
 <span class="Statement">         @</span>Value found is [<span class="Statement">&lt;&lt;p-out</span> val<span class="Statement">&gt;&gt;</span>] for key [<span class="Statement">&lt;&lt;p-out</span> k<span class="Statement">&gt;&gt;</span>]

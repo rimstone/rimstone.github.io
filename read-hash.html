@@ -246,19 +246,19 @@ function gg_copy(gt, eid, gc) {
 <pre id='code_650'>
  <span class="Comment">// Random access to hash data:</span>
 
-<span class="Statement"> read-hash</span> &lt;hash&gt; \
-    <span class="Type"> key</span> &lt;key&gt; \
-    <span class="Type"> value</span> &lt;value&gt; \
+ read-hash &lt;hash&gt; \
+     key &lt;key&gt; \
+     value &lt;value&gt; \
      [<span class="Identifier"> delete</span> [ &lt;delete&gt; ] ] \
      [<span class="Type"> status</span> &lt;status&gt; ]
 
  <span class="Comment">// Sequential access to hash data:</span>
 
-<span class="Statement"> read-hash</span> &lt;hash&gt;<span class="Identifier"> traverse begin</span>
+ read-hash &lt;hash&gt; traverse begin
 
-<span class="Statement"> read-hash</span> &lt;hash&gt;<span class="Identifier"> traverse</span> \
-    <span class="Type"> key</span> &lt;key&gt; \
-    <span class="Type"> value</span> &lt;value&gt;  \
+ read-hash &lt;hash&gt; traverse \
+     key &lt;key&gt; \
+     value &lt;value&gt;  \
      [<span class="Identifier"> delete</span> [ &lt;delete&gt; ] ] \
      [<span class="Type"> status</span> &lt;status&gt; ] \</pre>
 <span id=golf_copied_650 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
@@ -282,13 +282,13 @@ In this example, a new hash is created, a key/value pair is written to it, and t
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_651'>
  <span class="Comment">// Create new hash</span>
-<span class="Statement"> new-hash</span> h
+ new-hash h
 
  <span class="Comment">// Write to a hash</span>
-<span class="Statement"> write-hash</span> h<span class="Identifier"> key</span> <span class="Constant">&quot;X0029&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;some data&quot;</span>
+ write-hash h key <span class="Constant">&quot;X0029&quot;</span> value <span class="Constant">&quot;some data&quot;</span>
 
  <span class="Comment">// Read from a hash </span>
-<span class="Statement"> read-hash</span> h<span class="Type"> key</span> <span class="Constant">&quot;X0029&quot;</span><span class="Type"> value</span> res<span class="Type"> status</span> f<span class="Identifier"> delete</span>
+ read-hash h key <span class="Constant">&quot;X0029&quot;</span> value res status f delete
 <span class="Statement"> if-true</span> f<span class="Identifier"> equal</span> GG_ERR_EXIST
 <span class="Statement">     @</span>No data in the hash!
 <span class="Statement"> else-if</span>
@@ -302,10 +302,10 @@ The following will traverse the entire hash and display all the data:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_652'>
  <span class="Comment">// Position at the beginning of the hash </span>
-<span class="Statement"> read-hash</span> h<span class="Identifier"> traverse begin</span>
+ read-hash h traverse begin
 <span class="Statement"> start-loop</span>
      <span class="Comment">// Get elements, one by one, until NULL returned as a key</span>
-<span class="Statement">     read-hash</span> h<span class="Identifier"> traverse</span><span class="Type"> key</span> k<span class="Type"> value</span> r<span class="Type"> status</span> f
+     read-hash h traverse key k value r status f
 <span class="Statement">     if-true</span> f<span class="Identifier"> equal</span> GG_ERR_EXIST
          <span class="Statement">break</span>;
 <span class="Statement">     end-if</span>

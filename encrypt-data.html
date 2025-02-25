@@ -314,10 +314,10 @@ In the following example, the data is encrypted, and then decrypted, producing t
  <span class="Comment">// Original string to encrypt</span>
 <span class="Statement"> set-string</span> orig_data=<span class="Constant">&quot;something to encrypt!&quot;</span>
 
- <span class="Comment">// Encrypted data is in </span><span class="Constant">&quot;res&quot;</span><span class="Comment"> variable</span>
+ <span class="Comment">// Encrypted data is in &quot;res&quot; variable</span>
 <span class="Statement"> encrypt-data</span> orig_data<span class="Identifier"> password</span> <span class="Constant">&quot;mypass&quot;</span><span class="Type"> to</span> res
 
- <span class="Comment">// Decrypt what was just encrypted, decrypted data is in </span><span class="Constant">&quot;dec_data&quot;</span>
+ <span class="Comment">// Decrypt what was just encrypted, decrypted data is in &quot;dec_data&quot;</span>
 <span class="Statement"> decrypt-data</span> res<span class="Identifier"> password</span> <span class="Constant">&quot;mypass&quot;</span><span class="Type"> to</span> dec_data
 
  <span class="Comment">// Check that decrypted data matches the original </span>
@@ -333,21 +333,21 @@ In the following example, the data is encrypted, and then decrypted, producing t
 A more involved example below encrypts specific number of bytes (6 in this case). <a href='https://golf-lang.com/random-string.html'>random-string</a> is used to produce salt. The length of data to encrypt is given with "input-length" clause. The encrypted data is specified to be "binary" (meaning not as a human-readable string), so the "output-length" of such binary output is specified. The decryption thus uses "input-length" clause to specify the length of data to decrypt, and also "output-length" to get the length of decrypted data. Finally, the original data is compared with the decrypted data, and the length of such data must be the same as the original (meaning 6):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_398'>
- <span class="Comment">// Original data (only the first </span><span class="Constant">6</span><span class="Comment"> bytes are encrypted)</span>
+ <span class="Comment">// Original data (only the first 6 bytes are encrypted)</span>
 <span class="Statement"> set-string</span> orig_data=<span class="Constant">&quot;something to encrypt!&quot;</span>
 
- <span class="Comment">// Get </span><span class="Constant">8</span><span class="Comment"> random binary bytes to be the salt</span>
+ <span class="Comment">// Get 8 random binary bytes to be the salt</span>
 <span class="Statement"> random-string</span><span class="Type"> to</span> newsalt<span class="Identifier"> length</span> <span class="Constant">8</span><span class="Identifier"> binary</span>
 
  <span class="Comment">// Encrypt data using salt and produce binary output (meaning it's not a null-terminated character string), with the</span>
- <span class="Comment">// length of such output in </span><span class="Constant">&quot;encrypted_len&quot;</span><span class="Comment"> variable.</span>
+ <span class="Comment">// length of such output in &quot;encrypted_len&quot; variable.</span>
 <span class="Statement"> encrypt-data</span> orig_data<span class="Identifier"> input-length</span> <span class="Constant">6</span> output-length encrypted_len<span class="Identifier"> password</span> <span class="Constant">&quot;mypass&quot;</span><span class="Identifier"> salt</span> newsalt<span class="Type"> to</span> res<span class="Identifier"> binary</span>
 
- <span class="Comment">// Decrypt the data encrypted above. The length of encrypted data is passed in </span><span class="Constant">&quot;encrypted_len&quot;</span><span class="Comment"> variable, and then length of decrypted data</span>
- <span class="Comment">// is obtained in </span><span class="Constant">&quot;decrypted_len&quot;</span><span class="Comment"> variable.</span>
+ <span class="Comment">// Decrypt the data encrypted above. The length of encrypted data is passed in &quot;encrypted_len&quot; variable, and then length of decrypted data</span>
+ <span class="Comment">// is obtained in &quot;decrypted_len&quot; variable.</span>
 <span class="Statement"> decrypt-data</span> res output-length decrypted_len<span class="Identifier"> password</span> <span class="Constant">&quot;mypass&quot;</span><span class="Identifier"> salt</span> newsalt<span class="Type"> to</span> dec_data<span class="Identifier"> input-length</span> encrypted_len<span class="Identifier"> binary</span>
 
- <span class="Comment">// Check if the </span><span class="Constant">6</span><span class="Comment"> bytes of the original data matches decrypted data, and if exactly </span><span class="Constant">6</span><span class="Comment"> bytes was decrypted</span>
+ <span class="Comment">// Check if the 6 bytes of the original data matches decrypted data, and if exactly 6 bytes was decrypted</span>
  <span class="Statement">if</span> (!strncmp(orig_data,dec_data, <span class="Constant">6</span>) &amp;&amp; decrypted_len == <span class="Constant">6</span>) {
 <span class="Statement">     @</span>Success!
 <span class="Statement"> }</span> else {

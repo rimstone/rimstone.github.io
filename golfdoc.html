@@ -708,27 +708,27 @@ Save this into a file "srv.golf":<br/>
 <span class="Statement"> begin-handler</span> /srv<span class="Identifier"> public</span>
 <span class="Statement">     silent-header</span>
 <span class="Statement">     do-once</span>
-<span class="Statement">         new-tree</span> ind<span class="Identifier"> process-scope</span>
+         new-tree ind process-scope
 <span class="Statement">     end-do-once</span>
 <span class="Statement">     get-param</span> op
 <span class="Statement">     get-param</span> key
 <span class="Statement">     get-param</span> data
 <span class="Statement">     if-true</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;add&quot;</span>
-<span class="Statement">         write-tree</span> ind<span class="Identifier"> key</span> (key)<span class="Identifier"> value</span> data<span class="Type"> status</span> st
+         write-tree ind key (key) value data status st
 <span class="Statement">         if-true</span> st<span class="Identifier"> equal</span> GG_ERR_EXIST
 <span class="Statement">             @</span>Key exists [<span class="Statement">&lt;&lt;p-out</span> key<span class="Statement">&gt;&gt;</span>]
 <span class="Statement">         else-if</span>
 <span class="Statement">             @</span>Added [<span class="Statement">&lt;&lt;p-out</span> key<span class="Statement">&gt;&gt;</span>]
 <span class="Statement">         end-if</span>
 <span class="Statement">     else-if</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;delete&quot;</span>
-<span class="Statement">         delete-tree</span> ind<span class="Identifier"> key</span> (key)<span class="Type"> value</span> val<span class="Type"> status</span> st
+         delete-tree ind key (key) value val status st
 <span class="Statement">         if-true</span> st<span class="Identifier"> equal</span> GG_ERR_EXIST
 <span class="Statement">             @</span>Not found [<span class="Statement">&lt;&lt;p-out</span> key<span class="Statement">&gt;&gt;</span>]
 <span class="Statement">         else-if</span>
 <span class="Statement">             @</span>Deleted, old value was [<span class="Statement">&lt;&lt;p-out</span> val<span class="Statement">&gt;&gt;</span>]
 <span class="Statement">         end-if</span>
 <span class="Statement">     else-if</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;query&quot;</span>
-<span class="Statement">         read-tree</span> ind<span class="Identifier"> equal</span> (key)<span class="Type"> value</span> val<span class="Type"> status</span> st
+         read-tree ind equal (key) value val status st
 <span class="Statement">         if-true</span> st<span class="Identifier"> equal</span> GG_ERR_EXIST
 <span class="Statement">             @</span>Not found, queried [<span class="Statement">&lt;&lt;p-out</span> key<span class="Statement">&gt;&gt;</span>]
 <span class="Statement">         else-if</span>
@@ -1227,7 +1227,7 @@ The data to encrypt in these examples is a string, i.e. null-delimited. You can 
 <span class="Statement">     @</span>
      <span class="Comment">// Decrypt</span>
 <span class="Statement">     decrypt-data</span> enc_str<span class="Identifier"> password</span> <span class="Constant">&quot;my_password&quot;</span><span class="Type"> to</span> dec_str
-     <span class="Comment">// Output binary data; present null byte as octal \</span><span class="PreProc">0</span><span class="Constant">00</span>
+     <span class="Comment">// Output binary data; present null byte as octal \000</span>
 
 <span class="Statement">     string-length</span> dec_str<span class="Type"> to</span> res_len
 <span class="Statement">     start-loop</span><span class="Identifier"> repeat</span> res_len<span class="Type"> use</span> i<span class="Identifier"> start-with</span> <span class="Constant">0</span>
@@ -2839,7 +2839,7 @@ Let's start with a simple service that provides current time based on a timezone
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_154'>
 <span class="Statement"> begin-handler</span> /local/time
-<span class="Statement">     get-param</span> tzone <span class="Comment">// get time zone as input parameter (i.e. </span><span class="Constant">&quot;EST&quot;</span><span class="Comment">, </span><span class="Constant">&quot;MST&quot;</span><span class="Comment">, </span><span class="Constant">&quot;PST&quot;</span><span class="Comment"> etc.)</span>
+<span class="Statement">     get-param</span> tzone <span class="Comment">// get time zone as input parameter (i.e. &quot;EST&quot;, &quot;MST&quot;, &quot;PST&quot; etc.)</span>
 <span class="Statement">     get-time</span><span class="Type"> to</span> curr_time<span class="Identifier"> timezone</span> tzone
 <span class="Statement">     @</span>&lt;div&gt;Current time is <span class="Statement">&lt;&lt;p-out</span> curr_time<span class="Statement">&gt;&gt;</span>&lt;/div&gt;
 <span class="Statement"> end-handler</span></pre>
@@ -2903,9 +2903,9 @@ The result parameter will be obtained in the caller, and then output as HTML fro
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_162'>
 <span class="Statement"> begin-handler</span> /some/service
-<span class="Statement">     set-param</span> tzone=<span class="Constant">&quot;EST&quot;</span> <span class="Comment">// set input parameter used by </span><span class="Constant">&quot;/local/time&quot;</span>
+<span class="Statement">     set-param</span> tzone=<span class="Constant">&quot;EST&quot;</span> <span class="Comment">// set input parameter used by &quot;/local/time&quot;</span>
 <span class="Statement">     call-handler</span> <span class="Constant">&quot;/local/time&quot;</span>
-<span class="Statement">     get-param</span> curr_time <span class="Comment">// get parameter that was set by </span><span class="Constant">&quot;/local/time&quot;</span>
+<span class="Statement">     get-param</span> curr_time <span class="Comment">// get parameter that was set by &quot;/local/time&quot;</span>
 <span class="Statement">     @</span>&lt;div&gt;Current time is <span class="Statement">&lt;&lt;p-out</span> curr_time<span class="Statement">&gt;&gt;</span>&lt;/div&gt;
 <span class="Statement"> end-handler</span></pre>
 <span id=golf_copied_162 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
@@ -3268,27 +3268,27 @@ and copy and paste this:<br/>
 <pre id='code_186'>
 <span class="Statement"> begin-handler</span> /srv<span class="Identifier"> public</span>
 <span class="Statement">     do-once</span>
-<span class="Statement">         new-tree</span> ind<span class="Identifier"> process-scope</span>
+         new-tree ind process-scope
 <span class="Statement">     end-do-once</span>
 <span class="Statement">     get-param</span> op
 <span class="Statement">     get-param</span> key
 <span class="Statement">     get-param</span> data
 <span class="Statement">     if-true</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;add&quot;</span>
-<span class="Statement">         write-tree</span> ind<span class="Identifier"> key</span> (key)<span class="Identifier"> value</span> data<span class="Type"> status</span> st
+         write-tree ind key (key) value data status st
 <span class="Statement">         if-true</span> st<span class="Identifier"> equal</span> GG_ERR_EXIST
 <span class="Statement">             @</span>Key exists [<span class="Statement">&lt;&lt;p-out</span> key<span class="Statement">&gt;&gt;</span>]
 <span class="Statement">         else-if</span>
 <span class="Statement">             @</span>Added [<span class="Statement">&lt;&lt;p-out</span> key<span class="Statement">&gt;&gt;</span>]
 <span class="Statement">         end-if</span>
 <span class="Statement">     else-if</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;delete&quot;</span>
-<span class="Statement">         delete-tree</span> ind<span class="Identifier"> key</span> (key)<span class="Type"> value</span> val<span class="Type"> status</span> st
+         delete-tree ind key (key) value val status st
 <span class="Statement">         if-true</span> st<span class="Identifier"> equal</span> GG_ERR_EXIST
 <span class="Statement">             @</span>Not found [<span class="Statement">&lt;&lt;p-out</span> key<span class="Statement">&gt;&gt;</span>]
 <span class="Statement">         else-if</span>
 <span class="Statement">             @</span>Deleted, old value was [<span class="Statement">&lt;&lt;p-out</span> val<span class="Statement">&gt;&gt;</span>]
 <span class="Statement">         end-if</span>
 <span class="Statement">     else-if</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;query&quot;</span>
-<span class="Statement">         read-tree</span> ind<span class="Identifier"> equal</span> (key)<span class="Type"> value</span> val<span class="Type"> status</span> st
+         read-tree ind equal (key) value val status st
 <span class="Statement">         if-true</span> st<span class="Identifier"> equal</span> GG_ERR_EXIST
 <span class="Statement">             @</span>Not found, queried [<span class="Statement">&lt;&lt;p-out</span> key<span class="Statement">&gt;&gt;</span>]
 <span class="Statement">         else-if</span>
@@ -4277,7 +4277,7 @@ All input and output is contained in a single variable of type "gg_cli", the poi
  <span class="Comment">// Define and initialize request variable</span>
  gg_cli req = {<span class="Constant">0</span>};
  <span class="Comment">// You could also do:</span>
- <span class="Comment">// memset ((char*)&amp;req, </span><span class="Constant">0</span><span class="Comment">, sizeof(gg_cli));</span>
+ <span class="Comment">// memset ((char*)&amp;req, 0, sizeof(gg_cli));</span>
 <span class="Statement"> .</span>..
  <span class="Comment">// Set members of 'req' variable (see below)</span>
 <span class="Statement"> .</span>..
@@ -4629,7 +4629,7 @@ Copy this to file "cli1.c" in a directory of its own - note that in this example
      <span class="Comment">// Initialize request</span>
      memset (&amp;req, <span class="Constant">0</span>, <span class="Statement">sizeof</span>(req));
 
-     <span class="Comment">// Add </span><span class="Constant">3</span><span class="Comment"> environment variables (in the form of name, value, name, value, ... , NULL)</span>
+     <span class="Comment">// Add 3 environment variables (in the form of name, value, name, value, ... , NULL)</span>
      <span class="Type">char</span> *env[] = { <span class="Constant">&quot;REMOTE_USER&quot;</span>, <span class="Constant">&quot;John&quot;</span>, <span class="Constant">&quot;SOME_VAR&quot;</span>, <span class="Constant">&quot;SOME</span><span class="Special">\n</span><span class="Constant">VALUE&quot;</span>, <span class="Constant">&quot;NEW_VAR&quot;</span>, <span class="Constant">&quot;1000&quot;</span>, <span class="Constant">NULL</span> };
 
      <span class="Comment">// Create a request</span>
@@ -4651,7 +4651,7 @@ Copy this to file "cli1.c" in a directory of its own - note that in this example
      req.req_body = <span class="Constant">&quot;This is request body&quot;</span>;
      <span class="Comment">// Content length</span>
      req.content_len = strlen (req.req_body);
-     <span class="Comment">// No timeout (set to </span><span class="Constant">0</span><span class="Comment">)</span>
+     <span class="Comment">// No timeout (set to 0)</span>
      req.timeout = <span class="Constant">0</span>;
 
      <span class="Comment">// Make a request</span>
@@ -4727,9 +4727,9 @@ To test it, you can create a Golf application. Copy this to "hello.golf" file in
 <span class="Statement">     get-req</span><span class="Identifier"> process-id</span><span class="Type"> to</span> pid
 <span class="Statement">     @</span>Hello World! [<span class="Statement">&lt;&lt;p-out</span> ruser<span class="Statement">&gt;&gt;</span>] [<span class="Statement">&lt;&lt;p-out</span> somev<span class="Statement">&gt;&gt;</span>] [<span class="Statement">&lt;&lt;p-out</span> newv<span class="Statement">&gt;&gt;</span>] [<span class="Statement">&lt;&lt;p-out</span> par1<span class="Statement">&gt;&gt;</span>] [<span class="Statement">&lt;&lt;p-out</span> par2<span class="Statement">&gt;&gt;</span>] <span class="Statement">&lt;&lt;p-num</span> pid<span class="Statement">&gt;&gt;</span> <span class="Statement">&lt;&lt;p-out</span> rb<span class="Statement">&gt;&gt;</span>
 
-     <span class="Comment">// Output back a number of lines, generally as </span><span class="Constant">&quot;Output line #&lt;num of line&gt;&quot;</span>
-     <span class="Comment">// After line #</span><span class="Constant">1418</span><span class="Comment">, print out </span><span class="Constant">&quot;Line 1419 has an error&quot;</span><span class="Comment"> to stderr</span>
-     <span class="Comment">// After line #</span><span class="Constant">4418</span><span class="Comment">, report an error and exit</span>
+     <span class="Comment">// Output back a number of lines, generally as &quot;Output line #&lt;num of line&gt;&quot;</span>
+     <span class="Comment">// After line #1418, print out &quot;Line 1419 has an error&quot; to stderr</span>
+     <span class="Comment">// After line #4418, report an error and exit</span>
      <span class="Comment">// This demostrates outputting data to both stdout and stderr</span>
 <span class="Statement">     start-loop</span><span class="Identifier"> repeat</span> <span class="Constant">8000</span><span class="Type"> use</span> i<span class="Identifier"> start-with</span> <span class="Constant">0</span>
 <span class="Statement">         @</span>Output line #<span class="Statement">&lt;&lt;p-num</span> i<span class="Statement">&gt;&gt;</span>
@@ -5538,8 +5538,8 @@ You can copy a string to itself. In this case, the original string remains and t
 
 <span class="Statement"> upper-string</span> str <span class="Comment">// change the copy</span>
 
- <span class="Comment">// Now </span><span class="Constant">&quot;str&quot;</span><span class="Comment"> references </span><span class="Constant">&quot;ORIGINAL STRING&quot;</span><span class="Comment"> </span>
- <span class="Comment">// and </span><span class="Constant">&quot;orig&quot;</span><span class="Comment"> references </span><span class="Constant">&quot;original string&quot;</span></pre>
+ <span class="Comment">// Now &quot;str&quot; references &quot;ORIGINAL STRING&quot; </span>
+ <span class="Comment">// and &quot;orig&quot; references &quot;original string&quot;</span></pre>
 <span id=golf_copied_324 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_324' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_324, code_324, golf_copied_324)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
@@ -6187,7 +6187,7 @@ Right after <a href='/rewind-fifo.html'>rewind-fifo</a>, no element was read yet
  <span class="Comment">// Get first data from the list</span>
 <span class="Statement"> read-fifo</span> mylist<span class="Type"> key</span> k<span class="Type"> value</span> v
 
- <span class="Comment">// Delete first element from the list, so list will have only </span><span class="Constant">&quot;some2&quot;</span><span class="Comment"> key</span>
+ <span class="Comment">// Delete first element from the list, so list will have only &quot;some2&quot; key</span>
 <span class="Statement"> delete-fifo</span> mylist</pre>
 <span id=golf_copied_364 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_364' style='position: absolute;left: -500%;'></textarea>
@@ -6268,10 +6268,10 @@ After any <a href='/read-lifo.html'>read-lifo</a>, delete-lifo wil delete all el
 <span class="Statement"> write-lifo</span> mylist<span class="Identifier"> key</span> <span class="Constant">&quot;key1&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;value1&quot;</span>
 <span class="Statement"> write-lifo</span> mylist<span class="Identifier"> key</span> <span class="Constant">&quot;some2&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;other2&quot;</span>
 
- <span class="Comment">// Get first data from the list, it will be </span><span class="Constant">&quot;some2&quot;</span><span class="Comment"> key</span>
+ <span class="Comment">// Get first data from the list, it will be &quot;some2&quot; key</span>
 <span class="Statement"> read-lifo</span> mylist<span class="Type"> key</span> k<span class="Type"> value</span> v
 
- <span class="Comment">// Delete first element from the list, so list will have only </span><span class="Constant">&quot;key1&quot;</span><span class="Comment"> key</span>
+ <span class="Comment">// Delete first element from the list, so list will have only &quot;key1&quot; key</span>
 <span class="Statement"> delete-lifo</span> mylist</pre>
 <span id=golf_copied_368 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_368' style='position: absolute;left: -500%;'></textarea>
@@ -6384,9 +6384,9 @@ Free string allocated by write-string (consisting of 100 "Hello World"s):<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_374'>
-<span class="Statement"> delete-tree</span> &lt;tree&gt;<span class="Identifier"> key</span> &lt;key&gt; \
+ delete-tree &lt;tree&gt; key &lt;key&gt; \
      [<span class="Type"> status</span> &lt;status&gt; ] \
-     [<span class="Type"> value</span> &lt;value&gt; ] \</pre>
+     [<span class="Identifier"> value</span> &lt;value&gt; ] \</pre>
 <span id=golf_copied_374 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_374' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_374, code_374, golf_copied_374)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
@@ -6397,7 +6397,7 @@ Delete node with key "123", and obtain its value:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_375'>
 <span class="Statement"> set-string</span> k = <span class="Constant">&quot;123&quot;</span>
-<span class="Statement"> delete-tree</span> mytree<span class="Identifier"> key</span> k<span class="Type"> value</span> val<span class="Type"> status</span> st
+ delete-tree mytree key k value val status st
 <span class="Statement"> if-true</span> st<span class="Identifier"> not-equal</span> GG_OKAY
 <span class="Statement">    @</span>Could not find key <span class="Statement">&lt;&lt;p-out</span> k<span class="Statement">&gt;&gt;</span>
 <span class="Statement">    exit-handler</span>
@@ -6849,9 +6849,9 @@ In this example, a process-scoped hash (that is available to multiple requests o
 <pre id='code_383'>
 <span class="Statement"> .</span>..
 <span class="Statement">  do-once</span>
-<span class="Statement">     new-hash</span> my_hash<span class="Identifier"> hash-size</span> <span class="Constant">1024</span><span class="Identifier"> process-scope</span>
+     new-hash my_hash hash-size <span class="Constant">1024</span> process-scope
 <span class="Statement">  end-do-once</span>
-<span class="Statement">  write-hash</span> my_hash<span class="Identifier"> key</span> my_key<span class="Identifier"> value</span> my_data
+  write-hash my_hash key my_key value my_data
 <span class="Statement">  .</span>..</pre>
 <span id=golf_copied_383 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_383' style='position: absolute;left: -500%;'></textarea>
@@ -6916,7 +6916,7 @@ In the next example, "input-length" clause is used, and only a partial of the in
  <span class="Comment">// Original string, generally this would be binary data in most cases</span>
 <span class="Statement"> set-string</span> dt =<span class="Constant">&quot;  oh well  &quot;</span>
 
- <span class="Comment">// Encode in base64, encode only </span><span class="Constant">6</span><span class="Comment"> bytes</span>
+ <span class="Comment">// Encode in base64, encode only 6 bytes</span>
 <span class="Statement"> encode-base64</span> dt<span class="Identifier"> input-length</span> <span class="Constant">6</span><span class="Type"> to</span> out_dt
 
 <span class="Statement"> decode-base64</span> out_dt<span class="Type"> to</span> new_dt
@@ -7123,10 +7123,10 @@ In the following example, the data is encrypted, and then decrypted, producing t
  <span class="Comment">// Original string to encrypt</span>
 <span class="Statement"> set-string</span> orig_data=<span class="Constant">&quot;something to encrypt!&quot;</span>
 
- <span class="Comment">// Encrypted data is in </span><span class="Constant">&quot;res&quot;</span><span class="Comment"> variable</span>
+ <span class="Comment">// Encrypted data is in &quot;res&quot; variable</span>
 <span class="Statement"> encrypt-data</span> orig_data<span class="Identifier"> password</span> <span class="Constant">&quot;mypass&quot;</span><span class="Type"> to</span> res
 
- <span class="Comment">// Decrypt what was just encrypted, decrypted data is in </span><span class="Constant">&quot;dec_data&quot;</span>
+ <span class="Comment">// Decrypt what was just encrypted, decrypted data is in &quot;dec_data&quot;</span>
 <span class="Statement"> decrypt-data</span> res<span class="Identifier"> password</span> <span class="Constant">&quot;mypass&quot;</span><span class="Type"> to</span> dec_data
 
  <span class="Comment">// Check that decrypted data matches the original </span>
@@ -7142,21 +7142,21 @@ In the following example, the data is encrypted, and then decrypted, producing t
 A more involved example below encrypts specific number of bytes (6 in this case). <a href='/random-string.html'>random-string</a> is used to produce salt. The length of data to encrypt is given with "input-length" clause. The encrypted data is specified to be "binary" (meaning not as a human-readable string), so the "output-length" of such binary output is specified. The decryption thus uses "input-length" clause to specify the length of data to decrypt, and also "output-length" to get the length of decrypted data. Finally, the original data is compared with the decrypted data, and the length of such data must be the same as the original (meaning 6):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_398'>
- <span class="Comment">// Original data (only the first </span><span class="Constant">6</span><span class="Comment"> bytes are encrypted)</span>
+ <span class="Comment">// Original data (only the first 6 bytes are encrypted)</span>
 <span class="Statement"> set-string</span> orig_data=<span class="Constant">&quot;something to encrypt!&quot;</span>
 
- <span class="Comment">// Get </span><span class="Constant">8</span><span class="Comment"> random binary bytes to be the salt</span>
+ <span class="Comment">// Get 8 random binary bytes to be the salt</span>
 <span class="Statement"> random-string</span><span class="Type"> to</span> newsalt<span class="Identifier"> length</span> <span class="Constant">8</span><span class="Identifier"> binary</span>
 
  <span class="Comment">// Encrypt data using salt and produce binary output (meaning it's not a null-terminated character string), with the</span>
- <span class="Comment">// length of such output in </span><span class="Constant">&quot;encrypted_len&quot;</span><span class="Comment"> variable.</span>
+ <span class="Comment">// length of such output in &quot;encrypted_len&quot; variable.</span>
 <span class="Statement"> encrypt-data</span> orig_data<span class="Identifier"> input-length</span> <span class="Constant">6</span> output-length encrypted_len<span class="Identifier"> password</span> <span class="Constant">&quot;mypass&quot;</span><span class="Identifier"> salt</span> newsalt<span class="Type"> to</span> res<span class="Identifier"> binary</span>
 
- <span class="Comment">// Decrypt the data encrypted above. The length of encrypted data is passed in </span><span class="Constant">&quot;encrypted_len&quot;</span><span class="Comment"> variable, and then length of decrypted data</span>
- <span class="Comment">// is obtained in </span><span class="Constant">&quot;decrypted_len&quot;</span><span class="Comment"> variable.</span>
+ <span class="Comment">// Decrypt the data encrypted above. The length of encrypted data is passed in &quot;encrypted_len&quot; variable, and then length of decrypted data</span>
+ <span class="Comment">// is obtained in &quot;decrypted_len&quot; variable.</span>
 <span class="Statement"> decrypt-data</span> res output-length decrypted_len<span class="Identifier"> password</span> <span class="Constant">&quot;mypass&quot;</span><span class="Identifier"> salt</span> newsalt<span class="Type"> to</span> dec_data<span class="Identifier"> input-length</span> encrypted_len<span class="Identifier"> binary</span>
 
- <span class="Comment">// Check if the </span><span class="Constant">6</span><span class="Comment"> bytes of the original data matches decrypted data, and if exactly </span><span class="Constant">6</span><span class="Comment"> bytes was decrypted</span>
+ <span class="Comment">// Check if the 6 bytes of the original data matches decrypted data, and if exactly 6 bytes was decrypted</span>
  <span class="Statement">if</span> (!strncmp(orig_data,dec_data, <span class="Constant">6</span>) &amp;&amp; decrypted_len == <span class="Constant">6</span>) {
 <span class="Statement">     @</span>Success!
 <span class="Statement"> }</span> else {
@@ -7742,8 +7742,8 @@ Get value of cookie named "my_cookie_name" - variable my_cookie_value will hold 
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_430'>
-<span class="Statement"> get-hash</span>  &lt;hash &gt; \
-     (<span class="Type"> length</span> &lt;length&gt; ) \
+ get-hash  &lt;hash &gt; \
+     (<span class="Statement"> length</span> &lt;length&gt; ) \
      | (<span class="Type"> hash-size</span> &lt;hash size&gt; ) \
      | (<span class="Type"> average-reads</span> &lt;reads&gt; )</pre>
 <span id=golf_copied_430 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
@@ -7760,7 +7760,7 @@ This information may be useful in determining the performance of a hash, and whe
 <div class="vsub"><a id="Examples"></a>Examples</div>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_431'>
-<span class="Statement"> get-hash</span> h<span class="Type"> length</span> l<span class="Type"> hash-size</span> s<span class="Type"> average-reads</span> r</pre>
+ get-hash h length l hash-size s average-reads r</pre>
 <span id=golf_copied_431 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_431' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_431, code_431, golf_copied_431)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
@@ -8155,7 +8155,7 @@ An example of a future date (1 year, 3 months, 4 days, 7 hours, 15 minutes and 2
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_458'>
-<span class="Statement"> get-tree</span> &lt;tree&gt; \
+ get-tree &lt;tree&gt; \
      (<span class="Type"> count</span> &lt;count&gt; ) | (<span class="Type"> hops</span> &lt;hops&gt; )</pre>
 <span id=golf_copied_458 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_458' style='position: absolute;left: -500%;'></textarea>
@@ -8168,9 +8168,9 @@ get-tree provides information about &lt;tree&gt; (created by <a href='/new-tree.
 Get the number of nodes (keys) in a tree:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_459'>
-<span class="Statement"> new-tree</span> mytree
+ new-tree mytree
 <span class="Statement"> .</span>..
-<span class="Statement"> get-tree</span> mytree<span class="Type"> count</span> c</pre>
+ get-tree mytree count c</pre>
 <span id=golf_copied_459 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_459' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_459, code_459, golf_copied_459)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
@@ -9164,8 +9164,8 @@ sudo make install</pre>
      [<span class="Type"> status</span> &lt;status&gt; ] [<span class="Identifier"> length</span> &lt;length&gt; ] [<span class="Identifier"> noencode</span> ] [<span class="Identifier"> no-enum</span> ] \
      [<span class="Type"> error-text</span> &lt;status&gt; ] \
          [<span class="Type"> error-position</span> &lt;status&gt; ] \
-         [<span class="Type"> error-line</span> &lt;line&gt; ] \
-         [<span class="Type"> error-char</span> &lt;<span class="Type">char</span>&gt; ]
+         [ error-line &lt;line&gt; ] \
+         [ error-<span class="Type">char</span> &lt;<span class="Type">char</span>&gt; ]
 
 <span class="Statement"> json-doc</span> <span class="Identifier"> delete</span> &lt;json&gt;</pre>
 <span id=golf_copied_523 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
@@ -9348,14 +9348,14 @@ You can use any file name (likely choose a name that signifies the purpose of a 
 <span class="Statement">         lock-file</span> fname<span class="Type"> id</span> lockid<span class="Type"> status</span> lockst
          <span class="Comment">// Check the status of locking</span>
 <span class="Statement">         if-true</span> lockst<span class="Identifier"> equal</span> GG_OKAY
-             <span class="Comment">// File successfully locked, simulate working for </span><span class="Constant">20</span><span class="Comment"> seconds</span>
+             <span class="Comment">// File successfully locked, simulate working for 20 seconds</span>
 <span class="Statement">             @</span>WORKING
 <span class="Statement">             pause-program</span> <span class="Constant">20000</span>
 <span class="Statement">             @</span>DONE
              <span class="Comment">// Exit while loop</span>
 <span class="Statement">             break-loop</span>
 <span class="Statement">         else-if</span> lockst<span class="Identifier"> equal</span> GG_ERR_FAILED
-             <span class="Comment">// Another process holds the lock, wait, try again for </span><span class="Constant">1</span><span class="Comment"> second</span>
+             <span class="Comment">// Another process holds the lock, wait, try again for 1 second</span>
 <span class="Statement">             pause-program</span> <span class="Constant">1000</span>
 <span class="Statement">             @</span>WAITING
 <span class="Statement">             continue-loop</span>
@@ -9804,7 +9804,7 @@ The file should be saved as &lt;app name&gt;.service (or similar). Once saved, y
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_551'>
-<span class="Statement"> new-array</span> &lt;array&gt; [<span class="Identifier"> max-size</span> &lt;max-size&gt; ] [<span class="Identifier"> process-scope</span> ]</pre>
+ new-array &lt;array&gt; [ max-size &lt;max-size&gt; ] [<span class="Identifier"> process-scope</span> ]</pre>
 <span id=golf_copied_551 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_551' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_551, code_551, golf_copied_551)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
@@ -9824,7 +9824,7 @@ If "process-scope" is used, then &lt;array&gt; will keep its data across all req
 Create a new array:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_552'>
-<span class="Statement"> new-array</span> arr</pre>
+ new-array arr</pre>
 <span id=golf_copied_552 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_552' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_552, code_552, golf_copied_552)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
@@ -9877,9 +9877,9 @@ The internal positions for <a href='/write-fifo.html'>write-fifo</a> and <a href
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_555'>
-<span class="Statement"> new-hash</span> &lt;hash&gt; \
+ new-hash &lt;hash&gt; \
      [<span class="Identifier"> process-scope</span> ] \
-     [<span class="Identifier"> hash-size</span> &lt;hash size&gt; ]</pre>
+     [<span class="Type"> hash-size</span> &lt;hash size&gt; ]</pre>
 <span id=golf_copied_555 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_555' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_555, code_555, golf_copied_555)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
@@ -9901,7 +9901,7 @@ Golf uses high-performing <a href='https://en.wikipedia.org/wiki/Fowler%E2%80%93
 Create a new hash with 5000 buckets:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_556'>
-<span class="Statement"> new-hash</span> h<span class="Identifier"> hash-size</span> <span class="Constant">5000</span></pre>
+ new-hash h hash-size <span class="Constant">5000</span></pre>
 <span id=golf_copied_556 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_556' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_556, code_556, golf_copied_556)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
@@ -10091,7 +10091,7 @@ Copy this to "manage_keys.golf" source file:<br/>
 <pre id='code_566'>
 <span class="Statement"> %%</span> /manage-keys<span class="Identifier"> public</span>
 <span class="Statement">    do-once</span>
-<span class="Statement">    new-hash</span> h<span class="Identifier"> hash-size</span> <span class="Constant">1024</span><span class="Identifier"> process-scope</span>
+    new-hash h hash-size <span class="Constant">1024</span> process-scope
 <span class="Statement">    end-do-once</span>
 
     <span class="Comment">// Get input parameters</span>
@@ -10100,12 +10100,12 @@ Copy this to "manage_keys.golf" source file:<br/>
 <span class="Statement">    get-param</span> data
 
 <span class="Statement">    if-true</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;add&quot;</span> <span class="Comment">// Add data to hash,</span>
-<span class="Statement">        write-hash</span> h<span class="Identifier"> key</span> (key)<span class="Identifier"> value</span> data<span class="Type"> status</span> st
+        write-hash h key (key) value data status st
 <span class="Statement">        @</span>Added [<span class="Statement">&lt;&lt;p-out</span> key<span class="Statement">&gt;&gt;</span>]
 <span class="Statement">    else-if</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;delete&quot;</span> <span class="Comment">// Delete data and obtain the value deleted</span>
-<span class="Statement">        read-hash</span> h<span class="Type"> key</span> (key)<span class="Type"> value</span> val \
-           <span class="Identifier"> delete</span> \
-           <span class="Type"> status</span> st
+        read-hash h key (key) value val \
+            delete \
+            status st
 <span class="Statement">        if-true</span> st<span class="Identifier"> equal</span> GG_ERR_EXIST
 <span class="Statement">            @</span>Not found [<span class="Statement">&lt;&lt;p-out</span> key<span class="Statement">&gt;&gt;</span>]
 <span class="Statement">        else-if</span>
@@ -10114,7 +10114,7 @@ Copy this to "manage_keys.golf" source file:<br/>
 <span class="Statement">            delete-string</span> val
 <span class="Statement">        end-if</span>
 <span class="Statement">    else-if</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;query&quot;</span> <span class="Comment">// Query hash based on key value</span>
-<span class="Statement">        read-hash</span> h<span class="Type"> key</span> (key)<span class="Type"> value</span> val<span class="Type"> status</span> st
+        read-hash h key (key) value val status st
 <span class="Statement">        if-true</span> st<span class="Identifier"> equal</span> GG_ERR_EXIST
 <span class="Statement">            @</span>Not found, queried [<span class="Statement">&lt;&lt;p-out</span> key<span class="Statement">&gt;&gt;</span>]
 <span class="Statement">        else-if</span>
@@ -10132,7 +10132,7 @@ Create file "srv.golf" and copy to it this code:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_568'>
 <span class="Statement"> begin-handler</span> /srv<span class="Identifier"> public</span>
-  <span class="Comment">// Create resources (prepare) for </span><span class="Constant">3</span><span class="Comment"> service calls</span>
+  <span class="Comment">// Create resources (prepare) for 3 service calls</span>
   <span class="Comment">// We pass environment variable GG_SILENT_HEADER to these calls</span>
   <span class="Comment">// so they don't emit HTTP header</span>
 <span class="Statement">  new-remote</span> srv1<span class="Identifier"> local</span> <span class="Constant">&quot;app&quot;</span> \
@@ -10144,7 +10144,7 @@ Create file "srv.golf" and copy to it this code:<br/>
 <span class="Statement">  new-remote</span> srv3<span class="Identifier"> local</span> <span class="Constant">&quot;app&quot;</span> \
      <span class="Identifier"> url-path</span> <span class="Constant">&quot;/app/manage-keys/op=add/key=key3/data=data3&quot;</span> \
      <span class="Identifier"> environment</span> <span class="Constant">&quot;GG_SILENT_HEADER&quot;</span>=<span class="Constant">&quot;yes&quot;</span>
-  <span class="Comment">// Make </span><span class="Constant">3</span><span class="Comment"> service calls in parallel, each in it own thread</span>
+  <span class="Comment">// Make 3 service calls in parallel, each in it own thread</span>
 <span class="Statement">  call-remote</span> srv1, srv2, srv3<span class="Type"> status</span> st \
      <span class="Type"> started</span> start \
      <span class="Type"> finished-okay</span> fok
@@ -10231,7 +10231,7 @@ Added [key3]</pre>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_571'>
-<span class="Statement"> new-tree</span> &lt;tree&gt; \
+ new-tree &lt;tree&gt; \
      [<span class="Identifier"> key-as</span> <span class="Constant">&quot;positive integer&quot;</span> ] \
      [<span class="Identifier"> unsorted</span> ]
      [<span class="Identifier"> process-scope</span> ]</pre>
@@ -10266,7 +10266,7 @@ A tree is accessible to the current process only, unless "process-scope" clause 
 Create a new tree:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_572'>
-<span class="Statement"> new-tree</span> my_tree</pre>
+ new-tree my_tree</pre>
 <span id=golf_copied_572 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_572' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_572, code_572, golf_copied_572)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
@@ -10400,7 +10400,7 @@ Create a file (or truncate an existing one), write 25,000 rows and the read back
      <span class="Comment">// Create new file, or truncate an old file if it exists</span>
 <span class="Statement">     open-file</span> <span class="Constant">&quot;testwrite&quot;</span><span class="Type"> file-id</span> nf<span class="Identifier"> new-truncate</span>
 
-     <span class="Comment">// Write </span><span class="Constant">25000</span><span class="Comment"> rows</span>
+     <span class="Comment">// Write 25000 rows</span>
 <span class="Statement">     start-loop</span><span class="Identifier"> repeat</span> <span class="Constant">25000</span><span class="Type"> use</span> i
 <span class="Statement">        ((</span> line
 <span class="Statement">        @</span>some text in line <span class="Statement">&lt;&lt;p-num</span> i<span class="Statement">&gt;&gt;</span>
@@ -10412,7 +10412,7 @@ Create a file (or truncate an existing one), write 25,000 rows and the read back
      <span class="Comment">// Rewind back to the beginning</span>
 <span class="Statement">     file-position</span><span class="Identifier"> set</span> <span class="Constant">0</span><span class="Identifier"> file-id</span> nf
 
-     <span class="Comment">// Read all </span><span class="Constant">25000</span><span class="Comment"> rows back, and print them out</span>
+     <span class="Comment">// Read all 25000 rows back, and print them out</span>
 <span class="Statement">     read-file</span><span class="Identifier"> file-id</span> nf <span class="Type"> to</span> whole_file
 <span class="Statement">     p-out</span> whole_file
 
@@ -11135,7 +11135,7 @@ If "new-line" clause is used, then a new line ("\n") is output afterwards.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_624'>
-<span class="Statement"> purge-array</span> &lt;array&gt;</pre>
+ purge-array &lt;array&gt;</pre>
 <span id=golf_copied_624 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_624' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_624, code_624, golf_copied_624)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
@@ -11147,9 +11147,9 @@ After purge-array, you can use it without calling <a href='/new-array.html'>new-
 Create an array, put some data in it and then delete the data:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_625'>
-<span class="Statement"> new-array</span> arr
-<span class="Statement"> write-array</span> arr<span class="Identifier"> key</span> <span class="Constant">50</span><span class="Identifier"> value</span> <span class="Constant">&quot;myvalue&quot;</span>
-<span class="Statement"> purge-array</span> arr</pre>
+ new-array arr
+ write-array arr key <span class="Constant">50</span> value <span class="Constant">&quot;myvalue&quot;</span>
+ purge-array arr</pre>
 <span id=golf_copied_625 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_625' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_625, code_625, golf_copied_625)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
@@ -11193,7 +11193,7 @@ See <a href='/read-fifo.html'>read-fifo</a>.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_627'>
-<span class="Statement"> purge-hash</span> &lt;hash&gt;</pre>
+ purge-hash &lt;hash&gt;</pre>
 <span id=golf_copied_627 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_627' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_627, code_627, golf_copied_627)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
@@ -11205,9 +11205,9 @@ After purge-hash, you can use it without calling <a href='/new-hash.html'>new-ha
 Create a hash, put some data in it and then delete the data:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_628'>
-<span class="Statement"> new-hash</span> h
-<span class="Statement"> write-hash</span> h<span class="Identifier"> key</span> <span class="Constant">&quot;mykey&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;myvalue&quot;</span>
-<span class="Statement"> purge-hash</span> h</pre>
+ new-hash h
+ write-hash h key <span class="Constant">&quot;mykey&quot;</span> value <span class="Constant">&quot;myvalue&quot;</span>
+ purge-hash h</pre>
 <span id=golf_copied_628 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_628' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_628, code_628, golf_copied_628)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
@@ -11275,7 +11275,7 @@ See <a href='/read-list.html'>read-list</a>.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_631'>
-<span class="Statement"> purge-tree</span> &lt;tree&gt;</pre>
+ purge-tree &lt;tree&gt;</pre>
 <span id=golf_copied_631 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_631' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_631, code_631, golf_copied_631)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
@@ -11287,9 +11287,9 @@ After purge-tree, the tree is empty and you can use it again (write into it, rea
 Delete all tree data:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_632'>
-<span class="Statement"> new-tree</span> mytree
+ new-tree mytree
 <span class="Statement"> .</span>..
-<span class="Statement"> purge-tree</span> mytree</pre>
+ purge-tree mytree</pre>
 <span id=golf_copied_632 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_632' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_632, code_632, golf_copied_632)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
@@ -11489,9 +11489,9 @@ Get a random binary value that is 8 bytes in length - this value may contain nul
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_643'>
-<span class="Statement"> read-array</span> &lt;array&gt; \
-    <span class="Identifier"> key</span> &lt;key&gt; \
-    <span class="Type"> value</span> &lt;value&gt; \
+ read-array &lt;array&gt; \
+     key &lt;key&gt; \
+     value &lt;value&gt; \
      [<span class="Identifier"> delete</span> [ &lt;delete&gt; ] ] \
      [<span class="Type"> status</span> &lt;status&gt; ]</pre>
 <span id=golf_copied_643 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
@@ -11508,13 +11508,13 @@ In this example, a new array is created, a value is written to it, and then the 
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_644'>
  <span class="Comment">// Create new array</span>
-<span class="Statement"> new-array</span> arr
+ new-array arr
 
  <span class="Comment">// Write to array</span>
-<span class="Statement"> write-array</span> arr<span class="Identifier"> key</span> <span class="Constant">500</span><span class="Identifier"> value</span> <span class="Constant">&quot;some data&quot;</span>
+ write-array arr key <span class="Constant">500</span> value <span class="Constant">&quot;some data&quot;</span>
 
  <span class="Comment">// Read from array</span>
-<span class="Statement"> read-array</span> arr<span class="Identifier"> key</span> <span class="Constant">500</span><span class="Type"> value</span> res<span class="Type"> status</span> st<span class="Identifier"> delete</span>
+ read-array arr key <span class="Constant">500</span> value res status st delete
 <span class="Statement"> if-true</span> st<span class="Identifier"> equal</span> GG_ERR_EXIST
 <span class="Statement">     @</span>No data in the array at index <span class="Constant">500</span>!
 <span class="Statement"> else-if</span>
@@ -11692,19 +11692,19 @@ See <a href='/open-file.html'>open-file</a> for an example with "file-id" clause
 <pre id='code_650'>
  <span class="Comment">// Random access to hash data:</span>
 
-<span class="Statement"> read-hash</span> &lt;hash&gt; \
-    <span class="Type"> key</span> &lt;key&gt; \
-    <span class="Type"> value</span> &lt;value&gt; \
+ read-hash &lt;hash&gt; \
+     key &lt;key&gt; \
+     value &lt;value&gt; \
      [<span class="Identifier"> delete</span> [ &lt;delete&gt; ] ] \
      [<span class="Type"> status</span> &lt;status&gt; ]
 
  <span class="Comment">// Sequential access to hash data:</span>
 
-<span class="Statement"> read-hash</span> &lt;hash&gt;<span class="Identifier"> traverse begin</span>
+ read-hash &lt;hash&gt; traverse begin
 
-<span class="Statement"> read-hash</span> &lt;hash&gt;<span class="Identifier"> traverse</span> \
-    <span class="Type"> key</span> &lt;key&gt; \
-    <span class="Type"> value</span> &lt;value&gt;  \
+ read-hash &lt;hash&gt; traverse \
+     key &lt;key&gt; \
+     value &lt;value&gt;  \
      [<span class="Identifier"> delete</span> [ &lt;delete&gt; ] ] \
      [<span class="Type"> status</span> &lt;status&gt; ] \</pre>
 <span id=golf_copied_650 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
@@ -11728,13 +11728,13 @@ In this example, a new hash is created, a key/value pair is written to it, and t
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_651'>
  <span class="Comment">// Create new hash</span>
-<span class="Statement"> new-hash</span> h
+ new-hash h
 
  <span class="Comment">// Write to a hash</span>
-<span class="Statement"> write-hash</span> h<span class="Identifier"> key</span> <span class="Constant">&quot;X0029&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;some data&quot;</span>
+ write-hash h key <span class="Constant">&quot;X0029&quot;</span> value <span class="Constant">&quot;some data&quot;</span>
 
  <span class="Comment">// Read from a hash </span>
-<span class="Statement"> read-hash</span> h<span class="Type"> key</span> <span class="Constant">&quot;X0029&quot;</span><span class="Type"> value</span> res<span class="Type"> status</span> f<span class="Identifier"> delete</span>
+ read-hash h key <span class="Constant">&quot;X0029&quot;</span> value res status f delete
 <span class="Statement"> if-true</span> f<span class="Identifier"> equal</span> GG_ERR_EXIST
 <span class="Statement">     @</span>No data in the hash!
 <span class="Statement"> else-if</span>
@@ -11748,10 +11748,10 @@ The following will traverse the entire hash and display all the data:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_652'>
  <span class="Comment">// Position at the beginning of the hash </span>
-<span class="Statement"> read-hash</span> h<span class="Identifier"> traverse begin</span>
+ read-hash h traverse begin
 <span class="Statement"> start-loop</span>
      <span class="Comment">// Get elements, one by one, until NULL returned as a key</span>
-<span class="Statement">     read-hash</span> h<span class="Identifier"> traverse</span><span class="Type"> key</span> k<span class="Type"> value</span> r<span class="Type"> status</span> f
+     read-hash h traverse key k value r status f
 <span class="Statement">     if-true</span> f<span class="Identifier"> equal</span> GG_ERR_EXIST
          <span class="Statement">break</span>;
 <span class="Statement">     end-if</span>
@@ -12152,13 +12152,13 @@ See <a href='/split-string.html'>split-string</a>.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_665'>
-<span class="Statement"> read-tree</span> &lt;tree&gt; \
+ read-tree &lt;tree&gt; \
      (<span class="Identifier"> equal</span> &lt;search key&gt; |<span class="Identifier"> lesser</span> &lt;search key&gt; |<span class="Identifier"> greater</span> &lt;search key&gt; | \
         <span class="Identifier"> lesser-equal</span> &lt;search key&gt; |<span class="Identifier"> greater-equal</span> &lt;search key&gt; | \
         <span class="Identifier"> min-key</span> |<span class="Identifier"> max-key</span> ) \
-     [<span class="Type"> value</span> &lt;value&gt; ] \
+     [<span class="Identifier"> value</span> &lt;value&gt; ] \
      [<span class="Identifier"> update-value</span> &lt;update value&gt; ] \
-     [<span class="Type"> key</span> &lt;key&gt; ] \
+     [<span class="Identifier"> key</span> &lt;key&gt; ] \
      [<span class="Type"> status</span> &lt;status&gt; ] \
      [<span class="Type"> new-cursor</span> &lt;cursor&gt; ]</pre>
 <span id=golf_copied_665 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
@@ -12186,19 +12186,19 @@ In this example, a million key/value pairs are inserted into a tree, and then ea
 <pre id='code_666'>
 <span class="Statement"> %%</span> /tree-example<span class="Identifier"> public</span>
 
-<span class="Statement">     new-tree</span> mytree<span class="Identifier"> key-as</span> <span class="Constant">&quot;positive integer&quot;</span> <span class="Comment">// create new tree</span>
+     new-tree mytree key-as <span class="Constant">&quot;positive integer&quot;</span> <span class="Comment">// create new tree</span>
 
 <span class="Statement">     set-number</span> i
 <span class="Statement">     start-loop</span><span class="Type"> use</span> i<span class="Identifier"> start-with</span> <span class="Constant">0</span><span class="Identifier"> repeat</span> <span class="Constant">1000000</span>
 <span class="Statement">         number-string</span> i<span class="Type"> to</span> key
 <span class="Statement">         set-string</span> data=key
-<span class="Statement">         write-tree</span> mytree<span class="Identifier"> key</span> (key)<span class="Identifier"> value</span> data <span class="Comment">// insert key/data to the tree</span>
+         write-tree mytree key (key) value data <span class="Comment">// insert key/data to the tree</span>
 <span class="Statement">     end-loop</span>
 
 <span class="Statement">     start-loop</span><span class="Type"> use</span> i<span class="Identifier"> start-with</span> <span class="Constant">0</span><span class="Identifier"> repeat</span> <span class="Constant">1000000</span>
 <span class="Statement">         number-string</span> i<span class="Type"> to</span> key
          <span class="Comment">// search tree for each key previously inserted</span>
-<span class="Statement">         read-tree</span> mytree<span class="Identifier"> equal</span> (key)<span class="Type"> status</span> st<span class="Type"> value</span> data
+         read-tree mytree equal (key) status st value data
 <span class="Statement">         if-true</span> st<span class="Identifier"> not-equal</span> GG_OKAY
 <span class="Statement">             @</span>Could not find key <span class="Statement">&lt;&lt;p-out</span> key<span class="Statement">&gt;&gt;</span>
 <span class="Statement">         else-if</span>
@@ -12629,7 +12629,7 @@ If no request has been recognized (i.e. request name does not match any request-
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_693'>
-<span class="Statement"> resize-hash</span> &lt;hash&gt;<span class="Identifier"> hash-size</span> &lt;new size&gt;</pre>
+ resize-hash &lt;hash&gt; hash-size &lt;new size&gt;</pre>
 <span id=golf_copied_693 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_693' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_693, code_693, golf_copied_693)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
@@ -12642,7 +12642,7 @@ Resizing is generally expensive, so it should not be done too often, and only wh
 <div class="vsub"><a id="Examples"></a>Examples</div>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_694'>
-<span class="Statement"> resize-hash</span> h<span class="Identifier"> hash-size</span> <span class="Constant">100000</span></pre>
+ resize-hash h hash-size <span class="Constant">100000</span></pre>
 <span id=golf_copied_694 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_694' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_694, code_694, golf_copied_694)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
@@ -12878,10 +12878,10 @@ Note that if database connection was lost, and could not be reestablished, the r
 "=" and "@" clauses may or may not have a space before the data that follows. So for example, these are both valid:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_706'>
- <span class="Comment">// No space after </span><span class="Constant">&quot;@&quot;</span><span class="Comment"> and </span><span class="Constant">&quot;=&quot;</span>
+ <span class="Comment">// No space after &quot;@&quot; and &quot;=&quot;</span>
 <span class="Statement"> run-query</span> @db =<span class="Constant">&quot;select firstName, lastName from employee where employeeId='</span><span class="Special">%s</span><span class="Constant">'&quot;</span><span class="Type"> output</span> firstName, lastName<span class="Identifier"> input</span> empid
 
- <span class="Comment">// Space after </span><span class="Constant">&quot;@&quot;</span><span class="Comment"> and </span><span class="Constant">&quot;=&quot;</span>
+ <span class="Comment">// Space after &quot;@&quot; and &quot;=&quot;</span>
 <span class="Statement"> run-query</span><span class="Identifier"> @</span> db = <span class="Constant">&quot;select firstName, lastName from employee where employeeId='</span><span class="Special">%s</span><span class="Constant">'&quot;</span><span class="Type"> output</span> firstName, lastName<span class="Identifier"> input</span> empid</pre>
 <span id=golf_copied_706 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_706' style='position: absolute;left: -500%;'></textarea>
@@ -13769,17 +13769,17 @@ The following will parse a string containing name/value pairs (such as "name=val
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_763'>
 <span class="Statement"> %%</span> /parse-url<span class="Identifier"> public</span>
-     <span class="Comment">// Data to parse - data/value pairs delimited by </span><span class="Constant">&quot;&amp;amp;&quot;</span><span class="Comment"> string, and data and value delimited by equal sign:</span>
+     <span class="Comment">// Data to parse - data/value pairs delimited by &quot;&amp;amp;&quot; string, and data and value delimited by equal sign:</span>
 <span class="Statement">     set-string</span> url =<span class="Constant">&quot;x=23&amp;amp;y=good&amp;amp;z=hello_world&quot;</span>
 
-     <span class="Comment">// Split string first into pieces based on </span><span class="Constant">&quot;amp;&quot;</span>
+     <span class="Comment">// Split string first into pieces based on &quot;amp;&quot;</span>
 <span class="Statement">     split-string</span> url<span class="Identifier"> with</span> <span class="Constant">&quot;&amp;amp;&quot;</span><span class="Type"> to</span> url_var<span class="Type"> count</span> tot
 
      <span class="Comment">// For each of name=value pairs, split it with equal sign</span>
 <span class="Statement">     start-loop</span><span class="Identifier"> repeat</span> tot<span class="Type"> use</span> i
-         <span class="Comment">// Get a url pair (each separated with </span><span class="Constant">&quot;&amp;amp;&quot;</span><span class="Comment">)</span>
+         <span class="Comment">// Get a url pair (each separated with &quot;&amp;amp;&quot;)</span>
 <span class="Statement">         read-split</span> i<span class="Identifier"> from</span> url_var<span class="Type"> to</span> item
-         <span class="Comment">// Then split that with </span><span class="Constant">&quot;=&quot;</span><span class="Comment"> </span>
+         <span class="Comment">// Then split that with &quot;=&quot; </span>
 <span class="Statement">         split-string</span> item<span class="Identifier"> with</span> <span class="Constant">&quot;=&quot;</span><span class="Type"> to</span> item_var
          <span class="Comment">// Get name and value</span>
 <span class="Statement">         read-split</span> <span class="Constant">1</span><span class="Identifier"> from</span> item_var<span class="Type"> to</span> name
@@ -14477,7 +14477,7 @@ To create a temporary file:<br/>
 <pre id='code_801'>
 <span class="Statement"> uniq-file</span> temp_file<span class="Identifier"> temporary</span>
 <span class="Statement"> .</span>..
- <span class="Comment">// use file named </span><span class="Constant">&quot;temp_file&quot;</span>
+ <span class="Comment">// use file named &quot;temp_file&quot;</span>
 <span class="Statement"> .</span>.
 <span class="Statement"> delete-file</span> temp_file</pre>
 <span id=golf_copied_801 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
@@ -14634,8 +14634,8 @@ The following will find a value with key "999", and then iterate in the tree to 
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_808'>
 <span class="Statement"> set-string</span> k = <span class="Constant">&quot;999&quot;</span>
-<span class="Statement"> read-tree</span> mytree<span class="Identifier"> equal</span> k<span class="Type"> status</span> st \
-    <span class="Type"> value</span> val<span class="Type"> new-cursor</span> cur
+ read-tree mytree equal k status st \
+     value val new-cursor cur
 <span class="Statement"> start-loop</span>
 <span class="Statement">     if-true</span> st<span class="Identifier"> equal</span> GG_OKAY
 <span class="Statement">         @</span>Value found is [<span class="Statement">&lt;&lt;p-out</span> val<span class="Statement">&gt;&gt;</span>] for key [<span class="Statement">&lt;&lt;p-out</span> k<span class="Statement">&gt;&gt;</span>]
@@ -14728,9 +14728,9 @@ Convert UTF8 string to text and verify the expected result:<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_811'>
-<span class="Statement"> write-array</span> &lt;array&gt; \
-    <span class="Identifier"> key</span> &lt;key&gt; \
-    <span class="Identifier"> value</span> &lt;value&gt; \
+ write-array &lt;array&gt; \
+     key &lt;key&gt; \
+     value &lt;value&gt; \
      [<span class="Type"> status</span> &lt;status&gt; ] \
      [<span class="Type"> old-value</span> &lt;old value&gt; ]</pre>
 <span id=golf_copied_811 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
@@ -14750,8 +14750,8 @@ If an &lt;array&gt; was created with "process-scope" clause (see <a href='/new-a
 Writing data to an array:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_813'>
-<span class="Statement"> new-array</span> arr
-<span class="Statement"> write-array</span> arr<span class="Identifier"> key</span> <span class="Constant">100</span><span class="Identifier"> value</span> <span class="Constant">&quot;some data&quot;</span></pre>
+ new-array arr
+ write-array arr key <span class="Constant">100</span> value <span class="Constant">&quot;some data&quot;</span></pre>
 <span id=golf_copied_813 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_813' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_813, code_813, golf_copied_813)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
@@ -14759,7 +14759,7 @@ Writing data to an array:<br/>
 Writing new value with the same key index and obtaining the previous value (which is "some data"):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_815'>
-<span class="Statement"> write-array</span> arr<span class="Identifier"> key</span> <span class="Constant">100</span><span class="Identifier"> value</span> <span class="Constant">&quot;new data&quot;</span><span class="Type"> status</span> st<span class="Type"> old-value</span> od
+ write-array arr key <span class="Constant">100</span> value <span class="Constant">&quot;new data&quot;</span> status st old-value od
 <span class="Statement"> if-true</span> st<span class="Identifier"> equal</span> GG_INFO_EXIST
 <span class="Statement">     @</span>Previous value for this key index is <span class="Statement">&lt;&lt;p-out</span> od<span class="Statement">&gt;&gt;</span>
 <span class="Statement"> end-if</span></pre>
@@ -14772,7 +14772,7 @@ The following is an array service, where a process-scoped array is created. It p
 <pre id='code_816'>
 <span class="Statement"> %%</span> /arrsrv<span class="Identifier"> public</span>
 <span class="Statement">     do-once</span>
-<span class="Statement">     new-array</span> arr<span class="Identifier"> max-size</span> <span class="Constant">10000000</span><span class="Identifier"> process-scope</span>
+     new-array arr max-size <span class="Constant">10000000</span> process-scope
 <span class="Statement">     end-do-once</span>
 
      <span class="Comment">// Get input parameters</span>
@@ -14783,14 +14783,14 @@ The following is an array service, where a process-scoped array is created. It p
 <span class="Statement">     string-number</span> key<span class="Type"> to</span> key_n
 
 <span class="Statement">     if-true</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;add&quot;</span> <span class="Comment">// Add data to array</span>
-<span class="Statement">         write-array</span> arr<span class="Identifier"> key</span> key_n<span class="Identifier"> value</span> data<span class="Type"> old-value</span> old_data<span class="Type"> status</span> st
+         write-array arr key key_n value data old-value old_data status st
 <span class="Statement">         if-true</span> st<span class="Identifier"> equal</span> GG_INFO_EXIST
 <span class="Statement">             @</span>Old data was [<span class="Statement">&lt;&lt;p-out</span> old_data<span class="Statement">&gt;&gt;</span>]
 <span class="Statement">             delete-string</span> old_data
 <span class="Statement">         end-if</span>
 <span class="Statement">         @</span>Added [<span class="Statement">&lt;&lt;p-out</span> key<span class="Statement">&gt;&gt;</span>]
 <span class="Statement">     else-if</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;delete&quot;</span> <span class="Comment">// Delete data and obtain the value deleted</span>
-<span class="Statement">         read-array</span> arr<span class="Identifier"> key</span> key_n<span class="Type"> value</span> val<span class="Identifier"> delete</span><span class="Type"> status</span> st
+         read-array arr key key_n value val delete status st
 <span class="Statement">         if-true</span> st<span class="Identifier"> equal</span> GG_ERR_EXIST
 <span class="Statement">             @</span>Not found [<span class="Statement">&lt;&lt;p-out</span> key<span class="Statement">&gt;&gt;</span>]
 <span class="Statement">         else-if</span>
@@ -14799,7 +14799,7 @@ The following is an array service, where a process-scoped array is created. It p
 <span class="Statement">             delete-string</span> val
 <span class="Statement">         end-if</span>
 <span class="Statement">     else-if</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;query&quot;</span> <span class="Comment">// Query hash based on key value</span>
-<span class="Statement">         read-array</span> arr<span class="Identifier"> key</span> key_n<span class="Type"> value</span> val<span class="Type"> status</span> st
+         read-array arr key key_n value val status st
 <span class="Statement">         if-true</span> st<span class="Identifier"> equal</span> GG_ERR_EXIST
 <span class="Statement">             @</span>Not found, queried [<span class="Statement">&lt;&lt;p-out</span> key<span class="Statement">&gt;&gt;</span>]
 <span class="Statement">         else-if</span>
@@ -14978,9 +14978,9 @@ See <a href='/open-file.html'>open-file</a> for an example with "file-id" clause
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_824'>
-<span class="Statement"> write-hash</span> &lt;hash&gt; \
-    <span class="Identifier"> key</span> &lt;key&gt; \
-    <span class="Identifier"> value</span> &lt;value&gt; \
+ write-hash &lt;hash&gt; \
+     key &lt;key&gt; \
+     value &lt;value&gt; \
      [<span class="Type"> status</span> &lt;status&gt; ] \
      [<span class="Type"> old-value</span> &lt;old value&gt; ]</pre>
 <span id=golf_copied_824 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
@@ -15000,8 +15000,8 @@ If a &lt;hash&gt; was created with "process-scope" clause (see <a href='/new-has
 Writing data to a hash:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_826'>
-<span class="Statement"> new-hash</span> h
-<span class="Statement"> write-hash</span> h<span class="Identifier"> key</span> <span class="Constant">&quot;mykey&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;some data&quot;</span></pre>
+ new-hash h
+ write-hash h key <span class="Constant">&quot;mykey&quot;</span> value <span class="Constant">&quot;some data&quot;</span></pre>
 <span id=golf_copied_826 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_826' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_826, code_826, golf_copied_826)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
@@ -15009,7 +15009,7 @@ Writing data to a hash:<br/>
 Writing new value with the same key and obtaining the previous value (which is "some data"):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_828'>
-<span class="Statement"> write-hash</span> h<span class="Identifier"> key</span> <span class="Constant">&quot;mykey&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;new data&quot;</span><span class="Type"> status</span> st<span class="Type"> old-value</span> od
+ write-hash h key <span class="Constant">&quot;mykey&quot;</span> value <span class="Constant">&quot;new data&quot;</span> status st old-value od
 <span class="Statement"> if-true</span> st<span class="Identifier"> equal</span> GG_INFO_EXIST
 <span class="Statement">     @</span>Previous value for this key is <span class="Statement">&lt;&lt;p-out</span> od<span class="Statement">&gt;&gt;</span>
 <span class="Statement"> end-if</span></pre>
@@ -15022,7 +15022,7 @@ The following is a key/value service, where a process-scoped hash is created. It
 <pre id='code_829'>
 <span class="Statement"> %%</span> /keysrv<span class="Identifier"> public</span>
 <span class="Statement">     do-once</span>
-<span class="Statement">     new-hash</span> h<span class="Identifier"> hash-size</span> <span class="Constant">1024</span><span class="Identifier"> process-scope</span>
+     new-hash h hash-size <span class="Constant">1024</span> process-scope
 <span class="Statement">     end-do-once</span>
 
      <span class="Comment">// Get input parameters</span>
@@ -15031,13 +15031,13 @@ The following is a key/value service, where a process-scoped hash is created. It
 <span class="Statement">     get-param</span> data
 
 <span class="Statement">     if-true</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;add&quot;</span> <span class="Comment">// Add data to hash </span>
-<span class="Statement">         write-hash</span> h<span class="Identifier"> key key value</span> data<span class="Type"> old-value</span> old_data<span class="Type"> status</span> st
+         write-hash h key key value data old-value old_data status st
 <span class="Statement">         if-true</span> st<span class="Identifier"> equal</span> GG_INFO_EXIST
 <span class="Statement">             delete-string</span> old_data
 <span class="Statement">         end-if</span>
 <span class="Statement">         @</span>Added [<span class="Statement">&lt;&lt;p-out</span> key<span class="Statement">&gt;&gt;</span>]
 <span class="Statement">     else-if</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;delete&quot;</span> <span class="Comment">// Delete data and obtain the value deleted</span>
-<span class="Statement">         read-hash</span> h<span class="Type"> key</span> (key)<span class="Type"> value</span> val<span class="Identifier"> delete</span><span class="Type"> status</span> st
+         read-hash h key (key) value val delete status st
 <span class="Statement">         if-true</span> st<span class="Identifier"> equal</span> GG_ERR_EXIST
 <span class="Statement">             @</span>Not found [<span class="Statement">&lt;&lt;p-out</span> key<span class="Statement">&gt;&gt;</span>]
 <span class="Statement">         else-if</span>
@@ -15046,7 +15046,7 @@ The following is a key/value service, where a process-scoped hash is created. It
 <span class="Statement">             delete-string</span> val
 <span class="Statement">         end-if</span>
 <span class="Statement">     else-if</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;query&quot;</span> <span class="Comment">// Query hash based on key value</span>
-<span class="Statement">         read-hash</span> h<span class="Type"> key</span> (key)<span class="Type"> value</span> val<span class="Type"> status</span> st
+         read-hash h key (key) value val status st
 <span class="Statement">         if-true</span> st<span class="Identifier"> equal</span> GG_ERR_EXIST
 <span class="Statement">             @</span>Not found, queried [<span class="Statement">&lt;&lt;p-out</span> key<span class="Statement">&gt;&gt;</span>]
 <span class="Statement">         else-if</span>
@@ -15548,7 +15548,7 @@ Hi Again!</pre>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_859'>
-<span class="Statement"> write-tree</span> &lt;tree&gt;<span class="Identifier"> key</span> &lt;key&gt;<span class="Identifier"> value</span> &lt;value&gt; \
+ write-tree &lt;tree&gt; key &lt;key&gt; value &lt;value&gt; \
      [<span class="Type"> status</span> &lt;status&gt; ] \
      [<span class="Type"> new-cursor</span> &lt;cursor&gt; ]</pre>
 <span id=golf_copied_859 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
@@ -15564,7 +15564,7 @@ If "new-cursor" clause is used, then a &lt;cursor&gt; will be positioned on a ne
 Insert key "k" with value "d" into "mytree", and obtain status in "st":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_862'>
-<span class="Statement"> write-tree</span> mytree<span class="Identifier"> key</span> k<span class="Identifier"> value</span> d<span class="Type"> status</span> st</pre>
+ write-tree mytree key k value d status st</pre>
 <span id=golf_copied_862 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_862' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_862, code_862, golf_copied_862)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
@@ -15576,7 +15576,7 @@ In a new directory, create file treesrv.golf and copy to it:<br/>
 <pre id='code_864'>
 <span class="Statement"> %%</span> /treesrv<span class="Identifier"> public</span>
 <span class="Statement">     do-once</span>
-<span class="Statement">     new-tree</span> t<span class="Identifier"> process-scope</span>
+     new-tree t process-scope
 <span class="Statement">     end-do-once</span>
 
      <span class="Comment">// Get input parameters</span>
@@ -15585,14 +15585,14 @@ In a new directory, create file treesrv.golf and copy to it:<br/>
 <span class="Statement">     get-param</span> data
 
 <span class="Statement">     if-true</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;add&quot;</span> <span class="Comment">// Add data to tree</span>
-<span class="Statement">         write-tree</span> t<span class="Identifier"> key</span> (key)<span class="Identifier"> value</span> data<span class="Type"> status</span> st
+         write-tree t key (key) value data status st
 <span class="Statement">         if-true</span> st<span class="Identifier"> equal</span> GG_OKAY
 <span class="Statement">             @</span>Added [<span class="Statement">&lt;&lt;p-out</span> key<span class="Statement">&gt;&gt;</span>]
 <span class="Statement">         else-if</span>
 <span class="Statement">             @</span>Key exists
 <span class="Statement">         end-if</span>
 <span class="Statement">     else-if</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;delete&quot;</span> <span class="Comment">// Delete data and obtain the value deleted</span>
-<span class="Statement">         delete-tree</span> t<span class="Identifier"> key</span> (key)<span class="Type"> value</span> val<span class="Type"> status</span> st
+         delete-tree t key (key) value val status st
 <span class="Statement">         if-true</span> st<span class="Identifier"> equal</span> GG_ERR_EXIST
 <span class="Statement">             @</span>Not found [<span class="Statement">&lt;&lt;p-out</span> key<span class="Statement">&gt;&gt;</span>]
 <span class="Statement">         else-if</span>
@@ -15601,7 +15601,7 @@ In a new directory, create file treesrv.golf and copy to it:<br/>
 <span class="Statement">             delete-string</span> val
 <span class="Statement">         end-if</span>
 <span class="Statement">     else-if</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;query&quot;</span> <span class="Comment">// Query tree based on key value</span>
-<span class="Statement">         read-tree</span> t<span class="Identifier"> equal</span> (key)<span class="Type"> value</span> val<span class="Type"> status</span> st
+         read-tree t equal (key) value val status st
 <span class="Statement">         if-true</span> st<span class="Identifier"> equal</span> GG_ERR_EXIST
 <span class="Statement">             @</span>Not found, queried [<span class="Statement">&lt;&lt;p-out</span> key<span class="Statement">&gt;&gt;</span>]
 <span class="Statement">         else-if</span>

@@ -266,7 +266,7 @@ Create a file (or truncate an existing one), write 25,000 rows and the read back
      <span class="Comment">// Create new file, or truncate an old file if it exists</span>
 <span class="Statement">     open-file</span> <span class="Constant">&quot;testwrite&quot;</span><span class="Type"> file-id</span> nf<span class="Identifier"> new-truncate</span>
 
-     <span class="Comment">// Write </span><span class="Constant">25000</span><span class="Comment"> rows</span>
+     <span class="Comment">// Write 25000 rows</span>
 <span class="Statement">     start-loop</span><span class="Identifier"> repeat</span> <span class="Constant">25000</span><span class="Type"> use</span> i
 <span class="Statement">        ((</span> line
 <span class="Statement">        @</span>some text in line <span class="Statement">&lt;&lt;p-num</span> i<span class="Statement">&gt;&gt;</span>
@@ -278,7 +278,7 @@ Create a file (or truncate an existing one), write 25,000 rows and the read back
      <span class="Comment">// Rewind back to the beginning</span>
 <span class="Statement">     file-position</span><span class="Identifier"> set</span> <span class="Constant">0</span><span class="Identifier"> file-id</span> nf
 
-     <span class="Comment">// Read all </span><span class="Constant">25000</span><span class="Comment"> rows back, and print them out</span>
+     <span class="Comment">// Read all 25000 rows back, and print them out</span>
 <span class="Statement">     read-file</span><span class="Identifier"> file-id</span> nf <span class="Type"> to</span> whole_file
 <span class="Statement">     p-out</span> whole_file
 

@@ -311,10 +311,10 @@ Note that if database connection was lost, and could not be reestablished, the r
 "=" and "@" clauses may or may not have a space before the data that follows. So for example, these are both valid:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_706'>
- <span class="Comment">// No space after </span><span class="Constant">&quot;@&quot;</span><span class="Comment"> and </span><span class="Constant">&quot;=&quot;</span>
+ <span class="Comment">// No space after &quot;@&quot; and &quot;=&quot;</span>
 <span class="Statement"> run-query</span> @db =<span class="Constant">&quot;select firstName, lastName from employee where employeeId='</span><span class="Special">%s</span><span class="Constant">'&quot;</span><span class="Type"> output</span> firstName, lastName<span class="Identifier"> input</span> empid
 
- <span class="Comment">// Space after </span><span class="Constant">&quot;@&quot;</span><span class="Comment"> and </span><span class="Constant">&quot;=&quot;</span>
+ <span class="Comment">// Space after &quot;@&quot; and &quot;=&quot;</span>
 <span class="Statement"> run-query</span><span class="Identifier"> @</span> db = <span class="Constant">&quot;select firstName, lastName from employee where employeeId='</span><span class="Special">%s</span><span class="Constant">'&quot;</span><span class="Type"> output</span> firstName, lastName<span class="Identifier"> input</span> empid</pre>
 <span id=golf_copied_706 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_706' style='position: absolute;left: -500%;'></textarea>

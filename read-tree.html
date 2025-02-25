@@ -244,13 +244,13 @@ function gg_copy(gt, eid, gc) {
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_665'>
-<span class="Statement"> read-tree</span> &lt;tree&gt; \
+ read-tree &lt;tree&gt; \
      (<span class="Identifier"> equal</span> &lt;search key&gt; |<span class="Identifier"> lesser</span> &lt;search key&gt; |<span class="Identifier"> greater</span> &lt;search key&gt; | \
         <span class="Identifier"> lesser-equal</span> &lt;search key&gt; |<span class="Identifier"> greater-equal</span> &lt;search key&gt; | \
         <span class="Identifier"> min-key</span> |<span class="Identifier"> max-key</span> ) \
-     [<span class="Type"> value</span> &lt;value&gt; ] \
+     [<span class="Identifier"> value</span> &lt;value&gt; ] \
      [<span class="Identifier"> update-value</span> &lt;update value&gt; ] \
-     [<span class="Type"> key</span> &lt;key&gt; ] \
+     [<span class="Identifier"> key</span> &lt;key&gt; ] \
      [<span class="Type"> status</span> &lt;status&gt; ] \
      [<span class="Type"> new-cursor</span> &lt;cursor&gt; ]</pre>
 <span id=golf_copied_665 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
@@ -278,19 +278,19 @@ In this example, a million key/value pairs are inserted into a tree, and then ea
 <pre id='code_666'>
 <span class="Statement"> %%</span> /tree-example<span class="Identifier"> public</span>
 
-<span class="Statement">     new-tree</span> mytree<span class="Identifier"> key-as</span> <span class="Constant">&quot;positive integer&quot;</span> <span class="Comment">// create new tree</span>
+     new-tree mytree key-as <span class="Constant">&quot;positive integer&quot;</span> <span class="Comment">// create new tree</span>
 
 <span class="Statement">     set-number</span> i
 <span class="Statement">     start-loop</span><span class="Type"> use</span> i<span class="Identifier"> start-with</span> <span class="Constant">0</span><span class="Identifier"> repeat</span> <span class="Constant">1000000</span>
 <span class="Statement">         number-string</span> i<span class="Type"> to</span> key
 <span class="Statement">         set-string</span> data=key
-<span class="Statement">         write-tree</span> mytree<span class="Identifier"> key</span> (key)<span class="Identifier"> value</span> data <span class="Comment">// insert key/data to the tree</span>
+         write-tree mytree key (key) value data <span class="Comment">// insert key/data to the tree</span>
 <span class="Statement">     end-loop</span>
 
 <span class="Statement">     start-loop</span><span class="Type"> use</span> i<span class="Identifier"> start-with</span> <span class="Constant">0</span><span class="Identifier"> repeat</span> <span class="Constant">1000000</span>
 <span class="Statement">         number-string</span> i<span class="Type"> to</span> key
          <span class="Comment">// search tree for each key previously inserted</span>
-<span class="Statement">         read-tree</span> mytree<span class="Identifier"> equal</span> (key)<span class="Type"> status</span> st<span class="Type"> value</span> data
+         read-tree mytree equal (key) status st value data
 <span class="Statement">         if-true</span> st<span class="Identifier"> not-equal</span> GG_OKAY
 <span class="Statement">             @</span>Could not find key <span class="Statement">&lt;&lt;p-out</span> key<span class="Statement">&gt;&gt;</span>
 <span class="Statement">         else-if</span>

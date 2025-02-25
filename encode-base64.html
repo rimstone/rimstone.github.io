@@ -284,7 +284,7 @@ In the next example, "input-length" clause is used, and only a partial of the in
  <span class="Comment">// Original string, generally this would be binary data in most cases</span>
 <span class="Statement"> set-string</span> dt =<span class="Constant">&quot;  oh well  &quot;</span>
 
- <span class="Comment">// Encode in base64, encode only </span><span class="Constant">6</span><span class="Comment"> bytes</span>
+ <span class="Comment">// Encode in base64, encode only 6 bytes</span>
 <span class="Statement"> encode-base64</span> dt<span class="Identifier"> input-length</span> <span class="Constant">6</span><span class="Type"> to</span> out_dt
 
 <span class="Statement"> decode-base64</span> out_dt<span class="Type"> to</span> new_dt

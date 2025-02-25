@@ -262,7 +262,7 @@ All input and output is contained in a single variable of type "gg_cli", the poi
  <span class="Comment">// Define and initialize request variable</span>
  gg_cli req = {<span class="Constant">0</span>};
  <span class="Comment">// You could also do:</span>
- <span class="Comment">// memset ((char*)&amp;req, </span><span class="Constant">0</span><span class="Comment">, sizeof(gg_cli));</span>
+ <span class="Comment">// memset ((char*)&amp;req, 0, sizeof(gg_cli));</span>
 <span class="Statement"> .</span>..
  <span class="Comment">// Set members of 'req' variable (see below)</span>
 <span class="Statement"> .</span>..
@@ -614,7 +614,7 @@ Copy this to file "cli1.c" in a directory of its own - note that in this example
      <span class="Comment">// Initialize request</span>
      memset (&amp;req, <span class="Constant">0</span>, <span class="Statement">sizeof</span>(req));
 
-     <span class="Comment">// Add </span><span class="Constant">3</span><span class="Comment"> environment variables (in the form of name, value, name, value, ... , NULL)</span>
+     <span class="Comment">// Add 3 environment variables (in the form of name, value, name, value, ... , NULL)</span>
      <span class="Type">char</span> *env[] = { <span class="Constant">&quot;REMOTE_USER&quot;</span>, <span class="Constant">&quot;John&quot;</span>, <span class="Constant">&quot;SOME_VAR&quot;</span>, <span class="Constant">&quot;SOME</span><span class="Special">\n</span><span class="Constant">VALUE&quot;</span>, <span class="Constant">&quot;NEW_VAR&quot;</span>, <span class="Constant">&quot;1000&quot;</span>, <span class="Constant">NULL</span> };
 
      <span class="Comment">// Create a request</span>
@@ -636,7 +636,7 @@ Copy this to file "cli1.c" in a directory of its own - note that in this example
      req.req_body = <span class="Constant">&quot;This is request body&quot;</span>;
      <span class="Comment">// Content length</span>
      req.content_len = strlen (req.req_body);
-     <span class="Comment">// No timeout (set to </span><span class="Constant">0</span><span class="Comment">)</span>
+     <span class="Comment">// No timeout (set to 0)</span>
      req.timeout = <span class="Constant">0</span>;
 
      <span class="Comment">// Make a request</span>
@@ -712,9 +712,9 @@ To test it, you can create a Golf application. Copy this to "hello.golf" file in
 <span class="Statement">     get-req</span><span class="Identifier"> process-id</span><span class="Type"> to</span> pid
 <span class="Statement">     @</span>Hello World! [<span class="Statement">&lt;&lt;p-out</span> ruser<span class="Statement">&gt;&gt;</span>] [<span class="Statement">&lt;&lt;p-out</span> somev<span class="Statement">&gt;&gt;</span>] [<span class="Statement">&lt;&lt;p-out</span> newv<span class="Statement">&gt;&gt;</span>] [<span class="Statement">&lt;&lt;p-out</span> par1<span class="Statement">&gt;&gt;</span>] [<span class="Statement">&lt;&lt;p-out</span> par2<span class="Statement">&gt;&gt;</span>] <span class="Statement">&lt;&lt;p-num</span> pid<span class="Statement">&gt;&gt;</span> <span class="Statement">&lt;&lt;p-out</span> rb<span class="Statement">&gt;&gt;</span>
 
-     <span class="Comment">// Output back a number of lines, generally as </span><span class="Constant">&quot;Output line #&lt;num of line&gt;&quot;</span>
-     <span class="Comment">// After line #</span><span class="Constant">1418</span><span class="Comment">, print out </span><span class="Constant">&quot;Line 1419 has an error&quot;</span><span class="Comment"> to stderr</span>
-     <span class="Comment">// After line #</span><span class="Constant">4418</span><span class="Comment">, report an error and exit</span>
+     <span class="Comment">// Output back a number of lines, generally as &quot;Output line #&lt;num of line&gt;&quot;</span>
+     <span class="Comment">// After line #1418, print out &quot;Line 1419 has an error&quot; to stderr</span>
+     <span class="Comment">// After line #4418, report an error and exit</span>
      <span class="Comment">// This demostrates outputting data to both stdout and stderr</span>
 <span class="Statement">     start-loop</span><span class="Identifier"> repeat</span> <span class="Constant">8000</span><span class="Type"> use</span> i<span class="Identifier"> start-with</span> <span class="Constant">0</span>
 <span class="Statement">         @</span>Output line #<span class="Statement">&lt;&lt;p-num</span> i<span class="Statement">&gt;&gt;</span>

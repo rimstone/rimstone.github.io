@@ -244,9 +244,9 @@ function gg_copy(gt, eid, gc) {
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_643'>
-<span class="Statement"> read-array</span> &lt;array&gt; \
-    <span class="Identifier"> key</span> &lt;key&gt; \
-    <span class="Type"> value</span> &lt;value&gt; \
+ read-array &lt;array&gt; \
+     key &lt;key&gt; \
+     value &lt;value&gt; \
      [<span class="Identifier"> delete</span> [ &lt;delete&gt; ] ] \
      [<span class="Type"> status</span> &lt;status&gt; ]</pre>
 <span id=golf_copied_643 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
@@ -263,13 +263,13 @@ In this example, a new array is created, a value is written to it, and then the 
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_644'>
  <span class="Comment">// Create new array</span>
-<span class="Statement"> new-array</span> arr
+ new-array arr
 
  <span class="Comment">// Write to array</span>
-<span class="Statement"> write-array</span> arr<span class="Identifier"> key</span> <span class="Constant">500</span><span class="Identifier"> value</span> <span class="Constant">&quot;some data&quot;</span>
+ write-array arr key <span class="Constant">500</span> value <span class="Constant">&quot;some data&quot;</span>
 
  <span class="Comment">// Read from array</span>
-<span class="Statement"> read-array</span> arr<span class="Identifier"> key</span> <span class="Constant">500</span><span class="Type"> value</span> res<span class="Type"> status</span> st<span class="Identifier"> delete</span>
+ read-array arr key <span class="Constant">500</span> value res status st delete
 <span class="Statement"> if-true</span> st<span class="Identifier"> equal</span> GG_ERR_EXIST
 <span class="Statement">     @</span>No data in the array at index <span class="Constant">500</span>!
 <span class="Statement"> else-if</span>

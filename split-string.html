@@ -296,17 +296,17 @@ The following will parse a string containing name/value pairs (such as "name=val
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_763'>
 <span class="Statement"> %%</span> /parse-url<span class="Identifier"> public</span>
-     <span class="Comment">// Data to parse - data/value pairs delimited by </span><span class="Constant">&quot;&amp;amp;&quot;</span><span class="Comment"> string, and data and value delimited by equal sign:</span>
+     <span class="Comment">// Data to parse - data/value pairs delimited by &quot;&amp;amp;&quot; string, and data and value delimited by equal sign:</span>
 <span class="Statement">     set-string</span> url =<span class="Constant">&quot;x=23&amp;amp;y=good&amp;amp;z=hello_world&quot;</span>
 
-     <span class="Comment">// Split string first into pieces based on </span><span class="Constant">&quot;amp;&quot;</span>
+     <span class="Comment">// Split string first into pieces based on &quot;amp;&quot;</span>
 <span class="Statement">     split-string</span> url<span class="Identifier"> with</span> <span class="Constant">&quot;&amp;amp;&quot;</span><span class="Type"> to</span> url_var<span class="Type"> count</span> tot
 
      <span class="Comment">// For each of name=value pairs, split it with equal sign</span>
 <span class="Statement">     start-loop</span><span class="Identifier"> repeat</span> tot<span class="Type"> use</span> i
-         <span class="Comment">// Get a url pair (each separated with </span><span class="Constant">&quot;&amp;amp;&quot;</span><span class="Comment">)</span>
+         <span class="Comment">// Get a url pair (each separated with &quot;&amp;amp;&quot;)</span>
 <span class="Statement">         read-split</span> i<span class="Identifier"> from</span> url_var<span class="Type"> to</span> item
-         <span class="Comment">// Then split that with </span><span class="Constant">&quot;=&quot;</span><span class="Comment"> </span>
+         <span class="Comment">// Then split that with &quot;=&quot; </span>
 <span class="Statement">         split-string</span> item<span class="Identifier"> with</span> <span class="Constant">&quot;=&quot;</span><span class="Type"> to</span> item_var
          <span class="Comment">// Get name and value</span>
 <span class="Statement">         read-split</span> <span class="Constant">1</span><span class="Identifier"> from</span> item_var<span class="Type"> to</span> name

@@ -297,7 +297,7 @@ Copy this to "manage_keys.golf" source file:<br/>
 <pre id='code_566'>
 <span class="Statement"> %%</span> /manage-keys<span class="Identifier"> public</span>
 <span class="Statement">    do-once</span>
-<span class="Statement">    new-hash</span> h<span class="Identifier"> hash-size</span> <span class="Constant">1024</span><span class="Identifier"> process-scope</span>
+    new-hash h hash-size <span class="Constant">1024</span> process-scope
 <span class="Statement">    end-do-once</span>
 
     <span class="Comment">// Get input parameters</span>
@@ -306,12 +306,12 @@ Copy this to "manage_keys.golf" source file:<br/>
 <span class="Statement">    get-param</span> data
 
 <span class="Statement">    if-true</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;add&quot;</span> <span class="Comment">// Add data to hash,</span>
-<span class="Statement">        write-hash</span> h<span class="Identifier"> key</span> (key)<span class="Identifier"> value</span> data<span class="Type"> status</span> st
+        write-hash h key (key) value data status st
 <span class="Statement">        @</span>Added [<span class="Statement">&lt;&lt;p-out</span> key<span class="Statement">&gt;&gt;</span>]
 <span class="Statement">    else-if</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;delete&quot;</span> <span class="Comment">// Delete data and obtain the value deleted</span>
-<span class="Statement">        read-hash</span> h<span class="Type"> key</span> (key)<span class="Type"> value</span> val \
-           <span class="Identifier"> delete</span> \
-           <span class="Type"> status</span> st
+        read-hash h key (key) value val \
+            delete \
+            status st
 <span class="Statement">        if-true</span> st<span class="Identifier"> equal</span> GG_ERR_EXIST
 <span class="Statement">            @</span>Not found [<span class="Statement">&lt;&lt;p-out</span> key<span class="Statement">&gt;&gt;</span>]
 <span class="Statement">        else-if</span>
@@ -320,7 +320,7 @@ Copy this to "manage_keys.golf" source file:<br/>
 <span class="Statement">            delete-string</span> val
 <span class="Statement">        end-if</span>
 <span class="Statement">    else-if</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;query&quot;</span> <span class="Comment">// Query hash based on key value</span>
-<span class="Statement">        read-hash</span> h<span class="Type"> key</span> (key)<span class="Type"> value</span> val<span class="Type"> status</span> st
+        read-hash h key (key) value val status st
 <span class="Statement">        if-true</span> st<span class="Identifier"> equal</span> GG_ERR_EXIST
 <span class="Statement">            @</span>Not found, queried [<span class="Statement">&lt;&lt;p-out</span> key<span class="Statement">&gt;&gt;</span>]
 <span class="Statement">        else-if</span>
@@ -338,7 +338,7 @@ Create file "srv.golf" and copy to it this code:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_568'>
 <span class="Statement"> begin-handler</span> /srv<span class="Identifier"> public</span>
-  <span class="Comment">// Create resources (prepare) for </span><span class="Constant">3</span><span class="Comment"> service calls</span>
+  <span class="Comment">// Create resources (prepare) for 3 service calls</span>
   <span class="Comment">// We pass environment variable GG_SILENT_HEADER to these calls</span>
   <span class="Comment">// so they don't emit HTTP header</span>
 <span class="Statement">  new-remote</span> srv1<span class="Identifier"> local</span> <span class="Constant">&quot;app&quot;</span> \
@@ -350,7 +350,7 @@ Create file "srv.golf" and copy to it this code:<br/>
 <span class="Statement">  new-remote</span> srv3<span class="Identifier"> local</span> <span class="Constant">&quot;app&quot;</span> \
      <span class="Identifier"> url-path</span> <span class="Constant">&quot;/app/manage-keys/op=add/key=key3/data=data3&quot;</span> \
      <span class="Identifier"> environment</span> <span class="Constant">&quot;GG_SILENT_HEADER&quot;</span>=<span class="Constant">&quot;yes&quot;</span>
-  <span class="Comment">// Make </span><span class="Constant">3</span><span class="Comment"> service calls in parallel, each in it own thread</span>
+  <span class="Comment">// Make 3 service calls in parallel, each in it own thread</span>
 <span class="Statement">  call-remote</span> srv1, srv2, srv3<span class="Type"> status</span> st \
      <span class="Type"> started</span> start \
      <span class="Type"> finished-okay</span> fok

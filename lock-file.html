@@ -279,14 +279,14 @@ You can use any file name (likely choose a name that signifies the purpose of a 
 <span class="Statement">         lock-file</span> fname<span class="Type"> id</span> lockid<span class="Type"> status</span> lockst
          <span class="Comment">// Check the status of locking</span>
 <span class="Statement">         if-true</span> lockst<span class="Identifier"> equal</span> GG_OKAY
-             <span class="Comment">// File successfully locked, simulate working for </span><span class="Constant">20</span><span class="Comment"> seconds</span>
+             <span class="Comment">// File successfully locked, simulate working for 20 seconds</span>
 <span class="Statement">             @</span>WORKING
 <span class="Statement">             pause-program</span> <span class="Constant">20000</span>
 <span class="Statement">             @</span>DONE
              <span class="Comment">// Exit while loop</span>
 <span class="Statement">             break-loop</span>
 <span class="Statement">         else-if</span> lockst<span class="Identifier"> equal</span> GG_ERR_FAILED
-             <span class="Comment">// Another process holds the lock, wait, try again for </span><span class="Constant">1</span><span class="Comment"> second</span>
+             <span class="Comment">// Another process holds the lock, wait, try again for 1 second</span>
 <span class="Statement">             pause-program</span> <span class="Constant">1000</span>
 <span class="Statement">             @</span>WAITING
 <span class="Statement">             continue-loop</span>
