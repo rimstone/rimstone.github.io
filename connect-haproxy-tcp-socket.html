@@ -271,15 +271,15 @@ frontend front_server
     use_backend backend_servers if { path_reg -i ^.*\/func_test\/.*$ } 
     option forwardfor
 
-fcgi-app gliim-fcgi
+fcgi-app golf-fcgi
     log-stderr global
     docroot /var/lib/gg/func_test/app
     path-info ^.+(/func_test)(/.+)$ 
 
 backend backend_servers                                                                                                                     
     mode http
-    filter fcgi-app gliim-fcgi
-    use-fcgi-app gliim-fcgi
+    filter fcgi-app golf-fcgi
+    use-fcgi-app golf-fcgi
     server s1 127.0.0.1:2301 proto fcgi</pre>
 <span id=golf_copied_308 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_308' style='position: absolute;left: -500%;'></textarea>

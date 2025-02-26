@@ -272,14 +272,14 @@ If you have memory that's already provided from elsewhere, you can use gg_strdup
 <br/>
 If Golf memory you created with these functions has extra unused bytes, you can use either gg_realloc() to reduce its footprint, or you can use gg_mem_set_len() to set its length.<br/>
 <br/>
-Note that if you use C code included with a Golf project, you must include "gliim.h" file in each of them. You do not need to manually include any other ".h" files (header files), as they will be automatically picked up.<br/>
+Note that if you use C code included with a Golf project, you must include "golf.h" file in each of them. You do not need to manually include any other ".h" files (header files), as they will be automatically picked up.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Place the following files in a separate directory for demonstration purposes.<br/>
 <br/>
 In this example, "example.golf" will use C functions from "example.c", and "example.h" will have declarations of those functions. File "example.c" implements a factorial function, as well as a function that will store the factorial result in an output message that's allocated and passed back to your Golf code:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_723'>
- <span class="PreProc">#include </span><span class="Constant">&quot;gliim.h&quot;</span>
+ <span class="PreProc">#include </span><span class="Constant">&quot;golf.h&quot;</span>
 
  <span class="Type">void</span> get_factorial(gg_num f, gg_num *res)
 <span class="Statement"> {</span>
@@ -293,7 +293,7 @@ In this example, "example.golf" will use C functions from "example.c", and "exam
  <span class="PreProc">#</span>define<span class="PreProc"> </span>MEMSIZE<span class="PreProc"> </span><span class="Constant">200</span>
  <span class="Type">void</span> fact_msg (gg_num i, <span class="Type">char</span> **res)
 <span class="Statement"> {</span>
-     <span class="Comment">// gliim rule: outgoing string must NOT free or realloc its incoming value</span>
+     <span class="Comment">// golf rule: outgoing string must NOT free or realloc its incoming value</span>
      <span class="Comment">// all else is allowed</span>
      <span class="Type">char</span> *r = gg_malloc (MEMSIZE);
      gg_num f;
