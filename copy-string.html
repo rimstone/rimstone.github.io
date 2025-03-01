@@ -243,13 +243,13 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Copy string</div><hr/><span style="font-weight:bold;">Purpose</span>: Copies string to another string.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_323'>
+<pre id='code_338'>
 <span class="Statement"> copy-string</span> &lt;source string&gt;<span class="Type"> to</span> &lt;dest string&gt; \
      [<span class="Identifier"> start-with</span> &lt;start with&gt; ] \
      [<span class="Identifier"> length</span> &lt;length&gt; ]</pre>
-<span id=golf_copied_323 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_323' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_323, code_323, golf_copied_323)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_338 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_338' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_338, code_338, golf_copied_338)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Use copy-string to copy &lt;source string&gt; to &lt;dest string&gt;.<br/>
 <br/>
@@ -259,7 +259,7 @@ Without "length" clause, the whole of &lt;source string&gt; is copied. With "len
 <br/>
 You can copy a string to itself. In this case, the original string remains and the new string references a copy:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_324'>
+<pre id='code_339'>
 <span class="Statement"> set-string</span> str = <span class="Constant">&quot;original string&quot;</span> <span class="Comment">// string to change</span>
 
 <span class="Statement"> set-string</span> orig = str <span class="Comment">// references original copy of the string to change</span>
@@ -268,30 +268,30 @@ You can copy a string to itself. In this case, the original string remains and t
 
 <span class="Statement"> upper-string</span> str <span class="Comment">// change the copy</span>
 
- <span class="Comment">// Now &quot;str&quot; references &quot;ORIGINAL STRING&quot; </span>
- <span class="Comment">// and &quot;orig&quot; references &quot;original string&quot;</span></pre>
-<span id=golf_copied_324 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_324' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_324, code_324, golf_copied_324)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+ <span class="Comment">// Now </span><span class="Constant">&quot;str&quot;</span><span class="Comment"> references </span><span class="Constant">&quot;ORIGINAL STRING&quot;</span><span class="Comment"> </span>
+ <span class="Comment">// and </span><span class="Constant">&quot;orig&quot;</span><span class="Comment"> references </span><span class="Constant">&quot;original string&quot;</span></pre>
+<span id=golf_copied_339 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_339' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_339, code_339, golf_copied_339)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 After copy-string below, "my_str" will be a copy of string "some value":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_325'>
+<pre id='code_340'>
 <span class="Statement"> set-string</span> other_string=<span class="Constant">&quot;some value&quot;</span>
 <span class="Statement"> copy-string</span> other_string<span class="Type"> to</span> my_str</pre>
-<span id=golf_copied_325 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_325' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_325, code_325, golf_copied_325)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_340 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_340' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_340, code_340, golf_copied_340)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Copy certain number of bytes, the result in "my_str" will be "ome":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_326'>
+<pre id='code_341'>
 <span class="Statement"> set-string</span> other_string=<span class="Constant">&quot;some value&quot;</span>
 <span class="Statement"> copy-string</span> other_string<span class="Type"> to</span> my_str<span class="Identifier"> length</span> <span class="Constant">3</span><span class="Identifier"> start-with</span> <span class="Constant">1</span></pre>
-<span id=golf_copied_326 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_326' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_326, code_326, golf_copied_326)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_341 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_341' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_341, code_341, golf_copied_341)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <a name='Strings'></a><span style="font-weight:bold;">Strings</span><br/>

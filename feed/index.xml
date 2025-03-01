@@ -1,0 +1,48 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<title>Gliim</title>
+<atom:link href="http://gliim.bitbucket.io/feed/index.xml" rel="self" type="application/rss+xml"/>
+<link>http://gliim.bitbucket.io/</link>
+<description>Gliim news, releases, articles</description>
+<lastBuildDate>Fri, 02 Aug 2024 09:01:22 -0700</lastBuildDate>
+<ttl>1800</ttl>
+<language>en-US</language>
+<image>
+<title>Gliim</title>
+<url>
+http://gliim.bitbucket.io/gliim.png
+</url>
+<link>http://gliim.bitbucket.io/</link>
+<width>53</width>
+<height>58</height>
+</image>
+<item>
+<title>
+Search functionality now available on official Gliim framework web site.
+</title>
+<link>
+https://gliim.dev/search.html
+</link>
+<pubDate>Mon, 18 Dec 2023 19:35:19 -0700</pubDate>
+<category>News</category>
+<guid isPermaLink="true">https://gliim.dev/search.html</guid>
+<description>
+Gliim web site now has search functionality with type sensing and advanced search capabilities. Use it to learn Gliim quickly by browsing documentation, examples and articles based on search keywords of interest to obtain relevant information.
+</description>
+</item>
+<item>
+<title>
+RSS feed now available on Gliim project page
+</title>
+<link>
+https://gliim.dev/feed/index.xml
+</link>
+<pubDate>Tue, 19 Dec 2023 23:04:46 -0700</pubDate>
+<category>news</category>
+<guid isPermaLink="true">https://gliim.dev/feed/index.xml</guid>
+<description>
+Gliim.dev now offers RSS feed with the latest news, articles and examples
+</description>
+</item>
+</channel>
+</rss>
