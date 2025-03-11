@@ -3,11 +3,11 @@
 
 <head>
 <!--__GOLF_REDIRECT__-->
-<title>Text utf8</title>
+<title>Read xml</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="canonical" href="https://golf-lang.com/text-utf8.html" />
+<link rel="canonical" href="https://golf-lang.com/read-xml.html" />
 <style>
 
 
@@ -240,44 +240,47 @@ function gg_copy(gt, eid, gc) {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Text utf8</div><hr/><span style="font-weight:bold;">Purpose</span>: Convert text to UTF8 string.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Read xml</div><hr/><span style="font-weight:bold;">Purpose</span>: Read data elements from XML document.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_801'>
-<span class="Statement"> text-utf8</span> &lt;text&gt; \
+<pre id='code_694'>
+<span class="Statement"> read-xml</span> &lt;xml&gt; \
+     [<span class="Type"> key</span> &lt;key&gt; ] \
+     [<span class="Type"> value</span> &lt;value&gt; ] \
      [<span class="Type"> status</span> &lt;status&gt; ] \
-     [<span class="Type"> error-text</span> &lt;error text&gt; ]</pre>
-<span id=golf_copied_801 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_801' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_801, code_801, golf_copied_801)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+     [<span class="Identifier"> next</span> ]</pre>
+<span id=golf_copied_694 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_694' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_694, code_694, golf_copied_694)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-text-utf8 will convert string value &lt;text&gt; to UTF8. &lt;text&gt; itself will hold the resulting UTF8 string. If you don't wish &lt;text&gt; to be modified, make a copy of it first (see <a href='https://golf-lang.com/copy-string.html'>copy-string</a>). See <a href='https://golf-lang.com/utf8-text.html'>utf8-text</a> for the reverse conversion and data standards information.<br/>
+read-xml reads data elements from &lt;xml&gt; variable, which is created with <a href='https://golf-lang.com/xml-doc.html'>xml-doc</a>. A data element is a string &lt;key&gt;/&lt;value&gt; pair, where key (in "key" clause) is a normalized key name, which is the current name preceded with the names of all elements leading up to it, separated by a forward slash ("/"). Node that attribute elements end with "@".<br/>
 <br/>
-You can obtain &lt;status&gt; in "status" clause. &lt;status&gt; number is GG_OKAY if successful, or GG_ERR_UTF8 if there was an error, in which case &lt;error text&gt; string in "error-text" clause will contain the error message.<br/>
-<div class="vsub"><a id="Examples"></a>Examples</div>
+The actual &lt;value&gt; is obtained with "value" clause, and the &lt;status&gt; can be obtained with "status" clause. &lt;status&gt; is GG_OKAY if key/value is obtained, and GG_ERR_EXIST if there are no more to get. <br/>
+<br/>
+Use "next" clause to move to the next sequential key/value pair in the document, from top down as available. Typically, you would get a key first, examine if it's of interest to you, and then obtain value. You can use also use "key", "value" and "next" at the same time if you're going through all elements.<br/>
+<br/>
+&lt;key&gt; in "key" clause is a normalized name of any given element in XML text. This means every non-leaf element is included, separated by a forward slash ("/"), and arguments end with "@". An example would be, if "onclick" is a element of "menuitem":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_802'>
- <span class="Comment">// Unicode value to encode to UTF8</span>
-<span class="Statement"> set-string</span> txt = <span class="Constant">&quot;</span><span class="Special">\u0459\\\&quot;</span><span class="Constant">Doc</span><span class="Special">\\\&quot;\\</span><span class="Constant">n</span><span class="Special">\\</span><span class="Constant">t</span><span class="Special">\\</span><span class="Constant">b</span><span class="Special">\\</span><span class="Constant">f</span><span class="Special">\\</span><span class="Constant">r</span><span class="Special">\\</span><span class="Constant">t</span><span class="Special">\\</span><span class="Constant">u21d7</span><span class="Special">\\</span><span class="Constant">u21d8</span><span class="Special">\\</span><span class="Constant">t</span><span class="Special">\\</span><span class="Constant">u25b7</span><span class="Special">\\</span><span class="Constant">u25ee</span><span class="Special">\\</span><span class="Constant">uD834</span><span class="Special">\\</span><span class="Constant">uDD1E</span><span class="Special">\\</span><span class="Constant">u13eb</span><span class="Special">\\</span><span class="Constant">u2ca0</span><span class="Special">\\</span><span class="Constant">u0448</span><span class="Special">\\</span><span class="Constant">n</span><span class="Special">\\</span><span class="Constant">/</span><span class="Special">\\\&quot;</span><span class="Constant">()</span><span class="Special">\\</span><span class="Constant">t&quot;</span>
-
- <span class="Comment">// Convert to UTF8 </span>
-<span class="Statement"> text-utf8</span> txt<span class="Type"> status</span> txt_status<span class="Type"> error-text</span> txt_error
-
- <span class="Comment">// Expected UTF8 result</span>
-<span class="Statement"> set-string</span> utf8 = <span class="Constant">&quot;љ</span><span class="Special">\&quot;</span><span class="Constant">Doc</span><span class="Special">\&quot;\n\t\b\f\r\t</span><span class="Constant">⇗⇘</span><span class="Special">\t</span><span class="Constant">▷◮𝄞ᏫⲠш</span><span class="Special">\n</span><span class="Constant">/</span><span class="Special">\&quot;</span><span class="Constant">()</span><span class="Special">\t</span><span class="Constant">&quot;</span>
-
- <span class="Comment">// Make sure conversion was successful</span>
-<span class="Statement"> if-true</span> utf8<span class="Identifier"> not-equal</span> txt<span class="Identifier"> or</span> txt_status<span class="Identifier"> not-equal</span> GG_OKAY<span class="Identifier"> or</span> txt_error<span class="Identifier"> not-equal</span> <span class="Constant">&quot;&quot;</span>
-<span class="Statement">     @</span>Error in converting string to UTF8
-<span class="Statement"> end-if</span></pre>
-<span id=golf_copied_802 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_802' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_802, code_802, golf_copied_802)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_695'>
+ menu/popup/menuitem/onclick</pre>
+<span id=golf_copied_695 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_695' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_695, code_695, golf_copied_695)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
+or if "onclick" is an attribute of "menuitem":<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_696'>
+ menu/popup/menuitem/onclick/@</pre>
+<span id=golf_copied_696 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_696' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_696, code_696, golf_copied_696)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+<div class="vsub"><a id="Examples"></a>Examples</div>
+See <a href='https://golf-lang.com/xml-doc.html'>xml-doc</a>.<br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
- <a name='UTF8'></a><span style="font-weight:bold;">UTF8</span><br/>
-<a href='https://golf-lang.com/text-utf8.html'>text-utf8</a> &nbsp;<br/>
-<a href='https://golf-lang.com/utf8-text.html'>utf8-text</a> &nbsp; <br/>
+ <a name='XML parsing'></a><span style="font-weight:bold;">XML parsing</span><br/>
+<a href='https://golf-lang.com/read-xml.html'>read-xml</a> &nbsp;<br/>
+<a href='https://golf-lang.com/xml-doc.html'>xml-doc</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
 <a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->

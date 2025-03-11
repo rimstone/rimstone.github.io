@@ -243,37 +243,37 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Return handler</div><hr/><span style="font-weight:bold;">Purpose</span>: Return from current request handler back to its caller.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_710'>
+<pre id='code_725'>
 <span class="Statement"> return-handler</span></pre>
-<span id=golf_copied_710 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_710' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_710, code_710, golf_copied_710)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_725 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_725' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_725, code_725, golf_copied_725)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Returns from current request handler by transferring control back to its caller. If the current request handler was called from an outside caller (such as web browser, API, command line etc.), then return-handler is equivalent to <a href='https://golf-lang.com/exit-handler.html'>exit-handler</a>. If the current request handler was called from another request handler with <a href='https://golf-lang.com/call-handler.html'>call-handler</a>, then control transfers back to that handler immediately after call-handler.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 In this example, "req-handler" (the caller) will call "other-handler" (the callee), which will return to the caller (immediately after call-handler). Here's the caller:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_711'>
+<pre id='code_726'>
 <span class="Statement"> begin-handler</span> /req-handler<span class="Identifier"> public</span>
 <span class="Statement">     .</span>..
 <span class="Statement">     call-handler</span> other-handler
 <span class="Statement">     .</span>..
 <span class="Statement"> end-handler</span></pre>
-<span id=golf_copied_711 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_711' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_711, code_711, golf_copied_711)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_726 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_726' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_726, code_726, golf_copied_726)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The callee handler:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_712'>
+<pre id='code_727'>
 <span class="Statement"> begin-handler</span> /other-handler<span class="Identifier"> public</span>
 <span class="Statement">     .</span>..
 <span class="Statement">     return-handler</span>
 <span class="Statement">     .</span>..
 <span class="Statement"> end-handler</span></pre>
-<span id=golf_copied_712 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_712' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_712, code_712, golf_copied_712)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_727 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_727' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_727, code_727, golf_copied_727)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <a name='Program flow'></a><span style="font-weight:bold;">Program flow</span><br/>
