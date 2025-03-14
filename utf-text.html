@@ -244,9 +244,9 @@ function gg_copy(gt, eid, gc) {
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_842'>
-<span class="Statement"> utf-text</span> &lt;utf&gt; \
-     [<span class="Type"> to</span> &lt;text&gt; ] \
-     [<span class="Identifier"> length</span> &lt;length&gt; ] \
+ utf-text &lt;utf&gt; \
+     [<span class="Statement"> to</span> &lt;text&gt; ] \
+     [<span class="Statement"> length</span> &lt;length&gt; ] \
      [<span class="Type"> status</span> &lt;status&gt; ] \
      [<span class="Type"> error-text</span> &lt;error text&gt; ]</pre>
 <span id=golf_copied_842 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
@@ -270,7 +270,7 @@ Convert UTF string to text and verify the expected result:<br/>
 <span class="Statement"> set-string</span> utf_str = <span class="Constant">&quot;</span><span class="Special">\&quot;</span><span class="Constant">Doc</span><span class="Special">\&quot;\n\t\b\f\r\t</span><span class="Constant">⇗⇘</span><span class="Special">\t</span><span class="Constant">▷◮𝄞ᏫⲠш</span><span class="Special">\n</span><span class="Constant">/</span><span class="Special">\&quot;</span><span class="Constant">()</span><span class="Special">\t</span><span class="Constant">&quot;</span>
 
  <span class="Comment">// Convert UTF string to text</span>
-<span class="Statement"> utf-text</span> utf_str<span class="Type"> status</span> encstatus<span class="Type"> to</span> text_text
+ utf-text utf_str status encstatus to text_text
 
  <span class="Comment">// This is the text expected</span>
 <span class="Statement"> ((</span> expected_result
