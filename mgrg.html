@@ -243,11 +243,11 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Mgrg</div><hr/><span style="font-weight:bold;">Purpose</span>: Run and manage services.<br/>
 <br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_582'>
+<pre id='code_570'>
 mgrg <span class="Statement">&lt;</span>options<span class="Statement">&gt;</span> <span class="Statement">&lt;</span>app name<span class="Statement">&gt;</span></pre>
-<span id=golf_copied_582 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_582' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_582, code_582, golf_copied_582)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_570 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_570' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_570, code_570, golf_copied_570)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 mgrg (pronounced "em-greg") is a service manager. A service is started as a number of concurrent processes serving application requests, typically from reverse-proxy servers such as Apache, Nginx, HAProxy or others. Use mgrg to create Golf applications, including both service and command-line.<br/>
 <br/>
@@ -315,57 +315,57 @@ If mgrg is terminated without "-m stop", (for example with SIGKILL signal), then
 <div class="vsub"><a id="Examples"></a>Examples</div>
 <ul><li>To begin using mgrg for a specific application, you must initialize it first. For example, if your application name is "myapp" and the user who will run application is the currently logged-on user:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_583'>
+<pre id='code_571'>
 sudo mgrg <span class="Special">-i</span> <span class="Special">-u</span> <span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span> myapp</pre>
-<span id=golf_copied_583 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_583' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_583, code_583, golf_copied_583)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_571 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_571' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_571, code_571, golf_copied_571)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li><li>The initialization needs to be done only once. Following the above, you can start your service application with 3 server processes:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_584'>
+<pre id='code_572'>
 mgrg <span class="Special">-w</span> <span class="Constant">3</span> myapp</pre>
-<span id=golf_copied_584 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_584' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_584, code_584, golf_copied_584)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_572 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_572' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_572, code_572, golf_copied_572)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li><li>To stop your service processes:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_585'>
+<pre id='code_573'>
 mgrg <span class="Special">-m</span> <span class="Statement">stop</span> <span class="Special">--</span> myapp</pre>
-<span id=golf_copied_585 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_585' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_585, code_585, golf_copied_585)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_573 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_573' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_573, code_573, golf_copied_573)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li><li>To restart them:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_586'>
+<pre id='code_574'>
 mgrg <span class="Special">-m</span> restart <span class="Special">--</span> myapp</pre>
-<span id=golf_copied_586 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_586' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_586, code_586, golf_copied_586)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_574 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_574' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_574, code_574, golf_copied_574)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li><li>To stop the server entirely (meaning to stop the resident mgrg daemon serving your particular application):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_587'>
+<pre id='code_575'>
 mgrg <span class="Special">-m</span> quit <span class="Special">--</span> myapp</pre>
-<span id=golf_copied_587 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_587' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_587, code_587, golf_copied_587)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_575 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_575' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_575, code_575, golf_copied_575)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li><li>To view status of mgrg daemon for your application:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_588'>
+<pre id='code_576'>
 mgrg <span class="Special">-m</span> status <span class="Special">--</span> myapp</pre>
-<span id=golf_copied_588 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_588' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_588, code_588, golf_copied_588)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_576 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_576' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_576, code_576, golf_copied_576)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li></ul>
 <div class="vsub"><a id="Running your application server on system startup"></a>Running your application server on system startup</div>
 If you want your application to run on system startup (so you don't have to run it manually), you can add it to systemd configuration. Here is an example (replace &lt;app name&gt; with your application name and &lt;app owner&gt; with the name of the Operating System user under which your application is installed):<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_581'>
+<pre id='code_569'>
 [Unit]
 Description=Golf Service Program Manager for [&lt;app name&gt;] application.
 After=network.target
@@ -380,17 +380,17 @@ User=&lt;app owner&gt;
 
 [Install]
 WantedBy=multi-user.target</pre>
-<span id=golf_copied_581 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_581' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_581, code_581, golf_copied_581)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_569 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_569' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_569, code_569, golf_copied_569)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The above should be saved in the directory given by the output of the following system command:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_589'>
+<pre id='code_577'>
 pkg-config systemd <span class="Special">--variable</span><span class="Statement">=</span>systemdsystemunitdir</pre>
-<span id=golf_copied_589 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_589' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_589, code_589, golf_copied_589)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_577 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_577' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_577, code_577, golf_copied_577)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The file should be saved as &lt;app name&gt;.service (or similar). Once saved, you can use standard systemctl commands to start, stop and restart your service.<br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>

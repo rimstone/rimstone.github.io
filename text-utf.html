@@ -243,20 +243,20 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Text utf</div><hr/><span style="font-weight:bold;">Purpose</span>: Convert text to UTF (UTF8 or UTF16) string. <br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_831'>
+<pre id='code_819'>
 <span class="Statement"> text-utf</span> &lt;text&gt; \
      [<span class="Type"> status</span> &lt;status&gt; ] \
      [<span class="Type"> error-text</span> &lt;error text&gt; ]</pre>
-<span id=golf_copied_831 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_831' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_831, code_831, golf_copied_831)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_819 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_819' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_819, code_819, golf_copied_819)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 text-utf will convert string value &lt;text&gt; to UTF. &lt;text&gt; itself will hold the resulting UTF string. If you don't wish &lt;text&gt; to be modified, make a copy of it first (see <a href='https://golf-lang.com/copy-string.html'>copy-string</a>). See <a href='https://golf-lang.com/utf-text.html'>utf-text</a> for the reverse conversion and data standards information.<br/>
 <br/>
 You can obtain &lt;status&gt; in "status" clause. &lt;status&gt; number is GG_OKAY if successful, or GG_ERR_UTF if there was an error, in which case &lt;error text&gt; string in "error-text" clause will contain the error message.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_832'>
+<pre id='code_820'>
  <span class="Comment">// Unicode value to encode to UTF8 or UTF16 (such as \\uD834\\uDD1E as a surrogate pair)</span>
 <span class="Statement"> set-string</span> txt = <span class="Constant">&quot;</span><span class="Special">\u0459\\\&quot;</span><span class="Constant">Doc</span><span class="Special">\\\&quot;\\</span><span class="Constant">n</span><span class="Special">\\</span><span class="Constant">t</span><span class="Special">\\</span><span class="Constant">b</span><span class="Special">\\</span><span class="Constant">f</span><span class="Special">\\</span><span class="Constant">r</span><span class="Special">\\</span><span class="Constant">t</span><span class="Special">\\</span><span class="Constant">u21d7</span><span class="Special">\\</span><span class="Constant">u21d8</span><span class="Special">\\</span><span class="Constant">t</span><span class="Special">\\</span><span class="Constant">u25b7</span><span class="Special">\\</span><span class="Constant">u25ee</span><span class="Special">\\</span><span class="Constant">uD834</span><span class="Special">\\</span><span class="Constant">uDD1E</span><span class="Special">\\</span><span class="Constant">u13eb</span><span class="Special">\\</span><span class="Constant">u2ca0</span><span class="Special">\\</span><span class="Constant">u0448</span><span class="Special">\\</span><span class="Constant">n</span><span class="Special">\\</span><span class="Constant">/</span><span class="Special">\\\&quot;</span><span class="Constant">()</span><span class="Special">\\</span><span class="Constant">t&quot;</span>
 
@@ -270,9 +270,9 @@ You can obtain &lt;status&gt; in "status" clause. &lt;status&gt; number is GG_OK
 <span class="Statement"> if-true</span> utf<span class="Identifier"> not-equal</span> txt<span class="Identifier"> or</span> txt_status<span class="Identifier"> not-equal</span> GG_OKAY<span class="Identifier"> or</span> txt_error<span class="Identifier"> not-equal</span> <span class="Constant">&quot;&quot;</span>
 <span class="Statement">     @</span>Error in converting string to UTF
 <span class="Statement"> end-if</span></pre>
-<span id=golf_copied_832 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_832' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_832, code_832, golf_copied_832)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_820 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_820' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_820, code_820, golf_copied_820)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <a name='UTF'></a><span style="font-weight:bold;">UTF</span><br/>
