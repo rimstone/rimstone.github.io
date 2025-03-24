@@ -243,17 +243,17 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Current row</div><hr/><span style="font-weight:bold;">Purpose</span>: Get or print out the row number of a current row in the result-set of a query.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_356'>
+<pre id='code_368'>
 <span class="Statement"> current-row</span> [<span class="Identifier"> to</span> &lt;current row&gt; ]</pre>
-<span id=golf_copied_356 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_356' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_356, code_356, golf_copied_356)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_368 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_368' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_368, code_368, golf_copied_368)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Without "to" clause, current-row will print out the current row number. First row is numbered 1. With "to" clause, the row number is stored into variable &lt;current row&gt;. current-row must be within a <a href='https://golf-lang.com/run-query.html'>run-query</a> loop, and it always refers to the most inner one.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Display row number before a line with first and last name for each employee:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_357'>
+<pre id='code_369'>
 <span class="Statement"> run-query</span> @mydb=<span class="Constant">&quot;select firstName, lastName from employee&quot;</span><span class="Type"> output</span> firstName, lastName
 <span class="Statement">     @</span>Row #<span class="Statement">&lt;&lt;current-row&gt;&gt;</span>&lt;br/&gt;
 <span class="Statement">     p-out</span> firstName
@@ -261,9 +261,9 @@ Display row number before a line with first and last name for each employee:<br/
 <span class="Statement">     p-out</span> lastName
 <span class="Statement">     @</span>&lt;br/&gt;
 <span class="Statement"> end-query</span></pre>
-<span id=golf_copied_357 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_357' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_357, code_357, golf_copied_357)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_369 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_369' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_369, code_369, golf_copied_369)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <a name='Database'></a><span style="font-weight:bold;">Database</span><br/>
