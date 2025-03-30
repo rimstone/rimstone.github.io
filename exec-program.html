@@ -243,7 +243,7 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Exec program</div><hr/><span style="font-weight:bold;">Purpose</span>: Execute a program.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_429'>
+<pre id='code_447'>
 <span class="Statement"> exec-program</span> &lt;program path&gt; \
      [<span class="Identifier"> args</span> &lt;program arg&gt; [ , ... ] ] \
      [<span class="Type"> status</span> &lt;exit status&gt; ] \
@@ -252,9 +252,9 @@ function gg_copy(gt, eid, gc) {
      [ (<span class="Type"> output</span> &lt;output string&gt;  ) \
          | (<span class="Identifier"> output-file</span> &lt;output file&gt; ) ] \
      [ (<span class="Type"> error</span> &lt;error string&gt; ) | (<span class="Identifier"> error-file</span> &lt;error file&gt; ) ]</pre>
-<span id=golf_copied_429 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_429' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_429, code_429, golf_copied_429)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_447 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_447' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_447, code_447, golf_copied_447)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 exec-program executes a program specified in &lt;program path&gt;, which can be a program name without path that exists in the path specified by the PATH environment variable; or an absolute path; or a path relative to the application home directory (see <a href='https://golf-lang.com/directories.html'>directories</a>).<br/>
 <br/>
@@ -274,47 +274,47 @@ If &lt;input file&gt; cannot be opened, GG_ERR_READ is reported in &lt;exit stat
 <div class="vsub"><a id="Examples"></a>Examples</div>
 To simply execute a program that is in the path, without any arguments, input or output:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_430'>
+<pre id='code_448'>
 <span class="Statement"> exec-program</span> <span class="Constant">&quot;myprogram&quot;</span></pre>
-<span id=golf_copied_430 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_430' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_430, code_430, golf_copied_430)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_448 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_448' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_448, code_448, golf_copied_448)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Run "grep" program using a string as its standard input in order to remove a line that contains "bad line" in it, and outputting the result into "ovar" variable:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_431'>
+<pre id='code_449'>
 <span class="Statement"> exec-program</span> <span class="Constant">&quot;grep&quot;</span><span class="Identifier"> args</span> <span class="Constant">&quot;-v&quot;</span>, <span class="Constant">&quot;bad line&quot;</span> <span class="Constant">&quot;config&quot;</span><span class="Identifier"> input</span> <span class="Constant">&quot;line 1</span><span class="Special">\n</span><span class="Constant">line 2</span><span class="Special">\n</span><span class="Constant">bad line</span><span class="Special">\n</span><span class="Constant">line 3&quot;</span><span class="Type"> output</span> ovar
 <span class="Statement"> p-out</span> ovar</pre>
-<span id=golf_copied_431 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_431' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_431, code_431, golf_copied_431)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_449 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_449' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_449, code_449, golf_copied_449)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Get the list of files in the application home directory into buffer "ovar" and then display it:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_432'>
+<pre id='code_450'>
 <span class="Statement"> exec-program</span> <span class="Constant">&quot;ls&quot;</span><span class="Type"> output</span> ovar</pre>
-<span id=golf_copied_432 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_432' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_432, code_432, golf_copied_432)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_450 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_450' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_450, code_450, golf_copied_450)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Similar to the above example of listing files, but output results to a file (which is then read and the result displayed), and provide options "-a -l -s" to "ls" program:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_433'>
+<pre id='code_451'>
 <span class="Statement"> exec-program</span> <span class="Constant">&quot;ls&quot;</span><span class="Identifier"> args</span> <span class="Constant">&quot;-a&quot;</span>, <span class="Constant">&quot;-l&quot;</span>, <span class="Constant">&quot;-s&quot;</span><span class="Identifier"> output-file</span> <span class="Constant">&quot;lsout&quot;</span>
 <span class="Statement"> read-file</span> <span class="Constant">&quot;lsout&quot;</span><span class="Type"> to</span> final_res
 <span class="Statement"> p-out</span> final_res</pre>
-<span id=golf_copied_433 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_433' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_433, code_433, golf_copied_433)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_451 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_451' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_451, code_451, golf_copied_451)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Count the lines of file "config" (which is redirected to the standard output of "wc" program) and store the result in variable "ovar" (by means of redirecting the output of "wc" program to it), and then display: <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_434'>
+<pre id='code_452'>
 <span class="Statement"> exec-program</span> <span class="Constant">&quot;wc&quot;</span><span class="Identifier"> args</span> <span class="Constant">&quot;-l&quot;</span><span class="Identifier"> input-file</span> <span class="Constant">&quot;config&quot;</span><span class="Type"> output</span> ovar
 <span class="Statement"> p-out</span> ovar</pre>
-<span id=golf_copied_434 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_434' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_434, code_434, golf_copied_434)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_452 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_452' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_452, code_452, golf_copied_452)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <a name='Program execution'></a><span style="font-weight:bold;">Program execution</span><br/>

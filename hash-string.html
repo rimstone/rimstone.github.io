@@ -243,22 +243,22 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Hash string</div><hr/><span style="font-weight:bold;">Purpose</span>: Hash a string.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_501'>
+<pre id='code_519'>
 <span class="Statement"> hash-string</span> &lt;string&gt;<span class="Type"> to</span> &lt;result&gt; \
      [<span class="Identifier"> binary</span> [ &lt;binary&gt; ] \
      [<span class="Identifier"> digest</span> &lt;digest algorithm&gt; ]</pre>
-<span id=golf_copied_501 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_501' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_501, code_501, golf_copied_501)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_519 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_519' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_519, code_519, golf_copied_519)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 hash-string produces by default a SHA256 hash of &lt;string&gt; (if "digest" clause is not used), and stores the result into &lt;result&gt;. You can use a different &lt;digest algorithm&gt; in "digest" clause (for example "SHA3-256"). To see a list of available digests:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_502'>
+<pre id='code_520'>
 <span class="Comment">#get digests</span>
 openssl list <span class="Special">-digest-algorithms</span></pre>
-<span id=golf_copied_502 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_502' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_502, code_502, golf_copied_502)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_520 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_520' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_520, code_520, golf_copied_520)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 If "binary" clause is used without boolean variable &lt;binary&gt;, or if &lt;binary&gt; evaluates to true, then the &lt;result&gt; is a binary string that may contain null-characters. With the default SHA256, it is 32 bytes in length, while for instance with SHA3-384 it is 48 bytes in length, etc. <br/>
 <br/>
@@ -266,27 +266,27 @@ Without "binary" clause, or if &lt;binary&gt; evaluates to false, each binary by
 <div class="vsub"><a id="Examples"></a>Examples</div>
 String "result" will have a hashed value of the given string, an example of which might look like "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_503'>
+<pre id='code_521'>
 <span class="Statement"> hash-string</span> <span class="Constant">&quot;hello world&quot;</span><span class="Type"> to</span> hash</pre>
-<span id=golf_copied_503 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_503' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_503, code_503, golf_copied_503)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_521 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_521' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_521, code_521, golf_copied_521)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Using a different digest:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_504'>
+<pre id='code_522'>
 <span class="Statement"> hash-string</span> <span class="Constant">&quot;hello world&quot;</span><span class="Type"> to</span> hash<span class="Identifier"> digest</span> <span class="Constant">&quot;sha3-384&quot;</span></pre>
-<span id=golf_copied_504 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_504' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_504, code_504, golf_copied_504)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_522 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_522' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_522, code_522, golf_copied_522)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Producing a binary value instead of a null-terminated hexadecimal string:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_505'>
+<pre id='code_523'>
 <span class="Statement"> hash-string</span> <span class="Constant">&quot;hello world&quot;</span><span class="Type"> to</span> hash<span class="Identifier"> digest</span> <span class="Constant">&quot;sha3-384&quot;</span><span class="Identifier"> binary</span></pre>
-<span id=golf_copied_505 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_505' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_505, code_505, golf_copied_505)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_523 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_523' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_523, code_523, golf_copied_523)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <a name='Encryption'></a><span style="font-weight:bold;">Encryption</span><br/>
