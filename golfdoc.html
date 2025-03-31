@@ -9580,6 +9580,7 @@ If your distro isn't described here, or you don't want to install this way, you 
 You must have git installed. Get Golf source code for the latest version:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_550'>
+sudo pacman <span class="Special">-Sy</span> <span class="Special">--noconfirm</span> git
 git clone <span class="Special">--depth</span> <span class="Constant">1</span> <a href="https://github.com/golf-lang/golf.git">https://github.com/golf-lang/golf.git</a>
 <span class="Statement">cd</span> golf</pre>
 <span id=golf_copied_550 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
@@ -9589,6 +9590,7 @@ git clone <span class="Special">--depth</span> <span class="Constant">1</span> <
 <div class="vsub"><a id="Install dependencies"></a>Install dependencies</div>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_551'>
+sudo pacman <span class="Special">-Sy</span> <span class="Special">--noconfirm</span> debugedit
 makepkg <span class="Special">-s</span> <span class="Special">--noconfirm</span> <span class="Special">-o</span></pre>
 <span id=golf_copied_551 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_551' style='position: absolute;left: -500%;'></textarea>
@@ -9619,9 +9621,11 @@ sudo make install</pre>
 <a href='/documentation.html'>documentation</a><br/>
 <a id='install-golf-for-debian-from-source.html'></a>
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Install golf for debian from source</div><hr/><div class="vsub"><a id="Get latest Golf source code"></a>Get latest Golf source code</div>
-You must have git installed. Get Golf source code for the latest version:<br/>
+Get Golf source code for the latest version:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_553'>
+sudo apt update
+sudo apt <span class="Special">-y</span> install git
 git clone <span class="Special">--depth</span> <span class="Constant">1</span> <a href="https://github.com/golf-lang/golf.git">https://github.com/golf-lang/golf.git</a>
 <span class="Statement">cd</span> golf</pre>
 <span id=golf_copied_553 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
@@ -9663,9 +9667,10 @@ sudo make install</pre>
 <a href='/documentation.html'>documentation</a><br/>
 <a id='install-golf-for-fedora-from-source.html'></a>
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Install golf for fedora from source</div><hr/><div class="vsub"><a id="Get latest Golf source code"></a>Get latest Golf source code</div>
-You must have git installed. Get Golf source code for the latest version:<br/>
+Get Golf source code for the latest version:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_556'>
+sudo dnf <span class="Special">-y</span> install git
 git clone <span class="Special">--depth</span> <span class="Constant">1</span> <a href="https://github.com/golf-lang/golf.git">https://github.com/golf-lang/golf.git</a>
 <span class="Statement">cd</span> golf</pre>
 <span id=golf_copied_556 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
@@ -9710,6 +9715,7 @@ sudo make install</pre>
 You must have git installed. Get Golf source code for the latest version:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_559'>
+sudo zypper <span class="Special">--non-interactive</span> <span class="Error">in</span> git
 git clone <span class="Special">--depth</span> <span class="Constant">1</span> <a href="https://github.com/golf-lang/golf.git">https://github.com/golf-lang/golf.git</a>
 <span class="Statement">cd</span> golf</pre>
 <span id=golf_copied_559 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
