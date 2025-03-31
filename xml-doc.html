@@ -243,7 +243,7 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Xml doc</div><hr/><span style="font-weight:bold;">Purpose</span>: Parse XML text.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_913'>
+<pre id='code_919'>
 <span class="Statement"> xml-doc</span> &lt;text&gt;<span class="Type"> to</span> &lt;xml&gt; \
      [<span class="Type"> status</span> &lt;status&gt; ] [<span class="Identifier"> length</span> &lt;length&gt; ] \
      [<span class="Type"> error-text</span> &lt;error text&gt; ] \
@@ -251,9 +251,9 @@ function gg_copy(gt, eid, gc) {
          [<span class="Type"> error-char</span> &lt;<span class="Type">char</span>&gt; ]
 
 <span class="Statement"> xml-doc</span><span class="Identifier"> delete</span> &lt;xml&gt;</pre>
-<span id=golf_copied_913 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_913' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_913, code_913, golf_copied_913)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_919 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_919' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_919, code_919, golf_copied_919)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 xml-doc will parse XML &lt;text&gt; into &lt;xml&gt; variable, which can be used with <a href='https://golf-lang.com/read-xml.html'>read-xml</a> to get the data.<br/>
 <br/>
@@ -271,7 +271,7 @@ To delete an XML variable, use "delete" clause with the &lt;xml&gt;. This will d
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Parse the following XML document and display all element names and values from it. You can use them as they come along, or store them into <a href='https://golf-lang.com/new-hash.html'>new-hash</a> or <a href='https://golf-lang.com/new-tree.html'>new-tree</a> for instance for searching of large documents. This also demonstrates usage of UTF characters:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_915'>
+<pre id='code_921'>
 <span class="Statement"> %%</span> /xml<span class="Identifier"> public</span>
 <span class="Statement">     set-string</span> xmld<span class="Identifier"> unquoted</span> =&lt;?xml version=<span class="Constant">&quot;1.0&quot;</span> encoding=<span class="Constant">&quot;UTF-8&quot;</span>?&gt;\
  &lt;countries&gt;\
@@ -328,13 +328,13 @@ Parse the following XML document and display all element names and values from i
 <span class="Statement">     end-loop</span>
 <span class="Statement">     xml-doc</span><span class="Identifier"> delete</span> x
 <span class="Statement"> %%</span></pre>
-<span id=golf_copied_915 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_915' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_915, code_915, golf_copied_915)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_921 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_921' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_921, code_921, golf_copied_921)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The output would be:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_914'>
+<pre id='code_920'>
 Key [countries/country/id/@] Value [1]
 Key [countries/country/name/] Value [USA&amp;America]
 Key [countries/country/state/id/@] Value [1]
@@ -367,9 +367,9 @@ Key [countries/country/state/city/id/@] Value [1]
 Key [countries/country/state/city/name/] Value [Culiacán Rosales]
 Key [countries/country/state/city/population/] Value [3000000]
 Key [countries/country/state/] Value [Sinaloa]</pre>
-<span id=golf_copied_914 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_914' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_914, code_914, golf_copied_914)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_920 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_920' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_920, code_920, golf_copied_920)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <a name='XML parsing'></a><span style="font-weight:bold;">XML parsing</span><br/>
