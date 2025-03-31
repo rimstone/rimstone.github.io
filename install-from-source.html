@@ -3,11 +3,11 @@
 
 <head>
 <!--__GOLF_REDIRECT__-->
-<title>Install debian</title>
+<title>Install from source</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="canonical" href="https://golf-lang.com/install-debian.html" />
+<link rel="canonical" href="https://golf-lang.com/install-from-source.html" />
 <style>
 
 
@@ -240,54 +240,70 @@ function gg_copy(gt, eid, gc) {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Install debian</div><hr/><div class="vsub"><a id="Install Golf on Debian"></a>Install Golf on Debian</div>
-For Debian-like distributions (like Ubuntu or LinuxMint):<br/>
-<span style="font-weight:bold;">- Install git</span><br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Install from source</div><hr/><div class="vsub"><a id="Get latest Golf source code"></a>Get latest Golf source code</div>
+You must have git installed. Get Golf source code for the latest version:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_550'>
-sudo apt update
-sudo apt <span class="Special">-y</span> install git</pre>
+git clone <span class="Special">--depth</span> <span class="Constant">1</span> <a href="https://github.com/golf-lang/golf.git">https://github.com/golf-lang/golf.git</a>
+<span class="Statement">cd</span> golf</pre>
 <span id=golf_copied_550 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_550' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_550, code_550, golf_copied_550)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-<span style="font-weight:bold;">- Download Golf</span><br/>
+<div class="vsub"><a id="Install dependencies"></a>Install dependencies</div>
+<span style="font-weight:bold;">- Ubuntu</span><br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_551'>
-git clone <a href="https://github.com/golf-lang/golf.git">https://github.com/golf-lang/golf.git</a>
-<span class="Statement">cd</span> golf
-git checkout <span class="Constant">335</span></pre>
+sudo apt update
+sudo apt <span class="Special">-y</span> install devscripts equivs build-essential
+yes|mk-build-deps <span class="Special">-i</span> <span class="Special">-s</span> sudo debian/control</pre>
 <span id=golf_copied_551 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_551' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_551, code_551, golf_copied_551)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-<span style="font-weight:bold;">- Install dependencies</span><br/>
+<span style="font-weight:bold;">- Fedora</span><br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_552'>
-sudo apt <span class="Special">-y</span> install make gcc libssl-dev curl tar pkg-config libxml2-dev libcurl4 libcurl4-openssl-dev libmariadb-dev zlib1g-dev libfcgi-bin libfcgi-dev libpq-dev libsqlite3-dev libpcre2-dev</pre>
+sudo dnf <span class="Special">-y</span> install <a href="https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm">https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm</a>
+sudo dnf install <span class="Special">-y</span> rpmdevtools
+sudo dnf builddep <span class="Special">-y</span> golf.spec</pre>
 <span id=golf_copied_552 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_552' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_552, code_552, golf_copied_552)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-<span style="font-weight:bold;">- Build Golf</span><br/>
-Use DI=1 to build debug version, leave it as is for production:<br/>
+<span style="font-weight:bold;">- OpenSUSE (Tumbleweed)</span><br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_553'>
-make clean
-make <span class="Identifier">DI</span>=<span class="Constant">0</span>
-sudo make install</pre>
+sudo zypper <span class="Special">--non-interactive</span> <span class="Error">in</span> <span class="Special">--replacefiles</span> <span class="Special">--force-resolution</span> rpm-build
+sudo zypper <span class="Special">-n</span> install <span class="PreProc">$(</span><span class="Special">rpmspec </span><span class="Special">--parse</span><span class="Special"> golf.spec </span><span class="Statement">|</span><span class="Special"> </span><span class="Statement">grep</span><span class="Special"> BuildRequires</span><span class="Statement">|</span><span class="Statement">sed</span><span class="Special"> </span><span class="Statement">'</span><span class="Constant">s/^.*:\(.*\)$/\1/g</span><span class="Statement">'</span><span class="PreProc">)</span></pre>
 <span id=golf_copied_553 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_553' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_553, code_553, golf_copied_553)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
+<span style="font-weight:bold;">- Arch Linux</span><br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_554'>
+makepkg <span class="Special">-s</span> <span class="Special">--noconfirm</span> <span class="Special">-o</span></pre>
+<span id=golf_copied_554 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_554' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_554, code_554, golf_copied_554)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+<div class="vsub"><a id="Build Golf"></a>Build Golf</div>
+Use DI=1 to build debug version, leave it as-is for production:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_555'>
+make clean
+make <span class="Identifier">DI</span>=<span class="Constant">0</span>
+sudo make install</pre>
+<span id=golf_copied_555 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_555' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_555, code_555, golf_copied_555)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <a name='Download and build'></a><span style="font-weight:bold;">Download and build</span><br/>
 <a href='https://golf-lang.com/install.html'>install</a> &nbsp;<br/>
-<a href='https://golf-lang.com/install-arch.html'>install-arch</a> &nbsp;<br/>
-<a href='https://golf-lang.com/install-debian.html'>install-debian</a> &nbsp;<br/>
-<a href='https://golf-lang.com/install-fedora.html'>install-fedora</a> &nbsp;<br/>
 <a href='https://golf-lang.com/install-from-external-sources.html'>install-from-external-sources</a> &nbsp;<br/>
-<a href='https://golf-lang.com/install-opensuse.html'>install-opensuse</a> &nbsp;<br/>
+<a href='https://golf-lang.com/install-from-source.html'>install-from-source</a> &nbsp;<br/>
 <a href='https://golf-lang.com/install-package.html'>install-package</a> &nbsp;<br/>
 <a href='https://golf-lang.com/uninstall.html'>uninstall</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
