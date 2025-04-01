@@ -4,20 +4,20 @@ Binary: golf golf-dbgsym
 Architecture: amd64 source
 Version: 340
 Checksums-Md5:
- af4577cfd86c5da74d21183cab564c25 754 golf_340.dsc
+ d1a56fe692b4d94e9762f76407aaf149 754 golf_340.dsc
  65588154ba1e1b9daa58c9da9dcbb831 711434 golf-dbgsym_340_amd64.ddeb
  afcf09807ed6fd9dd98d4061fc75c0d0 480814 golf_340_amd64.deb
 Checksums-Sha1:
- 0650ceaa236c4d59639c75689c977f97864293a0 754 golf_340.dsc
+ 7681a7992e33abe1609f5e22e06251705edc95d8 754 golf_340.dsc
  318f8b5e9fc835cae8b456863b394c5d0df7590d 711434 golf-dbgsym_340_amd64.ddeb
  151fb070df3c6ae5af36a2fbfa4461a1a9a19b59 480814 golf_340_amd64.deb
 Checksums-Sha256:
- 1c5e2811178fa213e0561da63e54ba5451fa29f6df6a3b0e68f9c97b6f4b7f46 754 golf_340.dsc
+ 1abc269a44d2fa307c11a9fe0dc455fcc9cd7c339e718a3238e6ab20d360a220 754 golf_340.dsc
  403cc8f019d51afa2c599645a7af2c1ff9336c54fb148108a78f137d7a4d60bf 711434 golf-dbgsym_340_amd64.ddeb
  70d55f81e7eb154d1f4bea76a3bb1fd2d5a44b1daa9bcbe8675c0d688bcfc6cf 480814 golf_340_amd64.deb
 Build-Origin: Ubuntu
 Build-Architecture: amd64
-Build-Date: Tue, 01 Apr 2025 16:07:14 +0000
+Build-Date: Tue, 01 Apr 2025 19:58:31 +0000
 Build-Tainted-By:
  merged-usr-via-aliased-dirs
 Installed-Build-Depends:

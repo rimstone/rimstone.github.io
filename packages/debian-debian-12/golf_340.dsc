@@ -11,8 +11,8 @@ Build-Depends: libssl-dev, curl, pkgconf, libxml2-dev, libcurl4, libcurl4-openss
 Package-List:
  golf deb devel optional arch=any
 Checksums-Sha1:
- b56fe83a8ccd1dddd1a06338f7deaea0b8750b46 365548 golf_340.tar.xz
+ 49b2442300841928927b1729e6da185fb3d003ef 606844 golf_340.tar.xz
 Checksums-Sha256:
- 84017c28f01ee84acd437d05c290ea52b3519695b768f12caa92c694263c963a 365548 golf_340.tar.xz
+ de507fb2952af65d1af833134631fbb2d385c7f6f990aebb2914ca28c81d37aa 606844 golf_340.tar.xz
 Files:
- cd939e942f6fc21ae9c8503d7eeff309 365548 golf_340.tar.xz
+ 6b914f2dd64f5813c3c31eb421f504ff 606844 golf_340.tar.xz

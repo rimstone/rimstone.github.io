@@ -16,20 +16,20 @@ Changes:
  .
    * Initial release.
 Checksums-Sha1:
- 0650ceaa236c4d59639c75689c977f97864293a0 754 golf_340.dsc
- 4af1e0f01fa3e75adf1c9774a31f4b2c8d7d3cc1 365648 golf_340.tar.xz
+ 7681a7992e33abe1609f5e22e06251705edc95d8 754 golf_340.dsc
+ d398b17a5195a3b702b07ce5c84a9e02cdd622e8 621532 golf_340.tar.xz
  318f8b5e9fc835cae8b456863b394c5d0df7590d 711434 golf-dbgsym_340_amd64.ddeb
- da8e6a0f521582be26846fff02e374892ed95f0a 14100 golf_340_amd64.buildinfo
+ d9842c68307c058d28bad2f3c412944a8dc2b704 14100 golf_340_amd64.buildinfo
  151fb070df3c6ae5af36a2fbfa4461a1a9a19b59 480814 golf_340_amd64.deb
 Checksums-Sha256:
- 1c5e2811178fa213e0561da63e54ba5451fa29f6df6a3b0e68f9c97b6f4b7f46 754 golf_340.dsc
- 30cf4023decad835f1b6f05bfa7a23ef84e92fb0a055ee281729d1c39d9f64ba 365648 golf_340.tar.xz
+ 1abc269a44d2fa307c11a9fe0dc455fcc9cd7c339e718a3238e6ab20d360a220 754 golf_340.dsc
+ de54a92953417da4f5f1292d8b2d3acf5d59a61de57f7d8ab5c723812c803ced 621532 golf_340.tar.xz
  403cc8f019d51afa2c599645a7af2c1ff9336c54fb148108a78f137d7a4d60bf 711434 golf-dbgsym_340_amd64.ddeb
- b1717002f62be4edd6eeec404413ff0e6e9c0c13ee05ad861dd863b3e8fb546e 14100 golf_340_amd64.buildinfo
+ 7840abed8d4977359532f6fa05ad4deb0ce046f2dcb3a01540fdf87150fd5e29 14100 golf_340_amd64.buildinfo
  70d55f81e7eb154d1f4bea76a3bb1fd2d5a44b1daa9bcbe8675c0d688bcfc6cf 480814 golf_340_amd64.deb
 Files:
- af4577cfd86c5da74d21183cab564c25 754 devel optional golf_340.dsc
- 7810d99fb34846aa230df73dbf21c490 365648 devel optional golf_340.tar.xz
+ d1a56fe692b4d94e9762f76407aaf149 754 devel optional golf_340.dsc
+ 656c14f6841c91d3fbd38a618e564379 621532 devel optional golf_340.tar.xz
  65588154ba1e1b9daa58c9da9dcbb831 711434 debug optional golf-dbgsym_340_amd64.ddeb
- 696f56e4da610d50db2195b69d132f85 14100 devel optional golf_340_amd64.buildinfo
+ 35441fd9ae58b8996a626cdd66dd3fba 14100 devel optional golf_340_amd64.buildinfo
  afcf09807ed6fd9dd98d4061fc75c0d0 480814 devel optional golf_340_amd64.deb

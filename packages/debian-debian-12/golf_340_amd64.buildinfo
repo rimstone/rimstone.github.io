@@ -4,20 +4,20 @@ Binary: golf golf-dbgsym
 Architecture: amd64 source
 Version: 340
 Checksums-Md5:
- e936cef0827a293e869f7c918c474fa3 754 golf_340.dsc
+ dfc516aa35a88836be8d3903448447b0 754 golf_340.dsc
  174e48493083feed5be1da49ee41a4a5 670260 golf-dbgsym_340_amd64.deb
  8affce334d6ba790b0f4a19abd0cda27 462588 golf_340_amd64.deb
 Checksums-Sha1:
- 6a7a598e73e48bd61669f5386eb8b066ceb5cd30 754 golf_340.dsc
+ ae0238bbcdc014ec5413e8ec9fb74384f902216a 754 golf_340.dsc
  9e65dbd6a208db6ffc14647c7997958e52899415 670260 golf-dbgsym_340_amd64.deb
  7eaef8829bda2f17a416347f5aaa1dc5468be000 462588 golf_340_amd64.deb
 Checksums-Sha256:
- ec0e3489571219f60b0cd87c3591356bdc5c9e22ccaaf593e33d691f075a41a4 754 golf_340.dsc
+ 6030f42447a41fe46611e76c2bb9d9670074694d72733e712384b00a89832ab8 754 golf_340.dsc
  418cddb2539e191e60a890daff02422037f6fe9f8db673e7e984dd3c84f14588 670260 golf-dbgsym_340_amd64.deb
  1852635da63bd7d7f25f4d201addc1e557c910629834b5a1ad5bec515ba4baef 462588 golf_340_amd64.deb
 Build-Origin: Debian
 Build-Architecture: amd64
-Build-Date: Tue, 01 Apr 2025 09:06:52 -0700
+Build-Date: Tue, 01 Apr 2025 12:58:06 -0700
 Build-Tainted-By:
  merged-usr-via-aliased-dirs
 Installed-Build-Depends:
