@@ -244,7 +244,7 @@ function gg_copy(gt, eid, gc) {
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_837'>
-<span class="Statement"> text-utf</span> &lt;text&gt; \
+ text-utf &lt;text&gt; \
      [<span class="Type"> status</span> &lt;status&gt; ] \
      [<span class="Type"> error-text</span> &lt;error text&gt; ]</pre>
 <span id=golf_copied_837 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
@@ -261,7 +261,7 @@ You can obtain &lt;status&gt; in "status" clause. &lt;status&gt; number is GG_OK
 <span class="Statement"> set-string</span> txt = <span class="Constant">&quot;</span><span class="Special">\u0459\\\&quot;</span><span class="Constant">Doc</span><span class="Special">\\\&quot;\\</span><span class="Constant">n</span><span class="Special">\\</span><span class="Constant">t</span><span class="Special">\\</span><span class="Constant">b</span><span class="Special">\\</span><span class="Constant">f</span><span class="Special">\\</span><span class="Constant">r</span><span class="Special">\\</span><span class="Constant">t</span><span class="Special">\\</span><span class="Constant">u21d7</span><span class="Special">\\</span><span class="Constant">u21d8</span><span class="Special">\\</span><span class="Constant">t</span><span class="Special">\\</span><span class="Constant">u25b7</span><span class="Special">\\</span><span class="Constant">u25ee</span><span class="Special">\\</span><span class="Constant">uD834</span><span class="Special">\\</span><span class="Constant">uDD1E</span><span class="Special">\\</span><span class="Constant">u13eb</span><span class="Special">\\</span><span class="Constant">u2ca0</span><span class="Special">\\</span><span class="Constant">u0448</span><span class="Special">\\</span><span class="Constant">n</span><span class="Special">\\</span><span class="Constant">/</span><span class="Special">\\\&quot;</span><span class="Constant">()</span><span class="Special">\\</span><span class="Constant">t&quot;</span>
 
  <span class="Comment">// Convert to UTF </span>
-<span class="Statement"> text-utf</span> txt<span class="Type"> status</span> txt_status<span class="Type"> error-text</span> txt_error
+ text-utf txt status txt_status error-text txt_error
 
  <span class="Comment">// Expected UTF result</span>
 <span class="Statement"> set-string</span> utf = <span class="Constant">&quot;љ</span><span class="Special">\&quot;</span><span class="Constant">Doc</span><span class="Special">\&quot;\n\t\b\f\r\t</span><span class="Constant">⇗⇘</span><span class="Special">\t</span><span class="Constant">▷◮𝄞ᏫⲠш</span><span class="Special">\n</span><span class="Constant">/</span><span class="Special">\&quot;</span><span class="Constant">()</span><span class="Special">\t</span><span class="Constant">&quot;</span>

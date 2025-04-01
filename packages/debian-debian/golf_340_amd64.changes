@@ -1,0 +1,34 @@
+Format: 1.8
+Date: Fri, 31 Jan 2025 21:46:41 -0700
+Source: golf
+Binary: golf golf-dbgsym
+Architecture: source amd64
+Version: 340
+Distribution: stable
+Urgency: medium
+Maintainer: Gliim LLC <team@golf-lang.com>
+Changed-By: Gliim LLC <team@golf-lang.com>
+Description:
+ golf       - Programming language for web services
+Changes:
+ golf (340) stable; urgency=medium
+ .
+   * Initial release.
+Checksums-Sha1:
+ f4c6a22e11374095e617e1208949ebd34063ea09 754 golf_340.dsc
+ c91d5664348a4e5ca7c886d070664bf8d34993b4 365528 golf_340.tar.xz
+ 9e65dbd6a208db6ffc14647c7997958e52899415 670260 golf-dbgsym_340_amd64.deb
+ 62a95185f653d038264a62165eb2e480203c75cb 12462 golf_340_amd64.buildinfo
+ dc0c17f128114fd1bfdb7b2bf1e187cd4cf4f4ac 462668 golf_340_amd64.deb
+Checksums-Sha256:
+ d5bd31e98433950cc0430e99e51a81aa5efcea175583e4a30ce9de5f9dbe83ac 754 golf_340.dsc
+ 19690f3096dba66776dd7c255232a9bd5b70cf992889b9b10e6237bebdb94ba9 365528 golf_340.tar.xz
+ 418cddb2539e191e60a890daff02422037f6fe9f8db673e7e984dd3c84f14588 670260 golf-dbgsym_340_amd64.deb
+ def4f131a787d11b7baf01a9e25c01edfa73d755fc089a7f74e548280dfa5bd2 12462 golf_340_amd64.buildinfo
+ 1a92e7e42b4b71c89bfda3cf1bf174a5f1804c2b7b6738cc74583f58cd2f43c1 462668 golf_340_amd64.deb
+Files:
+ 66189386058ad4fcc1b34b9946aa0876 754 devel optional golf_340.dsc
+ b391370f56a7d99a67e1540cad14b449 365528 devel optional golf_340.tar.xz
+ 174e48493083feed5be1da49ee41a4a5 670260 debug optional golf-dbgsym_340_amd64.deb
+ 18e589bc59148ca2c7bcecd9a52717bc 12462 devel optional golf_340_amd64.buildinfo
+ 3106c929355b418b7fe1a100b4e9bf76 462668 devel optional golf_340_amd64.deb
