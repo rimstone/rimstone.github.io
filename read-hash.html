@@ -243,7 +243,7 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Read hash</div><hr/><span style="font-weight:bold;">Purpose</span>: Get data from hash.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_695'>
+<pre id='code_677'>
  <span class="Comment">// Random access to hash data:</span>
 
 <span class="Statement"> read-hash</span> &lt;hash&gt; \
@@ -261,9 +261,9 @@ function gg_copy(gt, eid, gc) {
     <span class="Type"> value</span> &lt;value&gt;  \
      [<span class="Identifier"> delete</span> [ &lt;delete&gt; ] ] \
      [<span class="Type"> status</span> &lt;status&gt; ] \</pre>
-<span id=golf_copied_695 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_695' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_695, code_695, golf_copied_695)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_677 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_677' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_677, code_677, golf_copied_677)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Without "traverse" clause"></a>Without "traverse" clause</div>
 read-hash will obtain an element from &lt;hash&gt;, which is a string &lt;value&gt; (in "value" clause) based on a string &lt;key&gt; (in "key" clause). &lt;hash&gt; was created by <a href='https://golf-lang.com/new-hash.html'>new-hash</a>. <br/>
@@ -280,7 +280,7 @@ You may search, add or delete elements while traversing a hash, and this will be
 <div class="vsub"><a id="Examples"></a>Examples</div>
 In this example, a new hash is created, a key/value pair is written to it, and then the value is obtained and the element deleted; return status is checked:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_696'>
+<pre id='code_678'>
  <span class="Comment">// Create new hash</span>
 <span class="Statement"> new-hash</span> h
 
@@ -294,13 +294,13 @@ In this example, a new hash is created, a key/value pair is written to it, and t
 <span class="Statement"> else-if</span>
 <span class="Statement">     @</span>Deleted value is <span class="Statement">&lt;&lt;p-out</span> res<span class="Statement">&gt;&gt;</span>
 <span class="Statement"> end-if</span></pre>
-<span id=golf_copied_696 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_696' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_696, code_696, golf_copied_696)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_678 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_678' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_678, code_678, golf_copied_678)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The following will traverse the entire hash and display all the data:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_697'>
+<pre id='code_679'>
  <span class="Comment">// Position at the beginning of the hash </span>
 <span class="Statement"> read-hash</span> h<span class="Identifier"> traverse begin</span>
 <span class="Statement"> start-loop</span>
@@ -311,9 +311,9 @@ The following will traverse the entire hash and display all the data:<br/>
 <span class="Statement">     end-if</span>
 <span class="Statement">     pf-out</span> <span class="Constant">&quot;Key [</span><span class="Special">%s</span><span class="Constant">] data [</span><span class="Special">%s</span><span class="Constant">]</span><span class="Special">\n</span><span class="Constant">&quot;</span>, k, r
 <span class="Statement"> end-loop</span></pre>
-<span id=golf_copied_697 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_697' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_697, code_697, golf_copied_697)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_679 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_679' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_679, code_679, golf_copied_679)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <a name='Hash'></a><span style="font-weight:bold;">Hash</span><br/>
