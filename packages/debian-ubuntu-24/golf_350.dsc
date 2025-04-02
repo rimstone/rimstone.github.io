@@ -2,7 +2,7 @@ Format: 3.0 (native)
 Source: golf
 Binary: golf
 Architecture: any
-Version: 340
+Version: 350
 Maintainer: Gliim LLC <team@golf-lang.com>
 Homepage: https://golf-lang.com
 Standards-Version: 4.1.2
@@ -11,8 +11,8 @@ Build-Depends: libssl-dev, curl, pkgconf, libxml2-dev, libcurl4, libcurl4-openss
 Package-List:
  golf deb devel optional arch=any
 Checksums-Sha1:
- d398b17a5195a3b702b07ce5c84a9e02cdd622e8 621532 golf_340.tar.xz
+ 5d54c2415bf79ee1aa0550c7d210390e77bf916a 366144 golf_350.tar.xz
 Checksums-Sha256:
- de54a92953417da4f5f1292d8b2d3acf5d59a61de57f7d8ab5c723812c803ced 621532 golf_340.tar.xz
+ 71970f539ae080df9d714a20d388420f4510ab3bcf010f4ae43ed460c1a2d631 366144 golf_350.tar.xz
 Files:
- 656c14f6841c91d3fbd38a618e564379 621532 golf_340.tar.xz
+ b8d2010c05d69d7ad035fbe52cfa2c19 366144 golf_350.tar.xz

@@ -2,22 +2,22 @@ Format: 1.0
 Source: golf
 Binary: golf golf-dbgsym
 Architecture: amd64 source
-Version: 340
+Version: 350
 Checksums-Md5:
- d1a56fe692b4d94e9762f76407aaf149 754 golf_340.dsc
- 65588154ba1e1b9daa58c9da9dcbb831 711434 golf-dbgsym_340_amd64.ddeb
- afcf09807ed6fd9dd98d4061fc75c0d0 480814 golf_340_amd64.deb
+ ca02cc3ae8ecf6366c72d4525a605cb8 754 golf_350.dsc
+ bc6f626329bf59b19e0a22e8f1459d26 711672 golf-dbgsym_350_amd64.ddeb
+ ef100a5441e9ddb186b7035c6996a243 482948 golf_350_amd64.deb
 Checksums-Sha1:
- 7681a7992e33abe1609f5e22e06251705edc95d8 754 golf_340.dsc
- 318f8b5e9fc835cae8b456863b394c5d0df7590d 711434 golf-dbgsym_340_amd64.ddeb
- 151fb070df3c6ae5af36a2fbfa4461a1a9a19b59 480814 golf_340_amd64.deb
+ 6444b222582d806f86b2e2fec0690843976e8960 754 golf_350.dsc
+ 4f23a266e170416de9d703c6e7d7759033c63e02 711672 golf-dbgsym_350_amd64.ddeb
+ e7fc3008011a089cc3d1010e66761bf971c0bf20 482948 golf_350_amd64.deb
 Checksums-Sha256:
- 1abc269a44d2fa307c11a9fe0dc455fcc9cd7c339e718a3238e6ab20d360a220 754 golf_340.dsc
- 403cc8f019d51afa2c599645a7af2c1ff9336c54fb148108a78f137d7a4d60bf 711434 golf-dbgsym_340_amd64.ddeb
- 70d55f81e7eb154d1f4bea76a3bb1fd2d5a44b1daa9bcbe8675c0d688bcfc6cf 480814 golf_340_amd64.deb
+ 6cb115435e4e34a951799ab5cad69eed591f618a4122ca71aacbd5d45cdc4c2a 754 golf_350.dsc
+ aac8d231d1221891873316f3b4a3bfcb7de2a49c4db9a55ebb3dc50914e98c60 711672 golf-dbgsym_350_amd64.ddeb
+ c0545938e2837303b797b1e8c0462cdfff8efa9bbfca46025b14d4eb3ae17233 482948 golf_350_amd64.deb
 Build-Origin: Ubuntu
 Build-Architecture: amd64
-Build-Date: Tue, 01 Apr 2025 19:58:31 +0000
+Build-Date: Wed, 02 Apr 2025 03:24:29 +0000
 Build-Tainted-By:
  merged-usr-via-aliased-dirs
 Installed-Build-Depends:
@@ -107,10 +107,10 @@ Installed-Build-Depends:
  libblkid1 (= 2.39.3-9ubuntu6.2),
  libbrotli1 (= 1.1.0-2build2),
  libbz2-1.0 (= 1.0.8-5.1build0.1),
- libc-bin (= 2.39-0ubuntu8.4),
- libc-dev-bin (= 2.39-0ubuntu8.4),
- libc6 (= 2.39-0ubuntu8.4),
- libc6-dev (= 2.39-0ubuntu8.4),
+ libc-bin (= 2.39-0ubuntu8.3),
+ libc-dev-bin (= 2.39-0ubuntu8.3),
+ libc6 (= 2.39-0ubuntu8.3),
+ libc6-dev (= 2.39-0ubuntu8.3),
  libcap-ng0 (= 0.8.4-2build2),
  libcap2 (= 1:2.66-5ubuntu2),
  libcapture-tiny-perl (= 0.48-2),

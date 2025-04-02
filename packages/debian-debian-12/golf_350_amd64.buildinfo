@@ -2,22 +2,22 @@ Format: 1.0
 Source: golf
 Binary: golf golf-dbgsym
 Architecture: amd64 source
-Version: 340
+Version: 350
 Checksums-Md5:
- dfc516aa35a88836be8d3903448447b0 754 golf_340.dsc
- 174e48493083feed5be1da49ee41a4a5 670260 golf-dbgsym_340_amd64.deb
- 8affce334d6ba790b0f4a19abd0cda27 462588 golf_340_amd64.deb
+ c8bb5f96ad6aa13c5ce8f1824977aad2 754 golf_350.dsc
+ eea547b928b27e4688a91649813644c4 669716 golf-dbgsym_350_amd64.deb
+ 6662481ef6177ed149286a4eb5a2b7d7 464876 golf_350_amd64.deb
 Checksums-Sha1:
- ae0238bbcdc014ec5413e8ec9fb74384f902216a 754 golf_340.dsc
- 9e65dbd6a208db6ffc14647c7997958e52899415 670260 golf-dbgsym_340_amd64.deb
- 7eaef8829bda2f17a416347f5aaa1dc5468be000 462588 golf_340_amd64.deb
+ 42a1a1d646ff575df5a481df9f9704241a5d33e5 754 golf_350.dsc
+ ef29b02ac128013a38cd18ab41d25fd124c54e7d 669716 golf-dbgsym_350_amd64.deb
+ 86b195e61cefde1e8b84109e73ddf8c731ef0f22 464876 golf_350_amd64.deb
 Checksums-Sha256:
- 6030f42447a41fe46611e76c2bb9d9670074694d72733e712384b00a89832ab8 754 golf_340.dsc
- 418cddb2539e191e60a890daff02422037f6fe9f8db673e7e984dd3c84f14588 670260 golf-dbgsym_340_amd64.deb
- 1852635da63bd7d7f25f4d201addc1e557c910629834b5a1ad5bec515ba4baef 462588 golf_340_amd64.deb
+ bbc5cd5bbbc76e9c4c0e40c2d5a8b9b7b36788c36fcc238f34ef53083f2d0fdb 754 golf_350.dsc
+ bf81064572729c45012f22ec6bbb79176baaf13146fb740c4d8b68a694a624ff 669716 golf-dbgsym_350_amd64.deb
+ 73ed7e0562d26444a7a33176d0bcb5055e86bc2a328ae81b294310ebeffc04f4 464876 golf_350_amd64.deb
 Build-Origin: Debian
 Build-Architecture: amd64
-Build-Date: Tue, 01 Apr 2025 12:58:06 -0700
+Build-Date: Tue, 01 Apr 2025 20:24:06 -0700
 Build-Tainted-By:
  merged-usr-via-aliased-dirs
 Installed-Build-Depends:
@@ -60,7 +60,6 @@ Installed-Build-Depends:
  findutils (= 4.9.0-4),
  g++ (= 4:12.2.0-3),
  g++-12 (= 12.2.0-14),
- gawk (= 1:5.2.1-2),
  gcc (= 4:12.2.0-3),
  gcc-12 (= 12.2.0-14),
  gcc-12-base (= 12.2.0-14),
@@ -286,7 +285,6 @@ Installed-Build-Depends:
  libsepol2 (= 3.4-2.1),
  libsereal-decoder-perl (= 5.003+ds-1),
  libsereal-encoder-perl (= 5.003+ds-1),
- libsigsegv2 (= 2.14-1),
  libsmartcols1 (= 2.38.1-5+deb12u1),
  libsort-versions-perl (= 1.62-3),
  libsqlite3-0 (= 3.40.1-2+deb12u1),
