@@ -2,22 +2,22 @@ Format: 1.0
 Source: golf
 Binary: golf golf-dbgsym
 Architecture: amd64 source
-Version: 350
+Version: 353
 Checksums-Md5:
- ca02cc3ae8ecf6366c72d4525a605cb8 754 golf_350.dsc
- bc6f626329bf59b19e0a22e8f1459d26 711672 golf-dbgsym_350_amd64.ddeb
- ef100a5441e9ddb186b7035c6996a243 482948 golf_350_amd64.deb
+ 20fa20e0a8dbe9ebb2b9e0612c0467aa 754 golf_353.dsc
+ c25997a0690feb2e7581dbce9f3a8308 711736 golf-dbgsym_353_amd64.ddeb
+ 2499f31c5b1489d116d230bc83b458f9 483062 golf_353_amd64.deb
 Checksums-Sha1:
- 6444b222582d806f86b2e2fec0690843976e8960 754 golf_350.dsc
- 4f23a266e170416de9d703c6e7d7759033c63e02 711672 golf-dbgsym_350_amd64.ddeb
- e7fc3008011a089cc3d1010e66761bf971c0bf20 482948 golf_350_amd64.deb
+ 4cdabfb8bd3f55dbc7298a590919a032955cd1ca 754 golf_353.dsc
+ ff6abd40df1160481ba52458257228c7a5b898a7 711736 golf-dbgsym_353_amd64.ddeb
+ dbf49fc8b1d732c6c9fdc542644e9757df26d4bd 483062 golf_353_amd64.deb
 Checksums-Sha256:
- 6cb115435e4e34a951799ab5cad69eed591f618a4122ca71aacbd5d45cdc4c2a 754 golf_350.dsc
- aac8d231d1221891873316f3b4a3bfcb7de2a49c4db9a55ebb3dc50914e98c60 711672 golf-dbgsym_350_amd64.ddeb
- c0545938e2837303b797b1e8c0462cdfff8efa9bbfca46025b14d4eb3ae17233 482948 golf_350_amd64.deb
+ 3e650e7c65d1565c6dfe07b54359bb8d7ef656e3d9c912cabbdcafb18846d2c5 754 golf_353.dsc
+ f034cb6374a5d5eeb0d26e0d82e8b5947e6bdeff5456c133a9e15c82f3c5b781 711736 golf-dbgsym_353_amd64.ddeb
+ 32cd411ffdf40f917c5db9b8930054fe1339ca809e52c7ec3577ae53992db1cf 483062 golf_353_amd64.deb
 Build-Origin: Ubuntu
 Build-Architecture: amd64
-Build-Date: Wed, 02 Apr 2025 03:24:29 +0000
+Build-Date: Wed, 02 Apr 2025 04:04:35 +0000
 Build-Tainted-By:
  merged-usr-via-aliased-dirs
 Installed-Build-Depends:
@@ -361,7 +361,7 @@ Installed-Build-Depends:
  ncurses-base (= 6.4+20240113-1ubuntu2),
  ncurses-bin (= 6.4+20240113-1ubuntu2),
  netbase (= 6.4),
- openssl (= 3.0.13-0ubuntu3.5),
+ openssl (= 3.0.13-0ubuntu3.4),
  passwd (= 1:4.13+dfsg1-4ubuntu3),
  patch (= 2.7.6-7build3),
  patchutils (= 0.4.2-1build3),
