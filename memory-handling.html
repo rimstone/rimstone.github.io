@@ -255,7 +255,7 @@ Golf handles memory references and assignments automatically, preventing danglin
 String results of any Golf <a href='https://golf-lang.com/statements.html'>statements</a> will always create new memory, unless stated otherwise.<br/>
 <div class="vsub"><a id="Open file descriptors"></a>Open file descriptors</div>
 Any files opened by <a href='https://golf-lang.com/open-file.html'>open-file</a> statement are automatically closed by Golf at the end of the request. This enhances stability of long-running server processes because Linux system by default offers only about 1000 open files to a process. A bug can quickly exhaust this pool and cause a malfunction or a crash - Golf prevents this by closing any such open files when the request ends. <br/>
-<!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
+<div class="vsub"><a id="See also"></a>See also</div>
  <a name='Memory'></a><span style="font-weight:bold;">Memory</span><br/>
 <a href='https://golf-lang.com/memory-handling.html'>memory-handling</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
