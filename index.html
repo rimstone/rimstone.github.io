@@ -241,7 +241,7 @@ function gg_copy(gt, eid, gc) {
 
 <!--BEGVDOC90-->
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div>Golf is a programming language and &nbsp;application server for building web services and back-end solutions on Linux. Golf is easy to develop with, memory-safe and high-performance. Read <a href='https://golf-lang.com/about-golf.html'>About Golf</a>. Visit <a href='https://golf-lang.com/documentation.html'>Documentation</a>. Try <a href='https://golf-lang.com/123-hello-world.html'>Hello World</a>. Visit <a href='https://golf-lang.blogspot.com/'>Blog</a> for useful articles and changelog. Licensed under <a href='https://golf-lang.com/license.html'>Apache 2</a> Free Open Source License. Source code is at <a href='https://github.com/golf-lang/golf'>https://github.com/golf-lang/golf</a>. <br/>
-<div class="vsub"><a id="Install Golf on Ubuntu (versions 20, 22, 24 and 25):"></a>Install Golf on Ubuntu (versions 20, 22, 24 and 25):</div>
+<div class="vsub"><a id="Install Golf on Ubuntu (versions 20, 22, 24, 25):"></a>Install Golf on Ubuntu (versions 20, 22, 24, 25):</div>
 <!--BEF0SAL13--><br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_541'>
@@ -254,7 +254,7 @@ sudo apt <span class="Special">-y</span> install golf</pre>
 </div><br/>
 <!--BEF1SAL13--><br/>
 You can also <a href='https://golf-lang.com/install-golf-from-source-using-apt.html'>install from source</a>.<br/>
-<div class="vsub"><a id="Install Golf on Redhat (incl. Rocky, Alma, Centos), Fedora, Amazon Linux, Mageia or OpenSUSE:"></a>Install Golf on Redhat (incl. Rocky, Alma, Centos), Fedora, Amazon Linux, Mageia or OpenSUSE:</div>
+<div class="vsub"><a id="Install Golf on Redhat (incl. Rocky, Alma, Centos), Fedora, Amazon Linux, Mageia:"></a>Install Golf on Redhat (incl. Rocky, Alma, Centos), Fedora, Amazon Linux, Mageia:</div>
 <!--BEF2SAL13--><br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_542'>
@@ -266,7 +266,30 @@ sudo dnf <span class="Special">-y</span> install golf</pre>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_542, code_542, golf_copied_542)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEF3SAL13--><br/>
-Note: install dnf on OpenSUSE first. You can also <a href='https://golf-lang.com/install-golf-from-source-using-dnf.html'>install from source</a>.<br/>
+You can also <a href='https://golf-lang.com/install-golf-from-source-using-dnf.html'>install from source</a>.<br/>
+<div class="vsub"><a id="Install Golf on OpenSUSE:"></a>Install Golf on OpenSUSE:</div>
+Install OpenSUSE Tumbleweed:<br/>
+<!--BEF4SAL13--><br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_543'>
+sudo zypper <span class="Special">--non-interactive</span> addrepo <a href="https://copr.fedorainfracloud.org/coprs/golf-lang/golf-lang/repo/opensuse-tumbleweed/golf-lang-golf-lang-opensuse-tumbleweed.repo">https://copr.fedorainfracloud.org/coprs/golf-lang/golf-lang/repo/opensuse-tumbleweed/golf-lang-golf-lang-opensuse-tumbleweed.repo</a>
+sudo zypper install golf</pre>
+<span id=golf_copied_543 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_543' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_543, code_543, golf_copied_543)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+<!--BEF5SAL13--><br/>
+Install OpenSUSE Leap 15.6:<br/>
+<!--BEF6SAL13--><br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_544'>
+sudo zypper <span class="Special">--non-interactive</span> addrepo <a href="https://copr.fedorainfracloud.org/coprs/golf-lang/golf-lang/repo/opensuse-leap-15.">https://copr.fedorainfracloud.org/coprs/golf-lang/golf-lang/repo/opensuse-leap-15.</a><span class="Constant">6</span>/golf-lang-golf-lang-opensuse-leap-15.<span class="Constant">6</span>.repo
+sudo zypper install golf</pre>
+<span id=golf_copied_544 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_544' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_544, code_544, golf_copied_544)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+<!--BEF7SAL13--><br/>
 <div class="vsub"><a id="Current version"></a>Current version</div>
 Current version is 366. This release passed 2346 automated functional tests.<br/>
 <div class="vsub"><a id="Example"></a>Example</div>
@@ -275,7 +298,8 @@ Example of Golf code (from <a href='https://golf-lang.blogspot.com/2024/11/multi
 </div><br/>
 <div class="vsub"><a id="Articles"></a>Articles</div>
 <a href='https://golf-lang.blogspot.com/'>Blog</a> articles and examples:<br/>
-<ul><li>2025-04-02 <a href='https://golf-lang.blogspot.com/2025/04/fragmentation-of-linux-and-impact-on.html'>Fragmentation of Linux and impact on packaging</a></li>
+<ul><li>2025-04-05 <a href='https://golf-lang.blogspot.com/2025/04/how-to-build-opensuse-zypper-package.html'>How to build OpenSUSE zypper package for Golf</a></li>
+<li>2025-04-02 <a href='https://golf-lang.blogspot.com/2025/04/fragmentation-of-linux-and-impact-on.html'>Fragmentation of Linux and impact on packaging</a></li>
 <li>2025-03-29 <a href='https://golf-lang.blogspot.com/2025/03/fifo-in-golf.html'>FIFO in Golf</a></li>
 <li>2025-03-23 <a href='https://golf-lang.blogspot.com/2025/03/how-to-debug-golf-programs-with-gdb.html'>How to debug Golf programs with gdb</a></li>
 <li>2025-03-19 <a href='https://golf-lang.blogspot.com/2025/03/maximum-file-size-uploaded-to-golf.html'>Maximum file size uploaded to Golf server</a></li>
