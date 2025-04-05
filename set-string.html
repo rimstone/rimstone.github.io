@@ -243,13 +243,13 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Set string</div><hr/><span style="font-weight:bold;">Purpose</span>: Set value of a string variable.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_781'>
+<pre id='code_784'>
 <span class="Statement"> set-string</span> &lt;variable&gt; [<span class="Identifier"> unquoted</span> ] [<span class="Identifier"> process-scope</span> ] [ = &lt;string&gt; ]
 
 <span class="Statement"> set-string</span> &lt;variable&gt; [ &lt;index&gt; ] = &lt;number&gt;</pre>
-<span id=golf_copied_781 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_781' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_781, code_781, golf_copied_781)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_784 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_784' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_784, code_784, golf_copied_784)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 String variable &lt;variable&gt; will be assigned a value of &lt;string&gt; if clause "=" is present; otherwise &lt;variable&gt; is assigned an empty string.<br/>
 <br/>
@@ -257,78 +257,78 @@ If "process-scope" clause is used, then &lt;variable&gt; will be of process scop
 <br/>
 If "unquoted" clause is used, then &lt;string&gt; literal is unquoted, and everything from equal clause ("=") to the rest of the line is a &lt;string&gt;; in this case there is no need to escape double quotes or backslashes. Note that in this case, "unquoted" and any other clause must appear prior to equal clause ("=") and after variable, because they wouldn't otherwise be recognized. For instance:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_783'>
-<span class="Statement"> set-string</span> my_string<span class="Identifier"> unquoted</span> = this is <span class="Constant">&quot;some&quot;</span> string where there escape characters like \n do <span class="Constant">&quot;not work&quot;</span></pre>
-<span id=golf_copied_783 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_783' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_783, code_783, golf_copied_783)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-This is the same as:<br/>
-<div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_784'>
-<span class="Statement"> set-string</span> my_string = <span class="Constant">&quot;this is </span><span class="Special">\&quot;</span><span class="Constant">some</span><span class="Special">\&quot;</span><span class="Constant"> string where there escape characters like </span><span class="Special">\n</span><span class="Constant"> do </span><span class="Special">\&quot;</span><span class="Constant">not work</span><span class="Special">\&quot;</span><span class="Constant">&quot;</span></pre>
-<span id=golf_copied_784 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_784' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_784, code_784, golf_copied_784)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-"unquoted" clause is useful when writing string literals that would otherwise need lots of escaping. You can use double backslash at the end of the line to split the line with new line in between:<br/>
-<div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_785'>
-<span class="Statement"> set-string</span> unq1<span class="Identifier"> unquoted</span> =This is one line\\
-         second line and\\
-         third!</pre>
-<span id=golf_copied_785 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_785' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_785, code_785, golf_copied_785)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-The above will create a string:<br/>
-<div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_782'>
-This is one line
-second line and
-third!</pre>
-<span id=golf_copied_782 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_782' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_782, code_782, golf_copied_782)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-A string can be represented as a concatenation of string literals; this is useful when you want to preserve spaces, for instance:<br/>
-<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_786'>
-<span class="Statement"> set-string</span> a=<span class="Constant">&quot;something is &quot;</span> \
-     <span class="Constant">&quot;  very good &quot;</span> \
-     <span class="Constant">&quot; with spaces!! &quot;</span>
- <span class="Comment">// string is </span><span class="Constant">&quot;something is   very good  with spaces!! &quot;</span></pre>
+<span class="Statement"> set-string</span> my_string<span class="Identifier"> unquoted</span> = this is <span class="Constant">&quot;some&quot;</span> string where there escape characters like \n do <span class="Constant">&quot;not work&quot;</span></pre>
 <span id=golf_copied_786 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_786' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_786, code_786, golf_copied_786)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-You can also use set-string to set a byte in it; in this case &lt;index&gt; byte in &lt;variable&gt; string is set to &lt;number&gt;. &lt;index&gt; starts with 0 for the first byte. For instance, the resulting "str" will be "Aome string" since 65 is a number representation of 'A':<br/>
+This is the same as:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_787'>
-<span class="Statement"> set-string</span> str = <span class="Constant">&quot;some string&quot;</span>
-<span class="Statement"> set-string</span> str[<span class="Constant">0</span>] = <span class="Constant">65</span>
- <span class="Comment">// or using a character constant as a number, to the same effect</span>
-<span class="Statement"> set-string</span> str[<span class="Constant">0</span>] = 'A'</pre>
+<span class="Statement"> set-string</span> my_string = <span class="Constant">&quot;this is </span><span class="Special">\&quot;</span><span class="Constant">some</span><span class="Special">\&quot;</span><span class="Constant"> string where there escape characters like </span><span class="Special">\n</span><span class="Constant"> do </span><span class="Special">\&quot;</span><span class="Constant">not work</span><span class="Special">\&quot;</span><span class="Constant">&quot;</span></pre>
 <span id=golf_copied_787 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_787' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_787, code_787, golf_copied_787)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-<div class="vsub"><a id="Examples"></a>Examples</div>
-Initialize "my_string" variable to "":<br/>
+"unquoted" clause is useful when writing string literals that would otherwise need lots of escaping. You can use double backslash at the end of the line to split the line with new line in between:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_788'>
-<span class="Statement"> set-string</span> my_string</pre>
+<span class="Statement"> set-string</span> unq1<span class="Identifier"> unquoted</span> =This is one line\\
+         second line and\\
+         third!</pre>
 <span id=golf_copied_788 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_788' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_788, code_788, golf_copied_788)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Initialize "my_string" variable to "abc":<br/>
+The above will create a string:<br/>
+<div class='ncode' style='position:relative;padding-right:16px;'>
+<pre id='code_785'>
+This is one line
+second line and
+third!</pre>
+<span id=golf_copied_785 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_785' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_785, code_785, golf_copied_785)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+A string can be represented as a concatenation of string literals; this is useful when you want to preserve spaces, for instance:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_789'>
-<span class="Statement"> set-string</span> my_string = <span class="Constant">&quot;abc&quot;</span></pre>
+<span class="Statement"> set-string</span> a=<span class="Constant">&quot;something is &quot;</span> \
+     <span class="Constant">&quot;  very good &quot;</span> \
+     <span class="Constant">&quot; with spaces!! &quot;</span>
+ <span class="Comment">// string is </span><span class="Constant">&quot;something is   very good  with spaces!! &quot;</span></pre>
 <span id=golf_copied_789 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_789' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_789, code_789, golf_copied_789)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+You can also use set-string to set a byte in it; in this case &lt;index&gt; byte in &lt;variable&gt; string is set to &lt;number&gt;. &lt;index&gt; starts with 0 for the first byte. For instance, the resulting "str" will be "Aome string" since 65 is a number representation of 'A':<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_790'>
+<span class="Statement"> set-string</span> str = <span class="Constant">&quot;some string&quot;</span>
+<span class="Statement"> set-string</span> str[<span class="Constant">0</span>] = <span class="Constant">65</span>
+ <span class="Comment">// or using a character constant as a number, to the same effect</span>
+<span class="Statement"> set-string</span> str[<span class="Constant">0</span>] = 'A'</pre>
+<span id=golf_copied_790 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_790' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_790, code_790, golf_copied_790)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+<div class="vsub"><a id="Examples"></a>Examples</div>
+Initialize "my_string" variable to "":<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_791'>
+<span class="Statement"> set-string</span> my_string</pre>
+<span id=golf_copied_791 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_791' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_791, code_791, golf_copied_791)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Initialize "my_string" variable to "abc":<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_792'>
+<span class="Statement"> set-string</span> my_string = <span class="Constant">&quot;abc&quot;</span></pre>
+<span id=golf_copied_792 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_792' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_792, code_792, golf_copied_792)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Strings'></a><span style="font-weight:bold;">Strings</span><br/>
