@@ -12,22 +12,6 @@
 
 
 body, html {
-    color:black;
-    text-rendering: optimizelegibility;
-    background-color: white;
-    min-height: 150%;
-    font-family: "Times New Roman";
-    font-weight:400;
-    font-size:18px;
-    line-height:27px;
-    letter-spacing: 2px;
-    z-index: 1;
-    height: 100%;
-    text-align:left;
-    width:80%;
-    margin-left:auto;
-    margin-right:auto;
-    padding:0;
     /*font-family: Helvetica, Arial, sans-serif;*/
 }
 
@@ -242,11 +226,11 @@ function gg_copy(gt, eid, gc) {
 <!--BEGVDOC90-->
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Temporary file</div><hr/>To create a temporary file, use <a href='https://golf-lang.com/uniq-file.html'>uniq-file</a> with a "temporary" clause. Temporary files are the same as any other files in the <a href='https://golf-lang.com/file-storage.html'>file-storage</a> (and are organized in the same fashion), except that they are all under the subdirectory named "t":<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_827'>
+<pre id='code_841'>
 /var/lib/gg/&lt;app_name&gt;/app/file/t</pre>
-<span id=golf_copied_827 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_827' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_827, code_827, golf_copied_827)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_841 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_841' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_841, code_841, golf_copied_841)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 A temporary file is not automatically deleted - you can remove it with <a href='https://golf-lang.com/delete-file.html'>delete-file</a> statement when not needed (or use a periodic shell script to remove old temporary files). The reason for this is that the nature of temporary files varies, and they may not necessarily span a given time frame (such as a lifetime of a <a href='https://golf-lang.com/request.html'>request</a>, or a lifetime of a process that serves any number of such requests), and they may be used across number of requests for a specific purpose. Thus, it is your responsibility to remove a temporary file when it's appropriate for your application to do so.<br/>
 <br/>
@@ -255,6 +239,7 @@ The reason for storing temporary files in a separate directory is to gain a sepa
 See <a href='https://golf-lang.com/uniq-file.html'>uniq-file</a> for an example of creating a temporary file.<br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Files'></a><span style="font-weight:bold;">Files</span><br/>
+<a href='https://golf-lang.com/change-mode.html'>change-mode</a> &nbsp;<br/>
 <a href='https://golf-lang.com/close-file.html'>close-file</a> &nbsp;<br/>
 <a href='https://golf-lang.com/copy-file.html'>copy-file</a> &nbsp;<br/>
 <a href='https://golf-lang.com/delete-file.html'>delete-file</a> &nbsp;<br/>

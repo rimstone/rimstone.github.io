@@ -12,22 +12,6 @@
 
 
 body, html {
-    color:black;
-    text-rendering: optimizelegibility;
-    background-color: white;
-    min-height: 150%;
-    font-family: "Times New Roman";
-    font-weight:400;
-    font-size:18px;
-    line-height:27px;
-    letter-spacing: 2px;
-    z-index: 1;
-    height: 100%;
-    text-align:left;
-    width:80%;
-    margin-left:auto;
-    margin-right:auto;
-    padding:0;
     /*font-family: Helvetica, Arial, sans-serif;*/
 }
 
@@ -271,10 +255,12 @@ Golf services and command-line programs can implement most back-end application 
 </li><li>data (eg. database) layers, and any others.</li></ul>
 <div class="vsub"><a id="Language"></a>Language</div>
 Golf programming language is memory-safe, meaning it will prevent you from accidentally overwriting memory or freeing it when it shouldn't be. Golf's <a href='https://golf-lang.com/memory-handling.html'>memory-handling</a> is not limited to just memory safety; it also includes automatic freeing of memory at the end of a request, preventing memory leaks which can be fatal to long running processes. Similarly, files open with file-handling statements are automatically closed at the end of each request, serving the same purpose. <br/>
+<br/>
+Golf goes a step further from memory safety. It also enforces status checking for statements that may cause serious application logic errors. This is done by checking for negative status outcome at run-time, but only if your code does not check for status, and by stopping the application if it happens. This provides for much safer application run-time because it prevents further execution of the program if such outcome happens, and it also forces the developer to add necessary status checks when needed. This feature is automatic and has an extremely low impact on performance.<br/>
 <div class="vsub"><a id="Types"></a>Types</div>
 Golf is a strongly-typed language, with only three primitive types (numbers, strings and booleans) and a number of structured types (message, split-string, hash, tree, tree-cursor, fifo, lifo, list, file and service). Golf is a declarative language, with a few lines of code implementing large functionalities. Golf is also very simple - it's near expression-free! That's because it's designed to achieve application goals with less coding.<br/>
 <br/>
-The number type is a signed 64-bit integer. The boolean type evaluates to true (non-zero) or false (zero). The string type evaluates to any sequence of bytes (binary or text) that is always trailed with a null character regardless, which is not counted in string's length. All constants follow C rules of formatting.<br/>
+The number type is a signed 64-bit integer (as a decimal, octal or hexadecimal C notation). The boolean type evaluates to true (non-zero) or false (zero). The string type evaluates to any sequence of bytes (binary or text) that is always trailed with a null character regardless, which is not counted in string's length. All constants follow C rules of formatting.<br/>
 <div class="vsub"><a id="Statements"></a>Statements</div>
 Golf <a href='https://golf-lang.com/statements.html'>statements</a> are designed for safety, ease of use, and ability to write stable code. Most statements typically perform common complex tasks with options to easily customize them; such options are compile-time whenever possible, increasing run-time performance.<br/>
 <div class="vsub"><a id="Variables, scope"></a>Variables, scope</div>
@@ -302,7 +288,8 @@ Do not use object names (such as variables and request names) that start with "_
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='General'></a><span style="font-weight:bold;">General</span><br/>
 <a href='https://golf-lang.com/about-golf.html'>about-golf</a> &nbsp;<br/>
-<a href='https://golf-lang.com/directories.html'>directories</a> &nbsp; <br/>
+<a href='https://golf-lang.com/directories.html'>directories</a> &nbsp;<br/>
+<a href='https://golf-lang.com/permissions.html'>permissions</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
 <a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->

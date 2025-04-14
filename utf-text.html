@@ -12,22 +12,6 @@
 
 
 body, html {
-    color:black;
-    text-rendering: optimizelegibility;
-    background-color: white;
-    min-height: 150%;
-    font-family: "Times New Roman";
-    font-weight:400;
-    font-size:18px;
-    line-height:27px;
-    letter-spacing: 2px;
-    z-index: 1;
-    height: 100%;
-    text-align:left;
-    width:80%;
-    margin-left:auto;
-    margin-right:auto;
-    padding:0;
     /*font-family: Helvetica, Arial, sans-serif;*/
 }
 
@@ -243,15 +227,15 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Utf text</div><hr/><span style="font-weight:bold;">Purpose</span>: Convert UTF (UTF8 or UTF16) string to text.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_853'>
- utf-text &lt;utf&gt; \
-     [<span class="Statement"> to</span> &lt;text&gt; ] \
-     [<span class="Statement"> length</span> &lt;length&gt; ] \
+<pre id='code_869'>
+<span class="Statement"> utf-text</span> &lt;utf&gt; \
+     [<span class="Type"> to</span> &lt;text&gt; ] \
+     [<span class="Identifier"> length</span> &lt;length&gt; ] \
      [<span class="Type"> status</span> &lt;status&gt; ] \
      [<span class="Type"> error-text</span> &lt;error text&gt; ]</pre>
-<span id=golf_copied_853 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_853' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_853, code_853, golf_copied_853)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_869 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_869' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_869, code_869, golf_copied_869)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 utf-text will convert &lt;utf&gt; text to &lt;text&gt; (specified with "to" clause). If &lt;text&gt; is omitted, then the result of conversion is output.<br/>
 <br/>
@@ -265,12 +249,12 @@ The status of encoding can be obtained in number &lt;status&gt;. &lt;status&gt; 
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Convert UTF string to text and verify the expected result:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_854'>
+<pre id='code_870'>
  <span class="Comment">// UTF string </span>
 <span class="Statement"> set-string</span> utf_str = <span class="Constant">&quot;</span><span class="Special">\&quot;</span><span class="Constant">Doc</span><span class="Special">\&quot;\n\t\b\f\r\t</span><span class="Constant">⇗⇘</span><span class="Special">\t</span><span class="Constant">▷◮𝄞ᏫⲠш</span><span class="Special">\n</span><span class="Constant">/</span><span class="Special">\&quot;</span><span class="Constant">()</span><span class="Special">\t</span><span class="Constant">&quot;</span>
 
  <span class="Comment">// Convert UTF string to text</span>
- utf-text utf_str status encstatus to text_text
+<span class="Statement"> utf-text</span> utf_str<span class="Type"> status</span> encstatus<span class="Type"> to</span> text_text
 
  <span class="Comment">// This is the text expected</span>
 <span class="Statement"> ((</span> expected_result
@@ -281,9 +265,9 @@ Convert UTF string to text and verify the expected result:<br/>
 <span class="Statement"> if-true</span> text_text<span class="Identifier"> equal</span> expected_result<span class="Identifier"> and</span> encstatus<span class="Identifier"> not-equal</span> -<span class="Constant">1</span>
 <span class="Statement">     @</span>decode-text worked okay
 <span class="Statement"> end-if</span></pre>
-<span id=golf_copied_854 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_854' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_854, code_854, golf_copied_854)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_870 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_870' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_870, code_870, golf_copied_870)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='UTF'></a><span style="font-weight:bold;">UTF</span><br/>

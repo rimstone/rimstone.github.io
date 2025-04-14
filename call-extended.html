@@ -12,22 +12,6 @@
 
 
 body, html {
-    color:black;
-    text-rendering: optimizelegibility;
-    background-color: white;
-    min-height: 150%;
-    font-family: "Times New Roman";
-    font-weight:400;
-    font-size:18px;
-    line-height:27px;
-    letter-spacing: 2px;
-    z-index: 1;
-    height: 100%;
-    text-align:left;
-    width:80%;
-    margin-left:auto;
-    margin-right:auto;
-    padding:0;
     /*font-family: Helvetica, Arial, sans-serif;*/
 }
 
@@ -262,6 +246,8 @@ Each &lt;variable&gt; can be of C type (or a pointer to C type):<br/>
 </li><li>"char *" which is a pointer to an array of characters. This represents Golf string value.<br/>
 </li><li>"bool" which is a boolean variable. This represents Golf boolean.</li></ul>
 A &lt;function&gt; should not return a value. Rather, use a variable passed as a pointer if you wish to pass the function's output back to your Golf code.<br/>
+<div class="vsub"><a id="Changing current working directory"></a>Changing current working directory</div>
+If you change current working directory from your C code (such as with C chmod() function), you must set Golf internal boolean variable "gg_path_changed" to true.<br/>
 <div class="vsub"><a id="Web framework for C programming language"></a>Web framework for C programming language</div>
 Note that when you use call-extended, Golf becomes a <a href='https://golf-lang.com/web-framework-for-C-programming-language.html'>web-framework-for-C-programming-language</a>.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
