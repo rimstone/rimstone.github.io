@@ -253,7 +253,7 @@ Golf services and command-line programs can implement most back-end application 
 <ul><li>presentation (eg. building a web page), <br/>
 </li><li>application logic,<br/>
 </li><li>data (eg. database) layers, and any others.</li></ul>
-<div class="vsub"><a id="Language"></a>Language</div>
+<div class="vsub"><a id="Language and safety"></a>Language and safety</div>
 Golf programming language is memory-safe, meaning it will prevent you from accidentally overwriting memory or freeing it when it shouldn't be. Golf's <a href='https://golf-lang.com/memory-handling.html'>memory-handling</a> is not limited to just memory safety; it also includes automatic freeing of memory at the end of a request, preventing memory leaks which can be fatal to long running processes. Similarly, files open with file-handling statements are automatically closed at the end of each request, serving the same purpose. <br/>
 <br/>
 Golf goes a step further from memory safety. It also enforces status checking for statements that may cause serious application logic errors. This is done by checking for negative status outcome at run-time, but only if your code does not check for status, and by stopping the application if it happens. This provides for much safer application run-time because it prevents further execution of the program if such outcome happens, and it also forces the developer to add necessary status checks when needed. This feature is automatic and has an extremely low impact on performance.<br/>
