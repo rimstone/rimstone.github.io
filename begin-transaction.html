@@ -244,7 +244,7 @@ Once you start a transaction with <a href='https://golf-lang.com/begin-transacti
 <br/>
 You must use begin-transaction, commit-transaction and rollback-transaction instead of calling this functionality through <a href='https://golf-lang.com/run-query.html'>run-query</a>.<br/>
 <div class="vsub"><a id="Database"></a>Database</div>
-&lt;database&gt; is specified in "@" clause and is the name of the <a href='https://golf-lang.com/database-config-file.html'>database-config-file</a>. If ommited, your program must use exactly one database (see --db option in <a href='https://golf-lang.com/gg.html'>gg</a>).<br/>
+&lt;database&gt; is specified in "@" clause and is the name of the <a href='https://golf-lang.com/database-config-file.html'>database-config-file</a>. If omitted, your program must use exactly one database (see --db option in <a href='https://golf-lang.com/gg.html'>gg</a>).<br/>
 <div class="vsub"><a id="Error handling"></a>Error handling</div>
 The error code is available in &lt;error&gt; variable in "error" clause - this code is always "0" if successful. The &lt;error&gt; code may or may not be a number but is always returned as a string value. In case of error, error text is available in "error-text" clause in &lt;error text&gt; string.<br/>
 <br/>

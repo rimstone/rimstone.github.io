@@ -235,11 +235,11 @@ function gg_copy(gt, eid, gc) {
 </div><br/>
 new-array creates new &lt;array&gt;. An array is an indexed array, with a number as an index, and with a string as an element in the array. <br/>
 <br/>
-A Golf array is flexible, which means that it will grow to accomodate your needs. By default, an array allocates room for 256 elements that can grow up to 1,000,000 elements, unless &lt;max-size&gt; number (in "max-size" clause) is specified in which case it can grow up to &lt;max-size&gt; elements. &lt;max-size&gt; must be at least 256.<br/>
+A Golf array is flexible, which means that it will grow to accommodate your needs. By default, an array allocates room for 256 elements that can grow up to 1,000,000 elements, unless &lt;max-size&gt; number (in "max-size" clause) is specified in which case it can grow up to &lt;max-size&gt; elements. &lt;max-size&gt; must be at least 256.<br/>
 <br/>
 Note that max-size specifies only the upper limit of allocation. The actual amount of memory allocated can vary greatly, and is only 256 elements for a new array.<br/>
 <br/>
-With a Golf array, you do not need to pre-size the array; rather when you write an element, it will resize automatically. For instance, you can set an array element arr[0] and then arr[1000] (with nothing in-between), and Golf will automatically extend the array to accomodate. Note that an array will not automatically contract when tailing elements are deleted. Use <a href='https://golf-lang.com/purge-array.html'>purge-array</a> to delete all elements in the array and shrink its memory footprint when your processing is done.<br/>
+With a Golf array, you do not need to pre-size the array; rather when you write an element, it will resize automatically. For instance, you can set an array element arr[0] and then arr[1000] (with nothing in-between), and Golf will automatically extend the array to accommodate. Note that an array will not automatically contract when tailing elements are deleted. Use <a href='https://golf-lang.com/purge-array.html'>purge-array</a> to delete all elements in the array and shrink its memory footprint when your processing is done.<br/>
 <div class="vsub"><a id="Scope"></a>Scope</div>
 Note that an array is accessible to the current request only, unless "process-scope" clause is used, in which case all requests served by a process can use it (see <a href='https://golf-lang.com/do-once.html'>do-once</a> for a typical way to do this).<br/>
 <br/>

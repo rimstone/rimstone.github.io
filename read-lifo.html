@@ -240,7 +240,7 @@ read-lifo retrieves an element from the LIFO &lt;list&gt; into &lt;key&gt; strin
 <br/>
 Once an element has been retrieved, the next use of read-lifo will obtain the following one, in the reverse order they were put in. read-lifo starts with the last element put in, and moves backwards from there, unless <a href='https://golf-lang.com/rewind-lifo.html'>rewind-lifo</a> is called, which positions back to the last one. Note that <a href='https://golf-lang.com/write-lifo.html'>write-lifo</a> will cause the next read-lifo to start with the element just written, i.e. it implicitly calls <a href='https://golf-lang.com/rewind-lifo.html'>rewind-lifo</a>.<br/>
 <br/>
-If the element is successfuly retrieved, &lt;status&gt; number (in "status" clause) is GG_OKAY, otherwise it is GG_ERR_EXIST, which means there are no more elements to retrieve. <br/>
+If the element is successfully retrieved, &lt;status&gt; number (in "status" clause) is GG_OKAY, otherwise it is GG_ERR_EXIST, which means there are no more elements to retrieve. <br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 In this example, a LIFO list is created, and two key/value pairs added. They are then retrieved in a loop and printed out (twice with rewind), and then the list is purged:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>

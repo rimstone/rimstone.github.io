@@ -351,7 +351,7 @@ You can obtain the error message (corresponding to the above return values) in "
 <div class="vsub"><a id="Server reply"></a>Server reply</div>
 The service reply is split in two. One part is the actual result of processing (called "stdout" or standard output), and that is "data". The other is the error messages (called "stderr" or standard error), and that's "error". All of service output goes to "data", except from <a href='https://golf-lang.com/report-error.html'>report-error</a> and <a href='https://golf-lang.com/pf-out.html'>pf-out</a>/<a href='https://golf-lang.com/pf-url.html'>pf-url</a>/<a href='https://golf-lang.com/pf-web.html'>pf-web</a> (with "to-error" clause) which goes to "error". Note that "data" and "error" streams can be co-mingled when output by the service, but they will be obtained separately. This allows for clean separation of output from any error messages.<br/>
 <br/>
-You can obtain service reply when it's ready in its entirety (likely most often used), or as it comes alone bit by bit (see more about asynchronous hooks futher here).<br/>
+You can obtain service reply when it's ready in its entirety (likely most often used), or as it comes alone bit by bit (see more about asynchronous hooks further here).<br/>
 <div class="vsub"><a id="Status of request execution"></a>Status of request execution</div>
 "req_status" member of "gg_cli" type is the request status when a request had executed; it is somewhat similar to an exit status of a program. A Golf service request returns status by means of <a href='https://golf-lang.com/handler-status.html'>handler-status</a> statement. Note that "req_status" is valid only if "gg_cli_request()" returned GG_OKAY (or if "return_code" is GG_OKAY for multi-threaded programs).<br/>
 <div class="vsub"><a id="Getting data reply (stdout)"></a>Getting data reply (stdout)</div>
@@ -373,7 +373,7 @@ Data returned from a request is valid only if "gg_cli_request()" returned GG_OKA
 </div><br/>
 "data_len" member of "gg_cli" type will have the length of data response in bytes. The reply is always null-terminated as a courtesy, and "data_len" does not include the terminating null byte.<br/>
 <br/>
-"gg_cli_data()" returns the actual response (i.e. data output) from service as passed to "data" stream. Any output from service will go there, except when "to-error" clause is used in <a href='https://golf-lang.com/pf-out.html'>pf-out</a>, <a href='https://golf-lang.com/pf-url.html'>pf-url</a> and <a href='https://golf-lang.com/pf-web.html'>pf-web</a> - use these constructs to output errors without stopping the service execution. Additionaly, the output of <a href='https://golf-lang.com/report-error.html'>report-error</a> will also not go to data output.<br/>
+"gg_cli_data()" returns the actual response (i.e. data output) from service as passed to "data" stream. Any output from service will go there, except when "to-error" clause is used in <a href='https://golf-lang.com/pf-out.html'>pf-out</a>, <a href='https://golf-lang.com/pf-url.html'>pf-url</a> and <a href='https://golf-lang.com/pf-web.html'>pf-web</a> - use these constructs to output errors without stopping the service execution. Additionally, the output of <a href='https://golf-lang.com/report-error.html'>report-error</a> will also not go to data output.<br/>
 <div class="vsub"><a id="Getting error reply (stderr)"></a>Getting error reply (stderr)</div>
 An error reply returned from a service is valid only if "gg_cli_request()" returned GG_OKAY (or if "return_code" is GG_OKAY for multi-threaded programs). In that case, use "gg_cli_error()" function, for example:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
@@ -699,7 +699,7 @@ To test it, you can create a Golf application. Copy this to "hello.golf" file in
      <span class="Comment">// Output back a number of lines, generally as </span><span class="Constant">&quot;Output line #&lt;num of line&gt;&quot;</span>
      <span class="Comment">// After line #</span><span class="Constant">1418</span><span class="Comment">, print out </span><span class="Constant">&quot;Line 1419 has an error&quot;</span><span class="Comment"> to stderr</span>
      <span class="Comment">// After line #</span><span class="Constant">4418</span><span class="Comment">, report an error and exit</span>
-     <span class="Comment">// This demostrates outputting data to both stdout and stderr</span>
+     <span class="Comment">// This demonstrates outputting data to both stdout and stderr</span>
 <span class="Statement">     start-loop</span><span class="Identifier"> repeat</span> <span class="Constant">8000</span><span class="Type"> use</span> i<span class="Identifier"> start-with</span> <span class="Constant">0</span>
 <span class="Statement">         @</span>Output line #<span class="Statement">&lt;&lt;p-num</span> i<span class="Statement">&gt;&gt;</span>
 <span class="Statement">         if-true</span> i<span class="Identifier"> equal</span> <span class="Constant">1419</span>
