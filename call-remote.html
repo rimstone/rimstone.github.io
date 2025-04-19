@@ -227,14 +227,14 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Call remote</div><hr/><span style="font-weight:bold;">Purpose</span>: Make a remote service call.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_278'>
+<pre id='code_290'>
 <span class="Statement"> call-remote</span> &lt;service&gt; [ ,... ]   \
      [<span class="Type"> status</span> &lt;status&gt; ]  \
      [<span class="Type"> started</span> &lt;started&gt; ] \
      [<span class="Type"> finished-okay</span> &lt;finished okay&gt; ]</pre>
-<span id=golf_copied_278 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_278' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_278, code_278, golf_copied_278)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_290 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_290' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_290, code_290, golf_copied_290)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 call-remote will make service call(s) as described in a single &lt;service&gt; or a list of &lt;service&gt;s. Unless only a single &lt;service&gt; is specified, each call will execute in parallel with others (as multiple threads). call-remote finishes when all &lt;service&gt; calls do. Each &lt;service&gt; must have beed created with <a href='https://golf-lang.com/new-remote.html'>new-remote</a>.<br/>
 <br/>
@@ -264,7 +264,7 @@ call-remote is faster than <a href='https://golf-lang.com/call-web.html'>call-we
 <div class="vsub"><a id="Examples"></a>Examples</div>
 This example will connect to local Unix socket file "/var/lib/gg/app_name/sock/sock" (a Golf application named "app_name"), and make a request named "server" (i.e. it will be processed by source code file "server.golf") with URL path of "/op=add/key=2" (meaning with input parameters "op=add" and "key=2"). Then, service reply is read and displayed.<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_279'>
+<pre id='code_291'>
  <span class="Comment">// Create single call</span>
 <span class="Statement"> new-remote</span> srv<span class="Identifier"> location</span> <span class="Constant">&quot;/var/lib/gg/app_name/sock/sock&quot;</span> \
     <span class="Identifier"> method</span> <span class="Constant">&quot;GET&quot;</span><span class="Identifier"> app-path</span> <span class="Constant">&quot;/app_name&quot;</span><span class="Identifier"> request-path</span> <span class="Constant">&quot;/server&quot;</span> \
@@ -275,19 +275,19 @@ This example will connect to local Unix socket file "/var/lib/gg/app_name/sock/s
 <span class="Statement"> read-remote</span> srv<span class="Type"> data</span> rdata
  <span class="Comment">// Display results</span>
 <span class="Statement"> @</span>Data from service is <span class="Statement">&lt;&lt;p-out</span> rdata<span class="Statement">&gt;&gt;</span></pre>
-<span id=golf_copied_279 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_279' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_279, code_279, golf_copied_279)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_291 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_291' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_291, code_291, golf_copied_291)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 If you are connecting to a service via TCP (and not with a Unix socket like in the example above), the "location" clause in <a href='https://golf-lang.com/new-remote.html'>new-remote</a> might be:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_280'>
+<pre id='code_292'>
 <span class="Statement"> new-remote</span> srv<span class="Identifier"> location</span> <span class="Constant">&quot;192.168.0.28:2400&quot;</span> \
     <span class="Identifier"> method</span> <span class="Constant">&quot;GET&quot;</span><span class="Identifier"> app-path</span> <span class="Constant">&quot;/app_name&quot;</span><span class="Identifier"> request-path</span> <span class="Constant">&quot;/server&quot;</span> \
     <span class="Identifier"> url-params</span> <span class="Constant">&quot;/op=add/key=2&quot;</span></pre>
-<span id=golf_copied_280 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_280' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_280, code_280, golf_copied_280)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_292 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_292' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_292, code_292, golf_copied_292)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In this case, you are connecting to another service (running on IP "192.168.0.28") on port 2400. See <a href='https://golf-lang.com/mgrg.html'>mgrg</a> on how to start a service that listens on a TCP port. You would likely use TCP connectivity only if a service you're connecting to is on a different computer.<br/>
 <br/>
