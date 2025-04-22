@@ -307,9 +307,15 @@ Install Golf on Debian <a href='https://golf-lang.com/install-golf-from-source-u
 <!--BEF8SAL13-->
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_567'>
-wget <span class="Statement">&quot;</span><span class="Constant"><a href="https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=golf">https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=golf</a></span><span class="Statement">&quot;</span> <span class="Special">-O</span> PKGBUILD
-sudo pacman <span class="Special">-Sy</span> <span class="Special">--noconfirm</span> base-devel
-makepkg <span class="Special">--noconfirm</span> <span class="Special">-sirc</span></pre>
+<span class="Comment">#Run this one time (to add Golf key):</span>
+<span class="Statement">echo</span><span class="Constant"> -e </span><span class="Statement">&quot;</span><span class="Constant">[home_golf_lang_Arch]</span><span class="Special">\n</span><span class="Constant">Server = <a href="https://download.opensuse.org/repositories/home:/golf_lang/Arch/x86_64">https://download.opensuse.org/repositories/home:/golf_lang/Arch/x86_64</a></span><span class="Statement">&quot;</span><span class="Constant"> </span>| sudo  tee <span class="Special">-a</span> /etc/pacman.conf
+<span class="Identifier">key</span>=<span class="PreProc">$(</span><span class="Special">curl </span><span class="Special">-fsSL</span><span class="Special"> <a href="https://download.opensuse.org/repositories/home:golf_lang/Arch/">https://download.opensuse.org/repositories/home:golf_lang/Arch/</a></span><span class="PreProc">$(</span><span class="Special">uname </span><span class="Special">-m</span><span class="PreProc">)</span><span class="Special">/home_golf_lang_Arch.key</span><span class="PreProc">)</span>
+<span class="Identifier">fingerprint</span>=<span class="PreProc">$(</span><span class="Special">gpg </span><span class="Special">--quiet</span><span class="Special"> </span><span class="Special">--with-colons</span><span class="Special"> </span><span class="Special">--import-options</span><span class="Special"> show-only </span><span class="Special">--import</span><span class="Special"> </span><span class="Special">--fingerprint</span><span class="Special"> </span><span class="Statement">&lt;&lt;&lt;</span><span class="Constant"> &quot;</span><span class="PreProc">${</span><span class="PreProc">key</span><span class="PreProc">}</span><span class="Constant">&quot; | awk -F: '</span><span class="PreProc">$1</span><span class="Constant"> == &quot;fpr&quot; { print </span><span class="PreProc">$1</span><span class="Constant">0 }')</span>
+<span class="Constant">sudo pacman-key --init</span>
+<span class="Constant">echo &quot;</span><span class="PreProc">${</span><span class="PreProc">key</span><span class="PreProc">}</span><span class="Constant">&quot; | sudo pacman-key --add - </span>
+<span class="Constant">sudo pacman-key --lsign-key &quot;</span><span class="PreProc">${</span><span class="PreProc">fingerprint</span><span class="PreProc">}</span><span class="Constant">&quot;</span>
+<span class="Constant">#Install golf going forward</span>
+<span class="Constant">sudo pacman --noconfirm -Sy home_golf_lang_Arch/golf</span></pre>
 <span id=golf_copied_567 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_567' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_567, code_567, golf_copied_567)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
@@ -332,7 +338,7 @@ sudo apt <span class="Special">-y</span> install golf</pre>
 <!--BEF15SAL13-->
 Install Golf on Raspberry <a href='https://golf-lang.com/install-golf-from-source-using-apt.html'>from source code</a>.<br/>
 <div class="vsub"><a id="Current version"></a>Current version</div>
-Current version is 447. This release passed 2389 automated functional tests.<br/>
+Current version is 452. This release passed 2389 automated functional tests.<br/>
 <div class="vsub"><a id="Example"></a>Example</div>
 Example of Golf code (from <a href='https://golf-lang.blogspot.com/2024/11/multi-tenant-saas-notes-web-application_43.html'>SaaS example</a>):<br/>
 <br/><div class='vimg'><img class='imgs' src='home-example.png' alt='Golf'></img>
