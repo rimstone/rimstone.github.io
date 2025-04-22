@@ -11102,7 +11102,7 @@ A node in a tree consists of two strings: key and value. There is no limit on th
 <div class="vsub"><a id="Key comparison"></a>Key comparison</div>
 In order for any data tree structure to function, a key comparison must be performed certain number of times in order to find a specific key. Keys are compared using C's strcmp() function, meaning using ASCII lexicographic order.<br/>
 <div class="vsub"><a id="Number keys"></a>Number keys</div>
-"key-as" clause allows to treat a key as something other than a string when it comes to ordering. When "positive integer" value is used, it will treat a key as a string representation of a positive integer number. Such numbers must be zero or positive integers in the 64 bit range, and they must not contain leading zeros, spaces or other prefix (or suffix) characters. For example, key strings may be "0", "123" or "891347". With this clause, sorting these strings according to their converted numerical values is much faster than using schemes such as prefixing numbers with zeros or spaces.<br/>
+"key-as" clause allows one to treat a key as something other than a string when it comes to ordering. When "positive integer" value is used, it will treat a key as a string representation of a positive integer number. Such numbers must be zero or positive integers in the 64 bit range, and they must not contain leading zeros, spaces or other prefix (or suffix) characters. For example, key strings may be "0", "123" or "891347". With this clause, sorting these strings according to their converted numerical values is much faster than using schemes such as prefixing numbers with zeros or spaces.<br/>
 <br/>
 Note that when using "positive integer", you can use numbers in any base (from 2 to 36). In fact, numbers expressed in a higher base are generally faster to search for, because they are shorter in length.<br/>
 <div class="vsub"><a id="Unsorted tree"></a>Unsorted tree</div>
@@ -11523,7 +11523,7 @@ Files in Golf <a href='/directories.html'>directories</a> are generally created 
 <br/>
 Files created by Golf (including <a href='/open-file.html'>open-file</a> and <a href='/write-file.html'>write-file</a>) are created with 600 permissions, meaning only the user who owns the application can access them and other users (even within the same group) cannot.<br/>
 <br/>
-You can use <a href='/stat-file.html'>stat-file</a> to obtain permission mode for a file or directory, and <a href='/change-mode.html'>change-mode</a> to set it. Note that, most of the time, you won't need to do this at all. If you do, however, you should change permission modes carefuly and keep in mind the implications for both your application's security and functionality.<br/>
+You can use <a href='/stat-file.html'>stat-file</a> to obtain permission mode for a file or directory, and <a href='/change-mode.html'>change-mode</a> to set it. Note that, most of the time, you won't need to do this at all. If you do, however, you should change permission modes carefully and keep in mind the implications for both your application's security and functionality.<br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='General'></a><span style="font-weight:bold;">General</span><br/>
 <a href='/about-golf.html'>about-golf</a> &nbsp;<br/>
@@ -11545,7 +11545,7 @@ You can use <a href='/stat-file.html'>stat-file</a> to obtain permission mode fo
 </div><br/>
 pf-out formats a string according to the &lt;format&gt; string and a list of &lt;variable&gt;s and then outputs the result without any encoding (meaning a string is output exactly as it is, and the client may interpret such text in any way it sees fit). <br/>
 <div class="vsub"><a id="Format"></a>Format</div>
-&lt;format&gt; string must be a literal. Variables must follow &lt;format&gt; separated by commas in the same order as placeholders. If you use any placeholders other than specified below, or the type of variables you use do not match the type of a correspoding placeholder in &lt;format&gt;, your program will <a href='/error-handling.html'>error out</a>. You can use the following placeholders in &lt;format&gt; (see <a href='/trace-run.html'>trace-run</a> for an example of usage):<br/>
+&lt;format&gt; string must be a literal. Variables must follow &lt;format&gt; separated by commas in the same order as placeholders. If you use any placeholders other than specified below, or the type of variables you use do not match the type of a corresponding placeholder in &lt;format&gt;, your program will <a href='/error-handling.html'>error out</a>. You can use the following placeholders in &lt;format&gt; (see <a href='/trace-run.html'>trace-run</a> for an example of usage):<br/>
 <ul><li>%s for a string<br/>
 </li><li>%&lt;number&gt;s for a string output with a width of at least &lt;number&gt; (any excess filled with spaces to the left),<br/>
 </li><li>%ld for a number<br/>
@@ -13290,7 +13290,7 @@ See <a href='/error-handling.html'>error-handling</a> when report-error is calle
 &lt;format&gt; string must be present and there must be at least one &lt;variable&gt; (it means if you want to trace a simple string literal you still have to use "%s" as format). The reason for this is to avoid formatting errors, and to use formatting in a consistent fashion.<br/>
 <br/>
 <div class="vsub"><a id="Format"></a>Format</div>
-&lt;format&gt; string must be a literal. Variables must follow &lt;format&gt; separated by commas in the same order as placeholders. If you use any placeholders other than specified below, or the type of variables you use do not match the type of a correspoding placeholder in &lt;format&gt;, your program will <a href='/error-handling.html'>error out</a>. You can use the following placeholders in &lt;format&gt; (see <a href='/trace-run.html'>trace-run</a> for an example of usage):<br/>
+&lt;format&gt; string must be a literal. Variables must follow &lt;format&gt; separated by commas in the same order as placeholders. If you use any placeholders other than specified below, or the type of variables you use do not match the type of a corresponding placeholder in &lt;format&gt;, your program will <a href='/error-handling.html'>error out</a>. You can use the following placeholders in &lt;format&gt; (see <a href='/trace-run.html'>trace-run</a> for an example of usage):<br/>
 <ul><li>%s for a string<br/>
 </li><li>%&lt;number&gt;s for a string output with a width of at least &lt;number&gt; (any excess filled with spaces to the left),<br/>
 </li><li>%ld for a number<br/>
@@ -15260,7 +15260,7 @@ If trace-run has any other clauses, then &lt;format&gt; string must be present a
 <br/>
 For tracing to have effect, debugging and tracing must be enabled (see "--debug" and "--trace" options in <a href='/gg.html'>gg</a>). For location of trace files, see <a href='/directories.html'>directories</a>.<br/>
 <div class="vsub"><a id="Format"></a>Format</div>
-&lt;format&gt; string must be a literal. Variables must follow &lt;format&gt; separated by commas in the same order as placeholders. If you use any placeholders other than specified below, or the type of variables you use do not match the type of a correspoding placeholder in &lt;format&gt;, your program will <a href='/error-handling.html'>error out</a>. You can use the following placeholders in &lt;format&gt; (see <a href='/trace-run.html'>trace-run</a> for an example of usage):<br/>
+&lt;format&gt; string must be a literal. Variables must follow &lt;format&gt; separated by commas in the same order as placeholders. If you use any placeholders other than specified below, or the type of variables you use do not match the type of a corresponding placeholder in &lt;format&gt;, your program will <a href='/error-handling.html'>error out</a>. You can use the following placeholders in &lt;format&gt; (see <a href='/trace-run.html'>trace-run</a> for an example of usage):<br/>
 <ul><li>%s for a string<br/>
 </li><li>%&lt;number&gt;s for a string output with a width of at least &lt;number&gt; (any excess filled with spaces to the left),<br/>
 </li><li>%ld for a number<br/>

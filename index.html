@@ -256,8 +256,9 @@ Install OpenSUSE Tumbleweed:<br/>
 <!--BEF4SAL13-->
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_563'>
-sudo zypper <span class="Special">--non-interactive</span> addrepo <span class="Special">-G</span> <a href="https://copr.fedorainfracloud.org/coprs/golf-lang/golf-lang/repo/opensuse-tumbleweed/golf-lang-golf-opensuse-tumbleweed.repo">https://copr.fedorainfracloud.org/coprs/golf-lang/golf-lang/repo/opensuse-tumbleweed/golf-lang-golf-opensuse-tumbleweed.repo</a>
-sudo zypper <span class="Special">-n</span> install <span class="Special">--replacefiles</span> <span class="Special">--force-resolution</span>  golf</pre>
+sudo zypper addrepo <a href="https://download.opensuse.org/repositories/home:golf_lang/openSUSE_Tumbleweed/home:golf_lang.repo">https://download.opensuse.org/repositories/home:golf_lang/openSUSE_Tumbleweed/home:golf_lang.repo</a>
+sudo zypper <span class="Special">--gpg-auto-import-keys</span> refresh
+sudo zypper <span class="Special">-n</span> install <span class="Special">--replacefiles</span> <span class="Special">--force-resolution</span> golf</pre>
 <span id=golf_copied_563 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_563' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_563, code_563, golf_copied_563)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
@@ -267,7 +268,8 @@ Install OpenSUSE Leap 15.6:<br/>
 <!--BEF6SAL13-->
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_564'>
-sudo zypper <span class="Special">--non-interactive</span> addrepo <span class="Special">-G</span> <a href="https://copr.fedorainfracloud.org/coprs/golf-lang/golf-lang/repo/opensuse-leap-15.">https://copr.fedorainfracloud.org/coprs/golf-lang/golf-lang/repo/opensuse-leap-15.</a><span class="Constant">6</span>/golf-lang-golf-opensuse-leap-15.<span class="Constant">6</span>.repo
+sudo zypper addrepo <a href="https://download.opensuse.org/repositories/home:golf_lang/">https://download.opensuse.org/repositories/home:golf_lang/</a><span class="Constant">15</span>.<span class="Constant">6</span>/home:golf_lang.repo
+sudo zypper <span class="Special">--gpg-auto-import-keys</span> refresh
 sudo zypper <span class="Special">-n</span> install <span class="Special">--replacefiles</span> <span class="Special">--force-resolution</span> golf</pre>
 <span id=golf_copied_564 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_564' style='position: absolute;left: -500%;'></textarea>
@@ -278,9 +280,9 @@ Install OpenSUSE Slowroll:<br/>
 <!--BEF12SAL13-->
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_565'>
-sudo zypper <span class="Special">--non-interactive</span> addrepo <a href="https://download.opensuse.org/repositories/home:golf_lang/openSUSE_Slowroll/home:golf_lang.repo">https://download.opensuse.org/repositories/home:golf_lang/openSUSE_Slowroll/home:golf_lang.repo</a>
-sudo zypper refresh
-sudo zypper <span class="Special">-n</span> install golf</pre>
+sudo zypper addrepo <a href="https://download.opensuse.org/repositories/home:golf_lang/openSUSE_Slowroll/home:golf_lang.repo">https://download.opensuse.org/repositories/home:golf_lang/openSUSE_Slowroll/home:golf_lang.repo</a>
+sudo zypper <span class="Special">--gpg-auto-import-keys</span> refresh
+sudo zypper <span class="Special">-n</span> install <span class="Special">--replacefiles</span> <span class="Special">--force-resolution</span> golf</pre>
 <span id=golf_copied_565 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_565' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_565, code_565, golf_copied_565)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
@@ -310,12 +312,12 @@ Install Golf on Debian <a href='https://golf-lang.com/install-golf-from-source-u
 <span class="Comment">#Run this one time (to add Golf key):</span>
 <span class="Statement">echo</span><span class="Constant"> -e </span><span class="Statement">&quot;</span><span class="Constant">[home_golf_lang_Arch]</span><span class="Special">\n</span><span class="Constant">Server = <a href="https://download.opensuse.org/repositories/home:/golf_lang/Arch/x86_64">https://download.opensuse.org/repositories/home:/golf_lang/Arch/x86_64</a></span><span class="Statement">&quot;</span><span class="Constant"> </span>| sudo  tee <span class="Special">-a</span> /etc/pacman.conf
 <span class="Identifier">key</span>=<span class="PreProc">$(</span><span class="Special">curl </span><span class="Special">-fsSL</span><span class="Special"> <a href="https://download.opensuse.org/repositories/home:golf_lang/Arch/">https://download.opensuse.org/repositories/home:golf_lang/Arch/</a></span><span class="PreProc">$(</span><span class="Special">uname </span><span class="Special">-m</span><span class="PreProc">)</span><span class="Special">/home_golf_lang_Arch.key</span><span class="PreProc">)</span>
-<span class="Identifier">fingerprint</span>=<span class="PreProc">$(</span><span class="Special">gpg </span><span class="Special">--quiet</span><span class="Special"> </span><span class="Special">--with-colons</span><span class="Special"> </span><span class="Special">--import-options</span><span class="Special"> show-only </span><span class="Special">--import</span><span class="Special"> </span><span class="Special">--fingerprint</span><span class="Special"> </span><span class="Statement">&lt;&lt;&lt;</span><span class="Constant"> &quot;</span><span class="PreProc">${</span><span class="PreProc">key</span><span class="PreProc">}</span><span class="Constant">&quot; | awk -F: '</span><span class="PreProc">$1</span><span class="Constant"> == &quot;fpr&quot; { print </span><span class="PreProc">$1</span><span class="Constant">0 }')</span>
-<span class="Constant">sudo pacman-key --init</span>
-<span class="Constant">echo &quot;</span><span class="PreProc">${</span><span class="PreProc">key</span><span class="PreProc">}</span><span class="Constant">&quot; | sudo pacman-key --add - </span>
-<span class="Constant">sudo pacman-key --lsign-key &quot;</span><span class="PreProc">${</span><span class="PreProc">fingerprint</span><span class="PreProc">}</span><span class="Constant">&quot;</span>
-<span class="Constant">#Install golf going forward</span>
-<span class="Constant">sudo pacman --noconfirm -Sy home_golf_lang_Arch/golf</span></pre>
+<span class="Identifier">fingerprint</span>=<span class="PreProc">$(</span><span class="Statement">echo</span><span class="Constant"> </span><span class="Statement">&quot;</span><span class="PreProc">${</span><span class="PreProc">key</span><span class="PreProc">}</span><span class="Statement">&quot;</span><span class="Statement">|</span><span class="Special">gpg </span><span class="Special">--quiet</span><span class="Special"> </span><span class="Special">--with-colons</span><span class="Special"> </span><span class="Special">--import-options</span><span class="Special"> show-only </span><span class="Special">--import</span><span class="Special"> </span><span class="Special">--fingerprint</span><span class="Special">  - </span><span class="Statement">|</span><span class="Special"> awk </span><span class="Special">-F</span><span class="Special">: </span><span class="Statement">'</span><span class="Constant">$1 == &quot;fpr&quot; { print $10 }</span><span class="Statement">'</span><span class="PreProc">)</span>
+sudo pacman-key <span class="Special">--init</span>
+<span class="Statement">echo</span><span class="Constant"> </span><span class="Statement">&quot;</span><span class="PreProc">${</span><span class="PreProc">key</span><span class="PreProc">}</span><span class="Statement">&quot;</span><span class="Constant"> </span>| sudo pacman-key <span class="Special">--add</span> -
+sudo pacman-key <span class="Special">--lsign-key</span> <span class="Statement">&quot;</span><span class="PreProc">${</span><span class="PreProc">fingerprint</span><span class="PreProc">}</span><span class="Statement">&quot;</span>
+<span class="Comment">#Install golf going forward</span>
+sudo pacman <span class="Special">--noconfirm</span> <span class="Special">-Sy</span> home_golf_lang_Arch/golf</pre>
 <span id=golf_copied_567 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_567' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_567, code_567, golf_copied_567)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
