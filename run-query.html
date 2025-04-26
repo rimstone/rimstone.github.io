@@ -227,7 +227,7 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Run query</div><hr/><span style="font-weight:bold;">Purpose</span>: Execute a query and loop through result set.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_770'>
+<pre id='code_778'>
 <span class="Statement"> run-query</span> \
      [ @&lt;database&gt; ] \
      = &lt;query text&gt; \
@@ -246,9 +246,9 @@ function gg_copy(gt, eid, gc) {
 
 <span class="Statement"> run-prepared-query</span> \
      ... ( the same as run-query ) ...</pre>
-<span id=golf_copied_770 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_770' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_770, code_770, golf_copied_770)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_778 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_778' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_778, code_778, golf_copied_778)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 run-query executes a query specified with string &lt;query text&gt;.<br/>
 <div class="vsub"><a id="Database"></a>Database</div>
@@ -257,25 +257,25 @@ run-query executes a query specified with string &lt;query text&gt;.<br/>
 <span style="font-weight:bold;">- output clause</span><br/>
 "output" clause is a comma-delimited list of the query's output columns. The column names do not need to match the actual query column names, rather you can name them anyway you want, as long as they positionally correspond. String variables with the same name are created for each column name and query's output assigned to them. For example:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_772'>
+<pre id='code_780'>
 <span class="Statement"> run-query</span> @db = <span class="Constant">&quot;select firstName, lastName from employees&quot;</span><span class="Type"> output</span> first_name, last_name
 <span class="Statement">     @</span>First name <span class="Statement">&lt;&lt;p-out</span> first_name<span class="Statement">&gt;&gt;</span>
 <span class="Statement">     @</span>Last name <span class="Statement">&lt;&lt;p-out</span> last_name<span class="Statement">&gt;&gt;</span>
 <span class="Statement"> end-loop</span></pre>
-<span id=golf_copied_772 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_772' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_772, code_772, golf_copied_772)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_780 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_780' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_780, code_780, golf_copied_780)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Note that the output is by default web-encoded. You can set the encoding of column output by using either "noencode" (for no encoding), "urlencode" (for URL-encoding) or "webencode" (for web-encoding) clause right after column name (see <a href='https://golf-lang.com/encode-web.html'>encode-web</a>, <a href='https://golf-lang.com/encode-url.html'>encode-url</a> for description of encodings). For example, here the first output column will not be encoded, and the second will be URL-encoded:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_773'>
+<pre id='code_781'>
 <span class="Statement"> run-query</span> @db = <span class="Constant">&quot;select firstName, lastName from employees&quot;</span><span class="Type"> output</span> first_name<span class="Identifier"> noencode</span>, last_name<span class="Identifier"> urlencode</span>
 <span class="Statement">     @</span>First name <span class="Statement">&lt;&lt;p-out</span> first_name<span class="Statement">&gt;&gt;</span>
 <span class="Statement">     @</span>Last name <span class="Statement">&lt;&lt;p-out</span> last_name<span class="Statement">&gt;&gt;</span>
 <span class="Statement"> end-loop</span></pre>
-<span id=golf_copied_773 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_773' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_773, code_773, golf_copied_773)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_781 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_781' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_781, code_781, golf_copied_781)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Input"></a>Input</div>
 The query's input parameters (if any) are specified with '%s' in the &lt;query text&gt; (note that single quotes must be included). The actual input parameters are provided after "input" clause (you can instead use semicolon, i.e. ":"), in a comma-separated list. Each input variable is a string regardless of the actual column type, as the database engine will interpret the data according to its usage. Each input variable is trimmed (left and right) before used in a query. <br/>
@@ -294,15 +294,15 @@ Note that if database connection was lost, and could not be reestablished, the r
 <div class="vsub"><a id="Space before = and @"></a>Space before = and @</div>
 "=" and "@" clauses may or may not have a space before the data that follows. So for example, these are both valid:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_774'>
+<pre id='code_782'>
  <span class="Comment">// No space after </span><span class="Constant">&quot;@&quot;</span><span class="Comment"> and </span><span class="Constant">&quot;=&quot;</span>
 <span class="Statement"> run-query</span> @db =<span class="Constant">&quot;select firstName, lastName from employee where employeeId='</span><span class="Special">%s</span><span class="Constant">'&quot;</span><span class="Type"> output</span> firstName, lastName<span class="Identifier"> input</span> empid
 
  <span class="Comment">// Space after </span><span class="Constant">&quot;@&quot;</span><span class="Comment"> and </span><span class="Constant">&quot;=&quot;</span>
 <span class="Statement"> run-query</span><span class="Identifier"> @</span> db = <span class="Constant">&quot;select firstName, lastName from employee where employeeId='</span><span class="Special">%s</span><span class="Constant">'&quot;</span><span class="Type"> output</span> firstName, lastName<span class="Identifier"> input</span> empid</pre>
-<span id=golf_copied_774 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_774' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_774, code_774, golf_copied_774)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_782 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_782' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_782, code_782, golf_copied_782)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="run-prepared-query"></a>run-prepared-query</div>
 run-prepared-query is the same as run-query except that a &lt;query&gt; is prepared. That means it is pre-compiled and its execution plan is created once, instead of each time a query executes. The statement is cached going forward for the life of the process (with the rare exception of re-establishing a lost database connection). It means effectively an unlimited number of requests will be reusing the query statement, which generally implies higher performance. Note that databases do not allow prepared queries for DDL (Data Definition Language), as there is not much benefit in general, hence only DML queries (such as INSERT, DELETE etc.) and SELECT can be prepared.<br/>
@@ -318,33 +318,33 @@ In some cases, you might not want to use prepared statements. Some reasons may b
 </li><li>typically prepared statements do not use database query cache, so repeating identical queries with identical input data may be faster without them.</li></ul>
 Note that in Postgres, with prepared statements you may get an error like "could not determine data type of parameter $N". This is an issue with Postgres server. In this case you can use "::&lt;type&gt;" qualifier, such as for instance to tell Postgres the input parameter is text:<br/>
 <div class='sqlcode' style='position:relative;padding-right:16px;'>
-<pre id='code_771'>
+<pre id='code_779'>
 <span class="Statement">select</span> col1 <span class="Special">from</span> test <span class="Special">where</span> someId&gt;=<span class="Special">'</span><span class="Constant">%s</span><span class="Special">'</span> <span class="Statement">and</span> col1 <span class="Statement">like</span> <span class="Identifier">concat</span>( <span class="Special">'</span><span class="Constant">%s</span><span class="Special">'</span>::text ,<span class="Special">'</span><span class="Constant">%</span><span class="Special">'</span>)</pre>
-<span id=golf_copied_771 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_771' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_771, code_771, golf_copied_771)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_779 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_779' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_779, code_779, golf_copied_779)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Note that SQL statements in SQLite are always prepared regardless of whether you use "run-query" or "run-prepared-query" due to how SQLite native interface works.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Select first and last name (output is firstName and lastName) based on employee ID (specified by input parameter empid):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_775'>
+<pre id='code_783'>
 <span class="Statement"> get-param</span> empid
 <span class="Statement"> run-query</span> @db = <span class="Constant">&quot;select firstName, lastName from employee where employeeId='</span><span class="Special">%s</span><span class="Constant">'&quot;</span><span class="Type"> output</span> firstName, lastName<span class="Identifier"> input</span> empid
 <span class="Statement">     @</span>Employee is <span class="Statement">&lt;&lt;p-out</span>  firstName<span class="Statement">&gt;&gt;</span> <span class="Statement">&lt;&lt;p-out</span> lastName<span class="Statement">&gt;&gt;</span>
 <span class="Statement"> end-query</span></pre>
-<span id=golf_copied_775 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_775' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_775, code_775, golf_copied_775)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_783 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_783' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_783, code_783, golf_copied_783)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Prepared query without a loop and obtain error code and affected rows:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_776'>
+<pre id='code_784'>
 <span class="Statement"> run-prepared-query</span> @db = qry<span class="Identifier"> no-loop</span> \
     <span class="Type"> error</span> ecode<span class="Type"> affected-rows</span> arows<span class="Identifier"> input</span> stock_name, stock_price, stock_price</pre>
-<span id=golf_copied_776 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_776' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_776, code_776, golf_copied_776)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_784 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_784' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_784, code_784, golf_copied_784)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Database'></a><span style="font-weight:bold;">Database</span><br/>

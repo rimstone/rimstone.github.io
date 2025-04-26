@@ -227,15 +227,15 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Read array</div><hr/><span style="font-weight:bold;">Purpose</span>: Get data from an array.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_708'>
+<pre id='code_716'>
 <span class="Statement"> read-array</span> &lt;array&gt; \
     <span class="Identifier"> key</span> &lt;key&gt; \
     <span class="Type"> value</span> &lt;value&gt; \
      [<span class="Identifier"> delete</span> [ &lt;delete&gt; ] ] \
      [<span class="Type"> status</span> &lt;status&gt; ]</pre>
-<span id=golf_copied_708 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_708' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_708, code_708, golf_copied_708)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_716 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_716' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_716, code_716, golf_copied_716)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 read-array will obtain an element from &lt;array&gt;, which is a string &lt;value&gt; (in "value" clause) based on a number &lt;key&gt; (in "key" clause). &lt;key&gt; is a number from 0 up to (excluding) the currently allocated array size. Note that array may be allocated beyond the highest index of an element written to it. &lt;array&gt; was created by <a href='https://golf-lang.com/new-array.html'>new-array</a>. <br/>
 <br/>
@@ -245,7 +245,7 @@ If no &lt;key&gt; was found in the array (meaning an array element with index &l
 <div class="vsub"><a id="Examples"></a>Examples</div>
 In this example, a new array is created, a value is written to it, and then the value is obtained and the element deleted; return status is checked:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_709'>
+<pre id='code_717'>
  <span class="Comment">// Create new array</span>
 <span class="Statement"> new-array</span> arr
 
@@ -259,9 +259,9 @@ In this example, a new array is created, a value is written to it, and then the 
 <span class="Statement"> else-if</span>
 <span class="Statement">     @</span>Deleted value is <span class="Statement">&lt;&lt;p-out</span> res<span class="Statement">&gt;&gt;</span>
 <span class="Statement"> end-if</span></pre>
-<span id=golf_copied_709 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_709' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_709, code_709, golf_copied_709)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_717 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_717' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_717, code_717, golf_copied_717)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Array'></a><span style="font-weight:bold;">Array</span><br/>
