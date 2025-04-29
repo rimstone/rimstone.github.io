@@ -227,15 +227,15 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Read xml</div><hr/><span style="font-weight:bold;">Purpose</span>: Read data elements from XML document.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_740'>
+<pre id='code_741'>
 <span class="Statement"> read-xml</span> &lt;xml&gt; \
      [<span class="Type"> key</span> &lt;key&gt; ] \
      [<span class="Type"> value</span> &lt;value&gt; ] \
      [<span class="Type"> status</span> &lt;status&gt; ] \
      [<span class="Identifier"> next</span> ]</pre>
-<span id=golf_copied_740 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_740' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_740, code_740, golf_copied_740)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_741 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_741' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_741, code_741, golf_copied_741)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 read-xml reads data elements from &lt;xml&gt; variable, which is created with <a href='https://golf-lang.com/xml-doc.html'>xml-doc</a>. A data element is a string &lt;key&gt;/&lt;value&gt; pair, where key (in "key" clause) is a normalized key name, which is the current name preceded with the names of all elements leading up to it, separated by a forward slash ("/"). Node that attribute elements end with "@".<br/>
 <br/>
@@ -245,19 +245,19 @@ Use "next" clause to move to the next sequential key/value pair in the document,
 <br/>
 &lt;key&gt; in "key" clause is a normalized name of any given element in XML text. This means every non-leaf element is included, separated by a forward slash ("/"), and arguments end with "@". An example would be, if "onclick" is a element of "menuitem":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_741'>
- menu/popup/menuitem/onclick</pre>
-<span id=golf_copied_741 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_741' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_741, code_741, golf_copied_741)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-or if "onclick" is an attribute of "menuitem":<br/>
-<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_742'>
- menu/popup/menuitem/onclick/@</pre>
+ menu/popup/menuitem/onclick</pre>
 <span id=golf_copied_742 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_742' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_742, code_742, golf_copied_742)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+or if "onclick" is an attribute of "menuitem":<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_743'>
+ menu/popup/menuitem/onclick/@</pre>
+<span id=golf_copied_743 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_743' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_743, code_743, golf_copied_743)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 See <a href='https://golf-lang.com/xml-doc.html'>xml-doc</a>.<br/>

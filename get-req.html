@@ -227,7 +227,7 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Get req</div><hr/><span style="font-weight:bold;">Purpose</span>: Obtain data that describes the input request.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_517'>
+<pre id='code_518'>
 <span class="Statement"> get-req</span> \
         <span class="Identifier"> errno</span> |<span class="Identifier"> error</span> |<span class="Identifier"> cookie-count</span> |<span class="Identifier"> cookie</span> &lt;cookie index&gt; \
          |<span class="Identifier"> arg-count</span> |<span class="Identifier"> arg-value</span> &lt;arg index&gt; \
@@ -235,9 +235,9 @@ function gg_copy(gt, eid, gc) {
          |<span class="Identifier"> content-type</span> |<span class="Identifier"> trace-file</span> |<span class="Identifier"> process-id</span> |<span class="Identifier"> name</span> \
          |<span class="Identifier"> external-call</span> |<span class="Identifier"> directory</span>
      to &lt;variable&gt;</pre>
-<span id=golf_copied_517 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_517' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_517, code_517, golf_copied_517)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_518 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_518' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_518, code_518, golf_copied_518)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Information related to an input request can be obtained with get-req statement and the result stored into &lt;variable&gt; (in "to" clause). The following can be obtained (all are strings except where stated otherwise):<br/>
 <ul><li>"errno" obtains the integer value of operating system "errno" tied to a last Golf statement that can return a status code. The "errno" value is saved internally; and restored here. It means that if "errno" changed for whatever reason since such Golf statement (such as with <a href='https://golf-lang.com/call-extended.html'>call-extended</a>), you will still obtain the correct value. See <a href='https://golf-lang.com/error-code.html'>error-code</a> for an example. Note that errno value is undefined if there is no error, and can be 0 if the error is reported by Golf and not by operating system.<br/>
@@ -248,16 +248,16 @@ Information related to an input request can be obtained with get-req statement a
 <br/>
 </li><li>"cookie" returns the cookie value specified by &lt;cookie index&gt; (a sequential number starting with 1 up to the number of cookies), for instance:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_518'>
+<pre id='code_519'>
 <span class="Statement"> get-req</span><span class="Identifier"> cookie-count</span><span class="Type"> to</span> cookie_c
 <span class="Statement"> start-loop</span><span class="Identifier"> repeat</span> cookie_c<span class="Type"> use</span> i
 <span class="Statement">     get-req</span><span class="Identifier"> cookie</span> i<span class="Type"> to</span> cookie_val
 <span class="Statement">     pf-web</span> <span class="Constant">&quot;cookie </span><span class="Special">%s</span><span class="Special">\n</span><span class="Constant">&quot;</span>, cookie_val
 <span class="Statement">     @</span>&lt;br/&gt;
 <span class="Statement"> end-loop</span></pre>
-<span id=golf_copied_518 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_518' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_518, code_518, golf_copied_518)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_519 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_519' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_519, code_519, golf_copied_519)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In this example, we get the number of cookies, and then print out each cookie value.<br/>
 <br/>
@@ -265,26 +265,26 @@ In this example, we get the number of cookies, and then print out each cookie va
 <br/>
 </li><li>"arg-value" is the string value of a single element from the array of input arguments, specified by &lt;arg_index&gt;. This array is indexed from 1 to the value obtained by "arg-count". Here is an example of using arg-count and arg-value:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_519'>
+<pre id='code_520'>
 <span class="Statement"> get-req</span><span class="Identifier"> arg-count</span><span class="Type"> to</span> ac
 <span class="Statement"> pf-out</span> <span class="Constant">&quot;Total args [</span><span class="Special">%ld</span><span class="Constant">]&quot;</span>, ac
 <span class="Statement"> start-loop</span><span class="Identifier"> repeat</span> ac<span class="Type"> use</span> i
 <span class="Statement">     get-req</span><span class="Identifier"> arg-value</span> i<span class="Type"> to</span> av
 <span class="Statement">     pf-out</span> <span class="Constant">&quot;</span><span class="Special">%s</span><span class="Special">\n</span><span class="Constant">&quot;</span>, av
 <span class="Statement"> end-loop</span></pre>
-<span id=golf_copied_519 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_519' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_519, code_519, golf_copied_519)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_520 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_520' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_520, code_520, golf_copied_520)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 This code will display the number of input arguments (as passed to main() function of your program, excluding the first argument which is the name of the program), and then all the arguments. If there are no arguments, then variable 'ac' would be 0. <br/>
 <br/>
 </li><li>"header" is the value of HTTP request header &lt;header&gt; that is set by the client. For example, if the HTTP request contains header "My-Header:30", then hval would be "30":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_520'>
+<pre id='code_521'>
 <span class="Statement"> get-req</span><span class="Identifier"> header</span> <span class="Constant">&quot;My-Header&quot;</span><span class="Type"> to</span> hval</pre>
-<span id=golf_copied_520 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_520' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_520, code_520, golf_copied_520)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_521 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_521' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_521, code_521, golf_copied_521)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Note that not all HTTP request headers are set by the caller. For example, SERVER_NAME or QUERY_STRING are set by the web server, and to get such headers, use <a href='https://golf-lang.com/get-sys.html'>get-sys</a>.<br/>
 <br/>
@@ -306,11 +306,11 @@ Note that not all HTTP request headers are set by the caller. For example, SERVE
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Get the name of current trace file:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_521'>
+<pre id='code_522'>
 <span class="Statement"> get-req</span><span class="Identifier"> trace-file</span><span class="Type"> to</span> trace_file</pre>
-<span id=golf_copied_521 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_521' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_521, code_521, golf_copied_521)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_522 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_522' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_522, code_522, golf_copied_522)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Request information'></a><span style="font-weight:bold;">Request information</span><br/>
