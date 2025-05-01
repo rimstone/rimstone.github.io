@@ -1,0 +1,34 @@
+Format: 1.8
+Date: Fri, 31 Jan 2025 21:46:41 -0700
+Source: golf
+Binary: golf golf-dbgsym
+Architecture: source amd64
+Version: 335
+Distribution: stable
+Urgency: medium
+Maintainer: Gliim LLC <team@golf-lang.com>
+Changed-By: Gliim LLC <team@golf-lang.com>
+Description:
+ golf       - Programming language for web services
+Changes:
+ golf (335) stable; urgency=medium
+ .
+   * Initial release.
+Checksums-Sha1:
+ 7c0a5920e92229b890dcfc4353d1db17524aa206 754 golf_335.dsc
+ 92714f5dff0108e843b73e66a2db7e6f54f77d68 606320 golf_335.tar.xz
+ 30e4e653795500ebcdd5102344d00543b0c79b68 670040 golf-dbgsym_335_amd64.deb
+ f5a3225a289f664f6f49f9c68bb22ce422a4ac22 12257 golf_335_amd64.buildinfo
+ c40d2f2bca5ae846cff68f3d5db82f678813e4f2 461628 golf_335_amd64.deb
+Checksums-Sha256:
+ 18ae74c4485e283aca524e7ae49585dacacfe6760de1301193ac8be59af1ced0 754 golf_335.dsc
+ 4ea6c93ad4c8d0faca82be87fc5322109bbfd5acc13e0611ac50aacc6432a538 606320 golf_335.tar.xz
+ 237fc23b86f36c70c96ed3536d9ee404da11f3bd1de841933c1a4df020f16989 670040 golf-dbgsym_335_amd64.deb
+ ad90db05f7111b08b0ac63d2d65d704743b3d9db7eaf68a4a4c9caabaa7b5751 12257 golf_335_amd64.buildinfo
+ 08d28d2b426c2a1f6e4b7e25001d853bd19e0b00a6be69baaedb304a455d0f90 461628 golf_335_amd64.deb
+Files:
+ d286fa925ab75d84aade0b7ee2d3a229 754 devel optional golf_335.dsc
+ 1225295e9207a4c2916693087bdd9d0b 606320 devel optional golf_335.tar.xz
+ a27442a8ff43eabdb690b34043dff717 670040 debug optional golf-dbgsym_335_amd64.deb
+ a05018a4a882701fe5df9a4a68691bd3 12257 devel optional golf_335_amd64.buildinfo
+ f61e14d68ba98993e7536e5561ede70d 461628 devel optional golf_335_amd64.deb
