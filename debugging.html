@@ -264,7 +264,7 @@ If you are using a web server as a reverse proxy, check its error log, which wou
 </div><br/>
 (for example /var/log/apache2), but the location may vary - consult your web server's documentation.<br/>
 <div class="vsub"><a id="Using gdb debugger"></a>Using gdb debugger</div>
-In order to use gdb debugger, you must make your application with "--debug" flag (see <a href='https://golf-lang.com/gg.html'>gg</a>). Do not use "--debug" in any other case, because performance will be considerably affected.<br/>
+In order to use gdb debugger, you don't need to do anything special. Golf itself as well as applications created with Golf already come with debugging information.<br/>
 <br/>
 Ultimately, you can attach a debugger to a running Golf process. If your application name is "app_name", first find the PID (process ID) of its process(es):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
@@ -313,8 +313,6 @@ which would handle any request to your application.<br/>
 Note that by default, gdb will show Golf code and you can step through it as you've written it, which is easy to follow and understand. <br/>
 <br/>
 However, if you wish to step through the underlying C libraries, use "--c-lines" option in <a href='https://golf-lang.com/gg.html'>gg</a> when making your application. In addition, you can use "--plain-diag" option to see diagnostics for underlying C code alone. These options should be used only if you're trying to debug issues with Golf itself, or to find and report a bug in Golf.<br/>
-<br/>
-Debugging version of Golf, as well as using "--debug" option to compile, will considerably slow down run-time performance (in some tests about 50-55%); do not use Golf build with debugging symbols (see <a href='https://golf-lang.com/index.html'>how to install</a>) nor "--debug" (see <a href='https://golf-lang.com/gg.html'>gg</a>) in production.<br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Debugging'></a><span style="font-weight:bold;">Debugging</span><br/>
 <a href='https://golf-lang.com/debugging.html'>debugging</a> &nbsp;<br/>

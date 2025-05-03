@@ -239,7 +239,7 @@ trace-run can be used without any clauses, in which case a location (file name a
 <br/>
 If trace-run has any other clauses, then &lt;format&gt; string must be present and there must be at least one &lt;variable&gt; (it means if you want to trace a simple string literal you still have to use "%s" as format).<br/>
 <br/>
-For tracing to have effect, debugging and tracing must be enabled (see "--debug" and "--trace" options in <a href='https://golf-lang.com/gg.html'>gg</a>). For location of trace files, see <a href='https://golf-lang.com/directories.html'>directories</a>.<br/>
+For tracing to have effect, tracing must be enabled (see "--debug" and "--trace" options in <a href='https://golf-lang.com/gg.html'>gg</a>). For location of trace files, see <a href='https://golf-lang.com/directories.html'>directories</a>.<br/>
 <div class="vsub"><a id="Format"></a>Format</div>
 &lt;format&gt; string must be a literal. Variables must follow &lt;format&gt; separated by commas in the same order as placeholders. If you use any placeholders other than specified below, or the type of variables you use do not match the type of a corresponding placeholder in &lt;format&gt;, your program will <a href='https://golf-lang.com/error-handling.html'>error out</a>. You can use the following placeholders in &lt;format&gt; (see <a href='https://golf-lang.com/trace-run.html'>trace-run</a> for an example of usage):<br/>
 <ul><li>%s for a string<br/>

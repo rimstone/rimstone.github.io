@@ -969,19 +969,19 @@ http://127.0.0.1:90/yum/biscuit/action=query-cookie</pre>
 And you'll see:<br/>
 So now you've learned how to use cookies in Golf, and how to use HAProxy too. Of course, you could have used Apache, Nginx or some other web server as well.<br/>
 <a id='article-debug.html'></a>
-To include debugging information in your application executable (be it application server or a command-line), use "--debug" option, for instance when build the application:<br/>
+Starting with Golf 513, &nbsp;debugging information is always included, be it in debug packages, or when compiling from source. You can compile your Golf application normally:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_37'>
-gg <span class="Special">-q</span> <span class="Special">--debug</span></pre>
+gg <span class="Special">-q</span></pre>
 <span id=golf_copied_37 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_37' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_37, code_37, golf_copied_37)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-This will include debugging information in your application code, so it can be debugged with gdb. You can debug your Golf program with gdb just as if it were a plain C program, which technically it is. This makes it much easier to get to the bottom of any issue directly without having to deal with virtual machines, p-code translation, assembler etc.<br/>
+This will create an executable that can be debugged with gdb. You can debug your Golf program with gdb just as if it were a plain C program, which technically it is. This makes it much easier to get to the bottom of any issue directly without having to deal with virtual machines, p-code translation, assembler etc.<br/>
 <br/>
 For this reason, the debugging ecosystem for Golf programs is already fully developed. For instance you can use Valgrind or Google ASAN with Golf programs just as you'd with a C program.<br/>
 <br/>
-Note that in order to debug the Golf itself, it needs to have debug information, so either has to be compiled from source with debug information included, or you need to use the included debugging information (if installed from a package). This will be covered in another article here on Golf blog.<br/>
+Note that in order to debug the Golf itself, it's best to be compiled from source, or you need to use the included debugging information (meaning you need to install a debug package). This will be covered in another article here on Golf blog.<br/>
 <div class="vsub"><a id="Example"></a>Example</div>
 Here's an example of debugging using Golf. We'll create a little parsing application to illustrate.<br/>
 <br/>
@@ -1021,17 +1021,13 @@ This program will parse the string "a=1&amp;b=2&amp;c=3" to produce name/value p
 Compile and link this:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_41'>
-gg <span class="Special">-q</span> <span class="Special">--public</span> <span class="Special">--debug</span></pre>
+gg <span class="Special">-q</span> <span class="Special">--public</span></pre>
 <span id=golf_copied_41 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_41' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_41, code_41, golf_copied_41)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <br/>
-What's what here? First of all "-q" will make your project (meaning compile and link it, both command-line executable and application server).<br/>
-<br/>
-"--public" makes all handlers public, meaning they can be called directly from an outside caller.<br/>
-<br/>
-"--debug" will add debugging information, so we can use gdb to debug this program. This is crucial to use gdb for debugging.<br/>
+What's what here? First of all "-q" will make your project (meaning compile and link it, both command-line executable and application server), while "--public" makes all handlers public, meaning they can be called directly from an outside caller.<br/>
 <div class="vsub"><a id="Debugging"></a>Debugging</div>
 Okay so now to execute this with gdb, do this:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
@@ -1153,7 +1149,7 @@ gdb is too powerful to summarize here. There are many tutorials on the web. But 
 Finally, if you're so inclined, you can also step through generated C code and see exactly what makes your program tick. To do that, make your program with "--c-lines" flag, which lets you do that:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_46'>
-gg <span class="Special">-q</span> <span class="Special">--public</span> <span class="Special">--c-lines</span> <span class="Special">--debug</span></pre>
+gg <span class="Special">-q</span> <span class="Special">--public</span> <span class="Special">--c-lines</span></pre>
 <span id=golf_copied_46 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_46' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_46, code_46, golf_copied_46)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
@@ -6911,7 +6907,7 @@ If you are using a web server as a reverse proxy, check its error log, which wou
 </div><br/>
 (for example /var/log/apache2), but the location may vary - consult your web server's documentation.<br/>
 <div class="vsub"><a id="Using gdb debugger"></a>Using gdb debugger</div>
-In order to use gdb debugger, you must make your application with "--debug" flag (see <a href='/gg.html'>gg</a>). Do not use "--debug" in any other case, because performance will be considerably affected.<br/>
+In order to use gdb debugger, you don't need to do anything special. Golf itself as well as applications created with Golf already come with debugging information.<br/>
 <br/>
 Ultimately, you can attach a debugger to a running Golf process. If your application name is "app_name", first find the PID (process ID) of its process(es):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
@@ -6960,8 +6956,6 @@ which would handle any request to your application.<br/>
 Note that by default, gdb will show Golf code and you can step through it as you've written it, which is easy to follow and understand. <br/>
 <br/>
 However, if you wish to step through the underlying C libraries, use "--c-lines" option in <a href='/gg.html'>gg</a> when making your application. In addition, you can use "--plain-diag" option to see diagnostics for underlying C code alone. These options should be used only if you're trying to debug issues with Golf itself, or to find and report a bug in Golf.<br/>
-<br/>
-Debugging version of Golf, as well as using "--debug" option to compile, will considerably slow down run-time performance (in some tests about 50-55%); do not use Golf build with debugging symbols (see <a href='/index.html'>how to install</a>) nor "--debug" (see <a href='/gg.html'>gg</a>) in production.<br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Debugging'></a><span style="font-weight:bold;">Debugging</span><br/>
 <a href='/debugging.html'>debugging</a> &nbsp;<br/>
@@ -7534,7 +7528,7 @@ Application home directory. This is the current working directory when your appl
 This is <a href='/file-storage.html'>file-storage</a> used for uploads and new document creation. Do not write there directly; Golf does that for you, such as with <a href='/uniq-file.html'>uniq-file</a> for instance, or when uploading files.<br/>
 <br/>
 </li><li>/var/lib/gg/&lt;app name&gt;/app/trace<br/>
-Process tracing is written in per-process files if "--trace" option is used (see <a href='/gg.html'>gg</a>). Note that a special file "backtrace" is appended to when program crashes (or <a href='/report-error.html'>report-error</a> statement is used), and this file shows a full source backtrace, allowing for easier debugging. In order to see Golf source code lines, you must use "--debug" option, and to see a backtrace, Golf must be built with debugging information included. You can use "--c-lines" in order to show the source code lines of the generated C code, instead of Golf code.<br/>
+Process tracing is written in per-process files if "--trace" option is used (see <a href='/gg.html'>gg</a>). Note that a special file "backtrace" is appended to when program crashes (or <a href='/report-error.html'>report-error</a> statement is used), and this file shows a full source backtrace, allowing for easier debugging. You can use "--c-lines" in order to show the source code lines of the generated C code, instead of Golf code.<br/>
 <br/>
 </li><li>/var/lib/gg/&lt;app name&gt;/app/db<br/>
 Database configuration directory contains the <a href='/database-config-file.html'>database-config-file</a>s used by Golf to connect to databases; this directory is maintained by Golf and you should not use it.</li></ul>
@@ -8291,7 +8285,7 @@ Note that if your program is <a href='/command-line.html'>command-line</a>, it w
 <div class="vsub"><a id="When there is a problem in Golf"></a>When there is a problem in Golf</div>
 If there is a fatal internal error (i.e. error in Golf code itself that cannot be handled), it will be caught by Golf, and the process will end. If your process is started with <a href='/mgrg.html'>mgrg</a>, it may be automatically restarted.<br/>
 <div class="vsub"><a id="Logging the error"></a>Logging the error</div>
-Regardless of the type of error and regardless of whether the process exits or not, the error is logged and the program stack with full source code lines (see <a href='/gg.html'>gg</a> for including debug information) will be written to backtrace file (use -e option of <a href='/gg.html'>gg</a> to obtain its location). Note that the program stack is logged only if Golf is built in debugging mode (see "DI=1" option when building Golf); otherwise, production code may be slowed down by stack dumping.<br/>
+Regardless of the type of error and regardless of whether the process exits or not, the error is logged and the program stack with full source code lines (see <a href='/gg.html'>gg</a> for including debug information) will be written to backtrace file (use -e option of <a href='/gg.html'>gg</a> to obtain its location). Note that the program stack is logged only if debugging info is present (i.e. if installed from package you must install debugging package as well).<br/>
 <br/>
 You can see the list of last N errors (and the location of file containing backtrace for them) by using <a href='/gg.html'>gg</a>, for instance to see the last 3 errors:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
@@ -9313,7 +9307,7 @@ Specify maximum upload size for a file (in bytes). The default is approximately 
 During building of an application, emit a maximum of &lt;max errors&gt; diagnostic messages per .golf source file. The default is 5.<br/>
 <br/>
 </li><li>--debug<br/>
-Generate debugging information when compiling your application. Debugging information is required to produce a backtrace file with the stack that contains source code line numbers, in order to pinpoint the exact location where report-error statement was used, or where the application crashed. It is also needed to use gdb for debugging purposes. Note that stack information is produced only when Golf is built in debugging mode (see "DI=1" option when <a href='/index.html'>installing</a> Golf).<br/>
+Debugging information is always included in Golf executables, even if in separate .dbg (or .debug) files. "--debug" flag is only necessary if tracing is used (see <a href='/trace-run.html'>trace-run</a>), as well as to include additional run-time checks. Do not use "--debug" unless you are a Golf upstream developer or maintainer, because it may significantly lower the run-time performance.<br/>
 <br/>
 </li><li>--c-lines<br/>
 Skip generating line information when compiling .golf files. By default line information is included, which allows errors to be reported with line numbers in .golf files. If you want only generated C code line numbers to be used, use this option. This output will omit certain color-coded and other details that are normally present without this option.<br/>
@@ -9969,11 +9963,10 @@ yes|mk-build-deps <span class="Special">-i</span> <span class="Special">-s</span
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_584, code_584, golf_copied_584)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Build Golf"></a>Build Golf</div>
-Use DI=1 to build debug version, leave it as-is for production:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_585'>
 make clean
-make <span class="Identifier">DI</span>=<span class="Constant">0</span>
+make
 sudo make install</pre>
 <span id=golf_copied_585 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_585' style='position: absolute;left: -500%;'></textarea>
@@ -10012,11 +10005,10 @@ sudo dnf builddep <span class="Special">-y</span> golf.spec</pre>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_587, code_587, golf_copied_587)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Build Golf"></a>Build Golf</div>
-Use DI=1 to build debug version, leave it as-is for production:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_588'>
 make clean
-make <span class="Identifier">DI</span>=<span class="Constant">0</span>
+make
 sudo make install</pre>
 <span id=golf_copied_588 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_588' style='position: absolute;left: -500%;'></textarea>
@@ -10054,11 +10046,10 @@ makepkg <span class="Special">-s</span> <span class="Special">--noconfirm</span>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_590, code_590, golf_copied_590)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Build Golf"></a>Build Golf</div>
-Use DI=1 to build debug version, leave it as-is for production:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_591'>
 make clean
-make <span class="Identifier">DI</span>=<span class="Constant">0</span>
+make
 sudo make install</pre>
 <span id=golf_copied_591 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_591' style='position: absolute;left: -500%;'></textarea>
@@ -10096,11 +10087,10 @@ sudo zypper <span class="Special">-n</span> install <span class="PreProc">$(</sp
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_593, code_593, golf_copied_593)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Build Golf"></a>Build Golf</div>
-Use DI=1 to build debug version, leave it as-is for production:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_594'>
 make clean
-make <span class="Identifier">DI</span>=<span class="Constant">0</span>
+make
 sudo make install</pre>
 <span id=golf_copied_594 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_594' style='position: absolute;left: -500%;'></textarea>
@@ -15401,7 +15391,7 @@ trace-run can be used without any clauses, in which case a location (file name a
 <br/>
 If trace-run has any other clauses, then &lt;format&gt; string must be present and there must be at least one &lt;variable&gt; (it means if you want to trace a simple string literal you still have to use "%s" as format).<br/>
 <br/>
-For tracing to have effect, debugging and tracing must be enabled (see "--debug" and "--trace" options in <a href='/gg.html'>gg</a>). For location of trace files, see <a href='/directories.html'>directories</a>.<br/>
+For tracing to have effect, tracing must be enabled (see "--debug" and "--trace" options in <a href='/gg.html'>gg</a>). For location of trace files, see <a href='/directories.html'>directories</a>.<br/>
 <div class="vsub"><a id="Format"></a>Format</div>
 &lt;format&gt; string must be a literal. Variables must follow &lt;format&gt; separated by commas in the same order as placeholders. If you use any placeholders other than specified below, or the type of variables you use do not match the type of a corresponding placeholder in &lt;format&gt;, your program will <a href='/error-handling.html'>error out</a>. You can use the following placeholders in &lt;format&gt; (see <a href='/trace-run.html'>trace-run</a> for an example of usage):<br/>
 <ul><li>%s for a string<br/>
