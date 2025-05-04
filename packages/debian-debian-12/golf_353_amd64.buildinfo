@@ -2,22 +2,22 @@ Format: 1.0
 Source: golf
 Binary: golf golf-dbgsym
 Architecture: amd64 source
-Version: 335
+Version: 353
 Checksums-Md5:
- d286fa925ab75d84aade0b7ee2d3a229 754 golf_335.dsc
- a27442a8ff43eabdb690b34043dff717 670040 golf-dbgsym_335_amd64.deb
- f61e14d68ba98993e7536e5561ede70d 461628 golf_335_amd64.deb
+ 329fef68b9f2d50eb556aa6ec62a5cd4 754 golf_353.dsc
+ 5e87743fe41be3cb741f8270268c759f 669548 golf-dbgsym_353_amd64.deb
+ fe8f441b13adddf3ac82b91cbfe152cd 464756 golf_353_amd64.deb
 Checksums-Sha1:
- 7c0a5920e92229b890dcfc4353d1db17524aa206 754 golf_335.dsc
- 30e4e653795500ebcdd5102344d00543b0c79b68 670040 golf-dbgsym_335_amd64.deb
- c40d2f2bca5ae846cff68f3d5db82f678813e4f2 461628 golf_335_amd64.deb
+ fb801665909fde277a95ebedd26482e803d12581 754 golf_353.dsc
+ 05eb9d15fe77665ea55170b8bfb04b9bf66d3a5e 669548 golf-dbgsym_353_amd64.deb
+ 141fb65fcadbb77b965ff7ca29c5fa3602c9a789 464756 golf_353_amd64.deb
 Checksums-Sha256:
- 18ae74c4485e283aca524e7ae49585dacacfe6760de1301193ac8be59af1ced0 754 golf_335.dsc
- 237fc23b86f36c70c96ed3536d9ee404da11f3bd1de841933c1a4df020f16989 670040 golf-dbgsym_335_amd64.deb
- 08d28d2b426c2a1f6e4b7e25001d853bd19e0b00a6be69baaedb304a455d0f90 461628 golf_335_amd64.deb
+ d721ec87c82ef539b41af05f7b25ca06169d601a4b4b320db360c6581c7f1c59 754 golf_353.dsc
+ dca0d33b1788befc97c2b422e56ecf5c846f8668c9939a535da3fa6b5faee17f 669548 golf-dbgsym_353_amd64.deb
+ e1730ffd7174324b62f68cfcde5e971d0b34775ff63cf9f85ae2a94f671b9415 464756 golf_353_amd64.deb
 Build-Origin: Debian
 Build-Architecture: amd64
-Build-Date: Sat, 29 Mar 2025 14:18:19 -0700
+Build-Date: Tue, 01 Apr 2025 21:04:31 -0700
 Build-Tainted-By:
  merged-usr-via-aliased-dirs
 Installed-Build-Depends:
@@ -26,14 +26,14 @@ Installed-Build-Depends:
  automake (= 1:1.16.5-1.3),
  autopoint (= 0.21-12),
  autotools-dev (= 20220109.1),
- base-files (= 12.4+deb12u1),
+ base-files (= 12.4+deb12u7),
  base-passwd (= 3.6.1),
- bash (= 5.2.15-2+b2),
+ bash (= 5.2.15-2+b7),
  binutils (= 2.40-2),
  binutils-common (= 2.40-2),
  binutils-x86-64-linux-gnu (= 2.40-2),
- bsdextrautils (= 2.38.1-5+b1),
- bsdutils (= 1:2.38.1-5+b1),
+ bsdextrautils (= 2.38.1-5+deb12u1),
+ bsdutils (= 1:2.38.1-5+deb12u1),
  build-essential (= 12.9),
  bzip2 (= 1.0.8-5+b1),
  ca-certificates (= 20230311),
@@ -44,7 +44,7 @@ Installed-Build-Depends:
  dash (= 0.5.12-2),
  debconf (= 1.5.82),
  debhelper (= 13.11.4),
- debianutils (= 5.7-0.4),
+ debianutils (= 5.7-0.5~deb12u1),
  devscripts (= 2.23.4+deb12u2),
  dh-autoreconf (= 20),
  dh-strip-nondeterminism (= 1.13.1-1),
@@ -60,7 +60,6 @@ Installed-Build-Depends:
  findutils (= 4.9.0-4),
  g++ (= 4:12.2.0-3),
  g++-12 (= 12.2.0-14),
- gawk (= 1:5.2.1-2),
  gcc (= 4:12.2.0-3),
  gcc-12 (= 12.2.0-14),
  gcc-12-base (= 12.2.0-14),
@@ -99,7 +98,7 @@ Installed-Build-Depends:
  libb-hooks-op-check-perl (= 0.22-2+b1),
  libberkeleydb-perl (= 0.64-2+b1),
  libbinutils (= 2.40-2),
- libblkid1 (= 2.38.1-5+b1),
+ libblkid1 (= 2.38.1-5+deb12u1),
  libbrotli1 (= 1.0.9-2+b6),
  libbz2-1.0 (= 1.0.8-5+b1),
  libc-bin (= 2.36-9+deb12u10),
@@ -165,11 +164,11 @@ Installed-Build-Depends:
  libgdbm-compat4 (= 1.23-3),
  libgdbm6 (= 1.23-3),
  libgmp10 (= 2:6.2.1+dfsg1-1.1),
- libgnutls30 (= 3.7.9-2),
+ libgnutls30 (= 3.7.9-2+deb12u3),
  libgomp1 (= 12.2.0-14),
  libgpg-error0 (= 1.46-1),
  libgprofng0 (= 2.40-2),
- libgssapi-krb5-2 (= 1.20.1-2),
+ libgssapi-krb5-2 (= 1.20.1-2+deb12u2),
  libhogweed6 (= 3.8.1-2),
  libhtml-form-perl (= 6.11-1),
  libhtml-html5-entities-perl (= 0.004-3),
@@ -200,10 +199,10 @@ Installed-Build-Depends:
  libjansson4 (= 2.14-2),
  libjson-maybexs-perl (= 1.004004-1),
  libjson-xs-perl (= 4.030-2+b1),
- libk5crypto3 (= 1.20.1-2),
+ libk5crypto3 (= 1.20.1-2+deb12u2),
  libkeyutils1 (= 1.6.3-2),
- libkrb5-3 (= 1.20.1-2),
- libkrb5support0 (= 1.20.1-2),
+ libkrb5-3 (= 1.20.1-2+deb12u2),
+ libkrb5support0 (= 1.20.1-2+deb12u2),
  libksba8 (= 1.6.3-2),
  libldap-2.5-0 (= 2.5.13+dfsg-5),
  liblist-compare-perl (= 0.55-2),
@@ -227,7 +226,7 @@ Installed-Build-Depends:
  libmodule-runtime-perl (= 0.016-2),
  libmoo-perl (= 2.005005-1),
  libmoox-aliases-perl (= 0.001006-2),
- libmount1 (= 2.38.1-5+b1),
+ libmount1 (= 2.38.1-5+deb12u1),
  libmouse-perl (= 2.5.10-1+b3),
  libmpc3 (= 1.3.1-1),
  libmpfr6 (= 4.2.0-1),
@@ -240,17 +239,17 @@ Installed-Build-Depends:
  libnet-ssleay-perl (= 1.92-2+b1),
  libnetaddr-ip-perl (= 4.079+dfsg-2+b1),
  libnettle8 (= 3.8.1-2),
- libnghttp2-14 (= 1.52.0-1),
+ libnghttp2-14 (= 1.52.0-1+deb12u1),
  libnpth0 (= 1.6-3),
  libnsl-dev (= 1.3.0-2),
  libnsl2 (= 1.3.0-2),
  libnumber-compare-perl (= 0.03-3),
  libp11-kit0 (= 0.24.1-2),
  libpackage-stash-perl (= 0.40-1),
- libpam-modules (= 1.5.2-6),
- libpam-modules-bin (= 1.5.2-6),
- libpam-runtime (= 1.5.2-6),
- libpam0g (= 1.5.2-6),
+ libpam-modules (= 1.5.2-6+deb12u1),
+ libpam-modules-bin (= 1.5.2-6+deb12u1),
+ libpam-runtime (= 1.5.2-6+deb12u1),
+ libpam0g (= 1.5.2-6+deb12u1),
  libparams-classify-perl (= 0.015-2+b1),
  libparams-util-perl (= 1.102-2+b1),
  libpath-tiny-perl (= 0.144-1),
@@ -259,7 +258,7 @@ Installed-Build-Depends:
  libpcre2-8-0 (= 10.42-1),
  libpcre2-dev (= 10.42-1),
  libpcre2-posix3 (= 10.42-1),
- libperl5.36 (= 5.36.0-7),
+ libperl5.36 (= 5.36.0-7+deb12u1),
  libperlio-gzip-perl (= 0.20-1+b1),
  libperlio-utf8-strict-perl (= 0.010-1),
  libpipeline1 (= 1.5.7-1),
@@ -269,8 +268,8 @@ Installed-Build-Depends:
  libproc-processtable-perl (= 0.634-1+b2),
  libpsl5 (= 0.21.2-1),
  libpython3-stdlib (= 3.11.2-1+b1),
- libpython3.11-minimal (= 3.11.2-6),
- libpython3.11-stdlib (= 3.11.2-6),
+ libpython3.11-minimal (= 3.11.2-6+deb12u3),
+ libpython3.11-stdlib (= 3.11.2-6+deb12u3),
  libquadmath0 (= 12.2.0-14),
  libreadline8 (= 8.2-1.3),
  libregexp-ipv6-perl (= 0.03-3),
@@ -279,15 +278,14 @@ Installed-Build-Depends:
  librtmp1 (= 2.4+20151223.gitfa8646d.1-2+b2),
  libsasl2-2 (= 2.1.28+dfsg-10),
  libsasl2-modules-db (= 2.1.28+dfsg-10),
- libseccomp2 (= 2.5.4-1+b3),
+ libseccomp2 (= 2.5.4-1+deb12u1),
  libselinux1 (= 3.4-1+b6),
  libsemanage-common (= 3.4-1),
  libsemanage2 (= 3.4-1+b5),
  libsepol2 (= 3.4-2.1),
  libsereal-decoder-perl (= 5.003+ds-1),
  libsereal-encoder-perl (= 5.003+ds-1),
- libsigsegv2 (= 2.14-1),
- libsmartcols1 (= 2.38.1-5+b1),
+ libsmartcols1 (= 2.38.1-5+deb12u1),
  libsort-versions-perl (= 1.62-3),
  libsqlite3-0 (= 3.40.1-2+deb12u1),
  libsqlite3-dev (= 3.40.1-2+deb12u1),
@@ -305,7 +303,7 @@ Installed-Build-Depends:
  libsub-override-perl (= 0.09-4),
  libsub-quote-perl (= 2.006008-1),
  libsyntax-keyword-try-perl (= 0.28-1),
- libsystemd0 (= 252.12-1~deb12u1),
+ libsystemd0 (= 252.30-1~deb12u2),
  libtasn1-6 (= 4.19.0-2),
  libterm-readkey-perl (= 2.38-2+b1),
  libtext-glob-perl (= 0.11-3),
@@ -325,11 +323,11 @@ Installed-Build-Depends:
  libtypes-serialiser-perl (= 1.01-1),
  libubsan1 (= 12.2.0-14),
  libuchardet0 (= 0.0.7-1),
- libudev1 (= 252.12-1~deb12u1),
+ libudev1 (= 252.30-1~deb12u2),
  libunicode-utf8-perl (= 0.62-2),
  libunistring2 (= 1.0-2),
  liburi-perl (= 5.17-1),
- libuuid1 (= 2.38.1-5+b1),
+ libuuid1 (= 2.38.1-5+deb12u1),
  libvariable-magic-perl (= 0.63-1+b1),
  libwww-mechanize-perl (= 2.16-1),
  libwww-perl (= 6.68-1),
@@ -361,13 +359,13 @@ Installed-Build-Depends:
  ncurses-base (= 6.4-4),
  ncurses-bin (= 6.4-4),
  netbase (= 6.4),
- openssl (= 3.0.15-1~deb12u1),
+ openssl (= 3.0.14-1~deb12u1),
  passwd (= 1:4.13+dfsg1-1+b1),
  patch (= 2.7.6-7),
  patchutils (= 0.4.2-1),
- perl (= 5.36.0-7),
- perl-base (= 5.36.0-7),
- perl-modules-5.36 (= 5.36.0-7),
+ perl (= 5.36.0-7+deb12u1),
+ perl-base (= 5.36.0-7+deb12u1),
+ perl-modules-5.36 (= 5.36.0-7+deb12u1),
  perl-openssl-defaults (= 7+b1),
  pinentry-curses (= 1.2.1-1),
  pkgconf (= 1.8.1-1),
@@ -376,8 +374,8 @@ Installed-Build-Depends:
  po-debconf (= 1.0.21+nmu1),
  python3 (= 3.11.2-1+b1),
  python3-minimal (= 3.11.2-1+b1),
- python3.11 (= 3.11.2-6),
- python3.11-minimal (= 3.11.2-6),
+ python3.11 (= 3.11.2-6+deb12u3),
+ python3.11-minimal (= 3.11.2-6+deb12u3),
  readline-common (= 8.2-1.3),
  rpcsvc-proto (= 1.4.3-1),
  sed (= 4.9-1),
@@ -387,9 +385,9 @@ Installed-Build-Depends:
  tar (= 1.34+dfsg-1.2+deb12u1),
  ucf (= 3.0043+nmu1),
  unzip (= 6.0-28),
- usr-is-merged (= 35),
- util-linux (= 2.38.1-5+b1),
- util-linux-extra (= 2.38.1-5+b1),
+ usr-is-merged (= 37~deb12u1),
+ util-linux (= 2.38.1-5+deb12u1),
+ util-linux-extra (= 2.38.1-5+deb12u1),
  wdiff (= 1.2.2-5),
  xz-utils (= 5.4.1-0.2),
  zlib1g (= 1:1.2.13.dfsg-1),
