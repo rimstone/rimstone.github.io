@@ -228,11 +228,11 @@ function gg_copy(gt, eid, gc) {
 <br/>
 The name of the command-line executable is the same as the application name, and its path is (assuming &lt;app name&gt; is the application name):<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_347'>
+<pre id='code_351'>
 /var/lib/gg/bld/&lt;app name&gt;/&lt;app name&gt;</pre>
-<span id=golf_copied_347 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_347' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_347, code_347, golf_copied_347)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_351 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_351' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_351, code_351, golf_copied_351)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Output"></a>Output</div>
 A command-line program works the same way as a service executable, and the output is the same, except that it is directed to stdout (standard output) and stderr (standard error). <br/>
@@ -241,27 +241,27 @@ To specify the exit code of a command-line program, use <a href='https://golf-la
 <div class="vsub"><a id="Executing a request"></a>Executing a request</div>
 Here is how to execute a request "add-stock" in application "stock" with parameters "name" having a value of "ABC" and "price" a value of "300":<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_348'>
+<pre id='code_352'>
 gg <span class="Special">-r</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/stock</span><span class="Statement">&quot;</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/add-stock?name=ABC&amp;price=300</span><span class="Statement">&quot;</span> <span class="Special">--exec</span></pre>
-<span id=golf_copied_348 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_348' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_348, code_348, golf_copied_348)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_352 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_352' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_352, code_352, golf_copied_352)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Note that you if specify parameters as part of the path, you could write the above the same way as in a URL:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_349'>
+<pre id='code_353'>
 gg <span class="Special">-r</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/stock</span><span class="Statement">&quot;</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/add-stock/name=ABC/price=300</span><span class="Statement">&quot;</span> <span class="Special">--exec</span></pre>
-<span id=golf_copied_349 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_349' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_349, code_349, golf_copied_349)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_353 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_353' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_353, code_353, golf_copied_353)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 You can generate the shell code to execute the above without using <a href='https://golf-lang.com/gg.html'>gg</a> by omitting "--exec" option, for instance:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_350'>
+<pre id='code_354'>
 gg <span class="Special">-r</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/stock</span><span class="Statement">&quot;</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/add-stock/name=ABC/price=300</span><span class="Statement">&quot;</span></pre>
-<span id=golf_copied_350 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_350' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_350, code_350, golf_copied_350)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_354 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_354' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_354, code_354, golf_copied_354)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Including a request body"></a>Including a request body</div>
 You can include a request body when executing a singe-run program. It is always included as the standard input (stdin) to the program. <br/>
@@ -270,59 +270,59 @@ You must provide the length of this input and the type of input, as well as a re
 <br/>
 Here is an example of using a request body to make a POST request on the command line - the application name is "json" and request name is "process". File "prices.json" is sent as request body:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_351'>
+<pre id='code_355'>
 gg <span class="Special">-r</span> <span class="Special">--app</span><span class="Statement">=</span>/json <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">'</span><span class="Constant">/process?act=get_total&amp;period=YTD</span><span class="Statement">'</span> <span class="Special">--method</span><span class="Statement">=</span>POST <span class="Special">--content</span><span class="Statement">=</span>prices.json <span class="Special">--content-type</span><span class="Statement">=</span>application/json <span class="Special">--exec</span></pre>
-<span id=golf_copied_351 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_351' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_351, code_351, golf_copied_351)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_355 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_355' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_355, code_355, golf_copied_355)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 You can generate the shell code for the above by omitting "--exec" option of <a href='https://golf-lang.com/gg.html'>gg</a> utility.<br/>
 <br/>
 Note that you can also include any other headers as environment variables by using the "HTTP_" convention, where custom headers are capitalized with use of underscore for dashes and prefixed with "HTTP_", for example header "Golf-Header" would be set as:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_352'>
+<pre id='code_356'>
 <span class="Statement">export</span> <span class="Identifier">HTTP_GOLF_HEADER</span>=<span class="Statement">&quot;</span><span class="Constant">some value</span><span class="Statement">&quot;</span></pre>
-<span id=golf_copied_352 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_352' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_352, code_352, golf_copied_352)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_356 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_356' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_356, code_356, golf_copied_356)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 You would set the "HTTP_" variable(s) prior to executing the program.<br/>
 <div class="vsub"><a id="Suppressing HTTP header output for the entire application"></a>Suppressing HTTP header output for the entire application</div>
 If you wish to suppress the output of HTTP headers for all requests, use "--silent-header" option in "gg -r":<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_353'>
+<pre id='code_357'>
 gg <span class="Special">-r</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/stock</span><span class="Statement">&quot;</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/add-stock/name=ABC/price=300</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--silent-header</span></pre>
-<span id=golf_copied_353 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_353' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_353, code_353, golf_copied_353)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_357 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_357' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_357, code_357, golf_copied_357)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 This will suppress the output of HTTP headers (either the default or with <a href='https://golf-lang.com/out-header.html'>out-header</a>), or for any other case where headers are output. This has the same effect as <a href='https://golf-lang.com/silent-header.html'>silent-header</a>, the only difference is that the environment variable applies to the entire application.<br/>
 <div class="vsub"><a id="URL-encoding the input"></a>URL-encoding the input</div>
 Any data in "--req" option (and consequently in PATH_INFO or QUERY_STRING environment vairables if calling directly from shell) must be formatted to be a valid URL; for example, data that contains special characters (like "&amp;" or "?") must be URL-encoded, for instance:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_354'>
+<pre id='code_358'>
 gg <span class="Special">-r</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/stock</span><span class="Statement">&quot;</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/add-stock/name=ABC%3F/price=300</span><span class="Statement">&quot;</span></pre>
-<span id=golf_copied_354 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_354' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_354, code_354, golf_copied_354)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_358 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_358' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_358, code_358, golf_copied_358)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In this case, parameter "name" has value of "ABC?", where special character "?" is encoded as "%3F". <br/>
 <br/>
 To make sure all your input parameters are properly URL-encoded, you can use Golf's v1 code processor:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_355'>
+<pre id='code_359'>
 <span class="PreProc">$($(</span><span class="Special">gg </span><span class="Special">-l</span><span class="PreProc">)</span><span class="Special">/v1 </span><span class="Special">-urlencode</span><span class="Special"> </span><span class="Statement">'</span><span class="Constant">&lt;your data&gt;</span><span class="Statement">'</span><span class="PreProc">)</span></pre>
-<span id=golf_copied_355 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_355' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_355, code_355, golf_copied_355)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_359 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_359' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_359, code_359, golf_copied_359)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 For instance, to encode "a?=b" as a parameter:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_356'>
+<pre id='code_360'>
 gg <span class="Special">-r</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/stock</span><span class="Statement">&quot;</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/add-stock/name=</span><span class="PreProc">$($(</span><span class="Special">gg </span><span class="Special">-l</span><span class="PreProc">)</span><span class="Special">/v1 </span><span class="Special">-urlencode</span><span class="Special"> </span><span class="Statement">'</span><span class="Constant">AB?</span><span class="Statement">'</span><span class="PreProc">)</span><span class="Constant">/price=300</span><span class="Statement">&quot;</span></pre>
-<span id=golf_copied_356 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_356' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_356, code_356, golf_copied_356)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_360 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_360' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_360, code_360, golf_copied_360)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 If your parameters do not contain characters that need URL encoding, then you can skip this.<br/>
 <div class="vsub"><a id="CGI"></a>CGI</div>

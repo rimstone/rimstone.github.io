@@ -227,7 +227,7 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Encrypt data</div><hr/><span style="font-weight:bold;">Purpose</span>: Encrypt data.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_468'>
+<pre id='code_472'>
 <span class="Statement"> encrypt-data</span> &lt;data&gt;<span class="Type"> to</span> &lt;result&gt; \
      [<span class="Identifier"> input-length</span> &lt;input length&gt; ] \
      [<span class="Identifier"> binary</span> [ &lt;binary&gt; ] ] \
@@ -239,23 +239,23 @@ function gg_copy(gt, eid, gc) {
          [<span class="Identifier"> cache</span> ]
          [<span class="Identifier"> clear-cache</span> &lt;clear cache&gt; <span class="Error">)</span> \
      [<span class="Identifier"> init-vector</span> &lt;init vector&gt; ]</pre>
-<span id=golf_copied_468 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_468' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_468, code_468, golf_copied_468)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_472 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_472' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_472, code_472, golf_copied_472)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 encrypt-data encrypts &lt;data&gt; and stores the ciphertext to &lt;result&gt; specified by "to" clause.<br/>
 <div class="vsub"><a id="Cipher and digest"></a>Cipher and digest</div>
 By default, AES-256-CBC encryption and SHA256 hashing is used. You can however specify different cipher and digest algorithms with &lt;cipher algorithm&gt; (in "cipher" clause) and &lt;digest algorithm&gt; (in "digest" clause) as long as <a href='https://www.openssl.org/'>OpenSSL</a> supports them, or you have added them to OpenSSL. You can see the available ones by using:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_469'>
+<pre id='code_473'>
 <span class="Comment">#get list of cipher providers</span>
 openssl list <span class="Special">-cipher-algorithms</span>
 
 <span class="Comment">#get list of digest providers</span>
 openssl list <span class="Special">-digest-algorithms</span></pre>
-<span id=golf_copied_469 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_469' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_469, code_469, golf_copied_469)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_473 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_473' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_473, code_473, golf_copied_473)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Note that the default algorithms will typically suffice. If you use different algorithms, you should have a specific reason. If you use a specific cipher and digest for encoding, you must use the same for decoding. The key derivation method is PBKDF2.<br/>
 <div class="vsub"><a id="Data to be encrypted"></a>Data to be encrypted</div>
@@ -273,14 +273,14 @@ The encrypted data is stored in &lt;result&gt; (in "to" clause). The encrypted d
 <div class="vsub"><a id="Caching key"></a>Caching key</div>
 A key used to actually encrypt/decrypt data is produced by using password, salt, cipher, digest and the number of iterations. Depending on these parameters (especially the number of iterations), computing the key can be a resource intensive and lengthy operation. You can cache the key value and compute it only once (or once in a while) by using "cache" clause. If you need to recompute the key once in a while, use "clear-cache" clause. &lt;clear cache&gt; is a "bool" variable; the key cache is cleared if it is true, and stays if it is false. For example with encrypt-data (the same applies to decrypt-data):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_470'>
+<pre id='code_474'>
 <span class="Statement"> set-bool</span> clear = <span class="Constant">true</span> if-<span class="Constant">true</span> q equal <span class="Constant">0</span>
 <span class="Statement"> encrypt-data</span> dt<span class="Identifier"> init-vector</span> non<span class="Identifier"> password</span> pwd \
     <span class="Identifier"> salt</span> rs<span class="Identifier"> salt-length</span> <span class="Constant">10</span><span class="Identifier"> iterations</span> iter<span class="Type"> to</span> \
      dt_enc<span class="Identifier"> cache clear-cache</span> clear</pre>
-<span id=golf_copied_470 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_470' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_470, code_470, golf_copied_470)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_474 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_474' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_474, code_474, golf_copied_474)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In this case, when "q" is 0, cache will be cleared, with values of password, salt and iterations presumably changed, and the new key is computed and then cached. In all other cases, the last computed key stays the same. Normally, with IV usage (in "init-vector" clause), there is no need to change the key often, or at all.<br/>
 <br/>
@@ -294,7 +294,7 @@ Each cipher/digest combination carries separate recommendations about the usage 
 <div class="vsub"><a id="Examples"></a>Examples</div>
 In the following example, the data is encrypted, and then decrypted, producing the very same data:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_471'>
+<pre id='code_475'>
  <span class="Comment">// Original string to encrypt</span>
 <span class="Statement"> set-string</span> orig_data=<span class="Constant">&quot;something to encrypt!&quot;</span>
 
@@ -310,13 +310,13 @@ In the following example, the data is encrypted, and then decrypted, producing t
 <span class="Statement"> }</span> else {
 <span class="Statement">     @</span>Failure!
 <span class="Statement"> }</span></pre>
-<span id=golf_copied_471 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_471' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_471, code_471, golf_copied_471)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_475 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_475' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_475, code_475, golf_copied_475)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 A more involved example below encrypts specific number of bytes (6 in this case). <a href='https://golf-lang.com/random-string.html'>random-string</a> is used to produce salt. The length of data to encrypt is given with "input-length" clause. The encrypted data is specified to be "binary" (meaning not as a human-readable string), so the "output-length" of such binary output is specified. The decryption thus uses "input-length" clause to specify the length of data to decrypt, and also "output-length" to get the length of decrypted data. Finally, the original data is compared with the decrypted data, and the length of such data must be the same as the original (meaning 6):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_472'>
+<pre id='code_476'>
  <span class="Comment">// Original data (only the first </span><span class="Constant">6</span><span class="Comment"> bytes are encrypted)</span>
 <span class="Statement"> set-string</span> orig_data=<span class="Constant">&quot;something to encrypt!&quot;</span>
 
@@ -337,18 +337,18 @@ A more involved example below encrypts specific number of bytes (6 in this case)
 <span class="Statement"> }</span> else {
 <span class="Statement">     @</span>Failure!
 <span class="Statement"> }</span></pre>
-<span id=golf_copied_472 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_472' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_472, code_472, golf_copied_472)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_476 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_476' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_476, code_476, golf_copied_476)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 An example of using different algorithms:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_473'>
+<pre id='code_477'>
 <span class="Statement"> encrypt-data</span> <span class="Constant">&quot;some data!&quot;</span><span class="Identifier"> password</span> <span class="Constant">&quot;mypwd&quot;</span><span class="Identifier"> salt</span> rs1<span class="Type"> to</span> encd1<span class="Identifier"> cipher</span> <span class="Constant">&quot;camellia-256-cfb1&quot;</span><span class="Identifier"> digest</span> <span class="Constant">&quot;sha3-256&quot;</span>
 <span class="Statement"> decrypt-data</span> encd1<span class="Identifier"> password</span> <span class="Constant">&quot;mypwd&quot;</span><span class="Identifier"> salt</span> rs1<span class="Type"> to</span> decd1<span class="Identifier"> cipher</span> <span class="Constant">&quot;camellia-256-cfb1&quot;</span><span class="Identifier"> digest</span> <span class="Constant">&quot;sha3-256&quot;</span></pre>
-<span id=golf_copied_473 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_473' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_473, code_473, golf_copied_473)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_477 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_477' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_477, code_477, golf_copied_477)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Encryption'></a><span style="font-weight:bold;">Encryption</span><br/>
