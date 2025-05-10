@@ -1,0 +1,11 @@
+Origin: https://golf-lang.com/
+Label: golf
+Suite: devel
+Codename: bookworm
+Architectures: source amd64
+Components: main
+Description: Apt repository for project golf on bookworm
+Contents:
+SignWith: "Golf Team"
+
+

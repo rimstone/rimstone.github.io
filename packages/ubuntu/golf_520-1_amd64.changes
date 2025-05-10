@@ -1,0 +1,50 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Sun, 20 Apr 2025 11:07:21 -0700
+Source: golf
+Binary: golf
+Built-For-Profiles: noudeb
+Architecture: source amd64
+Version: 520-1
+Distribution: noble
+Urgency: medium
+Maintainer: Golf Team <team@golf-lang.com>
+Changed-By: Golf Team <team@golf-lang.com>
+Description:
+ golf       - Programming language for web services
+Closes: 1102267
+Changes:
+ golf (520-1) noble; urgency=medium
+ .
+   * Initial release.(Closes:1102267)
+Checksums-Sha1:
+ f6db5a63fb98ca58ae2416e93f02582aaeff49d4 1305 golf_520-1.dsc
+ f99d00ed19d1d02c2bc549582af72082afecdae0 490869 golf_520.orig.tar.gz
+ a00daf647746dcb9c79d1727c53839e8ae50e3ac 2888 golf_520-1.debian.tar.xz
+ 1bca9c5138714bb62f9f0cee15ee4a26ba2f0931 1456766 golf-dbgsym_520-1_amd64.ddeb
+ dd8ce7cc8803c082eae9a6d1b082e787e8a3cbbb 8351 golf_520-1_amd64.buildinfo
+ 55d30e81ab63e20e78d048043411ab038661c623 1178424 golf_520-1_amd64.deb
+Checksums-Sha256:
+ 6376cb0126f3604a7aa452d7eb6ea2b24ffddbc0eb3b17366902f1b1ff53a2ca 1305 golf_520-1.dsc
+ 411f78038c17c220c0e80df2fe208ffebd9afef53507e7657f477095463d3737 490869 golf_520.orig.tar.gz
+ feced9e2c6f155270fac752ea3fc96b7ad1c84677da96766f18f2f336271753f 2888 golf_520-1.debian.tar.xz
+ 69d1a8e9ae5b0fe91b4c120bea903aa4d81b892531de0765c3870c488f7af2a9 1456766 golf-dbgsym_520-1_amd64.ddeb
+ db4e7bde59c382a9d0a2cccf09d71db0fd669e3d7d928f49a2f0d7301c8d856a 8351 golf_520-1_amd64.buildinfo
+ a49dd52c8d4721ea6ed29791692360a31dbc4420e35f95f7152b954463d9200f 1178424 golf_520-1_amd64.deb
+Files:
+ ba0e6fd904a9a7fde11473036536e8fd 1305 devel optional golf_520-1.dsc
+ 6d0dd337d050297c5189c754e84f66c0 490869 devel optional golf_520.orig.tar.gz
+ bf660039c3ba2662543894c9fc931efb 2888 devel optional golf_520-1.debian.tar.xz
+ bde12c0af38b8850b10bcd6370084726 1456766 debug optional golf-dbgsym_520-1_amd64.ddeb
+ 722fd9ce057075ad94142ac9a1427d7b 8351 devel optional golf_520-1_amd64.buildinfo
+ 831f179babf6ce1054fad7339a0f9fe4 1178424 devel optional golf_520-1_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iIkEARYKADEWIQSJKyclXxQ5UN3BJRxpJhvyCfne1wUCaB6/TBMcdGVhbUBnb2xm
+LWxhbmcuY29tAAoJEGkmG/IJ+d7XjhcBAOoYNh79kQhIB1kQSut0eOyGTq5UBUjh
+Oq9tLT59+M5pAP4sqKcgf6yVlEHCwcGbvohi0KAVagfcEXWlCanj3FW/Cg==
+=F1FW
+-----END PGP SIGNATURE-----
