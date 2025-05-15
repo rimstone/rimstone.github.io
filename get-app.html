@@ -227,20 +227,21 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Get app</div><hr/><span style="font-weight:bold;">Purpose</span>: Obtain data that describes the application.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_502'>
+<pre id='code_541'>
 <span class="Statement"> get-app</span> \
-    <span class="Identifier"> name</span> |<span class="Identifier"> directory</span> |<span class="Identifier"> trace-directory</span> |<span class="Identifier"> file-directory</span> \
+    <span class="Identifier"> name</span> |<span class="Identifier"> directory</span> |<span class="Identifier"> trace-directory</span> |<span class="Identifier"> file-directory</span> | root-directory \
          |<span class="Identifier"> db-vendor</span> &lt;database configuration&gt; |<span class="Identifier"> upload-size</span> \
          |<span class="Identifier"> path</span> |<span class="Identifier"> is-service</span> \
     <span class="Type"> to</span> &lt;variable&gt;</pre>
-<span id=golf_copied_502 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_502' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_502, code_502, golf_copied_502)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_541 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_541' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_541, code_541, golf_copied_541)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Application-related variables can be obtained with get-app statement. The following application variables can be obtained (they are all strings unless indicated otherwise):<br/>
 <ul><li>"name" returns the name of your application, as specified when created (see <a href='https://golf-lang.com/mgrg.html'>mgrg</a>). <br/>
 </li><li>"directory" is the directory where your application resides, i.e. the application home directory (see <a href='https://golf-lang.com/directories.html'>directories</a>).<br/>
 </li><li>"trace-directory" is the directory where your application trace files are written, if enabled (see <a href='https://golf-lang.com/directories.html'>directories</a>).<br/>
+</li><li>"root-directory" is the Golf's root directory (i.e. where Golf is installed, see <a href='https://golf-lang.com/directories.html'>directories</a>).<br/>
 </li><li>"is-service" is a boolean variable that is true if your code is running as a <a href='https://golf-lang.com/service.html'>service</a>, or false if it is running as a <a href='https://golf-lang.com/command-line.html'>command-line</a> program.<br/>
 </li><li>"file-directory" is the directory where Golf file storage system is, i.e. <a href='https://golf-lang.com/file-storage.html'>file-storage</a>.<br/>
 </li><li>"db-vendor" is the database vendor name of database given by &lt;database configuration&gt; (as used for example in <a href='https://golf-lang.com/run-query.html'>run-query</a>). You can use it to create database specific conditions. The database vendor name can be compared against predefined string constants GG_MARIADB (for MariaDB database), GG_POSTGRES (for Postgres database) and GG_SQLITE (for SQLite database).<br/>
@@ -249,22 +250,22 @@ Application-related variables can be obtained with get-app statement. The follow
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Get the name of Golf application:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_503'>
+<pre id='code_542'>
 <span class="Statement"> get-app</span><span class="Identifier"> name</span><span class="Type"> to</span> appname</pre>
-<span id=golf_copied_503 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_503' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_503, code_503, golf_copied_503)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_542 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_542' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_542, code_542, golf_copied_542)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Get the vendor of database db:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_504'>
+<pre id='code_543'>
 <span class="Statement"> get-app</span><span class="Identifier"> db-vendor</span> db<span class="Type"> to</span> dbv
 <span class="Statement"> if-true</span> dbv<span class="Identifier"> equal</span> GG_POSTGRES
      <span class="Comment">// do something Postgres specific</span>
 <span class="Statement"> end-if</span></pre>
-<span id=golf_copied_504 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_504' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_504, code_504, golf_copied_504)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_543 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_543' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_543, code_543, golf_copied_543)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Application information'></a><span style="font-weight:bold;">Application information</span><br/>

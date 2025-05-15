@@ -227,27 +227,27 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Derive key</div><hr/><span style="font-weight:bold;">Purpose</span>: Derive a key.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_453'>
+<pre id='code_491'>
 <span class="Statement"> derive-key</span> &lt;key&gt;<span class="Identifier"> from</span> &lt;source&gt;<span class="Identifier"> length</span> &lt;length&gt; \
      [<span class="Identifier"> binary</span> [ &lt;binary&gt; ] ] \
      [<span class="Identifier"> from-length</span> &lt;source length&gt; ] \
      [<span class="Identifier"> digest</span> &lt;digest algorithm&gt; ] \
      [<span class="Identifier"> salt</span> &lt;salt&gt; [<span class="Identifier"> salt-length</span> &lt;salt length&gt; ] ] \
      [<span class="Identifier"> iterations</span> &lt;iterations&gt; ]</pre>
-<span id=golf_copied_453 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_453' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_453, code_453, golf_copied_453)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_491 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_491' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_491, code_491, golf_copied_491)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 derive-key derives &lt;key&gt; from string &lt;source&gt; in "from" clause. If &lt;source length&gt; in "from-length" clause is specified, exactly &lt;source length&gt; bytes of &lt;source&gt; are used. Otherwise, the length of &lt;source&gt; string is used as the number of bytes (see <a href='https://golf-lang.com/string-length.html'>string-length</a>). <br/>
 <br/>
 The desired length of derived key is given by &lt;length&gt; in "length" clause. The method for key generation is PBKDF2. By default the digest used is "SHA256". You can use a different &lt;digest algorithm&gt; in "digest" clause (for example "SHA3-256"). To see a list of available digests:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_454'>
+<pre id='code_492'>
 <span class="Comment">#get digests</span>
 openssl list <span class="Special">-digest-algorithms</span></pre>
-<span id=golf_copied_454 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_454' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_454, code_454, golf_copied_454)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_492 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_492' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_492, code_492, golf_copied_492)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The salt for key derivation can be given with &lt;salt&gt; in "salt" clause. If "salt-length" clause is not specified, then the entire length of salt is used (see <a href='https://golf-lang.com/string-length.html'>string-length</a>), otherwise &lt;salt length&gt; bytes are used as salt.<br/>
 <br/>
@@ -259,12 +259,12 @@ Key derivation is often used when storing password-derivatives in the database (
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Derived key is in variable "mk":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_455'>
+<pre id='code_493'>
 <span class="Statement"> random-string</span><span class="Type"> to</span> rs9<span class="Identifier"> length</span> <span class="Constant">16</span>
 <span class="Statement"> derive-key</span> mk<span class="Identifier"> from</span> <span class="Constant">&quot;clave secreta&quot;</span><span class="Identifier"> digest</span> <span class="Constant">&quot;sha-256&quot;</span><span class="Identifier"> salt</span> rs9<span class="Identifier"> salt-length</span> <span class="Constant">10</span><span class="Identifier"> iterations</span> <span class="Constant">2000</span><span class="Identifier"> length</span> <span class="Constant">16</span></pre>
-<span id=golf_copied_455 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_455' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_455, code_455, golf_copied_455)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_493 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_493' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_493, code_493, golf_copied_493)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Encryption'></a><span style="font-weight:bold;">Encryption</span><br/>

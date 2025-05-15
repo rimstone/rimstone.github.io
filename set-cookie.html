@@ -227,16 +227,16 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Set cookie</div><hr/><span style="font-weight:bold;">Purpose</span>: Set cookie.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_816'>
+<pre id='code_888'>
 <span class="Statement"> set-cookie</span> ( &lt;cookie name&gt;=&lt;cookie value&gt; \
      [<span class="Identifier"> expires</span> &lt;expiration&gt; ] \
      [<span class="Identifier"> path</span> &lt;path&gt; ] \
      [<span class="Identifier"> same-site</span> <span class="Constant">&quot;Lax&quot;</span>|<span class="Constant">&quot;Strict&quot;</span>|<span class="Constant">&quot;None&quot;</span> ] \
      [<span class="Identifier"> no-http-only</span> [ &lt;no-http-only&gt; ] ] \
      [<span class="Identifier"> secure</span> [ &lt;secure&gt; ] ] ) ,...</pre>
-<span id=golf_copied_816 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_816' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_816, code_816, golf_copied_816)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_888 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_888' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_888, code_888, golf_copied_888)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 To set a cookie named by string &lt;cookie name&gt; to string value &lt;cookie value&gt;, use set-cookie statement. A cookie must be set prior to outputting any actual response (such as with <a href='https://golf-lang.com/output-statement.html'>output-statement</a> or <a href='https://golf-lang.com/p-out.html'>p-out</a> for example), or the program will <a href='https://golf-lang.com/error-handling.html'>error out</a> and stop. <br/>
 <br/>
@@ -254,31 +254,31 @@ Cookies are commonly used for session maintenance, tracking and other purposes. 
 <br/>
 You can set multiple cookies separated by a comma:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_817'>
+<pre id='code_889'>
 <span class="Statement"> get-time</span><span class="Type"> to</span> tm<span class="Identifier"> year</span> <span class="Constant">1</span>
 <span class="Statement"> set-cookie</span> <span class="Constant">&quot;mycookie1&quot;</span>=<span class="Constant">&quot;4900&quot;</span><span class="Identifier"> expires</span> tm<span class="Identifier"> path</span> <span class="Constant">&quot;/&quot;</span>, <span class="Constant">&quot;mycookie2&quot;</span>=<span class="Constant">&quot;900&quot;</span><span class="Identifier"> expires</span> tm <span class="Identifier"> path</span> <span class="Constant">&quot;/my-app&quot;</span><span class="Identifier"> same-site</span> <span class="Constant">&quot;Strict&quot;</span></pre>
-<span id=golf_copied_817 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_817' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_817, code_817, golf_copied_817)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_889 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_889' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_889, code_889, golf_copied_889)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 To set a cookie named "my_cookie_name" to value "XYZ", that will go with the reply and expire in 1 year and 2 months from now, use:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_818'>
+<pre id='code_890'>
 <span class="Statement"> get-time</span><span class="Type"> to</span> mytime<span class="Identifier"> year</span> <span class="Constant">1</span><span class="Identifier"> month</span> <span class="Constant">2</span>
 <span class="Statement"> set-string</span> my_cookie_value=<span class="Constant">&quot;XYZ&quot;</span>
 <span class="Statement"> set-cookie</span> <span class="Constant">&quot;my_cookie_name&quot;</span>=my_cookie_value<span class="Identifier"> expires</span> mytime<span class="Identifier"> path</span> <span class="Constant">&quot;/&quot;</span><span class="Identifier"> same-site</span> <span class="Constant">&quot;Lax&quot;</span></pre>
-<span id=golf_copied_818 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_818' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_818, code_818, golf_copied_818)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_890 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_890' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_890, code_890, golf_copied_890)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 A cookie that can be used by JavaScript (meaning we use no-http-only clause):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_819'>
+<pre id='code_891'>
 <span class="Statement"> set-cookie</span> <span class="Constant">&quot;my_cookie_name&quot;</span>=my_cookie_value<span class="Identifier"> no-http-only</span></pre>
-<span id=golf_copied_819 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_819' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_819, code_819, golf_copied_819)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_891 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_891' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_891, code_891, golf_copied_891)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Cookies'></a><span style="font-weight:bold;">Cookies</span><br/>

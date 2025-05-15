@@ -227,19 +227,19 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Debugging</div><hr/><div class="vsub"><a id="Tracing and Backtrace file"></a>Tracing and Backtrace file</div>
 To see any errors reported by Golf, use -e option of <a href='https://golf-lang.com/gg.html'>gg</a> and check backtrace file. For example, to see the last 3 error messages:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_419'>
+<pre id='code_457'>
 gg <span class="Special">-e</span> <span class="Constant">3</span></pre>
-<span id=golf_copied_419 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_419' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_419, code_419, golf_copied_419)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_457 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_457' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_457, code_457, golf_copied_457)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 You can use <a href='https://golf-lang.com/trace-run.html'>trace-run</a> statement to create run-time traces (see <a href='https://golf-lang.com/directories.html'>directories</a> for directory location). To quickly find the location of recently written-to trace files, use -t option of <a href='https://golf-lang.com/gg.html'>gg</a>, for example for 5 most recently used trace files:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_421'>
+<pre id='code_459'>
 gg <span class="Special">-t</span> <span class="Constant">5</span></pre>
-<span id=golf_copied_421 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_421' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_421, code_421, golf_copied_421)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_459 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_459' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_459, code_459, golf_copied_459)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Use <a href='https://golf-lang.com/get-req.html'>get-req</a> to get the trace file location at run-time from your application.<br/>
 <div class="vsub"><a id="Output from Golf application without web server"></a>Output from Golf application without web server</div>
@@ -247,20 +247,20 @@ Use <a href='https://golf-lang.com/gg.html'>gg</a> (see -r option) to send a req
 <div class="vsub"><a id="Issues in starting mgrg"></a>Issues in starting mgrg</div>
 <a href='https://golf-lang.com/mgrg.html'>mgrg</a> starts your web application, running as <a href='https://golf-lang.com/service.html'>service</a> processes. If you're having issues with mgrg, check out its log. Assuming your application name is "app_name", the log file is:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_418'>
+<pre id='code_456'>
 /var/lib/gg/app_name/mgrglog/log</pre>
-<span id=golf_copied_418 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_418' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_418, code_418, golf_copied_418)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_456 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_456' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_456, code_456, golf_copied_456)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Web server error log"></a>Web server error log</div>
 If you are using a web server as a reverse proxy, check its error log, which would store the error messages emitted. Typically, such files are in the following location:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_420'>
+<pre id='code_458'>
 /var/log/&lt;web server&gt;</pre>
-<span id=golf_copied_420 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_420' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_420, code_420, golf_copied_420)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_458 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_458' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_458, code_458, golf_copied_458)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 (for example /var/log/apache2), but the location may vary - consult your web server's documentation.<br/>
 <div class="vsub"><a id="Using gdb debugger"></a>Using gdb debugger</div>
@@ -268,45 +268,45 @@ In order to use gdb debugger, you don't need to do anything special. Golf itself
 <br/>
 Ultimately, you can attach a debugger to a running Golf process. If your application name is "app_name", first find the PID (process ID) of its process(es):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_423'>
+<pre id='code_461'>
 ps <span class="Special">-ef</span>|<span class="Statement">grep</span> app_name.srvc</pre>
-<span id=golf_copied_423 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_423' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_423, code_423, golf_copied_423)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_461 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_461' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_461, code_461, golf_copied_461)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Note that you can control the number of worker processes started, and thus have only a single worker process (or the minimum necessary), which will make attaching to the process that actually processes a request easier (see <a href='https://golf-lang.com/gg.html'>gg</a>).<br/>
 <br/>
 Use gdb to load your program:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_425'>
+<pre id='code_463'>
 sudo gdb /var/lib/gg/bld/app_name/app_name.srvc</pre>
-<span id=golf_copied_425 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_425' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_425, code_425, golf_copied_425)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_463 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_463' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_463, code_463, golf_copied_463)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 and then attach to the process (&lt;PID&gt; is the process ID you obtained above):<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_422'>
+<pre id='code_460'>
 att &lt;PID&gt;</pre>
-<span id=golf_copied_422 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_422' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_422, code_422, golf_copied_422)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_460 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_460' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_460, code_460, golf_copied_460)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Once attached, you can break in the request you're debugging:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_424'>
+<pre id='code_462'>
 br &lt;request name&gt;</pre>
-<span id=golf_copied_424 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_424' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_424, code_424, golf_copied_424)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_462 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_462' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_462, code_462, golf_copied_462)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 or in general Golf request dispatcher:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_426'>
+<pre id='code_464'>
 br gg_dispatch_request</pre>
-<span id=golf_copied_426 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_426' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_426, code_426, golf_copied_426)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_464 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_464' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_464, code_464, golf_copied_464)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 which would handle any request to your application.<br/>
 <br/>
