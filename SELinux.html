@@ -235,11 +235,11 @@ Note that OpenSUSE package does not come with SELinux policy as of this release,
 <div class="vsub"><a id="General"></a>General</div>
 Golf policy files (including .te, .fc files, while .if file is empty) can be found here:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_865'>
+<pre id='code_866'>
 <span class="Statement">ls</span> <span class="PreProc">$(</span><span class="Special">gg </span><span class="Special">-l</span><span class="PreProc">)</span>/selinux/*.<span class="Special">{</span>te,<span class="Statement">fc</span><span class="Special">}</span></pre>
-<span id=golf_copied_865 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_865' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_865, code_865, golf_copied_865)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_866 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_866' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_866, code_866, golf_copied_866)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 As a part of installing Golf, the following SELinux types will be installed:<br/>
 <ul><li>ggfile_t: all files within Golf directory (/var/lib/gg) are labeled with this type.<br/>
@@ -257,39 +257,39 @@ Using Unix domain sockets for Golf processes to communicate with a web server (s
 <div class="vsub"><a id="Unix TCP sockets"></a>Unix TCP sockets</div>
 Using TCP sockets for Golf processes to communicate with a web server (see <a href='https://golf-lang.com/gg.html'>gg</a>) requires you to label such ports as ggport_t, for example if you plan to use port 2109:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_866'>
-sudo semanage port <span class="Special">-a</span> <span class="Special">-t</span> ggport_t <span class="Special">-p</span> tcp  <span class="Constant">2109</span></pre>
-<span id=golf_copied_866 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_866' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_866, code_866, golf_copied_866)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-When you no longer need a port, for example if you are switching to another port (for instance 2209), remove the old one and add the new one:<br/>
-<div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_867'>
-sudo semanage port <span class="Special">-d</span> <span class="Special">-t</span> ggport_t <span class="Special">-p</span> tcp  <span class="Constant">2109</span>
-sudo semanage port <span class="Special">-a</span> <span class="Special">-t</span> ggport_t <span class="Special">-p</span> tcp  <span class="Constant">2209</span></pre>
+sudo semanage port <span class="Special">-a</span> <span class="Special">-t</span> ggport_t <span class="Special">-p</span> tcp  <span class="Constant">2109</span></pre>
 <span id=golf_copied_867 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_867' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_867, code_867, golf_copied_867)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-<div class="vsub"><a id="Changing or adding directories"></a>Changing or adding directories</div>
-If you are adding directories to be used by Golf program, or changing a directory, for example using a different storage instead of /var/lib/gg (see <a href='https://golf-lang.com/directories.html'>directories</a>), you need to label files in new directories:<br/>
+When you no longer need a port, for example if you are switching to another port (for instance 2209), remove the old one and add the new one:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_868'>
-sudo semanage fcontext <span class="Special">-a</span> <span class="Special">-t</span> ggfile_t <span class="Statement">&quot;</span><span class="Constant">/your/new/dir(/.*)?</span><span class="Statement">&quot;</span>
-sudo restorecon <span class="Special">-R</span> /your/new/dir</pre>
+sudo semanage port <span class="Special">-d</span> <span class="Special">-t</span> ggport_t <span class="Special">-p</span> tcp  <span class="Constant">2109</span>
+sudo semanage port <span class="Special">-a</span> <span class="Special">-t</span> ggport_t <span class="Special">-p</span> tcp  <span class="Constant">2209</span></pre>
 <span id=golf_copied_868 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_868' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_868, code_868, golf_copied_868)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-To remove context from such directories (if you are not using them anymore), use:<br/>
+<div class="vsub"><a id="Changing or adding directories"></a>Changing or adding directories</div>
+If you are adding directories to be used by Golf program, or changing a directory, for example using a different storage instead of /var/lib/gg (see <a href='https://golf-lang.com/directories.html'>directories</a>), you need to label files in new directories:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_869'>
-sudo semanage fcontext <span class="Special">-d</span> <span class="Special">-t</span> ggfile_t <span class="Statement">&quot;</span><span class="Constant">/your/new/dir(/.*)?</span><span class="Statement">&quot;</span>
+sudo semanage fcontext <span class="Special">-a</span> <span class="Special">-t</span> ggfile_t <span class="Statement">&quot;</span><span class="Constant">/your/new/dir(/.*)?</span><span class="Statement">&quot;</span>
 sudo restorecon <span class="Special">-R</span> /your/new/dir</pre>
 <span id=golf_copied_869 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_869' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_869, code_869, golf_copied_869)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+To remove context from such directories (if you are not using them anymore), use:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_870'>
+sudo semanage fcontext <span class="Special">-d</span> <span class="Special">-t</span> ggfile_t <span class="Statement">&quot;</span><span class="Constant">/your/new/dir(/.*)?</span><span class="Statement">&quot;</span>
+sudo restorecon <span class="Special">-R</span> /your/new/dir</pre>
+<span id=golf_copied_870 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_870' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_870, code_870, golf_copied_870)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='SELinux'></a><span style="font-weight:bold;">SELinux</span><br/>
