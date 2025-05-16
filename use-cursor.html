@@ -227,15 +227,15 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Use cursor</div><hr/><span style="font-weight:bold;">Purpose</span>: Iterate to a lesser or greater key in a tree.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_967'>
+<pre id='code_966'>
 <span class="Statement"> use-cursor</span> &lt;cursor&gt; (<span class="Identifier"> current</span> |<span class="Identifier"> get-lesser</span> |<span class="Identifier"> get-greater</span> ) \
      [<span class="Type"> key</span> &lt;key&gt; ] \
      [<span class="Type"> value</span> &lt;value&gt; ] \
      [<span class="Identifier"> update-value</span> &lt;update value&gt; ] \
      [<span class="Type"> status</span> &lt;status&gt; ]</pre>
-<span id=golf_copied_967 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_967' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_967, code_967, golf_copied_967)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_966 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_966' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_966, code_966, golf_copied_966)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 use-cursor uses &lt;cursor&gt; previously created (see <a href='https://golf-lang.com/read-tree.html'>read-tree</a>, <a href='https://golf-lang.com/write-tree.html'>write-tree</a>) for iteration over tree nodes with lesser or greater key values. It can also obtain keys and values for such nodes, as well as update their values.<br/>
 <div class="vsub"><a id="Current node"></a>Current node</div>
@@ -251,7 +251,7 @@ If the new current node can be found, then other use-cursor clauses are applied 
 <div class="vsub"><a id="Examples"></a>Examples</div>
 The following will find a value with key "999", and then iterate in the tree to find all lesser values (in descending order):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_968'>
+<pre id='code_967'>
 <span class="Statement"> set-string</span> k = <span class="Constant">&quot;999&quot;</span>
 <span class="Statement"> read-tree</span> mytree<span class="Identifier"> equal</span> k<span class="Type"> status</span> st \
     <span class="Type"> value</span> val<span class="Type"> new-cursor</span> cur
@@ -263,9 +263,9 @@ The following will find a value with key "999", and then iterate in the tree to 
 <span class="Statement">         break-loop</span>
 <span class="Statement">     end-if</span>
 <span class="Statement"> end-loop</span></pre>
-<span id=golf_copied_968 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_968' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_968, code_968, golf_copied_968)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_967 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_967' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_967, code_967, golf_copied_967)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 For more examples, see <a href='https://golf-lang.com/new-tree.html'>new-tree</a>.<br/>
 <div class="vsub"><a id="See also"></a>See also</div>

@@ -227,7 +227,7 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Out header</div><hr/><span style="font-weight:bold;">Purpose</span>: Output HTTP header.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_732'>
+<pre id='code_731'>
 <span class="Statement"> out-header</span><span class="Identifier"> default</span>
  |
 <span class="Statement"> out-header</span><span class="Identifier"> use</span> \
@@ -239,9 +239,9 @@ function gg_copy(gt, eid, gc) {
      [<span class="Identifier"> status-id</span> &lt;status id&gt; ] \
      [<span class="Identifier"> status-text</span> &lt;status text&gt; ] \
      [<span class="Identifier"> custom</span> &lt;header name&gt;=&lt;header value&gt; [ , ... ] ]</pre>
-<span id=golf_copied_732 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_732' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_732, code_732, golf_copied_732)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_731 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_731' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_731, code_731, golf_copied_731)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 out-header outputs HTTP header and also sends any cookies produced by <a href='https://golf-lang.com/set-cookie.html'>set-cookie</a> and <a href='https://golf-lang.com/delete-cookie.html'>delete-cookie</a>. A web page must have an HTTP header output before any other response. <br/>
 <br/>
@@ -255,19 +255,19 @@ The HTTP header is sent back to a client who initiated a request. You can specif
 <div class="vsub"><a id="Default header"></a>Default header</div>
 If no out-header is used, or if "default" clause is in place, a default header is constructed, which uses a status of 200/OK and content type of<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_733'>
+<pre id='code_732'>
  text/html;charset=utf-<span class="Constant">8</span></pre>
-<span id=golf_copied_733 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_733' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_733, code_733, golf_copied_733)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_732 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_732' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_732, code_732, golf_copied_732)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 and cache control of<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_734'>
+<pre id='code_733'>
  Cache-Control:max-age=<span class="Constant">0</span>, no-cache; <span class="Statement">Pragma</span>: no-cache</pre>
-<span id=golf_copied_734 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_734' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_734, code_734, golf_copied_734)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_733 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_733' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_733, code_733, golf_copied_733)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The default header is typical for dynamically generated web pages, and most of the time you would use the default header - meaning you don't need to specify out-header statement.<br/>
 <div class="vsub"><a id="Headers"></a>Headers</div>
@@ -277,40 +277,40 @@ The following are subclauses that allow setting any custom header:<br/>
 </li><li>&lt;file name&gt; is the name of the file being sent to a client. This is not the local file name - it is the file name that client will use for its own purposes.<br/>
 </li><li>&lt;cache control&gt; is the cache control HTTP header. "no-cache" instructs the client not to cache. Only one of "cache-control" and "no-cache" can be used. An example of &lt;cache control&gt;:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_735'>
+<pre id='code_734'>
 <span class="Statement"> send-file</span> <span class="Constant">&quot;somepic.jpg&quot;</span><span class="Identifier"> headers cache-control</span> <span class="Constant">&quot;max-age: 3600&quot;</span></pre>
-<span id=golf_copied_735 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_735' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_735, code_735, golf_copied_735)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_734 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_734' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_734, code_734, golf_copied_734)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li><li>If "etag" is used without boolean variable &lt;etag&gt;, or if &lt;etag&gt; evaluates to true, then "ETAG" header will be generated (a timestamp) and included, otherwise it is not. The time stamp is of last modification date of the file (and typically used to cache a file on client if it hasn't changed on the server). "etag" is useful to let the client know to download the file only once if it hasn't changed, thus saving network and computing resources. ETAG header is used only for <a href='https://golf-lang.com/send-file.html'>send-file</a>.<br/>
 </li><li>&lt;status id&gt; and &lt;status text&gt; are status settings for the response, as strings (such as "425" for "status-id" and "Too early" for "status-text"). <br/>
 </li><li>To set any type of generic HTTP header, use "custom" subclause, where &lt;header name&gt; and &lt;header value&gt; represent the name and value of a single header. Multiple headers are separated by a comma. There is no limit on the maximum number of such headers, other than of the underyling HTTP protocol. You must not use "custom" to set headers already set elsewhere (such as "etag" for instance), as that may cause unpredictable behavior. For instance this sets two custom headers:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_736'>
+<pre id='code_735'>
 <span class="Statement"> out-header</span><span class="Identifier"> use custom</span> <span class="Constant">&quot;CustomOption3&quot;</span>=<span class="Constant">&quot;CustomValue3&quot;</span>, <span class="Constant">&quot;Status&quot;</span>=<span class="Constant">&quot;418 I'm a teapot&quot;</span></pre>
-<span id=golf_copied_736 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_736' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_736, code_736, golf_copied_736)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_735 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_735' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_735, code_735, golf_copied_735)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 "custom" subclause lets you use any custom headers that exist today or may be added in the future, as well as any headers of your own design.</li></ul>
 You can use <a href='https://golf-lang.com/silent-header.html'>silent-header</a> before output-header in order to suppress its output.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Sometimes you may want to output the default header immediately, for instance if the first output produces may take some time:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_737'>
+<pre id='code_736'>
 <span class="Statement"> out-header</span><span class="Identifier"> default</span></pre>
-<span id=golf_copied_737 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_737' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_737, code_737, golf_copied_737)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_736 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_736' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_736, code_736, golf_copied_736)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 To set a custom header for a web page that changes cache control and adds two new headers:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_738'>
+<pre id='code_737'>
 <span class="Statement"> out-header</span><span class="Identifier"> use content-type</span> <span class="Constant">&quot;text/html&quot;</span><span class="Identifier"> cache-control</span> <span class="Constant">&quot;max-age:3600&quot;</span><span class="Identifier"> custom</span> <span class="Constant">&quot;some_HTTP_option&quot;</span>=<span class="Constant">&quot;value_for_some_HTTP_option&quot;</span>, <span class="Constant">&quot;some_HTTP_option_1&quot;</span>=<span class="Constant">&quot;value_for_some_HTTP_option_1&quot;</span></pre>
-<span id=golf_copied_738 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_738' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_738, code_738, golf_copied_738)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_737 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_737' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_737, code_737, golf_copied_737)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Web'></a><span style="font-weight:bold;">Web</span><br/>
