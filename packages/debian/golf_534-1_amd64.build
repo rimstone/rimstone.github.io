@@ -1,0 +1,223 @@
+ dpkg-buildpackage -us -uc -ui
+dpkg-buildpackage: info: source package golf
+dpkg-buildpackage: info: source version 534-1
+dpkg-buildpackage: info: source distribution bookworm
+dpkg-buildpackage: info: source changed by Golf Team <team@golf-lang.com>
+ dpkg-source --before-build .
+dpkg-buildpackage: info: host architecture amd64
+ fakeroot debian/rules clean
+GG_DEBIAN_BUILD=1 dh clean
+   dh_auto_clean
+	make -j1 clean
+make[1]: Entering directory '/home/dasoftver/golf-534'
+touch *.c
+touch *.h
+rm -rf debian/golf
+rm -rf debian/golf.substvars
+rm -rf debian/.debhelper
+rm -rf debian/debhelper*
+rm -rf debian/files
+rm -rf *.tar.gz
+rm -f *.o
+rm -f *.so
+rm -f *.dbg
+rm -f mgrg v1
+rm -f selinux.setup
+make[1]: Leaving directory '/home/dasoftver/golf-534'
+   dh_clean
+ dpkg-source -b .
+dpkg-source: info: using source format '3.0 (quilt)'
+dpkg-source: info: building golf using existing ./golf_534.orig.tar.gz
+dpkg-source: info: building golf in golf_534-1.debian.tar.xz
+dpkg-source: info: building golf in golf_534-1.dsc
+ debian/rules build
+GG_DEBIAN_BUILD=1 dh build
+   dh_update_autotools_config
+   dh_autoreconf
+   dh_auto_configure
+   dh_auto_build
+	make -j1 "INSTALL=install --strip-program=true"
+make[1]: Entering directory '/home/dasoftver/golf-534'
+gcc -c -o chandle.o chandle.c  -Wall -Wextra -Wuninitialized -Wmissing-declarations -Wformat -Wno-format-zero-length -funsigned-char -fpic -fno-semantic-interposition  -I/usr/include/mariadb -I/usr/include/mariadb/mysql -I /usr/include/postgresql  -I /usr/include/fastcgi -I/usr/include/libxml2  -DGG_OSNAME="\"debian\"" -DGG_OSVERSION="\"12\"" -DGG_PKGVERSION="\"534\"" -DGG_ROOT="\"\"" -g3 -O3  -fmax-errors=5 -Wl,-z,relro,-z,now 
+gcc -c -o hash.o hash.c  -Wall -Wextra -Wuninitialized -Wmissing-declarations -Wformat -Wno-format-zero-length -funsigned-char -fpic -fno-semantic-interposition  -I/usr/include/mariadb -I/usr/include/mariadb/mysql -I /usr/include/postgresql  -I /usr/include/fastcgi -I/usr/include/libxml2  -DGG_OSNAME="\"debian\"" -DGG_OSVERSION="\"12\"" -DGG_PKGVERSION="\"534\"" -DGG_ROOT="\"\"" -g3 -O3  -fmax-errors=5 -Wl,-z,relro,-z,now 
+gcc -c -o json.o json.c  -Wall -Wextra -Wuninitialized -Wmissing-declarations -Wformat -Wno-format-zero-length -funsigned-char -fpic -fno-semantic-interposition  -I/usr/include/mariadb -I/usr/include/mariadb/mysql -I /usr/include/postgresql  -I /usr/include/fastcgi -I/usr/include/libxml2  -DGG_OSNAME="\"debian\"" -DGG_OSVERSION="\"12\"" -DGG_PKGVERSION="\"534\"" -DGG_ROOT="\"\"" -g3 -O3  -fmax-errors=5 -Wl,-z,relro,-z,now 
+gcc -c -o msg.o msg.c  -Wall -Wextra -Wuninitialized -Wmissing-declarations -Wformat -Wno-format-zero-length -funsigned-char -fpic -fno-semantic-interposition  -I/usr/include/mariadb -I/usr/include/mariadb/mysql -I /usr/include/postgresql  -I /usr/include/fastcgi -I/usr/include/libxml2  -DGG_OSNAME="\"debian\"" -DGG_OSVERSION="\"12\"" -DGG_PKGVERSION="\"534\"" -DGG_ROOT="\"\"" -g3 -O3  -fmax-errors=5 -Wl,-z,relro,-z,now 
+gcc -c -o utf.o utf.c  -Wall -Wextra -Wuninitialized -Wmissing-declarations -Wformat -Wno-format-zero-length -funsigned-char -fpic -fno-semantic-interposition  -I/usr/include/mariadb -I/usr/include/mariadb/mysql -I /usr/include/postgresql  -I /usr/include/fastcgi -I/usr/include/libxml2  -DGG_OSNAME="\"debian\"" -DGG_OSVERSION="\"12\"" -DGG_PKGVERSION="\"534\"" -DGG_ROOT="\"\"" -g3 -O3  -fmax-errors=5 -Wl,-z,relro,-z,now 
+gcc -c -o srvc_golfrt.o golfrt.c  -Wall -Wextra -Wuninitialized -Wmissing-declarations -Wformat -Wno-format-zero-length -funsigned-char -fpic -fno-semantic-interposition  -I/usr/include/mariadb -I/usr/include/mariadb/mysql -I /usr/include/postgresql  -I /usr/include/fastcgi -I/usr/include/libxml2  -DGG_OSNAME="\"debian\"" -DGG_OSVERSION="\"12\"" -DGG_PKGVERSION="\"534\"" -DGG_ROOT="\"\"" -g3 -O3  -fmax-errors=5 -Wl,-z,relro,-z,now  
+gcc -c -o golfrtc.o golfrtc.c  -Wall -Wextra -Wuninitialized -Wmissing-declarations -Wformat -Wno-format-zero-length -funsigned-char -fpic -fno-semantic-interposition  -I/usr/include/mariadb -I/usr/include/mariadb/mysql -I /usr/include/postgresql  -I /usr/include/fastcgi -I/usr/include/libxml2  -DGG_OSNAME="\"debian\"" -DGG_OSVERSION="\"12\"" -DGG_PKGVERSION="\"534\"" -DGG_ROOT="\"\"" -g3 -O3  -fmax-errors=5 -Wl,-z,relro,-z,now
+gcc -c -o golfmems.o golfmem.c  -Wall -Wextra -Wuninitialized -Wmissing-declarations -Wformat -Wno-format-zero-length -funsigned-char -fpic -fno-semantic-interposition  -I/usr/include/mariadb -I/usr/include/mariadb/mysql -I /usr/include/postgresql  -I /usr/include/fastcgi -I/usr/include/libxml2  -DGG_OSNAME="\"debian\"" -DGG_OSVERSION="\"12\"" -DGG_PKGVERSION="\"534\"" -DGG_ROOT="\"\"" -g3 -O3  -fmax-errors=5 -Wl,-z,relro,-z,now 
+rm -f libsrvcgolf.so
+gcc -shared -o libsrvcgolf.so chandle.o hash.o json.o msg.o utf.o srvc_golfrt.o golfrtc.o golfmems.o 
+if [ "" != "1" ]; then objcopy --only-keep-debug libsrvcgolf.so libsrvcgolf.so.dbg || true ; if [[ "1" != "1" && "" != "1" ]]; then objcopy --strip-unneeded libsrvcgolf.so || true ; objcopy --add-gnu-debuglink=libsrvcgolf.so.dbg libsrvcgolf.so || true ; else rm -f libsrvcgolf.so.dbg || true ; fi ; fi
+rm -f libgolfcli.so
+gcc -shared -o libgolfcli.so gcli.c gcli.h golf.h  -Wall -Wextra -Wuninitialized -Wmissing-declarations -Wformat -Wno-format-zero-length -funsigned-char -fpic -fno-semantic-interposition  -I/usr/include/mariadb -I/usr/include/mariadb/mysql -I /usr/include/postgresql  -I /usr/include/fastcgi -I/usr/include/libxml2  -DGG_OSNAME="\"debian\"" -DGG_OSVERSION="\"12\"" -DGG_PKGVERSION="\"534\"" -DGG_ROOT="\"\"" -g3 -O3  -fmax-errors=5 -Wl,-z,relro,-z,now
+if [ "" != "1" ]; then objcopy --only-keep-debug libgolfcli.so libgolfcli.so.dbg || true ; if [[ "1" != "1" && "" != "1" ]]; then objcopy --strip-unneeded libgolfcli.so || true ; objcopy --add-gnu-debuglink=libgolfcli.so.dbg libgolfcli.so || true ; else rm -f libgolfcli.so.dbg || true ; fi ; fi
+rm -f libgolfscli.so
+gcc -shared -o libgolfscli.so gcli.c gcli.h golf.h  -Wall -Wextra -Wuninitialized -Wmissing-declarations -Wformat -Wno-format-zero-length -funsigned-char -fpic -fno-semantic-interposition  -I/usr/include/mariadb -I/usr/include/mariadb/mysql -I /usr/include/postgresql  -I /usr/include/fastcgi -I/usr/include/libxml2  -DGG_OSNAME="\"debian\"" -DGG_OSVERSION="\"12\"" -DGG_PKGVERSION="\"534\"" -DGG_ROOT="\"\"" -g3 -O3  -fmax-errors=5 -Wl,-z,relro,-z,now -DGG_GOLFSRV
+if [ "" != "1" ]; then objcopy --only-keep-debug libgolfscli.so libgolfscli.so.dbg || true ; if [[ "1" != "1" && "" != "1" ]]; then objcopy --strip-unneeded libgolfscli.so || true ; objcopy --add-gnu-debuglink=libgolfscli.so.dbg libgolfscli.so || true ; else rm -f libgolfscli.so.dbg || true ; fi ; fi
+gcc -c -DGG_COMMAND -o golfrt.o golfrt.c  -Wall -Wextra -Wuninitialized -Wmissing-declarations -Wformat -Wno-format-zero-length -funsigned-char -fpic -fno-semantic-interposition  -I/usr/include/mariadb -I/usr/include/mariadb/mysql -I /usr/include/postgresql  -I /usr/include/fastcgi -I/usr/include/libxml2  -DGG_OSNAME="\"debian\"" -DGG_OSVERSION="\"12\"" -DGG_PKGVERSION="\"534\"" -DGG_ROOT="\"\"" -g3 -O3  -fmax-errors=5 -Wl,-z,relro,-z,now  
+rm -f libgolf.so
+gcc -shared -o libgolf.so chandle.o hash.o json.o msg.o utf.o golfrt.o golfrtc.o golfmems.o 
+if [ "" != "1" ]; then objcopy --only-keep-debug libgolf.so libgolf.so.dbg || true ; if [[ "1" != "1" && "" != "1" ]]; then objcopy --strip-unneeded libgolf.so || true ; objcopy --add-gnu-debuglink=libgolf.so.dbg libgolf.so || true ; else rm -f libgolf.so.dbg || true ; fi ; fi
+gcc -c -o db.o db.c  -Wall -Wextra -Wuninitialized -Wmissing-declarations -Wformat -Wno-format-zero-length -funsigned-char -fpic -fno-semantic-interposition  -I/usr/include/mariadb -I/usr/include/mariadb/mysql -I /usr/include/postgresql  -I /usr/include/fastcgi -I/usr/include/libxml2  -DGG_OSNAME="\"debian\"" -DGG_OSVERSION="\"12\"" -DGG_PKGVERSION="\"534\"" -DGG_ROOT="\"\"" -g3 -O3  -fmax-errors=5 -Wl,-z,relro,-z,now 
+rm -f libgolfdb.so
+gcc -shared -o libgolfdb.so db.o 
+if [ "" != "1" ]; then objcopy --only-keep-debug libgolfdb.so libgolfdb.so.dbg || true ; if [[ "1" != "1" && "" != "1" ]]; then objcopy --strip-unneeded libgolfdb.so || true ; objcopy --add-gnu-debuglink=libgolfdb.so.dbg libgolfdb.so || true ; else rm -f libgolfdb.so.dbg || true ; fi ; fi
+gcc -c -o sec.o sec.c  -Wall -Wextra -Wuninitialized -Wmissing-declarations -Wformat -Wno-format-zero-length -funsigned-char -fpic -fno-semantic-interposition  -I/usr/include/mariadb -I/usr/include/mariadb/mysql -I /usr/include/postgresql  -I /usr/include/fastcgi -I/usr/include/libxml2  -DGG_OSNAME="\"debian\"" -DGG_OSVERSION="\"12\"" -DGG_PKGVERSION="\"534\"" -DGG_ROOT="\"\"" -g3 -O3  -fmax-errors=5 -Wl,-z,relro,-z,now 
+rm -f libgolfsec.so
+gcc -shared -o libgolfsec.so  sec.o 
+if [ "" != "1" ]; then objcopy --only-keep-debug libgolfsec.so libgolfsec.so.dbg || true ; if [[ "1" != "1" && "" != "1" ]]; then objcopy --strip-unneeded libgolfsec.so || true ; objcopy --add-gnu-debuglink=libgolfsec.so.dbg libgolfsec.so || true ; else rm -f libgolfsec.so.dbg || true ; fi ; fi
+gcc -c -o mys.o mys.c  -Wall -Wextra -Wuninitialized -Wmissing-declarations -Wformat -Wno-format-zero-length -funsigned-char -fpic -fno-semantic-interposition  -I/usr/include/mariadb -I/usr/include/mariadb/mysql -I /usr/include/postgresql  -I /usr/include/fastcgi -I/usr/include/libxml2  -DGG_OSNAME="\"debian\"" -DGG_OSVERSION="\"12\"" -DGG_PKGVERSION="\"534\"" -DGG_ROOT="\"\"" -g3 -O3  -fmax-errors=5 -Wl,-z,relro,-z,now
+rm -f libgolfmys.so
+gcc -shared -o libgolfmys.so mys.o 
+if [ "" != "1" ]; then objcopy --only-keep-debug libgolfmys.so libgolfmys.so.dbg || true ; if [[ "1" != "1" && "" != "1" ]]; then objcopy --strip-unneeded libgolfmys.so || true ; objcopy --add-gnu-debuglink=libgolfmys.so.dbg libgolfmys.so || true ; else rm -f libgolfmys.so.dbg || true ; fi ; fi
+gcc -c -o lite.o lite.c  -Wall -Wextra -Wuninitialized -Wmissing-declarations -Wformat -Wno-format-zero-length -funsigned-char -fpic -fno-semantic-interposition  -I/usr/include/mariadb -I/usr/include/mariadb/mysql -I /usr/include/postgresql  -I /usr/include/fastcgi -I/usr/include/libxml2  -DGG_OSNAME="\"debian\"" -DGG_OSVERSION="\"12\"" -DGG_PKGVERSION="\"534\"" -DGG_ROOT="\"\"" -g3 -O3  -fmax-errors=5 -Wl,-z,relro,-z,now
+rm -f libgolflite.so
+gcc -shared -o libgolflite.so lite.o 
+if [ "" != "1" ]; then objcopy --only-keep-debug libgolflite.so libgolflite.so.dbg || true ; if [[ "1" != "1" && "" != "1" ]]; then objcopy --strip-unneeded libgolflite.so || true ; objcopy --add-gnu-debuglink=libgolflite.so.dbg libgolflite.so || true ; else rm -f libgolflite.so.dbg || true ; fi ; fi
+gcc -c -o pg.o pg.c  -Wall -Wextra -Wuninitialized -Wmissing-declarations -Wformat -Wno-format-zero-length -funsigned-char -fpic -fno-semantic-interposition  -I/usr/include/mariadb -I/usr/include/mariadb/mysql -I /usr/include/postgresql  -I /usr/include/fastcgi -I/usr/include/libxml2  -DGG_OSNAME="\"debian\"" -DGG_OSVERSION="\"12\"" -DGG_PKGVERSION="\"534\"" -DGG_ROOT="\"\"" -g3 -O3  -fmax-errors=5 -Wl,-z,relro,-z,now 
+rm -f libgolfpg.so
+gcc -shared -o libgolfpg.so pg.o 
+if [ "" != "1" ]; then objcopy --only-keep-debug libgolfpg.so libgolfpg.so.dbg || true ; if [[ "1" != "1" && "" != "1" ]]; then objcopy --strip-unneeded libgolfpg.so || true ; objcopy --add-gnu-debuglink=libgolfpg.so.dbg libgolfpg.so || true ; else rm -f libgolfpg.so.dbg || true ; fi ; fi
+gcc -c -o curl.o curl.c  -Wall -Wextra -Wuninitialized -Wmissing-declarations -Wformat -Wno-format-zero-length -funsigned-char -fpic -fno-semantic-interposition  -I/usr/include/mariadb -I/usr/include/mariadb/mysql -I /usr/include/postgresql  -I /usr/include/fastcgi -I/usr/include/libxml2  -DGG_OSNAME="\"debian\"" -DGG_OSVERSION="\"12\"" -DGG_PKGVERSION="\"534\"" -DGG_ROOT="\"\"" -g3 -O3  -fmax-errors=5 -Wl,-z,relro,-z,now 
+rm -f libgolfcurl.so
+gcc -shared -o libgolfcurl.so curl.o 
+if [ "" != "1" ]; then objcopy --only-keep-debug libgolfcurl.so libgolfcurl.so.dbg || true ; if [[ "1" != "1" && "" != "1" ]]; then objcopy --strip-unneeded libgolfcurl.so || true ; objcopy --add-gnu-debuglink=libgolfcurl.so.dbg libgolfcurl.so || true ; else rm -f libgolfcurl.so.dbg || true ; fi ; fi
+gcc -c -o xml.o xml.c  -Wall -Wextra -Wuninitialized -Wmissing-declarations -Wformat -Wno-format-zero-length -funsigned-char -fpic -fno-semantic-interposition  -I/usr/include/mariadb -I/usr/include/mariadb/mysql -I /usr/include/postgresql  -I /usr/include/fastcgi -I/usr/include/libxml2  -DGG_OSNAME="\"debian\"" -DGG_OSVERSION="\"12\"" -DGG_PKGVERSION="\"534\"" -DGG_ROOT="\"\"" -g3 -O3  -fmax-errors=5 -Wl,-z,relro,-z,now 
+rm -f libgolfxml.so
+gcc -shared -o libgolfxml.so xml.o 
+if [ "" != "1" ]; then objcopy --only-keep-debug libgolfxml.so libgolfxml.so.dbg || true ; if [[ "1" != "1" && "" != "1" ]]; then objcopy --strip-unneeded libgolfxml.so || true ; objcopy --add-gnu-debuglink=libgolfxml.so.dbg libgolfxml.so || true ; else rm -f libgolfxml.so.dbg || true ; fi ; fi
+gcc -c -o arr.o arr.c  -Wall -Wextra -Wuninitialized -Wmissing-declarations -Wformat -Wno-format-zero-length -funsigned-char -fpic -fno-semantic-interposition  -I/usr/include/mariadb -I/usr/include/mariadb/mysql -I /usr/include/postgresql  -I /usr/include/fastcgi -I/usr/include/libxml2  -DGG_OSNAME="\"debian\"" -DGG_OSVERSION="\"12\"" -DGG_PKGVERSION="\"534\"" -DGG_ROOT="\"\"" -g3 -O3  -fmax-errors=5 -Wl,-z,relro,-z,now 
+rm -f libgolfarr.so
+gcc -shared -o libgolfarr.so arr.o 
+if [ "" != "1" ]; then objcopy --only-keep-debug libgolfarr.so libgolfarr.so.dbg || true ; if [[ "1" != "1" && "" != "1" ]]; then objcopy --strip-unneeded libgolfarr.so || true ; objcopy --add-gnu-debuglink=libgolfarr.so.dbg libgolfarr.so || true ; else rm -f libgolfarr.so.dbg || true ; fi ; fi
+gcc -c -o tree.o tree.c  -Wall -Wextra -Wuninitialized -Wmissing-declarations -Wformat -Wno-format-zero-length -funsigned-char -fpic -fno-semantic-interposition  -I/usr/include/mariadb -I/usr/include/mariadb/mysql -I /usr/include/postgresql  -I /usr/include/fastcgi -I/usr/include/libxml2  -DGG_OSNAME="\"debian\"" -DGG_OSVERSION="\"12\"" -DGG_PKGVERSION="\"534\"" -DGG_ROOT="\"\"" -g3 -O3  -fmax-errors=5 -Wl,-z,relro,-z,now 
+rm -f libgolftree.so
+gcc -shared -o libgolftree.so tree.o 
+if [ "" != "1" ]; then objcopy --only-keep-debug libgolftree.so libgolftree.so.dbg || true ; if [[ "1" != "1" && "" != "1" ]]; then objcopy --strip-unneeded libgolftree.so || true ; objcopy --add-gnu-debuglink=libgolftree.so.dbg libgolftree.so || true ; else rm -f libgolftree.so.dbg || true ; fi ; fi
+NEWPCRE2=$(./sys greater_than_eq "10.42" "10.37"); if [ "$NEWPCRE2" == "0" ]; then GLIBC_REGEX="-DGG_C_GLIBC_REGEX"; fi ; gcc -c -o pcre2.o pcre2.c $GLIBC_REGEX  -Wall -Wextra -Wuninitialized -Wmissing-declarations -Wformat -Wno-format-zero-length -funsigned-char -fpic -fno-semantic-interposition  -I/usr/include/mariadb -I/usr/include/mariadb/mysql -I /usr/include/postgresql  -I /usr/include/fastcgi -I/usr/include/libxml2  -DGG_OSNAME="\"debian\"" -DGG_OSVERSION="\"12\"" -DGG_PKGVERSION="\"534\"" -DGG_ROOT="\"\"" -g3 -O3  -fmax-errors=5 -Wl,-z,relro,-z,now 
+rm -f libgolfpcre2.so
+gcc -shared -o libgolfpcre2.so pcre2.o 
+if [ "" != "1" ]; then objcopy --only-keep-debug libgolfpcre2.so libgolfpcre2.so.dbg || true ; if [[ "1" != "1" && "" != "1" ]]; then objcopy --strip-unneeded libgolfpcre2.so || true ; objcopy --add-gnu-debuglink=libgolfpcre2.so.dbg libgolfpcre2.so || true ; else rm -f libgolfpcre2.so.dbg || true ; fi ; fi
+gcc -c -o stub_sqlite.o -DGG_STUB_SQLITE stub.c  -Wall -Wextra -Wuninitialized -Wmissing-declarations -Wformat -Wno-format-zero-length -funsigned-char -fpic -fno-semantic-interposition  -I/usr/include/mariadb -I/usr/include/mariadb/mysql -I /usr/include/postgresql  -I /usr/include/fastcgi -I/usr/include/libxml2  -DGG_OSNAME="\"debian\"" -DGG_OSVERSION="\"12\"" -DGG_PKGVERSION="\"534\"" -DGG_ROOT="\"\"" -g3 -O3  -fmax-errors=5 -Wl,-z,relro,-z,now 
+gcc -c -o stub_postgres.o -DGG_STUB_POSTGRES stub.c  -Wall -Wextra -Wuninitialized -Wmissing-declarations -Wformat -Wno-format-zero-length -funsigned-char -fpic -fno-semantic-interposition  -I/usr/include/mariadb -I/usr/include/mariadb/mysql -I /usr/include/postgresql  -I /usr/include/fastcgi -I/usr/include/libxml2  -DGG_OSNAME="\"debian\"" -DGG_OSVERSION="\"12\"" -DGG_PKGVERSION="\"534\"" -DGG_ROOT="\"\"" -g3 -O3  -fmax-errors=5 -Wl,-z,relro,-z,now 
+gcc -c -o stub_mariadb.o -DGG_STUB_MARIADB stub.c  -Wall -Wextra -Wuninitialized -Wmissing-declarations -Wformat -Wno-format-zero-length -funsigned-char -fpic -fno-semantic-interposition  -I/usr/include/mariadb -I/usr/include/mariadb/mysql -I /usr/include/postgresql  -I /usr/include/fastcgi -I/usr/include/libxml2  -DGG_OSNAME="\"debian\"" -DGG_OSVERSION="\"12\"" -DGG_PKGVERSION="\"534\"" -DGG_ROOT="\"\"" -g3 -O3  -fmax-errors=5 -Wl,-z,relro,-z,now 
+gcc -c -o stub_gendb.o -DGG_STUB_GENDB stub.c  -Wall -Wextra -Wuninitialized -Wmissing-declarations -Wformat -Wno-format-zero-length -funsigned-char -fpic -fno-semantic-interposition  -I/usr/include/mariadb -I/usr/include/mariadb/mysql -I /usr/include/postgresql  -I /usr/include/fastcgi -I/usr/include/libxml2  -DGG_OSNAME="\"debian\"" -DGG_OSVERSION="\"12\"" -DGG_PKGVERSION="\"534\"" -DGG_ROOT="\"\"" -g3 -O3  -fmax-errors=5 -Wl,-z,relro,-z,now 
+gcc -c -o stub_curl.o -DGG_CURL stub.c  -Wall -Wextra -Wuninitialized -Wmissing-declarations -Wformat -Wno-format-zero-length -funsigned-char -fpic -fno-semantic-interposition  -I/usr/include/mariadb -I/usr/include/mariadb/mysql -I /usr/include/postgresql  -I /usr/include/fastcgi -I/usr/include/libxml2  -DGG_OSNAME="\"debian\"" -DGG_OSVERSION="\"12\"" -DGG_PKGVERSION="\"534\"" -DGG_ROOT="\"\"" -g3 -O3  -fmax-errors=5 -Wl,-z,relro,-z,now
+gcc -c -o stub_xml.o -DGG_XML stub.c  -Wall -Wextra -Wuninitialized -Wmissing-declarations -Wformat -Wno-format-zero-length -funsigned-char -fpic -fno-semantic-interposition  -I/usr/include/mariadb -I/usr/include/mariadb/mysql -I /usr/include/postgresql  -I /usr/include/fastcgi -I/usr/include/libxml2  -DGG_OSNAME="\"debian\"" -DGG_OSVERSION="\"12\"" -DGG_PKGVERSION="\"534\"" -DGG_ROOT="\"\"" -g3 -O3  -fmax-errors=5 -Wl,-z,relro,-z,now 
+gcc -c -o stub_arr.o -DGG_ARR stub.c  -Wall -Wextra -Wuninitialized -Wmissing-declarations -Wformat -Wno-format-zero-length -funsigned-char -fpic -fno-semantic-interposition  -I/usr/include/mariadb -I/usr/include/mariadb/mysql -I /usr/include/postgresql  -I /usr/include/fastcgi -I/usr/include/libxml2  -DGG_OSNAME="\"debian\"" -DGG_OSVERSION="\"12\"" -DGG_PKGVERSION="\"534\"" -DGG_ROOT="\"\"" -g3 -O3  -fmax-errors=5 -Wl,-z,relro,-z,now
+gcc -c -o stub_tree.o -DGG_TREE stub.c  -Wall -Wextra -Wuninitialized -Wmissing-declarations -Wformat -Wno-format-zero-length -funsigned-char -fpic -fno-semantic-interposition  -I/usr/include/mariadb -I/usr/include/mariadb/mysql -I /usr/include/postgresql  -I /usr/include/fastcgi -I/usr/include/libxml2  -DGG_OSNAME="\"debian\"" -DGG_OSVERSION="\"12\"" -DGG_PKGVERSION="\"534\"" -DGG_ROOT="\"\"" -g3 -O3  -fmax-errors=5 -Wl,-z,relro,-z,now 
+gcc -c -o stub_pcre2.o -DGG_PCRE2 stub.c  -Wall -Wextra -Wuninitialized -Wmissing-declarations -Wformat -Wno-format-zero-length -funsigned-char -fpic -fno-semantic-interposition  -I/usr/include/mariadb -I/usr/include/mariadb/mysql -I /usr/include/postgresql  -I /usr/include/fastcgi -I/usr/include/libxml2  -DGG_OSNAME="\"debian\"" -DGG_OSVERSION="\"12\"" -DGG_PKGVERSION="\"534\"" -DGG_ROOT="\"\"" -g3 -O3  -fmax-errors=5 -Wl,-z,relro,-z,now 
+gcc -c -o stub_srvc.o -DGG_SERVICE stub.c  -Wall -Wextra -Wuninitialized -Wmissing-declarations -Wformat -Wno-format-zero-length -funsigned-char -fpic -fno-semantic-interposition  -I/usr/include/mariadb -I/usr/include/mariadb/mysql -I /usr/include/postgresql  -I /usr/include/fastcgi -I/usr/include/libxml2  -DGG_OSNAME="\"debian\"" -DGG_OSVERSION="\"12\"" -DGG_PKGVERSION="\"534\"" -DGG_ROOT="\"\"" -g3 -O3  -fmax-errors=5 -Wl,-z,relro,-z,now 
+gcc -c -o stub_crypto.o -DGG_CRYPTO stub.c  -Wall -Wextra -Wuninitialized -Wmissing-declarations -Wformat -Wno-format-zero-length -funsigned-char -fpic -fno-semantic-interposition  -I/usr/include/mariadb -I/usr/include/mariadb/mysql -I /usr/include/postgresql  -I /usr/include/fastcgi -I/usr/include/libxml2  -DGG_OSNAME="\"debian\"" -DGG_OSVERSION="\"12\"" -DGG_PKGVERSION="\"534\"" -DGG_ROOT="\"\"" -g3 -O3  -fmax-errors=5 -Wl,-z,relro,-z,now 
+gcc -c -o stub_after.o stub_after.c  -Wall -Wextra -Wuninitialized -Wmissing-declarations -Wformat -Wno-format-zero-length -funsigned-char -fpic -fno-semantic-interposition  -I/usr/include/mariadb -I/usr/include/mariadb/mysql -I /usr/include/postgresql  -I /usr/include/fastcgi -I/usr/include/libxml2  -DGG_OSNAME="\"debian\"" -DGG_OSVERSION="\"12\"" -DGG_PKGVERSION="\"534\"" -DGG_ROOT="\"\"" -g3 -O3  -fmax-errors=5 -Wl,-z,relro,-z,now
+gcc -c -o stub_before.o stub_before.c  -Wall -Wextra -Wuninitialized -Wmissing-declarations -Wformat -Wno-format-zero-length -funsigned-char -fpic -fno-semantic-interposition  -I/usr/include/mariadb -I/usr/include/mariadb/mysql -I /usr/include/postgresql  -I /usr/include/fastcgi -I/usr/include/libxml2  -DGG_OSNAME="\"debian\"" -DGG_OSVERSION="\"12\"" -DGG_PKGVERSION="\"534\"" -DGG_ROOT="\"\"" -g3 -O3  -fmax-errors=5 -Wl,-z,relro,-z,now
+gcc -c -o mgrg.o mgrg.c  -Wall -Wextra -Wuninitialized -Wmissing-declarations -Wformat -Wno-format-zero-length -funsigned-char -fpic -fno-semantic-interposition  -I/usr/include/mariadb -I/usr/include/mariadb/mysql -I /usr/include/postgresql  -I /usr/include/fastcgi -I/usr/include/libxml2  -DGG_OSNAME="\"debian\"" -DGG_OSVERSION="\"12\"" -DGG_PKGVERSION="\"534\"" -DGG_ROOT="\"\"" -g3 -O3  -fmax-errors=5 -Wl,-z,relro,-z,now 
+gcc -o mgrg mgrg.o -Wl,-rpath=/usr/lib/golf -Wl,--enable-new-dtags -L/usr/lib/golf  
+if [ "" != "1" ]; then objcopy --only-keep-debug mgrg mgrg.dbg || true ; if [[ "1" != "1" && "" != "1" ]]; then objcopy --strip-unneeded mgrg || true ; objcopy --add-gnu-debuglink=mgrg.dbg mgrg || true ; else rm -f mgrg.dbg || true ; fi ; fi
+gcc -c -o v1.o v1.c  -Wall -Wextra -Wuninitialized -Wmissing-declarations -Wformat -Wno-format-zero-length -funsigned-char -fpic -fno-semantic-interposition  -I/usr/include/mariadb -I/usr/include/mariadb/mysql -I /usr/include/postgresql  -I /usr/include/fastcgi -I/usr/include/libxml2  -DGG_OSNAME="\"debian\"" -DGG_OSVERSION="\"12\"" -DGG_PKGVERSION="\"534\"" -DGG_ROOT="\"\"" -g3 -O3  -fmax-errors=5 -Wl,-z,relro,-z,now 
+gcc -o v1 v1.o golfmems.o chandle.o golfrtc.o hash.o -Wl,-rpath=/usr/lib/golf -Wl,--enable-new-dtags -L/usr/lib/golf   
+if [ "" != "1" ]; then objcopy --only-keep-debug v1 v1.dbg || true ; if [[ "1" != "1" && "" != "1" ]]; then objcopy --strip-unneeded v1 || true ; objcopy --add-gnu-debuglink=v1.dbg v1 || true ; else rm -f v1.dbg || true ; fi ; fi
+echo '#!/bin/bash'>selinux.setup
+echo 'if [ -f /etc/selinux/config ]; then /usr/lib/golf/selinux/golf.sel "/usr/lib/golf/selinux" "/usr/share" "/usr/bin" ; fi'>>selinux.setup
+chmod 0755 selinux.setup
+Building version 534
+make[1]: Leaving directory '/home/dasoftver/golf-534'
+   dh_auto_test
+   create-stamp debian/debhelper-build-stamp
+ fakeroot debian/rules binary
+GG_DEBIAN_BUILD=1 dh binary
+   dh_testroot
+   dh_prep
+   dh_auto_install --destdir=debian/golf/
+	make -j1 install DESTDIR=/home/dasoftver/golf-534/debian/golf AM_UPDATE_INFO_DIR=no "INSTALL=install --strip-program=true"
+make[1]: Entering directory '/home/dasoftver/golf-534'
+install -m 0755 -d /home/dasoftver/golf-534/debian/golf/var/lib/gg/bld
+install -m 0755 -d /home/dasoftver/golf-534/debian/golf/usr/include/golf
+install -m 0755 -d /home/dasoftver/golf-534/debian/golf/usr/share/doc/golf
+install -D -m 0644 golf.h -t /home/dasoftver/golf-534/debian/golf/usr/include/golf/
+install -D -m 0644 gcli.h -t /home/dasoftver/golf-534/debian/golf/usr/include/golf/
+install -m 0755 -d /home/dasoftver/golf-534/debian/golf/usr/lib/golf
+install -m 0755 -d /home/dasoftver/golf-534/debian/golf/usr/lib/golf/selinux
+install -D -m 0755 libgolfpg.so -t /home/dasoftver/golf-534/debian/golf/usr/lib/golf/
+install -D -m 0755 libgolfdb.so -t /home/dasoftver/golf-534/debian/golf/usr/lib/golf/
+install -D -m 0755 libgolflite.so -t /home/dasoftver/golf-534/debian/golf/usr/lib/golf/
+install -D -m 0755 libgolfmys.so -t /home/dasoftver/golf-534/debian/golf/usr/lib/golf/
+install -D -m 0755 libgolfsec.so -t /home/dasoftver/golf-534/debian/golf/usr/lib/golf/
+install -D -m 0755 libgolftree.so -t /home/dasoftver/golf-534/debian/golf/usr/lib/golf/
+install -D -m 0755 libgolfcurl.so -t /home/dasoftver/golf-534/debian/golf/usr/lib/golf/
+install -D -m 0755 libgolfxml.so -t /home/dasoftver/golf-534/debian/golf/usr/lib/golf/
+install -D -m 0755 libgolfarr.so -t /home/dasoftver/golf-534/debian/golf/usr/lib/golf/
+install -D -m 0755 libgolfpcre2.so -t /home/dasoftver/golf-534/debian/golf/usr/lib/golf/
+install -D -m 0755 libsrvcgolf.so -t /home/dasoftver/golf-534/debian/golf/usr/lib/golf/
+install -D -m 0755 libgolf.so -t /home/dasoftver/golf-534/debian/golf/usr/lib/golf/
+install -D -m 0755 libgolfcli.so -t /home/dasoftver/golf-534/debian/golf/usr/lib/golf/
+install -D -m 0755 libgolfscli.so -t /home/dasoftver/golf-534/debian/golf/usr/lib/golf/
+install -D -m 0644 stub_sqlite.o -t /home/dasoftver/golf-534/debian/golf/usr/lib/golf/
+install -D -m 0644 stub_postgres.o -t /home/dasoftver/golf-534/debian/golf/usr/lib/golf/
+install -D -m 0644 stub_mariadb.o -t /home/dasoftver/golf-534/debian/golf/usr/lib/golf/
+install -D -m 0644 stub_gendb.o -t /home/dasoftver/golf-534/debian/golf/usr/lib/golf/
+install -D -m 0644 stub_srvc.o -t /home/dasoftver/golf-534/debian/golf/usr/lib/golf/
+install -D -m 0644 stub_pcre2.o -t /home/dasoftver/golf-534/debian/golf/usr/lib/golf/
+install -D -m 0644 stub_curl.o -t /home/dasoftver/golf-534/debian/golf/usr/lib/golf/
+install -D -m 0644 stub_arr.o -t /home/dasoftver/golf-534/debian/golf/usr/lib/golf/
+install -D -m 0644 stub_tree.o -t /home/dasoftver/golf-534/debian/golf/usr/lib/golf/
+install -D -m 0644 stub_crypto.o -t /home/dasoftver/golf-534/debian/golf/usr/lib/golf/
+install -D -m 0644 stub_before.o -t /home/dasoftver/golf-534/debian/golf/usr/lib/golf/
+install -D -m 0644 stub_after.o -t /home/dasoftver/golf-534/debian/golf/usr/lib/golf/
+install -D -m 0644 stub_xml.o -t /home/dasoftver/golf-534/debian/golf/usr/lib/golf/
+install -D -m 0644 golf.vim -t /home/dasoftver/golf-534/debian/golf/usr/lib/golf/
+install -D -m 0644 vmakefile -t /home/dasoftver/golf-534/debian/golf/usr/lib/golf/
+if [ "1" != "1" ]; then install -D -m 0644 LICENSE -t /home/dasoftver/golf-534/debian/golf/usr/share/doc/golf/ ; fi
+install -D -m 0644 NOTICE -t /home/dasoftver/golf-534/debian/golf/usr/share/doc/golf/
+install -D -m 0644 README.md -t /home/dasoftver/golf-534/debian/golf/usr/share/doc/golf/
+install -D -m 0644 CONTRIBUTING.md -t /home/dasoftver/golf-534/debian/golf/usr/share/doc/golf/
+install -m 0755 -d /home/dasoftver/golf-534/debian/golf/usr/bin
+install -D -m 0755 v1 -t /home/dasoftver/golf-534/debian/golf/usr/lib/golf/
+install -D -m 0755 vdiag -t /home/dasoftver/golf-534/debian/golf/usr/lib/golf/
+install -D -m 0755 gg  -t /home/dasoftver/golf-534/debian/golf/usr/bin/
+install -D -m 0755 mgrg  -t /home/dasoftver/golf-534/debian/golf/usr/bin/
+if [[ "1" != "1" && "" != "1" && -f v1.dbg ]]; then install -m 0755 -d /home/dasoftver/golf-534/debian/golf/usr/lib/debug/golf ; install -D -m 0644 v1.dbg -t /home/dasoftver/golf-534/debian/golf/usr/lib/debug/golf/ ; install -D -m 0644 mgrg.dbg  -t /home/dasoftver/golf-534/debian/golf/usr/lib/debug/golf/ ;  install -D -m 0644 libgolfpg.so.dbg -t /home/dasoftver/golf-534/debian/golf/usr/lib/debug/golf/ ; install -D -m 0644 libgolfdb.so.dbg -t /home/dasoftver/golf-534/debian/golf/usr/lib/debug/golf/ ; install -D -m 0644 libgolflite.so.dbg -t /home/dasoftver/golf-534/debian/golf/usr/lib/debug/golf/ ; install -D -m 0644 libgolfmys.so.dbg -t /home/dasoftver/golf-534/debian/golf/usr/lib/debug/golf/ ; install -D -m 0644 libgolfsec.so.dbg -t /home/dasoftver/golf-534/debian/golf/usr/lib/debug/golf/ ; install -D -m 0644 libgolftree.so.dbg -t /home/dasoftver/golf-534/debian/golf/usr/lib/debug/golf/ ; install -D -m 0644 libgolfcurl.so.dbg -t /home/dasoftver/golf-534/debian/golf/usr/lib/debug/golf/ ; install -D -m 0644 libgolfxml.so.dbg -t /home/dasoftver/golf-534/debian/golf/usr/lib/debug/golf/ ; install -D -m 0644 libgolfarr.so.dbg -t /home/dasoftver/golf-534/debian/golf/usr/lib/debug/golf/ ; install -D -m 0644 libgolfpcre2.so.dbg -t /home/dasoftver/golf-534/debian/golf/usr/lib/debug/golf/ ; install -D -m 0644 libsrvcgolf.so.dbg -t /home/dasoftver/golf-534/debian/golf/usr/lib/debug/golf/ ; install -D -m 0644 libgolf.so.dbg -t /home/dasoftver/golf-534/debian/golf/usr/lib/debug/golf/ ; install -D -m 0644 libgolfcli.so.dbg -t /home/dasoftver/golf-534/debian/golf/usr/lib/debug/golf/ ; install -D -m 0644 libgolfscli.so.dbg -t /home/dasoftver/golf-534/debian/golf/usr/lib/debug/golf/ ; fi
+if [ "1" != "1" ]; then install -m 0755 -d /home/dasoftver/golf-534/debian/golf/usr/share/man/man2 ; install -D -m 0644 docs/*.2gg -t /home/dasoftver/golf-534/debian/golf/usr/share/man/man2/ ; if [ "" != "1" ]; then sed -i "s/\$VERSION/534/g" /home/dasoftver/golf-534/debian/golf/usr/share/man/man2/*.2gg; fi ; if [ "" != "1" ]; then sed -i "s/\$DATE/May-17-2025/g" /home/dasoftver/golf-534/debian/golf/usr/share/man/man2/*.2gg; fi ; for i in $(ls /home/dasoftver/golf-534/debian/golf/usr/share/man/man2/*.2gg); do gzip -f $i; done ; mandb >/dev/null 2>&1 || true ; fi
+install -D -m 0755 sys -t /home/dasoftver/golf-534/debian/golf/usr/lib/golf/
+sed -i "s|^[ ]*export[ ]*GG_LIBRARY_PATH[ ]*=.*|export GG_LIBRARY_PATH=/usr/lib/golf|g" /home/dasoftver/golf-534/debian/golf/usr/lib/golf/sys
+sed -i "s|^[ ]*export[ ]*GG_LIBRARY_PATH[ ]*=.*|export GG_LIBRARY_PATH=/usr/lib/golf|g" /home/dasoftver/golf-534/debian/golf/usr/bin/gg
+sed -i "s|^[ ]*export[ ]*GG_INCLUDE_PATH[ ]*=.*|export GG_INCLUDE_PATH=/usr/include/golf|g" /home/dasoftver/golf-534/debian/golf/usr/lib/golf/sys
+sed -i "s|^[ ]*export[ ]*GG_VERSION[ ]*=.*|export GG_VERSION=534|g" /home/dasoftver/golf-534/debian/golf/usr/lib/golf/sys
+if [ "" == "1" ]; then sed -i 's|^export GG_ROOT=.*$|export GG_ROOT="''"|g' /home/dasoftver/golf-534/debian/golf/usr/bin/gg ; sed -i 's|^#define GG_ROOT .*$|#define GG_ROOT "''"|g' /home/dasoftver/golf-534/debian/golf/usr/include/golf/golf.h ; sed -i 's|^#\s*define GG_ROOT .*$|#define GG_ROOT "''"|g' /home/dasoftver/golf-534/debian/golf/usr/include/golf/gcli.h ; fi
+chmod -x *.so; chmod -x *.o
+install -D -m 0644 gg.te -t /home/dasoftver/golf-534/debian/golf/usr/lib/golf/selinux 
+install -D -m 0644 golf.te -t /home/dasoftver/golf-534/debian/golf/usr/lib/golf/selinux 
+install -D -m 0644 gg.fc -t /home/dasoftver/golf-534/debian/golf/usr/lib/golf/selinux 
+install -D -m 0755 golf.sel -t /home/dasoftver/golf-534/debian/golf/usr/lib/golf/selinux 
+install -D -m 0755 selinux.setup -t /home/dasoftver/golf-534/debian/golf/usr/lib/golf/selinux
+if [[ "" != "1" && "" != "1" && -f /etc/selinux/config ]]; then /home/dasoftver/golf-534/debian/golf/usr/lib/golf/selinux/selinux.setup; fi
+make[1]: Leaving directory '/home/dasoftver/golf-534'
+   dh_installdocs
+   dh_installchangelogs
+   dh_installman
+   dh_perl
+   dh_link
+   dh_strip_nondeterminism
+   dh_compress
+   dh_fixperms
+   dh_missing
+   dh_dwz -a
+   dh_strip -a
+   dh_makeshlibs -a
+   dh_shlibdeps -a
+   dh_installdeb
+   dh_gencontrol
+   dh_md5sums
+   dh_builddeb
+dpkg-deb: building package 'golf' in '../golf_534-1_amd64.deb'.
+dpkg-deb: building package 'golf-dbgsym' in '../golf-dbgsym_534-1_amd64.deb'.
+ dpkg-genbuildinfo -O../golf_534-1_amd64.buildinfo
+ dpkg-genchanges -O../golf_534-1_amd64.changes
+dpkg-genchanges: info: including full source code in upload
+ dpkg-source --after-build .
+dpkg-buildpackage: info: full upload (original source is included)
+Now running lintian golf_534-1_amd64.changes ...
+E: golf changes: bad-distribution-in-changes-file bookworm
+W: golf source: newer-standards-version 4.7.2 (current is 4.6.2)
+Finished running lintian.
