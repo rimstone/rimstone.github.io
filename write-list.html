@@ -227,13 +227,13 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Write list</div><hr/><span style="font-weight:bold;">Purpose</span>: Write key/value pair into a linked list.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_995'>
+<pre id='code_996'>
 <span class="Statement"> write-list</span> &lt;list&gt;<span class="Identifier"> key</span> &lt;key&gt; \
     <span class="Identifier"> value</span> &lt;value&gt; \
      [<span class="Identifier"> append</span> [ &lt;append&gt; ] ]</pre>
-<span id=golf_copied_995 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_995' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_995, code_995, golf_copied_995)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_996 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_996' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_996, code_996, golf_copied_996)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 write-list adds a pair of key/value strings to the linked &lt;list&gt;, specified with &lt;key&gt; and &lt;value&gt; (in "key" and "value" clauses, collectively called an "element"). <br/>
 <br/>
@@ -243,16 +243,16 @@ If "append" clause is used without boolean variable &lt;append&gt;, or if &lt;ap
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Add a key/value pair to the end of the list:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_997'>
+<pre id='code_998'>
 <span class="Statement"> new-list</span> mylist
 <span class="Statement"> write-list</span> mylist<span class="Identifier"> key</span> <span class="Constant">&quot;mykey&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;myvalue&quot;</span><span class="Identifier"> append</span></pre>
-<span id=golf_copied_997 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_997' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_997, code_997, golf_copied_997)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_998 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_998' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_998, code_998, golf_copied_998)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The following is a list that is process-scoped, i.e. it is a linked-list server, which can add, delete, read and position to various elements:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_999'>
+<pre id='code_1000'>
 <span class="Statement"> %%</span> /llsrv<span class="Identifier"> public</span>
      <span class="Comment">// Create linked list just once for the life of the process</span>
 <span class="Statement">     do-once</span>
@@ -324,37 +324,37 @@ The following is a list that is process-scoped, i.e. it is a linked-list server,
 <span class="Statement">         purge-list</span> t
 <span class="Statement">     end-if</span>
 <span class="Statement"> %%</span></pre>
+<span id=golf_copied_1000 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_1000' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_1000, code_1000, golf_copied_1000)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Create application:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_997'>
+sudo mgrg <span class="Special">-i</span> <span class="Special">-u</span> <span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span> linkserver</pre>
+<span id=golf_copied_997 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_997' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_997, code_997, golf_copied_997)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Start the server:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_999'>
+mgrg <span class="Special">-w</span> <span class="Constant">1</span> linkserver</pre>
 <span id=golf_copied_999 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_999' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_999, code_999, golf_copied_999)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Create application:<br/>
-<div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_996'>
-sudo mgrg <span class="Special">-i</span> <span class="Special">-u</span> <span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span> linkserver</pre>
-<span id=golf_copied_996 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_996' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_996, code_996, golf_copied_996)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-Start the server:<br/>
-<div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_998'>
-mgrg <span class="Special">-w</span> <span class="Constant">1</span> linkserver</pre>
-<span id=golf_copied_998 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_998' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_998, code_998, golf_copied_998)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
 Try it out:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_1000'>
+<pre id='code_1001'>
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/llsrv/op=add/key=1/data=1</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--service</span>
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/llsrv/op=add/key=2/data=2</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--service</span>
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/llsrv/op=query</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--service</span>
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/llsrv/op=previous</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--service</span>
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/llsrv/op=query</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--service</span></pre>
-<span id=golf_copied_1000 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_1000' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_1000, code_1000, golf_copied_1000)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_1001 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_1001' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_1001, code_1001, golf_copied_1001)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Linked list'></a><span style="font-weight:bold;">Linked list</span><br/>
