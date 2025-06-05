@@ -227,19 +227,19 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;New array</div><hr/><span style="font-weight:bold;">Purpose</span>: Create array.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_702'>
-<span class="Statement"> new-array</span> &lt;array&gt; [<span class="Identifier"> max-size</span> &lt;max-size&gt; ] [<span class="Identifier"> process-scope</span> ]</pre>
-<span id=golf_copied_702 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_702' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_702, code_702, golf_copied_702)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_709'>
+<span class="Statement"> new-array</span> &lt;array&gt; [<span class="Identifier"> max-size</span> &lt;max-size&gt; ] [<span class="Identifier"> process-scope</span> ]  [<span class="Identifier"> type string</span> |<span class="Identifier"> number</span> |<span class="Identifier"> bool</span> ]</pre>
+<span id=golf_copied_709 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_709' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_709, code_709, golf_copied_709)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-new-array creates new &lt;array&gt;. An array is an indexed array, with a number as an index, and with a string as an element in the array. <br/>
+new-array creates new &lt;array&gt;. An array is an indexed array, with a number as an index, and with a either a string, number or boolean as an element in the array. By default (without "type" clause), &lt;array&gt; is an array of strings. You can specify "string", "number" or "bool" in "type" clause, in which case &lt;array&gt; is an array of strings, numbers or booleans respectively.<br/>
 <br/>
-A Golf array is flexible, which means that it will grow to accommodate your needs. By default, an array allocates room for 256 elements that can grow up to 1,000,000 elements, unless &lt;max-size&gt; number (in "max-size" clause) is specified in which case it can grow up to &lt;max-size&gt; elements. &lt;max-size&gt; must be at least 256.<br/>
+An array is flexible, which means that it will grow as needed. By default, an array allocates room for 256 elements that can grow up to 1,000,000 elements, unless &lt;max-size&gt; number (in "max-size" clause) is specified in which case it can grow up to &lt;max-size&gt; elements. &lt;max-size&gt; must be at least 256.<br/>
 <br/>
-Note that max-size specifies only the upper limit of allocation. The actual amount of memory allocated can vary greatly, and is only 256 elements for a new array.<br/>
+Note that max-size specifies only the upper limit of allocation. The actual amount of memory allocated can vary.<br/>
 <br/>
-With a Golf array, you do not need to pre-size the array; rather when you write an element, it will resize automatically. For instance, you can set an array element arr[0] and then arr[1000] (with nothing in-between), and Golf will automatically extend the array to accommodate. Note that an array will not automatically contract when tailing elements are deleted. Use <a href='https://golf-lang.com/purge-array.html'>purge-array</a> to delete all elements in the array and shrink its memory footprint when your processing is done.<br/>
+You do not need to pre-size the array; rather when you write an element, it will resize automatically. For instance, you can set an array element arr[0] and then arr[1000] (with nothing in-between), the array will be automatically extended to accommodate. Note that it will not automatically contract when tailing elements are deleted. Use <a href='https://golf-lang.com/purge-array.html'>purge-array</a> to delete all elements in the array and shrink its memory footprint when your processing is done.<br/>
 <div class="vsub"><a id="Scope"></a>Scope</div>
 Note that an array is accessible to the current request only, unless "process-scope" clause is used, in which case all requests served by a process can use it (see <a href='https://golf-lang.com/do-once.html'>do-once</a> for a typical way to do this).<br/>
 <br/>
@@ -247,11 +247,11 @@ If "process-scope" is used, then &lt;array&gt; will keep its data across all req
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Create a new array:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_703'>
+<pre id='code_710'>
 <span class="Statement"> new-array</span> arr</pre>
-<span id=golf_copied_703 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_703' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_703, code_703, golf_copied_703)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_710 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_710' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_710, code_710, golf_copied_710)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Array'></a><span style="font-weight:bold;">Array</span><br/>

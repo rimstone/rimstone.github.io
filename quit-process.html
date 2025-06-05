@@ -3,11 +3,11 @@
 
 <head>
 <!--__GOLF_REDIRECT__-->
-<title>Pf url</title>
+<title>Quit process</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="canonical" href="https://golf-lang.com/pf-url.html" />
+<link rel="canonical" href="https://golf-lang.com/quit-process.html" />
 <style>
 
 
@@ -224,43 +224,39 @@ function gg_copy(gt, eid, gc) {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Pf url</div><hr/><span style="font-weight:bold;">Purpose</span>: Outputs a URL-encoded formatted string.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Quit process</div><hr/><span style="font-weight:bold;">Purpose</span>: Quit the current process.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_755'>
-<span class="Statement"> pf-url</span> &lt;format&gt;<span class="Identifier"> ,</span> &lt;variable&gt; [<span class="Identifier"> ,</span> &lt;variable&gt; ]... \
-     [<span class="Identifier"> to-error</span> ] \
-     [<span class="Type"> to</span> &lt;string&gt; ]</pre>
-<span id=golf_copied_755 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_755' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_755, code_755, golf_copied_755)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_796'>
+<span class="Statement"> quit-process</span></pre>
+<span id=golf_copied_796 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_796' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_796, code_796, golf_copied_796)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-pf-url is the same as <a href='https://golf-lang.com/pf-out.html'>pf-out</a>, except that the output is URL-encoded. This means such output is suited for use in URL parameters.<br/>
+quit-process will properly terminate the current request and its running process (be it <a href='https://golf-lang.com/service.html'>service</a> or <a href='https://golf-lang.com/command-line.html'>command-line</a>). It does that by sending itself a SIGTERM signal and then executing the process wind-down.<br/>
+<br/>
+quit-process may be used to stop the service processes (or restart them if setup) in rare cases where you wish to do so programmatically instead of using <a href='https://golf-lang.com/mgrg.html'>mgrg</a>.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
-Create a URL based on arbitrary strings used as URL parameters - for instance space would be encoded as "%20" in the final output:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_756'>
-<span class="Statement"> @</span>&lt;a href='&lt;&lt;p-path&gt;&gt;/update?val=<span class="Statement">&lt;&lt;pf-url</span> <span class="Constant">&quot;Purchased </span><span class="Special">%s</span><span class="Constant"> for </span><span class="Special">%ld</span><span class="Constant"> dollars&quot;</span>, piece_desc, price<span class="Statement">&gt;&gt;</span>'&gt;Log transaction&lt;/a&gt;</pre>
-<span id=golf_copied_756 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_756' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_756, code_756, golf_copied_756)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_797'>
+<span class="Statement"> quit-process</span></pre>
+<span id=golf_copied_797 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_797' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_797, code_797, golf_copied_797)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-See <a href='https://golf-lang.com/pf-out.html'>pf-out</a> for more examples.<br/>
 <div class="vsub"><a id="See also"></a>See also</div>
- <a name='Output'></a><span style="font-weight:bold;">Output</span><br/>
-<a href='https://golf-lang.com/finish-output.html'>finish-output</a> &nbsp;<br/>
-<a href='https://golf-lang.com/flush-output.html'>flush-output</a> &nbsp;<br/>
-<a href='https://golf-lang.com/output-statement.html'>output-statement</a> &nbsp;<br/>
-<a href='https://golf-lang.com/pf-out.html'>pf-out</a> &nbsp;<br/>
-<a href='https://golf-lang.com/pf-url.html'>pf-url</a> &nbsp;<br/>
-<a href='https://golf-lang.com/pf-web.html'>pf-web</a> &nbsp;<br/>
-<a href='https://golf-lang.com/p-num.html'>p-num</a> &nbsp;<br/>
-<a href='https://golf-lang.com/p-out.html'>p-out</a> &nbsp;<br/>
-<a href='https://golf-lang.com/p-path.html'>p-path</a> &nbsp;<br/>
-<a href='https://golf-lang.com/p-source-file.html'>p-source-file</a> &nbsp;<br/>
-<a href='https://golf-lang.com/p-source-line.html'>p-source-line</a> &nbsp;<br/>
-<a href='https://golf-lang.com/p-url.html'>p-url</a> &nbsp;<br/>
-<a href='https://golf-lang.com/p-web.html'>p-web</a> &nbsp; <br/>
+ <a name='Program flow'></a><span style="font-weight:bold;">Program flow</span><br/>
+<a href='https://golf-lang.com/break-loop.html'>break-loop</a> &nbsp;<br/>
+<a href='https://golf-lang.com/call-handler.html'>call-handler</a> &nbsp;<br/>
+<a href='https://golf-lang.com/code-blocks.html'>code-blocks</a> &nbsp;<br/>
+<a href='https://golf-lang.com/continue-loop.html'>continue-loop</a> &nbsp;<br/>
+<a href='https://golf-lang.com/do-once.html'>do-once</a> &nbsp;<br/>
+<a href='https://golf-lang.com/exit-handler.html'>exit-handler</a> &nbsp;<br/>
+<a href='https://golf-lang.com/if-defined.html'>if-defined</a> &nbsp;<br/>
+<a href='https://golf-lang.com/if-true.html'>if-true</a> &nbsp;<br/>
+<a href='https://golf-lang.com/quit-process.html'>quit-process</a> &nbsp;<br/>
+<a href='https://golf-lang.com/return-handler.html'>return-handler</a> &nbsp;<br/>
+<a href='https://golf-lang.com/start-loop.html'>start-loop</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
 <a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->

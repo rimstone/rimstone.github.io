@@ -232,88 +232,88 @@ A "request URL" is a URL that an outside caller (such as a web browser) uses to 
 </li><li>URL parameters.</li></ul>
 Here's a breakdown of URL structure:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_834'>
+<pre id='code_842'>
 &lt;scheme&gt;://&lt;domain&gt;[:&lt;port&gt;]&lt;application path&gt;&lt;request path&gt;&lt;parameters&gt;</pre>
-<span id=golf_copied_834 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_834' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_834, code_834, golf_copied_834)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_842 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_842' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_842, code_842, golf_copied_842)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 For example, in the following URL:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_837'>
+<pre id='code_845'>
 https://your.website.com/my-app/my-request/par1=val1/par2=val2</pre>
-<span id=golf_copied_837 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_837' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_837, code_837, golf_copied_837)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_845 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_845' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_845, code_845, golf_copied_845)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 "/my-app" is application path, "/my-request" is request path and "/par1=val1/par2=val2" are parameters "par1" and "par2" with values "val1" and "val2". Together, application path and request path are called URL path.<br/>
 <div class="vsub"><a id="Application path"></a>Application path</div>
 The leading part of URL's path is called "application path". By default, application path is the application name (see <a href='https://golf-lang.com/mgrg.html'>mgrg</a> with "-i" option) preceded by forward slash ("/"); if it's "shopping", then the default application path is:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_839'>
+<pre id='code_847'>
 /shopping</pre>
-<span id=golf_copied_839 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_839' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_839, code_839, golf_copied_839)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_847 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_847' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_847, code_847, golf_copied_847)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Application name can contain alphanumerical characters and hyphens.<br/>
 <br/>
 <span style="font-weight:bold;">- Customizing application path</span><br/>
 You can change the application path by specifying it with "--path" parameter in <a href='https://golf-lang.com/gg.html'>gg</a> when building; each application must have its own unique path. Note that whatever it may be, the application name must always be its last path segment. For example, if your application name is "shopping", then the application path may be:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_841'>
+<pre id='code_849'>
 /api/v2/shopping</pre>
-<span id=golf_copied_841 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_841' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_841, code_841, golf_copied_841)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_849 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_849' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_849, code_849, golf_copied_849)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 An example of specifying the custom application path:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_835'>
+<pre id='code_843'>
 gg <span class="Special">-q</span> <span class="Special">--path</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/api/v2/shopping</span><span class="Statement">&quot;</span></pre>
-<span id=golf_copied_835 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_835' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_835, code_835, golf_copied_835)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_843 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_843' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_843, code_843, golf_copied_843)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Request path"></a>Request path</div>
 Request path follows the application path, for instance:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_842'>
+<pre id='code_850'>
 https://some.web.site/shopping/buy-item</pre>
-<span id=golf_copied_842 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_842' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_842, code_842, golf_copied_842)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_850 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_850' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_850, code_850, golf_copied_850)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In this case the application path is "/shopping" and the request path is "/buy-item". It means that file "buy-item.golf" handles request "/buy-item" by implementing a <a href='https://golf-lang.com/begin-handler.html'>begin-handler</a> "/buy-item" in it. As another example, file "services/manage-home.golf" (meaning "manage-home.golf" file in subdirectory "services") handles request "/services/manage-home" etc.<br/>
 <br/>
 The request path must match (fully or partially) the path of the file name that implements it, with source directory being the root ("/"). Here is an example of implementing a request "/buy-item" in file "buy-item.golf":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_833'>
+<pre id='code_841'>
 <span class="Statement"> begin-handler</span> /buy-item<span class="Identifier"> public</span>
 <span class="Statement">     get-param</span> some_param
-<span class="Statement">     @</span>Bought item: <span class="Statement">&lt;&lt;p-out</span> some_param<span class="Statement">&gt;&gt;</span>
+<span class="Statement">     @</span>Bought item: <span class="Statement">&lt;&lt;print-out</span> some_param<span class="Statement">&gt;&gt;</span>
 <span class="Statement"> end-handler</span></pre>
-<span id=golf_copied_833 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_833' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_833, code_833, golf_copied_833)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_841 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_841' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_841, code_841, golf_copied_841)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 As an example of a path hierarchy, such as for example a hierarchy of resources, methods etc, <a href='https://golf-lang.com/begin-handler.html'>begin-handler</a> may be:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_836'>
+<pre id='code_844'>
 <span class="Statement"> begin-handler</span> /items/wine-collection/red-wine/buy-item<span class="Identifier"> public</span>
 <span class="Statement">     .</span>..
 <span class="Statement"> end-handler</span></pre>
-<span id=golf_copied_836 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_836' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_836, code_836, golf_copied_836)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_844 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_844' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_844, code_844, golf_copied_844)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 then the URL to call it would be:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_843'>
+<pre id='code_851'>
 https://some.web.site/shopping/items/wine-collection/red-wine/buy-item</pre>
-<span id=golf_copied_843 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_843' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_843, code_843, golf_copied_843)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_851 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_851' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_851, code_851, golf_copied_851)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 and might be implemented in file "items/wine-collection/red-wine/buy-item.golf", meaning under subdirectory "items", then subdirectory "wine-collection", then subdirectory "red-wine", then file "buy-item.golf".<br/>
 <br/>
@@ -335,11 +335,11 @@ The actual input parameters follow after the request path, and can be specified 
 <span style="font-weight:bold;">- Path segments</span><br/>
 A common way is to specify name and value separated by an equal sign within a single path segment:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_844'>
+<pre id='code_852'>
 https://some.web.site/shopping/buy-item/sku=4811/price=600/</pre>
-<span id=golf_copied_844 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_844' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_844, code_844, golf_copied_844)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_852 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_852' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_852, code_852, golf_copied_852)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 This way, you have a readable representation of parameter names and values, while still maintaining the hierarchical form which conveys how are the parameters structured.<br/>
 <br/>
@@ -348,27 +348,27 @@ Here, the required request path is "/buy-item" and there are two input parameter
 <span style="font-weight:bold;">- Query string</span><br/>
 Parameters can be specified after a question mark in a "name=value" form. For example, the full URL (with the same parameter values as above) may be:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_845'>
+<pre id='code_853'>
 https://some.web.site/shopping/buy-item?sku=4811&amp;price=600</pre>
-<span id=golf_copied_845 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_845' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_845, code_845, golf_copied_845)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_853 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_853' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_853, code_853, golf_copied_853)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <span style="font-weight:bold;">- Mixed</span><br/>
 You can specify a mix of the above ways to write parameters, for instance the above URL can be written as:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_846'>
+<pre id='code_854'>
 https://some.web.site/shopping/buy-item/sku=4811?price=600</pre>
-<span id=golf_copied_846 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_846' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_846, code_846, golf_copied_846)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_854 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_854' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_854, code_854, golf_copied_854)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <span style="font-weight:bold;">- Parameters</span><br/>
 A parameter name can be comprised of alphanumeric characters, hyphens and underscores, and it must start with an alphabet character. Any hyphens are converted to underscores for the purpose of obtaining parameter value, see <a href='https://golf-lang.com/get-param.html'>get-param</a>. Do not use double underscore ("__") in parameter names. <br/>
 <br/>
 Structuring your parameters, i.e. the order in a query path or path segments, and which ones (if any) are in a query string, is determined by you. Regardless of your choices, the code that handles a request is the same. In the example used here, you can obtain the parameters in request handler source file "buy-item.golf":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_838'>
+<pre id='code_846'>
 <span class="Statement"> begin-handler</span> /buy-item<span class="Identifier"> public</span>
 <span class="Statement">     get-param</span> sku
 <span class="Statement">     get-param</span> price
@@ -376,22 +376,22 @@ Structuring your parameters, i.e. the order in a query path or path segments, an
 <span class="Statement">     run-query</span> @mydb = <span class="Constant">&quot;update wine_items set price='</span><span class="Special">%s</span><span class="Constant">' where sku='</span><span class="Special">%s</span><span class="Constant">'&quot;</span><span class="Identifier"> :</span> price, sku<span class="Identifier"> no-loop</span>
 <span class="Statement">     @</span>OKAY
 <span class="Statement"> end-handler</span></pre>
-<span id=golf_copied_838 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_838' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_838, code_838, golf_copied_838)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_846 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_846' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_846, code_846, golf_copied_846)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 For a hierarchical URL path, you would write the same:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_840'>
+<pre id='code_848'>
 <span class="Statement"> begin-handler</span> /items/wine-collection/red-wine/buy-item<span class="Identifier"> public</span>
 <span class="Statement">     get-param</span> sku
 <span class="Statement">     get-param</span> price
 
 <span class="Statement">     run-query</span> @mydb = <span class="Constant">&quot;update wine_items set price='</span><span class="Special">%s</span><span class="Constant">' where sku='</span><span class="Special">%s</span><span class="Constant">'&quot;</span><span class="Identifier"> :</span> price, sku<span class="Identifier"> no-loop</span>
 <span class="Statement"> end-handler</span></pre>
-<span id=golf_copied_840 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_840' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_840, code_840, golf_copied_840)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_848 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_848' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_848, code_848, golf_copied_848)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Maximum length"></a>Maximum length</div>
 Maximum length of a request URL is 2500 bytes.<br/>

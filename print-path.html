@@ -3,11 +3,11 @@
 
 <head>
 <!--__GOLF_REDIRECT__-->
-<title>P path</title>
+<title>Print path</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="canonical" href="https://golf-lang.com/p-path.html" />
+<link rel="canonical" href="https://golf-lang.com/print-path.html" />
 <style>
 
 
@@ -224,46 +224,44 @@ function gg_copy(gt, eid, gc) {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;P path</div><hr/><span style="font-weight:bold;">Purpose</span>: Outputs URL application and request path of a request handler.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Print path</div><hr/><span style="font-weight:bold;">Purpose</span>: Print out URL that leads to a request handler.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_769'>
-<span class="Statement"> p-path</span> &lt;request path&gt; [<span class="Identifier"> new-line</span> ]</pre>
-<span id=golf_copied_769 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_769' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_769, code_769, golf_copied_769)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_783'>
+<span class="Statement"> print-path</span> &lt;request path&gt; [<span class="Identifier"> new-line</span> ]</pre>
+<span id=golf_copied_783 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_783' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_783, code_783, golf_copied_783)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-p-path outputs a URL application path (see <a href='https://golf-lang.com/request.html'>request</a>) with &lt;request path&gt; following immediately afterwards.<br/>
+print-path outputs URL application path of a URL that called this <a href='https://golf-lang.com/request.html'>request</a> handler, followed by string &lt;request path&gt;.<br/>
 <br/>
-If no "--path" option in <a href='https://golf-lang.com/gg.html'>gg</a> is used to specify URL application path, then it is the same as application name prepended with a forward slash:<br/>
+If no "--path" option in <a href='https://golf-lang.com/gg.html'>gg</a> is used to specify URL application path, then it is the same as application name prepended with a forward slash, followed by "/&lt;request path&gt;":<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_771'>
-/&lt;app name&gt;</pre>
-<span id=golf_copied_771 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_771' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_771, code_771, golf_copied_771)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_785'>
+/&lt;app name&gt;/&lt;request path&gt;</pre>
+<span id=golf_copied_785 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_785' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_785, code_785, golf_copied_785)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-p-path is used in construction of URLs or HTML forms (either for HTML or API) to refer back to the same application.<br/>
+print-path is used in construction of URLs or HTML forms (either for HTML or API) to refer back to the same application. Use it to create the absolute URL path to refer back to a service of yours so you can issue <a href='https://golf-lang.com/request.html'>request</a>s to it. <br/>
 <br/>
-Use <a href='https://golf-lang.com/p-path.html'>p-path</a> to create the absolute URL path to refer back to your service so you can issue <a href='https://golf-lang.com/request.html'>request</a>s to it. <br/>
-<br/>
-For example, this is a link that specifies request to service "show-notes":<br/>
+For example, this is a link that specifies request to service "/show-notes":<br/>
 <div class='htmlcode' style='position:relative;padding-right:16px;'>
-<pre id='code_770'>
-@<span class="Identifier">&lt;</span><span class="Statement">a</span><span class="Identifier"> </span><span class="Type">href</span><span class="Identifier">=</span><span class="Constant">&quot;&lt;&lt;p-path &quot;</span><span class="Identifier">/show-notes</span><span class="Constant">&quot;&gt;&gt;?date=yesterday&quot;</span><span class="Identifier">&gt;</span><span class="Underlined">Show Notes</span><span class="Identifier">&lt;/</span><span class="Statement">a</span><span class="Identifier">&gt;</span></pre>
-<span id=golf_copied_770 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_770' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_770, code_770, golf_copied_770)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_784'>
+@<span class="Identifier">&lt;</span><span class="Statement">a</span><span class="Identifier"> </span><span class="Type">href</span><span class="Identifier">=</span><span class="Constant">&quot;&lt;&lt;print-path &quot;</span><span class="Identifier">/show-notes</span><span class="Constant">&quot;&gt;&gt;?date=yesterday&quot;</span><span class="Identifier">&gt;</span><span class="Underlined">Show Notes</span><span class="Identifier">&lt;/</span><span class="Statement">a</span><span class="Identifier">&gt;</span></pre>
+<span id=golf_copied_784 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_784' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_784, code_784, golf_copied_784)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 If you are building HTML forms, you can add a note with:<br/>
 <div class='htmlcode' style='position:relative;padding-right:16px;'>
-<pre id='code_772'>
-@<span class="Identifier">&lt;</span><span class="Statement">form</span><span class="Identifier"> </span><span class="Type">action</span><span class="Identifier">=</span><span class="Constant">'&lt;&lt;p-path &quot;/add-note&quot;&gt;&gt;'</span><span class="Identifier"> </span><span class="Type">method</span><span class="Identifier">=</span><span class="Constant">&quot;POST&quot;</span><span class="Identifier">&gt;</span>
+<pre id='code_786'>
+@<span class="Identifier">&lt;</span><span class="Statement">form</span><span class="Identifier"> </span><span class="Type">action</span><span class="Identifier">=</span><span class="Constant">'&lt;&lt;print-path &quot;/add-note&quot;&gt;&gt;'</span><span class="Identifier"> </span><span class="Type">method</span><span class="Identifier">=</span><span class="Constant">&quot;POST&quot;</span><span class="Identifier">&gt;</span>
 @<span class="Identifier">&lt;</span><span class="Statement">input</span><span class="Identifier"> </span><span class="Type">type</span><span class="Identifier">=</span><span class="Constant">&quot;text&quot;</span><span class="Identifier"> </span><span class="Type">name</span><span class="Identifier">=</span><span class="Constant">&quot;note&quot;</span><span class="Identifier"> </span><span class="Type">value</span><span class="Identifier">=</span><span class="Constant">&quot;&quot;</span><span class="Identifier">&gt;</span>
 @<span class="Identifier">&lt;/</span><span class="Statement">form</span><span class="Identifier">&gt;</span></pre>
-<span id=golf_copied_772 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_772' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_772, code_772, golf_copied_772)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_786 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_786' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_786, code_786, golf_copied_786)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 See <a href='https://golf-lang.com/request.html'>request</a> for more on URL structure.<br/>
 <br/>
@@ -273,16 +271,9 @@ If "new-line" clause is used, then a new line ("\n") is output after the URL pat
 <a href='https://golf-lang.com/finish-output.html'>finish-output</a> &nbsp;<br/>
 <a href='https://golf-lang.com/flush-output.html'>flush-output</a> &nbsp;<br/>
 <a href='https://golf-lang.com/output-statement.html'>output-statement</a> &nbsp;<br/>
-<a href='https://golf-lang.com/pf-out.html'>pf-out</a> &nbsp;<br/>
-<a href='https://golf-lang.com/pf-url.html'>pf-url</a> &nbsp;<br/>
-<a href='https://golf-lang.com/pf-web.html'>pf-web</a> &nbsp;<br/>
-<a href='https://golf-lang.com/p-num.html'>p-num</a> &nbsp;<br/>
-<a href='https://golf-lang.com/p-out.html'>p-out</a> &nbsp;<br/>
-<a href='https://golf-lang.com/p-path.html'>p-path</a> &nbsp;<br/>
-<a href='https://golf-lang.com/p-source-file.html'>p-source-file</a> &nbsp;<br/>
-<a href='https://golf-lang.com/p-source-line.html'>p-source-line</a> &nbsp;<br/>
-<a href='https://golf-lang.com/p-url.html'>p-url</a> &nbsp;<br/>
-<a href='https://golf-lang.com/p-web.html'>p-web</a> &nbsp; <br/>
+<a href='https://golf-lang.com/print-format.html'>print-format</a> &nbsp;<br/>
+<a href='https://golf-lang.com/print-out.html'>print-out</a> &nbsp;<br/>
+<a href='https://golf-lang.com/print-path.html'>print-path</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
 <a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->

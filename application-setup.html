@@ -227,30 +227,30 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Application setup</div><hr/><div class="vsub"><a id="Initialize application"></a>Initialize application</div>
 A Golf application must be initialized first. This means creating a directory structure owned by application owner, which can be any Operating System user. To initialize application &lt;app name&gt; while logged-in as application owner: <br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_12'>
+<pre id='code_14'>
 sudo mgrg <span class="Special">-i</span> <span class="Special">-u</span> <span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span> <span class="Statement">&lt;</span>app name<span class="Statement">&gt;</span></pre>
-<span id=golf_copied_12 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_12' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_12, code_12, golf_copied_12)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_14 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_14' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_14, code_14, golf_copied_14)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Setup database(s)"></a>Setup database(s)</div>
 If your application does not use database(s), you can skip this part.<br/>
 <br/>
 You can setup your database(s) in any way you see fit, and this includes creating the database objects (such as tables or indexes) used by your application; all Golf needs to know is the connection parameters, which include database login information (but can include other things as well). For each database in use, you must provide a <a href='https://golf-lang.com/database-config-file.html'>database-config-file</a> in the same directory as your Golf source code. This file contains the database connection parameters - these parameters are database-specific. For example, if your code has statements like:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_10'>
+<pre id='code_12'>
 <span class="Statement"> run-query</span> @mydb = ...
 
  <span class="Comment">//or</span>
 
 <span class="Statement"> begin-transaction</span> @sales_db</pre>
-<span id=golf_copied_10 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_10' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_10, code_10, golf_copied_10)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_12 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_12' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_12, code_12, golf_copied_12)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 then you must have files "mydb" and "sales_db" present. For example, MariaDB config file might look like:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_11'>
+<pre id='code_13'>
 [client]
 user=golfuser
 password=pwd
@@ -258,45 +258,45 @@ database=golfdb
 protocol=TCP
 host=127.0.0.1
 port=3306</pre>
-<span id=golf_copied_11 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_11' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_11, code_11, golf_copied_11)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-or for PostgreSQL:<br/>
-<div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_13'>
-user=myuser password=mypwd dbname=mydb</pre>
 <span id=golf_copied_13 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_13' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_13, code_13, golf_copied_13)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-<div class="vsub"><a id="Make application"></a>Make application</div>
-To compile and link the application that doesn't use database(s):<br/>
-<div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_14'>
-gg <span class="Special">-q</span></pre>
-<span id=golf_copied_14 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_14' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_14, code_14, golf_copied_14)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-When you have database(s) in use, for instance assuming in above example that "mydb" is MariaDB database, "sales_db" is PostgreSQL, and "contacts" is SQLite database:<br/>
-<div class="shcode" style='position:relative;padding-right:16px;'>
+or for PostgreSQL:<br/>
+<div class='ncode' style='position:relative;padding-right:16px;'>
 <pre id='code_15'>
-gg <span class="Special">-q</span> <span class="Special">--db</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">mariadb:mydb postgres:sales_db sqlite:contacts</span><span class="Statement">&quot;</span></pre>
+user=myuser password=mypwd dbname=mydb</pre>
 <span id=golf_copied_15 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_15' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_15, code_15, golf_copied_15)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+<div class="vsub"><a id="Make application"></a>Make application</div>
+To compile and link the application that doesn't use database(s):<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_16'>
+gg <span class="Special">-q</span></pre>
+<span id=golf_copied_16 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_16' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_16, code_16, golf_copied_16)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+When you have database(s) in use, for instance assuming in above example that "mydb" is MariaDB database, "sales_db" is PostgreSQL, and "contacts" is SQLite database:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_17'>
+gg <span class="Special">-q</span> <span class="Special">--db</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">mariadb:mydb postgres:sales_db sqlite:contacts</span><span class="Statement">&quot;</span></pre>
+<span id=golf_copied_17 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_17' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_17, code_17, golf_copied_17)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 See <a href='https://golf-lang.com/gg.html'>gg</a> for more options.<br/>
 <div class="vsub"><a id="Start application"></a>Start application</div>
 Stop the application first in case it was running, then start the application - for example:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_16'>
+<pre id='code_18'>
 mgrg <span class="Special">-m</span> quit <span class="Statement">&lt;</span>app name<span class="Statement">&gt;</span>
 mgrg <span class="Special">-w</span> <span class="Constant">3</span> <span class="Statement">&lt;</span>app name<span class="Statement">&gt;</span></pre>
-<span id=golf_copied_16 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_16' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_16, code_16, golf_copied_16)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_18 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_18' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_18, code_18, golf_copied_18)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 See <a href='https://golf-lang.com/mgrg.html'>mgrg</a> for more details.<br/>
 <div class="vsub"><a id="Running application"></a>Running application</div>

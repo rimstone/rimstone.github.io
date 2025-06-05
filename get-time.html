@@ -227,67 +227,92 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Get time</div><hr/><span style="font-weight:bold;">Purpose</span>: Get time.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_569'>
+<pre id='code_576'>
 <span class="Statement"> get-time</span><span class="Type"> to</span> &lt;time var&gt; \
-     [<span class="Identifier"> timezone</span> &lt;tz&gt; ] \
-     [<span class="Identifier"> year</span> &lt;year&gt; ] \
-     [<span class="Identifier"> month</span> &lt;month&gt; ] \
-     [<span class="Identifier"> day</span> &lt;day&gt; ] \
-     [<span class="Identifier"> hour</span> &lt;hour&gt; ] \
-     [<span class="Identifier"> minute</span> &lt;minute&gt; ] \
-     [<span class="Identifier"> second</span> &lt;second&gt; ] \
-     [<span class="Identifier"> format</span> &lt;format&gt; ]</pre>
-<span id=golf_copied_569 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_569' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_569, code_569, golf_copied_569)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+     [<span class="Identifier"> since-epoch</span> ] \
+     |
+     (
+         [<span class="Identifier"> timezone</span> &lt;tz&gt; ] \
+         [<span class="Identifier"> year</span> &lt;year&gt; ] \
+         [<span class="Identifier"> month</span> &lt;month&gt; ] \
+         [<span class="Identifier"> day</span> &lt;day&gt; ] \
+         [<span class="Identifier"> hour</span> &lt;hour&gt; ] \
+         [<span class="Identifier"> minute</span> &lt;minute&gt; ] \
+         [<span class="Identifier"> second</span> &lt;second&gt; ] \
+         [<span class="Identifier"> format</span> &lt;format&gt; ] \
+         [<span class="Identifier"> from-epoch</span> &lt;epoch time&gt; ]
+     )</pre>
+<span id=golf_copied_576 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_576' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_576, code_576, golf_copied_576)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-get-time produces &lt;time var&gt; variable that contains string with time. &lt;time var&gt; is <a href='https://golf-lang.com/memory-handling.html'>allocated memory</a>.<br/>
-<br/>
-If none of "year", "month", "day", "hour", "minute" or "second" clauses are used, then current time is produced. <br/>
+get-time produces &lt;time var&gt; variable that contains string with current time by default (without "since-epoch" clause), or a number of seconds since the Epoch (1970-01-01 00:00:00 +0000 (UTC)) if "since-epoch" clause is used. <br/>
+<div class="vsub"><a id="Without "since-epoch" clause"></a>Without "since-epoch" clause</div>
+If "from-epoch" clause is used, then &lt;epoch time&gt; is the number of seconds since the Epoch, and get-time will assume it to be the current time (i.e. the actual current time will not be used). Otherwise, if none of "year", "month", "day", "hour", "minute" or "second" clauses are used, then the actual current time is produced. In further text, "current" time means one or the other, depending on whether "from-epoch" clause is used or not.<br/>
 <br/>
 Use timezone to specify that time produced will be in timezone &lt;tz&gt;. For example if &lt;tz&gt; is "EST", that means Eastern Standard Time, while "MST" means Mountain Standard Time. The exact way to get a full list of timezones recognized on your system may vary, but on many systems you can use:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_570'>
+<pre id='code_577'>
 timedatectl list-timezones</pre>
-<span id=golf_copied_570 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_570' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_570, code_570, golf_copied_570)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_577 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_577' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_577, code_577, golf_copied_577)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 So for example to get the time in Phoenix, Arizona you could use "America/Phoenix" for &lt;tz&gt;. If timezone clause is omitted, then time is produced in "GMT" timezone by default. DST (Daylight Savings Time) is automatically adjusted.<br/>
 <br/>
-Each variable specified with "year", "month", "day", "hour", "minute" or "second" is a time to be added or subtracted to/from current date. For example "year 2" means add 2 years to the current date, and "year -4" means subtract 4 years, whereas "hour -4" means &nbsp;subtract 4 hours, etc. So for example, a moment in time that is 2 years into the future minus 5 days minus 1 hour is:<br/>
+Each variable specified with "year", "month", "day", "hour", "minute" or "second" is a time to be added or subtracted to/from current time (see above for what is "current" time). For example "year 2" means add 2 years to the current time, and "year -4" means subtract 4 years, whereas "hour -4" means &nbsp;subtract 4 hours, etc. So for example, a moment in time that is 2 years into the future minus 5 days minus 1 hour is:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_571'>
+<pre id='code_578'>
 <span class="Statement"> get-time</span><span class="Type"> to</span> time_var<span class="Identifier"> year</span> <span class="Constant">2</span><span class="Identifier"> day</span> -<span class="Constant">5</span><span class="Identifier"> hour</span> -<span class="Constant">1</span></pre>
-<span id=golf_copied_571 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_571' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_571, code_571, golf_copied_571)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_578 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_578' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_578, code_578, golf_copied_578)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 &lt;format&gt; allows you to get the time in any string format you like, using the specifiers available in C "strftime". For example, if &lt;format&gt; is "%A, %B %d %Y, %l:%M %p %Z", it will produce something like "Sunday, November 28 2021, 9:07 PM MST". The default format is "UTC/GMT" format, which for instance, is suitable for use with cookie timestamps, and looks something like "Mon, 16 Jul 2012 00:03:01 GMT".<br/>
+<div class="vsub"><a id="With "since-epoch" clause"></a>With "since-epoch" clause</div>
+In this case, &lt;time var&gt; is a number signifying the number of seconds since the Epoch (1970-01-01 00:00:00 +0000 (UTC)) to the present moment. Golf operates on 64 numbers and the result is always safe (account for 292 billion years into the past and the future). This option is commonly used to obtain time in a form that can be subtracted, resulting in the number of seconds between two points in time, or for any other purpose where obtaining current time is more useful if represented as a number.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 To get current time in "GMT" timezone, in a format that is suitable for use with <a href='https://golf-lang.com/set-cookie.html'>set-cookie</a> (for example to set expiration date):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_572'>
+<pre id='code_579'>
 <span class="Statement"> get-time</span><span class="Type"> to</span> mytime</pre>
-<span id=golf_copied_572 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_572' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_572, code_572, golf_copied_572)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_579 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_579' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_579, code_579, golf_copied_579)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 To get the time in the same format, only 1 year and 2 months in the future:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_573'>
+<pre id='code_580'>
 <span class="Statement"> get-time</span><span class="Type"> to</span> mytime<span class="Identifier"> year</span> <span class="Constant">1</span><span class="Identifier"> month</span> <span class="Constant">2</span></pre>
-<span id=golf_copied_573 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_573' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_573, code_573, golf_copied_573)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_580 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_580' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_580, code_580, golf_copied_580)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 An example of a future date (1 year, 3 months, 4 days, 7 hours, 15 minutes and 22 seconds into the future), in a specific format (see "strftime"):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_574'>
+<pre id='code_581'>
 <span class="Statement"> get-time</span><span class="Type"> to</span> time_var<span class="Identifier"> timezone</span> <span class="Constant">&quot;MST&quot;</span><span class="Identifier"> year</span> <span class="Constant">1</span><span class="Identifier"> month</span> <span class="Constant">3</span><span class="Identifier"> day</span> <span class="Constant">4</span><span class="Identifier"> hour</span> <span class="Constant">7</span><span class="Identifier"> minute</span> <span class="Constant">15</span><span class="Identifier"> second</span> <span class="Constant">22</span><span class="Identifier"> format</span> <span class="Constant">&quot;</span><span class="Special">%A</span><span class="Constant">, %B </span><span class="Special">%d</span><span class="Constant"> %Y, %l:%M </span><span class="Special">%p</span><span class="Constant"> %Z&quot;</span></pre>
-<span id=golf_copied_574 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_574' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_574, code_574, golf_copied_574)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_581 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_581' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_581, code_581, golf_copied_581)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Get number of seconds sinc Jan 1, 1970:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_582'>
+<span class="Statement"> get-time</span><span class="Type"> to</span> mytime<span class="Identifier"> since-epoch</span>
+<span class="Statement"> print-out</span> mytime<span class="Identifier"> new-line</span></pre>
+<span id=golf_copied_582 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_582' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_582, code_582, golf_copied_582)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Produce 2 days after Epoch time stamp of 489326400 (which is July 4th 1985 at noon), and then add 2 days to it:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_583'>
+<span class="Statement"> get-time</span><span class="Type"> to</span> mytime<span class="Identifier"> from-epoch</span> <span class="Constant">489326400</span> <span class="Constant">2</span> day
+<span class="Statement"> print-out</span> mytime</pre>
+<span id=golf_copied_583 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_583' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_583, code_583, golf_copied_583)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Time'></a><span style="font-weight:bold;">Time</span><br/>

@@ -227,14 +227,14 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Replace string</div><hr/><span style="font-weight:bold;">Purpose</span>: Replaces part of string.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_826'>
+<pre id='code_834'>
 <span class="Statement"> replace-string</span> &lt;string&gt; \
      (<span class="Identifier"> copy</span> &lt;replacement&gt; ) | (<span class="Identifier"> copy-end</span> &lt;replacement&gt; ) \
      [<span class="Identifier"> start-with</span> &lt;start with&gt; ] \
      [<span class="Identifier"> length</span> &lt;length&gt; ]</pre>
-<span id=golf_copied_826 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_826' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_826, code_826, golf_copied_826)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_834 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_834' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_834, code_834, golf_copied_834)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 replace-string will replace part of &lt;string&gt; with &lt;replacement&gt; string. "copy" clause will make a replacement in the leading part of &lt;string&gt;, while "copy-end" will make a replacement in the trailing part of &lt;string&gt;.<br/>
 <br/>
@@ -248,43 +248,43 @@ If either "start-with" or "length" is negative, it's the same as if not specifie
 <div class="vsub"><a id="Examples"></a>Examples</div>
 After replace-string below, string "a" will be "none string is here":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_827'>
+<pre id='code_835'>
 <span class="Statement"> set-string</span> b=<span class="Constant">&quot;none&quot;</span>
 <span class="Statement"> set-string</span> a=<span class="Constant">&quot;some string is here&quot;</span>
 <span class="Statement"> replace-string</span> a<span class="Identifier"> copy</span> b</pre>
-<span id=golf_copied_827 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_827' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_827, code_827, golf_copied_827)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_835 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_835' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_835, code_835, golf_copied_835)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 After replace-string below, string "a" will be "some string is none":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_828'>
+<pre id='code_836'>
 <span class="Statement"> set-string</span> b=<span class="Constant">&quot;none&quot;</span>
 <span class="Statement"> set-string</span> a=<span class="Constant">&quot;some string is here&quot;</span>
 <span class="Statement"> replace-string</span> a<span class="Identifier"> copy-end</span> b</pre>
-<span id=golf_copied_828 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_828' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_828, code_828, golf_copied_828)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_836 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_836' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_836, code_836, golf_copied_836)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In this example, "a" will be "somnontring is here":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_829'>
+<pre id='code_837'>
 <span class="Statement"> set-string</span> b=<span class="Constant">&quot;none&quot;</span>
 <span class="Statement"> set-string</span> a=<span class="Constant">&quot;some string is here&quot;</span>
 <span class="Statement"> replace-string</span> a<span class="Identifier"> copy</span> b<span class="Identifier"> start-with</span> <span class="Constant">3</span><span class="Identifier"> length</span> <span class="Constant">3</span></pre>
-<span id=golf_copied_829 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_829' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_829, code_829, golf_copied_829)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_837 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_837' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_837, code_837, golf_copied_837)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In the following example, "a" will be "some string inohere":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_830'>
+<pre id='code_838'>
 <span class="Statement"> set-string</span> b=<span class="Constant">&quot;none&quot;</span>
 <span class="Statement"> set-string</span> a=<span class="Constant">&quot;some string is here&quot;</span>
 <span class="Statement"> replace-string</span> a<span class="Identifier"> copy-end</span> b<span class="Identifier"> start-with</span> <span class="Constant">6</span><span class="Identifier"> length</span> <span class="Constant">2</span></pre>
-<span id=golf_copied_830 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_830' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_830, code_830, golf_copied_830)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_838 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_838' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_838, code_838, golf_copied_838)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Strings'></a><span style="font-weight:bold;">Strings</span><br/>
@@ -293,6 +293,7 @@ In the following example, "a" will be "some string inohere":<br/>
 <a href='https://golf-lang.com/count-substring.html'>count-substring</a> &nbsp;<br/>
 <a href='https://golf-lang.com/delete-string.html'>delete-string</a> &nbsp;<br/>
 <a href='https://golf-lang.com/lower-string.html'>lower-string</a> &nbsp;<br/>
+<a href='https://golf-lang.com/new-string.html'>new-string</a> &nbsp;<br/>
 <a href='https://golf-lang.com/read-split.html'>read-split</a> &nbsp;<br/>
 <a href='https://golf-lang.com/replace-string.html'>replace-string</a> &nbsp;<br/>
 <a href='https://golf-lang.com/set-string.html'>set-string</a> &nbsp;<br/>

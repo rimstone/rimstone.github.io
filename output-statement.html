@@ -227,13 +227,13 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Output statement</div><hr/><span style="font-weight:bold;">Purpose</span>: Output text.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_742'>
+<pre id='code_751'>
 <span class="Statement"> @</span>&lt;text&gt;
 
 <span class="Statement"> !</span>&lt;verbatim text&gt;</pre>
-<span id=golf_copied_742 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_742' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_742, code_742, golf_copied_742)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_751 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_751' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_751, code_751, golf_copied_751)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Outputting free form text is done by starting the line with "@" or "!". The text is output unencoded with a new line appended.<br/>
 <br/>
@@ -241,75 +241,68 @@ With "@" statement, any <a href='https://golf-lang.com/inline-code.html'>inline-
 <br/>
 With "!" statement, all text is output verbatim, and any inline code is not executed. This is useful when the text printed out should not be checked for any <a href='https://golf-lang.com/inline-code.html'>inline-code</a>.<br/>
 <br/>
-All trailing whitespaces are trimmed from each source code line. If you need to write trailing whitespaces, with "@" statement you can use <a href='https://golf-lang.com/p-out.html'>p-out</a> as <a href='https://golf-lang.com/inline-code.html'>inline-code</a>. Maximum line length is 8KB - this is the source code line length, the actual run-time output length is unlimited.<br/>
+All trailing whitespaces are trimmed from each source code line. If you need to write trailing whitespaces, with "@" statement you can use <a href='https://golf-lang.com/print-out.html'>print-out</a> as <a href='https://golf-lang.com/inline-code.html'>inline-code</a>. Maximum line length is 8KB - this is the source code line length, the actual run-time output length is unlimited.<br/>
 <br/>
-Note that all characters are output as they are written, including the escape character (\). If you wish to output characters requiring an escape character, such as new line and tab (as is done in C by using \n, \t etc.), use <a href='https://golf-lang.com/p-out.html'>p-out</a> as <a href='https://golf-lang.com/inline-code.html'>inline-code</a>.<br/>
+Note that all characters are output as they are written, including the escape character (\). If you wish to output characters requiring an escape character, such as new line and tab (as is done in C by using \n, \t etc.), use <a href='https://golf-lang.com/print-out.html'>print-out</a> as <a href='https://golf-lang.com/inline-code.html'>inline-code</a>.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Outputting "Hello there": <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_744'>
+<pre id='code_753'>
 <span class="Statement"> @</span>Hello there</pre>
-<span id=golf_copied_744 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_744' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_744, code_744, golf_copied_744)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_753 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_753' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_753, code_753, golf_copied_753)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 You can use other Golf statements inlined and mixed with the text you are outputting:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_746'>
+<pre id='code_755'>
 <span class="Statement"> set-string</span> weatherType=<span class="Constant">&quot;sunny&quot;</span>
-<span class="Statement"> @</span>Today's weather is <span class="Statement">&lt;&lt;p-out</span> weatherType<span class="Statement">&gt;&gt;</span></pre>
-<span id=golf_copied_746 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_746' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_746, code_746, golf_copied_746)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span class="Statement"> @</span>Today's weather is <span class="Statement">&lt;&lt;print-out</span> weatherType<span class="Statement">&gt;&gt;</span></pre>
+<span id=golf_copied_755 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_755' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_755, code_755, golf_copied_755)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 which would output <br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_743'>
+<pre id='code_752'>
 Today&apos;s weather is sunny</pre>
-<span id=golf_copied_743 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_743' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_743, code_743, golf_copied_743)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_752 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_752' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_752, code_752, golf_copied_752)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 With "!" statement, the text is also output, and this example produces the same "Hello there" output as "@":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_747'>
+<pre id='code_756'>
 <span class="Statement"> !</span>Hello there</pre>
-<span id=golf_copied_747 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_747' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_747, code_747, golf_copied_747)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_756 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_756' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_756, code_756, golf_copied_756)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In contrast to "@" statement, "!" statement outputs all texts verbatim &nbsp;and does not execute any inline code:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_748'>
+<pre id='code_757'>
 <span class="Statement"> set-string</span> weatherType=<span class="Constant">&quot;sunny&quot;</span>
-<span class="Statement"> !</span>Today's weather is &lt;&lt;p-out weatherType&gt;&gt;</pre>
-<span id=golf_copied_748 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_748' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_748, code_748, golf_copied_748)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span class="Statement"> !</span>Today's weather is &lt;&lt;print-out weatherType&gt;&gt;</pre>
+<span id=golf_copied_757 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_757' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_757, code_757, golf_copied_757)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 which would output <br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_745'>
-Today&apos;s weather is &lt;&lt;p-out weatherType&gt;&gt;</pre>
-<span id=golf_copied_745 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_745' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_745, code_745, golf_copied_745)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_754'>
+Today&apos;s weather is &lt;&lt;print-out weatherType&gt;&gt;</pre>
+<span id=golf_copied_754 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_754' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_754, code_754, golf_copied_754)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Output'></a><span style="font-weight:bold;">Output</span><br/>
 <a href='https://golf-lang.com/finish-output.html'>finish-output</a> &nbsp;<br/>
 <a href='https://golf-lang.com/flush-output.html'>flush-output</a> &nbsp;<br/>
 <a href='https://golf-lang.com/output-statement.html'>output-statement</a> &nbsp;<br/>
-<a href='https://golf-lang.com/pf-out.html'>pf-out</a> &nbsp;<br/>
-<a href='https://golf-lang.com/pf-url.html'>pf-url</a> &nbsp;<br/>
-<a href='https://golf-lang.com/pf-web.html'>pf-web</a> &nbsp;<br/>
-<a href='https://golf-lang.com/p-num.html'>p-num</a> &nbsp;<br/>
-<a href='https://golf-lang.com/p-out.html'>p-out</a> &nbsp;<br/>
-<a href='https://golf-lang.com/p-path.html'>p-path</a> &nbsp;<br/>
-<a href='https://golf-lang.com/p-source-file.html'>p-source-file</a> &nbsp;<br/>
-<a href='https://golf-lang.com/p-source-line.html'>p-source-line</a> &nbsp;<br/>
-<a href='https://golf-lang.com/p-url.html'>p-url</a> &nbsp;<br/>
-<a href='https://golf-lang.com/p-web.html'>p-web</a> &nbsp; <br/>
+<a href='https://golf-lang.com/print-format.html'>print-format</a> &nbsp;<br/>
+<a href='https://golf-lang.com/print-out.html'>print-out</a> &nbsp;<br/>
+<a href='https://golf-lang.com/print-path.html'>print-path</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
 <a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->

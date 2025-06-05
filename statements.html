@@ -239,11 +239,11 @@ An object must immediately follow the statement's name, while clauses may be spe
 <br/>
 For example, in the following Golf code:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_927'>
+<pre id='code_936'>
 <span class="Statement"> encrypt-data</span> orig_data<span class="Identifier"> input-length</span> <span class="Constant">6</span><span class="Identifier"> password</span> <span class="Constant">&quot;mypass&quot;</span><span class="Identifier"> salt</span> newsalt<span class="Type"> to</span> res<span class="Identifier"> binary</span></pre>
-<span id=golf_copied_927 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_927' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_927, code_927, golf_copied_927)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_936 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_936' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_936, code_936, golf_copied_936)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 encrypt-data is the statement's name, and "orig_data" is its object. The clauses are:<br/>
 <ul><li>input-length 6<br/>
@@ -253,15 +253,15 @@ encrypt-data is the statement's name, and "orig_data" is its object. The clauses
 </li><li>binary</li></ul>
 The clauses can be in any order, so the above can be restated as:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_928'>
+<pre id='code_937'>
 <span class="Statement"> encrypt-data</span> orig_data<span class="Type"> to</span> res<span class="Identifier"> password</span> <span class="Constant">&quot;mypass&quot;</span><span class="Identifier"> salt</span> newsalt<span class="Identifier"> binary input-length</span> <span class="Constant">6</span></pre>
-<span id=golf_copied_928 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_928' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_928, code_928, golf_copied_928)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_937 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_937' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_937, code_937, golf_copied_937)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Golf documentation provides a concise BNF-like notation of how each statement works, which in case of <a href='https://golf-lang.com/encrypt-data.html'>encrypt-data</a> is (backslash simply allows continuing to multiple lines):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_929'>
+<pre id='code_938'>
 <span class="Statement"> encrypt-data</span> &lt;data&gt;<span class="Type"> to</span> &lt;result&gt; \
      [<span class="Identifier"> input-length</span> &lt;input length&gt; ] \
      [<span class="Identifier"> binary</span> [ &lt;binary&gt; ] ] \
@@ -273,9 +273,9 @@ Golf documentation provides a concise BNF-like notation of how each statement wo
          [<span class="Identifier"> cache</span> ]
          [<span class="Identifier"> clear-cache</span> &lt;clear cache&gt; <span class="Error">)</span> \
      [<span class="Identifier"> init-vector</span> &lt;init vector&gt; ]</pre>
-<span id=golf_copied_929 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_929' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_929, code_929, golf_copied_929)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_938 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_938' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_938, code_938, golf_copied_938)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Note the color scheme: clauses with input data are in blue, and with output data in green.<br/>
 <br/>
@@ -289,14 +289,14 @@ A group of clauses that cannot be separated, or to remove ambiguity, are enclose
 <br/>
 Keywords (other than statement names such as encrypt-data above) are generally specific to each statement. So, keyword "salt", for example, has meaning only within encrypt-data and a few other related statements. In order to have the freedom to choose your variable names, you can simply surround them in parenthesis (i.e. "(" and ")") and use any names you want, even keywords, for example:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_930'>
+<pre id='code_939'>
 <span class="Statement"> set-string</span> password = <span class="Constant">&quot;some password&quot;</span>
 <span class="Statement"> set-string</span> salt = <span class="Constant">&quot;0123456789012345&quot;</span>
 <span class="Statement"> encrypt-data</span> <span class="Constant">&quot;some data&quot;</span><span class="Identifier"> password</span> (password)<span class="Identifier"> salt</span> (salt)<span class="Type"> to</span> enc_data
-<span class="Statement"> p-out</span> enc_data</pre>
-<span id=golf_copied_930 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_930' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_930, code_930, golf_copied_930)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span class="Statement"> print-out</span> enc_data</pre>
+<span id=golf_copied_939 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_939' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_939, code_939, golf_copied_939)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In this example, keywords "password" and "salt" are used as variable names as well.<br/>
 <br/>
@@ -304,14 +304,14 @@ Note that while you can use tab characters at the beginning of the line (such as
 <div class="vsub"><a id="Splitting statement into multiple lines, space trimming"></a>Splitting statement into multiple lines, space trimming</div>
 To split a statement into multiple lines (including string continuations), use a backslash (\), for instance:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_931'>
+<pre id='code_940'>
 <span class="Statement"> encrypt-data</span> orig_data<span class="Identifier"> input-length</span> <span class="Constant">6</span> \
     <span class="Identifier"> password</span> <span class="Constant">&quot;my</span><span class="Special">\</span>
 <span class="Constant">     pass&quot;</span><span class="Identifier"> salt</span> \
      newsalt<span class="Type"> to</span> res<span class="Identifier"> binary</span></pre>
-<span id=golf_copied_931 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_931' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_931, code_931, golf_copied_931)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_940 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_940' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_940, code_940, golf_copied_940)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Note that all statements are always left-trimmed for whitespace. Thus the resulting string literal in the above example is "mypass", and not "my &nbsp; pass", as the whitespaces prior to line starting with "pass" are trimmed first. Also, all statements are right-trimmed for white space, except if backslash is used at the end, in which case any spaces prior to backslash are conserved. For that reason, in the above example there is a space prior to a backslash where clauses need to be separated.<br/>
 <br/>
@@ -319,13 +319,13 @@ Note that <a href='https://golf-lang.com/begin-handler.html'>begin-handler</a> s
 <div class="vsub"><a id="Comments"></a>Comments</div>
 You can use both C style (i.e. /* ... */) and C++ style (i.e. //) comments with Golf statements, including within statements (with the exception of /*..*/ before statement name for readability), for example:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_932'>
+<pre id='code_941'>
 <span class="Statement"> run-query</span> @db = \
      <span class="Constant">&quot;select firstName, lastName from employee where yearOfHire&gt;='</span><span class="Special">%s</span><span class="Constant">'&quot;</span> \
     <span class="Type"> output</span> <span class="Comment">/*</span><span class="Comment"> comment within </span><span class="Comment">*/</span> firstName, lastName<span class="Identifier"> :</span> <span class="Constant">&quot;2015&quot;</span> <span class="Comment">// other comment</span></pre>
-<span id=golf_copied_932 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_932' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_932, code_932, golf_copied_932)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_941 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_941' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_941, code_941, golf_copied_941)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Error handling"></a>Error handling</div>
 A statement that fails for reasons that are generally irrecoverable will <a href='https://golf-lang.com/error-handling.html'>error out</a>, for example out of memory or disk space, bad input parameters etc. <br/>

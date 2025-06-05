@@ -227,36 +227,42 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Set bool</div><hr/><span style="font-weight:bold;">Purpose</span>: Set value of a boolean variable.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_889'>
-<span class="Statement"> set-bool</span> &lt;var&gt; [ = &lt;boolean&gt; ] [<span class="Identifier"> process-scope</span> ]</pre>
-<span id=golf_copied_889 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_889' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_889, code_889, golf_copied_889)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_897'>
+<span class="Statement"> set-bool</span> &lt;var&gt; [ = &lt;boolean&gt; ] [<span class="Identifier"> process-scope</span> ]
+
+<span class="Statement"> set-bool</span> &lt;var&gt;<span class="Identifier"> from-condition</span> &lt;condition&gt;</pre>
+<span id=golf_copied_897 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_897' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_897, code_897, golf_copied_897)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Boolean variable &lt;var&gt; is either assigned value &lt;boolean&gt; with "=" clause, or it is assigned "false" if equal clause ("=") is omitted.<br/>
+<div class="vsub"><a id="Without "from-condition" clause"></a>Without "from-condition" clause</div>
+If "from-condition" clause is not used, boolean variable &lt;var&gt; is either assigned value &lt;boolean&gt; with "=" clause, or it is assigned "false" if equal clause ("=") is omitted.<br/>
 <br/>
 If "process-scope" clause is used, then boolean is of process scope, meaning its value will persist from one request to another for the life of the process. <br/>
+<div class="vsub"><a id="With "from-condition" clause"></a>With "from-condition" clause</div>
+If "from-condition" clause is not used, then &lt;condition&gt; is evaluated, and if true, then "true" value is assigned to &lt;var&gt;, otherwise "false" is assigned. See <a href='https://golf-lang.com/if-true.html'>if-true</a> for more on &lt;condition&gt;.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Assign "true" value to boolean variable "my_bool":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_890'>
+<pre id='code_898'>
 <span class="Statement"> set-bool</span> my_bool = <span class="Constant">true</span></pre>
-<span id=golf_copied_890 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_890' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_890, code_890, golf_copied_890)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_898 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_898' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_898, code_898, golf_copied_898)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Assign boolean value based on condition:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_899'>
+<span class="Statement"> .</span>..
+<span class="Statement"> set-bool</span> my_bool<span class="Identifier"> from-condition</span> num1<span class="Identifier"> equal</span> num2<span class="Identifier"> or</span> str1<span class="Identifier"> not-equal</span> str2</pre>
+<span id=golf_copied_899 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_899' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_899, code_899, golf_copied_899)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
- <a name='Program flow'></a><span style="font-weight:bold;">Program flow</span><br/>
-<a href='https://golf-lang.com/break-loop.html'>break-loop</a> &nbsp;<br/>
-<a href='https://golf-lang.com/code-blocks.html'>code-blocks</a> &nbsp;<br/>
-<a href='https://golf-lang.com/continue-loop.html'>continue-loop</a> &nbsp;<br/>
-<a href='https://golf-lang.com/do-once.html'>do-once</a> &nbsp;<br/>
-<a href='https://golf-lang.com/exit-handler.html'>exit-handler</a> &nbsp;<br/>
-<a href='https://golf-lang.com/if-defined.html'>if-defined</a> &nbsp;<br/>
-<a href='https://golf-lang.com/if-true.html'>if-true</a> &nbsp;<br/>
-<a href='https://golf-lang.com/return-handler.html'>return-handler</a> &nbsp;<br/>
-<a href='https://golf-lang.com/set-bool.html'>set-bool</a> &nbsp;<br/>
-<a href='https://golf-lang.com/start-loop.html'>start-loop</a> &nbsp; <br/>
+ <a name='Booleans'></a><span style="font-weight:bold;">Booleans</span><br/>
+<a href='https://golf-lang.com/boolean-expressions.html'>boolean-expressions</a> &nbsp;<br/>
+<a href='https://golf-lang.com/set-bool.html'>set-bool</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
 <a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
