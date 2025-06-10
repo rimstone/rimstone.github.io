@@ -26,7 +26,7 @@ body {
     font-size:14px;
     font-family: monospace;
     display:inline-block;
-    max-width:100%;
+    max-width:99%;
     min-width:90%;
     margin:0;
     padding:0;
@@ -45,7 +45,7 @@ body {
     font-size:14px;
     font-family: monospace;
     display:inline-block;
-    max-width:100%;
+    max-width:99%;
     min-width:90%;
     margin:0;
     padding:0;
@@ -64,7 +64,7 @@ body {
     font-size:14px;
     font-family: monospace;
     display:inline-block;
-    max-width:100%;
+    max-width:99%;
     min-width:90%;
     margin:0;
     padding:0;
@@ -83,7 +83,7 @@ body {
     font-size:14px;
     font-family: monospace;
     display:inline-block;
-    max-width:100%;
+    max-width:99%;
     min-width:90%;
     margin:0;
     padding:0;
@@ -102,7 +102,7 @@ body {
     font-size:14px;
     font-family: monospace;
     display:inline-block;
-    max-width:100%;
+    max-width:99%;
     min-width:90%;
     margin:0;
     padding:0;
@@ -227,33 +227,33 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Install from source opensuse</div><hr/><div class="vsub"><a id="Get latest Golf source code"></a>Get latest Golf source code</div>
 You must have git installed. Get Golf source code for the latest version:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_638'>
+<pre id='code_639'>
 sudo zypper <span class="Special">--non-interactive</span> <span class="Error">in</span> wget tar
 wget <span class="Statement">&quot;</span><span class="Constant"><a href="https://github.com/golf-lang/golf/archive/refs/heads/main.tar.gz">https://github.com/golf-lang/golf/archive/refs/heads/main.tar.gz</a></span><span class="Statement">&quot;</span> <span class="Special">-O</span> main.tar.gz
 tar xvfz main.tar.gz
 <span class="Statement">cd</span> golf-main</pre>
-<span id=golf_copied_638 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_638' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_638, code_638, golf_copied_638)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-<div class="vsub"><a id="Install dependencies"></a>Install dependencies</div>
-<div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_639'>
-sudo zypper <span class="Special">--non-interactive</span> <span class="Error">in</span> <span class="Special">--replacefiles</span> <span class="Special">--force-resolution</span> rpm-build
-sudo zypper <span class="Special">-n</span> install <span class="PreProc">$(</span><span class="Special">rpmspec </span><span class="Special">--parse</span><span class="Special"> golf.spec </span><span class="Statement">|</span><span class="Special"> </span><span class="Statement">grep</span><span class="Special"> BuildRequires</span><span class="Statement">|</span><span class="Statement">sed</span><span class="Special"> </span><span class="Statement">'</span><span class="Constant">s/^.*:\(.*\)$/\1/g</span><span class="Statement">'</span><span class="PreProc">)</span></pre>
 <span id=golf_copied_639 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_639' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_639, code_639, golf_copied_639)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-<div class="vsub"><a id="Build Golf"></a>Build Golf</div>
+<div class="vsub"><a id="Install dependencies"></a>Install dependencies</div>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_640'>
-make clean
-make
-sudo make install</pre>
+sudo zypper <span class="Special">--non-interactive</span> <span class="Error">in</span> <span class="Special">--replacefiles</span> <span class="Special">--force-resolution</span> rpm-build
+sudo zypper <span class="Special">-n</span> install <span class="PreProc">$(</span><span class="Special">rpmspec </span><span class="Special">--parse</span><span class="Special"> golf.spec </span><span class="Statement">|</span><span class="Special"> </span><span class="Statement">grep</span><span class="Special"> BuildRequires</span><span class="Statement">|</span><span class="Statement">sed</span><span class="Special"> </span><span class="Statement">'</span><span class="Constant">s/^.*:\(.*\)$/\1/g</span><span class="Statement">'</span><span class="PreProc">)</span></pre>
 <span id=golf_copied_640 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_640' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_640, code_640, golf_copied_640)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+<div class="vsub"><a id="Build Golf"></a>Build Golf</div>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_641'>
+make clean
+make
+sudo make install</pre>
+<span id=golf_copied_641 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_641' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_641, code_641, golf_copied_641)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Here's how to <a href='https://golf-lang.com/uninstall.html'>uninstall</a>.<br/>
 <div class="vsub"><a id="See also"></a>See also</div>

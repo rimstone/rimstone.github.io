@@ -26,7 +26,7 @@ body {
     font-size:14px;
     font-family: monospace;
     display:inline-block;
-    max-width:100%;
+    max-width:99%;
     min-width:90%;
     margin:0;
     padding:0;
@@ -45,7 +45,7 @@ body {
     font-size:14px;
     font-family: monospace;
     display:inline-block;
-    max-width:100%;
+    max-width:99%;
     min-width:90%;
     margin:0;
     padding:0;
@@ -64,7 +64,7 @@ body {
     font-size:14px;
     font-family: monospace;
     display:inline-block;
-    max-width:100%;
+    max-width:99%;
     min-width:90%;
     margin:0;
     padding:0;
@@ -83,7 +83,7 @@ body {
     font-size:14px;
     font-family: monospace;
     display:inline-block;
-    max-width:100%;
+    max-width:99%;
     min-width:90%;
     margin:0;
     padding:0;
@@ -102,7 +102,7 @@ body {
     font-size:14px;
     font-family: monospace;
     display:inline-block;
-    max-width:100%;
+    max-width:99%;
     min-width:90%;
     margin:0;
     padding:0;
@@ -227,11 +227,11 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Call handler</div><hr/><span style="font-weight:bold;">Purpose</span>: Call another handler within the same process.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_334'>
+<pre id='code_335'>
 <span class="Statement"> call-handler</span> &lt;request path&gt; [<span class="Type"> return-value</span>  &lt;return value&gt; ]</pre>
-<span id=golf_copied_334 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_334' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_334, code_334, golf_copied_334)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_335 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_335' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_335, code_335, golf_copied_335)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Calls another handler within the same request in the same process. You can call any handler within the same application. "Calling a handler" means executing it solely within the context of the top handler currently running; no before-handler or after-handler will execute for the called handler.<br/>
 <br/>
@@ -247,7 +247,7 @@ The following example demonstrate calling a call-handler twice, and also using i
 <br/>
 Copy to file "callsub.golf":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_337'>
+<pre id='code_338'>
 <span class="Statement"> %%</span> /callsub<span class="Identifier"> public</span>
      <span class="Comment">//</span>
      <span class="Comment">// First call to call-handler</span>
@@ -273,13 +273,13 @@ Copy to file "callsub.golf":<br/>
 <span class="Statement">     get-param</span> out<span class="Identifier"> type string</span>
 <span class="Statement">     @</span><span class="Statement">&lt;&lt;print-out</span> s<span class="Statement">&gt;&gt;</span> with output [<span class="Statement">&lt;&lt;print-out</span> out<span class="Statement">&gt;&gt;</span>]
 <span class="Statement"> %%</span></pre>
-<span id=golf_copied_337 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_337' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_337, code_337, golf_copied_337)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_338 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_338' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_338, code_338, golf_copied_338)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 And in "sub/service.golf" file (meaning file "service.golf" in subdirectory "sub"):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_339'>
+<pre id='code_340'>
 <span class="Statement"> %%</span> /sub/service<span class="Identifier"> private</span>
 <span class="Statement">     @</span>This is sub!
 <span class="Statement">     get-param</span> inp
@@ -288,35 +288,35 @@ And in "sub/service.golf" file (meaning file "service.golf" in subdirectory "sub
 <span class="Statement">     ))</span>
 <span class="Statement">     set-param</span> out = out
 <span class="Statement"> %%</span></pre>
+<span id=golf_copied_340 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_340' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_340, code_340, golf_copied_340)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Create and build an application:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_337'>
+gg <span class="Special">-k</span> subhandler
+gg <span class="Special">-q</span></pre>
+<span id=golf_copied_337 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_337' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_337, code_337, golf_copied_337)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Run it:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_339'>
+gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/callsub</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--silent-header</span></pre>
 <span id=golf_copied_339 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_339' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_339, code_339, golf_copied_339)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Create and build an application:<br/>
-<div class="shcode" style='position:relative;padding-right:16px;'>
+The output:<br/>
+<div class='ncode' style='position:relative;padding-right:16px;'>
 <pre id='code_336'>
-gg <span class="Special">-k</span> subhandler
-gg <span class="Special">-q</span></pre>
+This is sub! with output [got input: some string]
+Output: This is sub! with output [got input: new string]</pre>
 <span id=golf_copied_336 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_336' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_336, code_336, golf_copied_336)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-Run it:<br/>
-<div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_338'>
-gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/callsub</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--silent-header</span></pre>
-<span id=golf_copied_338 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_338' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_338, code_338, golf_copied_338)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-The output:<br/>
-<div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_335'>
-This is sub! with output [got input: some string]
-Output: This is sub! with output [got input: new string]</pre>
-<span id=golf_copied_335 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_335' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_335, code_335, golf_copied_335)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Program flow'></a><span style="font-weight:bold;">Program flow</span><br/>

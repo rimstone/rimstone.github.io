@@ -26,7 +26,7 @@ body {
     font-size:14px;
     font-family: monospace;
     display:inline-block;
-    max-width:100%;
+    max-width:99%;
     min-width:90%;
     margin:0;
     padding:0;
@@ -45,7 +45,7 @@ body {
     font-size:14px;
     font-family: monospace;
     display:inline-block;
-    max-width:100%;
+    max-width:99%;
     min-width:90%;
     margin:0;
     padding:0;
@@ -64,7 +64,7 @@ body {
     font-size:14px;
     font-family: monospace;
     display:inline-block;
-    max-width:100%;
+    max-width:99%;
     min-width:90%;
     margin:0;
     padding:0;
@@ -83,7 +83,7 @@ body {
     font-size:14px;
     font-family: monospace;
     display:inline-block;
-    max-width:100%;
+    max-width:99%;
     min-width:90%;
     margin:0;
     padding:0;
@@ -102,7 +102,7 @@ body {
     font-size:14px;
     font-family: monospace;
     display:inline-block;
-    max-width:100%;
+    max-width:99%;
     min-width:90%;
     margin:0;
     padding:0;
@@ -234,31 +234,31 @@ See Examples section below for detailed examples.<br/>
 <div class="vsub"><a id="Sending a request to Golf service"></a>Sending a request to Golf service</div>
 The following function is used to make a call using C API:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_371'>
+<pre id='code_372'>
  <span class="Type">int</span> gg_cli_request (gg_cli *req);</pre>
-<span id=golf_copied_371 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_371' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_371, code_371, golf_copied_371)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_372 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_372' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_372, code_372, golf_copied_372)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 All input and output is contained in a single variable of type "gg_cli", the pointer to which is passed to "gg_cli_request()" function that sends a request to the service. A variable of type "gg_cli" must be initialized to zero before using it (such as with {0} initialization, "memset()" or "calloc()"), or otherwise some of its members may have random values:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_374'>
+<pre id='code_375'>
  <span class="Comment">// Define and initialize request variable</span>
  gg_cli req = {<span class="Constant">0</span>};
  <span class="Comment">// You could also do:</span>
- <span class="Comment">// memset ((char*)&amp;req, 0, sizeof(gg_cli));</span>
+ <span class="Comment">// memset ((char*)&amp;req, </span><span class="Constant">0</span><span class="Comment">, sizeof(gg_cli));</span>
 <span class="Statement"> .</span>..
  <span class="Comment">// Set members of 'req' variable (see below)</span>
 <span class="Statement"> .</span>..
  <span class="Comment">// Make a call</span>
  <span class="Type">int</span> result = gg_cli_request (&amp;req);</pre>
-<span id=golf_copied_374 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_374' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_374, code_374, golf_copied_374)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_375 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_375' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_375, code_375, golf_copied_375)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Type "gg_cli" is defined as (i.e. public members of it):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_376'>
+<pre id='code_377'>
  <span class="Type">typedef</span> <span class="Type">struct</span> {
      <span class="Type">const</span> <span class="Type">char</span> *server; <span class="Comment">// the IP:port/socket_path to server</span>
      <span class="Type">const</span> <span class="Type">char</span> *req_method; <span class="Comment">// request method</span>
@@ -281,9 +281,9 @@ Type "gg_cli" is defined as (i.e. public members of it):<br/>
      <span class="Type">volatile</span> <span class="Type">char</span> done; <span class="Comment">// indicator that the request has completed</span>
      <span class="Type">int</span> return_code; <span class="Comment">// the return code from gg_cli_request()</span>
 <span class="Statement"> }</span> gg_cli;</pre>
-<span id=golf_copied_376 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_376' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_376, code_376, golf_copied_376)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_377 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_377' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_377, code_377, golf_copied_377)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <br/>
 <span style="font-weight:bold;">- Mandatory input</span><br/>
@@ -303,16 +303,16 @@ The following members of "gg_cli" type must be supplied in order to make a call 
 <span style="font-weight:bold;">- Passing environment to service</span><br/>
 "env" is any environment variables that should be passed along to the service. You can access those in Golf via "environment" clause of <a href='https://golf-lang.com/get-sys.html'>get-sys</a> statement. This is an array of strings, where name/value pairs are specified one after the other, and which always must end with NULL. For example, if you want to use variable "REMOTE_USER" with value "John" and variable "MY_VARIABLE" with value "8000", then it might look like this:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_378'>
+<pre id='code_379'>
  <span class="Type">char</span> *env[<span class="Constant">5</span>];
  env[<span class="Constant">0</span>] = <span class="Constant">&quot;REMOTE_USER&quot;</span>;
  env[<span class="Constant">1</span>] = <span class="Constant">&quot;John&quot;</span>
  env[<span class="Constant">2</span>] = <span class="Constant">&quot;MY_VARIABLE&quot;</span>;
  env[<span class="Constant">3</span>] = <span class="Constant">&quot;8000&quot;</span>
  env[<span class="Constant">4</span>] = <span class="Constant">NULL</span>;</pre>
-<span id=golf_copied_378 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_378' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_378, code_378, golf_copied_378)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_379 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_379' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_379, code_379, golf_copied_379)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Thus, if you are passing N environment variables to the service, you must size "env" as "char*" array with 2*N+1 elements. <br/>
 <br/>
@@ -357,7 +357,7 @@ You can obtain service reply when it's ready in its entirety (likely most often 
 <div class="vsub"><a id="Getting data reply (stdout)"></a>Getting data reply (stdout)</div>
 Data returned from a request is valid only if "gg_cli_request()" returned GG_OKAY (or if "return_code" is GG_OKAY for multi-threaded programs). In that case, use "gg_cli_data()" function, for example:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_380'>
+<pre id='code_381'>
  <span class="Comment">// Declare and initialize request variable</span>
  gg_cli req = {<span class="Constant">0</span>};
  <span class="Comment">// Setup the req variable</span>
@@ -367,9 +367,9 @@ Data returned from a request is valid only if "gg_cli_request()" returned GG_OKA
      <span class="Type">char</span> *data = gg_cli_data (req); <span class="Comment">// data response</span>
      <span class="Type">int</span> data_len = req-&gt;data_len; <span class="Comment">// length of data response in bytes</span>
 <span class="Statement"> }</span></pre>
-<span id=golf_copied_380 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_380' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_380, code_380, golf_copied_380)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_381 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_381' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_381, code_381, golf_copied_381)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 "data_len" member of "gg_cli" type will have the length of data response in bytes. The reply is always null-terminated as a courtesy, and "data_len" does not include the terminating null byte.<br/>
 <br/>
@@ -377,7 +377,7 @@ Data returned from a request is valid only if "gg_cli_request()" returned GG_OKA
 <div class="vsub"><a id="Getting error reply (stderr)"></a>Getting error reply (stderr)</div>
 An error reply returned from a service is valid only if "gg_cli_request()" returned GG_OKAY (or if "return_code" is GG_OKAY for multi-threaded programs). In that case, use "gg_cli_error()" function, for example:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_382'>
+<pre id='code_383'>
  <span class="Comment">// Declare and initialize request variable</span>
  gg_cli req = {<span class="Constant">0</span>};
  <span class="Comment">// Setup the req variable</span>
@@ -387,9 +387,9 @@ An error reply returned from a service is valid only if "gg_cli_request()" retur
      <span class="Type">char</span> *err = gg_cli_error (req); <span class="Comment">// error response</span>
      <span class="Type">int</span> err_len = req-&gt;error_len; <span class="Comment">// length of error response in bytes</span>
 <span class="Statement"> }</span></pre>
-<span id=golf_copied_382 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_382' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_382, code_382, golf_copied_382)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_383 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_383' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_383, code_383, golf_copied_383)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 "gg_cli_error()" returns any error messages from a service response, i.e. data passed to "error" stream. It is comprised of any service output when "to-error" clause is used in <a href='https://golf-lang.com/print-format.html'>print-format</a>, as well as any output from <a href='https://golf-lang.com/report-error.html'>report-error</a>. <br/>
 <br/>
@@ -397,7 +397,7 @@ An error reply returned from a service is valid only if "gg_cli_request()" retur
 <div class="vsub"><a id="Freeing the result of a request"></a>Freeing the result of a request</div>
 Once you have obtained the result of a request, and when no longer needed, you should free it by using "gg_cli_delete()":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_384'>
+<pre id='code_385'>
  <span class="Comment">// Declare and initialize request variable</span>
  gg_cli req = {<span class="Constant">0</span>};
  <span class="Comment">// Setup the req variable</span>
@@ -407,9 +407,9 @@ Once you have obtained the result of a request, and when no longer needed, you s
  <span class="Comment">// .. Use the result ..</span>
  <span class="Comment">// Free request output (data and error streams)</span>
  gg_cli_delete (&amp;req);</pre>
-<span id=golf_copied_384 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_384' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_384, code_384, golf_copied_384)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_385 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_385' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_385, code_385, golf_copied_385)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 If you do not free the result, your program may experience a memory leak. If your program exits right after issuing any request(s), you may skip freeing results as that is automatically done on exit by the Operating System. <br/>
 <br/>
@@ -417,11 +417,11 @@ You can use "gg_cli_delete()" regardless of whether "gg_cli_request()" returned 
 <div class="vsub"><a id="Completion hook"></a>Completion hook</div>
 A function you wrote can be called when a request has completed. This is useful in multithreaded invocations, where you may want to receive complete request's results as they are available. To specify a completion hook, you must write a C function with the following signature and assign it to "done_hook" member of "gg_cli" typed variable:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_385'>
+<pre id='code_386'>
  <span class="Type">typedef</span> <span class="Type">void</span> (*gg_cli_done_hook)(<span class="Type">char</span> *recv, <span class="Type">int</span> recv_len, <span class="Type">char</span> *err, <span class="Type">int</span> err_len, gg_cli *req);</pre>
-<span id=golf_copied_385 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_385' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_385, code_385, golf_copied_385)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_386 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_386' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_386, code_386, golf_copied_386)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 "recv" is the request's data output, "recv_len" is its length in bytes, "err" is the request's error output, and "err_len" is its length in bytes. "req" is the request itself which you can use to obtain any other information about the request. In a single threaded environment, these are available as members of the request variable of "gg_cli" type used in the request, and there is not much use for a completion hook. <br/>
 <br/>
@@ -431,21 +431,21 @@ You can obtain the service's reply as it arrives by specifying read hooks. This 
 <br/>
 To specify a hook for data output (i.e. from stdout), you must write a C function with the following signature and assign it to "out_hook":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_386'>
+<pre id='code_387'>
  <span class="Type">typedef</span> <span class="Type">void</span> (*gg_cli_out_hook)(<span class="Type">char</span> *recv, <span class="Type">int</span> recv_len, gg_cli *req);</pre>
-<span id=golf_copied_386 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_386' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_386, code_386, golf_copied_386)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_387 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_387' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_387, code_387, golf_copied_387)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 "recv" is the data received and "recv_len" is its length.<br/>
 <br/>
 To specify a hook for error output (i.e. from stderr), you must write a C function with the following signature and assign it to "err_hook":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_361'>
+<pre id='code_362'>
  <span class="Type">typedef</span> <span class="Type">void</span> (*gg_cli_err_hook)(<span class="Type">char</span> *err, <span class="Type">int</span> err_len, gg_cli *req);</pre>
-<span id=golf_copied_361 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_361' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_361, code_361, golf_copied_361)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_362 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_362' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_362, code_362, golf_copied_362)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 "err" is the error received and "err_len" is its length.<br/>
 <br/>
@@ -455,7 +455,7 @@ To register these functions with "gg_cli_request()" function, assign their point
 <br/>
 For example, functions "get_output()" and "get_err()" will capture data as it arrives and print it out, and get_complete() will print the final result:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_362'>
+<pre id='code_363'>
  <span class="Comment">// Output hook</span>
  <span class="Type">void</span> get_output(<span class="Type">char</span> *d, <span class="Type">int</span> l, gg_cli *req)
 <span class="Statement"> {</span>
@@ -482,9 +482,9 @@ For example, functions "get_output()" and "get_err()" will capture data as it ar
  req.out_hook = &amp;get_output;
  req.err_hook = &amp;get_err;
  req.done_hook = &amp;get_complete;</pre>
-<span id=golf_copied_362 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_362' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_362, code_362, golf_copied_362)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_363 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_363' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_363, code_363, golf_copied_363)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Multithreading"></a>Multithreading</div>
 The Golf client is MT-safe, meaning you can use it both in single-threaded and multi-threaded programs. Note that each thread must have its own copy of "gg_cli" request variable, since it provides both input and output parameters to a request call and as such cannot be shared between the threads.<br/>
@@ -497,11 +497,11 @@ You can use API without installing Golf. To do that:<br/>
 </li><li>add the content of Golf's "LICENSE" file to your own in order to include the license for these source files,<br/>
 </li><li>then make your application:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_363'>
+<pre id='code_364'>
  gcc -o cli cli.c gcli.c</pre>
-<span id=golf_copied_363 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_363' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_363, code_363, golf_copied_363)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_364 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_364' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_364, code_364, golf_copied_364)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li></ul>
 Note that you do not need to install any other dependencies, as API is entirely contained in the aforementioned source files.<br/>
@@ -509,7 +509,7 @@ Note that you do not need to install any other dependencies, as API is entirely 
 <div class="vsub"><a id="Simple example"></a>Simple example</div>
 The following example is a simple demonstration, with minimum of options used. Copy the C code to file "cli.c" in a directory of its own:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_364'>
+<pre id='code_365'>
  <span class="PreProc">#include </span><span class="Constant">&quot;gcli.h&quot;</span>
 
  <span class="Type">void</span> main ()
@@ -533,62 +533,62 @@ The following example is a simple demonstration, with minimum of options used. C
      <span class="Comment">// Free up resources so there are no memory leaks</span>
      gg_cli_delete(&amp;req);
 <span class="Statement"> }</span></pre>
-<span id=golf_copied_364 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_364' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_364, code_364, golf_copied_364)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-To make this client application:<br/>
-<div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_373'>
-gcc <span class="Special">-o</span> cli cli.c <span class="PreProc">$(</span><span class="Special">gg </span><span class="Special">-i</span><span class="PreProc">)</span></pre>
-<span id=golf_copied_373 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_373' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_373, code_373, golf_copied_373)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-In this case, you're using a Unix socket to communicate with the Golf service. To test with a Golf service handler, copy the following code to "hello_simple.golf" file in a separate directory:<br/>
-<div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_365'>
-<span class="Statement"> begin-handler</span> /hello_simple<span class="Identifier"> public</span>
-<span class="Statement">    silent-header</span>
-<span class="Statement">    @</span>Hi there!
-<span class="Statement"> end-handler</span></pre>
 <span id=golf_copied_365 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_365' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_365, code_365, golf_copied_365)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
+To make this client application:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_374'>
+gcc <span class="Special">-o</span> cli cli.c <span class="PreProc">$(</span><span class="Special">gg </span><span class="Special">-i</span><span class="PreProc">)</span></pre>
+<span id=golf_copied_374 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_374' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_374, code_374, golf_copied_374)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+In this case, you're using a Unix socket to communicate with the Golf service. To test with a Golf service handler, copy the following code to "hello_simple.golf" file in a separate directory:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_366'>
+<span class="Statement"> begin-handler</span> /hello_simple<span class="Identifier"> public</span>
+<span class="Statement">    silent-header</span>
+<span class="Statement">    @</span>Hi there!
+<span class="Statement"> end-handler</span></pre>
+<span id=golf_copied_366 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_366' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_366, code_366, golf_copied_366)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
 Create and make the Golf application and run it via local Unix socket:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_375'>
+<pre id='code_376'>
 sudo mgrg <span class="Special">-i</span> <span class="Special">-u</span> <span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span> helloworld
 gg <span class="Special">-q</span>
 mgrg <span class="Special">-m</span> quit helloworld
 mgrg <span class="Special">-w</span> <span class="Constant">1</span> helloworld</pre>
-<span id=golf_copied_375 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_375' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_375, code_375, golf_copied_375)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_376 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_376' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_376, code_376, golf_copied_376)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Run the client:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_377'>
+<pre id='code_378'>
 ./cli</pre>
-<span id=golf_copied_377 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_377' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_377, code_377, golf_copied_377)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_378 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_378' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_378, code_378, golf_copied_378)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The output is, as expected:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_366'>
+<pre id='code_367'>
  Hi there!</pre>
-<span id=golf_copied_366 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_366' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_366, code_366, golf_copied_366)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_367 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_367' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_367, code_367, golf_copied_367)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Example with more options"></a>Example with more options</div>
 This example demonstrates using multiple options, including using TCP sockets connecting to a host and port number, environment variables, query string, request body and request execution timeout. It will also show the separation of "data" and "error" (i.e. stdout and stderr) streams from the service.<br/>
 <br/>
 Copy this to file "cli1.c" in a directory of its own - note that in this example a server will run on localhost (127.0.0.1) and TCP port 2301:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_367'>
+<pre id='code_368'>
  <span class="PreProc">#include </span><span class="Constant">&quot;gcli.h&quot;</span>
 
  <span class="Type">void</span> main ()
@@ -598,7 +598,7 @@ Copy this to file "cli1.c" in a directory of its own - note that in this example
      <span class="Comment">// Initialize request</span>
      memset (&amp;req, <span class="Constant">0</span>, <span class="Statement">sizeof</span>(req));
 
-     <span class="Comment">// Add 3 environment variables (in the form of name, value, name, value, ... , NULL)</span>
+     <span class="Comment">// Add </span><span class="Constant">3</span><span class="Comment"> environment variables (in the form of name, value, name, value, ... , NULL)</span>
      <span class="Type">char</span> *env[] = { <span class="Constant">&quot;REMOTE_USER&quot;</span>, <span class="Constant">&quot;John&quot;</span>, <span class="Constant">&quot;SOME_VAR&quot;</span>, <span class="Constant">&quot;SOME</span><span class="Special">\n</span><span class="Constant">VALUE&quot;</span>, <span class="Constant">&quot;NEW_VAR&quot;</span>, <span class="Constant">&quot;1000&quot;</span>, <span class="Constant">NULL</span> };
 
      <span class="Comment">// Create a request</span>
@@ -620,7 +620,7 @@ Copy this to file "cli1.c" in a directory of its own - note that in this example
      req.req_body = <span class="Constant">&quot;This is request body&quot;</span>;
      <span class="Comment">// Content length</span>
      req.content_len = strlen (req.req_body);
-     <span class="Comment">// No timeout (set to 0)</span>
+     <span class="Comment">// No timeout (set to </span><span class="Constant">0</span><span class="Comment">)</span>
      req.timeout = <span class="Constant">0</span>;
 
      <span class="Comment">// Make a request</span>
@@ -646,37 +646,37 @@ Copy this to file "cli1.c" in a directory of its own - note that in this example
      <span class="Comment">// Free up resources so there are no memory leaks</span>
      gg_cli_delete(&amp;req);
 <span class="Statement"> }</span></pre>
-<span id=golf_copied_367 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_367' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_367, code_367, golf_copied_367)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-Note that the URL parameters (i.e. "req.url_params") could have been written as a combination of a path segment and query string (see <a href='https://golf-lang.com/request.html'>request</a>):<br/>
-<div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_368'>
- req.url_params = <span class="Constant">&quot;/par1/val1?par2=91&quot;</span>;</pre>
 <span id=golf_copied_368 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_368' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_368, code_368, golf_copied_368)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-or just as a path segment:<br/>
+Note that the URL parameters (i.e. "req.url_params") could have been written as a combination of a path segment and query string (see <a href='https://golf-lang.com/request.html'>request</a>):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_369'>
- req.url_params = <span class="Constant">&quot;/par1=val1/par2=91&quot;</span>;</pre>
+ req.url_params = <span class="Constant">&quot;/par1/val1?par2=91&quot;</span>;</pre>
 <span id=golf_copied_369 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_369' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_369, code_369, golf_copied_369)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
+or just as a path segment:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_370'>
+ req.url_params = <span class="Constant">&quot;/par1=val1/par2=91&quot;</span>;</pre>
+<span id=golf_copied_370 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_370' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_370, code_370, golf_copied_370)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
 To make this client application:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_379'>
+<pre id='code_380'>
 gcc <span class="Special">-o</span> cli1 cli1.c <span class="PreProc">$(</span><span class="Special">gg </span><span class="Special">-i</span><span class="PreProc">)</span></pre>
-<span id=golf_copied_379 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_379' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_379, code_379, golf_copied_379)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_380 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_380' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_380, code_380, golf_copied_380)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 To test it, you can create a Golf application. Copy this to "hello.golf" file in a separate directory:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_370'>
+<pre id='code_371'>
 <span class="Statement"> begin-handler</span> /hello<span class="Identifier"> public</span>
 <span class="Statement">     silent-header</span>
 
@@ -696,9 +696,9 @@ To test it, you can create a Golf application. Copy this to "hello.golf" file in
 <span class="Statement">     get-req</span><span class="Identifier"> process-id</span><span class="Type"> to</span> pid
 <span class="Statement">     @</span>Hello World! [<span class="Statement">&lt;&lt;print-out</span> ruser<span class="Statement">&gt;&gt;</span>] [<span class="Statement">&lt;&lt;print-out</span> somev<span class="Statement">&gt;&gt;</span>] [<span class="Statement">&lt;&lt;print-out</span> newv<span class="Statement">&gt;&gt;</span>] [<span class="Statement">&lt;&lt;print-out</span> par1<span class="Statement">&gt;&gt;</span>] [<span class="Statement">&lt;&lt;print-out</span> par2<span class="Statement">&gt;&gt;</span>] <span class="Statement">&lt;&lt;print-out</span> pid<span class="Statement">&gt;&gt;</span> <span class="Statement">&lt;&lt;print-out</span> rb<span class="Statement">&gt;&gt;</span>
 
-     <span class="Comment">// Output back a number of lines, generally as &quot;Output line #&lt;num of line&gt;&quot;</span>
-     <span class="Comment">// After line #1418, print out &quot;Line 1419 has an error&quot; to stderr</span>
-     <span class="Comment">// After line #4418, report an error and exit</span>
+     <span class="Comment">// Output back a number of lines, generally as </span><span class="Constant">&quot;Output line #&lt;num of line&gt;&quot;</span>
+     <span class="Comment">// After line #</span><span class="Constant">1418</span><span class="Comment">, print out </span><span class="Constant">&quot;Line 1419 has an error&quot;</span><span class="Comment"> to stderr</span>
+     <span class="Comment">// After line #</span><span class="Constant">4418</span><span class="Comment">, report an error and exit</span>
      <span class="Comment">// This demonstrates outputting data to both stdout and stderr</span>
 <span class="Statement">     start-loop</span><span class="Identifier"> repeat</span> <span class="Constant">8000</span><span class="Type"> use</span> i<span class="Identifier"> start-with</span> <span class="Constant">0</span>
 <span class="Statement">         @</span>Output line #<span class="Statement">&lt;&lt;print-out</span> i<span class="Statement">&gt;&gt;</span>
@@ -712,32 +712,32 @@ To test it, you can create a Golf application. Copy this to "hello.golf" file in
 <span class="Statement">         end-if</span>
 <span class="Statement">     end-loop</span>
 <span class="Statement"> end-handler</span></pre>
-<span id=golf_copied_370 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_370' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_370, code_370, golf_copied_370)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_371 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_371' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_371, code_371, golf_copied_371)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Create and make the Golf application and run it on local TCP port 2301 to match the client above:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_381'>
+<pre id='code_382'>
 sudo mgrg <span class="Special">-i</span> <span class="Special">-u</span> <span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span> helloworld
 gg <span class="Special">-q</span>
 mgrg <span class="Special">-m</span> quit helloworld
 mgrg <span class="Special">-w</span> <span class="Constant">1</span> <span class="Special">-p</span> <span class="Constant">2301</span> helloworld</pre>
-<span id=golf_copied_381 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_381' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_381, code_381, golf_copied_381)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_382 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_382' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_382, code_382, golf_copied_382)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Run the client:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_383'>
+<pre id='code_384'>
 ./cli1</pre>
-<span id=golf_copied_383 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_383' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_383, code_383, golf_copied_383)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_384 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_384' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_384, code_384, golf_copied_384)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The output:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_372'>
+<pre id='code_373'>
 Server status 82
 Len of data 78530
 Len of error 35
@@ -764,9 +764,9 @@ Output line #4419
 Error [Line 1419 has an error
 Some error!
 ]</pre>
-<span id=golf_copied_372 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_372' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_372, code_372, golf_copied_372)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_373 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_373' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_373, code_373, golf_copied_373)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The output shows service exit code (82, see <a href='https://golf-lang.com/exit-status.html'>exit-status</a> in the Golf code above), length of data output, and other information which includes environment variables passed to the service from the client, the PID of server process, the request body from the client, and then the error output. Note that the data output (stdout) and the error output (stderr) are separated, since the protocol does use separate streams over the same connection. This makes working with the output easy, while the data transfer is fast at the same time.<br/>
 <div class="vsub"><a id="See also"></a>See also</div>

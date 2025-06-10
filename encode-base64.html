@@ -26,7 +26,7 @@ body {
     font-size:14px;
     font-family: monospace;
     display:inline-block;
-    max-width:100%;
+    max-width:99%;
     min-width:90%;
     margin:0;
     padding:0;
@@ -45,7 +45,7 @@ body {
     font-size:14px;
     font-family: monospace;
     display:inline-block;
-    max-width:100%;
+    max-width:99%;
     min-width:90%;
     margin:0;
     padding:0;
@@ -64,7 +64,7 @@ body {
     font-size:14px;
     font-family: monospace;
     display:inline-block;
-    max-width:100%;
+    max-width:99%;
     min-width:90%;
     margin:0;
     padding:0;
@@ -83,7 +83,7 @@ body {
     font-size:14px;
     font-family: monospace;
     display:inline-block;
-    max-width:100%;
+    max-width:99%;
     min-width:90%;
     margin:0;
     padding:0;
@@ -102,7 +102,7 @@ body {
     font-size:14px;
     font-family: monospace;
     display:inline-block;
-    max-width:100%;
+    max-width:99%;
     min-width:90%;
     margin:0;
     padding:0;
@@ -227,12 +227,12 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Encode base64</div><hr/><span style="font-weight:bold;">Purpose</span>: Base64 encode.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_504'>
+<pre id='code_505'>
 <span class="Statement"> encode-base64</span> &lt;data&gt;<span class="Type"> to</span> &lt;output data&gt; \
      [<span class="Identifier"> input-length</span> &lt;input length&gt; ]</pre>
-<span id=golf_copied_504 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_504' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_504, code_504, golf_copied_504)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_505 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_505' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_505, code_505, golf_copied_505)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 encode-base64 will encode string &lt;data&gt; into base64 string &lt;output data&gt;.<br/>
 <br/>
@@ -244,7 +244,7 @@ Base64-encoded strings are often used where binary data needs to be in a format 
 <div class="vsub"><a id="Examples"></a>Examples</div>
 An example that encodes a string, decodes, and finally checks if they match:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_505'>
+<pre id='code_506'>
  <span class="Comment">// Original string, generally this would be binary data in most cases</span>
 <span class="Statement"> set-string</span> dt =<span class="Constant">&quot;  oh well  &quot;</span>
 
@@ -258,17 +258,17 @@ An example that encodes a string, decodes, and finally checks if they match:<br/
 <span class="Statement"> else-if</span>
 <span class="Statement">     @</span>Failure!
 <span class="Statement"> end-if</span></pre>
-<span id=golf_copied_505 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_505' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_505, code_505, golf_copied_505)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_506 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_506' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_506, code_506, golf_copied_506)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In the next example, "input-length" clause is used, and only a partial of the input string is encoded, then later compared to the original:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_506'>
+<pre id='code_507'>
  <span class="Comment">// Original string, generally this would be binary data in most cases</span>
 <span class="Statement"> set-string</span> dt =<span class="Constant">&quot;  oh well  &quot;</span>
 
- <span class="Comment">// Encode in base64, encode only 6 bytes</span>
+ <span class="Comment">// Encode in base64, encode only </span><span class="Constant">6</span><span class="Comment"> bytes</span>
 <span class="Statement"> encode-base64</span> dt<span class="Identifier"> input-length</span> <span class="Constant">6</span><span class="Type"> to</span> out_dt
 
 <span class="Statement"> decode-base64</span> out_dt<span class="Type"> to</span> new_dt
@@ -287,9 +287,9 @@ In the next example, "input-length" clause is used, and only a partial of the in
 <span class="Statement"> else-if</span>
 <span class="Statement">     @</span>Failure! [<span class="Statement">&lt;&lt;print-out</span> dt<span class="Statement">&gt;&gt;</span>] [<span class="Statement">&lt;&lt;print-out</span> new_dt<span class="Statement">&gt;&gt;</span>]
 <span class="Statement"> end-if</span></pre>
-<span id=golf_copied_506 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_506' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_506, code_506, golf_copied_506)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_507 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_507' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_507, code_507, golf_copied_507)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Base64'></a><span style="font-weight:bold;">Base64</span><br/>

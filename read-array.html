@@ -26,7 +26,7 @@ body {
     font-size:14px;
     font-family: monospace;
     display:inline-block;
-    max-width:100%;
+    max-width:99%;
     min-width:90%;
     margin:0;
     padding:0;
@@ -45,7 +45,7 @@ body {
     font-size:14px;
     font-family: monospace;
     display:inline-block;
-    max-width:100%;
+    max-width:99%;
     min-width:90%;
     margin:0;
     padding:0;
@@ -64,7 +64,7 @@ body {
     font-size:14px;
     font-family: monospace;
     display:inline-block;
-    max-width:100%;
+    max-width:99%;
     min-width:90%;
     margin:0;
     padding:0;
@@ -83,7 +83,7 @@ body {
     font-size:14px;
     font-family: monospace;
     display:inline-block;
-    max-width:100%;
+    max-width:99%;
     min-width:90%;
     margin:0;
     padding:0;
@@ -102,7 +102,7 @@ body {
     font-size:14px;
     font-family: monospace;
     display:inline-block;
-    max-width:100%;
+    max-width:99%;
     min-width:90%;
     margin:0;
     padding:0;
@@ -227,14 +227,14 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Read array</div><hr/><span style="font-weight:bold;">Purpose</span>: Get data from an array.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_804'>
+<pre id='code_805'>
 <span class="Statement"> read-array</span> &lt;array&gt; \
     <span class="Identifier"> key</span> &lt;key&gt; \
     <span class="Type"> value</span> &lt;value&gt; \
      [<span class="Identifier"> delete</span> [ &lt;delete&gt; ] ]</pre>
-<span id=golf_copied_804 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_804' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_804, code_804, golf_copied_804)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_805 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_805' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_805, code_805, golf_copied_805)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 read-array will obtain an element from &lt;array&gt; (that was created with <a href='https://golf-lang.com/new-array.html'>new-array</a>); an element obtained is &lt;value&gt; (in "value" clause) based on a number &lt;key&gt; (in "key" clause). &lt;key&gt; is a number from 0 up to (excluding) the currently allocated array size. The type of &lt;value&gt; is determined when &lt;array&gt; is created (see "type" clause), and can be either a string, number or a boolean.<br/>
 <br/>
@@ -244,7 +244,7 @@ Note that array may be allocated beyond the highest index of an element written 
 <div class="vsub"><a id="Examples"></a>Examples</div>
 In this example, a new array is created, a value is written to it, and then the value is obtained and the element deleted; return status is checked:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_805'>
+<pre id='code_806'>
  <span class="Comment">// Create new array</span>
 <span class="Statement"> new-array</span> arr<span class="Identifier"> type string</span>
 
@@ -254,9 +254,9 @@ In this example, a new array is created, a value is written to it, and then the 
  <span class="Comment">// Read from array</span>
 <span class="Statement"> read-array</span> arr<span class="Identifier"> key</span> <span class="Constant">500</span><span class="Type"> value</span> res status st<span class="Identifier"> delete</span>
 <span class="Statement"> @</span>Deleted value is <span class="Statement">&lt;&lt;print-out</span> res<span class="Statement">&gt;&gt;</span></pre>
-<span id=golf_copied_805 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_805' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_805, code_805, golf_copied_805)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_806 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_806' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_806, code_806, golf_copied_806)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Array'></a><span style="font-weight:bold;">Array</span><br/>

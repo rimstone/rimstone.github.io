@@ -26,7 +26,7 @@ body {
     font-size:14px;
     font-family: monospace;
     display:inline-block;
-    max-width:100%;
+    max-width:99%;
     min-width:90%;
     margin:0;
     padding:0;
@@ -45,7 +45,7 @@ body {
     font-size:14px;
     font-family: monospace;
     display:inline-block;
-    max-width:100%;
+    max-width:99%;
     min-width:90%;
     margin:0;
     padding:0;
@@ -64,7 +64,7 @@ body {
     font-size:14px;
     font-family: monospace;
     display:inline-block;
-    max-width:100%;
+    max-width:99%;
     min-width:90%;
     margin:0;
     padding:0;
@@ -83,7 +83,7 @@ body {
     font-size:14px;
     font-family: monospace;
     display:inline-block;
-    max-width:100%;
+    max-width:99%;
     min-width:90%;
     margin:0;
     padding:0;
@@ -102,7 +102,7 @@ body {
     font-size:14px;
     font-family: monospace;
     display:inline-block;
-    max-width:100%;
+    max-width:99%;
     min-width:90%;
     margin:0;
     padding:0;
@@ -227,7 +227,7 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Print out</div><hr/><span style="font-weight:bold;">Purpose</span>: Print data out.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_774'>
+<pre id='code_775'>
 <span class="Statement"> print-out</span> &lt;string&gt; [ &lt;length&gt; ] [<span class="Identifier"> url-encode</span> |<span class="Identifier"> web-encode</span> ] [<span class="Identifier"> new-line</span> ]
 
 <span class="Statement"> print-out</span> &lt;number&gt;<span class="Identifier"> new-line</span>
@@ -235,65 +235,65 @@ function gg_copy(gt, eid, gc) {
 <span class="Statement"> print-out</span><span class="Identifier"> source-file</span> [<span class="Identifier"> new-line</span> ]
 
 <span class="Statement"> print-out</span><span class="Identifier"> source-line</span> [<span class="Identifier"> new-line</span> ]</pre>
-<span id=golf_copied_774 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_774' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_774, code_774, golf_copied_774)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-print-out outputs various kinds of data:<br/>
-<ul><li>A &lt;string&gt; is output:<br/>
-<div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_775'>
-<span class="Statement"> print-out</span> &lt;string&gt; [ &lt;length&gt; ] [<span class="Identifier"> url-encode</span> |<span class="Identifier"> web-encode</span> ] [<span class="Identifier"> new-line</span> ]</pre>
 <span id=golf_copied_775 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_775' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_775, code_775, golf_copied_775)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-<ul><li>By default, &lt;string&gt; is output without any encoding (meaning a string is output exactly as it appears). To output data verbatim to a client:<br/>
+print-out outputs various kinds of data:<br/>
+<ul><li>A &lt;string&gt; is output:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_776'>
-<span class="Statement"> set-string</span> mydata=<span class="Constant">&quot;Hello world&quot;</span>
-<span class="Statement"> print-out</span> mydata</pre>
+<span class="Statement"> print-out</span> &lt;string&gt; [ &lt;length&gt; ] [<span class="Identifier"> url-encode</span> |<span class="Identifier"> web-encode</span> ] [<span class="Identifier"> new-line</span> ]</pre>
 <span id=golf_copied_776 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_776' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_776, code_776, golf_copied_776)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Writing to client, outputting text followed by a horizontal rule - the text is output to a client (such as browser) as it is, and the browser will interpret tags "&lt;br/&gt;" and "&lt;hr/&gt;" as a line break and a horizonal line and display them as such:<br/>
+<ul><li>By default, &lt;string&gt; is output without any encoding (meaning a string is output exactly as it appears). To output data verbatim to a client:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_777'>
-<span class="Statement"> print-out</span> <span class="Constant">&quot;This is a non-encoded output&lt;br/&gt;&quot;</span><span class="Identifier"> new-line</span>
-<span class="Statement"> print-out</span> <span class="Constant">&quot;&lt;hr/&gt;&quot;</span></pre>
+<span class="Statement"> set-string</span> mydata=<span class="Constant">&quot;Hello world&quot;</span>
+<span class="Statement"> print-out</span> mydata</pre>
 <span id=golf_copied_777 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_777' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_777, code_777, golf_copied_777)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Create a query text string by means of <a href='https://golf-lang.com/write-string.html'>write-string</a> statement:<br/>
+Writing to client, outputting text followed by a horizontal rule - the text is output to a client (such as browser) as it is, and the browser will interpret tags "&lt;br/&gt;" and "&lt;hr/&gt;" as a line break and a horizonal line and display them as such:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_778'>
+<span class="Statement"> print-out</span> <span class="Constant">&quot;This is a non-encoded output&lt;br/&gt;&quot;</span><span class="Identifier"> new-line</span>
+<span class="Statement"> print-out</span> <span class="Constant">&quot;&lt;hr/&gt;&quot;</span></pre>
+<span id=golf_copied_778 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_778' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_778, code_778, golf_copied_778)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Create a query text string by means of <a href='https://golf-lang.com/write-string.html'>write-string</a> statement:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_779'>
  <span class="Comment">//</span>
  <span class="Comment">// Construct the run-time text of dynamic SQL</span>
  <span class="Comment">//</span>
 <span class="Statement"> write-string</span> qry_txt
 <span class="Statement">    @</span>select * from <span class="Statement">&lt;&lt;print-out</span> table_name<span class="Statement">&gt;&gt;</span>
 <span class="Statement"> end-write-string</span></pre>
-<span id=golf_copied_778 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_778' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_778, code_778, golf_copied_778)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-</li><li>If "url-encode" clause is used, then the output is URL-encoded. This means such output is suited for use in URL parameters. Create a URL based on arbitrary strings used as URL parameters - for instance a space would be encoded as "%20" in the final output:<br/>
-<div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_779'>
-<span class="Statement"> @</span>&lt;a href='<span class="Statement">&lt;&lt;print-out</span> <span class="Constant">&quot;/update&quot;</span><span class="Statement">&gt;&gt;</span>?item=<span class="Statement">&lt;&lt;print-out</span> item_name<span class="Statement"> url-encode&gt;&gt;</span>'&gt;Update&lt;/a&gt;</pre>
 <span id=golf_copied_779 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_779' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_779, code_779, golf_copied_779)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-</li></ul>If "web-encode" clause is used, then the output is web-encoded (or HTML-encoded). This means such output is suited for use in web pages - the text will be displayed verbatim without HTML-markup being interpreted. Display "We use &lt;hr/&gt; markup" text, without "&lt;hr/&gt;" being displayed as a horizontal line:<br/>
+</li><li>If "url-encode" clause is used, then the output is URL-encoded. This means such output is suited for use in URL parameters. Create a URL based on arbitrary strings used as URL parameters - for instance a space would be encoded as "%20" in the final output:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_780'>
-<span class="Statement"> print-out</span> <span class="Constant">&quot;We use &lt;hr/&gt; markup&quot;</span><span class="Identifier"> web-encode</span></pre>
+<span class="Statement"> @</span>&lt;a href='<span class="Statement">&lt;&lt;print-out</span> <span class="Constant">&quot;/update&quot;</span><span class="Statement">&gt;&gt;</span>?item=<span class="Statement">&lt;&lt;print-out</span> item_name<span class="Statement"> url-encode&gt;&gt;</span>'&gt;Update&lt;/a&gt;</pre>
 <span id=golf_copied_780 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_780' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_780, code_780, golf_copied_780)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+</li></ul>If "web-encode" clause is used, then the output is web-encoded (or HTML-encoded). This means such output is suited for use in web pages - the text will be displayed verbatim without HTML-markup being interpreted. Display "We use &lt;hr/&gt; markup" text, without "&lt;hr/&gt;" being displayed as a horizontal line:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_781'>
+<span class="Statement"> print-out</span> <span class="Constant">&quot;We use &lt;hr/&gt; markup&quot;</span><span class="Identifier"> web-encode</span></pre>
+<span id=golf_copied_781 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_781' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_781, code_781, golf_copied_781)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li></ul>
 If "length" clause is used, then only &lt;length&gt; leading bytes of &lt;string&gt; are output. <br/>
@@ -304,58 +304,58 @@ Note that all bytes of &lt;string&gt; are output, even if &lt;string&gt; contain
 <br/>
 </li><li>Outputs a number, given by &lt;number&gt;:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_781'>
+<pre id='code_782'>
 <span class="Statement"> print-out</span> &lt;number&gt; [<span class="Identifier"> new-line</span> ]</pre>
-<span id=golf_copied_781 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_781' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_781, code_781, golf_copied_781)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_782 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_782' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_782, code_782, golf_copied_782)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 If "new-line" clause is used, then a new line ("\n") is output after &lt;number&gt;.<br/>
 <br/>
 To output a number to a client:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_782'>
+<pre id='code_783'>
 <span class="Statement"> set-number</span> x = <span class="Constant">100</span>
 <span class="Statement"> print-out</span> x</pre>
-<span id=golf_copied_782 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_782' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_782, code_782, golf_copied_782)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_783 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_783' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_783, code_783, golf_copied_783)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li><li>Outputs the file name of the current source file.<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_770'>
+<pre id='code_771'>
 <span class="Statement"> print-out</span><span class="Identifier"> source-file</span> [<span class="Identifier"> new-line</span> ]</pre>
-<span id=golf_copied_770 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_770' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_770, code_770, golf_copied_770)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_771 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_771' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_771, code_771, golf_copied_771)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 This outputs the file name (relative to the source code directory) of the source file where the statement is located; this is often used for debugging.<br/>
 <br/>
 If "new-line" clause is used, then a new line ("\n") is output afterwards.<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_771'>
-<span class="Statement"> @</span>This file is <span class="Statement">&lt;&lt;print-out source-file&gt;&gt;</span></pre>
-<span id=golf_copied_771 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_771' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_771, code_771, golf_copied_771)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-</li><li>Outputs current line number in the source file.<br/>
-<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_772'>
-<span class="Statement"> print-out</span><span class="Identifier"> source-line</span> [<span class="Identifier"> new-line</span> ]</pre>
+<span class="Statement"> @</span>This file is <span class="Statement">&lt;&lt;print-out source-file&gt;&gt;</span></pre>
 <span id=golf_copied_772 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_772' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_772, code_772, golf_copied_772)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+</li><li>Outputs current line number in the source file.<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_773'>
+<span class="Statement"> print-out</span><span class="Identifier"> source-line</span> [<span class="Identifier"> new-line</span> ]</pre>
+<span id=golf_copied_773 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_773' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_773, code_773, golf_copied_773)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 This outputs the line number in the source file where the statement is located. It is often used for debugging purposes.<br/>
 <br/>
 If "new-line" clause is used, then a new line ("\n") is output afterwards.<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_773'>
+<pre id='code_774'>
 <span class="Statement"> @</span>This line is #<span class="Statement">&lt;&lt;print-out source-line&gt;&gt;</span></pre>
-<span id=golf_copied_773 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_773' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_773, code_773, golf_copied_773)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_774 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_774' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_774, code_774, golf_copied_774)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li></ul>
 <div class="vsub"><a id="See also"></a>See also</div>

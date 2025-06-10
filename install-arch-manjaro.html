@@ -26,7 +26,7 @@ body {
     font-size:14px;
     font-family: monospace;
     display:inline-block;
-    max-width:100%;
+    max-width:99%;
     min-width:90%;
     margin:0;
     padding:0;
@@ -45,7 +45,7 @@ body {
     font-size:14px;
     font-family: monospace;
     display:inline-block;
-    max-width:100%;
+    max-width:99%;
     min-width:90%;
     margin:0;
     padding:0;
@@ -64,7 +64,7 @@ body {
     font-size:14px;
     font-family: monospace;
     display:inline-block;
-    max-width:100%;
+    max-width:99%;
     min-width:90%;
     margin:0;
     padding:0;
@@ -83,7 +83,7 @@ body {
     font-size:14px;
     font-family: monospace;
     display:inline-block;
-    max-width:100%;
+    max-width:99%;
     min-width:90%;
     margin:0;
     padding:0;
@@ -102,7 +102,7 @@ body {
     font-size:14px;
     font-family: monospace;
     display:inline-block;
-    max-width:100%;
+    max-width:99%;
     min-width:90%;
     margin:0;
     padding:0;
@@ -227,24 +227,24 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Install arch manjaro</div><hr/><div class="vsub"><a id="Install Golf on Arch and Manjaro:"></a>Install Golf on Arch and Manjaro:</div>
 Run this one time to add Golf key:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_625'>
+<pre id='code_626'>
 <span class="Statement">echo</span><span class="Constant"> -e </span><span class="Statement">&quot;</span><span class="Constant">[home_golf_lang_Arch]</span><span class="Special">\n</span><span class="Constant">Server = <a href="https://download.opensuse.org/repositories/home:/golf_lang/Arch/x86_64">https://download.opensuse.org/repositories/home:/golf_lang/Arch/x86_64</a></span><span class="Statement">&quot;</span><span class="Constant"> </span>| sudo  tee <span class="Special">-a</span> /etc/pacman.conf
 <span class="Identifier">key</span>=<span class="PreProc">$(</span><span class="Special">curl </span><span class="Special">-fsSL</span><span class="Special"> <a href="https://download.opensuse.org/repositories/home:golf_lang/Arch/">https://download.opensuse.org/repositories/home:golf_lang/Arch/</a></span><span class="PreProc">$(</span><span class="Special">uname </span><span class="Special">-m</span><span class="PreProc">)</span><span class="Special">/home_golf_lang_Arch.key</span><span class="PreProc">)</span>
 <span class="Identifier">fingerprint</span>=<span class="PreProc">$(</span><span class="Statement">echo</span><span class="Constant"> </span><span class="Statement">&quot;</span><span class="PreProc">${</span><span class="PreProc">key</span><span class="PreProc">}</span><span class="Statement">&quot;</span><span class="Statement">|</span><span class="Special">gpg </span><span class="Special">--quiet</span><span class="Special"> </span><span class="Special">--with-colons</span><span class="Special"> </span><span class="Special">--import-options</span><span class="Special"> show-only </span><span class="Special">--import</span><span class="Special"> </span><span class="Special">--fingerprint</span><span class="Special">  - </span><span class="Statement">|</span><span class="Special"> awk </span><span class="Special">-F</span><span class="Special">: </span><span class="Statement">'</span><span class="Constant">$1 == &quot;fpr&quot; { print $10 }</span><span class="Statement">'</span><span class="PreProc">)</span>
 sudo pacman-key <span class="Special">--init</span>
 <span class="Statement">echo</span><span class="Constant"> </span><span class="Statement">&quot;</span><span class="PreProc">${</span><span class="PreProc">key</span><span class="PreProc">}</span><span class="Statement">&quot;</span><span class="Constant"> </span>| sudo pacman-key <span class="Special">--add</span> -
 sudo pacman-key <span class="Special">--lsign-key</span> <span class="Statement">&quot;</span><span class="PreProc">${</span><span class="PreProc">fingerprint</span><span class="PreProc">}</span><span class="Statement">&quot;</span></pre>
-<span id=golf_copied_625 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_625' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_625, code_625, golf_copied_625)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-Install Golf:<br/>
-<div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_626'>
-sudo pacman <span class="Special">--noconfirm</span> <span class="Special">-Sy</span> home_golf_lang_Arch/golf</pre>
 <span id=golf_copied_626 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_626' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_626, code_626, golf_copied_626)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Install Golf:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_627'>
+sudo pacman <span class="Special">--noconfirm</span> <span class="Special">-Sy</span> home_golf_lang_Arch/golf</pre>
+<span id=golf_copied_627 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_627' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_627, code_627, golf_copied_627)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Install golf'></a><span style="font-weight:bold;">Install golf</span><br/>
