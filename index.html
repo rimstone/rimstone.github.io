@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Golf Programming Language!</title>
     <style>
         body, html {
-            font-family: sans-serif;
+            font-family: "Quicksand",sans-serif;
             margin: 0;
             padding: 0;
             overflow-x: clip; /* stop issues with full width*/
         }
 
+        a:visited, a:link { color: #2c2c2c;}
         /*The following is for code snippets that are highlighted by 2html vim*/
         pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
         .Identifier { color: #008b8b; }
@@ -23,7 +27,7 @@
         /*end of highlighted snippets*/
 
         .sect {
-            color: white;
+            color: #2c2c2c;
             font-size: 2em;
             padding: 20px; 
             width: 100%; 
@@ -56,7 +60,7 @@
         }
 
         .sec-five {
-            background-color: #6e5487;
+            background-color: #b694d6;
             padding-left: 15px; 
         }
 
@@ -72,11 +76,12 @@
             min-height: 150px; /* minimum height for squares */
             padding: 20px;
             width: 45%; /* approx half, we need space for gap */
-            background-color: rgba(255, 255, 255, 0.2); /* transparent white just a bit */
+            background-color: rgba(255, 255, 255, 0.3); /* transparent white just a bit */
             text-align: center;
             border-radius: 10px;
             font-size: 0.7em; /* text within squares */
-            color: #333; /* darker text */
+            /*font-weight:bold;*/
+            /*color: #333; *//* darker text */
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             box-sizing: border-box; /* padding included in width */
             display: flex; /* within squares uses flex for centering */
@@ -106,7 +111,7 @@
             text-align: center;
             margin-top: 20px; /* Space from heading */
             font-size: 0.7em;
-            color: white;
+            color: #2c2c2c;
         }
 
         .one-big-sect p {
@@ -154,6 +159,7 @@
         .btn {
             font-weight: bold;
             font-size: 26px;
+            color:#2c2c2c;
             text-decoration: none;
             padding: 11px 24px;
             border-radius: 6px;
@@ -165,7 +171,7 @@
         /* Filled button */
         .first-fill {
             background-color: gray;
-            color: white;
+            color: #2c2c2c;
             border: 2px solid #007bff;
         }
 
@@ -182,36 +188,36 @@
         }
 
         .basic-outline:hover {
-            color: white;
+            color: #2c2c2c;
             background-color: #007bff;
         }
 
     </style>
 </head>
 <body>
-    <div id="google_translate_element"></div>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    <script>
-        function gg_copy(gt, eid, gc) {
-            gt.textContent = eid.textContent;
-            gt.select();
-            document.execCommand("copy");
-            gc.style.visibility="visible"
-            setTimeout(()=>{ gc.style.visibility="hidden"; }, 1000);
-        }
-        function googleTranslateElementInit() {
-        new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-    }
-    </script>
-
-
+    <div id="google_translate_element" style='background-image:linear-gradient(to bottom, #c9e1f1,#3f95ce );text-align:right;height:80px;'></div>
+	<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+	<script>
+	    function gg_copy(gt, eid, gc) {
+		gt.textContent = eid.textContent;
+		gt.select();
+		document.execCommand("copy");
+		gc.style.visibility="visible"
+		setTimeout(()=>{ gc.style.visibility="hidden"; }, 700);
+	    }
+	    function googleTranslateElementInit() {
+	    new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+	}
+	</script>
     <sect class="sect sec-one"  style='padding-bottom:0px'>
+
+
         <div class="box-container" >
             <div >
             <img src="golf-large.png" style='width:100%;height:auto;'>
             </div>
             <div style='padding-left:20px'>
-            <h1>Build applications and server software fast with confidence</h1>
+                <h1 style='color:white'>Build applications and server software fast with confidence.<br/>Free Open Source.</h1>
             </div>
         </div>
     </sect>
@@ -246,65 +252,70 @@
          </div>
     </div>
     </sect>
+    <div style='background-image:linear-gradient(to bottom, #3f95ce,  #1ab35b); width:100%;text-align:right;height:10px;'> </div>
 
     <sect class="sect sec-two">
-        <h1>Never skip on important stuff</h1>
+        <h2 style='color:white'>Never skip on important stuff</h2>
         <div class="box-container">
             <div class="square left-square">
-                <h2>Safe</h2>
+                <h3>Safe</h3>
                 <p>Golf is a memory safe language with automatic memory release so it never leaks, and with a smart status checking of your code.</p>
             </div>
             <div class="square right-square">
-                <h2>Standards-driven</h2>
+                <h3>Standards-driven</h3>
                 <p>Built with industry-standard Free Open Source libraries for stability, performance and compliance.</p>
             </div>
         </div>
     </sect>
 
+    <div style='background-image:linear-gradient(to bottom, #1ab35b,#da4d3e ); width:100%;text-align:right;height:10px;'> </div>
     <sect class="sect sec-three">
-        <h1>Everything you need</h1>
+        <h2  style='color:white'>Everything you need</h2>
         <div class="box-container">
             <div class="square left-square">
-                <h2>Every CPU cycle counts</h2>
+                <h3>Every CPU cycle counts</h3>
                 <p>Performance is important. That's why Golf makes native executables from smartly generated C code, optimized for <a href='https://www.sciencedirect.com/science/article/pii/S0167642321000022'>speed and efficiency</a> </p>
             </div>
             <div class="square right-square">
-                <h2>Versatile and powerful</h2>
+                <h3>Versatile and powerful</h3>
                 <p>Build any application on Linux, command-line programs and application-servers alike, easily adding powerful features such as database access, JSON, Regex, XML, encryption and more.</p>
             </div>
         </div>
     </sect>
+    <div style='background-image:linear-gradient(to bottom, #da4d3e,#eb950d ); width:100%;text-align:right;height:10px;'> </div>
 
     <sect class="sect sec-four">
-        <h1>Well rounded</h1>
+        <h2  style='color:white'>Well rounded</h2>
         <div class="box-container">
             <div class="square left-square">
-                <h2>Freedom</h2>
-                <p>Licensed under <a href='/license.html'>Apache 2</a> Free Open Source License. Source code always at your fingertips at <a href='https://github.com/golf-lang/golf'>https://github.com/golf-lang/golf</a> (mirrors at <a href="https://gitlab.com/golf-lang/golf/">Gitlab</a>, <a href="https://sourceforge.net/p/golf/code">SourceForge</a>, <a href="https://aur.archlinux.org/packages/golf">AUR</a> and <a href="https://salsa.debian.org/golf/golf">Debian Salsa</a>)</p>
+                <h3>Freedom</h3>
+                <p>Licensed under <a href='/license.html'>Apache 2</a> Free Open Source License. Source code always at your fingertips at<br/><a href='https://github.com/golf-lang/golf'>https://github.com/golf-lang/golf</a></p>
             </div>
             <div class="square right-square">
-                <h2>Well documented with examples</h2>
+                <h3>Well documented with examples</h3>
                 <p>Visit <a href='/documentation.html'>Documentation</a> for a clear and concise manual, and examples of use. Check out <a href='/examples.html'>examples</a> too.</p>
             </div>
         </div>
     </sect>
+    <div style='background-image:linear-gradient(to bottom, #eb950d,#1ab35b ); width:100%;text-align:right;height:10px;'> </div>
 
     <sect class="sect sec-two">
-        <h1>Easy to install</h1>
+        <h2  style='color:white'>Easy to install</h2>
         <div class="box-container">
             <div class="square left-square">
-                <h2>No sudo required</h2>
+                <h3>No sudo required</h3>
                 <p>Golf doesn't need sudo permissions because it installs in a home folder. <a href="/golf-install.html">Install Golf</a> now.</p>
             </div>
             <div class="square right-square">
-                <h2>No binaries</h2>
+                <h3>No binaries</h3>
                 <p>Golf installs from source only for safety and performance, so you don't need to download any binaries. Not to worry, the install process is fully automated. <a href="/golf-install.html">Install Golf</a> now.</p>
             </div>
         </div>
     </sect>
 
+    <div style='background-image:linear-gradient(to bottom, #1ab35b, #b694d6 ); width:100%;text-align:right;height:10px;'> </div>
     <sect class="sect sec-five">
-        <h1>Here's how easy Golf is</h1>
+        <h2  style='color:white'>Here's how easy Golf is</h2>
         <div class="one-big-sect">
         Example of Golf code (from <a href='https://golf-lang.blogspot.com/2024/11/multi-tenant-saas-notes-web-application_43.html'>SaaS example</a>):<br/>
         <div class='code'  style='font-size:26px;position:relative;padding-right:16px;text-align:left;padding-left:2px;width:100%;margin-left:2px;background-color:white;color:black'>
@@ -329,19 +340,20 @@
 </div>
         </div>
     </sect>
+    <div style='background-image:linear-gradient(to bottom, #b694d6, #eb950d ); width:100%;text-align:right;height:10px;'> </div>
 
     <sect class="sect sec-four">
-        <h1>Quality matters</h1>
+        <h2  style='color:white'>Quality matters</h2>
         <div class="box-container">
             <div class="square left-square">
-                <h2>Rigorous QA</h2>
+                <h3>Rigorous QA</h3>
                 <p>
-Current version is 3.0.1. This release passed 2902 functional tests.
-                Check out <a href='/blog.html'>blog</a> for new releases and other news, including new examples.
+                Current version is 3.0.1. This release passed 2902 functional tests.
+                Check out <a href='/blog.html'>Golf blog</a> for new releases and other news, including new examples.
                 </p>
             </div>
             <div class="square right-square">
-                <h2>Good coverage</h2>
+                <h3>Good coverage</h3>
                 <p>Tested on major Linux distributions, such as Ubuntu, Debian, Redhat, Fedora, OpenSUSE and Arch.</p>
             </div>
         </div>
