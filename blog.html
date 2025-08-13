@@ -227,7 +227,7 @@ function googleTranslateElementInit() {
 Updated on 2025-08-13<br/>
 <span style="font-weight:bold;">Note</span>: This blog is a replacement for golf-lang.blogspot.com; please bookmark this page going forward.<br/>
 <ul><br/>
-<li><span style="font-weight:bold;">Major Golf rewrite brings no-sudo installation, better performance and many new features</span> (2025-08-13)<br/>
+<li><span style="font-weight:bold;">Golf 3.0.1: Major Golf rewrite brings no-sudo installation, better performance and many new features</span> (2025-08-13)<br/>
 <ul><li> Golf now installs without sudo in a local home folder. New gginst.sh utility is used to install Golf without sudo.<br/>
 </li><li> Golf is now source-only. The reason is performance and transparency; Golf generates C code for user applications, and then links (via Link Time Optimization, LTO) with Golf code. It's as if your code is directly compiled and optimized across whole program with Golf code. This can produce significant performance gains.<br/>
 </li><li> To use features that depend on other FOSS libraries, you need to install those libraries and you need sudo for that, which has nothing to do with Golf. The same goes for SELinux support. You can still use Golf without those features. Note that Golf installed can install them for you, or if you use them, it will tell you exactly how to install them yourself.<br/>
