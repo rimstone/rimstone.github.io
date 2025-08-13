@@ -12,7 +12,9 @@
 
 
 body, html {
-    /*font-family: Helvetica, Arial, sans-serif;*/
+    font-family: monospace,Helvetica, Arial, sans-serif;
+    line-height: 150%;
+    font-size:15px;
 }
 
 body {
@@ -21,10 +23,9 @@ body {
 }
     
 .ncode {
-    line-height:20px;
     letter-spacing: 0px;
-    font-size:14px;
     font-family: monospace;
+    font-size:83%;
     display:inline-block;
     max-width:99%;
     min-width:90%;
@@ -40,10 +41,9 @@ body {
 }
 
 .shcode {
-    line-height:23px;
     letter-spacing: 0px;
-    font-size:14px;
     font-family: monospace;
+    font-size:83%;
     display:inline-block;
     max-width:99%;
     min-width:90%;
@@ -59,10 +59,9 @@ body {
 }
 
 .sqlcode {
-    line-height:23px;
     letter-spacing: 0px;
-    font-size:14px;
     font-family: monospace;
+    font-size:83%;
     display:inline-block;
     max-width:99%;
     min-width:90%;
@@ -78,10 +77,9 @@ body {
 }
 
 .htmlcode {
-    line-height:23px;
     letter-spacing: 0px;
-    font-size:14px;
     font-family: monospace;
+    font-size:83%;
     display:inline-block;
     max-width:99%;
     min-width:90%;
@@ -97,10 +95,9 @@ body {
 }
 
 .code {
-    line-height:23px;
     letter-spacing: 0px;
-    font-size:14px;
     font-family: monospace;
+    font-size:83%;
     display:inline-block;
     max-width:99%;
     min-width:90%;
@@ -156,8 +153,6 @@ a {
 body {
     padding-left:2vw;
     padding-right:2vw;
-    font-size:14px;
-    line-height:22px;
     letter-spacing: 1px;
 }
 }
@@ -205,7 +200,8 @@ ul {
 
 </head>
 <body>
-
+<div id="google_translate_element"></div>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
 function gg_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
@@ -213,6 +209,9 @@ function gg_copy(gt, eid, gc) {
   document.execCommand("copy");
   gc.style.visibility="visible"
   setTimeout(()=>{ gc.style.visibility="hidden"; }, 1000);
+}
+function googleTranslateElementInit() {
+   new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
 }
 
 </script>
@@ -224,14 +223,14 @@ function gg_copy(gt, eid, gc) {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;If true</div><hr/><span style="font-weight:bold;">Purpose</span>: Conditional statement.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>If true</div><hr/><span style="font-weight:bold;">Purpose</span>: Comparison statement.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_615'>
-<span class="Statement"> if-true</span> &lt;condition&gt;
+<pre id='code_615' class=notranslate>
+<span class="Statement"> if-true</span> &lt;comparison&gt;
      &lt;any code&gt;
  [
-<span class="Statement"> else-if</span> &lt;condition&gt;
+<span class="Statement"> else-if</span> &lt;comparison&gt;
      &lt;any code&gt;
  ] ...
  [
@@ -243,19 +242,14 @@ function gg_copy(gt, eid, gc) {
 <textarea id='golft_615' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_615, code_615, golf_copied_615)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-where &lt;condition&gt; is:<br/>
+if-true statement will evaluate a &lt;comparison&gt; and if true, it will execute &lt;any code&gt; that immediately follows; if false, it will evaluate the optional following &lt;comparison&gt; in else-if statement, and if true it will execute &lt;any code&gt; that immediately follows it; and so on; if none of the comparisons are true, then an optional &lt;any code&gt; following else-if statement will execute; regardless of which &lt;any code&gt; executes (or if any does), the execution will continue after end-if.<br/>
+<br/>
+There can be only one "else-if" statement without a condition, and it must be the last one. <br/>
+<br/>
+&lt;comparison&gt; is<br/>
+<ul><li>For strings:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_616'>
- ( &lt;comparison&gt; [<span class="Identifier"> and</span> &lt;comparison&gt; [<span class="Statement"> ,</span> ... ] ] )
- |
- ( &lt;comparison&gt; [<span class="Identifier"> or</span> &lt;comparison&gt; [<span class="Statement"> ,</span> ... ] ] )</pre>
-<span id=golf_copied_616 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_616' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_616, code_616, golf_copied_616)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-&lt;comparison&gt; is for strings:<br/>
-<div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_617'>
+<pre id='code_616' class=notranslate>
  &lt;string&gt; \
     (<span class="Identifier"> equal</span> |<span class="Identifier"> not-equal</span> | \
    <span class="Identifier"> lesser-than</span> |<span class="Identifier"> lesser-equal</span> | \
@@ -263,59 +257,58 @@ where &lt;condition&gt; is:<br/>
    <span class="Identifier"> contain</span> |<span class="Identifier"> not-contain</span> ) \
  &lt;check string&gt; \
   [<span class="Identifier"> case-insensitive</span> ] [<span class="Statement"> length</span> &lt;length&gt; ]</pre>
-<span id=golf_copied_617 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_617' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_617, code_617, golf_copied_617)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_616 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_616' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_616, code_616, golf_copied_616)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-&lt;comparison&gt; is for numbers<br/>
+If "equal", "not-equal", "lesser-than", "lesser-equal", "greater-than" or "greater-equal" clause is used, a comparison succeeds if &lt;string&gt; is equal, not equal, lesser, lesser or equal, greater or greater-or-equal than &lt;check string&gt;, respectively. <br/>
+<br/>
+If "contain" or "not-contain" clause is used, a comparison succeeds if &lt;string&gt; is contained or not contained in &lt;check string&gt;, respectively. <br/>
+<br/>
+If "case-insensitive" clause is used, a comparison is performed without case sensitivity; this option is meant for null-terminated strings, while for non-null terminated strings it produces an undefined result.<br/>
+<br/>
+If "length" clause is used, only the first &lt;length&gt; bytes of the strings are compared; this clause is not available for "contain" and "not-contain".<br/>
+<br/>
+</li><li>For numbers:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_618'>
+<pre id='code_617' class=notranslate>
  &lt;number&gt; \
     (<span class="Identifier"> equal</span> |<span class="Identifier"> not-equal</span> | \
    <span class="Identifier"> lesser-than</span> |<span class="Identifier"> lesser-equal</span> | \
    <span class="Identifier"> greater-than</span> |<span class="Identifier"> greater-equal</span> | \
    <span class="Identifier"> every</span> |<span class="Identifier"> not-every</span> ) \
  &lt;check number&gt;  ...</pre>
+<span id=golf_copied_617 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_617' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_617, code_617, golf_copied_617)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+If "equal", "not-equal", "lesser-than", "lesser-equal", "greater-than" or "greater-equal" clause is used, a comparison succeeds if &lt;number&gt; is equal, not equal, lesser, lesser or equal, greater or greater-or-equal than &lt;check number&gt;, respectively.<br/>
+<br/>
+If "every" is used, then the comparison succeeds if the modulo of &lt;number&gt; and &lt;check number&gt; is 0 - this is useful in executing some code every N times but not the ones in between; with "not-every" the comparison success is this modulo is not 0 which is useful to execute code all the times except every Nth.<br/>
+<br/>
+</li><li>For booleans:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_618' class=notranslate>
+ &lt;boolean&gt; (<span class="Identifier"> equal</span> |<span class="Identifier"> not-equal</span> ) &lt;check boolean&gt;  ...</pre>
 <span id=golf_copied_618 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_618' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_618, code_618, golf_copied_618)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-&lt;comparison&gt; is for booleans:<br/>
-<div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_619'>
- &lt;boolean&gt; (<span class="Identifier"> equal</span> |<span class="Identifier"> not-equal</span> ) &lt;check boolean&gt;  ...</pre>
-<span id=golf_copied_619 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_619' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_619, code_619, golf_copied_619)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-if-true will evaluate a &lt;condition&gt; and execute code associated with the match. If the &lt;condition&gt; in if-true or "else-if" succeeds, then &lt;any code&gt; below is executed. If it is not a match, then the next condition in "else-if" statement is evaluated, one by one until a match is found and code under that statement executes. If no match is found, then code under "else-if" statement without a &lt;condition&gt; executes (if specified), otherwise program control passes outside of "end-if".<br/>
-<br/>
-A &lt;condition&gt; is made of one or more &lt;comparison&gt;s, connected by either "and" or "or" clause, but not both in the same &lt;condition&gt;. "and" clause uses logical AND to connect &lt;comparisons&gt; and it succeeds if all &lt;comparison&gt;s succeed. "or" clause uses logical OR to connect &lt;comparisons&gt; and it succeeds if at least one &lt;comparison&gt;s succeeds (if such a &lt;comparison&gt; is found, the following ones are not checked). <br/>
-<br/>
-Each &lt;comparison&gt; examines either a string, a number or a boolean variable. <br/>
-<div class="vsub"><a id="String variable in a comparison"></a>String variable in a comparison</div>
-If "equal", "not-equal", "lesser-than", "lesser-equal", "greater-than" or "greater-equal" clause is used, a comparison succeeds if &lt;string&gt; is equal, not equal, lesser, lesser or equal, greater or greater-or-equal than &lt;check string&gt;, respectively. If "contain" or "not-contain" clause is used, a comparison succeeds if &lt;string&gt; is contained or not contained in &lt;check string&gt;, respectively. If "case-insensitive" clause is used, a comparison is performed without case sensitivity. If "length" clause is used, only the first &lt;length&gt; bytes of the strings are compared.<br/>
-<div class="vsub"><a id="Number variable in a comparison"></a>Number variable in a comparison</div>
-If "equal", "not-equal", "lesser-than", "lesser-equal", "greater-than" or "greater-equal" clause is used, a comparison succeeds if &lt;number&gt; is equal, not equal, lesser, lesser or equal, greater or greater-or-equal than &lt;check number&gt;, respectively. <br/>
-<br/>
-If "every" is used, then the comparison succeeds if the modulo of &lt;number&gt; and &lt;check number&gt; is 0 - this is useful in executing some code every N times but not the ones in between; with "not-every" the comparison success is this modulo is not 0 which is useful to execute code all the times except every Nth.<br/>
-<div class="vsub"><a id="Boolean variable in a comparison"></a>Boolean variable in a comparison</div>
+</li></ul>
 If "equal" or "not-equal" clause is used, a comparison succeeds if &lt;boolean&gt; is equal or not equal than &lt;check boolean&gt;, respectively. <br/>
-<div class="vsub"><a id="else-if without a &lt;condition&gt;"></a>else-if without a &lt;condition&gt;</div>
-With a given if-true, there can be only one "else-if" statement without a condition, and it must be the last one. <br/>
+<div class="vsub"><a id="Multiple comparisons"></a>Multiple comparisons</div>
+For convenience, multiple &lt;comparisons&gt; can be connected by either "and" or "or" clause, but not both in the same &lt;condition&gt; (in order to keep comparisons readable; see <a href='https://golf-lang.com/boolean-expressions.html'>boolean-expressions</a> for constructing more involved boolean expressions). "and" clause uses logical AND to connect &lt;comparisons&gt; and it succeeds if all &lt;comparison&gt;s succeed. "or" clause uses logical OR to connect &lt;comparisons&gt; and it succeeds if at least one &lt;comparison&gt;s succeeds (if such a &lt;comparison&gt; is found, the following ones are not checked). <br/>
 <div class="vsub"><a id="Nesting"></a>Nesting</div>
 if-true can be nested, which can be up to 30 levels deep.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_620'>
+<pre id='code_619' class=notranslate>
 <span class="Statement"> %%</span> /if-test<span class="Identifier"> public</span>
 <span class="Statement">     get-param</span> inp
-
 <span class="Statement">     if-true</span> inp<span class="Identifier"> equal</span> <span class="Constant">&quot;1&quot;</span>
 <span class="Statement">         @</span>Found &quot;<span class="Constant">1</span>&quot; in input
 <span class="Statement">     else-if</span> inp<span class="Identifier"> equal</span> <span class="Constant">&quot;2&quot;</span> <span class="Identifier"> or</span> inp<span class="Identifier"> equal</span> <span class="Constant">&quot;3&quot;</span>
 <span class="Statement">         @</span>Found &quot;<span class="Constant">2</span>&quot; or &quot;<span class="Constant">3</span>&quot; in input
-
 <span class="Statement">         get-param</span> inp_num
 <span class="Statement">         string-number</span> inp_num<span class="Type"> to</span> num
 <span class="Statement">         if-true</span> num<span class="Identifier"> equal</span> <span class="Constant">4</span>
@@ -325,30 +318,37 @@ if-true can be nested, which can be up to 30 levels deep.<br/>
 <span class="Statement">         else-if</span>
 <span class="Statement">             @</span>Something else
 <span class="Statement">         end-if</span>
-
 <span class="Statement">     else-if</span>
 <span class="Statement">         @</span>Found something else
 <span class="Statement">     end-if</span>
 <span class="Statement"> %%</span></pre>
+<span id=golf_copied_619 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_619' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_619, code_619, golf_copied_619)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+&lt;string&gt;, &lt;number&gt; and &lt;boolean&gt; can be expressions, for instance:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_620' class=notranslate>
+<span class="Statement"> set-string</span> str1=<span class="Constant">&quot;one&quot;</span>
+<span class="Statement"> set-string</span> str2=<span class="Constant">&quot;two&quot;</span>
+<span class="Statement"> if-true</span> str1+<span class="Constant">&quot; &quot;</span>+str2<span class="Identifier"> not-equal</span> <span class="Constant">&quot;one two&quot;</span>
+<span class="Statement">     @</span>It can't be true!
+<span class="Statement"> end-if</span>
+<span class="Statement"> .</span>..
+<span class="Statement"> set-bool</span> b1 = str1<span class="Identifier"> not-equal</span> <span class="Constant">&quot;one&quot;</span>
+<span class="Statement"> set-bool</span> b2 = str2<span class="Identifier"> equal</span> <span class="Constant">&quot;two&quot;</span>
+<span class="Statement"> if-true</span> b1 &amp;&amp; b2<span class="Identifier"> equal</span> <span class="Constant">false</span>
+<span class="Statement">     @</span>It is true!
+<span class="Statement"> end-if</span>
+<span class="Statement"> .</span>..
+<span class="Statement"> set-number</span> n1 = <span class="Constant">20</span>
+<span class="Statement"> if-true</span> n1+<span class="Constant">10</span><span class="Identifier"> equal</span> <span class="Constant">30</span><span class="Identifier"> and</span> !b1<span class="Identifier"> equal</span> <span class="Constant">true</span><span class="Identifier"> and</span> str1<span class="Identifier"> equal</span> <span class="Constant">&quot;one&quot;</span>
+<span class="Statement">     @</span>It is true!
+<span class="Statement"> end-if</span></pre>
 <span id=golf_copied_620 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_620' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_620, code_620, golf_copied_620)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-<div class="vsub"><a id="See also"></a>See also</div>
- <a name='Program flow'></a><span style="font-weight:bold;">Program flow</span><br/>
-<a href='https://golf-lang.com/break-loop.html'>break-loop</a> &nbsp;<br/>
-<a href='https://golf-lang.com/call-handler.html'>call-handler</a> &nbsp;<br/>
-<a href='https://golf-lang.com/code-blocks.html'>code-blocks</a> &nbsp;<br/>
-<a href='https://golf-lang.com/continue-loop.html'>continue-loop</a> &nbsp;<br/>
-<a href='https://golf-lang.com/do-once.html'>do-once</a> &nbsp;<br/>
-<a href='https://golf-lang.com/exit-handler.html'>exit-handler</a> &nbsp;<br/>
-<a href='https://golf-lang.com/if-defined.html'>if-defined</a> &nbsp;<br/>
-<a href='https://golf-lang.com/if-true.html'>if-true</a> &nbsp;<br/>
-<a href='https://golf-lang.com/quit-process.html'>quit-process</a> &nbsp;<br/>
-<a href='https://golf-lang.com/return-handler.html'>return-handler</a> &nbsp;<br/>
-<a href='https://golf-lang.com/start-loop.html'>start-loop</a> &nbsp; <br/>
-<span style="font-weight:bold;">See all</span> <br/>
-<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>

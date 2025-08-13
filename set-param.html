@@ -12,7 +12,9 @@
 
 
 body, html {
-    /*font-family: Helvetica, Arial, sans-serif;*/
+    font-family: monospace,Helvetica, Arial, sans-serif;
+    line-height: 150%;
+    font-size:15px;
 }
 
 body {
@@ -21,10 +23,9 @@ body {
 }
     
 .ncode {
-    line-height:20px;
     letter-spacing: 0px;
-    font-size:14px;
     font-family: monospace;
+    font-size:83%;
     display:inline-block;
     max-width:99%;
     min-width:90%;
@@ -40,10 +41,9 @@ body {
 }
 
 .shcode {
-    line-height:23px;
     letter-spacing: 0px;
-    font-size:14px;
     font-family: monospace;
+    font-size:83%;
     display:inline-block;
     max-width:99%;
     min-width:90%;
@@ -59,10 +59,9 @@ body {
 }
 
 .sqlcode {
-    line-height:23px;
     letter-spacing: 0px;
-    font-size:14px;
     font-family: monospace;
+    font-size:83%;
     display:inline-block;
     max-width:99%;
     min-width:90%;
@@ -78,10 +77,9 @@ body {
 }
 
 .htmlcode {
-    line-height:23px;
     letter-spacing: 0px;
-    font-size:14px;
     font-family: monospace;
+    font-size:83%;
     display:inline-block;
     max-width:99%;
     min-width:90%;
@@ -97,10 +95,9 @@ body {
 }
 
 .code {
-    line-height:23px;
     letter-spacing: 0px;
-    font-size:14px;
     font-family: monospace;
+    font-size:83%;
     display:inline-block;
     max-width:99%;
     min-width:90%;
@@ -156,8 +153,6 @@ a {
 body {
     padding-left:2vw;
     padding-right:2vw;
-    font-size:14px;
-    line-height:22px;
     letter-spacing: 1px;
 }
 }
@@ -205,7 +200,8 @@ ul {
 
 </head>
 <body>
-
+<div id="google_translate_element"></div>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
 function gg_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
@@ -213,6 +209,9 @@ function gg_copy(gt, eid, gc) {
   document.execCommand("copy");
   gc.style.visibility="visible"
   setTimeout(()=>{ gc.style.visibility="hidden"; }, 1000);
+}
+function googleTranslateElementInit() {
+   new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
 }
 
 </script>
@@ -224,14 +223,14 @@ function gg_copy(gt, eid, gc) {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Set param</div><hr/><span style="font-weight:bold;">Purpose</span>: Set or create a parameter.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Set param</div><hr/><span style="font-weight:bold;">Purpose</span>: Set or create a parameter.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_911'>
+<pre id='code_874' class=notranslate>
 <span class="Statement"> set-param</span> ( &lt;name&gt; [ = &lt;value&gt; ] )<span class="Identifier"> ,</span> ...</pre>
-<span id=golf_copied_911 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_911' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_911, code_911, golf_copied_911)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_874 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_874' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_874, code_874, golf_copied_874)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 set-param sets or creates parameter &lt;name&gt; (see <a href='https://golf-lang.com/get-param.html'>get-param</a>). <br/>
 <br/>
@@ -239,50 +238,43 @@ If parameter &lt;name&gt; does not exist, it's created with &lt;value&gt;. If it
 <br/>
 If equal sign ("=") and &lt;value&gt; are omitted, then &lt;value&gt; is the same as &lt;name&gt;, so:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_912'>
+<pre id='code_875' class=notranslate>
 <span class="Statement"> set-param</span> something</pre>
-<span id=golf_copied_912 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_912' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_912, code_912, golf_copied_912)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_875 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_875' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_875, code_875, golf_copied_875)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 is the same as:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_913'>
+<pre id='code_876' class=notranslate>
 <span class="Statement"> set-param</span> something = something</pre>
-<span id=golf_copied_913 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_913' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_913, code_913, golf_copied_913)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_876 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_876' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_876, code_876, golf_copied_876)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 where the first "something" is the parameter set/created, and the second "something" is an actual variable in your code. In this example, the two just happen to have the same name; this generally happens often, so this form is a shortcut for that.<br/>
 <br/>
 You can specify any number of parameters separated by a comma, for instance in this case par1 is a boolean, par2 is a number and par3 is a string:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_914'>
+<pre id='code_877' class=notranslate>
 <span class="Statement"> set-number</span> par2 = <span class="Constant">10</span>
 <span class="Statement"> set-param</span> par1=<span class="Constant">true</span>, par, par3=<span class="Constant">&quot;hi&quot;</span></pre>
-<span id=golf_copied_914 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_914' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_914, code_914, golf_copied_914)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_877 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_877' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_877, code_877, golf_copied_877)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Set the value of parameter "quantity" to "10", which is also the output:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_915'>
+<pre id='code_878' class=notranslate>
 <span class="Statement"> set-param</span> quantity = <span class="Constant">&quot;10&quot;</span>
 <span class="Statement"> .</span>..
 <span class="Statement"> get-param</span> quantity
 <span class="Statement"> print-out</span> quantity</pre>
-<span id=golf_copied_915 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_915' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_915, code_915, golf_copied_915)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_878 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_878' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_878, code_878, golf_copied_878)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-<div class="vsub"><a id="See also"></a>See also</div>
- <a name='Request data'></a><span style="font-weight:bold;">Request data</span><br/>
-<a href='https://golf-lang.com/get-param.html'>get-param</a> &nbsp;<br/>
-<a href='https://golf-lang.com/request-body.html'>request-body</a> &nbsp;<br/>
-<a href='https://golf-lang.com/set-param.html'>set-param</a> &nbsp; <br/>
-<span style="font-weight:bold;">See all</span> <br/>
-<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>

@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!--__GOLF_REDIRECT__-->
+<title>How to write distributed applications</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="HandheldFriendly" content="True"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="canonical" href="https://golf-lang.com/article-distributed.html" />
+<style>
+
+
+body, html {
+    font-family: monospace,Helvetica, Arial, sans-serif;
+    line-height: 150%;
+    font-size:15px;
+}
+
+body {
+    padding-left:1vw;
+    padding-right:1vw;
+}
+    
+.ncode {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.shcode {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.sqlcode {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.htmlcode {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.code {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+/*Just like h1 but for pdf conversion it would be indented this way it's not*/
+.vhub {
+    display: block;
+   font-size: 1.6em;
+   margin-top: 0.63em;
+   margin-bottom: 0.63em;
+   margin-left: 0;
+   margin-right: 0;
+   font-weight: bold;
+}
+
+/*Just like h2 but for pdf conversion it would be indented this way it's not*/
+.vsub {
+    display: block;
+   font-size: 1.25em;
+   margin-top: 0.53em;
+   margin-bottom: 0.53em;
+   margin-left: 0;
+   margin-right: 0;
+   font-weight: bold;
+}
+
+ul {
+  margin-left: 0.75vw;
+  padding-left: 0;
+}
+li {
+  margin-left: 0.75vw;
+  padding-left: 0;
+}
+
+/* this must be last, as it overrides previous settings, for mobile */
+@media (hover: none) {
+a {
+   display: inline-block;
+   padding-top: 3px;
+   padding-bottom: 2px;
+}
+body {
+    padding-left:2vw;
+    padding-right:2vw;
+    letter-spacing: 1px;
+}
+}
+
+/*The following is for code snippets that are highlighted by 2html vim*/
+pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
+.Identifier { color: #008b8b; }
+.Statement { color: #af5f00; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
+/*end of highlighted snippets*/
+
+a {
+    text-decoration:none;
+    padding-bottom: 0px; 
+    color:inherit;
+    border-bottom: 2px solid #6cb8f0;
+}
+a:hover {
+    text-decoration: none;
+    color:black;
+    border-bottom: 1px solid red;
+}
+/*do not underline links nor should they be active*/
+pre a {
+    text-decoration:none;
+    color:black;
+    border-bottom: none;
+    pointer-events: none;
+    cursor: default;
+}
+
+
+.golfSnippet {display:none;}
+
+ul {
+  list-style-type:square;
+  list-style-position: outside;
+}
+
+</style>
+
+
+</head>
+<body>
+<div id="google_translate_element"></div>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script>
+function gg_copy(gt, eid, gc) {
+  gt.textContent = eid.textContent;
+  gt.select();
+  document.execCommand("copy");
+  gc.style.visibility="visible"
+  setTimeout(()=>{ gc.style.visibility="hidden"; }, 1000);
+}
+function googleTranslateElementInit() {
+   new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+
+</script>
+
+<!--GOLFMENU13-->
+
+<!--GOLFENDMENU13-->
+
+
+
+<!--BEGVDOC90-->
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>How to write distributed applications</div><hr/><br/>
+<br/><div class='vimg'><img class='imgs' src='distributed_computing.png' alt='Golf'></img>
+</div><br/>
+<div class="vsub"><a id="What is distributed computing"></a>What is distributed computing</div>
+Distributed computing is two or more servers communicating for a common purpose. Typically, some tasks are divvied up between a number of computers, and they all work together to accomplish it. Note that "separate servers" may mean physically separate computers. It may also mean virtual servers such as Virtual Private Servers (VPS) or containers, that may share the same physical hardware, though they appear as separate computers on the network. <br/>
+<br/>
+There are many reasons why you might need this kind of setup. It may be that resources needed to complete the task aren't all on a single computer. For instance, your application may rely on multiple databases, each residing on a different computer. Or, you may need to distribute requests to your application because a single computer isn't enough to handle them all at the same time. In other cases, you are using remote services (like a REST API-based for instance), and those by nature reside somewhere else.<br/>
+<br/>
+In any case, the computers comprising your distributed system may be on a local network, or they may be worldwide, or some combination of those. The throughput (how many bytes per second can be exchanged via network) and latency (how long it takes for a packet to travel via network) will obviously vary: for a local network you'd have a higher throughput and lower latency, and for Internet servers it will be the opposite. Plan accordingly based on the quality of service you'd expect.<br/>
+<div class="vsub"><a id="How servers communicate"></a>How servers communicate</div>
+Depending on your network(s) setup, different kinds of communication are called for. If two servers reside on a local network, then they would typically used the fastest possible means of communication. A local network typically means a secure network, because nobody else has access to it but you. So you would not need TSL/SSL or any other kind of secure protocol as that would just slow things down.<br/>
+<br/>
+If two servers are on the Internet though, then you must use a secure protocol (like TSL/SSL or some other) because your communication may be spied on, or worse, affected by man-in-the-middle attacks. <br/>
+<div class="vsub"><a id="Local network distributed computing"></a>Local network distributed computing</div>
+Most of the time, your distributed system would be on a local network. Such network may be separate and private in a physical sense, or (more commonly) in a virtual sense, where some kind of a Private Cloud Network is established for you by the Cloud provider. It's likely that separation is enforced by specialized hardware (such as routers and firewalls) and secure protocols that keep networks belonging to different customers separate. This way, a "local" network can be established even if computers on it are a world apart, though typically they reside as a part of a larger local network. <br/>
+<br/>
+Either way, as far as your application is concerned, you are looking at a local network. Thus, the example here will be for such a case, as it's most likely what you'll have. A local network means different parts of your application residing on different servers will use some efficient protocol based on TCP/IP. One such protocol is FastCGI, a high-performance binary protocol for communication between servers, clients, and in general programs of all kinds, and that's the one used by Golf. So in principle, the setup will look like this (there'll be more details later):<br/>
+<br/><div class='vimg'><img class='imgs' src='distributed_principle.png' alt='Golf'></img>
+</div><br/>
+Next, in theory you should have two servers, however in this example both servers will be on the same localhost (i.e. "127.0.0.1"). This is just for simplicity; the code is exactly the same if you have two different servers on a local network - simply use another IP (such as "192.168.0.15" for instance) for your "remote" server instead of local "127.0.0.1". The two servers do not even necessarily need to be physically two different computers. You can start a Virtual Machine (VM) on your computer and host another virtual computer there. Popular free software like VirtualBox or KVM Hypervisor can help you do that. <br/>
+<br/>
+In any case, in this example you will start two simple application servers; they will communicate with one another. The first one will be called "local" and the other one "remote" server. The local application server will make a request to the remote one.<br/>
+<div class="vsub"><a id="Local server"></a>Local server</div>
+On a local server, create a new directory for your local application server source code:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_54' class=notranslate>
+<span class="Statement">mkdir</span> <span class="PreProc">$HOME</span>/local_server
+<span class="Statement">cd</span> <span class="PreProc">$HOME</span>/local_server</pre>
+<span id=golf_copied_54 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_54' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_54, code_54, golf_copied_54)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+and then create a new file "status.golf" with the following:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_52' class=notranslate>
+<span class="Statement"> begin-handler</span> /status<span class="Identifier"> public</span>
+<span class="Statement">     silent-header</span>
+<span class="Statement">     get-param</span> server
+<span class="Statement">     get-param</span> days
+
+<span class="Statement">     print-format</span> <span class="Constant">&quot;/server/remote-status/days=</span><span class="Special">%s</span><span class="Constant">&quot;</span>, days<span class="Identifier"> to</span> payload
+<span class="Statement">     print-format</span> <span class="Constant">&quot;</span><span class="Special">%s</span><span class="Constant">:3800&quot;</span>, server<span class="Identifier"> to</span> srv_location
+
+<span class="Statement">     new-remote</span> srv<span class="Identifier"> location</span> srv_location \
+        <span class="Identifier"> method</span> <span class="Constant">&quot;GET&quot;</span><span class="Identifier"> url-path</span> payload \
+        <span class="Identifier"> timeout</span> <span class="Constant">30</span>
+
+<span class="Statement">     call-remote</span> srv
+<span class="Statement">     read-remote</span> srv<span class="Identifier"> data</span> dt
+<span class="Statement">     @</span>Output is: [<span class="Statement">&lt;&lt;print-out</span> dt<span class="Statement">&gt;&gt;</span>]
+<span class="Statement"> end-handler</span></pre>
+<span id=golf_copied_52 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_52' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_52, code_52, golf_copied_52)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+The code here is very simple. <a href='https://golf-lang.com/new-remote.html'>new-remote</a> will create a new connection to a remote server, running on IP address given by input parameter "server" (and obtained with <a href='https://golf-lang.com/get-param.html'>get-param</a>) on TCP port 3800. URL payload created in string variable "payload" is passed to the remote server. If it doesn't reply in 30 seconds, then the code would timeout. Then you're using <a href='https://golf-lang.com/call-remote.html'>call-remote</a> to actually make a call to the remote server (which is served by application "server" and by request handler "remote-status.golf" below), and finally <a href='https://golf-lang.com/read-remote.html'>read-remote</a> to get the reply from it. For simplicity, error handling is omitted here, but you can easily detect a timeout, any network errors, any errors from the remote server, including error code and error text, etc. See the above statements for more on this.<br/>
+<div class="vsub"><a id="Make and start the local server"></a>Make and start the local server</div>
+Next, create a local application:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_57' class=notranslate>
+gg <span class="Special">-k</span> client</pre>
+<span id=golf_copied_57 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_57' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_57, code_57, golf_copied_57)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Make the application (i.e. compile the source code and build the native executable):<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_59' class=notranslate>
+gg <span class="Special">-q</span></pre>
+<span id=golf_copied_59 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_59' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_59, code_59, golf_copied_59)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Finally, start the local application server:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_60' class=notranslate>
+mgrg <span class="Special">-w</span> <span class="Constant">2</span> client</pre>
+<span id=golf_copied_60 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_60' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_60, code_60, golf_copied_60)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+This will start 2 server instances of a local application server.<br/>
+<div class="vsub"><a id="Remote server"></a>Remote server</div>
+Okay, now you have a local server. Next, you'll setup a remote server. Login to your remote server and create a new directory for your remote application server:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_61' class=notranslate>
+<span class="Statement">mkdir</span> <span class="PreProc">$HOME</span>/remote_server
+<span class="Statement">cd</span> <span class="PreProc">$HOME</span>/remote_server</pre>
+<span id=golf_copied_61 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_61' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_61, code_61, golf_copied_61)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Then create file "remote-status.golf" with this code:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_55' class=notranslate>
+<span class="Statement"> begin-handler</span> /remote-status<span class="Identifier"> public</span>
+<span class="Statement">     silent-header</span>
+<span class="Statement">     get-param</span> days
+
+<span class="Statement">     print-format</span> <span class="Constant">&quot;Status in the past </span><span class="Special">%s</span><span class="Constant"> days is okay&quot;</span>, days
+<span class="Statement"> end-handler</span></pre>
+<span id=golf_copied_55 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_55' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_55, code_55, golf_copied_55)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+This is super simple, and it just replies that the status is okay; it accepts the number of days to check for status and displays that back. In a real service, you might query a database to check for status (see <a href='https://golf-lang.com/run-query.html'>run-query</a>).<br/>
+<div class="vsub"><a id="Make and start remote server"></a>Make and start remote server</div>
+First create your application:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_62' class=notranslate>
+gg <span class="Special">-k</span> server</pre>
+<span id=golf_copied_62 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_62' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_62, code_62, golf_copied_62)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Then make your program:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_63' class=notranslate>
+gg <span class="Special">-q</span></pre>
+<span id=golf_copied_63 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_63' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_63, code_63, golf_copied_63)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+And finally start the server:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_64' class=notranslate>
+mgrg <span class="Special">-w</span> <span class="Constant">2</span> <span class="Special">-p</span> <span class="Constant">3800</span> server</pre>
+<span id=golf_copied_64 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_64' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_64, code_64, golf_copied_64)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+This will start 2 daemon processes running as background servers. They will serve requests from your local server.<br/>
+<br/>
+Note that if you're running this example on different computers, some Linux distributions come with a firewall, and you may need to use ufw or firewall-cmd to make port 3800 accessible here. <br/>
+<div class="vsub"><a id="Run distributed calls"></a>Run distributed calls</div>
+There is a number of ways you can call the remote service you created. These are calls made from your <span style="font-style:italic">local</span> server, so change directory to it:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_65' class=notranslate>
+<span class="Statement">cd</span> <span class="PreProc">$HOME</span>/local_server</pre>
+<span id=golf_copied_65 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_65' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_65, code_65, golf_copied_65)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Here's various way to call the remote application server:<br/>
+<ul><li>Execute a command-line program on local server that calls remote application server:<br/>
+<br/><div class='vimg'><img class='imgs' src='distributed_command_line.png' alt='Golf'></img>
+</div><br/>
+To do this, use "-r" option of <a href='https://golf-lang.com/gg.html'>gg</a> utility to generate shell commands you can use to call your program:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_49' class=notranslate>
+gg <span class="Special">-r</span> <span class="Special">--req</span> <span class="Statement">&quot;</span><span class="Constant">/status/days=18/server=127.0.0.1</span><span class="Statement">&quot;</span> <span class="Special">--exec</span></pre>
+<span id=golf_copied_49 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_49' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_49, code_49, golf_copied_49)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Here, you're saying that you want to make a request "status" (which is in source file "status.golf" on your local server). You are also saying that input parameter "days" should have a value of "18" and also that input parameter "server" should have a value of "127.0.0.1" - see <a href='https://golf-lang.com/get-param.html'>get-param</a> statements in the above file "status.golf". If you actually have a different server with a different IP, use it instead of "127.0.0.1". <br/>
+The result will be:<br/>
+<div class='ncode' style='position:relative;padding-right:16px;'>
+<pre id='code_53' class=notranslate>
+Output is: [Status in the past 18 days is okay]</pre>
+<span id=golf_copied_53 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_53' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_53, code_53, golf_copied_53)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+where the part in between "[..]" comes from the remote server, and the "Output is: " part comes from the command line Golf program you executed.<br/>
+</li><li>Call remote application server directly from a command-line program:<br/>
+<br/><div class='vimg'><img class='imgs' src='distributed_command_utility.png' alt='Golf'></img>
+</div><br/>
+Do this:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_50' class=notranslate>
+gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/remote-status/days=18/server=127.0.0.1</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--service</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/server</span><span class="Statement">&quot;</span> <span class="Special">--remote</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">127.0.0.1:3800</span><span class="Statement">&quot;</span></pre>
+<span id=golf_copied_50 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_50' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_50, code_50, golf_copied_50)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+The result is, as expected:<br/>
+<div class='ncode' style='position:relative;padding-right:16px;'>
+<pre id='code_56' class=notranslate>
+Status in the past 18 days is okay</pre>
+<span id=golf_copied_56 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_56' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_56, code_56, golf_copied_56)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+In this case, the output comes straight from the remote server, so the "Output is: " part is missing. The above simply copies the output from a remote service to the standard output.<br/>
+</li><li>Use a command-line utility to contact local application server, which then calls the remote server, which replies back to local application server, which replies back to your command-line utility:<br/>
+<br/><div class='vimg'><img class='imgs' src='distributed_command_local.png' alt='Golf'></img>
+</div><br/>
+You will use <a href='https://golf-lang.com/gg.html'>gg</a> to do this:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_51' class=notranslate>
+gg <span class="Special">-r</span> <span class="Special">--req</span> <span class="Statement">&quot;</span><span class="Constant">/status/server=127.0.0.1/days=10</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--service</span></pre>
+<span id=golf_copied_51 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_51' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_51, code_51, golf_copied_51)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+The result is:<br/>
+<div class='ncode' style='position:relative;padding-right:16px;'>
+<pre id='code_58' class=notranslate>
+Output is: [Status in the past 10 days is okay]</pre>
+<span id=golf_copied_58 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_58' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_58, code_58, golf_copied_58)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+which is what you'd expect. In this case we first send a request to your local application server, which sends it to a remote service, so there is "Output is: " output.<br/>
+</li></ul>
+You have different options when designing your distributed systems, and this article shows how easy it is to implement them.<br/>
+<div class="vsub"><a id="See also"></a>See also</div>
+ <a name='Articles'></a><span style="font-weight:bold;">Articles</span><br/>
+<a href='https://golf-lang.com/article-capi.html'>article-capi</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-cookies.html'>article-cookies</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-debug.html'>article-debug</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-distributed.html'>article-distributed</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-encryption.html'>article-encryption</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-fifo.html'>article-fifo</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-file-manager.html'>article-file-manager</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-hello-server.html'>article-hello-server</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-hello-world.html'>article-hello-world</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-hello-world-service.html'>article-hello-world-service</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-hello-world-service-web.html'>article-hello-world-service-web</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-json.html'>article-json</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-language.html'>article-language</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-mariadb.html'>article-mariadb</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-memory-safety.html'>article-memory-safety</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-memory-safety-web.html'>article-memory-safety-web</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-notes-postgres.html'>article-notes-postgres</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-random.html'>article-random</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-regex.html'>article-regex</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-remote-call.html'>article-remote-call</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-request-function.html'>article-request-function</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-security.html'>article-security</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-sendmail.html'>article-sendmail</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-server.html'>article-server</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-shopping.html'>article-shopping</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-sqlite.html'>article-sqlite</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-statements.html'>article-statements</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-status-check.html'>article-status-check</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-tree.html'>article-tree</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-tree-web.html'>article-tree-web</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-vim-coloring.html'>article-vim-coloring</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-web-framework-for-c-programming-language.html'>article-web-framework-for-c-programming-language</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-what-is-golf.html'>article-what-is-golf</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-what-is-web-service.html'>article-what-is-web-service</a> &nbsp; <br/>
+<span style="font-weight:bold;">See all</span> <br/>
+<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
+<!--ENDVDOC90-->
+<br/><div style='width:100%;clear:both;'>
+<hr/>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://golf-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+</div><br/></body></html>
+
+

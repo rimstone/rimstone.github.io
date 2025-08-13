@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!--__GOLF_REDIRECT__-->
+<title>How to build a Web Service API</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="HandheldFriendly" content="True"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="canonical" href="https://golf-lang.com/article-shopping.html" />
+<style>
+
+
+body, html {
+    font-family: monospace,Helvetica, Arial, sans-serif;
+    line-height: 150%;
+    font-size:15px;
+}
+
+body {
+    padding-left:1vw;
+    padding-right:1vw;
+}
+    
+.ncode {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.shcode {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.sqlcode {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.htmlcode {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.code {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+/*Just like h1 but for pdf conversion it would be indented this way it's not*/
+.vhub {
+    display: block;
+   font-size: 1.6em;
+   margin-top: 0.63em;
+   margin-bottom: 0.63em;
+   margin-left: 0;
+   margin-right: 0;
+   font-weight: bold;
+}
+
+/*Just like h2 but for pdf conversion it would be indented this way it's not*/
+.vsub {
+    display: block;
+   font-size: 1.25em;
+   margin-top: 0.53em;
+   margin-bottom: 0.53em;
+   margin-left: 0;
+   margin-right: 0;
+   font-weight: bold;
+}
+
+ul {
+  margin-left: 0.75vw;
+  padding-left: 0;
+}
+li {
+  margin-left: 0.75vw;
+  padding-left: 0;
+}
+
+/* this must be last, as it overrides previous settings, for mobile */
+@media (hover: none) {
+a {
+   display: inline-block;
+   padding-top: 3px;
+   padding-bottom: 2px;
+}
+body {
+    padding-left:2vw;
+    padding-right:2vw;
+    letter-spacing: 1px;
+}
+}
+
+/*The following is for code snippets that are highlighted by 2html vim*/
+pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
+.Identifier { color: #008b8b; }
+.Statement { color: #af5f00; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
+/*end of highlighted snippets*/
+
+a {
+    text-decoration:none;
+    padding-bottom: 0px; 
+    color:inherit;
+    border-bottom: 2px solid #6cb8f0;
+}
+a:hover {
+    text-decoration: none;
+    color:black;
+    border-bottom: 1px solid red;
+}
+/*do not underline links nor should they be active*/
+pre a {
+    text-decoration:none;
+    color:black;
+    border-bottom: none;
+    pointer-events: none;
+    cursor: default;
+}
+
+
+.golfSnippet {display:none;}
+
+ul {
+  list-style-type:square;
+  list-style-position: outside;
+}
+
+</style>
+
+
+</head>
+<body>
+<div id="google_translate_element"></div>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script>
+function gg_copy(gt, eid, gc) {
+  gt.textContent = eid.textContent;
+  gt.select();
+  document.execCommand("copy");
+  gc.style.visibility="visible"
+  setTimeout(()=>{ gc.style.visibility="hidden"; }, 1000);
+}
+function googleTranslateElementInit() {
+   new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+
+</script>
+
+<!--GOLFMENU13-->
+
+<!--GOLFENDMENU13-->
+
+
+
+<!--BEGVDOC90-->
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>How to build a Web Service API</div><hr/><br/>
+This article will show a simple shopping web API with basic functions, such as adding customers, items and orders, as well as updating and deleting them. It's easy to write and easy to understand with Golf; that's the reason code doesn't have much in a way of comments - there's no need.<br/>
+<br/>
+The API returns a valid JSON reply, even if it's just a single string (such as created ID for a customer, item or order). Listing an order returns a JSON document showing the order details. <br/>
+<br/>
+If you'd like to be as RESTful as possible, you can use POST, PUT, GET or DELETE request methods. We'll cover that in another post.<br/>
+<br/>
+The example is an open web service, i.e. it doesn't check for any permissions. You can add that separately (see <a href='https://golf-lang.com/article-notes-postgres.html'>article-notes-postgres</a>).<br/>
+<br/>
+This example will use PostgreSQL database, but you can use other databases too.<br/>
+<div class="vsub"><a id="Keep this project in its own directory"></a>Keep this project in its own directory</div>
+We'll create a new directory ("shop") to keep everything tidy. You can call this directory whatever you want. Then we'll create a new Golf application ("shopping"):<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_229' class=notranslate>
+<span class="Statement">mkdir</span> shop
+<span class="Statement">cd</span> shop
+gg <span class="Special">-k</span> shopping</pre>
+<span id=golf_copied_229 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_229' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_229, code_229, golf_copied_229)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+<div class="vsub"><a id="Setup the database"></a>Setup the database</div>
+Create the database "db_shopping":<br/>
+<div class='sqlcode' style='position:relative;padding-right:16px;'>
+<pre id='code_230' class=notranslate>
+echo <span class="Special">&quot;</span><span class="Constant">create user $(whoami);</span>
+<span class="Constant">create database db_shopping with owner=$(whoami);</span>
+<span class="Constant">grant all on database db_shopping to $(whoami);</span>
+<span class="Constant">\q</span><span class="Special">&quot;</span>  | sudo -u postgres psql</pre>
+<span id=golf_copied_230 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_230' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_230, code_230, golf_copied_230)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Create the "customers", "items", "orders" and "orderItems" tables we'll use:<br/>
+<div class='sqlcode' style='position:relative;padding-right:16px;'>
+<pre id='code_234' class=notranslate>
+echo <span class="Special">&quot;</span><span class="Constant">drop table if exists customers; create table if not exists customers (firstName varchar(30), lastName varchar(30), customerID bigserial primary key);</span>
+<span class="Constant">drop table if exists items; create table if not exists items (name varchar(30), description varchar(200), itemID bigserial primary key);</span>
+<span class="Constant">drop table if exists orders; create table if not exists orders (customerID bigint, orderID bigserial primary key);</span>
+<span class="Constant">drop table if exists orderItems; create table if not exists orderItems (orderID bigint, itemID bigint, quantity bigint);</span><span class="Special">&quot;</span> | psql -d db_shopping</pre>
+<span id=golf_copied_234 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_234' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_234, code_234, golf_copied_234)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+<div class="vsub"><a id="Tell Golf about your database"></a>Tell Golf about your database</div>
+First thing to do is to let Golf know what database it should use:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_233' class=notranslate>
+<span class="Statement">echo</span><span class="Constant"> </span><span class="Statement">&quot;</span><span class="Constant">user=</span><span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span><span class="Constant"> dbname=db_shopping</span><span class="Statement">&quot;</span><span class="Constant"> </span><span class="Statement">&gt;</span> db</pre>
+<span id=golf_copied_233 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_233' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_233, code_233, golf_copied_233)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+This tells Golf that a database "db" is setup (with database user being the same as your Operating System user, and the database name being "db_shopping"). Golf makes this easy by letting you use a given database's native format for client configuration, which you're likely to be familiar with. So if you used MariaDB or SQLite for instance, you would have used their native client configuration files. <br/>
+<div class="vsub"><a id="Source code for web service"></a>Source code for web service</div>
+Here are the source code files.<br/>
+<br/>
+<span style="font-weight:bold;">- Add a new customer</span><br/>
+<br/>
+Create file "add-customer.golf" and copy the following to it:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_227' class=notranslate>
+<span class="Statement"> begin-handler</span> /add-customer
+<span class="Statement">     out-header</span><span class="Identifier"> use content-type</span> <span class="Constant">&quot;application/json&quot;</span>
+<span class="Statement">     get-param</span> first_name
+<span class="Statement">     get-param</span> last_name
+     <span class="Comment">// Add a customer SQL</span>
+<span class="Statement">     run-query</span> @db =<span class="Constant">&quot;insert into customers (firstName, lastName) </span><span class="Special">\</span>
+<span class="Constant">             values ('</span><span class="Special">%s</span><span class="Constant">', '</span><span class="Special">%s</span><span class="Constant">') returning customerID&quot;</span><span class="Type"> output</span> customerID<span class="Identifier"> :</span> \
+             first_name, last_name
+<span class="Statement">         @</span>&quot;<span class="Statement">&lt;&lt;print-out</span> customerID<span class="Statement">&gt;&gt;</span>&quot;
+<span class="Statement">     end-query</span>
+<span class="Statement"> end-handler</span></pre>
+<span id=golf_copied_227 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_227' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_227, code_227, golf_copied_227)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+<span style="font-weight:bold;">- Add new item for sale</span><br/>
+<br/>
+Create file "add-item.golf" and copy the following to it:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_231' class=notranslate>
+<span class="Statement"> begin-handler</span> /add-item
+<span class="Statement">     out-header</span><span class="Identifier"> use content-type</span> <span class="Constant">&quot;application/json&quot;</span>
+<span class="Statement">     get-param</span> name
+<span class="Statement">     get-param</span> description
+     <span class="Comment">// Add an item to inventory SQL</span>
+<span class="Statement">     run-query</span> @db =<span class="Constant">&quot;insert into items (name, description) </span><span class="Special">\</span>
+<span class="Constant">         values ('</span><span class="Special">%s</span><span class="Constant">', '</span><span class="Special">%s</span><span class="Constant">') returning itemID&quot;</span><span class="Type"> output</span> item_id<span class="Identifier"> :</span> name, description
+<span class="Statement">         @</span>&quot;<span class="Statement">&lt;&lt;print-out</span> item_id<span class="Statement">&gt;&gt;</span>&quot;
+<span class="Statement">     end-query</span>
+<span class="Statement"> end-handler</span></pre>
+<span id=golf_copied_231 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_231' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_231, code_231, golf_copied_231)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+<span style="font-weight:bold;">- Add an item to an order</span><br/>
+<br/>
+Create file "add-to-order.golf" and copy the following to it:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_235' class=notranslate>
+<span class="Statement"> begin-handler</span> /add-to-order
+<span class="Statement">     out-header</span><span class="Identifier"> use content-type</span> <span class="Constant">&quot;application/json&quot;</span>
+<span class="Statement">     get-param</span> order_id
+<span class="Statement">     get-param</span> item_id
+<span class="Statement">     get-param</span> quantity
+     <span class="Comment">// SQL to add an item to an order</span>
+<span class="Statement">     run-query</span> @db =<span class="Constant">&quot;insert into orderItems (orderId, itemID, quantity) values  ('</span><span class="Special">%s</span><span class="Constant">', '</span><span class="Special">%s</span><span class="Constant">', '</span><span class="Special">%s</span><span class="Constant">')&quot;</span> \
+        <span class="Identifier"> :</span> order_id, item_id, quantity<span class="Identifier"> no-loop</span><span class="Type"> affected-rows</span> arows
+<span class="Statement">     @</span>&quot;<span class="Statement">&lt;&lt;print-out</span> arows<span class="Statement">&gt;&gt;</span>&quot;
+<span class="Statement"> end-handler</span></pre>
+<span id=golf_copied_235 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_235' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_235, code_235, golf_copied_235)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+<span style="font-weight:bold;">- Create a new order</span><br/>
+<br/>
+Create file "create-order.golf" and copy the following to it:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_238' class=notranslate>
+<span class="Statement"> begin-handler</span> /create-order
+<span class="Statement">     out-header</span><span class="Identifier"> use content-type</span> <span class="Constant">&quot;application/json&quot;</span>
+<span class="Statement">     get-param</span> customer_id
+     <span class="Comment">// SQL to create an order</span>
+<span class="Statement">     run-query</span> @db =<span class="Constant">&quot;insert into orders (customerId) </span><span class="Special">\</span>
+<span class="Constant">         values ('</span><span class="Special">%s</span><span class="Constant">') returning orderID&quot;</span><span class="Type"> output</span> order_id<span class="Identifier"> :</span> customer_id
+<span class="Statement">         @</span>&quot;<span class="Statement">&lt;&lt;print-out</span> order_id<span class="Statement">&gt;&gt;</span>&quot;
+<span class="Statement">     end-query</span>
+<span class="Statement"> end-handler</span></pre>
+<span id=golf_copied_238 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_238' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_238, code_238, golf_copied_238)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+<span style="font-weight:bold;">- Delete an order</span><br/>
+<br/>
+Create file "delete-order.golf" and copy the following to it:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_241' class=notranslate>
+<span class="Statement"> begin-handler</span> /delete-order
+<span class="Statement">     out-header</span><span class="Identifier"> use content-type</span> <span class="Constant">&quot;application/json&quot;</span>
+<span class="Statement">     get-param</span> order_id
+<span class="Statement">     begin-transaction</span>
+<span class="Statement">     run-query</span> @db =<span class="Constant">&quot;delete from orders where orderID='</span><span class="Special">%s</span><span class="Constant">'&quot;</span><span class="Identifier"> :</span> order_id \
+        <span class="Identifier"> no-loop</span><span class="Type"> affected-rows</span> order_rows
+<span class="Statement">     run-query</span> @db =<span class="Constant">&quot;delete from orderItems where orderID='</span><span class="Special">%s</span><span class="Constant">'&quot;</span><span class="Identifier"> :</span> order_id \
+        <span class="Identifier"> no-loop</span><span class="Type"> affected-rows</span> item_rows
+<span class="Statement">     commit-transaction</span>
+<span class="Statement">     @</span>{ &quot;orders&quot;:&quot;<span class="Statement">&lt;&lt;print-out</span> order_rows<span class="Statement">&gt;&gt;</span>&quot;, &quot;items&quot;:&quot;<span class="Statement">&lt;&lt;print-out</span> item_rows<span class="Statement">&gt;&gt;</span>&quot; }
+<span class="Statement"> end-handler</span></pre>
+<span id=golf_copied_241 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_241' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_241, code_241, golf_copied_241)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+<span style="font-weight:bold;">- Make a JSON document describing an order</span><br/>
+<br/>
+Create file "json-from-order.golf" and copy the following to it:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_244' class=notranslate>
+<span class="Statement"> begin-handler</span> /json_from_order
+<span class="Statement">     get-param</span> order_id<span class="Identifier"> type string</span>
+<span class="Statement">     get-param</span> curr_order<span class="Identifier"> type number</span>
+<span class="Statement">     get-param</span> order_count<span class="Identifier"> type number</span>
+<span class="Statement">     get-param</span> customer_id<span class="Identifier"> type string</span>
+<span class="Statement">     get-param</span> first_name<span class="Identifier"> type string</span>
+<span class="Statement">     get-param</span> last_name<span class="Identifier"> type string</span>
+<span class="Statement">     @</span>   {
+<span class="Statement">     @</span>       &quot;orderID&quot;: &quot;<span class="Statement">&lt;&lt;print-out</span> order_id<span class="Statement">&gt;&gt;</span>&quot;,
+<span class="Statement">     @</span>       &quot;customer&quot;:
+<span class="Statement">     @</span>       {
+<span class="Statement">     @</span>           &quot;customerID&quot;: &quot;<span class="Statement">&lt;&lt;print-out</span> customer_id<span class="Statement">&gt;&gt;</span>&quot;,
+<span class="Statement">     @</span>           &quot;firstName&quot;: &quot;<span class="Statement">&lt;&lt;print-out</span> first_name<span class="Statement">&gt;&gt;</span>&quot;,
+<span class="Statement">     @</span>           &quot;lastName&quot;: &quot;<span class="Statement">&lt;&lt;print-out</span> last_name<span class="Statement">&gt;&gt;</span>&quot;
+<span class="Statement">     @</span>       },
+<span class="Statement">     @</span>       &quot;items&quot;: [
+<span class="Statement">     set-number</span> curr_item = <span class="Constant">0</span>
+     <span class="Comment">// Query to get all items in an order</span>
+<span class="Statement">     run-query</span> @db =<span class="Constant">&quot;select i.itemID, t.name, t.description, i.quantity </span><span class="Special">\</span>
+<span class="Constant">             from orderItems i, items t where i.orderID='</span><span class="Special">%s</span><span class="Constant">' </span><span class="Special">\</span>
+<span class="Constant">                 and t.itemID=i.itemID&quot;</span> \
+            <span class="Type"> output</span> itemID, itemName, itemDescription, itemQuantity<span class="Identifier"> :</span> order_id \
+            <span class="Type"> row-count</span> item_count
+<span class="Statement">         @</span>       {
+<span class="Statement">         @</span>           &quot;itemID&quot;: &quot;<span class="Statement">&lt;&lt;print-out</span> itemID<span class="Statement">&gt;&gt;</span>&quot;,
+<span class="Statement">         @</span>           &quot;itemName&quot;: &quot;<span class="Statement">&lt;&lt;print-out</span> itemName<span class="Statement">&gt;&gt;</span>&quot;,
+<span class="Statement">         @</span>           &quot;itemDescription&quot;: &quot;<span class="Statement">&lt;&lt;print-out</span> itemDescription<span class="Statement">&gt;&gt;</span>&quot;,
+<span class="Statement">         @</span>           &quot;itemQuantity&quot;: &quot;<span class="Statement">&lt;&lt;print-out</span> itemQuantity<span class="Statement">&gt;&gt;</span>&quot;
+         <span class="Comment">// add a comma if there are more items after this</span>
+<span class="Statement">         set-number</span> curr_item=curr_item+<span class="Constant">1</span>
+<span class="Statement">         if-true</span> curr_item<span class="Identifier"> lesser-than</span> item_count
+<span class="Statement">             @</span>       },
+<span class="Statement">         else-if</span>
+<span class="Statement">             @</span>       }
+<span class="Statement">         end-if</span>
+<span class="Statement">     end-query</span>
+<span class="Statement">     @</span>   ]
+     <span class="Comment">// add a comma if there are more orders after this</span>
+<span class="Statement">     set-number</span> curr_order = curr_order+<span class="Constant">1</span>
+<span class="Statement">     if-true</span> curr_order<span class="Identifier"> lesser-than</span> order_count
+<span class="Statement">         @</span>},
+<span class="Statement">     else-if</span>
+<span class="Statement">         @</span>}
+<span class="Statement">     end-if</span>
+<span class="Statement"> end-handler</span></pre>
+<span id=golf_copied_244 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_244' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_244, code_244, golf_copied_244)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+<span style="font-weight:bold;">- List orders</span><br/>
+<br/>
+Create file "list-orders.golf" and copy the following to it:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_247' class=notranslate>
+<span class="Statement"> begin-handler</span> /list-orders
+<span class="Statement">     out-header</span><span class="Identifier"> use content-type</span> <span class="Constant">&quot;application/json&quot;</span>
+<span class="Statement">     get-param</span> order_id
+<span class="Statement">     set-number</span> curr_order = <span class="Constant">0</span>
+     <span class="Comment">// Start JSON output</span>
+<span class="Statement">     @</span>{ &quot;orders&quot;: [
+<span class="Statement">     if-true</span> order_id<span class="Identifier"> not-equal</span> <span class="Constant">&quot;&quot;</span>
+         <span class="Comment">// Query just a specific order</span>
+<span class="Statement">         run-query</span> @db = <span class="Constant">&quot;select o.orderID, c.customerID, c.firstName, c.lastName </span><span class="Special">\</span>
+<span class="Constant">                 from orders o, customers c </span><span class="Special">\</span>
+<span class="Constant">                 where o.customerID=c.customerID and o.orderId='</span><span class="Special">%s</span><span class="Constant">'&quot;</span> \
+                <span class="Type"> output</span> customer_id, first_name, last_name \
+                <span class="Type"> row-count</span> order_count<span class="Identifier"> :</span> order_id
+<span class="Statement">                 set-param</span> order_id, curr_order, order_count, customer_id, first_name, last_name
+<span class="Statement">                 call-handler</span> <span class="Constant">&quot;/json_from_order&quot;</span>
+<span class="Statement">         end-query</span>
+<span class="Statement">     else-if</span>
+         <span class="Comment">// Query to get all orders</span>
+<span class="Statement">         run-query</span> @db =<span class="Constant">&quot;select o.orderID, c.customerID, c.firstName, c.lastName </span><span class="Special">\</span>
+<span class="Constant">                 from orders o, customers c </span><span class="Special">\</span>
+<span class="Constant">                 where o.customerID=c.customerID order by o.orderId&quot;</span> \
+                <span class="Type"> output</span> order_id, customer_id, first_name, last_name \
+                <span class="Type"> row-count</span> order_count
+<span class="Statement">                 set-param</span> order_id, curr_order, order_count, customer_id, first_name, last_name
+<span class="Statement">                 call-handler</span> <span class="Constant">&quot;/json_from_order&quot;</span>
+<span class="Statement">         end-query</span>
+<span class="Statement">     end-if</span>
+     <span class="Comment">// Finish JSON output</span>
+<span class="Statement">     @</span>   ]
+<span class="Statement">     @</span>}
+<span class="Statement"> end-handler</span></pre>
+<span id=golf_copied_247 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_247' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_247, code_247, golf_copied_247)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+<span style="font-weight:bold;">- Update an order</span><br/>
+<br/>
+Create file "update-order.golf" and copy the following to it:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_250' class=notranslate>
+<span class="Statement"> begin-handler</span> /update-order
+<span class="Statement">     out-header</span><span class="Identifier"> use content-type</span> <span class="Constant">&quot;application/json&quot;</span>
+<span class="Statement">     get-param</span> order_id, item_id, quantity
+<span class="Statement">     set-number</span> arows
+     <span class="Comment">// If quantity update is </span><span class="Constant">0</span><span class="Comment">, issue SQL to delete an item from order, otherwise update </span>
+<span class="Statement">     if-true</span> quantity<span class="Identifier"> equal</span> <span class="Constant">&quot;0&quot;</span>
+<span class="Statement">         run-query</span> @db =<span class="Constant">&quot;delete from orderItems where orderID='</span><span class="Special">%s</span><span class="Constant">' and itemID='</span><span class="Special">%s</span><span class="Constant">'&quot;</span> \
+            <span class="Identifier"> :</span> order_id, item_id<span class="Identifier"> no-loop</span><span class="Type"> affected-rows</span> arows
+<span class="Statement">     else-if</span>
+<span class="Statement">         run-query</span> @db =<span class="Constant">&quot;update orderItems set quantity='</span><span class="Special">%s</span><span class="Constant">' where orderID='</span><span class="Special">%s</span><span class="Constant">' and itemID='</span><span class="Special">%s</span><span class="Constant">'&quot;</span> \
+            <span class="Identifier"> :</span> quantity, order_id, item_id<span class="Identifier"> no-loop</span><span class="Type"> affected-rows</span> arows
+<span class="Statement">     end-if</span>
+<span class="Statement">     @</span>&quot;<span class="Statement">&lt;&lt;print-out</span> arows<span class="Statement">&gt;&gt;</span>&quot;
+<span class="Statement"> end-handler</span></pre>
+<span id=golf_copied_250 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_250' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_250, code_250, golf_copied_250)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+<div class="vsub"><a id="Make the application"></a>Make the application</div>
+Specify the database "db" (remember we set it up above), and make all handlers public (i.e. they can handle external calls from the outside callers, and not just from within the application):<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_237' class=notranslate>
+gg <span class="Special">-q</span> <span class="Special">--db</span><span class="Statement">=</span>postgres:db <span class="Special">--public</span></pre>
+<span id=golf_copied_237 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_237' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_237, code_237, golf_copied_237)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+<div class="vsub"><a id="Try it"></a>Try it</div>
+The following is just playing with the API. Golf lets you run your web services from command line, so you can see byte-for-byte exactly what's the response. So the responses below include HTTP header, which in this case is very simple. You can disable HTTP output by specifying "--silent-header" in <a href='https://golf-lang.com/gg.html'>gg</a> invocations below.<br/>
+<br/>
+Add new customer:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_240' class=notranslate>
+gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/add-customer/first-name=Mike/last-name=Gonzales</span><span class="Statement">&quot;</span> <span class="Special">--exec</span></pre>
+<span id=golf_copied_240 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_240' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_240, code_240, golf_copied_240)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Resulting JSON (showing the ID of a new customer):<br/>
+<div class='ncode' style='position:relative;padding-right:16px;'>
+<pre id='code_228' class=notranslate>
+Content-Type: application/json
+Cache-Control: max-age=0, no-cache
+Status: 200 OK
+
+&quot;1&quot;</pre>
+<span id=golf_copied_228 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_228' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_228, code_228, golf_copied_228)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Add an item for sale (showing the ID of a newly added item):<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_243' class=notranslate>
+gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/add-item/name=Milk/description=Lactose-Free</span><span class="Statement">&quot;</span> <span class="Special">--exec</span></pre>
+<span id=golf_copied_243 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_243' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_243, code_243, golf_copied_243)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+The result:<br/>
+<div class='ncode' style='position:relative;padding-right:16px;'>
+<pre id='code_232' class=notranslate>
+Content-Type: application/json
+Cache-Control: max-age=0, no-cache
+Status: 200 OK
+
+&quot;1&quot;</pre>
+<span id=golf_copied_232 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_232' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_232, code_232, golf_copied_232)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Add a new order for the customer we created (showing the ID of order):<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_246' class=notranslate>
+gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/create-order/customer-id=1</span><span class="Statement">&quot;</span> <span class="Special">--exec</span></pre>
+<span id=golf_copied_246 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_246' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_246, code_246, golf_copied_246)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+The result:<br/>
+<div class='ncode' style='position:relative;padding-right:16px;'>
+<pre id='code_236' class=notranslate>
+Content-Type: application/json
+Cache-Control: max-age=0, no-cache
+Status: 200 OK
+
+&quot;1&quot;</pre>
+<span id=golf_copied_236 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_236' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_236, code_236, golf_copied_236)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Add an item to order, in quantity of 2 (showing number of items added, not the quantity):<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_249' class=notranslate>
+gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/add-to-order/order-id=1/item-id=1/quantity=2</span><span class="Statement">&quot;</span> <span class="Special">--exec</span></pre>
+<span id=golf_copied_249 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_249' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_249, code_249, golf_copied_249)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+The result:<br/>
+<div class='ncode' style='position:relative;padding-right:16px;'>
+<pre id='code_239' class=notranslate>
+Content-Type: application/json
+Cache-Control: max-age=0, no-cache
+Status: 200 OK
+
+&quot;1&quot;</pre>
+<span id=golf_copied_239 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_239' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_239, code_239, golf_copied_239)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+List orders:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_252' class=notranslate>
+gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/list-orders</span><span class="Statement">&quot;</span> <span class="Special">--exec</span></pre>
+<span id=golf_copied_252 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_252' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_252, code_252, golf_copied_252)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Here's the JSON showing current orders (just one in our case):<br/>
+<div class='ncode' style='position:relative;padding-right:16px;'>
+<pre id='code_242' class=notranslate>
+Content-Type: application/json
+Cache-Control: max-age=0, no-cache
+Status: 200 OK
+
+{ &quot;orders&quot;: [
+   {
+       &quot;orderID&quot;: &quot;1&quot;,
+       &quot;customer&quot;:
+       {
+           &quot;customerID&quot;: &quot;1&quot;,
+           &quot;firstName&quot;: &quot;Mike&quot;,
+           &quot;lastName&quot;: &quot;Gonzales&quot;
+       },
+       &quot;items&quot;: [
+       {
+           &quot;itemID&quot;: &quot;1&quot;,
+           &quot;itemName&quot;: &quot;Milk&quot;,
+           &quot;itemDescription&quot;: &quot;Lactose-Free&quot;,
+           &quot;itemQuantity&quot;: &quot;2&quot;
+       }
+   ]
+}
+   ]
+}</pre>
+<span id=golf_copied_242 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_242' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_242, code_242, golf_copied_242)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Add another item for sale (showing the ID of this new item):<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_254' class=notranslate>
+gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/add-item/name=Bread/description=Sliced</span><span class="Statement">&quot;</span> <span class="Special">--exec</span></pre>
+<span id=golf_copied_254 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_254' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_254, code_254, golf_copied_254)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+The result (showing the ID of a newly added item):<br/>
+<div class='ncode' style='position:relative;padding-right:16px;'>
+<pre id='code_245' class=notranslate>
+Content-Type: application/json
+Cache-Control: max-age=0, no-cache
+Status: 200 OK
+
+&quot;2&quot;</pre>
+<span id=golf_copied_245 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_245' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_245, code_245, golf_copied_245)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Add a quantity of 3 of the new item we added (ID of 2):<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_221' class=notranslate>
+gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/add-to-order/order-id=1/item-id=2/quantity=3</span><span class="Statement">&quot;</span> <span class="Special">--exec</span></pre>
+<span id=golf_copied_221 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_221' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_221, code_221, golf_copied_221)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+The result (showing the number of items added, not the quantity):<br/>
+<div class='ncode' style='position:relative;padding-right:16px;'>
+<pre id='code_248' class=notranslate>
+Content-Type: application/json
+Cache-Control: max-age=0, no-cache
+Status: 200 OK
+
+&quot;1&quot;</pre>
+<span id=golf_copied_248 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_248' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_248, code_248, golf_copied_248)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+List orders again:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_223' class=notranslate>
+gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/list-orders</span><span class="Statement">&quot;</span> <span class="Special">--exec</span></pre>
+<span id=golf_copied_223 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_223' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_223, code_223, golf_copied_223)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+The result, now there's new items here:<br/>
+<div class='ncode' style='position:relative;padding-right:16px;'>
+<pre id='code_251' class=notranslate>
+Content-Type: application/json
+Cache-Control: max-age=0, no-cache
+Status: 200 OK
+
+{ &quot;orders&quot;: [
+   {
+       &quot;orderID&quot;: &quot;1&quot;,
+       &quot;customer&quot;:
+       {
+           &quot;customerID&quot;: &quot;1&quot;,
+           &quot;firstName&quot;: &quot;Mike&quot;,
+           &quot;lastName&quot;: &quot;Gonzales&quot;
+       },
+       &quot;items&quot;: [
+       {
+           &quot;itemID&quot;: &quot;1&quot;,
+           &quot;itemName&quot;: &quot;Milk&quot;,
+           &quot;itemDescription&quot;: &quot;Lactose-Free&quot;,
+           &quot;itemQuantity&quot;: &quot;2&quot;
+       },
+       {
+           &quot;itemID&quot;: &quot;2&quot;,
+           &quot;itemName&quot;: &quot;Bread&quot;,
+           &quot;itemDescription&quot;: &quot;Sliced&quot;,
+           &quot;itemQuantity&quot;: &quot;3&quot;
+       }
+   ]
+}
+   ]
+}</pre>
+<span id=golf_copied_251 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_251' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_251, code_251, golf_copied_251)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Update order, by changing the quantity of item (we specify order ID, item ID and the new quantity):<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_224' class=notranslate>
+gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/update-order/order-id=1/item-id=2/quantity=4</span><span class="Statement">&quot;</span> <span class="Special">--exec</span></pre>
+<span id=golf_copied_224 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_224' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_224, code_224, golf_copied_224)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+The result showing number of items updated:<br/>
+<div class='ncode' style='position:relative;padding-right:16px;'>
+<pre id='code_253' class=notranslate>
+Content-Type: application/json
+Cache-Control: max-age=0, no-cache
+Status: 200 OK
+
+&quot;1&quot;</pre>
+<span id=golf_copied_253 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_253' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_253, code_253, golf_copied_253)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+List orders to show the update:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_225' class=notranslate>
+gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/list-orders</span><span class="Statement">&quot;</span> <span class="Special">--exec</span></pre>
+<span id=golf_copied_225 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_225' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_225, code_225, golf_copied_225)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+And it shows:<br/>
+<div class='ncode' style='position:relative;padding-right:16px;'>
+<pre id='code_220' class=notranslate>
+Content-Type: application/json
+Cache-Control: max-age=0, no-cache
+Status: 200 OK
+
+{ &quot;orders&quot;: [
+   {
+       &quot;orderID&quot;: &quot;1&quot;,
+       &quot;customer&quot;:
+       {
+           &quot;customerID&quot;: &quot;1&quot;,
+           &quot;firstName&quot;: &quot;Mike&quot;,
+           &quot;lastName&quot;: &quot;Gonzales&quot;
+       },
+       &quot;items&quot;: [
+       {
+           &quot;itemID&quot;: &quot;1&quot;,
+           &quot;itemName&quot;: &quot;Milk&quot;,
+           &quot;itemDescription&quot;: &quot;Lactose-Free&quot;,
+           &quot;itemQuantity&quot;: &quot;2&quot;
+       },
+       {
+           &quot;itemID&quot;: &quot;2&quot;,
+           &quot;itemName&quot;: &quot;Bread&quot;,
+           &quot;itemDescription&quot;: &quot;Sliced&quot;,
+           &quot;itemQuantity&quot;: &quot;4&quot;
+       }
+   ]
+}
+   ]
+}</pre>
+<span id=golf_copied_220 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_220' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_220, code_220, golf_copied_220)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Delete an order:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_226' class=notranslate>
+gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/delete-order/order-id=1</span><span class="Statement">&quot;</span> <span class="Special">--exec</span></pre>
+<span id=golf_copied_226 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_226' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_226, code_226, golf_copied_226)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+The result JSON (showing the number of items deleted in it):<br/>
+<div class='ncode' style='position:relative;padding-right:16px;'>
+<pre id='code_222' class=notranslate>
+Content-Type: application/json
+Cache-Control: max-age=0, no-cache
+Status: 200 OK
+
+{ &quot;orders&quot;:&quot;1&quot;, &quot;items&quot;:&quot;2&quot; }</pre>
+<span id=golf_copied_222 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_222' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_222, code_222, golf_copied_222)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+<div class="vsub"><a id="Conclusion"></a>Conclusion</div>
+You can see that building web services can be easy and fast. More importantly, what matters is also how easy it is to come back to it 6 months later and understand right away what's what. You can try that 6 months from now and see if it's true for you. I'd say chances are pretty good.<br/>
+<div class="vsub"><a id="See also"></a>See also</div>
+ <a name='Articles'></a><span style="font-weight:bold;">Articles</span><br/>
+<a href='https://golf-lang.com/article-capi.html'>article-capi</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-cookies.html'>article-cookies</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-debug.html'>article-debug</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-distributed.html'>article-distributed</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-encryption.html'>article-encryption</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-fifo.html'>article-fifo</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-file-manager.html'>article-file-manager</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-hello-server.html'>article-hello-server</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-hello-world.html'>article-hello-world</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-hello-world-service.html'>article-hello-world-service</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-hello-world-service-web.html'>article-hello-world-service-web</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-json.html'>article-json</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-language.html'>article-language</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-mariadb.html'>article-mariadb</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-memory-safety.html'>article-memory-safety</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-memory-safety-web.html'>article-memory-safety-web</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-notes-postgres.html'>article-notes-postgres</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-random.html'>article-random</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-regex.html'>article-regex</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-remote-call.html'>article-remote-call</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-request-function.html'>article-request-function</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-security.html'>article-security</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-sendmail.html'>article-sendmail</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-server.html'>article-server</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-shopping.html'>article-shopping</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-sqlite.html'>article-sqlite</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-statements.html'>article-statements</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-status-check.html'>article-status-check</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-tree.html'>article-tree</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-tree-web.html'>article-tree-web</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-vim-coloring.html'>article-vim-coloring</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-web-framework-for-c-programming-language.html'>article-web-framework-for-c-programming-language</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-what-is-golf.html'>article-what-is-golf</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-what-is-web-service.html'>article-what-is-web-service</a> &nbsp; <br/>
+<span style="font-weight:bold;">See all</span> <br/>
+<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
+<!--ENDVDOC90-->
+<br/><div style='width:100%;clear:both;'>
+<hr/>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://golf-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+</div><br/></body></html>
+
+

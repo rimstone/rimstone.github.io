@@ -12,7 +12,9 @@
 
 
 body, html {
-    /*font-family: Helvetica, Arial, sans-serif;*/
+    font-family: monospace,Helvetica, Arial, sans-serif;
+    line-height: 150%;
+    font-size:15px;
 }
 
 body {
@@ -21,10 +23,9 @@ body {
 }
     
 .ncode {
-    line-height:20px;
     letter-spacing: 0px;
-    font-size:14px;
     font-family: monospace;
+    font-size:83%;
     display:inline-block;
     max-width:99%;
     min-width:90%;
@@ -40,10 +41,9 @@ body {
 }
 
 .shcode {
-    line-height:23px;
     letter-spacing: 0px;
-    font-size:14px;
     font-family: monospace;
+    font-size:83%;
     display:inline-block;
     max-width:99%;
     min-width:90%;
@@ -59,10 +59,9 @@ body {
 }
 
 .sqlcode {
-    line-height:23px;
     letter-spacing: 0px;
-    font-size:14px;
     font-family: monospace;
+    font-size:83%;
     display:inline-block;
     max-width:99%;
     min-width:90%;
@@ -78,10 +77,9 @@ body {
 }
 
 .htmlcode {
-    line-height:23px;
     letter-spacing: 0px;
-    font-size:14px;
     font-family: monospace;
+    font-size:83%;
     display:inline-block;
     max-width:99%;
     min-width:90%;
@@ -97,10 +95,9 @@ body {
 }
 
 .code {
-    line-height:23px;
     letter-spacing: 0px;
-    font-size:14px;
     font-family: monospace;
+    font-size:83%;
     display:inline-block;
     max-width:99%;
     min-width:90%;
@@ -156,8 +153,6 @@ a {
 body {
     padding-left:2vw;
     padding-right:2vw;
-    font-size:14px;
-    line-height:22px;
     letter-spacing: 1px;
 }
 }
@@ -205,7 +200,8 @@ ul {
 
 </head>
 <body>
-
+<div id="google_translate_element"></div>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
 function gg_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
@@ -213,6 +209,9 @@ function gg_copy(gt, eid, gc) {
   document.execCommand("copy");
   gc.style.visibility="visible"
   setTimeout(()=>{ gc.style.visibility="hidden"; }, 1000);
+}
+function googleTranslateElementInit() {
+   new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
 }
 
 </script>
@@ -224,44 +223,42 @@ function gg_copy(gt, eid, gc) {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Report error</div><hr/><span style="font-weight:bold;">Purpose</span>: Reports a fatal error.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Report error</div><hr/><span style="font-weight:bold;">Purpose</span>: Reports a fatal error.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_840'>
+<pre id='code_799' class=notranslate>
 <span class="Statement"> report-error</span> &lt;format&gt;, &lt;variable&gt; [<span class="Identifier"> ,</span> ... ]</pre>
-<span id=golf_copied_840 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_840' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_840, code_840, golf_copied_840)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_799 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_799' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_799, code_799, golf_copied_799)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-report-error will report a fatal error. It will format an error message according to the &lt;format&gt; string and a list of &lt;variable&gt;s and then &nbsp;write it in the trace file (see <a href='https://golf-lang.com/directories.html'>directories</a>); this happens regardless of whether tracing is enabled or not.<br/>
+report-error will report a fatal error. It will format an error message according to the &lt;format&gt; string and a list of &lt;variable&gt;s and then &nbsp;write it to the standard error output; no HTTP header is output specifically for report-error. <br/>
+<br/>
+In general, before issuing report-error, you would provide an output for the client that is appropriate. report-error's purpose is only to output a message to the standard error output, stop the processing of the current request, and move on to the next one for the <a href='https://golf-lang.com/service.html'>service</a> or exit if this is a <a href='https://golf-lang.com/command-line.html'>command-line</a> program; it is your responsibility to provide any meaningful output to the client prior to that.<br/>
 <br/>
 See <a href='https://golf-lang.com/error-handling.html'>error-handling</a> when report-error is called.<br/>
 <br/>
-&lt;format&gt; string must be present and there must be at least one &lt;variable&gt; (it means if you want to trace a simple string literal you still have to use "%s" as format). The reason for this is to avoid formatting errors, and to use formatting in a consistent fashion.<br/>
+&lt;format&gt; string must be present and there must be at least one &lt;variable&gt; (it means if you want to output a simple string literal you still have to use "%s" as format). The reason for this is to avoid formatting errors, and to use formatting in a consistent fashion.<br/>
 <br/>
 <div class="vsub"><a id="Format"></a>Format</div>
-&lt;format&gt; string must be a literal. Variables must follow &lt;format&gt; separated by commas in the same order as placeholders. If you use any placeholders other than specified below, or the type of variables you use do not match the type of a corresponding placeholder in &lt;format&gt;, your program will <a href='https://golf-lang.com/error-handling.html'>error out</a>. You can use the following placeholders in &lt;format&gt; (see <a href='https://golf-lang.com/trace-run.html'>trace-run</a> for an example of usage):<br/>
+&lt;format&gt; string must be a literal. Variables must follow &lt;format&gt; separated by commas in the same order as placeholders. If you use any placeholders other than specified below, or the type of variables you use do not match the type of a corresponding placeholder in &lt;format&gt;, your program will <a href='https://golf-lang.com/error-handling.html'>error out</a>. You can use the following placeholders in &lt;format&gt;:<br/>
 <ul><li>%s for a string<br/>
 </li><li>%c for a number displayed as a character,<br/>
 </li><li>%&lt;number&gt;s for a string output with a width of at least &lt;number&gt; (any excess filled with spaces to the left),<br/>
-</li><li>%ld for a number (use "lo" for displaying in octal notation and "lx" for hexadecimal notation).<br/>
-</li><li>%&lt;number&gt;ld for a number output with a width of at least &lt;number&gt; (any excess filled with spaces to the left). Use "lo" for displaying in octal notation and "lx" for hexadecimal notation.</li></ul>
+</li><li>%ld for a 64-bit signed number. Use "lo" for displaying in octal notation and "lx" for hexadecimal notation.<br/>
+</li><li>%&lt;number&gt;ld for a 64-bit signed number output with a width of at least &lt;number&gt; (any excess filled with spaces to the left). Use "lo" for displaying in octal notation and "lx" for hexadecimal notation.</li>
+</li><li>%hd for a 32-bit signed number. Use "hu" for displaying as unsigned number, "ho" for displaying in octal notation and "hx" for hexadecimal notation.<br/>
+</li><li>%&lt;number&gt;hd for a 32-bit signed number output with a width of at least &lt;number&gt; (any excess filled with spaces to the left). Use "ho" for displaying as unsigned number, "ho" for displaying in octal notation and "hx" for hexadecimal notation.<br/>
+</li><li>%hhd for a signed 8-bit number. Use "hhu" for displaying as unsigned number, "hho" for displaying in octal notation and "hhx" for hexadecimal notation.<br/>
+</li><li>%&lt;number&gt;hhd for a number output with a width of at least &lt;number&gt; (any excess filled with spaces to the left). Use "hhu" for displaying as unsigned number, "hho" for displaying in octal notation and "hhx" for hexadecimal notation.</li></ul>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_841'>
+<pre id='code_800' class=notranslate>
 <span class="Statement"> report-error</span> <span class="Constant">&quot;Too many input parameters for </span><span class="Special">%s</span><span class="Constant">, encountered total of [</span><span class="Special">%ld</span><span class="Constant">]&quot;</span>, <span class="Constant">&quot;customer&quot;</span>, num_count</pre>
-<span id=golf_copied_841 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_841' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_841, code_841, golf_copied_841)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_800 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_800' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_800, code_800, golf_copied_800)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-<div class="vsub"><a id="See also"></a>See also</div>
- <a name='Error handling'></a><span style="font-weight:bold;">Error handling</span><br/>
-<a href='https://golf-lang.com/db-error.html'>db-error</a> &nbsp;<br/>
-<a href='https://golf-lang.com/error-code.html'>error-code</a> &nbsp;<br/>
-<a href='https://golf-lang.com/error-handling.html'>error-handling</a> &nbsp;<br/>
-<a href='https://golf-lang.com/report-error.html'>report-error</a> &nbsp; <br/>
-<span style="font-weight:bold;">See all</span> <br/>
-<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>

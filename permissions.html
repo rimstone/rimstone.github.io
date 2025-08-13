@@ -12,7 +12,9 @@
 
 
 body, html {
-    /*font-family: Helvetica, Arial, sans-serif;*/
+    font-family: monospace,Helvetica, Arial, sans-serif;
+    line-height: 150%;
+    font-size:15px;
 }
 
 body {
@@ -21,10 +23,9 @@ body {
 }
     
 .ncode {
-    line-height:20px;
     letter-spacing: 0px;
-    font-size:14px;
     font-family: monospace;
+    font-size:83%;
     display:inline-block;
     max-width:99%;
     min-width:90%;
@@ -40,10 +41,9 @@ body {
 }
 
 .shcode {
-    line-height:23px;
     letter-spacing: 0px;
-    font-size:14px;
     font-family: monospace;
+    font-size:83%;
     display:inline-block;
     max-width:99%;
     min-width:90%;
@@ -59,10 +59,9 @@ body {
 }
 
 .sqlcode {
-    line-height:23px;
     letter-spacing: 0px;
-    font-size:14px;
     font-family: monospace;
+    font-size:83%;
     display:inline-block;
     max-width:99%;
     min-width:90%;
@@ -78,10 +77,9 @@ body {
 }
 
 .htmlcode {
-    line-height:23px;
     letter-spacing: 0px;
-    font-size:14px;
     font-family: monospace;
+    font-size:83%;
     display:inline-block;
     max-width:99%;
     min-width:90%;
@@ -97,10 +95,9 @@ body {
 }
 
 .code {
-    line-height:23px;
     letter-spacing: 0px;
-    font-size:14px;
     font-family: monospace;
+    font-size:83%;
     display:inline-block;
     max-width:99%;
     min-width:90%;
@@ -156,8 +153,6 @@ a {
 body {
     padding-left:2vw;
     padding-right:2vw;
-    font-size:14px;
-    line-height:22px;
     letter-spacing: 1px;
 }
 }
@@ -205,7 +200,8 @@ ul {
 
 </head>
 <body>
-
+<div id="google_translate_element"></div>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
 function gg_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
@@ -213,6 +209,9 @@ function gg_copy(gt, eid, gc) {
   document.execCommand("copy");
   gc.style.visibility="visible"
   setTimeout(()=>{ gc.style.visibility="hidden"; }, 1000);
+}
+function googleTranslateElementInit() {
+   new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
 }
 
 </script>
@@ -224,20 +223,13 @@ function gg_copy(gt, eid, gc) {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Permissions</div><hr/>File and directory permissions are given with standard Linux permissions. A permission "mode" is typically given as an octal number (such as 0750), where each digit is made of read (carrying value of 4), write (carrying value of 2) and execute/search permissions (carrying value of 1), so for example 7 means having read, write and execute/search permissions (since 7=4+2+1). The first digit refers to permissions given to user, second digit to those given to user's group, and third digit to those given to everyone.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Permissions</div><hr/>File and directory permissions are given with standard Linux permissions. A permission "mode" is typically given as an octal number (such as 0750), where each digit is made of read (carrying value of 4), write (carrying value of 2) and execute/search permissions (carrying value of 1), so for example 7 means having read, write and execute/search permissions (since 7=4+2+1). The first digit refers to permissions given to user, second digit to those given to user's group, and third digit to those given to everyone.<br/>
 <br/>
 Files in Golf <a href='https://golf-lang.com/directories.html'>directories</a> are generally created with 700 privileges, meaning only the user who owns the application can access them and other users (even within the same group) cannot. The same goes for directories created by <a href='https://golf-lang.com/new-dir.html'>new-dir</a> by default, unless "mode" specifies differently.<br/>
 <br/>
 Files created by Golf (including <a href='https://golf-lang.com/open-file.html'>open-file</a> and <a href='https://golf-lang.com/write-file.html'>write-file</a>) are created with 600 permissions, meaning only the user who owns the application can access them and other users (even within the same group) cannot.<br/>
 <br/>
 You can use <a href='https://golf-lang.com/stat-file.html'>stat-file</a> to obtain permission mode for a file or directory, and <a href='https://golf-lang.com/change-mode.html'>change-mode</a> to set it. Note that, most of the time, you won't need to do this at all. If you do, however, you should change permission modes carefully and keep in mind the implications for both your application's security and functionality.<br/>
-<div class="vsub"><a id="See also"></a>See also</div>
- <a name='General'></a><span style="font-weight:bold;">General</span><br/>
-<a href='https://golf-lang.com/about-golf.html'>about-golf</a> &nbsp;<br/>
-<a href='https://golf-lang.com/directories.html'>directories</a> &nbsp;<br/>
-<a href='https://golf-lang.com/permissions.html'>permissions</a> &nbsp; <br/>
-<span style="font-weight:bold;">See all</span> <br/>
-<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>

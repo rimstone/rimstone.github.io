@@ -12,7 +12,9 @@
 
 
 body, html {
-    /*font-family: Helvetica, Arial, sans-serif;*/
+    font-family: monospace,Helvetica, Arial, sans-serif;
+    line-height: 150%;
+    font-size:15px;
 }
 
 body {
@@ -21,10 +23,9 @@ body {
 }
     
 .ncode {
-    line-height:20px;
     letter-spacing: 0px;
-    font-size:14px;
     font-family: monospace;
+    font-size:83%;
     display:inline-block;
     max-width:99%;
     min-width:90%;
@@ -40,10 +41,9 @@ body {
 }
 
 .shcode {
-    line-height:23px;
     letter-spacing: 0px;
-    font-size:14px;
     font-family: monospace;
+    font-size:83%;
     display:inline-block;
     max-width:99%;
     min-width:90%;
@@ -59,10 +59,9 @@ body {
 }
 
 .sqlcode {
-    line-height:23px;
     letter-spacing: 0px;
-    font-size:14px;
     font-family: monospace;
+    font-size:83%;
     display:inline-block;
     max-width:99%;
     min-width:90%;
@@ -78,10 +77,9 @@ body {
 }
 
 .htmlcode {
-    line-height:23px;
     letter-spacing: 0px;
-    font-size:14px;
     font-family: monospace;
+    font-size:83%;
     display:inline-block;
     max-width:99%;
     min-width:90%;
@@ -97,10 +95,9 @@ body {
 }
 
 .code {
-    line-height:23px;
     letter-spacing: 0px;
-    font-size:14px;
     font-family: monospace;
+    font-size:83%;
     display:inline-block;
     max-width:99%;
     min-width:90%;
@@ -156,8 +153,6 @@ a {
 body {
     padding-left:2vw;
     padding-right:2vw;
-    font-size:14px;
-    line-height:22px;
     letter-spacing: 1px;
 }
 }
@@ -205,7 +200,8 @@ ul {
 
 </head>
 <body>
-
+<div id="google_translate_element"></div>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
 function gg_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
@@ -213,6 +209,9 @@ function gg_copy(gt, eid, gc) {
   document.execCommand("copy");
   gc.style.visibility="visible"
   setTimeout(()=>{ gc.style.visibility="hidden"; }, 1000);
+}
+function googleTranslateElementInit() {
+   new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
 }
 
 </script>
@@ -224,10 +223,10 @@ function gg_copy(gt, eid, gc) {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Decode base64</div><hr/><span style="font-weight:bold;">Purpose</span>: Base64 decode.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Decode base64</div><hr/><span style="font-weight:bold;">Purpose</span>: Base64 decode.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_469'>
+<pre id='code_469' class=notranslate>
 <span class="Statement"> decode-base64</span> &lt;data&gt;<span class="Type"> to</span> &lt;output data&gt; \
      [<span class="Identifier"> input-length</span> &lt;input length&gt; ]</pre>
 <span id=golf_copied_469 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
@@ -243,12 +242,6 @@ The result is stored in &lt;output data&gt; (in "to" clause).<br/>
 Note that the string to decode can have whitespaces before it (such as spaces or tabs), and whitespaces and new lines after it, which will all be ignored for the purpose of decoding.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 See <a href='https://golf-lang.com/encode-base64.html'>encode-base64</a>.<br/>
-<div class="vsub"><a id="See also"></a>See also</div>
- <a name='Base64'></a><span style="font-weight:bold;">Base64</span><br/>
-<a href='https://golf-lang.com/decode-base64.html'>decode-base64</a> &nbsp;<br/>
-<a href='https://golf-lang.com/encode-base64.html'>encode-base64</a> &nbsp; <br/>
-<span style="font-weight:bold;">See all</span> <br/>
-<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>

@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!--__GOLF_REDIRECT__-->
+<title>Fast JSON parser with little coding</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="HandheldFriendly" content="True"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="canonical" href="https://golf-lang.com/article-json.html" />
+<style>
+
+
+body, html {
+    font-family: monospace,Helvetica, Arial, sans-serif;
+    line-height: 150%;
+    font-size:15px;
+}
+
+body {
+    padding-left:1vw;
+    padding-right:1vw;
+}
+    
+.ncode {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.shcode {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.sqlcode {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.htmlcode {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.code {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+/*Just like h1 but for pdf conversion it would be indented this way it's not*/
+.vhub {
+    display: block;
+   font-size: 1.6em;
+   margin-top: 0.63em;
+   margin-bottom: 0.63em;
+   margin-left: 0;
+   margin-right: 0;
+   font-weight: bold;
+}
+
+/*Just like h2 but for pdf conversion it would be indented this way it's not*/
+.vsub {
+    display: block;
+   font-size: 1.25em;
+   margin-top: 0.53em;
+   margin-bottom: 0.53em;
+   margin-left: 0;
+   margin-right: 0;
+   font-weight: bold;
+}
+
+ul {
+  margin-left: 0.75vw;
+  padding-left: 0;
+}
+li {
+  margin-left: 0.75vw;
+  padding-left: 0;
+}
+
+/* this must be last, as it overrides previous settings, for mobile */
+@media (hover: none) {
+a {
+   display: inline-block;
+   padding-top: 3px;
+   padding-bottom: 2px;
+}
+body {
+    padding-left:2vw;
+    padding-right:2vw;
+    letter-spacing: 1px;
+}
+}
+
+/*The following is for code snippets that are highlighted by 2html vim*/
+pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
+.Identifier { color: #008b8b; }
+.Statement { color: #af5f00; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
+/*end of highlighted snippets*/
+
+a {
+    text-decoration:none;
+    padding-bottom: 0px; 
+    color:inherit;
+    border-bottom: 2px solid #6cb8f0;
+}
+a:hover {
+    text-decoration: none;
+    color:black;
+    border-bottom: 1px solid red;
+}
+/*do not underline links nor should they be active*/
+pre a {
+    text-decoration:none;
+    color:black;
+    border-bottom: none;
+    pointer-events: none;
+    cursor: default;
+}
+
+
+.golfSnippet {display:none;}
+
+ul {
+  list-style-type:square;
+  list-style-position: outside;
+}
+
+</style>
+
+
+</head>
+<body>
+<div id="google_translate_element"></div>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script>
+function gg_copy(gt, eid, gc) {
+  gt.textContent = eid.textContent;
+  gt.select();
+  document.execCommand("copy");
+  gc.style.visibility="visible"
+  setTimeout(()=>{ gc.style.visibility="hidden"; }, 1000);
+}
+function googleTranslateElementInit() {
+   new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+
+</script>
+
+<!--GOLFMENU13-->
+
+<!--GOLFENDMENU13-->
+
+
+
+<!--BEGVDOC90-->
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Fast JSON parser with little coding</div><hr/><br/>
+Golf's JSON parser produces an array of name/value pairs. A name is a path to value, for instance "country"."state"."name", and the value is simply the data associated with it, for instance "Idaho". You can control if the name contains array indexes or not, for instance if there are multiple States in the document, you might have names like "country"."state"[0]."name" with [..] designating an array element.<br/>
+<br/>
+You can iterate through this array and get names of JSON elements, examine if they are of interest to you, and if so, get the values. This typical scenario is how Golf's parser is built, since it uses a "lazy" approach, where values are not allocated until needed, speeding up parsing. That is the case in this example. The JSON document below is examined and only the names of the cities are extracted.<br/>
+<br/>
+You can also store JSON elements into trees or hashes for future fast retrieval, or store them into a database, etc.<br/>
+<br/>
+To get started, create a directory for this example and position in it:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_143' class=notranslate>
+<span class="Statement">mkdir</span> <span class="Special">-p</span> json
+<span class="Statement">cd</span> json</pre>
+<span id=golf_copied_143 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_143' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_143, code_143, golf_copied_143)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Save this JSON into a file "countries.json" - we will get the names of the cities from it:<br/>
+<div class='ncode' style='position:relative;padding-right:16px;'>
+<pre id='code_142' class=notranslate>
+{ &quot;country&quot;: [
+    { 
+        &quot;name&quot;: &quot;USA&quot;,
+        &quot;state&quot;: [
+            { 
+                &quot;name&quot;: &quot;Arizona&quot;,
+                &quot;city&quot;: [
+                    {
+                        &quot;name&quot; : &quot;Phoenix&quot;,
+                        &quot;population&quot;: 5000000
+            	    } ,
+                    {
+                        &quot;name&quot; : &quot;Tuscon&quot;,
+                        &quot;population&quot;: 1000000
+            	    } 
+
+                ]
+            } ,
+            { 
+                &quot;name&quot;: &quot;California&quot;,
+                &quot;city&quot;: [
+                    {
+                        &quot;name&quot; : &quot;Los Angeles&quot;,
+                        &quot;population&quot;: 19000000
+            	    },
+                    {
+                        &quot;name&quot; : &quot;Irvine&quot;
+            	    }
+                ]
+            } 
+        ] 
+    } ,
+    { 
+        &quot;name&quot;: &quot;Mexico&quot;,
+        &quot;state&quot;: [
+            { 
+                &quot;name&quot;: &quot;Veracruz&quot;,
+                &quot;city&quot;: [
+                    {
+                        &quot;name&quot; : &quot;Xalapa-Enr\u00edquez&quot;,
+                        &quot;population&quot;: 8000000
+            	    },
+                    {
+                        &quot;name&quot; : &quot;C\u00F3rdoba&quot;,
+                        &quot;population&quot;: 220000
+            	    }
+                ]
+            } ,
+            { 
+                &quot;name&quot;: &quot;Sinaloa&quot;,
+                &quot;city&quot;: [
+                    {
+                        &quot;name&quot; : &quot;Culiac\u00E1n Rosales&quot;,
+                        &quot;population&quot;: 3000000
+            	    }
+                ]
+            } 
+        ] 
+    }
+    ]
+}</pre>
+<span id=golf_copied_142 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_142' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_142, code_142, golf_copied_142)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+What follows is the code to parse JSON. We open a JSON file, process the document, check for errors, and then read elements one by one. We look for a key "country"."state"."city"."name" because those contains city names. Note use "no-enum" clause in <a href='https://golf-lang.com/json-doc.html'>json-doc</a> (which is the Golf's JSON parser), so that element designations aren't showing (meaning we don't have [0], [1] etc. for arrays). <br/>
+<br/>
+Save this code to "parse-json.golf":<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_141' class=notranslate>
+<span class="Statement"> begin-handler</span> /parse-json<span class="Identifier"> public</span>
+     <span class="Comment">// Read the JSON file</span>
+<span class="Statement">     read-file</span> <span class="Constant">&quot;countries.json&quot;</span><span class="Type"> to</span> countries<span class="Type"> status</span> st
+<span class="Statement">     if-true</span> st<span class="Identifier"> lesser-equal</span> <span class="Constant">0</span>
+<span class="Statement">         @</span>Cannot read file or file empty
+<span class="Statement">         exit-handler</span> -<span class="Constant">1</span>
+<span class="Statement">     end-if</span>
+
+     <span class="Comment">// Parse JSON</span>
+<span class="Statement">     json-doc</span> countries<span class="Identifier"> no-enum</span><span class="Type"> status</span> st<span class="Type"> error-text</span> et<span class="Type"> error-position</span> ep<span class="Type"> to</span> json
+
+     <span class="Comment">// Check for errors in JSON document</span>
+<span class="Statement">     if-true</span> st<span class="Identifier"> not-equal</span> GG_OKAY
+<span class="Statement">         @</span>Error [<span class="Statement">&lt;&lt;print-out</span> et<span class="Statement">&gt;&gt;</span>] at [<span class="Statement">&lt;&lt;print-out</span> ep<span class="Statement">&gt;&gt;</span>]
+<span class="Statement">         exit-handler</span> -<span class="Constant">2</span>
+<span class="Statement">     end-if</span>
+
+     <span class="Comment">// This is the JSON element we're looking for</span>
+<span class="Statement">     set-string</span> city_name<span class="Identifier"> unquoted</span> =<span class="Constant">&quot;country&quot;</span>.<span class="Constant">&quot;state&quot;</span>.<span class="Constant">&quot;city&quot;</span>.<span class="Constant">&quot;name&quot;</span>
+
+     <span class="Comment">// Read elements one by one - note you can then store them in a tree or hash for future fast searches</span>
+<span class="Statement">     start-loop</span>
+         <span class="Comment">// Read just a key</span>
+<span class="Statement">         read-json</span> json<span class="Type"> key</span> k<span class="Type"> type</span> t
+         <span class="Comment">// Exit if end of document</span>
+<span class="Statement">         if-true</span> t<span class="Identifier"> equal</span> GG_JSON_TYPE_NONE
+<span class="Statement">             break-loop</span>
+<span class="Statement">         end-if</span>
+         <span class="Comment">// If matches key we're looking for, get the value, and output it</span>
+<span class="Statement">         if-true</span> city_name<span class="Identifier"> equal</span> k
+<span class="Statement">             read-json</span> json<span class="Type"> value</span> v
+<span class="Statement">             @</span>Value [<span class="Statement">&lt;&lt;print-out</span> v<span class="Statement">&gt;&gt;</span>]
+<span class="Statement">             @</span>--------
+<span class="Statement">         end-if</span>
+         <span class="Comment">// Move on to the next JSON element</span>
+<span class="Statement">         read-json</span> json<span class="Identifier"> next</span>
+<span class="Statement">     end-loop</span>
+
+     <span class="Comment">// Optionally delete JSON object, or it will be automatically deleted</span>
+<span class="Statement">     json-doc</span><span class="Identifier"> delete</span> json
+<span class="Statement"> end-handler</span></pre>
+<span id=golf_copied_141 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_141' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_141, code_141, golf_copied_141)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Create "json" application ("-k") and compile it ("-q"):<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_145' class=notranslate>
+gg <span class="Special">-k</span> json <span class="Special">-q</span></pre>
+<span id=golf_copied_145 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_145' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_145, code_145, golf_copied_145)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Copy the above JSON file into application home directory so we can use it without a path (since this directory is your program's default directory) - you can, of course, also specify any absolute or relative path in Golf code above:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_146' class=notranslate>
+<span class="Statement">cp</span> countries.json /var/lib/gg/json/app</pre>
+<span id=golf_copied_146 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_146' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_146, code_146, golf_copied_146)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Run it:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_147' class=notranslate>
+gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/parse-json</span><span class="Statement">&quot;</span> <span class="Special">--exec</span></pre>
+<span id=golf_copied_147 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_147' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_147, code_147, golf_copied_147)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+The result is:<br/>
+<div class='ncode' style='position:relative;padding-right:16px;'>
+<pre id='code_144' class=notranslate>
+Content-Type: text/html;charset=utf-8
+Cache-Control: max-age=0, no-cache
+Pragma: no-cache
+Status: 200 OK
+
+Value [Phoenix]
+--------
+Value [Tuscon]
+--------
+Value [Los Angeles]
+--------
+Value [Irvine]
+--------
+Value [Xalapa-Enríquez]
+--------
+Value [Córdoba]
+--------
+Value [Culiacán Rosales]</pre>
+<span id=golf_copied_144 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_144' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_144, code_144, golf_copied_144)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Golf programs work exactly the same when you run them from command line as they do as web services or applications, hence you get the HTTP header in the output. You can avoid it by using <a href='https://golf-lang.com/silent-header.html'>silent-header</a> in your Golf code, or by using "--silent-header" option in the above <a href='https://golf-lang.com/gg.html'>gg</a> execution call. <br/>
+<br/>
+You can also omit "--exec" option in the above gg execution call, which will display environment variable settings and the path to your executable. Then you can run those directly. This is useful if you're running a Golf command line program in batch mode from command line repeatedly, as it's faster than using gg.<br/>
+<div class="vsub"><a id="See also"></a>See also</div>
+ <a name='Articles'></a><span style="font-weight:bold;">Articles</span><br/>
+<a href='https://golf-lang.com/article-capi.html'>article-capi</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-cookies.html'>article-cookies</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-debug.html'>article-debug</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-distributed.html'>article-distributed</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-encryption.html'>article-encryption</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-fifo.html'>article-fifo</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-file-manager.html'>article-file-manager</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-hello-server.html'>article-hello-server</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-hello-world.html'>article-hello-world</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-hello-world-service.html'>article-hello-world-service</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-hello-world-service-web.html'>article-hello-world-service-web</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-json.html'>article-json</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-language.html'>article-language</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-mariadb.html'>article-mariadb</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-memory-safety.html'>article-memory-safety</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-memory-safety-web.html'>article-memory-safety-web</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-notes-postgres.html'>article-notes-postgres</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-random.html'>article-random</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-regex.html'>article-regex</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-remote-call.html'>article-remote-call</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-request-function.html'>article-request-function</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-security.html'>article-security</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-sendmail.html'>article-sendmail</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-server.html'>article-server</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-shopping.html'>article-shopping</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-sqlite.html'>article-sqlite</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-statements.html'>article-statements</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-status-check.html'>article-status-check</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-tree.html'>article-tree</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-tree-web.html'>article-tree-web</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-vim-coloring.html'>article-vim-coloring</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-web-framework-for-c-programming-language.html'>article-web-framework-for-c-programming-language</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-what-is-golf.html'>article-what-is-golf</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-what-is-web-service.html'>article-what-is-web-service</a> &nbsp; <br/>
+<span style="font-weight:bold;">See all</span> <br/>
+<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
+<!--ENDVDOC90-->
+<br/><div style='width:100%;clear:both;'>
+<hr/>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://golf-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+</div><br/></body></html>
+
+

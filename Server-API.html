@@ -12,7 +12,9 @@
 
 
 body, html {
-    /*font-family: Helvetica, Arial, sans-serif;*/
+    font-family: monospace,Helvetica, Arial, sans-serif;
+    line-height: 150%;
+    font-size:15px;
 }
 
 body {
@@ -21,10 +23,9 @@ body {
 }
     
 .ncode {
-    line-height:20px;
     letter-spacing: 0px;
-    font-size:14px;
     font-family: monospace;
+    font-size:83%;
     display:inline-block;
     max-width:99%;
     min-width:90%;
@@ -40,10 +41,9 @@ body {
 }
 
 .shcode {
-    line-height:23px;
     letter-spacing: 0px;
-    font-size:14px;
     font-family: monospace;
+    font-size:83%;
     display:inline-block;
     max-width:99%;
     min-width:90%;
@@ -59,10 +59,9 @@ body {
 }
 
 .sqlcode {
-    line-height:23px;
     letter-spacing: 0px;
-    font-size:14px;
     font-family: monospace;
+    font-size:83%;
     display:inline-block;
     max-width:99%;
     min-width:90%;
@@ -78,10 +77,9 @@ body {
 }
 
 .htmlcode {
-    line-height:23px;
     letter-spacing: 0px;
-    font-size:14px;
     font-family: monospace;
+    font-size:83%;
     display:inline-block;
     max-width:99%;
     min-width:90%;
@@ -97,10 +95,9 @@ body {
 }
 
 .code {
-    line-height:23px;
     letter-spacing: 0px;
-    font-size:14px;
     font-family: monospace;
+    font-size:83%;
     display:inline-block;
     max-width:99%;
     min-width:90%;
@@ -156,8 +153,6 @@ a {
 body {
     padding-left:2vw;
     padding-right:2vw;
-    font-size:14px;
-    line-height:22px;
     letter-spacing: 1px;
 }
 }
@@ -205,7 +200,8 @@ ul {
 
 </head>
 <body>
-
+<div id="google_translate_element"></div>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
 function gg_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
@@ -213,6 +209,9 @@ function gg_copy(gt, eid, gc) {
   document.execCommand("copy");
   gc.style.visibility="visible"
   setTimeout(()=>{ gc.style.visibility="hidden"; }, 1000);
+}
+function googleTranslateElementInit() {
+   new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
 }
 
 </script>
@@ -224,7 +223,7 @@ function gg_copy(gt, eid, gc) {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Server API</div><hr/>Golf can be used in <a href='https://golf-lang.com/extended-mode.html'>extended-mode</a>, where non-Golf code or libraries can be linked with your application.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Server API</div><hr/>Golf can be used in <a href='https://golf-lang.com/extended-mode.html'>extended-mode</a>, where non-Golf code or libraries can be linked with your application.<br/>
 <br/>
 Such code can be from a library (see --llflag and --cflag options in <a href='https://golf-lang.com/gg.html'>gg</a>), or can be written directly as C code, i.e. files with .c and .h extension together with your Golf application. To do this, use <a href='https://golf-lang.com/call-extended.html'>call-extended</a> statement.<br/>
 <br/>
@@ -262,7 +261,7 @@ Place the following files in a separate directory for demonstration purposes.<br
 <br/>
 In this example, "example.golf" will use C functions from "example.c", and "example.h" will have declarations of those functions. File "example.c" implements a factorial function, as well as a function that will store the factorial result in an output message that's allocated and passed back to your Golf code:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_888'>
+<pre id='code_850' class=notranslate>
  <span class="PreProc">#include </span><span class="Constant">&quot;golf.h&quot;</span>
 
  <span class="Type">void</span> get_factorial(gg_num f, gg_num *res)
@@ -284,26 +283,26 @@ In this example, "example.golf" will use C functions from "example.c", and "exam
      get_factorial (i, &amp;f);
      gg_num bw = snprintf(r, MEMSIZE, <span class="Constant">&quot;Factorial value (message from C function) is </span><span class="Special">%ld</span><span class="Constant">&quot;</span>, f) + <span class="Constant">1</span>;
      <span class="Comment">// reduce memory footprint to match the memory used (including the null byte)</span>
-     <span class="Comment">// you can also use gg_mem_set_len() with bw as length for higher performance </span>
+     <span class="Comment">// you can also use gg_mem_set_len() with bw as length for better performance </span>
      <span class="Comment">// (but also higher memory usage)</span>
      *res = gg_realloc (gg_mem_get_id(r), bw);
 <span class="Statement"> }</span></pre>
-<span id=golf_copied_888 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_888' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_888, code_888, golf_copied_888)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_850 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_850' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_850, code_850, golf_copied_850)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 File "example.h" declares the above functions:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_891'>
+<pre id='code_853' class=notranslate>
  <span class="Type">void</span> get_factorial(gg_num f, gg_num *res);
  <span class="Type">void</span> fact_msg (gg_num i, <span class="Type">char</span> **res);</pre>
-<span id=golf_copied_891 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_891' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_891, code_891, golf_copied_891)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_853 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_853' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_853, code_853, golf_copied_853)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 File "example.golf" will call the above functions and display the results:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_893'>
+<pre id='code_855' class=notranslate>
 <span class="Statement"> extended-mode</span>
 
 <span class="Statement"> begin-handler</span> /example<span class="Identifier"> public</span>
@@ -317,49 +316,43 @@ File "example.golf" will call the above functions and display the results:<br/>
 <span class="Statement">     print-out</span> res
 <span class="Statement">     @</span>
 <span class="Statement"> end-handler</span></pre>
-<span id=golf_copied_893 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_893' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_893, code_893, golf_copied_893)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_855 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_855' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_855, code_855, golf_copied_855)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Create application "example":<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_890'>
+<pre id='code_852' class=notranslate>
 sudo mgrg <span class="Special">-i</span> <span class="Special">-u</span> <span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span> example</pre>
-<span id=golf_copied_890 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_890' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_890, code_890, golf_copied_890)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_852 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_852' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_852, code_852, golf_copied_852)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Make the application:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_892'>
+<pre id='code_854' class=notranslate>
 gg <span class="Special">-q</span></pre>
-<span id=golf_copied_892 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_892' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_892, code_892, golf_copied_892)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_854 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_854' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_854, code_854, golf_copied_854)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Run it:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_894'>
+<pre id='code_856' class=notranslate>
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/example</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--silent-header</span></pre>
-<span id=golf_copied_894 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_894' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_894, code_894, golf_copied_894)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_856 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_856' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_856, code_856, golf_copied_856)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The output is, as expected:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_889'>
+<pre id='code_851' class=notranslate>
 Factorial is 3628800
 Factorial value (message from C function) is 362880</pre>
-<span id=golf_copied_889 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_889' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_889, code_889, golf_copied_889)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_851 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_851' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_851, code_851, golf_copied_851)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-<div class="vsub"><a id="See also"></a>See also</div>
- <a name='API'></a><span style="font-weight:bold;">API</span><br/>
-<a href='https://golf-lang.com/Client-API.html'>Client-API</a> &nbsp;<br/>
-<a href='https://golf-lang.com/Server-API.html'>Server-API</a> &nbsp; <br/>
-<span style="font-weight:bold;">See all</span> <br/>
-<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>

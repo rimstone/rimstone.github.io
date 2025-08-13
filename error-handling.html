@@ -12,7 +12,9 @@
 
 
 body, html {
-    /*font-family: Helvetica, Arial, sans-serif;*/
+    font-family: monospace,Helvetica, Arial, sans-serif;
+    line-height: 150%;
+    font-size:15px;
 }
 
 body {
@@ -21,10 +23,9 @@ body {
 }
     
 .ncode {
-    line-height:20px;
     letter-spacing: 0px;
-    font-size:14px;
     font-family: monospace;
+    font-size:83%;
     display:inline-block;
     max-width:99%;
     min-width:90%;
@@ -40,10 +41,9 @@ body {
 }
 
 .shcode {
-    line-height:23px;
     letter-spacing: 0px;
-    font-size:14px;
     font-family: monospace;
+    font-size:83%;
     display:inline-block;
     max-width:99%;
     min-width:90%;
@@ -59,10 +59,9 @@ body {
 }
 
 .sqlcode {
-    line-height:23px;
     letter-spacing: 0px;
-    font-size:14px;
     font-family: monospace;
+    font-size:83%;
     display:inline-block;
     max-width:99%;
     min-width:90%;
@@ -78,10 +77,9 @@ body {
 }
 
 .htmlcode {
-    line-height:23px;
     letter-spacing: 0px;
-    font-size:14px;
     font-family: monospace;
+    font-size:83%;
     display:inline-block;
     max-width:99%;
     min-width:90%;
@@ -97,10 +95,9 @@ body {
 }
 
 .code {
-    line-height:23px;
     letter-spacing: 0px;
-    font-size:14px;
     font-family: monospace;
+    font-size:83%;
     display:inline-block;
     max-width:99%;
     min-width:90%;
@@ -156,8 +153,6 @@ a {
 body {
     padding-left:2vw;
     padding-right:2vw;
-    font-size:14px;
-    line-height:22px;
     letter-spacing: 1px;
 }
 }
@@ -205,7 +200,8 @@ ul {
 
 </head>
 <body>
-
+<div id="google_translate_element"></div>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
 function gg_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
@@ -213,6 +209,9 @@ function gg_copy(gt, eid, gc) {
   document.execCommand("copy");
   gc.style.visibility="visible"
   setTimeout(()=>{ gc.style.visibility="hidden"; }, 1000);
+}
+function googleTranslateElementInit() {
+   new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
 }
 
 </script>
@@ -224,32 +223,17 @@ function gg_copy(gt, eid, gc) {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Error handling</div><hr/><div class="vsub"><a id="When your program errors out"></a>When your program errors out</div>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Error handling</div><hr/><div class="vsub"><a id="When your program errors out"></a>When your program errors out</div>
 "Erroring out" means a process handling a request has encountered a difficulty that cannot be handled and it will either:<br/>
 <ul><li>Skip the rest of the request, and move on quickly to handle the next request without exiting. Most errors are like this, for example your program has attempted to access memory outside of what's allocated, or you have called <a href='https://golf-lang.com/report-error.html'>report-error</a> statement.<br/>
-</li><li>Stop and exit, and it may be automatically restarted if it's a <a href='https://golf-lang.com/service.html'>service</a>. For instance, the process could be out of memory, or the database is permanently down and connection cannot be re-established.</li></ul>. <br/>
+</li><li>Stop and exit, and it may be automatically restarted if it's a <a href='https://golf-lang.com/service.html'>service</a>. For instance, the process could be out of memory, or the database is permanently down and connection cannot be re-established, or there is an internal error.</li></ul>. <br/>
 Note that if your program is <a href='https://golf-lang.com/command-line.html'>command-line</a>, it will exit in any case since it handles a single request anyway.</li></ul>
 <div class="vsub"><a id="When there is a problem in Golf"></a>When there is a problem in Golf</div>
 If there is a fatal internal error (i.e. error in Golf code itself that cannot be handled), it will be caught by Golf, and the process will end. If your process is started with <a href='https://golf-lang.com/mgrg.html'>mgrg</a>, it may be automatically restarted.<br/>
 <div class="vsub"><a id="Logging the error"></a>Logging the error</div>
-Regardless of the type of error and regardless of whether the process exits or not, the error is logged and the program stack with full source code lines (see <a href='https://golf-lang.com/gg.html'>gg</a> for including debug information) will be written to backtrace file (use -e option of <a href='https://golf-lang.com/gg.html'>gg</a> to obtain its location). Note that the program stack is logged only if debugging info is present (i.e. if installed from package you must install debugging package as well).<br/>
-<br/>
-You can see the list of last N errors (and the location of file containing backtrace for them) by using <a href='https://golf-lang.com/gg.html'>gg</a>, for instance to see the last 3 errors:<br/>
-<div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_522'>
-gg <span class="Special">-e</span> <span class="Constant">3</span></pre>
-<span id=golf_copied_522 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_522' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_522, code_522, golf_copied_522)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-<div class="vsub"><a id="See also"></a>See also</div>
- <a name='Error handling'></a><span style="font-weight:bold;">Error handling</span><br/>
-<a href='https://golf-lang.com/db-error.html'>db-error</a> &nbsp;<br/>
-<a href='https://golf-lang.com/error-code.html'>error-code</a> &nbsp;<br/>
-<a href='https://golf-lang.com/error-handling.html'>error-handling</a> &nbsp;<br/>
-<a href='https://golf-lang.com/report-error.html'>report-error</a> &nbsp; <br/>
-<span style="font-weight:bold;">See all</span> <br/>
-<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
+Regardless of the type of error and regardless of whether the process exits or not, the error is output to the standard error stream along with the error details: cause of error and full stack trace (including source file names and line numbers); note that for <a href='https://golf-lang.com/report-error.html'>report-error</a> error details are not output since you're providing your own details.<br/>
+<div class="vsub"><a id="Output when error happens"></a>Output when error happens</div>
+When your program errors out, a generic message is output to the standard output, i.e. to the client, that indicates that error has occurred, and to check the error log. The actual details are output to standard error stream, see details above. Note that in case of fatal error (such as Golf internal error), no message is sent to the client; rather the program ends. On how to view the error log (including the stack traces), see <a href='https://golf-lang.com/debugging.html'>debugging</a>.<br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>

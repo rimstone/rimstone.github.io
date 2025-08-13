@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!--__GOLF_REDIRECT__-->
+<title>Using Regex in Golf</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="HandheldFriendly" content="True"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="canonical" href="https://golf-lang.com/article-regex.html" />
+<style>
+
+
+body, html {
+    font-family: monospace,Helvetica, Arial, sans-serif;
+    line-height: 150%;
+    font-size:15px;
+}
+
+body {
+    padding-left:1vw;
+    padding-right:1vw;
+}
+    
+.ncode {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.shcode {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.sqlcode {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.htmlcode {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.code {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+/*Just like h1 but for pdf conversion it would be indented this way it's not*/
+.vhub {
+    display: block;
+   font-size: 1.6em;
+   margin-top: 0.63em;
+   margin-bottom: 0.63em;
+   margin-left: 0;
+   margin-right: 0;
+   font-weight: bold;
+}
+
+/*Just like h2 but for pdf conversion it would be indented this way it's not*/
+.vsub {
+    display: block;
+   font-size: 1.25em;
+   margin-top: 0.53em;
+   margin-bottom: 0.53em;
+   margin-left: 0;
+   margin-right: 0;
+   font-weight: bold;
+}
+
+ul {
+  margin-left: 0.75vw;
+  padding-left: 0;
+}
+li {
+  margin-left: 0.75vw;
+  padding-left: 0;
+}
+
+/* this must be last, as it overrides previous settings, for mobile */
+@media (hover: none) {
+a {
+   display: inline-block;
+   padding-top: 3px;
+   padding-bottom: 2px;
+}
+body {
+    padding-left:2vw;
+    padding-right:2vw;
+    letter-spacing: 1px;
+}
+}
+
+/*The following is for code snippets that are highlighted by 2html vim*/
+pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
+.Identifier { color: #008b8b; }
+.Statement { color: #af5f00; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
+/*end of highlighted snippets*/
+
+a {
+    text-decoration:none;
+    padding-bottom: 0px; 
+    color:inherit;
+    border-bottom: 2px solid #6cb8f0;
+}
+a:hover {
+    text-decoration: none;
+    color:black;
+    border-bottom: 1px solid red;
+}
+/*do not underline links nor should they be active*/
+pre a {
+    text-decoration:none;
+    color:black;
+    border-bottom: none;
+    pointer-events: none;
+    cursor: default;
+}
+
+
+.golfSnippet {display:none;}
+
+ul {
+  list-style-type:square;
+  list-style-position: outside;
+}
+
+</style>
+
+
+</head>
+<body>
+<div id="google_translate_element"></div>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script>
+function gg_copy(gt, eid, gc) {
+  gt.textContent = eid.textContent;
+  gt.select();
+  document.execCommand("copy");
+  gc.style.visibility="visible"
+  setTimeout(()=>{ gc.style.visibility="hidden"; }, 1000);
+}
+function googleTranslateElementInit() {
+   new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+
+</script>
+
+<!--GOLFMENU13-->
+
+<!--GOLFENDMENU13-->
+
+
+
+<!--BEGVDOC90-->
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Using Regex in Golf</div><hr/><br/>
+Regex (or "REGular EXpressions") is a powerful way to search strings, as well as to replace parts of strings. It makes it easier to reliably do so, since regular expressions are usually short; at the same time there's a learning curve in becoming proficient. However, given that regex is ubiquitous, it is worth learning at least some of it, as it can come handy.<br/>
+<br/>
+Golf's implementation of regex is via <a href='https://golf-lang.com/match-regex.html'>match-regex</a> statement, which allows for both searching and replacing in a single statement. It also has a caching capability (meaning caching of compiled regex process), which can increase performance by up to 500%.<br/>
+<br/>
+This article will show a few basic ways to use match-regex statement in your Golf code.<br/>
+<br/>
+Create directory for your application:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_188' class=notranslate>
+<span class="Statement">mkdir</span> <span class="Special">-p</span> regex
+<span class="Statement">cd</span> regex</pre>
+<span id=golf_copied_188 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_188' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_188, code_188, golf_copied_188)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Create "reg" application:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_191' class=notranslate>
+gg <span class="Special">-k</span> reg</pre>
+<span id=golf_copied_191 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_191' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_191, code_191, golf_copied_191)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Copy the following code to file "reg.golf":<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_186' class=notranslate>
+<span class="Statement"> %%</span> /reg<span class="Identifier"> public</span>
+     <span class="Comment">// Use backreferences to swap two words, with </span><span class="Constant">&quot;Reverse order word&quot;</span><span class="Comment"> as a result</span>
+<span class="Statement">     match-regex</span> <span class="Constant">&quot;(word)</span><span class="Special">\\</span><span class="Constant">s+(order)&quot;</span><span class="Identifier"> in</span> <span class="Constant">&quot;Reverse word order&quot;</span><span class="Identifier"> replace-with</span> <span class="Constant">&quot;</span><span class="Special">\\</span><span class="Constant">2 </span><span class="Special">\\</span><span class="Constant">1&quot;</span><span class="Type"> result</span> res
+<span class="Statement">     print-out</span> res<span class="Identifier"> new-line</span>
+
+     <span class="Comment">// Recognize a pattern, in this case </span><span class="Constant">3</span><span class="Comment"> found</span>
+<span class="Statement">     match-regex</span> <span class="Constant">&quot;[abc]{3}&quot;</span><span class="Identifier"> in</span> <span class="Constant">&quot;Recognize 'aaa' or 'aa' or 'abc' or 'cab'&quot;</span><span class="Type"> status</span> st
+<span class="Statement">     print-out</span> st<span class="Identifier"> new-line</span>
+
+     <span class="Comment">// Recognize a pattern, in this case not found</span>
+<span class="Statement">     match-regex</span> <span class="Constant">&quot;[abc]{3}&quot;</span><span class="Identifier"> in</span> <span class="Constant">&quot;Recognize 'aa' or 'aa' or 'bc' or 'ca'&quot;</span><span class="Type"> status</span> st
+<span class="Statement">     print-out</span> st<span class="Identifier"> new-line</span>
+
+     <span class="Comment">// Use case insensitive search to recognize a pattern, in this case </span><span class="Constant">3</span><span class="Comment"> found</span>
+<span class="Statement">     match-regex</span> <span class="Constant">&quot;[abc]{3}&quot;</span><span class="Identifier"> in</span> <span class="Constant">&quot;Recognize 'aAa' or 'aa' or 'aBc' or 'Cab'&quot;</span><span class="Identifier"> case-insensitive</span><span class="Type"> status</span> st
+<span class="Statement">     print-out</span> st<span class="Identifier"> new-line</span>
+
+     <span class="Comment">// Use case insensitive search to recognize a pattern and replace, with </span><span class="Constant">&quot;Recognize 'XXX' or 'aa' or 'XXX' or 'XXX'&quot;</span><span class="Comment"> as a result</span>
+<span class="Statement">     match-regex</span> <span class="Constant">&quot;[abc]{3}&quot;</span><span class="Identifier"> in</span> <span class="Constant">&quot;Recognize 'aAa' or 'aa' or 'aBc' or 'Cab'&quot;</span><span class="Identifier"> replace-with</span> <span class="Constant">&quot;XXX&quot;</span><span class="Type"> result</span> res<span class="Identifier"> case-insensitive</span><span class="Type"> status</span> st
+<span class="Statement">     print-out</span> res<span class="Identifier"> new-line</span>
+<span class="Statement">     print-out</span> st<span class="Identifier"> new-line</span>
+<span class="Statement"> %%</span></pre>
+<span id=golf_copied_186 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_186' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_186, code_186, golf_copied_186)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Build your application server as a native executable:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_193' class=notranslate>
+gg <span class="Special">-k</span></pre>
+<span id=golf_copied_193 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_193' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_193, code_193, golf_copied_193)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Run it from the command line:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_195' class=notranslate>
+gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/reg</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--silent-header</span></pre>
+<span id=golf_copied_195 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_195' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_195, code_195, golf_copied_195)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+The result is:<br/>
+<div class='ncode' style='position:relative;padding-right:16px;'>
+<pre id='code_187' class=notranslate>
+Reverse order word
+3
+0
+3
+Recognize &apos;XXX&apos; or &apos;aa&apos; or &apos;XXX&apos; or &apos;XXX&apos;
+3</pre>
+<span id=golf_copied_187 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_187' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_187, code_187, golf_copied_187)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Let's go over this one by one. <br/>
+<div class="vsub"><a id="Backreferences"></a>Backreferences</div>
+The first statement uses back-references, which is a way to refer to something that's found in the string:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_189' class=notranslate>
+ <span class="Comment">// Use backreferences to swap two words</span>
+<span class="Statement"> match-regex</span> <span class="Constant">&quot;(word)</span><span class="Special">\\</span><span class="Constant">s+(order)&quot;</span><span class="Identifier"> in</span> <span class="Constant">&quot;Reverse word order&quot;</span><span class="Identifier"> replace-with</span> <span class="Constant">&quot;</span><span class="Special">\\</span><span class="Constant">2 </span><span class="Special">\\</span><span class="Constant">1&quot;</span><span class="Type"> result</span> res
+<span class="Statement"> print-out</span> res<span class="Identifier"> new-line</span></pre>
+<span id=golf_copied_189 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_189' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_189, code_189, golf_copied_189)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Here, "word" and "order" are found. Since they are in parenthesis (meaning within "()"), they can be used as back-references. The first one would be \1, the second one \2 etc. In "replace-with" clause, we refer to them as "\\1" and "\\2" just because backslash in a special character used to escape others and needs to be escaped itself. "\\s+" means find any spaces ("\\s") which repeat at least one time ("+"). So we're looking for essentially a snippet like "word order" or "word &nbsp; order", and we are then replacing that with "\\2 \\1". Keep in mind that "\\1" refers to "word" and "\\2" refers to "order". So the result will be "order word", i.e. the two words will be output in reverse order.<br/>
+<div class="vsub"><a id="Finding pattern, and counting them"></a>Finding pattern, and counting them</div>
+A common use of regex is to find out if a pattern is showing up in a string, and how many times. Consider this:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_192' class=notranslate>
+ <span class="Comment">// Recognize a pattern, found</span>
+<span class="Statement"> match-regex</span> <span class="Constant">&quot;[abc]{3}&quot;</span><span class="Identifier"> in</span> <span class="Constant">&quot;Recognize 'aaa' or 'aa' or 'abc' or 'cab'&quot;</span><span class="Type"> status</span> st
+<span class="Statement"> print-out</span> st<span class="Identifier"> new-line</span></pre>
+<span id=golf_copied_192 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_192' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_192, code_192, golf_copied_192)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Here, you're looking for any of the characters "a", "b" or "c" that repeat 3 times (which is what "{3}" does). Obviously "aaa", "abc" and "cab" fit that bill, while "aa" does not, so the output is 3.<br/>
+<br/>
+Conversely, in this case, there are no instances of 3 characters (with each being "a", "b" or "c"), since all of them of length 2 (such as "aa", "bc" etc.), so the result will be 0:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_194' class=notranslate>
+ <span class="Comment">// Recognize a pattern, in this case not found</span>
+<span class="Statement"> match-regex</span> <span class="Constant">&quot;[abc]{3}&quot;</span><span class="Identifier"> in</span> <span class="Constant">&quot;Recognize 'aa' or 'aa' or 'bc' or 'ca'&quot;</span><span class="Type"> status</span> st
+<span class="Statement"> print-out</span> st<span class="Identifier"> new-line</span></pre>
+<span id=golf_copied_194 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_194' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_194, code_194, golf_copied_194)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+<div class="vsub"><a id="Case insensitive search"></a>Case insensitive search</div>
+By default, the search is case sensitive. You can make it case insensitive with "case-insensitive" clause:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_196' class=notranslate>
+ <span class="Comment">// Use case insensitive search to recognize a pattern</span>
+<span class="Statement"> match-regex</span> <span class="Constant">&quot;[abc]{3}&quot;</span><span class="Identifier"> in</span> <span class="Constant">&quot;Recognize 'aAa' or 'aa' or 'aBc' or 'Cab'&quot;</span><span class="Identifier"> case-insensitive</span><span class="Type"> status</span> st
+<span class="Statement"> print-out</span> st<span class="Identifier"> new-line</span></pre>
+<span id=golf_copied_196 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_196' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_196, code_196, golf_copied_196)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+In this case, there are also 3 matches ("aAa", "aBc" and "Cab").<br/>
+<div class="vsub"><a id="Search and replace"></a>Search and replace</div>
+In the following example, we search for a pattern and replace it with something:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_197' class=notranslate>
+ <span class="Comment">// Use case insensitive search to recognize a pattern and replace</span>
+<span class="Statement"> match-regex</span> <span class="Constant">&quot;[abc]{3}&quot;</span><span class="Identifier"> in</span> <span class="Constant">&quot;Recognize 'aAa' or 'aa' or 'aBc' or 'Cab'&quot;</span><span class="Identifier"> replace-with</span> <span class="Constant">&quot;XXX&quot;</span><span class="Type"> result</span> res<span class="Identifier"> case-insensitive</span><span class="Type"> status</span> st
+<span class="Statement"> print-out</span> res<span class="Identifier"> new-line</span>
+<span class="Statement"> print-out</span> st<span class="Identifier"> new-line</span></pre>
+<span id=golf_copied_197 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_197' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_197, code_197, golf_copied_197)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Just like in previous example, 3 patterns will be recognized and replaced with "XXX" and with 3 matches as the status, the result is:<br/>
+<div class='ncode' style='position:relative;padding-right:16px;'>
+<pre id='code_190' class=notranslate>
+Recognize &apos;XXX&apos; or &apos;aa&apos; or &apos;XXX&apos; or &apos;XXX&apos;
+3</pre>
+<span id=golf_copied_190 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_190' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_190, code_190, golf_copied_190)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+<div class="vsub"><a id="Lookahead and lookbehind"></a>Lookahead and lookbehind</div>
+Some times you'd like to search for a pattern, but only if there's another pattern before it ("lookbehind") or after it ("lookahead").<br/>
+<div class="vsub"><a id="See also"></a>See also</div>
+ <a name='Articles'></a><span style="font-weight:bold;">Articles</span><br/>
+<a href='https://golf-lang.com/article-capi.html'>article-capi</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-cookies.html'>article-cookies</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-debug.html'>article-debug</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-distributed.html'>article-distributed</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-encryption.html'>article-encryption</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-fifo.html'>article-fifo</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-file-manager.html'>article-file-manager</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-hello-server.html'>article-hello-server</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-hello-world.html'>article-hello-world</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-hello-world-service.html'>article-hello-world-service</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-hello-world-service-web.html'>article-hello-world-service-web</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-json.html'>article-json</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-language.html'>article-language</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-mariadb.html'>article-mariadb</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-memory-safety.html'>article-memory-safety</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-memory-safety-web.html'>article-memory-safety-web</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-notes-postgres.html'>article-notes-postgres</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-random.html'>article-random</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-regex.html'>article-regex</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-remote-call.html'>article-remote-call</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-request-function.html'>article-request-function</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-security.html'>article-security</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-sendmail.html'>article-sendmail</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-server.html'>article-server</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-shopping.html'>article-shopping</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-sqlite.html'>article-sqlite</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-statements.html'>article-statements</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-status-check.html'>article-status-check</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-tree.html'>article-tree</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-tree-web.html'>article-tree-web</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-vim-coloring.html'>article-vim-coloring</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-web-framework-for-c-programming-language.html'>article-web-framework-for-c-programming-language</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-what-is-golf.html'>article-what-is-golf</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-what-is-web-service.html'>article-what-is-web-service</a> &nbsp; <br/>
+<span style="font-weight:bold;">See all</span> <br/>
+<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
+<!--ENDVDOC90-->
+<br/><div style='width:100%;clear:both;'>
+<hr/>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://golf-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+</div><br/></body></html>
+
+

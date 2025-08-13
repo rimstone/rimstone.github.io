@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!--__GOLF_REDIRECT__-->
+<title>Golf is a different kind of programming language</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="HandheldFriendly" content="True"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="canonical" href="https://golf-lang.com/article-language.html" />
+<style>
+
+
+body, html {
+    font-family: monospace,Helvetica, Arial, sans-serif;
+    line-height: 150%;
+    font-size:15px;
+}
+
+body {
+    padding-left:1vw;
+    padding-right:1vw;
+}
+    
+.ncode {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.shcode {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.sqlcode {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.htmlcode {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.code {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+/*Just like h1 but for pdf conversion it would be indented this way it's not*/
+.vhub {
+    display: block;
+   font-size: 1.6em;
+   margin-top: 0.63em;
+   margin-bottom: 0.63em;
+   margin-left: 0;
+   margin-right: 0;
+   font-weight: bold;
+}
+
+/*Just like h2 but for pdf conversion it would be indented this way it's not*/
+.vsub {
+    display: block;
+   font-size: 1.25em;
+   margin-top: 0.53em;
+   margin-bottom: 0.53em;
+   margin-left: 0;
+   margin-right: 0;
+   font-weight: bold;
+}
+
+ul {
+  margin-left: 0.75vw;
+  padding-left: 0;
+}
+li {
+  margin-left: 0.75vw;
+  padding-left: 0;
+}
+
+/* this must be last, as it overrides previous settings, for mobile */
+@media (hover: none) {
+a {
+   display: inline-block;
+   padding-top: 3px;
+   padding-bottom: 2px;
+}
+body {
+    padding-left:2vw;
+    padding-right:2vw;
+    letter-spacing: 1px;
+}
+}
+
+/*The following is for code snippets that are highlighted by 2html vim*/
+pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
+.Identifier { color: #008b8b; }
+.Statement { color: #af5f00; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
+/*end of highlighted snippets*/
+
+a {
+    text-decoration:none;
+    padding-bottom: 0px; 
+    color:inherit;
+    border-bottom: 2px solid #6cb8f0;
+}
+a:hover {
+    text-decoration: none;
+    color:black;
+    border-bottom: 1px solid red;
+}
+/*do not underline links nor should they be active*/
+pre a {
+    text-decoration:none;
+    color:black;
+    border-bottom: none;
+    pointer-events: none;
+    cursor: default;
+}
+
+
+.golfSnippet {display:none;}
+
+ul {
+  list-style-type:square;
+  list-style-position: outside;
+}
+
+</style>
+
+
+</head>
+<body>
+<div id="google_translate_element"></div>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script>
+function gg_copy(gt, eid, gc) {
+  gt.textContent = eid.textContent;
+  gt.select();
+  document.execCommand("copy");
+  gc.style.visibility="visible"
+  setTimeout(()=>{ gc.style.visibility="hidden"; }, 1000);
+}
+function googleTranslateElementInit() {
+   new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+
+</script>
+
+<!--GOLFMENU13-->
+
+<!--GOLFENDMENU13-->
+
+
+
+<!--BEGVDOC90-->
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Golf is a different kind of programming language</div><hr/><br/>
+Over the past 50 years, general-purpose programming languages became more complex due to the constant influx of new features (some of which are great, while others are a "feature creep"). Just look at any major programming language in its early days, versus the latest incarnations. From a distance, it may look like you switched from riding a bicycle to flying a passenger jet with a few hundred knobs, buttons and readout consoles. Arguably, the language structure covers many more usage patterns, yields additional power and safety has improved, but the complexity and the learning curve has increased too. While in the beginning there was lots of pitfalls due to the lack of features and safety, which would usually result in too many ways of doing the same thing, in the end there's a minefield due to an overcrowded feature-scape that's paralyzing to deal with and often not quite understood by anyone on the team.<br/>
+<br/>
+If you look at a moderately involved application written in any major programming language these days, you can intuitively experience this without any need for a formal explanation. This is true especially if you are not familiar with the language involved. The level of "cryptic" in programming languages has gone up notches.<br/>
+<br/>
+When writing software, useful complexity helps by providing structure as well as the shortest path to actualizing an algorithm. "Useful" complexity stands in contrast to complexity that doesn't yield enough benefits to justify itself. Typically, it's the ability to quickly make workable programs, the power of its constructs, memory safety, performance etc. Often a given benefit compromises another, i.e. you "can't have it all". This is where the perceived benefits become more personal and vary based on where exactly the emphasis is.<br/>
+<br/>
+Regardless, programming languages tend to favor primitives that, when combined in a clever manner, yield higher-level function, until ultimately such function becomes business or consumer friendly. The process has been this way for over 50 years. Despite a plethora of languages out there, nothing has changed much. The basic blocks of languages remain primitives, and the building of applications from ground up remains the norm, rarely directly, and more by means of libraries building functionality on top of libraries.<br/>
+<br/>
+The reason for how all this developed in this manner (and why) would be a good topic for a study, and not just of programming languages but indeed first and foremost of human nature and the nature of business. On one hand, the original languages evolved in a relatively simple way with the rise of LALR and LR grammar tools, which made building a parser to be a streamlined process. It's a benefit, but also a trap, in a sense that it pigeon-holes the design of a language. Regardless of which parsing tools are used, it's the conceptually the same ball of yarn. This has resulted in a rather large number of languages that are in their basic nature clones of each other.<br/>
+<br/>
+While the above applies to general-purpose languages, the situation isn't like that in DSL (Domain-Specific Languages). Take for example SQL, or Structured Query Language. It's withstood the test of time with relatively minor changes, and even those that weren't minor came out well enough. Successful DSLs have something that general-purpose languages don't: firstly the power to cross the chasms of building functionality in very little code, and secondly the ease of use later in the development cycle, long after the dust settles. The former refers to typing a single (or very few) statements that take hundreds in other languages. The latter to being able to understand the code years later, or by other people.<br/>
+<br/>
+Perhaps now is a good time to make a point. It's simple really: Golf intends to converge a general purpose language concept with a Domain-Specific one, or in a nutshell: a language that's general-purpose but with the two aforementioned benefits of DSLs. The process isn't straighforward because it's not just about grammars and BNF notations, or about pure structure. It's about the interaction between the language and a human. It's about reducing the effect of overly-expressioned languages and escaping the trap of cookie-cutter churning of languages.<br/>
+<br/>
+Aside from grabbing the benefits of both, there's an additional, emerging one: some things that were "either/or" can now be together at the same time. I am talking about performance. Using memory-safe general-purpose programming languages has a drawback: building "libraries on top of libraries" (or similar, as a method of building up functionality) carries a performance stick: everything written in such a language will exact a performance penalty because the cost of memory safety on every level of development starts to pile up. But if a programming language builds a large number of significant functionalities in just a single or few statements (such as in DSLs), then such functionalities can be built in C, which is the most energy-efficient and fastest programming language, according to <a href='https://www.sciencedirect.com/science/article/pii/S0167642321000022'>this study</a> (and also something that most of us intuitively understand). Building so can be done to include memory safety from the get-go with a much lower impact, and offers lots of customizations at the same time, yet still remain high-performance because it's built entirely in C. And the range of functionalities can be large, including databases, web technologies, regex, strings, files, parsing etc. It can include enough to be useful for building business and consumer applications.<br/>
+<br/>
+What this implies is that a hybrid between a general-purpose and a set of Domain-Specific language can be simple, memory safe and have high-performance, at the same time. It would emphasise near-expressionless statements that are close to natural way of thinking, instead of one based on mechanical-parsing methods that's easy for a computer. Golf is a hybrid language of that nature. One more benefit is that you may not need AI to summarize what the program does. If a single statement can convey a high-level intent, then you can read a program in such language more as a story of the solution than an algorithm.<br/>
+<div class="vsub"><a id="See also"></a>See also</div>
+ <a name='Articles'></a><span style="font-weight:bold;">Articles</span><br/>
+<a href='https://golf-lang.com/article-capi.html'>article-capi</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-cookies.html'>article-cookies</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-debug.html'>article-debug</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-distributed.html'>article-distributed</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-encryption.html'>article-encryption</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-fifo.html'>article-fifo</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-file-manager.html'>article-file-manager</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-hello-server.html'>article-hello-server</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-hello-world.html'>article-hello-world</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-hello-world-service.html'>article-hello-world-service</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-hello-world-service-web.html'>article-hello-world-service-web</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-json.html'>article-json</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-language.html'>article-language</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-mariadb.html'>article-mariadb</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-memory-safety.html'>article-memory-safety</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-memory-safety-web.html'>article-memory-safety-web</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-notes-postgres.html'>article-notes-postgres</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-random.html'>article-random</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-regex.html'>article-regex</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-remote-call.html'>article-remote-call</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-request-function.html'>article-request-function</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-security.html'>article-security</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-sendmail.html'>article-sendmail</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-server.html'>article-server</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-shopping.html'>article-shopping</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-sqlite.html'>article-sqlite</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-statements.html'>article-statements</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-status-check.html'>article-status-check</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-tree.html'>article-tree</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-tree-web.html'>article-tree-web</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-vim-coloring.html'>article-vim-coloring</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-web-framework-for-c-programming-language.html'>article-web-framework-for-c-programming-language</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-what-is-golf.html'>article-what-is-golf</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-what-is-web-service.html'>article-what-is-web-service</a> &nbsp; <br/>
+<span style="font-weight:bold;">See all</span> <br/>
+<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
+<!--ENDVDOC90-->
+<br/><div style='width:100%;clear:both;'>
+<hr/>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://golf-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+</div><br/></body></html>
+
+

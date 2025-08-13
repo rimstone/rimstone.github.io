@@ -12,7 +12,9 @@
 
 
 body, html {
-    /*font-family: Helvetica, Arial, sans-serif;*/
+    font-family: monospace,Helvetica, Arial, sans-serif;
+    line-height: 150%;
+    font-size:15px;
 }
 
 body {
@@ -21,10 +23,9 @@ body {
 }
     
 .ncode {
-    line-height:20px;
     letter-spacing: 0px;
-    font-size:14px;
     font-family: monospace;
+    font-size:83%;
     display:inline-block;
     max-width:99%;
     min-width:90%;
@@ -40,10 +41,9 @@ body {
 }
 
 .shcode {
-    line-height:23px;
     letter-spacing: 0px;
-    font-size:14px;
     font-family: monospace;
+    font-size:83%;
     display:inline-block;
     max-width:99%;
     min-width:90%;
@@ -59,10 +59,9 @@ body {
 }
 
 .sqlcode {
-    line-height:23px;
     letter-spacing: 0px;
-    font-size:14px;
     font-family: monospace;
+    font-size:83%;
     display:inline-block;
     max-width:99%;
     min-width:90%;
@@ -78,10 +77,9 @@ body {
 }
 
 .htmlcode {
-    line-height:23px;
     letter-spacing: 0px;
-    font-size:14px;
     font-family: monospace;
+    font-size:83%;
     display:inline-block;
     max-width:99%;
     min-width:90%;
@@ -97,10 +95,9 @@ body {
 }
 
 .code {
-    line-height:23px;
     letter-spacing: 0px;
-    font-size:14px;
     font-family: monospace;
+    font-size:83%;
     display:inline-block;
     max-width:99%;
     min-width:90%;
@@ -156,8 +153,6 @@ a {
 body {
     padding-left:2vw;
     padding-right:2vw;
-    font-size:14px;
-    line-height:22px;
     letter-spacing: 1px;
 }
 }
@@ -205,7 +200,8 @@ ul {
 
 </head>
 <body>
-
+<div id="google_translate_element"></div>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
 function gg_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
@@ -213,6 +209,9 @@ function gg_copy(gt, eid, gc) {
   document.execCommand("copy");
   gc.style.visibility="visible"
   setTimeout(()=>{ gc.style.visibility="hidden"; }, 1000);
+}
+function googleTranslateElementInit() {
+   new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
 }
 
 </script>
@@ -224,16 +223,16 @@ function gg_copy(gt, eid, gc) {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Number string</div><hr/><span style="font-weight:bold;">Purpose</span>: Convert number to string.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Number string</div><hr/><span style="font-weight:bold;">Purpose</span>: Convert number to string.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_739'>
+<pre id='code_691' class=notranslate>
 <span class="Statement"> number-string</span> &lt;number&gt; [<span class="Type"> to</span> &lt;string&gt; ] \
      [<span class="Identifier"> base</span> &lt;base&gt; ] \
      [<span class="Type"> status</span> &lt;status&gt; ]</pre>
-<span id=golf_copied_739 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_739' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_739, code_739, golf_copied_739)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_691 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_691' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_691, code_691, golf_copied_691)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 &lt;number&gt; is converted to &lt;string&gt; in "to" clause, using &lt;base&gt; in "base" clause, where &lt;base&gt; is by default 10. &lt;base&gt; can be between 2 and 36, inclusive. &lt;number&gt; can be positive or negative (i.e. signed) and can be of any integer type up to 64-bit (char, int, long, long long etc.). &nbsp;If "to" clause is omitted, then &lt;number&gt; is printed out.<br/>
 <br/>
@@ -241,44 +240,68 @@ Note that any letters in &lt;string&gt; (depending on the &lt;base&gt;) are alwa
 <br/>
 If there is an error, such as if &lt;base&gt; is incorrect, then &lt;status&gt; number (in "status" clause) is GG_ERR_FAILED, otherwise it's GG_OKAY.<br/>
 <br/>
-Use of number-string (and <a href='https://golf-lang.com/print-out.html'>print-out</a> which is based on it) for converting and outputting numbers is high-performance and recommended if your application needs to do that often. If number-string prints out a number (i.e. "to" clause is omitted), and this is within <a href='https://golf-lang.com/write-string.html'>write-string</a>, then &lt;number&gt; is output into the buffer that builds a new string.<br/>
+If number-string prints out a number (i.e. "to" clause is omitted), and this is within <a href='https://golf-lang.com/write-string.html'>write-string</a>, then &lt;number&gt; is output into the buffer that builds a new string.<br/>
+<div class="vsub"><a id="Shortcut"></a>Shortcut</div>
+For convenience, you can use a shortcut for converting a string to a number, by prepending a "$" sign to the variable name, for example:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_692' class=notranslate>
+<span class="Statement"> set-number</span> n = -<span class="Constant">10</span>
+<span class="Statement"> set-string</span> s = <span class="Constant">&quot;This is number &quot;</span> + $n</pre>
+<span id=golf_copied_692 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_692' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_692, code_692, golf_copied_692)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+The above is the same as:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_693' class=notranslate>
+<span class="Statement"> set-number</span> n = -<span class="Constant">10</span>
+<span class="Statement"> number-string</span> n<span class="Type"> to</span> sval
+<span class="Statement"> set-string</span> s = <span class="Constant">&quot;This is number &quot;</span> + sval</pre>
+<span id=golf_copied_693 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_693' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_693, code_693, golf_copied_693)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Effectively, $ in front of a number variable is the same as number-string that converts it to a string with the base of 10. If a string cannot be converted to a number, your program will error out. To check values with a status, or to use different bases, use number-string.<br/>
+<br/>
+You can use $ for an expression, in which case the expression must be within parenthesis:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_694' class=notranslate>
+<span class="Statement"> set-number</span> n1 = -<span class="Constant">10</span>
+<span class="Statement"> set-number</span> n2 = <span class="Constant">15</span>
+<span class="Statement"> set-string</span> s = <span class="Constant">&quot;This is number &quot;</span> + $(n1+n2)</pre>
+<span id=golf_copied_694 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_694' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_694, code_694, golf_copied_694)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+In this case number "s" will have value of "This is number 5", because numbers -10 and 15 are added to produce 5, which is then converted to a string and finally added to the first string.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 The following will allocate memory for string "x" to be "801":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_740'>
+<pre id='code_695' class=notranslate>
 <span class="Statement"> set-number</span> x = <span class="Constant">801</span>
 <span class="Statement"> number-string</span> x<span class="Type"> to</span> res</pre>
-<span id=golf_copied_740 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_740' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_740, code_740, golf_copied_740)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_695 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_695' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_695, code_695, golf_copied_695)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The following will store "-238f" to string "res":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_741'>
+<pre id='code_696' class=notranslate>
 <span class="Statement"> set-number</span> x = -<span class="Constant">9103</span>
 <span class="Statement"> number-string</span> x<span class="Type"> to</span> res<span class="Identifier"> base</span> <span class="Constant">16</span></pre>
-<span id=golf_copied_741 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_741' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_741, code_741, golf_copied_741)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_696 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_696' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_696, code_696, golf_copied_696)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 To print out a number -131:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_742'>
+<pre id='code_697' class=notranslate>
 <span class="Statement"> set-number</span> x = -<span class="Constant">131</span>
 <span class="Statement"> number-string</span> x</pre>
-<span id=golf_copied_742 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_742' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_742, code_742, golf_copied_742)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_697 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_697' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_697, code_697, golf_copied_697)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-<div class="vsub"><a id="See also"></a>See also</div>
- <a name='Numbers'></a><span style="font-weight:bold;">Numbers</span><br/>
-<a href='https://golf-lang.com/abs-number.html'>abs-number</a> &nbsp;<br/>
-<a href='https://golf-lang.com/number-expressions.html'>number-expressions</a> &nbsp;<br/>
-<a href='https://golf-lang.com/number-string.html'>number-string</a> &nbsp;<br/>
-<a href='https://golf-lang.com/set-number.html'>set-number</a> &nbsp;<br/>
-<a href='https://golf-lang.com/string-number.html'>string-number</a> &nbsp; <br/>
-<span style="font-weight:bold;">See all</span> <br/>
-<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>

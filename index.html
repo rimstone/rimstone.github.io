@@ -1,360 +1,362 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<!--__GOLF_REDIRECT__-->
-<title>Golf official web site</title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-<meta name="HandheldFriendly" content="True"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="canonical" href="https://golf-lang.com/index.html" />
-<style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Golf Programming Language!</title>
+    <style>
+        body, html {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: clip; /* stop issues with full width*/
+        }
+
+        /*The following is for code snippets that are highlighted by 2html vim*/
+        pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
+        .Identifier { color: #008b8b; }
+        .Statement { color: #af5f00; }
+        .PreProc { color: #5fd7ff; }
+        .Type { color: #005f00; }
+        .Comment { color: blue ; }
+        .Constant { color: #ff00ff; }
+        /*end of highlighted snippets*/
+
+        .sect {
+            color: white;
+            font-size: 2em;
+            padding: 20px; 
+            width: 100%; 
+            min-height: 200px; 
+            display: flex; /* content alignment within sections */
+            justify-content: center; /* center horizontally within the section */
+            align-items: center; /* center vertically within the section */
+            box-sizing: border-box; /* include padding and border in width and height */
+            position: relative; /* needed fo absolute positioning of children */
+            flex-direction: column; /* default to column for when there's stacked content, like heading and what's below */
+        }
+
+        .sec-one {
+            background-color: #3f95ce;
+            flex-direction: row; /* content is in a row, like heading + other stuff */
+            justify-content: flex-start; /* align to the left (start) */
+            padding-left: 40px; /* image */
+        }
+
+        .sec-two {
+            background-color: #1ab35b;
+        }
+
+        .sec-three {
+            background-color: #da4d3e;
+        }
+
+        .sec-four {
+            background-color: #eb950d;
+        }
+
+        .sec-five {
+            background-color: #6e5487;
+            padding-left: 15px; 
+        }
+
+        .box-container {
+            width: 100%; 
+            margin-top: 20px; /* space above squares */
+            display: flex; /* for squares next to each other */
+            justify-content: space-around; /* equal space around them */
+            align-items: flex-start; /* align to the top */
+        }
+
+        .square {
+            min-height: 150px; /* minimum height for squares */
+            padding: 20px;
+            width: 45%; /* approx half, we need space for gap */
+            background-color: rgba(255, 255, 255, 0.2); /* transparent white just a bit */
+            text-align: center;
+            border-radius: 10px;
+            font-size: 0.7em; /* text within squares */
+            color: #333; /* darker text */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            box-sizing: border-box; /* padding included in width */
+            display: flex; /* within squares uses flex for centering */
+            flex-direction: column; /* text within square is stacked */
+            justify-content: center;
+            align-items: center;
+        }
+        .square_menu {
+            padding: 0px;
+            width: 45%; /* approx half, we need space for gap */
+            text-align: center;
+            display: flex; /* within squares uses flex for centering */
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; /* text within square is stacked */
+        }
+
+        .square p {
+            margin: 0; /* no default margin */
+        }
 
 
-body, html {
-    /*font-family: Helvetica, Arial, sans-serif;*/
-}
+        /* within the single-box section */
+        .one-big-sect {
+            width: 80%;
+            max-width: 1000px;
+            text-align: center;
+            margin-top: 20px; /* Space from heading */
+            font-size: 0.7em;
+            color: white;
+        }
 
-body {
-    padding-left:1vw;
-    padding-right:1vw;
-}
-    
-.ncode {
-    line-height:20px;
-    letter-spacing: 0px;
-    font-size:14px;
-    font-family: monospace;
-    display:inline-block;
-    max-width:99%;
-    min-width:90%;
-    margin:0;
-    padding:0;
-    padding-left:5px;
-    padding-top:3px;
-    padding-bottom:3px;
-    margin-bottom:15px;
-    border: 2px solid #d6d6d6;
-    background-color:#f5f7f4;
-    white-space:nowrap;
-}
-
-.shcode {
-    line-height:23px;
-    letter-spacing: 0px;
-    font-size:14px;
-    font-family: monospace;
-    display:inline-block;
-    max-width:99%;
-    min-width:90%;
-    margin:0;
-    padding:0;
-    padding-left:5px;
-    padding-top:3px;
-    padding-bottom:3px;
-    margin-bottom:15px;
-    border: 2px solid #d6d6d6;
-    background-color:#f5f7f4;
-    white-space:nowrap;
-}
-
-.sqlcode {
-    line-height:23px;
-    letter-spacing: 0px;
-    font-size:14px;
-    font-family: monospace;
-    display:inline-block;
-    max-width:99%;
-    min-width:90%;
-    margin:0;
-    padding:0;
-    padding-left:5px;
-    padding-top:3px;
-    padding-bottom:3px;
-    margin-bottom:15px;
-    border: 2px solid #d6d6d6;
-    background-color:#f5f7f4;
-    white-space:nowrap;
-}
-
-.htmlcode {
-    line-height:23px;
-    letter-spacing: 0px;
-    font-size:14px;
-    font-family: monospace;
-    display:inline-block;
-    max-width:99%;
-    min-width:90%;
-    margin:0;
-    padding:0;
-    padding-left:5px;
-    padding-top:3px;
-    padding-bottom:3px;
-    margin-bottom:15px;
-    border: 2px solid #d6d6d6;
-    background-color:#f5f7f4;
-    white-space:nowrap;
-}
-
-.code {
-    line-height:23px;
-    letter-spacing: 0px;
-    font-size:14px;
-    font-family: monospace;
-    display:inline-block;
-    max-width:99%;
-    min-width:90%;
-    margin:0;
-    padding:0;
-    padding-left:5px;
-    padding-top:3px;
-    padding-bottom:3px;
-    margin-bottom:15px;
-    border: 2px solid #d6d6d6;
-    background-color:#f5f7f4;
-    white-space:nowrap;
-}
-
-/*Just like h1 but for pdf conversion it would be indented this way it's not*/
-.vhub {
-    display: block;
-   font-size: 1.6em;
-   margin-top: 0.63em;
-   margin-bottom: 0.63em;
-   margin-left: 0;
-   margin-right: 0;
-   font-weight: bold;
-}
-
-/*Just like h2 but for pdf conversion it would be indented this way it's not*/
-.vsub {
-    display: block;
-   font-size: 1.25em;
-   margin-top: 0.53em;
-   margin-bottom: 0.53em;
-   margin-left: 0;
-   margin-right: 0;
-   font-weight: bold;
-}
-
-ul {
-  margin-left: 0.75vw;
-  padding-left: 0;
-}
-li {
-  margin-left: 0.75vw;
-  padding-left: 0;
-}
-
-/* this must be last, as it overrides previous settings, for mobile */
-@media (hover: none) {
-a {
-   display: inline-block;
-   padding-top: 3px;
-   padding-bottom: 2px;
-}
-body {
-    padding-left:2vw;
-    padding-right:2vw;
-    font-size:14px;
-    line-height:22px;
-    letter-spacing: 1px;
-}
-}
-
-/*The following is for code snippets that are highlighted by 2html vim*/
-pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.Identifier { color: #008b8b; }
-.Statement { color: #af5f00; }
-.PreProc { color: #5fd7ff; }
-.Type { color: #005f00; }
-.Comment { color: blue ; }
-.Constant { color: #ff00ff; }
-/*end of highlighted snippets*/
-
-a {
-    text-decoration:none;
-    padding-bottom: 0px; 
-    color:inherit;
-    border-bottom: 2px solid #6cb8f0;
-}
-a:hover {
-    text-decoration: none;
-    color:black;
-    border-bottom: 1px solid red;
-}
-/*do not underline links nor should they be active*/
-pre a {
-    text-decoration:none;
-    color:black;
-    border-bottom: none;
-    pointer-events: none;
-    cursor: default;
-}
+        .one-big-sect p {
+            line-height: 1.6;
+            margin-top: 15px;
+        }
 
 
-.golfSnippet {display:none;}
+        /* for small screens */
+        @media (max-width: 768px) {
+            .box-container {
+                width: 90%;
+                align-items: center; /* centered and vertical (see below) */
+                flex-direction: column; /* squares now go vertically to be seen */
+            }
 
-ul {
-  list-style-type:square;
-  list-style-position: outside;
-}
+            .square:last-child {
+                margin-bottom: 0; /* no margin after the last square when stacked */
+            }
 
-</style>
+            .square {
+                margin-bottom: 20px; /* space between squares when stacked */
+                width: 90%; /* squares when stacked are almost full width */
+            }
+
+            .one-big-sect {
+                width: 90%;
+            }
+
+            .sec-one {
+                padding-left: 90px; /* padding for smaller img on mobile */
+            }
+            .square_menu {
+                padding: 20px;
+            }
+        }
 
 
+        /* Buttons */
+        .btn-cont {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            font-weight: bold;
+            font-size: 26px;
+            text-decoration: none;
+            padding: 11px 24px;
+            border-radius: 6px;
+            transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        /* Filled button */
+        .first-fill {
+            background-color: gray;
+            color: white;
+            border: 2px solid #007bff;
+        }
+
+        .first-fill:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        /* outline for a button */
+        .basic-outline {
+            color: #007bff;
+            background-color: transparent;
+            border: 2px solid #007bff;
+        }
+
+        .basic-outline:hover {
+            color: white;
+            background-color: #007bff;
+        }
+
+    </style>
 </head>
 <body>
-
-<script>
-function gg_copy(gt, eid, gc) {
-  gt.textContent = eid.textContent;
-  gt.select();
-  document.execCommand("copy");
-  gc.style.visibility="visible"
-  setTimeout(()=>{ gc.style.visibility="hidden"; }, 1000);
-}
-
-</script>
-
-<!--GOLFMENU13-->
-
-<!--GOLFENDMENU13-->
-
+    <div id="google_translate_element"></div>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script>
+        function gg_copy(gt, eid, gc) {
+            gt.textContent = eid.textContent;
+            gt.select();
+            document.execCommand("copy");
+            gc.style.visibility="visible"
+            setTimeout(()=>{ gc.style.visibility="hidden"; }, 1000);
+        }
+        function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+    }
+    </script>
 
 
-<!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div>Golf is a programming language and &nbsp;application server for building web services and back-end solutions on Linux. Golf is easy to develop with, memory-safe and high-performance. Read <a href='https://golf-lang.com/about-golf.html'>About Golf</a>. Visit <a href='https://golf-lang.com/documentation.html'>Documentation</a>. Try <a href='https://golf-lang.com/123-hello-world.html'>Hello World</a>. Visit <a href='https://golf-lang.blogspot.com/'>Golf Blog</a> for useful articles and changelog. Licensed under <a href='https://golf-lang.com/license.html'>Apache 2</a> Free Open Source License. Source code is at <a href='https://github.com/golf-lang/golf'>https://github.com/golf-lang/golf</a> (with mirrors on <a href='https://gitlab.com/golf-lang/golf/'>Gitlab</a>, <a href='https://sourceforge.net/p/golf/code'>SourceForge</a>, <a href='https://aur.archlinux.org/packages/golf'>AUR</a> and <a href='https://salsa.debian.org/golf/golf'>Debian Salsa</a>). Installation packages and source installs below are for both x86_64 and aarch64.<br/>
-<div class="vsub"><a id="Install Golf package (x86_64 and aarch64)"></a>Install Golf package (x86_64 and aarch64)</div>
-<a href='https://golf-lang.com/install-ubuntu.html'>Ubuntu</a><br/>
-<a href='https://golf-lang.com/install-debian.html'>Debian</a><br/>
-<a href='https://golf-lang.com/install-fedora-redhat-rocky-alma-centos-amazon-mageia.html'>Fedora, Redhat, Rocky, Alma, Centos, Amazon, Mageia</a><br/>
-<a href='https://golf-lang.com/install-opensuse.html'>OpenSUSE</a><br/>
-<a href='https://golf-lang.com/install-arch-manjaro.html'>Arch, Manjaro</a><br/>
-<a href='https://golf-lang.com/install-raspbian.html'>Raspbian</a><br/>
-<div class="vsub"><a id="Install Golf from source code"></a>Install Golf from source code</div>
-<a href='https://golf-lang.com/install-from-source-debian-ubuntu-raspbian.html'>Debian, Ubuntu, Raspbian</a><br/>
-<a href='https://golf-lang.com/install-from-source-fedora-redhat-rocky-alma-centos-amazon-mageia.html'>Fedora, Redhat, Rocky, Alma, Centos, Amazon, Mageia</a><br/>
-<a href='https://golf-lang.com/install-from-source-opensuse.html'>OpenSUSE</a><br/>
-<a href='https://golf-lang.com/install-from-source-arch-manjaro.html'>Arch, Manjaro</a><br/>
-<div class="vsub"><a id="Current version"></a>Current version</div>
-Current version is 601.4.58. This release passed 2563 automated functional tests.<br/>
-<div class="vsub"><a id="Example"></a>Example</div>
-Example of Golf code (from <a href='https://golf-lang.blogspot.com/2024/11/multi-tenant-saas-notes-web-application_43.html'>SaaS example</a>):<br/>
-<br/><div class='vimg'><img class='imgs' src='home-example.png' alt='Golf'></img>
-</div><br/>
-<div class="vsub"><a id="Articles"></a>Articles</div>
-<a href='https://golf-lang.blogspot.com/'>Blog</a> articles and examples:<br/>
-<ul><li>2025-06-10 <a href='https://golf-lang.blogspot.com/2025/06/arch-linux-build-from-golf-source.html'>Arch Linux and Ubuntu/Debian build from Golf source</a></li>
-<li>2025-06-04 <a href='https://golf-lang.blogspot.com/2025/06/major-new-release-of-golf-coming-soon.html'>Major new release of Golf coming soon</a></li>
-<li>2025-05-13 <a href='https://golf-lang.blogspot.com/2025/05/how-to-write-web-service-api-with-golf.html'>How to write Web Service API with Golf</a></li>
-<li>2025-05-08 <a href='https://golf-lang.blogspot.com/2025/05/random-numbers-in-golf.html'>Random numbers in Golf</a></li>
-<li>2025-05-03 <a href='https://golf-lang.blogspot.com/2025/05/working-with-debug-symbols-on-fedora-etc.html'>Working with debug symbols on Fedora etc.</a></li>
-<li>2025-05-03 <a href='https://golf-lang.blogspot.com/2025/05/how-to-install-debug-symbols-for-golf.html'>How to install debug symbols for Golf package on Debian/Ubuntu</a></li>
-<li>2025-05-03 <a href='https://golf-lang.blogspot.com/2025/05/use-case-for-dnf-distro-sync.html'>Use case for dnf distro-sync</a></li>
-<li>2025-04-25 <a href='https://golf-lang.blogspot.com/2025/04/cookies-in-golf-applications-plus.html'>Cookies in Golf applications, plus HAProxy!</a></li>
-<li>2025-04-19 <a href='https://golf-lang.blogspot.com/2025/04/example-of-auto-status-checking-with.html'>Example of auto status checking with Golf</a></li>
-<li>2025-04-14 <a href='https://golf-lang.blogspot.com/2025/04/new-status-safety-feature.html'>New status-safety feature</a></li>
-<li>2025-04-11 <a href='https://golf-lang.blogspot.com/2025/04/safety-improvement-for-application-logic.html'>New upcoming safety features</a></li>
-<li>2025-04-10 <a href='https://golf-lang.blogspot.com/2025/04/how-to-start-stop-or-restart-golf.html'>How to start, stop or restart Golf application server</a></li>
-<li>2025-04-05 <a href='https://golf-lang.blogspot.com/2025/04/how-to-build-opensuse-zypper-package.html'>How to build OpenSUSE zypper package for Golf</a></li>
-<li>2025-04-02 <a href='https://golf-lang.blogspot.com/2025/04/fragmentation-of-linux-and-impact-on.html'>Fragmentation of Linux and impact on packaging</a></li>
-<li>2025-03-29 <a href='https://golf-lang.blogspot.com/2025/03/fifo-in-golf.html'>FIFO in Golf</a></li>
-<li>2025-03-23 <a href='https://golf-lang.blogspot.com/2025/03/how-to-debug-golf-programs-with-gdb.html'>How to debug Golf programs with gdb</a></li>
-<li>2025-03-19 <a href='https://golf-lang.blogspot.com/2025/03/maximum-file-size-uploaded-to-golf.html'>Maximum file size uploaded to Golf server</a></li>
-<li>2025-03-10 <a href='https://golf-lang.blogspot.com/2025/03/how-to-know-golf-version.html'>How to know Golf version</a></li>
-<li>2025-03-01 <a href='https://golf-lang.blogspot.com/2025/03/web-framework-for-c-programming-language.html'>Web framework for C programming language</a></li>
-<li>2025-02-24 <a href='https://golf-lang.blogspot.com/2025/02/how-to-create-installation-package-for.html'>Make RPM package on Fedora and RedHat</a></li>
-<li>2025-02-23 <a href='https://golf-lang.blogspot.com/2025/02/create-deb-installation-package-for-golf.html'>DEB package on Ubuntu and Debian</a></li>
-<li>2025-02-21 <a href='https://golf-lang.blogspot.com/2025/02/34000-server-requests-per-second-to.html'>34000 requests per second on a modest laptop</a></li>
-<li>2025-02-12 <a href='https://golf-lang.blogspot.com/2025/02/use-c-language-api-to-talk-to-golf.html'>Use C language API to talk to Golf Server</a></li>
-<li>2025-02-04 <a href='https://golf-lang.blogspot.com/2025/02/golfs-package-page-on-aur-for-arch-linux.html'>Golf package page on AUR for Arch Linux</a></li>
-<li>2025-02-02 <a href='https://golf-lang.blogspot.com/2025/02/ubuntu-apt-package-available-for-golf.html'>Ubuntu apt package available for Golf</a></li>
-<li>2025-01-30 <a href='https://golf-lang.blogspot.com/2025/01/how-to-send-email-with-golf.html'>How to send email with Golf</a></li>
-<li>2025-01-28 <a href='https://golf-lang.blogspot.com/2025/01/fast-json-parser-with-little-coding.html'>Fast JSON parser with little coding</a></li>
-<li>2025-01-03 <a href='https://golf-lang.blogspot.com/2025/01/what-is-application-server_72.html'>What is application server?</a></li>
-<li>2024-12-26 <a href='https://golf-lang.blogspot.com/2024/12/encryption-ciphers-digests-salt-iv_84.html'>Encryption: ciphers, digests, salt, IV</a></li>
-<li>2024-12-15 <a href='https://golf-lang.blogspot.com/2024/12/distributed-computing-made-easy_31.html'>Distributed computing made easy</a></li>
-<li>2024-12-12 <a href='https://golf-lang.blogspot.com/2024/12/how-is-memory-organized-in-golf_12.html'>How is memory organized in Golf</a></li>
-<li>2024-12-08 <a href='https://golf-lang.blogspot.com/2024/12/web-file-manager-in-less-than-100-lines_35.html'>Web file manager in less than 100 lines of code</a></li>
-<li>2024-12-02 <a href='https://golf-lang.blogspot.com/2024/12/passing-parameters-between-local_24.html'>Passing parameters between local request handlers</a></li>
-<li>2024-11-22 <a href='https://golf-lang.blogspot.com/2024/11/how-to-create-golf-application_22.html'>How to create Golf application</a></li>
-<li>2024-11-21 <a href='https://golf-lang.blogspot.com/2024/11/getting-help-for-golf-with-man-pages_21.html'>Getting help for Golf with man pages</a></li>
-<li>2024-11-12 <a href='https://golf-lang.blogspot.com/2024/11/multi-tenant-saas-notes-web-application_43.html'>Multi-tenant SaaS (Notes web application) in 200 lines of code</a></li>
-<li>2024-10-28 <a href='https://golf-lang.blogspot.com/2024/10/web-services-security_3.html'>Web Services Security</a></li>
-<li>2024-10-21 <a href='https://golf-lang.blogspot.com/2024/10/web-services-with-mariadb_21.html'>Web services with MariaDB</a></li>
-<li>2024-10-17 <a href='https://golf-lang.blogspot.com/2024/10/web-service-calling-web-service_3.html'>Web service calling web service</a></li>
-<li>2024-10-13 <a href='https://golf-lang.blogspot.com/2024/10/what-is-web-service_49.html'>What is Web Service</a></li>
-<li>2024-10-11 <a href='https://golf-lang.blogspot.com/2024/10/cache-as-web-service_31.html'>Cache as a web service</a></li>
-<li>2024-10-09 <a href='https://golf-lang.blogspot.com/2024/10/cache-server-in-30-lines_9.html'>Cache server in 30 lines </a></li>
-<li>2024-10-06 <a href='https://golf-lang.blogspot.com/2024/10/memory-safety-cost-in-performance_43.html'>Memory safety: the cost in performance</a></li>
-<li>2024-09-29 <a href='https://golf-lang.blogspot.com/2024/09/sqlite-with-golf_29.html'>SQLite with Golf</a></li>
-<li>2024-09-29 <a href='https://golf-lang.blogspot.com/2024/09/copy-code-icon-added_61.html'>Copy-code icon added</a></li>
-<li>2024-09-26 <a href='https://golf-lang.blogspot.com/2024/09/overview-of-golf_26.html'>Overview of Golf</a></li>
-<li>2024-09-21 <a href='https://golf-lang.blogspot.com/2024/09/web-service-hello-world_10.html'>Web service Hello World</a></li>
-<li>2024-09-21 <a href='https://golf-lang.blogspot.com/2024/09/hello-world-as-service_60.html'>Hello World as a Service</a></li>
-<li>2024-09-19 <a href='https://golf-lang.blogspot.com/2024/09/using-vim-color-schemes-with-golf_19.html'>Using Vim color schemes with Golf</a></li>
-<li>2024-09-17 <a href='https://golf-lang.blogspot.com/2024/09/hello-world-in-golf_17.html'>Hello World in Golf</a></li>
-<li>2024-09-13 <a href='https://golf-lang.blogspot.com/2024/09/introduction-to-golf_13.html'>Introduction to Golf</a></li>
-<li>2024-09-12 <a href='https://golf-lang.blogspot.com/2024/09/initial-golf-release_12.html'>Initial Golf release</a></li></ul>
-<div class="vsub"><a id="Releases"></a>Releases</div>
-<ul><li>2025-06-10 <a href='https://golf-lang.blogspot.com/2025/06/golf-601451-released.html'>Golf 601.4.58 released</a></li>
-<li>2025-06-07 <a href='https://golf-lang.blogspot.com/2025/06/golf-601439.html'>Golf 601.4.41 released</a></li>
-<li>2025-06-07 <a href='https://golf-lang.blogspot.com/2025/06/golf-601437.html'>Golf 601.4.37 released</a></li>
-<li>2025-06-05 <a href='https://golf-lang.blogspot.com/2025/06/golf-60140-released.html'>Golf 601.4.32 released</a></li>
-<li>2025-05-19 <a href='https://golf-lang.blogspot.com/2025/05/golf-600321-released.html'>Golf 600.3.25 released</a></li>
-<li>2025-05-17 <a href='https://golf-lang.blogspot.com/2025/05/golf-5311-released.html'>Golf 600.3.13 released</a></li>
-<li>2025-05-14 <a href='https://golf-lang.blogspot.com/2025/05/golf-532-released.html'>Golf 534 released</a></li>
-<li>2025-05-06 <a href='https://golf-lang.blogspot.com/2025/05/golf-520-released.html'>Golf 520 released</a></li>
-<li>2025-05-02 <a href='https://golf-lang.blogspot.com/2025/05/golf-511-released.html'>Golf 517 released</a></li>
-<li>2025-04-29 <a href='https://golf-lang.blogspot.com/2025/04/golf-492-released.html'>Golf 501 released</a></li>
-<li>2025-04-24 <a href='https://golf-lang.blogspot.com/2025/04/golf-467-released.html'>Golf 488 released</a></li>
-<li>2025-04-23 <a href='https://golf-lang.blogspot.com/2025/04/golf-462-released.html'>Golf 465 released</a></li>
-<li>2025-04-20 <a href='https://golf-lang.blogspot.com/2025/04/golf-426-released.html'>Golf 452 released</a></li>
-<li>2025-04-18 <a href='https://golf-lang.blogspot.com/2025/04/golf-423-released.html'>Golf 423 released</a></li>
-<li>2025-04-17 <a href='https://golf-lang.blogspot.com/2025/04/golf-419-released.html'>Golf 419 released</a></li>
-<li>2025-04-14 <a href='https://golf-lang.blogspot.com/2025/04/golf-397-released.html'>Golf 397 released</a></li>
-<li>2025-03-31 <a href='https://golf-lang.blogspot.com/2025/03/golf-338-released.html'>Golf 373 released</a></li>
-<li>2025-03-16 <a href='https://golf-lang.blogspot.com/2025/03/golf-324-released.html'>Golf 324 released</a></li>
-<li>2025-03-11 <a href='https://golf-lang.blogspot.com/2025/03/golf-297-released.html'>Golf 297 released</a></li>
-<li>2025-03-11 <a href='https://golf-lang.blogspot.com/2025/03/golf-295-released.html'>Golf 295 released</a></li>
-<li>2025-03-10 <a href='https://golf-lang.blogspot.com/2025/03/golf-288-released.html'>Golf 288 released</a></li>
-<li>2025-03-02 <a href='https://golf-lang.blogspot.com/2025/03/golf-273-released.html'>Golf 273 released</a></li>
-<li>2025-02-23 <a href='https://golf-lang.blogspot.com/2025/02/golf-261-released.html'>Golf 261 released</a></li>
-<li>2025-02-19 <a href='https://golf-lang.blogspot.com/2025/02/golf-253-released.html'>Golf 253 released</a></li>
-<li>2025-02-16 <a href='https://golf-lang.blogspot.com/2025/02/golf-247-released.html'>Golf 247 released</a></li>
-<li>2025-02-13 <a href='https://golf-lang.blogspot.com/2025/02/golf-244-released.html'>Golf 244 released</a></li>
-<li>2025-02-11 <a href='https://golf-lang.blogspot.com/2025/02/golf-241-released.html'>Golf 241 released</a></li>
-<li>2025-02-08 <a href='https://golf-lang.blogspot.com/2025/02/golf-231-released.html'>Golf 231 released</a></li>
-<li>2025-02-02 <a href='https://golf-lang.blogspot.com/2025/02/golf-210-released.html'>Golf 210 released</a></li>
-<li>2025-01-27 <a href='https://golf-lang.blogspot.com/2025/01/golf-191-released.html'>Golf 191 released</a></li>
-<li>2025-01-26 <a href='https://golf-lang.blogspot.com/2025/01/golf-184-released.html'>Golf 184 released</a></li>
-<li>2025-01-18 <a href='https://golf-lang.blogspot.com/2025/01/golf-168-released.html'>Golf 171 released</a></li>
-<li>2025-01-14 <a href='https://golf-lang.blogspot.com/2025/01/golf-155-released.html'>Golf 155 released</a></li>
-<li>2024-12-25 <a href='https://golf-lang.blogspot.com/2024/12/golf-136-released_25.html'>Golf 136 released</a></li>
-<li>2024-12-24 <a href='https://golf-lang.blogspot.com/2024/12/golf-132-released_24.html'>Golf 132 released</a></li>
-<li>2024-12-08 <a href='https://golf-lang.blogspot.com/2024/12/golf-124-released_8.html'>Golf 124 released</a></li>
-<li>2024-12-04 <a href='https://golf-lang.blogspot.com/2024/12/golf-121-released_4.html'>Golf 121 released</a></li>
-<li>2024-11-29 <a href='https://golf-lang.blogspot.com/2024/11/golf-117-released_29.html'>Golf 117 released</a></li>
-<li>2024-11-26 <a href='https://golf-lang.blogspot.com/2024/11/golf-114-released_26.html'>Golf 114 released</a></li>
-<li>2024-11-22 <a href='https://golf-lang.blogspot.com/2024/11/golf-109-released_22.html'>Golf 109 released</a></li>
-<li>2024-11-10 <a href='https://golf-lang.blogspot.com/2024/11/golf-91-released_10.html'>Golf 91 released</a></li>
-<li>2024-11-05 <a href='https://golf-lang.blogspot.com/2024/11/golf-87-released_5.html'>Golf 87 released</a></li>
-<li>2024-10-28 <a href='https://golf-lang.blogspot.com/2024/10/golf-76-released_28.html'>Golf 76 released</a></li>
-<li>2024-10-23 <a href='https://golf-lang.blogspot.com/2024/10/golf-70-released_23.html'>Golf 70 released</a></li>
-<li>2024-10-19 <a href='https://golf-lang.blogspot.com/2024/10/golf-65-released_19.html'>Golf 65 released</a></li>
-<li>2024-10-14 <a href='https://golf-lang.blogspot.com/2024/10/golf-56-released_14.html'>Golf 56 released</a></li>
-<li>2024-10-08 <a href='https://golf-lang.blogspot.com/2024/10/golf-54-released_8.html'>Golf 54 released</a></li>
-<li>2024-10-01 <a href='https://golf-lang.blogspot.com/2024/10/golf-50-released_1.html'>Golf 50 released</a></li>
-<li>2024-09-27 <a href='https://golf-lang.blogspot.com/2024/09/golf-44-released_27.html'>Golf 44 released</a></li>
-<li>2024-09-24 <a href='https://golf-lang.blogspot.com/2024/09/golf-37-released_24.html'>Golf 37 released</a></li>
-<li>2024-09-20 <a href='https://golf-lang.blogspot.com/2024/09/golf-32-released_20.html'>Golf 32 released</a></li>
-<div class="vsub"><a id="Contact"></a>Contact</div>
-Contact email <a href='mailto:team@golf-lang.com'>team@golf-lang.com</a><br/>
-<!--ENDVDOC90-->
+    <sect class="sect sec-one"  style='padding-bottom:0px'>
+        <div class="box-container" >
+            <div >
+            <img src="golf-large.png" style='width:100%;height:auto;'>
+            </div>
+            <div style='padding-left:20px'>
+            <h1>Build applications and server software fast with confidence</h1>
+            </div>
+        </div>
+    </sect>
+
+    <sect class="sect sec-one" style='min-height:50px;'>
+        <div class="box-container">
+            <div class="square_menu">
+                <div class="btn-cont">
+                    <a href="/install-golf.html" class="btn first-fill">Install</a>
+                </div>
+            </div>
+            <div class="square_menu">
+                <div class="btn-cont">
+                    <a href="/documentation.html" class="btn first-fill">Docs</a>
+                </div>
+            </div>
+            <div class="square_menu">
+                <div class="btn-cont">
+                    <a href="/examples.html" class="btn first-fill">Examples</a>
+                </div>
+            </div>
+            <div class="square_menu">
+                <div class="btn-cont">
+                    <a href="/blog.html" class="btn first-fill">Blog</a>
+                </div>
+            </div>
+            <div class="square_menu">
+                <div class="btn-cont">
+                    <a href="/about-golf.html" class="btn first-fill">About</a>
+                </div>
+            </div>
+         </div>
+    </div>
+    </sect>
+
+    <sect class="sect sec-two">
+        <h1>Never skip on important stuff</h1>
+        <div class="box-container">
+            <div class="square left-square">
+                <h2>Safe</h2>
+                <p>Golf is a memory safe language with automatic memory release so it never leaks, and with a smart status checking of your code.</p>
+            </div>
+            <div class="square right-square">
+                <h2>Standards-driven</h2>
+                <p>Built with industry-standard Free Open Source libraries for stability, performance and compliance.</p>
+            </div>
+        </div>
+    </sect>
+
+    <sect class="sect sec-three">
+        <h1>Everything you need</h1>
+        <div class="box-container">
+            <div class="square left-square">
+                <h2>Every CPU cycle counts</h2>
+                <p>Performance is important. That's why Golf makes native executables from smartly generated C code, optimized for <a href='https://www.sciencedirect.com/science/article/pii/S0167642321000022'>speed and efficiency</a> </p>
+            </div>
+            <div class="square right-square">
+                <h2>Versatile and powerful</h2>
+                <p>Build any application on Linux, command-line programs and application-servers alike, easily adding powerful features such as database access, JSON, Regex, XML, encryption and more.</p>
+            </div>
+        </div>
+    </sect>
+
+    <sect class="sect sec-four">
+        <h1>Well rounded</h1>
+        <div class="box-container">
+            <div class="square left-square">
+                <h2>Freedom</h2>
+                <p>Licensed under <a href='/license.html'>Apache 2</a> Free Open Source License. Source code always at your fingertips at <a href='https://github.com/golf-lang/golf'>https://github.com/golf-lang/golf</a> (mirrors at <a href="https://gitlab.com/golf-lang/golf/">Gitlab</a>, <a href="https://sourceforge.net/p/golf/code">SourceForge</a>, <a href="https://aur.archlinux.org/packages/golf">AUR</a> and <a href="https://salsa.debian.org/golf/golf">Debian Salsa</a>)</p>
+            </div>
+            <div class="square right-square">
+                <h2>Well documented with examples</h2>
+                <p>Visit <a href='/documentation.html'>Documentation</a> for a clear and concise manual, and examples of use. Check out <a href='/examples.html'>examples</a> too.</p>
+            </div>
+        </div>
+    </sect>
+
+    <sect class="sect sec-two">
+        <h1>Easy to install</h1>
+        <div class="box-container">
+            <div class="square left-square">
+                <h2>No sudo required</h2>
+                <p>Golf doesn't need sudo permissions because it installs in a home folder. <a href="/golf-install.html">Install Golf</a> now.</p>
+            </div>
+            <div class="square right-square">
+                <h2>No binaries</h2>
+                <p>Golf installs from source only for safety and performance, so you don't need to download any binaries. Not to worry, the install process is fully automated. <a href="/golf-install.html">Install Golf</a> now.</p>
+            </div>
+        </div>
+    </sect>
+
+    <sect class="sect sec-five">
+        <h1>Here's how easy Golf is</h1>
+        <div class="one-big-sect">
+        Example of Golf code (from <a href='https://golf-lang.blogspot.com/2024/11/multi-tenant-saas-notes-web-application_43.html'>SaaS example</a>):<br/>
+        <div class='code'  style='font-size:26px;position:relative;padding-right:16px;text-align:left;padding-left:2px;width:100%;margin-left:2px;background-color:white;color:black'>
+        <pre id='code_621'>
+<span class="Statement">begin-handler</span> /update-order
+<span class="Statement">    out-header</span><span class="Identifier"> use content-type</span> <span class="Constant">&quot;application/json&quot;</span>
+<span class="Statement">    get-param</span> order_id, item_id, quantity
+<span class="Statement">    set-number</span> arows
+<span class="Comment">// If quantity update is </span><span class="Constant">0</span><span class="Comment">, issue SQL to delete an item from order, otherwise update </span>
+<span class="Statement">    if-true</span> quantity<span class="Identifier"> equal</span> <span class="Constant">&quot;0&quot;</span>
+<span class="Statement">        run-query</span> @db =<span class="Constant">&quot;delete from orderItems where orderID='</span><span class="Special">%s</span><span class="Constant">' and itemID='</span><span class="Special">%s</span><span class="Constant">'&quot;</span> \
+<span class="Identifier">           :</span> order_id, item_id<span class="Identifier"> no-loop</span><span class="Type"> affected-rows</span> arows
+<span class="Statement">    else-if</span>
+<span class="Statement">        run-query</span> @db =<span class="Constant">&quot;update orderItems set quantity='</span><span class="Special">%s</span><span class="Constant">' where orderID='</span><span class="Special">%s</span><span class="Constant">' and itemID='</span><span class="Special">%s</span><span class="Constant">'&quot;</span> \
+<span class="Identifier">           :</span> quantity, order_id, item_id<span class="Identifier"> no-loop</span><span class="Type"> affected-rows</span> arows
+<span class="Statement">    end-if</span>
+<span class="Statement">    @</span>&quot;<span class="Statement">&lt;&lt;print-out</span> arows<span class="Statement">&gt;&gt;</span>&quot;
+<span class="Statement">end-handler</span></pre>
+<span id=golf_copied_621 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_621' style='position: absolute;left: -500%;'></textarea>
+<img src='/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_621, code_621, golf_copied_621)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div>
+        </div>
+    </sect>
+
+    <sect class="sect sec-four">
+        <h1>Quality matters</h1>
+        <div class="box-container">
+            <div class="square left-square">
+                <h2>Rigorous QA</h2>
+                <p>
+Current version is 3.0.0. This release passed 2902 functional tests.
+                Check out <a href='/blog.html'>blog</a> for new releases and other news, including new examples.
+                </p>
+            </div>
+            <div class="square right-square">
+                <h2>Good coverage</h2>
+                <p>Tested on major Linux distributions, such as Ubuntu, Debian, Redhat, Fedora, OpenSUSE and Arch.</p>
+            </div>
+        </div>
+    </sect>
+
+    <sect class="sect sec-four">
+        <div class="one-big-sect" style='width:100%; max-width:3000px;color:black;'>
 <br/><div style='width:100%;clear:both;'>
 <hr/>
-<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://golf-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
 </div><br/></body></html>
 
+
+        </div>
+    </sect>
+</body>
+</html>
 

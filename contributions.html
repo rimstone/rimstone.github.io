@@ -12,7 +12,9 @@
 
 
 body, html {
-    /*font-family: Helvetica, Arial, sans-serif;*/
+    font-family: monospace,Helvetica, Arial, sans-serif;
+    line-height: 150%;
+    font-size:15px;
 }
 
 body {
@@ -21,10 +23,9 @@ body {
 }
     
 .ncode {
-    line-height:20px;
     letter-spacing: 0px;
-    font-size:14px;
     font-family: monospace;
+    font-size:83%;
     display:inline-block;
     max-width:99%;
     min-width:90%;
@@ -40,10 +41,9 @@ body {
 }
 
 .shcode {
-    line-height:23px;
     letter-spacing: 0px;
-    font-size:14px;
     font-family: monospace;
+    font-size:83%;
     display:inline-block;
     max-width:99%;
     min-width:90%;
@@ -59,10 +59,9 @@ body {
 }
 
 .sqlcode {
-    line-height:23px;
     letter-spacing: 0px;
-    font-size:14px;
     font-family: monospace;
+    font-size:83%;
     display:inline-block;
     max-width:99%;
     min-width:90%;
@@ -78,10 +77,9 @@ body {
 }
 
 .htmlcode {
-    line-height:23px;
     letter-spacing: 0px;
-    font-size:14px;
     font-family: monospace;
+    font-size:83%;
     display:inline-block;
     max-width:99%;
     min-width:90%;
@@ -97,10 +95,9 @@ body {
 }
 
 .code {
-    line-height:23px;
     letter-spacing: 0px;
-    font-size:14px;
     font-family: monospace;
+    font-size:83%;
     display:inline-block;
     max-width:99%;
     min-width:90%;
@@ -156,8 +153,6 @@ a {
 body {
     padding-left:2vw;
     padding-right:2vw;
-    font-size:14px;
-    line-height:22px;
     letter-spacing: 1px;
 }
 }
@@ -205,7 +200,8 @@ ul {
 
 </head>
 <body>
-
+<div id="google_translate_element"></div>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
 function gg_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
@@ -213,6 +209,9 @@ function gg_copy(gt, eid, gc) {
   document.execCommand("copy");
   gc.style.visibility="visible"
   setTimeout(()=>{ gc.style.visibility="hidden"; }, 1000);
+}
+function googleTranslateElementInit() {
+   new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
 }
 
 </script>
@@ -224,15 +223,12 @@ function gg_copy(gt, eid, gc) {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Contributions</div><hr/><div class="vsub"><a id="Ways to contribute"></a>Ways to contribute</div>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Contributions</div><hr/><div class="vsub"><a id="Ways to contribute"></a>Ways to contribute</div>
 You can support Golf project by spreading the word about it, reporting bugs, documentation issues, and suggesting improvements and new features, which are welcome and appreciated. Please send email to <a href='mailto:gliim@gliim.dev'>gliim@gliim.dev</a> for questions, bug reports or feature requests.<br/>
 <div class="vsub"><a id="Code contributions"></a>Code contributions</div>
 Golf is <a href='https://opensource.com/resources/what-open-source'>Open Source</a>, but it is not open to code contributions. The decision to do so was made for the long term viability of the project in order to keep it focused and spend less time and energy on managing contributions, and more on bug fixes and features. This is true especially when the PR's author is no longer willing or able to help with maintenance. It is true that a project can ultimately benefit from opening to contributions. On the other hand, due to complexity and stress for the maintainer, it may also get it derailed. Another aspect of this is the Contributor License Agreement(s) related to the legal side of accepting and maintaining contributions, which adds to the workload. There is significant overall cost in managing contributions, and every Open Source project should be able to make their own decision either way in this regard, as it is a fair choice for anyone. <br/>
 <div class="vsub"><a id="Trends"></a>Trends</div>
 A recent <a href='https://aiven.io/press/new-research-into-open-source:-google-accelerates'>research article</a> shows that the top contributors to open source were all companies, including Amazon Web Services, Intel, Red Hat, Google, and Microsoft. This role used to be reserved for individual contributors once, but for some time now and more so with each passing year, large companies are the main driving force behind open source projects. On one hand this is a good thing, as the biggest users of open source are getting behind it. On the other hand, accoding to Jonathan Corbet, editor-in-chief of Linux Weekly News (LWN), only 7.5 percent of the kernel development in 2022 was done by the individual contributors. Surely, these numbers are heavily skewed in Linux kernel, and may not be so much in general; however the fact remains that the trend overall is moving in the same direction. Likely this is in no small part related to burdens of project management, which leaves less for the actual product development and testing. It's another reason for the approach outlined here that will help keep Golf focused and continue making it a world-class software.<br/>
-<div class="vsub"><a id="See also"></a>See also</div>
-<span style="font-weight:bold;">See all</span> <br/>
-<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>

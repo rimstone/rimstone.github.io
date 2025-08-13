@@ -12,7 +12,9 @@
 
 
 body, html {
-    /*font-family: Helvetica, Arial, sans-serif;*/
+    font-family: monospace,Helvetica, Arial, sans-serif;
+    line-height: 150%;
+    font-size:15px;
 }
 
 body {
@@ -21,10 +23,9 @@ body {
 }
     
 .ncode {
-    line-height:20px;
     letter-spacing: 0px;
-    font-size:14px;
     font-family: monospace;
+    font-size:83%;
     display:inline-block;
     max-width:99%;
     min-width:90%;
@@ -40,10 +41,9 @@ body {
 }
 
 .shcode {
-    line-height:23px;
     letter-spacing: 0px;
-    font-size:14px;
     font-family: monospace;
+    font-size:83%;
     display:inline-block;
     max-width:99%;
     min-width:90%;
@@ -59,10 +59,9 @@ body {
 }
 
 .sqlcode {
-    line-height:23px;
     letter-spacing: 0px;
-    font-size:14px;
     font-family: monospace;
+    font-size:83%;
     display:inline-block;
     max-width:99%;
     min-width:90%;
@@ -78,10 +77,9 @@ body {
 }
 
 .htmlcode {
-    line-height:23px;
     letter-spacing: 0px;
-    font-size:14px;
     font-family: monospace;
+    font-size:83%;
     display:inline-block;
     max-width:99%;
     min-width:90%;
@@ -97,10 +95,9 @@ body {
 }
 
 .code {
-    line-height:23px;
     letter-spacing: 0px;
-    font-size:14px;
     font-family: monospace;
+    font-size:83%;
     display:inline-block;
     max-width:99%;
     min-width:90%;
@@ -156,8 +153,6 @@ a {
 body {
     padding-left:2vw;
     padding-right:2vw;
-    font-size:14px;
-    line-height:22px;
     letter-spacing: 1px;
 }
 }
@@ -205,7 +200,8 @@ ul {
 
 </head>
 <body>
-
+<div id="google_translate_element"></div>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
 function gg_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
@@ -213,6 +209,9 @@ function gg_copy(gt, eid, gc) {
   document.execCommand("copy");
   gc.style.visibility="visible"
   setTimeout(()=>{ gc.style.visibility="hidden"; }, 1000);
+}
+function googleTranslateElementInit() {
+   new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
 }
 
 </script>
@@ -224,33 +223,26 @@ function gg_copy(gt, eid, gc) {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Web framework for C programming language</div><hr/><div class="vsub"><a id="Golf as a web framework for C programming language"></a>Golf as a web framework for C programming language</div>
-Golf source code translates to C before compilation for maximum performance; as a result, Golf offers the ability to include C code directly in extended mode (via <a href='https://golf-lang.com/call-extended.html'>call-extended</a> statement and <a href='https://golf-lang.com/Server-API.html'>Server-API</a>) which means Golf is also an effective framework for C programming language.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Web framework for C programming language</div><hr/><div class="vsub"><a id="Golf as a web framework for C programming language"></a>Golf as a web framework for C programming language</div>
+Golf source code translates to C before compilation; as a result, Golf offers the ability to include C code directly in extended mode (via <a href='https://golf-lang.com/call-extended.html'>call-extended</a> statement and <a href='https://golf-lang.com/Server-API.html'>Server-API</a>) which means Golf is also an effective framework for C programming language.<br/>
 <br/>
 Golf offers simple statements to perform complex common tasks, as well as memory safety. The C code that you'd include via call-extended statement may or may not be memory safe; thus once your application is in extended mode (see <a href='https://golf-lang.com/extended-mode.html'>extended-mode</a>), your application may no longer be memory safe.<br/>
 <br/>
 To make sure a Golf application is memory safe, simply search for extended-mode statement from the root source directory:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_984'>
+<pre id='code_946' class=notranslate>
 <span class="Statement">find</span><span class="Statement"> . </span>-name <span class="Statement">&quot;</span><span class="Constant">*.golf</span><span class="Statement">&quot;</span> <span class="Special">-print</span> <span class="Special">-exec</span> <span class="Statement">grep</span> <span class="Special">-l</span> <span class="Statement">'</span><span class="Constant">^\s*extended\-mode</span><span class="Statement">'</span> <span class="Special">{}</span> \;</pre>
-<span id=golf_copied_984 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_984' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_984, code_984, golf_copied_984)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_946 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_946' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_946, code_946, golf_copied_946)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 If no matches are found, the application is memory safe.<br/>
 <br/>
 However, for applications that are written in C (for performance, access to hardware or OS features, or for any other reason), Golf offers a framework that can offload many tasks from your project, while you write C code where it's needed or necessary.<br/>
 <br/>
-The benefit is that the part of your application written in Golf (which may be a vast majority of it) offers memory safety, ease of development and maintenance, server facilities, lots of functionality, as well as high performance to begin with. Your Golf code would call your C code when needed, thus accomplishing the functionality and goals you set out to do.<br/>
+The benefit is that the part of your application written in Golf (which may be a vast majority of it) offers memory safety, ease of development and maintenance, server facilities and lots of functionality. Your Golf code would call your C code when needed, thus accomplishing the functionality and goals you set out to do.<br/>
 <br/>
 Just as a note of technicality, when used in extended mode, Golf is considered a framework and not a library, because Golf code will call your C code (and not the other way around).<br/>
-<div class="vsub"><a id="See also"></a>See also</div>
- <a name='C language'></a><span style="font-weight:bold;">C language</span><br/>
-<a href='https://golf-lang.com/call-extended.html'>call-extended</a> &nbsp;<br/>
-<a href='https://golf-lang.com/extended-mode.html'>extended-mode</a> &nbsp;<br/>
-<a href='https://golf-lang.com/web-framework-for-C-programming-language.html'>web-framework-for-C-programming-language</a> &nbsp; <br/>
-<span style="font-weight:bold;">See all</span> <br/>
-<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>

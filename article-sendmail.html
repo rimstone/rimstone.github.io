@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!--__GOLF_REDIRECT__-->
+<title>How to send email with Golf</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="HandheldFriendly" content="True"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="canonical" href="https://golf-lang.com/article-sendmail.html" />
+<style>
+
+
+body, html {
+    font-family: monospace,Helvetica, Arial, sans-serif;
+    line-height: 150%;
+    font-size:15px;
+}
+
+body {
+    padding-left:1vw;
+    padding-right:1vw;
+}
+    
+.ncode {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.shcode {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.sqlcode {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.htmlcode {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.code {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+/*Just like h1 but for pdf conversion it would be indented this way it's not*/
+.vhub {
+    display: block;
+   font-size: 1.6em;
+   margin-top: 0.63em;
+   margin-bottom: 0.63em;
+   margin-left: 0;
+   margin-right: 0;
+   font-weight: bold;
+}
+
+/*Just like h2 but for pdf conversion it would be indented this way it's not*/
+.vsub {
+    display: block;
+   font-size: 1.25em;
+   margin-top: 0.53em;
+   margin-bottom: 0.53em;
+   margin-left: 0;
+   margin-right: 0;
+   font-weight: bold;
+}
+
+ul {
+  margin-left: 0.75vw;
+  padding-left: 0;
+}
+li {
+  margin-left: 0.75vw;
+  padding-left: 0;
+}
+
+/* this must be last, as it overrides previous settings, for mobile */
+@media (hover: none) {
+a {
+   display: inline-block;
+   padding-top: 3px;
+   padding-bottom: 2px;
+}
+body {
+    padding-left:2vw;
+    padding-right:2vw;
+    letter-spacing: 1px;
+}
+}
+
+/*The following is for code snippets that are highlighted by 2html vim*/
+pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
+.Identifier { color: #008b8b; }
+.Statement { color: #af5f00; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
+/*end of highlighted snippets*/
+
+a {
+    text-decoration:none;
+    padding-bottom: 0px; 
+    color:inherit;
+    border-bottom: 2px solid #6cb8f0;
+}
+a:hover {
+    text-decoration: none;
+    color:black;
+    border-bottom: 1px solid red;
+}
+/*do not underline links nor should they be active*/
+pre a {
+    text-decoration:none;
+    color:black;
+    border-bottom: none;
+    pointer-events: none;
+    cursor: default;
+}
+
+
+.golfSnippet {display:none;}
+
+ul {
+  list-style-type:square;
+  list-style-position: outside;
+}
+
+</style>
+
+
+</head>
+<body>
+<div id="google_translate_element"></div>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script>
+function gg_copy(gt, eid, gc) {
+  gt.textContent = eid.textContent;
+  gt.select();
+  document.execCommand("copy");
+  gc.style.visibility="visible"
+  setTimeout(()=>{ gc.style.visibility="hidden"; }, 1000);
+}
+function googleTranslateElementInit() {
+   new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+
+</script>
+
+<!--GOLFMENU13-->
+
+<!--GOLFENDMENU13-->
+
+
+
+<!--BEGVDOC90-->
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>How to send email with Golf</div><hr/><br/>
+This example shows how to send email with Golf. The web service you'll create here is very simple and it will display an HTML form to collect info needed to send email, such as "From" and "To" (the sender and the recipient emails), the Subject and of course the Message itself. Once user clicks Submit, email is sent. <br/>
+<br/>
+Create directory for your application:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_213' class=notranslate>
+<span class="Statement">mkdir</span> <span class="Special">-p</span> mail
+<span class="Statement">cd</span> mail</pre>
+<span id=golf_copied_213 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_213' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_213, code_213, golf_copied_213)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Create "mail-sender" application:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_215' class=notranslate>
+gg <span class="Special">-k</span> mail-sender</pre>
+<span id=golf_copied_215 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_215' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_215, code_215, golf_copied_215)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Copy the following code to file "mail.golf":<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_211' class=notranslate>
+<span class="Statement"> begin-handler</span> /mail<span class="Identifier"> public</span>
+     <span class="Comment">// Get URL parameter</span>
+<span class="Statement">     get-param</span> action
+
+<span class="Statement">     if-true</span> action<span class="Identifier"> equal</span> <span class="Constant">&quot;show_form&quot;</span>
+         <span class="Comment">// Display HTML form</span>
+<span class="Statement">         @</span>&lt;h2&gt;Enter email and click Send to send it&lt;/h2&gt;
+<span class="Statement">         @</span>Note: 'From' field must be the email address from the domain of your server.&lt;br/&gt;&lt;br/&gt;
+<span class="Statement">         @</span>&lt;form action=&quot;<span class="Statement">&lt;&lt;print-path</span> <span class="Constant">&quot;/mail&quot;</span><span class="Statement">&gt;&gt;</span>&quot; method=&quot;POST&quot;&gt;
+<span class="Statement">         @</span>    &lt;input type=&quot;hidden&quot; name=&quot;action&quot; value=&quot;submit_form&quot;&gt;
+<span class="Statement">         @</span>    &lt;label for=&quot;from_mail&quot;&gt;From:&lt;/label&gt;&lt;br&gt;
+<span class="Statement">         @</span>    &lt;input type=&quot;text&quot; name=&quot;from_mail&quot; value=&quot;&quot;&gt;&lt;br&gt;
+<span class="Statement">         @</span>    &lt;label for=&quot;to_mail&quot;&gt;To:&lt;/label&gt;&lt;br&gt;
+<span class="Statement">         @</span>    &lt;input type=&quot;text&quot; name=&quot;to_mail&quot; value=&quot;&quot;&gt;&lt;br&gt;&lt;br&gt;
+<span class="Statement">         @</span>    &lt;label for=&quot;subject_mail&quot;&gt;Subject:&lt;/label&gt;&lt;br&gt;
+<span class="Statement">         @</span>    &lt;input type=&quot;text&quot; name=&quot;subject_mail&quot; value=&quot;&quot;&gt;&lt;br&gt;&lt;br&gt;
+<span class="Statement">         @</span>    &lt;label for=&quot;message&quot;&gt;Message:&lt;/label&gt;&lt;br&gt;
+<span class="Statement">         @</span>    &lt;textarea name=&quot;message&quot; rows=&quot;<span class="Constant">3</span>&quot; columns=&quot;<span class="Constant">50</span>&quot;&gt;&lt;/textarea&gt;
+<span class="Statement">         @</span>    &lt;br/&gt;&lt;br/&gt;
+<span class="Statement">         @</span>    &lt;input type=&quot;submit&quot; value=&quot;Send&quot;&gt;
+<span class="Statement">         @</span>&lt;/form&gt;
+<span class="Statement">     else-if</span> action<span class="Identifier"> equal</span> <span class="Constant">&quot;submit_form&quot;</span>
+         <span class="Comment">// Get data from HTML form</span>
+<span class="Statement">         get-param</span> from_mail
+<span class="Statement">         get-param</span> to_mail
+<span class="Statement">         get-param</span><span class="Identifier"> message</span>
+<span class="Statement">         get-param</span> subject_mail
+         <span class="Comment">// Construct email message</span>
+<span class="Statement">         write-string</span> msg
+<span class="Statement">             @</span>From: <span class="Statement">&lt;&lt;print-out</span> from_mail<span class="Statement">&gt;&gt;</span>
+<span class="Statement">             @</span>To: <span class="Statement">&lt;&lt;print-out</span> to_mail<span class="Statement">&gt;&gt;</span>
+<span class="Statement">             @</span>Subject: <span class="Statement">&lt;&lt;print-out</span> subject_mail<span class="Statement">&gt;&gt;</span>
+<span class="Statement">             @</span>
+             &lt;&lt;print-out message&gt;&gt;
+<span class="Statement">         end-write-string</span>
+         <span class="Comment">// Send email</span>
+<span class="Statement">         exec-program</span> <span class="Constant">&quot;/usr/sbin/sendmail&quot;</span><span class="Identifier"> args</span> <span class="Constant">&quot;-i&quot;</span>, <span class="Constant">&quot;-t&quot;</span><span class="Identifier"> input</span> msg<span class="Type"> status</span> st
+         <span class="Comment">// Check status of email sending</span>
+<span class="Statement">         if-true</span> st<span class="Identifier"> not-equal</span> GG_OKAY
+<span class="Statement">             @</span>Could not send email!
+<span class="Statement">         else-if</span>
+<span class="Statement">             @</span>Email sent!
+<span class="Statement">         end-if</span>
+<span class="Statement">         @</span>&lt;hr/&gt;
+<span class="Statement">     else-if</span>
+<span class="Statement">         @</span>Unrecognized action!&lt;hr/&gt;
+<span class="Statement">     end-if</span>
+<span class="Statement"> end-handler</span></pre>
+<span id=golf_copied_211 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_211' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_211, code_211, golf_copied_211)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+The example uses <a href='https://golf-lang.com/exec-program.html'>exec-program</a> to invoke a MTA (Mail Transfer Agent), in this case postfix or sendmail, but you can use any other that you like!<br/>
+<br/>
+Build your application server as a native executable:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_216' class=notranslate>
+gg <span class="Special">-q</span></pre>
+<span id=golf_copied_216 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_216' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_216, code_216, golf_copied_216)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Run the application server using Golf's application server manager, called <a href='https://golf-lang.com/mgrg.html'>mgrg</a>:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_217' class=notranslate>
+mgrg mail-sender</pre>
+<span id=golf_copied_217 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_217' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_217, code_217, golf_copied_217)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+You may or may not have MTA (Mail Transfer Agent) installed on your system. Install it anyway, for Ubuntu and Debian:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_218' class=notranslate>
+sudo apt install postfix
+sudo systemctl start postfix</pre>
+<span id=golf_copied_218 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_218' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_218, code_218, golf_copied_218)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+and on RedHat and Fedora systems:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_219' class=notranslate>
+sudo dnf install postfix
+sudo systemctl start postfix</pre>
+<span id=golf_copied_219 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_219' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_219, code_219, golf_copied_219)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Now, since this application server will be accessed via web server, we'll need to setup a web server (aka "reverse proxy"). We'll use Apache, so follow the instructions to <a href='https://golf-lang.com/connect-apache-unix-socket.html'>set up Apache</a>, with &lt;app path&gt; being your application name, which is "mail-sender", and the "ProxyPass" directive in Step 3 will be:<br/>
+<div class='ncode' style='position:relative;padding-right:16px;'>
+<pre id='code_212' class=notranslate>
+ProxyPass &quot;/mail-sender/&quot; unix:///var/lib/gg/mail-sender/sock/sock|fcgi://localhost/mail-sender</pre>
+<span id=golf_copied_212 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_212' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_212, code_212, golf_copied_212)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Once you've restarted Apache web server, go to your browser and try it. In this case, everything is happening locally on your computer. If your server were running on the Internet, then you would use that server's name instead of "127.0.0.1", and email would be with an actual provider instead of a local user name. To get the form that sends email:<br/>
+<div class='ncode' style='position:relative;padding-right:16px;'>
+<pre id='code_214' class=notranslate>
+http://127.0.0.1/mail-sender/mail/action=show_form</pre>
+<span id=golf_copied_214 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_214' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_214, code_214, golf_copied_214)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+In this case local user name we're sending email to is "bear", but you'd put your own user name:<br/>
+<br/><div class='vimg'><img class='imgs' src='send-mail.png' alt='Golf'></img>
+</div><br/>
+And once you click Submit:<br/>
+<br/><div class='vimg'><img class='imgs' src='send-mail-sent.png' alt='Golf'></img>
+</div><br/>
+<div class="vsub"><a id="See also"></a>See also</div>
+ <a name='Articles'></a><span style="font-weight:bold;">Articles</span><br/>
+<a href='https://golf-lang.com/article-capi.html'>article-capi</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-cookies.html'>article-cookies</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-debug.html'>article-debug</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-distributed.html'>article-distributed</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-encryption.html'>article-encryption</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-fifo.html'>article-fifo</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-file-manager.html'>article-file-manager</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-hello-server.html'>article-hello-server</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-hello-world.html'>article-hello-world</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-hello-world-service.html'>article-hello-world-service</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-hello-world-service-web.html'>article-hello-world-service-web</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-json.html'>article-json</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-language.html'>article-language</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-mariadb.html'>article-mariadb</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-memory-safety.html'>article-memory-safety</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-memory-safety-web.html'>article-memory-safety-web</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-notes-postgres.html'>article-notes-postgres</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-random.html'>article-random</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-regex.html'>article-regex</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-remote-call.html'>article-remote-call</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-request-function.html'>article-request-function</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-security.html'>article-security</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-sendmail.html'>article-sendmail</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-server.html'>article-server</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-shopping.html'>article-shopping</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-sqlite.html'>article-sqlite</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-statements.html'>article-statements</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-status-check.html'>article-status-check</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-tree.html'>article-tree</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-tree-web.html'>article-tree-web</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-vim-coloring.html'>article-vim-coloring</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-web-framework-for-c-programming-language.html'>article-web-framework-for-c-programming-language</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-what-is-golf.html'>article-what-is-golf</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-what-is-web-service.html'>article-what-is-web-service</a> &nbsp; <br/>
+<span style="font-weight:bold;">See all</span> <br/>
+<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
+<!--ENDVDOC90-->
+<br/><div style='width:100%;clear:both;'>
+<hr/>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://golf-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+</div><br/></body></html>
+
+
