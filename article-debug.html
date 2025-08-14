@@ -257,21 +257,21 @@ gg <span class="Special">-k</span> split</pre>
 Create a source file "parse.golf" and copy this:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_37' class=notranslate>
-<span class="Statement">  begin-handler</span> /parse
-<span class="Statement">      silent-header</span>
-<span class="Statement">      set-string</span> str = <span class="Constant">&quot;a=1&amp;b=2&amp;c=3&quot;</span>
-      <span class="Comment">// Split string using </span><span class="Constant">&quot;&amp;&quot;</span><span class="Comment"> as a delimiter</span>
-<span class="Statement">      split-string</span> str<span class="Identifier"> with</span> <span class="Constant">&quot;&amp;&quot;</span><span class="Type"> to</span> pair<span class="Type"> count</span> pair_tot
-<span class="Statement">      start-loop</span><span class="Identifier"> repeat</span> pair_tot<span class="Type"> use</span> pair_count
-<span class="Statement">          read-split</span> pair_count<span class="Identifier"> from</span> pair<span class="Type"> to</span> item
-          <span class="Comment">// Now split each item using </span><span class="Constant">&quot;=&quot;</span><span class="Comment"> as a delimiter</span>
-<span class="Statement">          split-string</span> item<span class="Identifier"> with</span> <span class="Constant">&quot;=&quot;</span><span class="Type"> to</span> equal
-<span class="Statement">          read-split</span> <span class="Constant">1</span><span class="Identifier"> from</span> equal<span class="Type"> to</span> name
-<span class="Statement">          read-split</span> <span class="Constant">2</span><span class="Identifier"> from</span> equal<span class="Type"> to</span> value
-          <span class="Comment">// Output each name/value</span>
-<span class="Statement">          print-format</span> <span class="Constant">&quot;Name [</span><span class="Special">%s</span><span class="Constant">] value [</span><span class="Special">%s</span><span class="Constant">]</span><span class="Special">\n</span><span class="Constant">&quot;</span>, name, value
-<span class="Statement">      end-loop</span>
-<span class="Statement">  end-handler</span></pre>
+<span class="Statement"> begin-handler</span> /parse
+<span class="Statement">     silent-header</span>
+<span class="Statement">     set-string</span> str = <span class="Constant">&quot;a=1&amp;b=2&amp;c=3&quot;</span>
+     <span class="Comment">// Split string using </span><span class="Constant">&quot;&amp;&quot;</span><span class="Comment"> as a delimiter</span>
+<span class="Statement">     split-string</span> str<span class="Identifier"> with</span> <span class="Constant">&quot;&amp;&quot;</span><span class="Type"> to</span> pair<span class="Type"> count</span> pair_tot
+<span class="Statement">     start-loop</span><span class="Identifier"> repeat</span> pair_tot<span class="Type"> use</span> pair_count
+<span class="Statement">         read-split</span> pair_count<span class="Identifier"> from</span> pair<span class="Type"> to</span> item
+         <span class="Comment">// Now split each item using </span><span class="Constant">&quot;=&quot;</span><span class="Comment"> as a delimiter</span>
+<span class="Statement">         split-string</span> item<span class="Identifier"> with</span> <span class="Constant">&quot;=&quot;</span><span class="Type"> to</span> equal
+<span class="Statement">         read-split</span> <span class="Constant">1</span><span class="Identifier"> from</span> equal<span class="Type"> to</span> name
+<span class="Statement">         read-split</span> <span class="Constant">2</span><span class="Identifier"> from</span> equal<span class="Type"> to</span> value
+         <span class="Comment">// Output each name/value</span>
+<span class="Statement">         print-format</span> <span class="Constant">&quot;Name [</span><span class="Special">%s</span><span class="Constant">] value [</span><span class="Special">%s</span><span class="Constant">]</span><span class="Special">\n</span><span class="Constant">&quot;</span>, name, value
+<span class="Statement">     end-loop</span>
+<span class="Statement"> end-handler</span></pre>
 <span id=golf_copied_37 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_37' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_37, code_37, golf_copied_37)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
@@ -298,7 +298,7 @@ gg <span class="Special">-r</span> <span class="Special">--req</span><span class
 <textarea id='golft_45' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_45, code_45, golf_copied_45)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-This will produce something like the following:<br/>
+This will produce something like the following (substitute "your-user" for your OS user name):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_46' class=notranslate>
 <span class="Statement">export</span> <span class="Identifier">CONTENT_TYPE</span>=
@@ -309,7 +309,7 @@ This will produce something like the following:<br/>
 <span class="Statement">export</span> <span class="Identifier">SCRIPT_NAME</span>=<span class="Statement">&quot;</span><span class="Constant">/split</span><span class="Statement">&quot;</span>
 <span class="Statement">export</span> <span class="Identifier">PATH_INFO</span>=<span class="Statement">&quot;</span><span class="Constant">/parse</span><span class="Statement">&quot;</span>
 <span class="Statement">export</span> <span class="Identifier">QUERY_STRING</span>=<span class="Statement">&quot;&quot;</span>
-/var/lib/gg/bld/split/split</pre>
+/home/your-user/.golf/apps/split/.bld/split</pre>
 <span id=golf_copied_46 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_46' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_46, code_46, golf_copied_46)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
@@ -331,7 +331,7 @@ Which is the proper parsing of the string. Okay so far so good.<br/>
 Now to debug your program, do:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_47' class=notranslate>
-gdb /var/lib/gg/bld/split/split</pre>
+gdb /home/your-user/.golf/apps/split/.bld/split</pre>
 <span id=golf_copied_47 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_47' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_47, code_47, golf_copied_47)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
@@ -354,7 +354,7 @@ Find the GDB manual and other documentation resources online at:
 
 For help, type &quot;help&quot;.
 Type &quot;apropos word&quot; to search for commands related to &quot;word&quot;...
-Reading symbols from /var/lib/gg/bld/split/split...
+Reading symbols from /home/your-user/.golf/apps/split/.bld/split...
 (gdb)</pre>
 <span id=golf_copied_40 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_40' style='position: absolute;left: -500%;'></textarea>
@@ -366,11 +366,11 @@ Now you can use standard gdb commands. We'll set a break in our code above (whic
 (gdb) br parse
 Breakpoint 1 at 0x3a5e: file /var/lib/gg/bld/split/__parse.o.c, line 4.
 (gdb) run
-Starting program: /var/lib/gg/bld/split/split
+Starting program: /home/your-user/.golf/apps/split/.bld/split
 [Thread debugging using libthread_db enabled]
 Using host libthread_db library &quot;/lib/x86_64-linux-gnu/libthread_db.so.1&quot;.
 
-Breakpoint 1.1, parse () at /var/lib/gg/bld/split/__parse.o.c:4
+Breakpoint 1.1, parse () at /home/your-user/tmp/test/split/parse.golf:1
 4	void parse () {
 (gdb) next
 2	    silent-header
@@ -418,7 +418,7 @@ gg <span class="Special">-q</span> <span class="Special">--public</span> <span c
 Now, repeat the above to get into gdb, and it may look like this (note that generated code can always change and there's absolutely no guarantee it will stay the same!):<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
 <pre id='code_44' class=notranslate>
-Breakpoint 1.1, parse () at /var/lib/gg/bld/split/__parse.o.c:4
+Breakpoint 1.1, parse () at /home/bear/.golf/apps/split/.bld/__parse.o.c:4
 4	void parse () {
 (gdb) next
 7	gg_get_config ()-&gt;ctx.req-&gt;silent=1;

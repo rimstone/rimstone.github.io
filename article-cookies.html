@@ -303,7 +303,7 @@ mgrg <span class="Special">-p</span> <span class="Constant">3000</span> yum</pre
 </div><br/>
 "-p 3000" means it will run on socket port 3000, and the reason for that will become apparent momentarily.<br/>
 <br/>
-We'll use HAProxy as a web server in this instance to demostrate that you can use Golf with pretty much any web server or load balancer. To set it up, here is the simple config file (typically in "/etc/haproxy/haproxy.cfg"). Note that "frontend", "fcgi-app" and "backend" sections are relevant to us here; the rest can be as it is by default in whatever configuration file you have:<br/>
+We'll use HAProxy as a web server in this instance to demostrate that you can use Golf with pretty much any web server or load balancer. To set it up, here is the simple config file (typically in "/etc/haproxy/haproxy.cfg"). Note that "frontend", "fcgi-app" and "backend" sections are relevant to us here; the rest can be as it is by default in whatever configuration file you have (substitute "your-user" for your OS user name):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_35' class=notranslate>
 frontend front_server
@@ -315,7 +315,7 @@ frontend front_server
 
 fcgi-app golf-fcgi
     log-stderr global
-    docroot /var/lib/gg/yum/app
+    docroot /home/your-user/.golf/apps/yum/app
     path-info ^.+<span class="PreProc">(</span>/yum<span class="PreProc">)(</span>/.+<span class="PreProc">)</span>$
 
 backend backend_servers
