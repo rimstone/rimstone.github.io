@@ -745,8 +745,8 @@ Save this into a file "srv.golf":<br/>
 <span class="Statement">         new-tree</span> ind<span class="Identifier"> process-scope</span>
 <span class="Statement">     end-do-once</span>
 <span class="Statement">     get-param</span> op
-<span class="Statement">     get-param</span> key
-<span class="Statement">     get-param</span> data
+<span class="Statement">     get-param</span> key<span class="Identifier"> default-value</span> <span class="Constant">&quot;&quot;</span>
+<span class="Statement">     get-param</span> data<span class="Identifier"> default-value</span> <span class="Constant">&quot;&quot;</span>
 <span class="Statement">     if-true</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;add&quot;</span>
 <span class="Statement">         write-tree</span> ind<span class="Identifier"> key</span> (key)<span class="Identifier"> value</span> data<span class="Type"> status</span> st
 <span class="Statement">         if-true</span> st<span class="Identifier"> equal</span> GG_ERR_EXIST
@@ -833,18 +833,21 @@ Next is the C code for your client. It simply inserts key/value pair, queries it
      <span class="Type">char</span> *urlreq, *data;
      gg_cli req;
 
+     <span class="Type">char</span> dir[GG_MAX_OS_UDIR_LEN];
+     gg_dir (GG_DIR_SOCKFILE, dir, <span class="Statement">sizeof</span>(dir), <span class="Constant">&quot;index&quot;</span>, <span class="Constant">NULL</span>); <span class="Comment">// socket for application</span>
+                                                                <span class="Comment">//</span>
      urlreq = <span class="Constant">&quot;/op=add/key=some_key/data=some_data&quot;</span>; <span class="Comment">// Add data</span>
-     res = golf_client (&amp;req, <span class="Constant">&quot;/var/lib/gg/index/sock/sock&quot;</span>, <span class="Constant">&quot;GET&quot;</span>, <span class="Constant">&quot;/index&quot;</span>, <span class="Constant">&quot;/srv&quot;</span>, urlreq);
+     res = golf_client (&amp;req, dir, <span class="Constant">&quot;GET&quot;</span>, <span class="Constant">&quot;/index&quot;</span>, <span class="Constant">&quot;/srv&quot;</span>, urlreq);
      <span class="Statement">if</span> (res != GG_OKAY) printf(<span class="Constant">&quot;Request failed [</span><span class="Special">%d</span><span class="Constant">] [</span><span class="Special">%s</span><span class="Constant">]</span><span class="Special">\n</span><span class="Constant">&quot;</span>, res, req.errm); <span class="Statement">else</span> printf(<span class="Constant">&quot;</span><span class="Special">%s</span><span class="Constant">&quot;</span>, gg_cli_data(&amp;req));
      gg_cli_delete(&amp;req);
 
      urlreq = <span class="Constant">&quot;/op=query/key=some_key&quot;</span>; <span class="Comment">// Query data</span>
-     res = golf_client (&amp;req, <span class="Constant">&quot;/var/lib/gg/index/sock/sock&quot;</span>, <span class="Constant">&quot;GET&quot;</span>, <span class="Constant">&quot;/index&quot;</span>, <span class="Constant">&quot;/srv&quot;</span>, urlreq);
+     res = golf_client (&amp;req, dir, <span class="Constant">&quot;GET&quot;</span>, <span class="Constant">&quot;/index&quot;</span>, <span class="Constant">&quot;/srv&quot;</span>, urlreq);
      <span class="Statement">if</span> (res != GG_OKAY) printf(<span class="Constant">&quot;Request failed [</span><span class="Special">%d</span><span class="Constant">] [</span><span class="Special">%s</span><span class="Constant">]</span><span class="Special">\n</span><span class="Constant">&quot;</span>, res, req.errm); <span class="Statement">else</span> printf(<span class="Constant">&quot;</span><span class="Special">%s</span><span class="Constant">&quot;</span>,<span class="Identifier"> data</span> = gg_cli_data(&amp;req));
      gg_cli_delete(&amp;req);
 
      urlreq = <span class="Constant">&quot;/op=delete/key=some_key&quot;</span>; <span class="Comment">// Delete data</span>
-     res = golf_client (&amp;req, <span class="Constant">&quot;/var/lib/gg/index/sock/sock&quot;</span>, <span class="Constant">&quot;GET&quot;</span>, <span class="Constant">&quot;/index&quot;</span>, <span class="Constant">&quot;/srv&quot;</span>, urlreq);
+     res = golf_client (&amp;req, dir, <span class="Constant">&quot;GET&quot;</span>, <span class="Constant">&quot;/index&quot;</span>, <span class="Constant">&quot;/srv&quot;</span>, urlreq);
      <span class="Statement">if</span> (res != GG_OKAY) printf(<span class="Constant">&quot;Request failed [</span><span class="Special">%d</span><span class="Constant">] [</span><span class="Special">%s</span><span class="Constant">]</span><span class="Special">\n</span><span class="Constant">&quot;</span>, res, req.errm); <span class="Statement">else</span> printf(<span class="Constant">&quot;</span><span class="Special">%s</span><span class="Constant">&quot;</span>, data=gg_cli_data(&amp;req));
      gg_cli_delete(&amp;req);
 <span class="Statement"> }</span></pre>
@@ -9850,7 +9853,7 @@ Regardless of the type of error and regardless of whether the process exits or n
 When your program errors out, a generic message is output to the standard output, i.e. to the client, that indicates that error has occurred, and to check the error log. The actual details are output to standard error stream, see details above. Note that in case of fatal error (such as Golf internal error), no message is sent to the client; rather the program ends. On how to view the error log (including the stack traces), see <a href='/debugging.html'>debugging</a>.<br/>
 <a id='examples.html'></a>
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Golf examples</div><hr/><br/>
-Updated on 2025-08-13<br/>
+Updated on 2025-08-14<br/>
 <ul><br/>
 <li><a href='/article-capi.html'>Use C language API to talk to Golf Server</a><br/>
 Golf application server can be accessed via C API. Most programming languages allow for C linkage, so this makes it easy to talk to Golf server from anywhere. The <a href='/Client-API.html'>Client-API</a> is very simple with just a few functions and a single data type. It's also MT-safe (i.e. safe for multi-threaded applications). ...<br/>
