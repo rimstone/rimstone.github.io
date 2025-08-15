@@ -228,9 +228,16 @@ function googleTranslateElementInit() {
 
 <!--BEGVDOC90-->
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Official Golf blog</div><hr/><br/>
-Updated on 2025-08-14<br/>
+Updated on 2025-08-15<br/>
 <span style="font-weight:bold;">Note</span>: This blog is a replacement for golf-lang.blogspot.com; please bookmark this page going forward.<br/>
 <ul><br/>
+<li><span style="font-weight:bold;">Golf 3.0.9: Bug and documentation fixes</span> (2025-08-15)<br/>
+<ul><li> fixed bug in stack trace reporting,<br/>
+</li><li> fixed several examples to work with the new Golf (more to come),<br/>
+</li><li> fixed bug in gg -e, where error reporting not shown properly,<br/>
+</li><li> fixed bug in ggcli where only error output shown even if stdout output present. Both are now properly output, even for binary output.</li></ul>
+</li>
+<br/>
 <li><span style="font-weight:bold;">Golf 3.0.1: Major Golf rewrite brings no-sudo installation, better performance and many new features</span> (2025-08-13)<br/>
 <ul><li> Golf now installs without sudo in a local home folder. New gginst.sh utility is used to install Golf without sudo.<br/>
 </li><li> Golf is now source-only. The reason is performance and transparency; Golf generates C code for user applications, and then links (via Link Time Optimization, LTO) with Golf code. It's as if your code is directly compiled and optimized across whole program with Golf code. This can produce significant performance gains.<br/>
