@@ -2545,10 +2545,12 @@ Then create C file "cli.c" and copy this:<br/>
  <span class="Type">void</span> main ()
 <span class="Statement"> {</span>
      <span class="Type">int</span> i;
+     <span class="Type">char</span> dir[GG_MAX_OS_UDIR_LEN];
+     gg_dir (GG_DIR_SOCKFILE, dir, <span class="Statement">sizeof</span>(dir), <span class="Constant">&quot;hello&quot;</span>, <span class="Constant">NULL</span>);
      <span class="Statement">for</span> (i = <span class="Constant">0</span>; i &lt; <span class="Constant">100000</span>; i++)
 <span class="Statement">     {</span>
          gg_cli req;
-         <span class="Type">int</span> res = golf_client (&amp;req, <span class="Constant">&quot;/var/lib/gg/hello/sock/sock&quot;</span>, <span class="Constant">&quot;GET&quot;</span>, <span class="Constant">&quot;/hello&quot;</span>, <span class="Constant">&quot;/srv&quot;</span>, <span class="Constant">&quot;/&quot;</span>);
+         <span class="Type">int</span> res = golf_client (&amp;req, dir, <span class="Constant">&quot;GET&quot;</span>, <span class="Constant">&quot;/hello&quot;</span>, <span class="Constant">&quot;/srv&quot;</span>, <span class="Constant">&quot;/&quot;</span>);
          <span class="Statement">if</span> (res != GG_OKAY) printf(<span class="Constant">&quot;Request failed [</span><span class="Special">%d</span><span class="Constant">] [</span><span class="Special">%s</span><span class="Constant">]</span><span class="Special">\n</span><span class="Constant">&quot;</span>, res, req.errm);
          <span class="Statement">else</span> printf(<span class="Constant">&quot;</span><span class="Special">%s</span><span class="Constant">&quot;</span>, gg_cli_data(&amp;req));
          gg_cli_delete(&amp;req);
@@ -2574,7 +2576,7 @@ Run it:<br/>
 <textarea id='golft_123' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_123, code_123, golf_copied_123)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-The result is "Hello world!" 1,000,000 times from each request invocation.<br/>
+The result is "Hello world!" 100,000 times from each request invocation.<br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Articles'></a><span style="font-weight:bold;">Articles</span><br/>
 <a href='/article-capi.html'>article-capi</a> &nbsp;<br/>
@@ -2627,7 +2629,7 @@ Create a directory for your Hello World application and then switch to it:<br/>
 Create the application:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_127' class=notranslate>
-sudo mgrg <span class="Special">-i</span> <span class="Special">-u</span> <span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span> hello</pre>
+mgrg <span class="Special">-i</span> <span class="Special">-u</span> <span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span> hello</pre>
 <span id=golf_copied_127 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_127' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_127, code_127, golf_copied_127)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
@@ -2831,7 +2833,7 @@ sudo vi /etc/nginx/nginx.conf</pre>
 Add the following in the "server {}" section:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_139' class=notranslate>
-location /hello/ <span class="Special">{</span> include /etc/nginx/fastcgi_params<span class="Statement">;</span> fastcgi_pass  unix:///var/lib/gg/hello/sock/sock<span class="Statement">;</span> <span class="Special">}</span></pre>
+location /hello/ <span class="Special">{</span> include /etc/nginx/fastcgi_params<span class="Statement">;</span> fastcgi_pass  unix:///home/your-user/.golf/apps/hello/sock/.sock<span class="Statement">;</span> <span class="Special">}</span></pre>
 <span id=golf_copied_139 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_139' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_139, code_139, golf_copied_139)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
