@@ -357,7 +357,7 @@ gg <span class="Special">-r</span> <span class="Special">--req</span><span class
 The result is:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
 <pre id='code_76' class=notranslate>
-Encrypted data written to file /var/lib/gg/enc/app/encrypted_data
+Encrypted data written to file ~/.golf/apps/enc/app/encrypted_data
 This contains a secret code, which is Open Sesame!</pre>
 <span id=golf_copied_76 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_76' style='position: absolute;left: -500%;'></textarea>
@@ -368,7 +368,7 @@ The decrypted data is exactly the same as the original.<br/>
 You can see the actual encrypted data written to the file by using "octal dump" ("od") Linux utility:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_89' class=notranslate>
-od <span class="Special">-c</span> /var/lib/gg/enc/app/encrypted_data</pre>
+od <span class="Special">-c</span> ~/.golf/apps/enc/app/encrypted_data</pre>
 <span id=golf_copied_89 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_89' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_89, code_89, golf_copied_89)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
@@ -376,7 +376,7 @@ od <span class="Special">-c</span> /var/lib/gg/enc/app/encrypted_data</pre>
 with the result like:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
 <pre id='code_79' class=notranslate>
-$ od -c /var/lib/gg/enc/app/encrypted_data
+$ od -c ~/.golf/apps/enc/app/encrypted_data
 0000000   r 335 324   L 020 351   i   ; 346 254   w 312 253 306   N 005
 0000020 370  \t   )  \n 020 235 367 317 305   t  \0 224 214 270 210 315
 0000040   # 307 351 216 025 274 362 033   % 253 023   7 335 306 320

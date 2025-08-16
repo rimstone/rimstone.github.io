@@ -1743,7 +1743,7 @@ gg <span class="Special">-r</span> <span class="Special">--req</span><span class
 The result is:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
 <pre id='code_76' class=notranslate>
-Encrypted data written to file /var/lib/gg/enc/app/encrypted_data
+Encrypted data written to file ~/.golf/apps/enc/app/encrypted_data
 This contains a secret code, which is Open Sesame!</pre>
 <span id=golf_copied_76 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_76' style='position: absolute;left: -500%;'></textarea>
@@ -1754,7 +1754,7 @@ The decrypted data is exactly the same as the original.<br/>
 You can see the actual encrypted data written to the file by using "octal dump" ("od") Linux utility:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_89' class=notranslate>
-od <span class="Special">-c</span> /var/lib/gg/enc/app/encrypted_data</pre>
+od <span class="Special">-c</span> ~/.golf/apps/enc/app/encrypted_data</pre>
 <span id=golf_copied_89 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_89' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_89, code_89, golf_copied_89)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
@@ -1762,7 +1762,7 @@ od <span class="Special">-c</span> /var/lib/gg/enc/app/encrypted_data</pre>
 with the result like:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
 <pre id='code_79' class=notranslate>
-$ od -c /var/lib/gg/enc/app/encrypted_data
+$ od -c ~/.golf/apps/enc/app/encrypted_data
 0000000   r 335 324   L 020 351   i   ; 346 254   w 312 253 306   N 005
 0000020 370  \t   )  \n 020 235 367 317 305   t  \0 224 214 270 210 315
 0000040   # 307 351 216 025 274 362 033   % 253 023   7 335 306 320
@@ -2287,17 +2287,15 @@ Create "upload.golf" file and copy and paste:<br/>
 <pre id='code_105' class=notranslate>
 <span class="Statement"> begin-handler</span> /upload<span class="Identifier"> public</span>
 <span class="Statement">    get-param</span> filedesc      <span class="Comment">// file description from the upload form</span>
-<span class="Statement">    get-param</span> file_filename <span class="Comment">// file name</span>
-<span class="Statement">    get-param</span> file_location <span class="Comment">// the path to uploaded file</span>
-<span class="Statement">    get-param</span> file_size     <span class="Comment">// size in bytes</span>
-<span class="Statement">    get-param</span> file_ext      <span class="Comment">// the file extension</span>
+<span class="Statement">    get-upload</span> file<span class="Type"> local-file</span> file_location<span class="Type"> size</span> file_size \
+       <span class="Type"> extension</span> file_ext<span class="Type"> client-file</span> file_filename
 <span class="Statement">    @</span>&lt;h2&gt;Uploading file&lt;/h2&gt;
 <span class="Statement">    run-query</span> @db= \
          <span class="Constant">&quot;insert into files (fileName, localPath, extension, description, fileSize) </span><span class="Special">\</span>
 <span class="Constant">             values ('</span><span class="Special">%s</span><span class="Constant">', '</span><span class="Special">%s</span><span class="Constant">', '</span><span class="Special">%s</span><span class="Constant">', '</span><span class="Special">%s</span><span class="Constant">', '</span><span class="Special">%s</span><span class="Constant">')&quot;</span> \
-        <span class="Identifier"> input</span> file_filename, file_location, file_ext, filedesc, file_size
+        <span class="Identifier"> input</span> file_filename, file_location, file_ext, filedesc, $file_size
 <span class="Statement">    end-query</span>
-<span class="Statement">    @</span>File <span class="Statement">&lt;&lt;print-out</span> file_filename<span class="Statement"> web-encode&gt;&gt;</span> of size <span class="Statement">&lt;&lt;print-out</span> file_size<span class="Statement"> web-encode&gt;&gt;</span> \
+<span class="Statement">    @</span>File <span class="Statement">&lt;&lt;print-out</span> file_filename<span class="Statement"> web-encode&gt;&gt;</span> of size <span class="Statement">&lt;&lt;print-out</span> file_size <span class="Statement">&gt;&gt;</span> \
          is stored on server at <span class="Statement">&lt;&lt;print-out</span> file_location<span class="Statement"> web-encode&gt;&gt;</span>. \
          File description is <span class="Statement">&lt;&lt;print-out</span> filedesc<span class="Statement"> web-encode&gt;&gt;</span>.&lt;hr/&gt;
 <span class="Statement"> end-handler</span></pre>
@@ -2393,10 +2391,10 @@ sudo vi /etc/nginx/sites-enabled/default</pre>
 <textarea id='golft_112' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_112, code_112, golf_copied_112)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Add this in "server {}" section ("client_max_body_size" allows for images of typical sizes to be uploaded):<br/>
+Add this in "server {}" section ("client_max_body_size" allows for images of typical sizes to be uploaded), replace "your-user" with the name of your OS user:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
 <pre id='code_101' class=notranslate>
-location /file-manager/ { include /etc/nginx/fastcgi_params; fastcgi_pass  unix:///var/lib/gg/file-manager/sock/sock; }
+location /file-manager/ { include /etc/nginx/fastcgi_params; fastcgi_pass  unix:///home/your-user/.golf/apps/file-manager/sock/.sock; }
 client_max_body_size 100M;</pre>
 <span id=golf_copied_101 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_101' style='position: absolute;left: -500%;'></textarea>
