@@ -15,7 +15,6 @@
             overflow-x: clip; /* stop issues with full width*/
         }
 
-        a:visited, a:link { color: #2c2c2c;}
         /*The following is for code snippets that are highlighted by 2html vim*/
         pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
         .Identifier { color: #008b8b; }
@@ -27,9 +26,7 @@
         /*end of highlighted snippets*/
 
         .sect {
-            color: #2c2c2c;
             font-size: 2em;
-            padding: 20px; 
             width: 100%; 
             min-height: 200px; 
             display: flex; /* content alignment within sections */
@@ -41,32 +38,30 @@
         }
 
         .sec-one {
-            background-color: #3f95ce;
             flex-direction: row; /* content is in a row, like heading + other stuff */
             justify-content: flex-start; /* align to the left (start) */
-            padding-left: 40px; /* image */
+            padding-left: 20px; /* image */
         }
 
         .sec-two {
-            background-color: #1ab35b;
+	    padding-top:50px;
         }
 
         .sec-three {
-            background-color: #da4d3e;
+	    padding-top:50px;
         }
 
         .sec-four {
-            background-color: #eb950d;
+	    padding-top:50px;
         }
 
         .sec-five {
-            background-color: #b694d6;
             padding-left: 15px; 
+	    padding-top:50px;
         }
 
         .box-container {
             width: 100%; 
-            margin-top: 20px; /* space above squares */
             display: flex; /* for squares next to each other */
             justify-content: space-around; /* equal space around them */
             align-items: flex-start; /* align to the top */
@@ -76,12 +71,10 @@
             min-height: 150px; /* minimum height for squares */
             padding: 20px;
             width: 45%; /* approx half, we need space for gap */
-            background-color: rgba(255, 255, 255, 0.3); /* transparent white just a bit */
             text-align: center;
             border-radius: 10px;
             font-size: 0.7em; /* text within squares */
             /*font-weight:bold;*/
-            /*color: #333; *//* darker text */
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             box-sizing: border-box; /* padding included in width */
             display: flex; /* within squares uses flex for centering */
@@ -111,12 +104,10 @@
             text-align: center;
             margin-top: 20px; /* Space from heading */
             font-size: 0.7em;
-            color: #2c2c2c;
         }
 
         .one-big-sect p {
             line-height: 1.6;
-            margin-top: 15px;
         }
 
 
@@ -157,45 +148,28 @@
         }
 
         .btn {
-            font-weight: bold;
             font-size: 26px;
-            color:#2c2c2c;
             text-decoration: none;
             padding: 11px 24px;
-            border-radius: 6px;
-            transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease;
+            border-radius: 8px;
             display: inline-block;
             cursor: pointer;
         }
 
         /* Filled button */
-        .first-fill {
-            background-color: gray;
-            color: #2c2c2c;
-            border: 2px solid #007bff;
+        .button-st {
+            border: 1px solid gray;
         }
 
-        .first-fill:hover {
-            background-color: #0056b3;
-            border-color: #0056b3;
-        }
-
-        /* outline for a button */
-        .basic-outline {
-            color: #007bff;
-            background-color: transparent;
-            border: 2px solid #007bff;
-        }
-
-        .basic-outline:hover {
-            color: #2c2c2c;
-            background-color: #007bff;
+        .button-st:hover {
+            border-color: black;
         }
 
     </style>
 </head>
 <body>
-    <div id="google_translate_element" style='background-image:linear-gradient(to bottom, #c9e1f1,#3f95ce );text-align:right;height:80px;'></div>
+    <div id="google_translate_element" style='float:right;padding-left:80px;padding-right:10px;'>
+    </div>
 	<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 	<script>
 	    function gg_copy(gt, eid, gc) {
@@ -209,15 +183,26 @@
 	    new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
 	}
 	</script>
+	<style>
+        div#google_translate_element {
+            z-index: 999 !important;
+            right: 3vw !important;
+        }
+    </style>
+    <div style='float:right;padding-bottom:10px;font-style:italic;padding-right:10px;'>
+Current release (3.0.9). Updated 2025-08-15.
+    </div>
+
+
     <sect class="sect sec-one"  style='padding-bottom:0px'>
 
 
         <div class="box-container" >
             <div >
-            <img src="golf-large.png" style='width:100%;height:auto;'>
+            <img src="golf-large.png" style='width:500px;height:auto;'>
             </div>
-            <div style='padding-left:20px'>
-                <h1 style='color:white'>Build applications and server software fast with confidence.<br/>Free Open Source.</h1>
+            <div style='padding-left:20px;padding-bottom:0px;color:#3d3d3d'>
+                <h2 >Build web applications and server software fast with confidence.<br/>Free Open Source.</h2>
             </div>
         </div>
     </sect>
@@ -226,51 +211,63 @@
         <div class="box-container">
             <div class="square_menu">
                 <div class="btn-cont">
-                    <a href="/install-golf.html" class="btn first-fill">Install</a>
+                    <a href="/install-golf.html" class="btn button-st">Install</a>
                 </div>
             </div>
             <div class="square_menu">
                 <div class="btn-cont">
-                    <a href="/documentation.html" class="btn first-fill">Docs</a>
+                    <a href="/documentation.html" class="btn button-st">Docs</a>
                 </div>
             </div>
             <div class="square_menu">
                 <div class="btn-cont">
-                    <a href="/examples.html" class="btn first-fill">Examples</a>
+                    <a href="/examples.html" class="btn button-st">Examples</a>
                 </div>
             </div>
             <div class="square_menu">
                 <div class="btn-cont">
-                    <a href="/blog.html" class="btn first-fill">Blog</a>
+                    <a href="/blog.html" class="btn button-st">Blog</a>
                 </div>
             </div>
             <div class="square_menu">
                 <div class="btn-cont">
-                    <a href="/about-golf.html" class="btn first-fill">About</a>
+                    <a href="/about-golf.html" class="btn button-st">About</a>
                 </div>
             </div>
          </div>
     </div>
     </sect>
-    <div style='background-image:linear-gradient(to bottom, #3f95ce,  #1ab35b); width:100%;text-align:right;height:10px;'> </div>
 
     <sect class="sect sec-two">
-        <h2 style='color:white'>Never skip on important stuff</h2>
+    <!--<h2  style='color:white'>Easy to install</h2>-->
         <div class="box-container">
             <div class="square left-square">
-                <h3>Safe</h3>
-                <p>Golf is a memory safe language with automatic memory release so it never leaks, and with a smart status checking of your code.</p>
+                <h3>Easy, then easier, and memory safe</h3>
+                <p>Build web applications quicker than ever before. Memory safe with automatic memory release, and with a smart status checking of your code.</p>
             </div>
             <div class="square right-square">
-                <h3>Standards-driven</h3>
-                <p>Built with industry-standard Free Open Source libraries for stability, performance and compliance.</p>
+                <h3>No sudo needed to install</h3>
+                <p>Golf doesn't need sudo permissions because it installs in a home folder. <a href="/golf-install.html">Install Golf</a> now.</p>
             </div>
         </div>
     </sect>
 
-    <div style='background-image:linear-gradient(to bottom, #1ab35b,#da4d3e ); width:100%;text-align:right;height:10px;'> </div>
-    <sect class="sect sec-three">
-        <h2  style='color:white'>Everything you need</h2>
+    <sect class="sect sec-four">
+    <!--<h2  style='color:white'>Well rounded</h2>-->
+        <div class="box-container">
+            <div class="square left-square">
+                <h3>Standards-driven</h3>
+                <p>Built with industry-standard Free Open Source libraries for stability, performance and compliance.</p>
+            </div>
+            <div class="square right-square">
+                <h3>Well documented with examples</h3>
+                <p>Visit <a href='/documentation.html'>Documentation</a> for a clear and concise manual, and examples of use. Check out <a href='/examples.html'>examples</a> too.</p>
+            </div>
+        </div>
+    </sect>
+
+    <sect class="sect sec-two">
+    <!--<h2 style='color:white'>Never skip on important stuff</h2>-->
         <div class="box-container">
             <div class="square left-square">
                 <h3>Every CPU cycle counts</h3>
@@ -282,29 +279,13 @@
             </div>
         </div>
     </sect>
-    <div style='background-image:linear-gradient(to bottom, #da4d3e,#eb950d ); width:100%;text-align:right;height:10px;'> </div>
 
-    <sect class="sect sec-four">
-        <h2  style='color:white'>Well rounded</h2>
+    <sect class="sect sec-three">
+    <!--<h2  style='color:white'>Everything you need</h2>-->
         <div class="box-container">
             <div class="square left-square">
                 <h3>Freedom</h3>
                 <p>Licensed under <a href='/license.html'>Apache 2</a> Free Open Source License. Source code always at your fingertips at<br/><a href='https://github.com/golf-lang/golf'>https://github.com/golf-lang/golf</a></p>
-            </div>
-            <div class="square right-square">
-                <h3>Well documented with examples</h3>
-                <p>Visit <a href='/documentation.html'>Documentation</a> for a clear and concise manual, and examples of use. Check out <a href='/examples.html'>examples</a> too.</p>
-            </div>
-        </div>
-    </sect>
-    <div style='background-image:linear-gradient(to bottom, #eb950d,#1ab35b ); width:100%;text-align:right;height:10px;'> </div>
-
-    <sect class="sect sec-two">
-        <h2  style='color:white'>Easy to install</h2>
-        <div class="box-container">
-            <div class="square left-square">
-                <h3>No sudo required</h3>
-                <p>Golf doesn't need sudo permissions because it installs in a home folder. <a href="/golf-install.html">Install Golf</a> now.</p>
             </div>
             <div class="square right-square">
                 <h3>No binaries</h3>
@@ -313,12 +294,11 @@
         </div>
     </sect>
 
-    <div style='background-image:linear-gradient(to bottom, #1ab35b, #b694d6 ); width:100%;text-align:right;height:10px;'> </div>
     <sect class="sect sec-five">
-        <h2  style='color:white'>Here's how easy Golf is</h2>
+    <!--<h2  style='color:white'>Here's how easy Golf is</h2>-->
         <div class="one-big-sect">
-        Example of Golf code (from <a href='https://golf-lang.blogspot.com/2024/11/multi-tenant-saas-notes-web-application_43.html'>SaaS example</a>):<br/>
-        <div class='code'  style='font-size:26px;position:relative;padding-right:16px;text-align:left;padding-left:2px;width:100%;margin-left:2px;background-color:white;color:black'>
+		Example of Golf code (from <a href='https://golf-lang.blogspot.com/2024/11/multi-tenant-saas-notes-web-application_43.html'>SaaS example</a>):<br/><br/>
+        <div class='code'  style='font-size:20px;position:relative;padding-right:16px;text-align:left;padding-left:2px;width:100%;margin-left:2px;background-color:white;color:black'>
         <pre id='code_621'>
 <span class="Statement">begin-handler</span> /update-order
 <span class="Statement">    out-header</span><span class="Identifier"> use content-type</span> <span class="Constant">&quot;application/json&quot;</span>
@@ -340,15 +320,14 @@
 </div>
         </div>
     </sect>
-    <div style='background-image:linear-gradient(to bottom, #b694d6, #eb950d ); width:100%;text-align:right;height:10px;'> </div>
 
     <sect class="sect sec-four">
-        <h2  style='color:white'>Quality matters</h2>
+    <!--<h2  style='color:white'>Quality matters</h2>-->
         <div class="box-container">
             <div class="square left-square">
                 <h3>Rigorous QA</h3>
                 <p>
-                Current version is 3.0.1. This release passed 2902 functional tests.
+Current version is 3.0.9. This release passed 2909 functional tests.
                 Check out <a href='/blog.html'>Golf blog</a> for new releases and other news, including new examples.
                 </p>
             </div>
@@ -361,11 +340,7 @@
 
     <sect class="sect sec-four">
         <div class="one-big-sect" style='width:100%; max-width:3000px;color:black;'>
-<br/><div style='width:100%;clear:both;'>
-<hr/>
-<!--GOLFFOOT77--><span style='font-size:80%'><a href="/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
-</div><br/></body></html>
-
+	__GOLF_FOOT_
 
         </div>
     </sect>
