@@ -273,7 +273,7 @@ Create database objects we'll need - users table for application users, and note
 Create application "notes" owned by your Linux user:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_177' class=notranslate>
-sudo mgrg <span class="Special">-i</span> <span class="Special">-u</span> <span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span> notes</pre>
+mgrg <span class="Special">-i</span> <span class="Special">-u</span> <span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span> notes</pre>
 <span id=golf_copied_177 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_177' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_177, code_177, golf_copied_177)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
@@ -336,7 +336,7 @@ Copy and paste:<br/>
 <span class="Statement"> %%</span>
  <span class="Comment">// Starting point of the application. Either display login form or a home page:</span>
 <span class="Statement"> %%</span> /session/start<span class="Identifier"> public</span>
-<span class="Statement">     get-param</span> action, is_logged_in<span class="Identifier"> type bool</span>
+<span class="Statement">     get-param</span> action<span class="Identifier"> default-value</span> <span class="Constant">&quot;&quot;</span>, is_logged_in<span class="Identifier"> type bool default-value</span> <span class="Constant">&quot;&quot;</span>
 <span class="Statement">     if-true</span> is_logged_in<span class="Identifier"> equal</span> <span class="Constant">true</span>
 <span class="Statement">         if-true</span> action<span class="Identifier"> not-equal</span> <span class="Constant">&quot;logout&quot;</span>
 <span class="Statement">             call-handler</span> <span class="Constant">&quot;/session/show-home&quot;</span>
@@ -373,7 +373,7 @@ Copy and paste:<br/>
 <span class="Statement">             set-param</span> is_logged_in = <span class="Constant">true</span>
 <span class="Statement">             get-param</span> displayed_logout<span class="Identifier"> type bool</span>
 <span class="Statement">             if-true</span> displayed_logout<span class="Identifier"> equal</span> <span class="Constant">false</span>
-<span class="Statement">                 get-param</span> action
+<span class="Statement">                 get-param</span> action<span class="Identifier"> default-value</span> <span class="Constant">&quot;&quot;</span>
 <span class="Statement">                 if-true</span> action<span class="Identifier"> not-equal</span> <span class="Constant">&quot;logout&quot;</span>
 <span class="Statement">                     @</span>Hi <span class="Statement">&lt;&lt;print-out</span> email<span class="Statement">&gt;&gt;</span>! &lt;a href=&quot;<span class="Statement">&lt;&lt;print-path</span> <span class="Constant">&quot;/session/logout&quot;</span><span class="Statement">&gt;&gt;</span>&quot;&gt;Logout&lt;/a&gt;&lt;br/&gt;
 <span class="Statement">                 end-if</span>
@@ -608,10 +608,10 @@ sudo vi /etc/nginx/sites-enabled/default</pre>
 <textarea id='golft_166' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_166, code_166, golf_copied_166)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Add this in "server {}" section:<br/>
+Add this in "server {}" section (replace "your-user" with your OS user name):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_167' class=notranslate>
-location /notes/ <span class="Special">{</span> include /etc/nginx/fastcgi_params<span class="Statement">;</span> fastcgi_pass  unix:///var/lib/gg/notes/sock/sock<span class="Statement">;</span> <span class="Special">}</span></pre>
+location /notes/ <span class="Special">{</span> include /etc/nginx/fastcgi_params<span class="Statement">;</span> fastcgi_pass  unix:///home/your-user/.golf/apps/notes/sock/.sock<span class="Statement">;</span> <span class="Special">}</span></pre>
 <span id=golf_copied_167 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_167' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_167, code_167, golf_copied_167)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
