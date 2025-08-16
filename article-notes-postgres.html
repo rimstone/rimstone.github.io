@@ -336,7 +336,7 @@ Copy and paste:<br/>
 <span class="Statement"> %%</span>
  <span class="Comment">// Starting point of the application. Either display login form or a home page:</span>
 <span class="Statement"> %%</span> /session/start<span class="Identifier"> public</span>
-<span class="Statement">     get-param</span> action<span class="Identifier"> default-value</span> <span class="Constant">&quot;&quot;</span>, is_logged_in<span class="Identifier"> type bool default-value</span> <span class="Constant">&quot;&quot;</span>
+<span class="Statement">     get-param</span> action<span class="Identifier"> default-value</span> <span class="Constant">&quot;&quot;</span>, is_logged_in<span class="Identifier"> type bool default-value</span> <span class="Constant">false</span>
 <span class="Statement">     if-true</span> is_logged_in<span class="Identifier"> equal</span> <span class="Constant">true</span>
 <span class="Statement">         if-true</span> action<span class="Identifier"> not-equal</span> <span class="Constant">&quot;logout&quot;</span>
 <span class="Statement">             call-handler</span> <span class="Constant">&quot;/session/show-home&quot;</span>
