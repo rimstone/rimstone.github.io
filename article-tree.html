@@ -234,32 +234,32 @@ We'll use "tree" type, which is a high-performance data structure. For example, 
 <br/>
 Create new "tree" application first, in a new directory (you can name it anything you like):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_282' class=notranslate>
+<pre id='code_287' class=notranslate>
 <span class="Statement">mkdir</span> <span class="Special">-p</span> tree
 <span class="Statement">cd</span> tree</pre>
-<span id=golf_copied_282 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_282' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_282, code_282, golf_copied_282)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_287 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_287' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_287, code_287, golf_copied_287)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The <a href='https://golf-lang.com/mgrg.html'>mgrg</a> command is a Golf service manager and here it will create a new application named "tree" (it can be different from the directory it's in):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_283' class=notranslate>
+<pre id='code_288' class=notranslate>
 gg <span class="Special">-k</span> tree</pre>
-<span id=golf_copied_283 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_283' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_283, code_283, golf_copied_283)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_288 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_288' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_288, code_288, golf_copied_288)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Create a source code file "srv.golf":<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_284' class=notranslate>
+<pre id='code_289' class=notranslate>
 vi srv.golf</pre>
-<span id=golf_copied_284 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_284' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_284, code_284, golf_copied_284)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_289 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_289' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_289, code_289, golf_copied_289)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 and copy and paste this:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_280' class=notranslate>
+<pre id='code_285' class=notranslate>
 <span class="Statement"> begin-handler</span> /srv<span class="Identifier"> public</span>
 <span class="Statement">     do-once</span>
 <span class="Statement">         new-tree</span> ind<span class="Identifier"> process-scope</span>
@@ -290,40 +290,40 @@ and copy and paste this:<br/>
 <span class="Statement">         end-if</span>
 <span class="Statement">     end-if</span>
 <span class="Statement"> end-handler</span></pre>
-<span id=golf_copied_280 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_280' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_280, code_280, golf_copied_280)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-A service will run as a single process because each operation is handled very fast, even with large number of concurrent requests.<br/>
-<div class="vsub"><a id="Build a service"></a>Build a service</div>
-<div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_285' class=notranslate>
-gg <span class="Special">-q</span></pre>
 <span id=golf_copied_285 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_285' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_285, code_285, golf_copied_285)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
+A service will run as a single process because each operation is handled very fast, even with large number of concurrent requests.<br/>
+<div class="vsub"><a id="Build a service"></a>Build a service</div>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_290' class=notranslate>
+gg <span class="Special">-q</span></pre>
+<span id=golf_copied_290 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_290' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_290, code_290, golf_copied_290)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
 <div class="vsub"><a id="Run as service"></a>Run as service</div>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_286' class=notranslate>
+<pre id='code_291' class=notranslate>
 mgrg <span class="Special">-w</span> <span class="Constant">1</span> tree</pre>
-<span id=golf_copied_286 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_286' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_286, code_286, golf_copied_286)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_291 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_291' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_291, code_291, golf_copied_291)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The above will start a single server process (-w 1) to serve incoming requests.<br/>
 <div class="vsub"><a id="Test it"></a>Test it</div>
 This is a bash test script to insert 3 keys into your cache server, query them, then delete them. Create "test_tree" file:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_287' class=notranslate>
+<pre id='code_292' class=notranslate>
 vi test_tree</pre>
-<span id=golf_copied_287 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_287' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_287, code_287, golf_copied_287)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_292 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_292' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_292, code_292, golf_copied_292)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 And copy/paste the following:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_288' class=notranslate>
+<pre id='code_293' class=notranslate>
 <span class="Comment">#Add 3 key/data pairs. Key value is 0,1,2... and data values are &quot;data_0&quot;, &quot;data_1&quot;, &quot;data_2&quot; etc.</span>
 <span class="Statement">for</span> i <span class="Statement">in</span> <span class="Special">{</span><span class="Constant">1</span>..<span class="Constant">3</span><span class="Special">}</span>; <span class="Statement">do</span>
    gg <span class="Statement">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/srv/op=add/key=</span><span class="PreProc">$i</span><span class="Constant">/data=data_</span><span class="PreProc">$i</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--service</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/tree</span><span class="Statement">&quot;</span> <span class="Special">--silent-header</span>
@@ -342,22 +342,22 @@ And copy/paste the following:<br/>
    gg <span class="Statement">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/srv/op=delete/key=</span><span class="PreProc">$i</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--service</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/tree</span><span class="Statement">&quot;</span> <span class="Special">--silent-header</span>
 <span class="Statement">done</span>
 <span class="Statement">echo</span><span class="Constant"> </span><span class="Statement">&quot;</span><span class="Constant">Keys deleted</span><span class="Statement">&quot;</span></pre>
-<span id=golf_copied_288 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_288' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_288, code_288, golf_copied_288)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_293 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_293' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_293, code_293, golf_copied_293)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Make sure it's executable and run it:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_289' class=notranslate>
+<pre id='code_294' class=notranslate>
 <span class="Statement">chmod</span> <span class="Special">+x</span> test_tree
 ./test_tree</pre>
-<span id=golf_copied_289 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_289' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_289, code_289, golf_copied_289)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_294 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_294' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_294, code_294, golf_copied_294)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The result is this:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_281' class=notranslate>
+<pre id='code_286' class=notranslate>
 Added [1]
 Added [2]
 Added [3]
@@ -370,9 +370,9 @@ Deleted, old value was [data_1]
 Deleted, old value was [data_2]
 Deleted, old value was [data_3]
 Keys deleted</pre>
-<span id=golf_copied_281 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_281' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_281, code_281, golf_copied_281)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_286 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_286' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_286, code_286, golf_copied_286)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Articles'></a><span style="font-weight:bold;">Articles</span><br/>
@@ -381,6 +381,7 @@ Keys deleted</pre>
 <a href='https://golf-lang.com/article-debug.html'>article-debug</a> &nbsp;<br/>
 <a href='https://golf-lang.com/article-distributed.html'>article-distributed</a> &nbsp;<br/>
 <a href='https://golf-lang.com/article-encryption.html'>article-encryption</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-fetch-web-page.html'>article-fetch-web-page</a> &nbsp;<br/>
 <a href='https://golf-lang.com/article-fifo.html'>article-fifo</a> &nbsp;<br/>
 <a href='https://golf-lang.com/article-file-manager.html'>article-file-manager</a> &nbsp;<br/>
 <a href='https://golf-lang.com/article-hello-server.html'>article-hello-server</a> &nbsp;<br/>

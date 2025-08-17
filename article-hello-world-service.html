@@ -234,50 +234,50 @@ For that reason, create first <a href='https://golf-lang.com/article-hello-world
 <br/>
 The only thing to do afterwards is to start up Hello World as application server:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_132' class=notranslate>
+<pre id='code_137' class=notranslate>
 mgrg hello</pre>
-<span id=golf_copied_132 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_132' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_132, code_132, golf_copied_132)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_137 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_137' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_137, code_137, golf_copied_137)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Now there's a number of resident processes running, expecting clients requests. You can see those processes:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_134' class=notranslate>
+<pre id='code_139' class=notranslate>
 ps <span class="Special">-ef</span>|<span class="Statement">grep</span> hello</pre>
-<span id=golf_copied_134 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_134' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_134, code_134, golf_copied_134)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_139 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_139' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_139, code_139, golf_copied_139)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The result:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_131' class=notranslate>
+<pre id='code_136' class=notranslate>
 bear       25772    2311  0 13:04 ?        00:00:00 mgrg hello
 bear       25773   25772  0 13:04 ?        00:00:00 /var/lib/gg/bld/hello/hello.srvc
 bear       25774   25772  0 13:04 ?        00:00:00 /var/lib/gg/bld/hello/hello.srvc
 bear       25775   25772  0 13:04 ?        00:00:00 /var/lib/gg/bld/hello/hello.srvc
 bear       25776   25772  0 13:04 ?        00:00:00 /var/lib/gg/bld/hello/hello.srvc
 bear       25777   25772  0 13:04 ?        00:00:00 /var/lib/gg/bld/hello/hello.srvc</pre>
-<span id=golf_copied_131 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_131' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_131, code_131, golf_copied_131)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_136 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_136' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_136, code_136, golf_copied_136)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 "mgrg hello" runs the Golf process manager for application "hello". A number of ".../hello.srvc" processes are server processes that will handle service request sent to application "hello".<br/>
 <br/>
 Now, to test your service, you can send a request to the server from command line (by using "--service" option):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_135' class=notranslate>
+<pre id='code_140' class=notranslate>
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/hello-world/name=Mike</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--silent-header</span> <span class="Special">--service</span></pre>
-<span id=golf_copied_135 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_135' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_135, code_135, golf_copied_135)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_140 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_140' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_140, code_140, golf_copied_140)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The above will make a request to one of the processes above, which will then reply:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_133' class=notranslate>
+<pre id='code_138' class=notranslate>
 This is Hello World from Mike</pre>
-<span id=golf_copied_133 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_133' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_133, code_133, golf_copied_133)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_138 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_138' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_138, code_138, golf_copied_138)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Articles'></a><span style="font-weight:bold;">Articles</span><br/>
@@ -286,6 +286,7 @@ This is Hello World from Mike</pre>
 <a href='https://golf-lang.com/article-debug.html'>article-debug</a> &nbsp;<br/>
 <a href='https://golf-lang.com/article-distributed.html'>article-distributed</a> &nbsp;<br/>
 <a href='https://golf-lang.com/article-encryption.html'>article-encryption</a> &nbsp;<br/>
+<a href='https://golf-lang.com/article-fetch-web-page.html'>article-fetch-web-page</a> &nbsp;<br/>
 <a href='https://golf-lang.com/article-fifo.html'>article-fifo</a> &nbsp;<br/>
 <a href='https://golf-lang.com/article-file-manager.html'>article-file-manager</a> &nbsp;<br/>
 <a href='https://golf-lang.com/article-hello-server.html'>article-hello-server</a> &nbsp;<br/>
