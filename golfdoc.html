@@ -6279,7 +6279,7 @@ and on Fedora/RedHat is at:<br/>
 </div><br/>
 Note you might have to use "sudo" to edit these files as they're generally not writable by ordinary users.<br/>
 <br/>
-Find the "server" section, and add this inside it:<br/>
+Find the "server" section, and add this inside it (replace "your-user" with your OS user name):<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
 <pre id='code_308' class=notranslate>
 location /fact/ { include /etc/nginx/fastcgi_params; fastcgi_pass  unix:///home/your-user/.golf/apps/fact/sock/.sock; }</pre>
