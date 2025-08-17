@@ -232,86 +232,86 @@ This is a complete SaaS example (Software-as-a-Service) using PostgreSQL as a da
 <br/>
 First create a directory for your application, where the source code will be:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_178' class=notranslate>
+<pre id='code_179' class=notranslate>
 <span class="Statement">mkdir</span> <span class="Special">-p</span> notes
 <span class="Statement">cd</span> notes</pre>
-<span id=golf_copied_178 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_178' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_178, code_178, golf_copied_178)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_179 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_179' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_179, code_179, golf_copied_179)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Setup Postgres database"></a>Setup Postgres database</div>
 Create PostgreSQL user (with the same name as your logged on Linux user, so no password needed), and the database "db_app":<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_180' class=notranslate>
+<pre id='code_181' class=notranslate>
 <span class="Statement">echo</span><span class="Constant"> </span><span class="Statement">&quot;</span><span class="Constant">create user </span><span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span><span class="Constant">;</span>
 <span class="Constant">create database db_app with owner=</span><span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span><span class="Constant">;</span>
 <span class="Constant">grant all on database db_app to </span><span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span><span class="Constant">;</span>
 <span class="Constant">\q</span><span class="Statement">&quot;</span><span class="Constant">  </span>| sudo <span class="Special">-u</span> postgres psql</pre>
-<span id=golf_copied_180 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_180' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_180, code_180, golf_copied_180)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_181 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_181' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_181, code_181, golf_copied_181)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Create a database configuration file to describe your PostgreSQL database above:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_182' class=notranslate>
-<span class="Statement">echo</span><span class="Constant"> </span><span class="Statement">&quot;</span><span class="Constant">user=</span><span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span><span class="Constant"> dbname=db_app</span><span class="Statement">&quot;</span><span class="Constant"> </span><span class="Statement">&gt;</span> db_app</pre>
-<span id=golf_copied_182 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_182' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_182, code_182, golf_copied_182)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-Create database objects we'll need - users table for application users, and notes table to hold their notes:<br/>
-<div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_183' class=notranslate>
-<span class="Statement">echo</span><span class="Constant"> </span><span class="Statement">&quot;</span><span class="Constant">create table if not exists notes (dateOf timestamp, noteId bigserial primary key, userId bigint, note varchar(1000));</span>
-<span class="Constant">create table if not exists users (userId bigserial primary key, email varchar(100), hashed_pwd varchar(100), verified smallint, verify_token varchar(30), session varchar(100));</span>
-<span class="Constant">create unique index if not exists users1 on users (email);</span><span class="Statement">&quot;</span><span class="Constant"> </span>| psql <span class="Special">-d</span> db_app</pre>
+<span class="Statement">echo</span><span class="Constant"> </span><span class="Statement">&quot;</span><span class="Constant">user=</span><span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span><span class="Constant"> dbname=db_app</span><span class="Statement">&quot;</span><span class="Constant"> </span><span class="Statement">&gt;</span> db_app</pre>
 <span id=golf_copied_183 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_183' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_183, code_183, golf_copied_183)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-<div class="vsub"><a id="Create Golf application"></a>Create Golf application</div>
-Create application "notes" owned by your Linux user:<br/>
+Create database objects we'll need - users table for application users, and notes table to hold their notes:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_184' class=notranslate>
-mgrg <span class="Special">-i</span> <span class="Special">-u</span> <span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span> notes</pre>
+<span class="Statement">echo</span><span class="Constant"> </span><span class="Statement">&quot;</span><span class="Constant">create table if not exists notes (dateOf timestamp, noteId bigserial primary key, userId bigint, note varchar(1000));</span>
+<span class="Constant">create table if not exists users (userId bigserial primary key, email varchar(100), hashed_pwd varchar(100), verified smallint, verify_token varchar(30), session varchar(100));</span>
+<span class="Constant">create unique index if not exists users1 on users (email);</span><span class="Statement">&quot;</span><span class="Constant"> </span>| psql <span class="Special">-d</span> db_app</pre>
 <span id=golf_copied_184 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_184' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_184, code_184, golf_copied_184)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-<div class="vsub"><a id="Source code"></a>Source code</div>
-This executes before any other handler in an application, making sure all requests are authorized, file "before-handler.golf":<br/>
+<div class="vsub"><a id="Create Golf application"></a>Create Golf application</div>
+Create application "notes" owned by your Linux user:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_185' class=notranslate>
-vi before-handler.golf</pre>
+mgrg <span class="Special">-i</span> <span class="Special">-u</span> <span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span> notes</pre>
 <span id=golf_copied_185 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_185' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_185, code_185, golf_copied_185)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Copy and paste:<br/>
-<div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_176' class=notranslate>
-<span class="Statement"> before-handler</span>
-<span class="Statement">     set-param</span> displayed_logout = <span class="Constant">false</span>, is_logged_in = <span class="Constant">false</span>
-<span class="Statement">     call-handler</span> <span class="Constant">&quot;/session/check&quot;</span>
-<span class="Statement"> end-before-handler</span></pre>
-<span id=golf_copied_176 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_176' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_176, code_176, golf_copied_176)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-<br/>
-<span style="font-weight:bold;">- Signup users, login, logout</span><br/>
-<br/>
-This is a generic session management web service that handles user creation, verification, login and logout. Create file "session.golf":<br/>
+<div class="vsub"><a id="Source code"></a>Source code</div>
+This executes before any other handler in an application, making sure all requests are authorized, file "before-handler.golf":<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_186' class=notranslate>
-vi session.golf</pre>
+vi before-handler.golf</pre>
 <span id=golf_copied_186 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_186' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_186, code_186, golf_copied_186)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Copy and paste:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_179' class=notranslate>
+<pre id='code_177' class=notranslate>
+<span class="Statement"> before-handler</span>
+<span class="Statement">     set-param</span> displayed_logout = <span class="Constant">false</span>, is_logged_in = <span class="Constant">false</span>
+<span class="Statement">     call-handler</span> <span class="Constant">&quot;/session/check&quot;</span>
+<span class="Statement"> end-before-handler</span></pre>
+<span id=golf_copied_177 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_177' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_177, code_177, golf_copied_177)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+<br/>
+<span style="font-weight:bold;">- Signup users, login, logout</span><br/>
+<br/>
+This is a generic session management web service that handles user creation, verification, login and logout. Create file "session.golf":<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_187' class=notranslate>
+vi session.golf</pre>
+<span id=golf_copied_187 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_187' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_187, code_187, golf_copied_187)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Copy and paste:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_180' class=notranslate>
  <span class="Comment">// Display link to login or signup</span>
 <span class="Statement"> %%</span> /session/login-or-signup<span class="Identifier"> private</span>
 <span class="Statement">     @</span>&lt;a href=&quot;<span class="Statement">&lt;&lt;print-path</span> <span class="Constant">&quot;/session/user/login&quot;</span><span class="Statement">&gt;&gt;</span>&quot;&gt;Login&lt;/a&gt; &amp;nbsp; &amp;nbsp; &lt;a href=&quot;<span class="Statement">&lt;&lt;print-path</span> <span class="Constant">&quot;/session/user/new/form&quot;</span><span class="Statement">&gt;&gt;</span>&quot;&gt;Sign Up&lt;/a&gt;&lt;hr/&gt;
@@ -468,23 +468,23 @@ Copy and paste:<br/>
 <span class="Statement">     @</span>&lt;button type=&quot;submit&quot;&gt;Verify&lt;/button&gt;
 <span class="Statement">     @</span>&lt;/form&gt;
 <span class="Statement"> %%</span></pre>
-<span id=golf_copied_179 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_179' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_179, code_179, golf_copied_179)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_180 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_180' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_180, code_180, golf_copied_180)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <span style="font-weight:bold;">- Notes application</span><br/>
 <br/>
 This is the actual application that uses above session management services. Create file "notes.golf":<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_187' class=notranslate>
+<pre id='code_188' class=notranslate>
 vi notes.golf</pre>
-<span id=golf_copied_187 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_187' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_187, code_187, golf_copied_187)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_188 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_188' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_188, code_188, golf_copied_188)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Copy and paste:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_181' class=notranslate>
+<pre id='code_182' class=notranslate>
  <span class="Comment">// Delete a note</span>
 <span class="Statement"> %%</span> /notes/delete<span class="Identifier"> public</span>
 <span class="Statement">     call-handler</span> <span class="Constant">&quot;/notes/header&quot;</span>
@@ -552,86 +552,86 @@ Copy and paste:<br/>
 <span class="Statement">     end-if</span>
 <span class="Statement">     @</span>&lt;a href=&quot;<span class="Statement">&lt;&lt;print-path</span> <span class="Constant">&quot;/notes/form-add&quot;</span><span class="Statement">&gt;&gt;</span>&quot;&gt;Add Note&lt;/a&gt; &lt;a href=&quot;<span class="Statement">&lt;&lt;print-path</span> <span class="Constant">&quot;/notes/list&quot;</span><span class="Statement">&gt;&gt;</span>&quot;&gt;List Notes&lt;/a&gt;&lt;hr/&gt;
 <span class="Statement"> %%</span></pre>
-<span id=golf_copied_181 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_181' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_181, code_181, golf_copied_181)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_182 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_182' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_182, code_182, golf_copied_182)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Build application"></a>Build application</div>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_188' class=notranslate>
+<pre id='code_189' class=notranslate>
 gg <span class="Special">-q</span> <span class="Special">--db</span><span class="Statement">=</span>postgres:db_app</pre>
-<span id=golf_copied_188 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_188' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_188, code_188, golf_copied_188)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_189 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_189' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_189, code_189, golf_copied_189)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Run web services application server"></a>Run web services application server</div>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_169' class=notranslate>
-mgrg notes</pre>
-<span id=golf_copied_169 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_169' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_169, code_169, golf_copied_169)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-<div class="vsub"><a id="Emailing"></a>Emailing</div>
-In order to use this example, you need to be able to email local users, which means email addresses such as \"myuser@localhost\". To do that, install postfix (or sendmail). On Debian systems (like Ubuntu):<br/>
-<div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_170' class=notranslate>
-sudo apt install postfix
-sudo systemctl start postfix</pre>
+mgrg notes</pre>
 <span id=golf_copied_170 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_170' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_170, code_170, golf_copied_170)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-and on Fedora systems (like RedHat):<br/>
+<div class="vsub"><a id="Emailing"></a>Emailing</div>
+In order to use this example, you need to be able to email local users, which means email addresses such as \"myuser@localhost\". To do that, install postfix (or sendmail). On Debian systems (like Ubuntu):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_171' class=notranslate>
-sudo dnf install postfix
+sudo apt install postfix
 sudo systemctl start postfix</pre>
 <span id=golf_copied_171 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_171' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_171, code_171, golf_copied_171)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-When the application sends an email to a local user, such as &lt;OS user&gt;@localhost, then you can see the email sent at:<br/>
+and on Fedora systems (like RedHat):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_172' class=notranslate>
-sudo vi /var/mail/<span class="Statement">&lt;</span>OS user<span class="Statement">&gt;</span></pre>
+sudo dnf install postfix
+sudo systemctl start postfix</pre>
 <span id=golf_copied_172 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_172' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_172, code_172, golf_copied_172)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-<div class="vsub"><a id="Setup Nginx"></a>Setup Nginx</div>
-A web server sits in front of Golf application server, so it needs to be setup. This example is for Ubuntu, so edit Nginx config file there:<br/>
+When the application sends an email to a local user, such as &lt;OS user&gt;@localhost, then you can see the email sent at:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_173' class=notranslate>
-sudo vi /etc/nginx/sites-enabled/default</pre>
+sudo vi /var/mail/<span class="Statement">&lt;</span>OS user<span class="Statement">&gt;</span></pre>
 <span id=golf_copied_173 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_173' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_173, code_173, golf_copied_173)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Add this in "server {}" section (replace "your-user" with your OS user name):<br/>
+<div class="vsub"><a id="Setup Nginx"></a>Setup Nginx</div>
+A web server sits in front of Golf application server, so it needs to be setup. This example is for Ubuntu, so edit Nginx config file there:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_174' class=notranslate>
-location /notes/ <span class="Special">{</span> include /etc/nginx/fastcgi_params<span class="Statement">;</span> fastcgi_pass  unix:///home/your-user/.golf/apps/notes/sock/.sock<span class="Statement">;</span> <span class="Special">}</span></pre>
+sudo vi /etc/nginx/sites-enabled/default</pre>
 <span id=golf_copied_174 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_174' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_174, code_174, golf_copied_174)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Restart Nginx:<br/>
+Add this in "server {}" section (replace "your-user" with your OS user name):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_175' class=notranslate>
-sudo systemctl restart nginx</pre>
+location /notes/ <span class="Special">{</span> include /etc/nginx/fastcgi_params<span class="Statement">;</span> fastcgi_pass  unix:///home/your-user/.golf/apps/notes/sock/.sock<span class="Statement">;</span> <span class="Special">}</span></pre>
 <span id=golf_copied_175 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_175' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_175, code_175, golf_copied_175)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
+Restart Nginx:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_176' class=notranslate>
+sudo systemctl restart nginx</pre>
+<span id=golf_copied_176 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_176' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_176, code_176, golf_copied_176)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
 <div class="vsub"><a id="You're done, run it!"></a>You're done, run it!</div>
 Go to your web browser, and enter:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_177' class=notranslate>
+<pre id='code_178' class=notranslate>
 http://127.0.0.1/notes/session/start</pre>
-<span id=golf_copied_177 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_177' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_177, code_177, golf_copied_177)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_178 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_178' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_178, code_178, golf_copied_178)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Articles'></a><span style="font-weight:bold;">Articles</span><br/>

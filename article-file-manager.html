@@ -234,44 +234,44 @@ You will use Golf as an application server and the programming language. It will
 <br/>
 Assuming your currently logged-on Linux user will own the application, create a source code directory and also create Golf application named "file-manager":<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_107' class=notranslate>
+<pre id='code_108' class=notranslate>
 <span class="Statement">mkdir</span> filemgr
 <span class="Statement">cd</span> filemgr
 gg <span class="Special">-k</span> file-manager</pre>
-<span id=golf_copied_107 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_107' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_107, code_107, golf_copied_107)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_108 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_108' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_108, code_108, golf_copied_108)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Next, create PostgreSQL database named "db_file_manager", owned by currently logged-on user (i.e. passwordless setup):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_109' class=notranslate>
+<pre id='code_110' class=notranslate>
 <span class="Statement">echo</span><span class="Constant"> </span><span class="Statement">&quot;</span><span class="Constant">create user </span><span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span><span class="Constant">;</span>
 <span class="Constant">create database db_file_manager with owner=</span><span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span><span class="Constant">;</span>
 <span class="Constant">grant all on database db_file_manager to </span><span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span><span class="Constant">;</span>
 <span class="Constant">\q</span><span class="Statement">&quot;</span><span class="Constant">  </span>| sudo <span class="Special">-u</span> postgres psql</pre>
-<span id=golf_copied_109 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_109' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_109, code_109, golf_copied_109)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_110 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_110' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_110, code_110, golf_copied_110)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Create database configuration file used by Golf that describes the database (it's a file "db"):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_111' class=notranslate>
+<pre id='code_112' class=notranslate>
 <span class="Statement">echo</span><span class="Constant"> </span><span class="Statement">&quot;</span><span class="Constant">user=</span><span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span><span class="Constant"> dbname=db_file_manager</span><span class="Statement">&quot;</span><span class="Constant"> </span><span class="Statement">&gt;</span> db</pre>
-<span id=golf_copied_111 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_111' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_111, code_111, golf_copied_111)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_112 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_112' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_112, code_112, golf_copied_112)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Create SQL table that will hold files currently stored on the server:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_113' class=notranslate>
+<pre id='code_114' class=notranslate>
 <span class="Statement">echo</span><span class="Constant"> </span><span class="Statement">&quot;</span><span class="Constant">create table if not exists files (fileName varchar(100), localPath varchar(300), extension varchar(10), description varchar(200), fileSize int, fileID bigserial primary key);</span><span class="Statement">&quot;</span><span class="Constant"> </span>| psql <span class="Special">-d</span> db_file_manager</pre>
-<span id=golf_copied_113 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_113' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_113, code_113, golf_copied_113)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_114 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_114' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_114, code_114, golf_copied_114)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Finally, create source Golf files. First create "start.golf" file and copy and paste:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_105' class=notranslate>
+<pre id='code_106' class=notranslate>
 <span class="Statement"> begin-handler</span> /start<span class="Identifier"> public</span>
 <span class="Statement">    @</span>&lt;h2&gt;File Manager&lt;/h2&gt;
 <span class="Statement">    @</span>To manage the uploaded files, &lt;a href=&quot;<span class="Statement">&lt;&lt;print-path</span> <span class="Constant">&quot;/list&quot;</span><span class="Statement">&gt;&gt;</span>&quot;&gt;click here.&lt;/a&gt;&lt;br/&gt;
@@ -285,13 +285,13 @@ Finally, create source Golf files. First create "start.golf" file and copy and p
 <span class="Statement">    @</span>    &lt;input type=&quot;submit&quot; value=&quot;Submit&quot;&gt;
 <span class="Statement">    @</span>&lt;/form&gt;
 <span class="Statement"> end-handler</span></pre>
-<span id=golf_copied_105 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_105' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_105, code_105, golf_copied_105)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_106 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_106' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_106, code_106, golf_copied_106)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Create "list.golf" file and copy and paste:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_108' class=notranslate>
+<pre id='code_109' class=notranslate>
 <span class="Statement"> begin-handler</span> /list<span class="Identifier"> public</span>
 <span class="Statement">     @</span>&lt;h2&gt;List of files&lt;/h2&gt;
 <span class="Statement">     @</span>To add a file, &lt;a href=&quot;<span class="Statement">&lt;&lt;print-path</span> <span class="Constant">&quot;/start&quot;</span><span class="Statement">&gt;&gt;</span>&quot;&gt;click here&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;
@@ -310,13 +310,13 @@ Create "list.golf" file and copy and paste:<br/>
 <span class="Statement">     end-query</span>
 <span class="Statement">     @</span>&lt;/table&gt;
 <span class="Statement"> end-handler</span></pre>
-<span id=golf_copied_108 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_108' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_108, code_108, golf_copied_108)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_109 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_109' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_109, code_109, golf_copied_109)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Create "upload.golf" file and copy and paste:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_110' class=notranslate>
+<pre id='code_111' class=notranslate>
 <span class="Statement"> begin-handler</span> /upload<span class="Identifier"> public</span>
 <span class="Statement">    get-param</span> filedesc      <span class="Comment">// file description from the upload form</span>
 <span class="Statement">    get-upload</span> file<span class="Type"> local-file</span> file_location<span class="Type"> size</span> file_size \
@@ -331,13 +331,13 @@ Create "upload.golf" file and copy and paste:<br/>
          is stored on server at <span class="Statement">&lt;&lt;print-out</span> file_location<span class="Statement"> web-encode&gt;&gt;</span>. \
          File description is <span class="Statement">&lt;&lt;print-out</span> filedesc<span class="Statement"> web-encode&gt;&gt;</span>.&lt;hr/&gt;
 <span class="Statement"> end-handler</span></pre>
-<span id=golf_copied_110 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_110' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_110, code_110, golf_copied_110)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_111 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_111' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_111, code_111, golf_copied_111)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Create "download.golf" file and copy and paste:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_112' class=notranslate>
+<pre id='code_113' class=notranslate>
 <span class="Statement"> begin-handler</span> /download<span class="Identifier"> public</span>
 <span class="Statement">     get-param</span> file_id
 <span class="Statement">     run-query</span> @db= \
@@ -360,13 +360,13 @@ Create "download.golf" file and copy and paste:<br/>
 <span class="Statement">         exit-handler</span>
 <span class="Statement">     end-if</span>
 <span class="Statement"> end-handler</span></pre>
-<span id=golf_copied_112 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_112' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_112, code_112, golf_copied_112)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_113 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_113' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_113, code_113, golf_copied_113)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Create "delete.golf" file and copy and paste:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_114' class=notranslate>
+<pre id='code_115' class=notranslate>
 <span class="Statement"> begin-handler</span> /delete<span class="Identifier"> public</span>
 <span class="Statement">    @</span>&lt;h2&gt;Delete a file&lt;/h2&gt;
 <span class="Statement">    get-param</span> action
@@ -395,58 +395,58 @@ Create "delete.golf" file and copy and paste:<br/>
 <span class="Statement">         end-if</span>
 <span class="Statement">    end-query</span>
 <span class="Statement"> end-handler</span></pre>
-<span id=golf_copied_114 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_114' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_114, code_114, golf_copied_114)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-Make the application:<br/>
-<div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_115' class=notranslate>
-gg <span class="Special">-q</span> <span class="Special">--db</span><span class="Statement">=</span>postgres:db</pre>
 <span id=golf_copied_115 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_115' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_115, code_115, golf_copied_115)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Run your application server:<br/>
+Make the application:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_116' class=notranslate>
-mgrg file-manager</pre>
+gg <span class="Special">-q</span> <span class="Special">--db</span><span class="Statement">=</span>postgres:db</pre>
 <span id=golf_copied_116 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_116' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_116, code_116, golf_copied_116)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-A web server sits in front of Golf application server, so it needs to be setup. This example is for Ubuntu, so edit Nginx config file there:<br/>
+Run your application server:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_117' class=notranslate>
-sudo vi /etc/nginx/sites-enabled/default</pre>
+mgrg file-manager</pre>
 <span id=golf_copied_117 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_117' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_117, code_117, golf_copied_117)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Add this in "server {}" section ("client_max_body_size" allows for images of typical sizes to be uploaded), replace "your-user" with the name of your OS user:<br/>
-<div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_106' class=notranslate>
-location /file-manager/ { include /etc/nginx/fastcgi_params; fastcgi_pass  unix:///home/your-user/.golf/apps/file-manager/sock/.sock; }
-client_max_body_size 100M;</pre>
-<span id=golf_copied_106 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_106' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_106, code_106, golf_copied_106)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-Restart Nginx:<br/>
+A web server sits in front of Golf application server, so it needs to be setup. This example is for Ubuntu, so edit Nginx config file there:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_118' class=notranslate>
-sudo systemctl restart nginx</pre>
+sudo vi /etc/nginx/sites-enabled/default</pre>
 <span id=golf_copied_118 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_118' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_118, code_118, golf_copied_118)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Go to your web browser, and enter:<br/>
+Add this in "server {}" section ("client_max_body_size" allows for images of typical sizes to be uploaded), replace "your-user" with the name of your OS user:<br/>
+<div class='ncode' style='position:relative;padding-right:16px;'>
+<pre id='code_107' class=notranslate>
+location /file-manager/ { include /etc/nginx/fastcgi_params; fastcgi_pass  unix:///home/your-user/.golf/apps/file-manager/sock/.sock; }
+client_max_body_size 100M;</pre>
+<span id=golf_copied_107 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_107' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_107, code_107, golf_copied_107)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Restart Nginx:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_119' class=notranslate>
-<a href="http://">http://</a><span class="Constant">127</span>.<span class="Constant">0</span>.<span class="Constant">0</span>.<span class="Constant">1</span>/file-manager/start</pre>
+sudo systemctl restart nginx</pre>
 <span id=golf_copied_119 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_119' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_119, code_119, golf_copied_119)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Go to your web browser, and enter:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_120' class=notranslate>
+<a href="http://">http://</a><span class="Constant">127</span>.<span class="Constant">0</span>.<span class="Constant">0</span>.<span class="Constant">1</span>/file-manager/start</pre>
+<span id=golf_copied_120 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_120' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_120, code_120, golf_copied_120)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 This is what the end result looks like. Obviously, we used just bare-bone HTML, but that's not the point here at all. You can use any kind of front-end technology, the point is to demonstrate Golf as a back-end server for web applications/services.<br/>
 <br/>

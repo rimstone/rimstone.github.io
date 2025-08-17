@@ -230,45 +230,45 @@ function googleTranslateElementInit() {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Web services with MariaDB</div><hr/><br/>
 Create a directory for your project, it'll be where this example takes place. Also create Golf application "stock":<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_157' class=notranslate>
+<pre id='code_158' class=notranslate>
 <span class="Statement">mkdir</span> <span class="Special">-p</span> stock-app
 <span class="Statement">cd</span> stock-app
 mgrg <span class="Special">-i</span> <span class="Special">-u</span> <span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span> stock</pre>
-<span id=golf_copied_157 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_157' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_157, code_157, golf_copied_157)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_158 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_158' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_158, code_158, golf_copied_158)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Start MariaDB command line interface:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_161' class=notranslate>
+<pre id='code_162' class=notranslate>
 sudo mysql</pre>
-<span id=golf_copied_161 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_161' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_161, code_161, golf_copied_161)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_162 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_162' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_162, code_162, golf_copied_162)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Create an application user, database and a stock table (with stock name and price):<br/>
 <div class='sqlcode' style='position:relative;padding-right:16px;'>
-<pre id='code_158' class=notranslate>
+<pre id='code_159' class=notranslate>
 <span class="Statement">create</span> <span class="Identifier">user</span> stock_user;
 <span class="Statement">create</span> database stock_db;
 <span class="Statement">grant</span> <span class="Statement">all</span> <span class="Special">privileges</span> <span class="Special">on</span> stock_db.* <span class="Special">to</span> stock_user@localhost <span class="Special">identified</span> <span class="Special">by</span> <span class="Special">'</span><span class="Constant">stock_pwd</span><span class="Special">'</span>;
 use stock_db
 <span class="Statement">create</span> <span class="Special">table</span> <span class="Special">if</span> <span class="Statement">not</span> <span class="Statement">exists</span> stock (stock_name <span class="Type">varchar</span>(<span class="Constant">100</span>) primary key, stock_price bigint);</pre>
-<span id=golf_copied_158 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_158' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_158, code_158, golf_copied_158)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_159 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_159' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_159, code_159, golf_copied_159)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Golf wants you to describe the database: the user name and password, database name, and the rest is the default setup for MariaDB database connection. So create a file "db_stock" (which is your database configuration file, one per each you use):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_163' class=notranslate>
+<pre id='code_164' class=notranslate>
 vi db_stock</pre>
-<span id=golf_copied_163 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_163' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_163, code_163, golf_copied_163)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_164 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_164' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_164, code_164, golf_copied_164)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 and copy and paste this:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_156' class=notranslate>
+<pre id='code_157' class=notranslate>
 [client]
 user=stock_user
 password=stock_pwd
@@ -276,21 +276,21 @@ database=stock_db
 protocol=TCP
 host=127.0.0.1
 port=3306</pre>
-<span id=golf_copied_156 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_156' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_156, code_156, golf_copied_156)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_157 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_157' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_157, code_157, golf_copied_157)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Now to the code. Here's the web service to insert stock name and price into the stock table - create file "add-stock.golf":<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_164' class=notranslate>
+<pre id='code_165' class=notranslate>
 vi add-stock.golf</pre>
-<span id=golf_copied_164 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_164' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_164, code_164, golf_copied_164)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_165 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_165' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_165, code_165, golf_copied_165)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 and copy and paste this:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_155' class=notranslate>
+<pre id='code_156' class=notranslate>
 <span class="Statement"> %%</span> /add-stock<span class="Identifier"> public</span>
 <span class="Statement">     @</span>&lt;html&gt;
 <span class="Statement">         @</span>&lt;body&gt;
@@ -308,21 +308,21 @@ and copy and paste this:<br/>
 <span class="Statement">         @</span>&lt;/body&gt;
 <span class="Statement">     @</span>&lt;/html&gt;
 <span class="Statement"> %%</span></pre>
-<span id=golf_copied_155 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_155' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_155, code_155, golf_copied_155)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_156 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_156' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_156, code_156, golf_copied_156)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Next is the web service to display a web page with all stock names and prices from the stock table - create file "show-stock.golf":<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_165' class=notranslate>
+<pre id='code_166' class=notranslate>
 vi show-stock.golf</pre>
-<span id=golf_copied_165 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_165' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_165, code_165, golf_copied_165)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_166 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_166' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_166, code_166, golf_copied_166)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 and copy and paste this:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_159' class=notranslate>
+<pre id='code_160' class=notranslate>
 <span class="Statement"> %%</span> /show-stock<span class="Identifier"> public</span>
 <span class="Statement">     @</span>&lt;html&gt;
 <span class="Statement">         @</span>&lt;body&gt;
@@ -345,30 +345,30 @@ and copy and paste this:<br/>
 <span class="Statement">         @</span>&lt;/body&gt;
 <span class="Statement">     @</span>&lt;/html&gt;
 <span class="Statement"> %%</span></pre>
-<span id=golf_copied_159 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_159' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_159, code_159, golf_copied_159)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_160 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_160' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_160, code_160, golf_copied_160)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 You're done! Now it's time to make your application. You need to tell Golf that your database configuration file "db_stock" is MariaDB (because you could use PostgreSQL or SQLite for instance):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_166' class=notranslate>
-gg <span class="Special">-q</span> <span class="Special">--db</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">mariadb:db_stock</span><span class="Statement">&quot;</span></pre>
-<span id=golf_copied_166 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_166' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_166, code_166, golf_copied_166)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-Test your web service. Here you'd run it as a command line program. That's neat because you can test your web services without even using a web server or a browser:<br/>
-<div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_167' class=notranslate>
-gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/add-stock/name=ABC/price=882</span><span class="Statement">&quot;</span> <span class="Special">--exec</span>
-gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/add-stock/name=XYZ/price=112</span><span class="Statement">&quot;</span> <span class="Special">--exec</span></pre>
+gg <span class="Special">-q</span> <span class="Special">--db</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">mariadb:db_stock</span><span class="Statement">&quot;</span></pre>
 <span id=golf_copied_167 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_167' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_167, code_167, golf_copied_167)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
+Test your web service. Here you'd run it as a command line program. That's neat because you can test your web services without even using a web server or a browser:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_168' class=notranslate>
+gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/add-stock/name=ABC/price=882</span><span class="Statement">&quot;</span> <span class="Special">--exec</span>
+gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/add-stock/name=XYZ/price=112</span><span class="Statement">&quot;</span> <span class="Special">--exec</span></pre>
+<span id=golf_copied_168 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_168' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_168, code_168, golf_copied_168)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
 The result for each:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_160' class=notranslate>
+<pre id='code_161' class=notranslate>
 Content-Type: text/html;charset=utf-8
 Cache-Control: max-age=0, no-cache
 Pragma: no-cache
@@ -381,21 +381,21 @@ Stock price updated!
 &lt;/div&gt;
 &lt;/body&gt;
 &lt;/html&gt;</pre>
-<span id=golf_copied_160 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_160' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_160, code_160, golf_copied_160)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_161 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_161' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_161, code_161, golf_copied_161)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 And to test the list of stocks:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_168' class=notranslate>
+<pre id='code_169' class=notranslate>
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/show-stock</span><span class="Statement">&quot;</span> <span class="Special">--exe</span></pre>
-<span id=golf_copied_168 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_168' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_168, code_168, golf_copied_168)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_169 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_169' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_169, code_169, golf_copied_169)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The result:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_162' class=notranslate>
+<pre id='code_163' class=notranslate>
 Content-Type: text/html;charset=utf-8
 Cache-Control: max-age=0, no-cache
 Pragma: no-cache
@@ -423,9 +423,9 @@ XYZ&lt;/td&gt;
 &lt;/table&gt;
 &lt;/body&gt;
 &lt;/html&gt;</pre>
-<span id=golf_copied_162 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_162' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_162, code_162, golf_copied_162)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_163 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_163' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_163, code_163, golf_copied_163)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 You can see the actual response, the way it would be sent to a browser, or an API web client, or any other kind of web client.<br/>
 <div class="vsub"><a id="See also"></a>See also</div>
