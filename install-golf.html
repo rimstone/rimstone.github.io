@@ -231,39 +231,39 @@ function googleTranslateElementInit() {
 <div class="vsub"><a id="Get Golf source code"></a>Get Golf source code</div>
 Get Golf source code from its official GitHub repo (depth is 1 for speed):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_626' class=notranslate>
+<pre id='code_628' class=notranslate>
 git clone <span class="Special">--depth</span> <span class="Constant">1</span> <a href="https://github.com/golf-lang/golf.git">https://github.com/golf-lang/golf.git</a>
 <span class="Statement">cd</span> golf</pre>
-<span id=golf_copied_626 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_626' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_626, code_626, golf_copied_626)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_628 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_628' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_628, code_628, golf_copied_628)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Install Golf"></a>Install Golf</div>
 Golf itself does not require sudo as it installs in a local ".golf" folder. You may need sudo privilege to install standard Open Source toolkit libraries (such as MariaDB, SQLite, PostgreSQL, XML, Regex, Curl, OpenSSL etc), base libraries (if not installed already, and they usually are), or SELinux support (if you use it). They are system-wide by nature and require sudo.<br/>
 <br/>
 The default installation (above) will ask you if you'd like to install the above toolkit packages, You can install them if and when you need them, or you can install them now. To run the default installation:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_627' class=notranslate>
-./gginst.sh</pre>
-<span id=golf_copied_627 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_627' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_627, code_627, golf_copied_627)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-If you'd like to install all base and toolkit packages automatically now, then use the following:<br/>
-<div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_628' class=notranslate>
-<span class="Statement">. </span>./gginst.sh all</pre>
-<span id=golf_copied_628 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_628' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_628, code_628, golf_copied_628)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-The environment variables (such as PATH) are now set in .bashrc file, and will take effect next time you login. To continue working with Golf in the current shell:<br/>
-<div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_629' class=notranslate>
-<span class="Statement">. </span>~/.bashrc</pre>
+./gginst.sh</pre>
 <span id=golf_copied_629 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_629' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_629, code_629, golf_copied_629)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+If you'd like to install all base and toolkit packages automatically now, then use the following:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_630' class=notranslate>
+<span class="Statement">. </span>./gginst.sh all</pre>
+<span id=golf_copied_630 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_630' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_630, code_630, golf_copied_630)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+The environment variables (such as PATH) are now set in .bashrc file, and will take effect next time you login. To continue working with Golf in the current shell:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_631' class=notranslate>
+<span class="Statement">. </span>~/.bashrc</pre>
+<span id=golf_copied_631 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_631' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_631, code_631, golf_copied_631)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Try Golf"></a>Try Golf</div>
 Go to <a href='https://golf-lang.com/123-hello-world.html'>123-hello-world</a> for your Hello World.<br/>
@@ -274,11 +274,11 @@ If you have SELinux enabled then you'll need to install SELinux support for Golf
 <br/>
 If you don't want or need SELinux support, you can use permissive mode with:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_630' class=notranslate>
+<pre id='code_632' class=notranslate>
 sudo setenforce <span class="Constant">0</span></pre>
-<span id=golf_copied_630 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_630' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_630, code_630, golf_copied_630)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_632 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_632' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_632, code_632, golf_copied_632)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 in which case you won't need to install SELinux support.<br/>
 <span style="font-weight:bold;">- Afterwards</span><br/>

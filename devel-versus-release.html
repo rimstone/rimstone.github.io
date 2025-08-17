@@ -229,29 +229,29 @@ function googleTranslateElementInit() {
 <!--BEGVDOC90-->
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Devel versus release</div><hr/>By default, when you make your application, a "devel" (or development) version is built, for instance:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_498' class=notranslate>
+<pre id='code_500' class=notranslate>
 gg <span class="Special">-q</span></pre>
-<span id=golf_copied_498 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_498' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_498, code_498, golf_copied_498)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_500 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_500' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_500, code_500, golf_copied_500)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 You can also explicitly specify this:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_499' class=notranslate>
+<pre id='code_501' class=notranslate>
 gg <span class="Special">-q</span> <span class="Special">--devel</span></pre>
-<span id=golf_copied_499 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_499' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_499, code_499, golf_copied_499)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_501 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_501' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_501, code_501, golf_copied_501)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The development version of your application will not use all the compiler optimizations and it will not use the Link Time Optimizations (LTO), sometimes also referred to as "whole program optimization". So this version will exhibit lower run-time performance. However, it is also much faster to build and it includes additional debugging symbols as well.<br/>
 <br/>
 When you wish to produce a release executable, use "--release" option, for instance:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_500' class=notranslate>
+<pre id='code_502' class=notranslate>
 gg <span class="Special">-q</span> <span class="Special">--release</span></pre>
-<span id=golf_copied_500 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_500' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_500, code_500, golf_copied_500)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_502 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_502' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_502, code_502, golf_copied_502)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 This will include all the compiler optimizations as well as LTO; it will also include the minimal necessary debugging information. Release executables can be significantly faster than development ones; use them for releases as well as when you wish to do performance testing. Note however that making release executables will take significantly longer, so you probably do not want to do it while developing your application.<br/>
 <br/>
