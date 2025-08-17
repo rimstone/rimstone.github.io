@@ -441,7 +441,7 @@ Create file "list-orders.golf" and copy the following to it:<br/>
 <pre id='code_247' class=notranslate>
 <span class="Statement"> begin-handler</span> /list-orders
 <span class="Statement">     out-header</span><span class="Identifier"> use content-type</span> <span class="Constant">&quot;application/json&quot;</span>
-<span class="Statement">     get-param</span> order_id
+<span class="Statement">     get-param</span> order_id<span class="Identifier"> default-value</span> <span class="Constant">&quot;&quot;</span>
 <span class="Statement">     set-number</span> curr_order = <span class="Constant">0</span>
      <span class="Comment">// Start JSON output</span>
 <span class="Statement">     @</span>{ &quot;orders&quot;: [

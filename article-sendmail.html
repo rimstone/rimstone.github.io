@@ -338,10 +338,10 @@ sudo systemctl start postfix</pre>
 <textarea id='golft_219' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_219, code_219, golf_copied_219)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Now, since this application server will be accessed via web server, we'll need to setup a web server (aka "reverse proxy"). We'll use Apache, so follow the instructions to <a href='https://golf-lang.com/connect-apache-unix-socket.html'>set up Apache</a>, with &lt;app path&gt; being your application name, which is "mail-sender", and the "ProxyPass" directive in Step 3 will be:<br/>
+Now, since this application server will be accessed via web server, we'll need to setup a web server (aka "reverse proxy"). We'll use Apache, so follow the instructions to <a href='https://golf-lang.com/connect-apache-unix-socket.html'>set up Apache</a>, with &lt;app path&gt; being your application name, which is "mail-sender", and the "ProxyPass" directive in Step 3 will be (replace "your-user" with the name of your OS user):<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
 <pre id='code_212' class=notranslate>
-ProxyPass &quot;/mail-sender/&quot; unix:///var/lib/gg/mail-sender/sock/sock|fcgi://localhost/mail-sender</pre>
+ProxyPass &quot;/mail-sender/&quot; unix:///home/your-user/.golf/apps/mail-sender/sock/.sock|fcgi://localhost/mail-sender</pre>
 <span id=golf_copied_212 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_212' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_212, code_212, golf_copied_212)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>

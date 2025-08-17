@@ -244,7 +244,7 @@ Create new "tree" application first, in a new directory (you can name it anythin
 The <a href='https://golf-lang.com/mgrg.html'>mgrg</a> command is a Golf service manager and here it will create a new application named "tree" (it can be different from the directory it's in):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_281' class=notranslate>
-sudo mgrg <span class="Special">-i</span> <span class="Special">-u</span> <span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span> tree</pre>
+gg <span class="Special">-k</span> tree</pre>
 <span id=golf_copied_281 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_281' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_281, code_281, golf_copied_281)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
@@ -266,7 +266,7 @@ and copy and paste this:<br/>
 <span class="Statement">     end-do-once</span>
 <span class="Statement">     get-param</span> op
 <span class="Statement">     get-param</span> key
-<span class="Statement">     get-param</span> data
+<span class="Statement">     get-param</span> data<span class="Identifier"> default-value</span> <span class="Constant">&quot;&quot;</span>
 <span class="Statement">     if-true</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;add&quot;</span>
 <span class="Statement">         write-tree</span> ind<span class="Identifier"> key</span> (key)<span class="Identifier"> value</span> data<span class="Type"> status</span> st
 <span class="Statement">         if-true</span> st<span class="Identifier"> equal</span> GG_ERR_EXIST

@@ -4109,7 +4109,7 @@ Copy the following code to file "reg.golf":<br/>
 Build your application server as a native executable:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_193' class=notranslate>
-gg <span class="Special">-k</span></pre>
+gg <span class="Special">-q</span></pre>
 <span id=golf_copied_193 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_193' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_193, code_193, golf_copied_193)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
@@ -4323,7 +4323,7 @@ Let's start with a simple service that provides current time based on a timezone
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_198' class=notranslate>
 <span class="Statement"> begin-handler</span> /local/time
-<span class="Statement">     get-param</span> tzone <span class="Comment">// get time zone as input parameter (i.e. </span><span class="Constant">&quot;EST&quot;</span><span class="Comment">, </span><span class="Constant">&quot;MST&quot;</span><span class="Comment">, </span><span class="Constant">&quot;PST&quot;</span><span class="Comment"> etc.)</span>
+<span class="Statement">     get-param</span> tzone<span class="Identifier"> default-value</span> <span class="Constant">&quot;MST&quot;</span> <span class="Comment">// get time zone as input parameter (i.e. </span><span class="Constant">&quot;EST&quot;</span><span class="Comment">, </span><span class="Constant">&quot;MST&quot;</span><span class="Comment">, </span><span class="Constant">&quot;PST&quot;</span><span class="Comment"> etc.)</span>
 <span class="Statement">     get-time</span><span class="Type"> to</span> curr_time<span class="Identifier"> timezone</span> tzone
 <span class="Statement">     @</span>&lt;div&gt;Current time is <span class="Statement">&lt;&lt;print-out</span> curr_time<span class="Statement">&gt;&gt;</span>&lt;/div&gt;
 <span class="Statement"> end-handler</span></pre>
@@ -4375,7 +4375,7 @@ You can also, however, return the string to the caller using <a href='/set-param
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_204' class=notranslate>
 <span class="Statement"> begin-handler</span> /local/time
-<span class="Statement">     get-param</span> tzone
+<span class="Statement">     get-param</span> tzone<span class="Identifier"> default-value</span> <span class="Constant">&quot;MST&quot;</span>
 <span class="Statement">     get-time</span><span class="Type"> to</span> curr_time<span class="Identifier"> timezone</span> tzone
 <span class="Statement">     set-param</span> curr_time <span class="Comment">// set the return parameter to be obtained by the caller</span>
 <span class="Statement"> end-handler</span></pre>
@@ -4657,10 +4657,10 @@ sudo systemctl start postfix</pre>
 <textarea id='golft_219' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_219, code_219, golf_copied_219)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Now, since this application server will be accessed via web server, we'll need to setup a web server (aka "reverse proxy"). We'll use Apache, so follow the instructions to <a href='https://golf-lang.com/connect-apache-unix-socket.html'>set up Apache</a>, with &lt;app path&gt; being your application name, which is "mail-sender", and the "ProxyPass" directive in Step 3 will be:<br/>
+Now, since this application server will be accessed via web server, we'll need to setup a web server (aka "reverse proxy"). We'll use Apache, so follow the instructions to <a href='https://golf-lang.com/connect-apache-unix-socket.html'>set up Apache</a>, with &lt;app path&gt; being your application name, which is "mail-sender", and the "ProxyPass" directive in Step 3 will be (replace "your-user" with the name of your OS user):<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
 <pre id='code_212' class=notranslate>
-ProxyPass &quot;/mail-sender/&quot; unix:///var/lib/gg/mail-sender/sock/sock|fcgi://localhost/mail-sender</pre>
+ProxyPass &quot;/mail-sender/&quot; unix:///home/your-user/.golf/apps/mail-sender/sock/.sock|fcgi://localhost/mail-sender</pre>
 <span id=golf_copied_212 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_212' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_212, code_212, golf_copied_212)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
@@ -4983,7 +4983,7 @@ Create file "list-orders.golf" and copy the following to it:<br/>
 <pre id='code_247' class=notranslate>
 <span class="Statement"> begin-handler</span> /list-orders
 <span class="Statement">     out-header</span><span class="Identifier"> use content-type</span> <span class="Constant">&quot;application/json&quot;</span>
-<span class="Statement">     get-param</span> order_id
+<span class="Statement">     get-param</span> order_id<span class="Identifier"> default-value</span> <span class="Constant">&quot;&quot;</span>
 <span class="Statement">     set-number</span> curr_order = <span class="Constant">0</span>
      <span class="Comment">// Start JSON output</span>
 <span class="Statement">     @</span>{ &quot;orders&quot;: [
@@ -5413,7 +5413,7 @@ Create configuration file "mydb" that describes the SQLite database "mydata.db":
 Create the application:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_261' class=notranslate>
-sudo mgrg <span class="Special">-i</span> <span class="Special">-u</span> <span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span> sqlite</pre>
+gg <span class="Special">-k</span> sqlite</pre>
 <span id=golf_copied_261 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_261' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_261, code_261, golf_copied_261)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
@@ -5646,7 +5646,7 @@ gg <span class="Special">-r</span> <span class="Special">--req</span><span class
 <textarea id='golft_276' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_276, code_276, golf_copied_276)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-The output is:<br/>
+The output is (among other things like stack trace):<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
 <pre id='code_273' class=notranslate>
 File [file-name.golf], line [5], Statement failed without status being obtained and/or checked [-1]</pre>
@@ -5756,7 +5756,7 @@ Create new "tree" application first, in a new directory (you can name it anythin
 The <a href='/mgrg.html'>mgrg</a> command is a Golf service manager and here it will create a new application named "tree" (it can be different from the directory it's in):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_281' class=notranslate>
-sudo mgrg <span class="Special">-i</span> <span class="Special">-u</span> <span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span> tree</pre>
+gg <span class="Special">-k</span> tree</pre>
 <span id=golf_copied_281 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_281' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_281, code_281, golf_copied_281)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
@@ -5778,7 +5778,7 @@ and copy and paste this:<br/>
 <span class="Statement">     end-do-once</span>
 <span class="Statement">     get-param</span> op
 <span class="Statement">     get-param</span> key
-<span class="Statement">     get-param</span> data
+<span class="Statement">     get-param</span> data<span class="Identifier"> default-value</span> <span class="Constant">&quot;&quot;</span>
 <span class="Statement">     if-true</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;add&quot;</span>
 <span class="Statement">         write-tree</span> ind<span class="Identifier"> key</span> (key)<span class="Identifier"> value</span> data<span class="Type"> status</span> st
 <span class="Statement">         if-true</span> st<span class="Identifier"> equal</span> GG_ERR_EXIST
@@ -5991,10 +5991,10 @@ sudo vi /etc/apache2/httpd.conf</pre>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_298, code_298, golf_copied_298)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li></ul>
-Add this to the end of the configuration file - note "tree" is the application name you created in the above example:<br/>
+Add this to the end of the configuration file - note "tree" is the application name you created in the above example (replace "your-user" with your OS user name):<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
 <pre id='code_288' class=notranslate>
-ProxyPass &quot;/tree/&quot; unix:///var/lib/gg/tree/sock/sock|fcgi://localhost/tree</pre>
+ProxyPass &quot;/tree/&quot; unix:///home/your-user/.golf/apps/tree/sock/.sock|fcgi://localhost/tree</pre>
 <span id=golf_copied_288 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_288' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_288, code_288, golf_copied_288)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
@@ -6282,7 +6282,7 @@ Note you might have to use "sudo" to edit these files as they're generally not w
 Find the "server" section, and add this inside it:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
 <pre id='code_308' class=notranslate>
-location /fact/ { include /etc/nginx/fastcgi_params; fastcgi_pass  unix:///var/lib/gg/fact/sock/sock; }</pre>
+location /fact/ { include /etc/nginx/fastcgi_params; fastcgi_pass  unix:///home/your-user/.golf/apps/fact/sock/.sock; }</pre>
 <span id=golf_copied_308 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_308' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_308, code_308, golf_copied_308)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
