@@ -30,7 +30,7 @@
             width: 100%; 
             min-height: 200px; 
             display: flex; /* content alignment within sections */
-            justify-content: center; /* center horizontally within the section */
+            justify-content: left; /* center horizontally within the section */
             align-items: center; /* center vertically within the section */
             box-sizing: border-box; /* include padding and border in width and height */
             position: relative; /* needed fo absolute positioning of children */
@@ -71,7 +71,7 @@
             min-height: 150px; /* minimum height for squares */
             padding: 20px;
             width: 45%; /* approx half, we need space for gap */
-            text-align: center;
+            text-align: left;
             border-radius: 10px;
             font-size: 0.7em; /* text within squares */
             /*font-weight:bold;*/
@@ -79,8 +79,8 @@
             box-sizing: border-box; /* padding included in width */
             display: flex; /* within squares uses flex for centering */
             flex-direction: column; /* text within square is stacked */
-            justify-content: center;
-            align-items: center;
+            justify-content: left;
+            align-items: left;
         }
         .square_menu {
             padding: 0px;
@@ -94,13 +94,14 @@
 
         .square p {
             margin: 0; /* no default margin */
+            text-align:left;
         }
 
 
         /* within the single-box section */
         .one-big-sect {
             width: 80%;
-            max-width: 1000px;
+            max-width: 2000px;
             text-align: center;
             margin-top: 20px; /* Space from heading */
             font-size: 0.7em;
@@ -202,7 +203,7 @@ Current release (3.0.12). Updated 2025-08-18.
             <img src="golf-large.png" style='width:100%;height:auto;'>
             </div>
             <div style='padding-left:20px;padding-bottom:0px;color:#3d3d3d'>
-                <h2 >Build web applications and server software fast with confidence.<br/>Free Open Source.</h2>
+                <h2 >Language for Web back-end.<br/>Apache 2 License.</h2>
             </div>
         </div>
     </sect>
@@ -241,13 +242,17 @@ Current release (3.0.12). Updated 2025-08-18.
     <sect class="sect sec-two">
     <!--<h2  style='color:white'>Easy to install</h2>-->
         <div class="box-container">
-            <div class="square left-square">
+            <div class="square">
                 <h3>Easy, then easier, and memory safe</h3>
-                <p>Build web applications quicker than ever before. Have codebase that's simple and readable years later. Memory safe with automatic memory release, and with a smart status checking of your code.</p>
+                <p>Golf is unlike other languages. It's simpler and declarative. You can do much in a single line.</p>
+                <p>Lots of great features and rich functionality. Build back-end applications super fast.</p>
+                <p>Built with industry-standard Free Open Source libraries for performance, functionality, stability and compatibility.</p>
             </div>
-            <div class="square right-square">
-                <h3>No sudo needed to install</h3>
-                <p>Golf doesn't need sudo permissions because it installs in a home folder. <a href="/install-golf.html">Install Golf</a> now.</p>
+            <div class="square">
+                <h3>Memory safety</h3>
+                    <p>Memory safety that's fast and lean, so you can have both performance and safety.</p>
+                    <p>Automatic memory release to avoid leaks in long-running server processes.</p>
+                    <p>Smart status checking of your code to avoid mistakes from the get-go.</p>
             </div>
         </div>
     </sect>
@@ -255,13 +260,13 @@ Current release (3.0.12). Updated 2025-08-18.
     <sect class="sect sec-four">
     <!--<h2  style='color:white'>Well rounded</h2>-->
         <div class="box-container">
-            <div class="square left-square">
-                <h3>Standards-driven</h3>
-                <p>Built with industry-standard Free Open Source libraries for stability, performance and compliance.</p>
+            <div class="square">
+                <h3>Install with confidence</h3>
+                <p>Golf doesn't need sudo permissions because it installs in a home folder. <a href="/install-golf.html">Install Golf</a> now.</p>
             </div>
-            <div class="square right-square">
+            <div class="square">
                 <h3>Well documented with examples</h3>
-                <p>Visit <a href='/documentation.html'>Documentation</a> for a clear and concise manual, and examples of use. Check out <a href='/examples.html'>examples</a> too.</p>
+                <p>Visit <a href='/documentation.html'>Documentation</a> for a clear and concise manual. Check out <a href='/examples.html'>examples</a> too.</p>
             </div>
         </div>
     </sect>
@@ -269,13 +274,15 @@ Current release (3.0.12). Updated 2025-08-18.
     <sect class="sect sec-two">
     <!--<h2 style='color:white'>Never skip on important stuff</h2>-->
         <div class="box-container">
-            <div class="square left-square">
+            <div class="square">
                 <h3>Every CPU cycle counts</h3>
-                <p>Performance is important. That's why Golf makes native executables from smartly generated C code, optimized for <a href='https://www.sciencedirect.com/science/article/pii/S0167642321000022'>speed and efficiency</a> </p>
+                <p>Performance is important. That's why Golf makes native executables from smartly generated C code, optimized for speed and efficiency.</p>
+                <p>C is the <a href='https://www.sciencedirect.com/science/article/pii/S0167642321000022'>fastest and most efficient</a> and having it as a foundation is important. </p>
             </div>
-            <div class="square right-square">
+            <div class="square">
                 <h3>Versatile and powerful</h3>
-                <p>Build any application on Linux, command-line programs and application-servers alike, easily adding powerful features such as database access, JSON, Regex, XML, encryption and more.</p>
+                <p>Build for the web, build command-line programs, build application servers.</p>
+                <p>Powerful features such as database access, JSON, Regex, XML, encryption and more.</p>
             </div>
         </div>
     </sect>
@@ -283,11 +290,11 @@ Current release (3.0.12). Updated 2025-08-18.
     <sect class="sect sec-three">
     <!--<h2  style='color:white'>Everything you need</h2>-->
         <div class="box-container">
-            <div class="square left-square">
+            <div class="square">
                 <h3>Freedom</h3>
                 <p>Licensed under <a href='/license.html'>Apache 2</a> Free Open Source License. Source code always at your fingertips at<br/><a href='https://github.com/golf-lang/golf'>https://github.com/golf-lang/golf</a></p>
             </div>
-            <div class="square right-square">
+            <div class="square">
                 <h3>No binaries</h3>
                 <p>Golf installs from source only for safety and performance, so you don't need to download any binaries. Not to worry, the install process is fully automated. <a href="/install-golf.html">Install Golf</a> now.</p>
             </div>
@@ -324,14 +331,14 @@ Current release (3.0.12). Updated 2025-08-18.
     <sect class="sect sec-four">
     <!--<h2  style='color:white'>Quality matters</h2>-->
         <div class="box-container">
-            <div class="square left-square">
+            <div class="square ieft-square">
                 <h3>Rigorous QA</h3>
                 <p>
 Current version is 3.0.12. This release passed 2909 functional tests.
                 Check out <a href='/blog.html'>Golf blog</a> for new releases and other news, including new examples.
                 </p>
             </div>
-            <div class="square right-square">
+            <div class="square">
                 <h3>Good coverage</h3>
                 <p>Tested on major Linux distributions, such as Ubuntu, Debian, Redhat, Fedora, OpenSUSE and Arch.</p>
             </div>
