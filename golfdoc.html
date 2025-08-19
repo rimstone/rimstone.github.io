@@ -16308,46 +16308,13 @@ The variable "str" will be "some string" after trim-string:<br/>
 </div><br/>
 <a id='uninstall.html'></a>
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Uninstall</div><hr/><div class="vsub"><a id="Uninstall Golf if installed from source"></a>Uninstall Golf if installed from source</div>
-Run from command line (if you installed to a folder, add "DESTDIR=&lt;folder&gt;" where &lt;folder&gt; is the directory where it was installed):<br/>
+Run from command line:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_937' class=notranslate>
- sudo make uninstall</pre>
+ make uninstall</pre>
 <span id=golf_copied_937 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_937' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_937, code_937, golf_copied_937)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-<div class="vsub"><a id="Uninstall Golf if installed from package"></a>Uninstall Golf if installed from package</div>
-For Ubuntu:<br/>
-<div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_938' class=notranslate>
-sudo apt remove golf</pre>
-<span id=golf_copied_938 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_938' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_938, code_938, golf_copied_938)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-For Redhat, Fedora and similar:<br/>
-<div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_939' class=notranslate>
-sudo dnf remove golf</pre>
-<span id=golf_copied_939 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_939' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_939, code_939, golf_copied_939)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-For OpenSUSE:<br/>
-<div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_940' class=notranslate>
-sudo zypper remove golf</pre>
-<span id=golf_copied_940 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_940' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_940, code_940, golf_copied_940)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-For Arch and similar:<br/>
-<div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_941' class=notranslate>
-sudo pacman <span class="Special">-R</span> golf</pre>
-<span id=golf_copied_941 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_941' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_941, code_941, golf_copied_941)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Application files"></a>Application files</div>
 Note that $HOME/.golf directory will not be removed, since it may contain application files; you may delete it if there's no data there you care about, or you backed it up.<br/>
@@ -16355,11 +16322,11 @@ Note that $HOME/.golf directory will not be removed, since it may contain applic
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Uniq file</div><hr/><span style="font-weight:bold;">Purpose</span>: Create a new empty file with a unique name.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_942' class=notranslate>
+<pre id='code_938' class=notranslate>
 <span class="Statement"> uniq-file</span> &lt;file name&gt; [<span class="Identifier"> temporary</span> ]</pre>
-<span id=golf_copied_942 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_942' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_942, code_942, golf_copied_942)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_938 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_938' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_938, code_938, golf_copied_938)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 One of the common tasks in many applications is creating a unique file (of any kind, including temporary). uniq-file statement does that - it creates a new unique file of zero size, with &lt;file name&gt; being its fully qualified name, which is always within the <a href='/file-storage.html'>file-storage</a>. <br/>
 <br/>
@@ -16371,34 +16338,34 @@ All files created are setup with owner and group read/write only permissions.<br
 <div class="vsub"><a id="Examples"></a>Examples</div>
 The following creates an empty file with auto-generated name that will be stored in "mydoc" variable. String variable "mydoc" is defined in the statement. The string "some data" is written to a newly created file:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_943' class=notranslate>
+<pre id='code_939' class=notranslate>
 <span class="Statement"> uniq-file</span> mydoc
 <span class="Statement"> write-file</span> mydoc<span class="Identifier"> from</span> <span class="Constant">&quot;some data&quot;</span></pre>
-<span id=golf_copied_943 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_943' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_943, code_943, golf_copied_943)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_939 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_939' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_939, code_939, golf_copied_939)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 To create a temporary file:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_944' class=notranslate>
+<pre id='code_940' class=notranslate>
 <span class="Statement"> uniq-file</span> temp_file<span class="Identifier"> temporary</span>
 <span class="Statement"> .</span>..
  <span class="Comment">// use file named </span><span class="Constant">&quot;temp_file&quot;</span>
 <span class="Statement"> .</span>.
 <span class="Statement"> delete-file</span> temp_file</pre>
-<span id=golf_copied_944 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_944' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_944, code_944, golf_copied_944)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_940 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_940' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_940, code_940, golf_copied_940)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <a id='unlock-file.html'></a>
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Unlock file</div><hr/><span style="font-weight:bold;">Purpose</span>: Unlocks file.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_945' class=notranslate>
+<pre id='code_941' class=notranslate>
 <span class="Statement"> unlock-file</span><span class="Identifier"> id</span> &lt;lock id&gt;</pre>
-<span id=golf_copied_945 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_945' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_945, code_945, golf_copied_945)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_941 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_941' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_941, code_941, golf_copied_941)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 unlock-file will unlock file that was locked with <a href='/lock-file.html'>lock-file</a>. &lt;lock id&gt; is the value obtained in <a href='/lock-file.html'>lock-file</a>'s "id" clause.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
@@ -16407,57 +16374,57 @@ See <a href='/lock-file.html'>lock-file</a>.<br/>
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Unused var</div><hr/><span style="font-weight:bold;">Purpose</span>: Prevent compiler error if variable is not used.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_946' class=notranslate>
+<pre id='code_942' class=notranslate>
 <span class="Statement"> unused-var</span> &lt;variable name&gt; [<span class="Identifier"> ,</span> ... ]</pre>
-<span id=golf_copied_946 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_946' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_946, code_946, golf_copied_946)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_942 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_942' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_942, code_942, golf_copied_942)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 unused-var prevents <a href='/error-handling.html'>erroring out</a> if &lt;variable name&gt; is unused; a list of variable names can be specified separated by a comma. Generally, you don't want to have unused variables - they typically indicate bugs or clutter. However, in some cases you might need such variables as a reminder for a future enhancement, or for some other reason it is unavoidable. In any case, you can use unused-var to shield such instances from causing errors.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 In the following, variable "hw" is created and initialized. Such variable is not used at the moment, however if you would do so in the future and want to keep it, use unused-var to prevent compiler errors:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_947' class=notranslate>
+<pre id='code_943' class=notranslate>
 <span class="Statement"> set-string</span> hw = <span class="Constant">&quot;Hello world&quot;</span>
 <span class="Statement"> unused-var</span> hw</pre>
-<span id=golf_copied_947 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_947' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_947, code_947, golf_copied_947)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_943 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_943' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_943, code_943, golf_copied_943)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <a id='upper-string.html'></a>
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Upper string</div><hr/><span style="font-weight:bold;">Purpose</span>: Upper-case a string.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_948' class=notranslate>
+<pre id='code_944' class=notranslate>
 <span class="Statement"> upper-string</span> &lt;string&gt;</pre>
-<span id=golf_copied_948 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_948' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_948, code_948, golf_copied_948)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_944 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_944' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_944, code_944, golf_copied_944)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 upper-string converts all &lt;string&gt;'s characters to upper case.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 The resulting "str" is "GOOD":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_949' class=notranslate>
+<pre id='code_945' class=notranslate>
 <span class="Statement"> set-string</span> str=<span class="Constant">&quot;good&quot;</span>
 <span class="Statement"> upper-string</span> str</pre>
-<span id=golf_copied_949 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_949' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_949, code_949, golf_copied_949)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_945 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_945' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_945, code_945, golf_copied_945)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <a id='use-cursor.html'></a>
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Use cursor</div><hr/><span style="font-weight:bold;">Purpose</span>: Iterate to a lesser or greater key in a tree.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_950' class=notranslate>
+<pre id='code_946' class=notranslate>
 <span class="Statement"> use-cursor</span> &lt;cursor&gt; (<span class="Identifier"> current</span> |<span class="Identifier"> get-lesser</span> |<span class="Identifier"> get-greater</span> ) \
      [<span class="Type"> key</span> &lt;key&gt; ] \
      [<span class="Type"> value</span> &lt;value&gt; ] \
      [<span class="Identifier"> update-value</span> &lt;update value&gt; ] \
      [<span class="Type"> status</span> &lt;status&gt; ]</pre>
-<span id=golf_copied_950 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_950' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_950, code_950, golf_copied_950)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_946 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_946' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_946, code_946, golf_copied_946)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 use-cursor uses &lt;cursor&gt; previously created (see <a href='/read-tree.html'>read-tree</a>, <a href='/write-tree.html'>write-tree</a>) for iteration over tree nodes with lesser or greater key values. It can also obtain keys and values for such nodes, as well as update their values.<br/>
 <div class="vsub"><a id="Current node"></a>Current node</div>
@@ -16473,7 +16440,7 @@ If the new current node can be found, then other use-cursor clauses are applied 
 <div class="vsub"><a id="Examples"></a>Examples</div>
 The following will find a value with key "999", and then iterate in the tree to find all lesser values (in descending order):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_951' class=notranslate>
+<pre id='code_947' class=notranslate>
 <span class="Statement"> set-string</span> k = <span class="Constant">&quot;999&quot;</span>
 <span class="Statement"> read-tree</span> mytree<span class="Identifier"> equal</span> k<span class="Type"> status</span> st \
     <span class="Type"> value</span> val<span class="Type"> new-cursor</span> cur
@@ -16485,24 +16452,24 @@ The following will find a value with key "999", and then iterate in the tree to 
 <span class="Statement">         break-loop</span>
 <span class="Statement">     end-if</span>
 <span class="Statement"> end-loop</span></pre>
-<span id=golf_copied_951 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_951' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_951, code_951, golf_copied_951)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_947 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_947' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_947, code_947, golf_copied_947)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 For more examples, see <a href='/new-tree.html'>new-tree</a>.<br/>
 <a id='utf-text.html'></a>
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Utf text</div><hr/><span style="font-weight:bold;">Purpose</span>: Convert UTF (UTF8 or UTF16) string to text.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_952' class=notranslate>
+<pre id='code_948' class=notranslate>
 <span class="Statement"> utf-text</span> &lt;utf&gt; \
      [<span class="Type"> to</span> &lt;text&gt; ] \
      [<span class="Identifier"> length</span> &lt;length&gt; ] \
      [<span class="Type"> status</span> &lt;status&gt; ] \
      [<span class="Type"> error-text</span> &lt;error text&gt; ]</pre>
-<span id=golf_copied_952 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_952' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_952, code_952, golf_copied_952)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_948 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_948' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_948, code_948, golf_copied_948)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 utf-text will convert &lt;utf&gt; text to &lt;text&gt; (specified with "to" clause). If &lt;text&gt; is omitted, then the result of conversion is output.<br/>
 <br/>
@@ -16516,7 +16483,7 @@ The status of encoding can be obtained in number &lt;status&gt;. &lt;status&gt; 
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Convert UTF string to text and verify the expected result:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_953' class=notranslate>
+<pre id='code_949' class=notranslate>
  <span class="Comment">// UTF string </span>
 <span class="Statement"> set-string</span> utf_str = <span class="Constant">&quot;</span><span class="Special">\&quot;</span><span class="Constant">Doc</span><span class="Special">\&quot;\n\t\b\f\r\t</span><span class="Constant">⇗⇘</span><span class="Special">\t</span><span class="Constant">▷◮𝄞ᏫⲠш</span><span class="Special">\n</span><span class="Constant">/</span><span class="Special">\&quot;</span><span class="Constant">()</span><span class="Special">\t</span><span class="Constant">&quot;</span>
 
@@ -16532,9 +16499,9 @@ Convert UTF string to text and verify the expected result:<br/>
 <span class="Statement"> if-true</span> text_text<span class="Identifier"> equal</span> expected_result<span class="Identifier"> and</span> encstatus<span class="Identifier"> not-equal</span> -<span class="Constant">1</span>
 <span class="Statement">     @</span>decode-text worked okay
 <span class="Statement"> end-if</span></pre>
-<span id=golf_copied_953 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_953' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_953, code_953, golf_copied_953)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_949 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_949' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_949, code_949, golf_copied_949)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <a id='variable-scope.html'></a>
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Variable scope</div><hr/>Golf uses scope rules for variables that is similar to other programming languages.<br/>
@@ -16546,11 +16513,11 @@ Golf offers simple statements to perform complex common tasks, as well as memory
 <br/>
 To make sure a Golf application is memory safe, simply search for extended-mode statement from the root source directory:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_954' class=notranslate>
+<pre id='code_950' class=notranslate>
 <span class="Statement">find</span><span class="Statement"> . </span>-name <span class="Statement">&quot;</span><span class="Constant">*.golf</span><span class="Statement">&quot;</span> <span class="Special">-print</span> <span class="Special">-exec</span> <span class="Statement">grep</span> <span class="Special">-l</span> <span class="Statement">'</span><span class="Constant">^\s*extended\-mode</span><span class="Statement">'</span> <span class="Special">{}</span> \;</pre>
-<span id=golf_copied_954 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_954' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_954, code_954, golf_copied_954)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_950 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_950' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_950, code_950, golf_copied_950)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 If no matches are found, the application is memory safe.<br/>
 <br/>
@@ -16563,14 +16530,14 @@ Just as a note of technicality, when used in extended mode, Golf is considered a
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Write array</div><hr/><span style="font-weight:bold;">Purpose</span>: Store value into an array.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_955' class=notranslate>
+<pre id='code_951' class=notranslate>
 <span class="Statement"> write-array</span> &lt;array&gt; \
     <span class="Identifier"> key</span> &lt;key&gt; \
     <span class="Identifier"> value</span> &lt;value&gt; \
      [<span class="Type"> old-value</span> &lt;old value&gt; ]</pre>
-<span id=golf_copied_955 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_955' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_955, code_955, golf_copied_955)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_951 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_951' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_951, code_951, golf_copied_951)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 write-array will store a &lt;value&gt; (in "value" clause) under index &lt;key&gt; (in "key" clause) into &lt;array&gt;, which must be created with <a href='/new-array.html'>new-array</a>. &lt;key&gt; is a number from 0 up to (excluding) the currently allocated array size (see <a href='/new-array.html'>new-array</a>). The type of &lt;value&gt; is determined when &lt;array&gt; is created (see "type" clause), and can be either a string, number or a boolean.<br/>
 <br/>
@@ -16582,25 +16549,25 @@ If an &lt;array&gt; was created with "process-scope" clause (see <a href='/new-a
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Writing data to an array:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_957' class=notranslate>
+<pre id='code_953' class=notranslate>
 <span class="Statement"> new-array</span> arr
 <span class="Statement"> write-array</span> arr<span class="Identifier"> key</span> <span class="Constant">100</span><span class="Identifier"> value</span> <span class="Constant">&quot;some data&quot;</span></pre>
-<span id=golf_copied_957 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_957' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_957, code_957, golf_copied_957)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_953 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_953' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_953, code_953, golf_copied_953)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Writing new value with the same key index and obtaining the previous value (which is "some data"):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_959' class=notranslate>
+<pre id='code_955' class=notranslate>
 <span class="Statement"> write-array</span> arr<span class="Identifier"> key</span> <span class="Constant">100</span><span class="Identifier"> value</span> <span class="Constant">&quot;new data&quot;</span><span class="Type"> old-value</span> od
 <span class="Statement"> @</span>Previous value for this key index is <span class="Statement">&lt;&lt;print-out</span> od<span class="Statement">&gt;&gt;</span></pre>
-<span id=golf_copied_959 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_959' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_959, code_959, golf_copied_959)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_955 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_955' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_955, code_955, golf_copied_955)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The following is an array service, where a process-scoped array is created. It provides inserting, deleting and querying indexed keys. Maximum number of keys it holds is 10,000,000 (indexed from 0 to 9,999,999). Such a service process can run indefinitely. Create file arrsrv.golf:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_960' class=notranslate>
+<pre id='code_956' class=notranslate>
 <span class="Statement"> %%</span> /arrsrv<span class="Identifier"> public</span>
 <span class="Statement">     do-once</span>
 <span class="Statement">     new-array</span> arr<span class="Identifier"> max-size</span> <span class="Constant">10000000</span><span class="Identifier"> process-scope type string</span>
@@ -16626,74 +16593,74 @@ The following is an array service, where a process-scoped array is created. It p
 <span class="Statement">         @</span>Value [<span class="Statement">&lt;&lt;print-out</span> val<span class="Statement">&gt;&gt;</span>]
 <span class="Statement">     end-if</span>
 <span class="Statement"> %%</span></pre>
-<span id=golf_copied_960 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_960' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_960, code_960, golf_copied_960)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_956 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_956' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_956, code_956, golf_copied_956)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Create and make the application, then run it as service:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_956' class=notranslate>
+<pre id='code_952' class=notranslate>
 // Create application
 gg <span class="Special">-k</span> arr
 // Make application
 gg <span class="Special">-q</span>
 // Start application <span class="PreProc">(</span><span class="Special">single process key service</span><span class="PreProc">)</span>
 mgrg <span class="Special">-w</span> <span class="Constant">1</span> arr</pre>
-<span id=golf_copied_956 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_956' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_956, code_956, golf_copied_956)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_952 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_952' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_952, code_952, golf_copied_952)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Try it from a command line client (see <a href='/gg.html'>gg</a>):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_958' class=notranslate>
+<pre id='code_954' class=notranslate>
 // Add data
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/arrsrv/op=add/key=15/data=15</span><span class="Statement">&quot;</span> <span class="Special">--service</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/arr</span><span class="Statement">&quot;</span> <span class="Special">--exec</span>
 // Query data
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/arrsrv/op=query/key=15</span><span class="Statement">&quot;</span> <span class="Special">--service</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/arr</span><span class="Statement">&quot;</span> <span class="Special">--exec</span>
 // Delete data
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/arrsrv/op=delete/key=15</span><span class="Statement">&quot;</span> <span class="Special">--service</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/arr</span><span class="Statement">&quot;</span> <span class="Special">--exec</span></pre>
-<span id=golf_copied_958 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_958' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_958, code_958, golf_copied_958)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_954 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_954' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_954, code_954, golf_copied_954)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 See <a href='/read-array.html'>read-array</a> for more examples.<br/>
 <a id='write-fifo.html'></a>
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Write fifo</div><hr/><span style="font-weight:bold;">Purpose</span>: Write key/value pair into a FIFO list.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_961' class=notranslate>
+<pre id='code_957' class=notranslate>
 <span class="Statement"> write-fifo</span> &lt;list&gt; \
     <span class="Identifier"> key</span> &lt;key&gt; \
     <span class="Identifier"> value</span> &lt;value&gt;</pre>
-<span id=golf_copied_961 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_961' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_961, code_961, golf_copied_961)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_957 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_957' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_957, code_957, golf_copied_957)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 write-fifo adds a pair of key/value pointers to the FIFO &lt;list&gt;, specified with strings &lt;key&gt; and &lt;value&gt; (in "key" and "value" clauses, collectively called an "element"). <br/>
 <br/>
 It always adds elements to the end of the list. <br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_962' class=notranslate>
+<pre id='code_958' class=notranslate>
 <span class="Statement"> new-fifo</span> nf
 <span class="Statement"> write-fifo</span> nf<span class="Identifier"> key</span> <span class="Constant">&quot;mykey&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;myvalue&quot;</span></pre>
-<span id=golf_copied_962 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_962' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_962, code_962, golf_copied_962)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_958 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_958' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_958, code_958, golf_copied_958)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <a id='write-file.html'></a>
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Write file</div><hr/><span style="font-weight:bold;">Purpose</span>: Write to a file.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_963' class=notranslate>
+<pre id='code_959' class=notranslate>
 <span class="Statement"> write-file</span> &lt;file&gt; | (<span class="Identifier"> file-id</span> &lt;file id&gt; ) \
     <span class="Identifier"> from</span> &lt;content&gt; \
      [<span class="Identifier"> length</span> &lt;length&gt; ] \
      [ (<span class="Identifier"> position</span> &lt;position&gt; ) | (<span class="Identifier"> append</span> [ &lt;append&gt; ] ) ] \
      [<span class="Type"> status</span> &lt;status&gt; ]</pre>
-<span id=golf_copied_963 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_963' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_963, code_963, golf_copied_963)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_959 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_959' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_959, code_959, golf_copied_959)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Without file-id"></a>Without file-id</div>
 This is a simple method of writing a file. File named &lt;file&gt; is opened, data written, and file is closed. &lt;file&gt; can be a full path name, or a path relative to the application home directory (see <a href='/directories.html'>directories</a>).<br/>
@@ -16719,54 +16686,54 @@ If "status" clause is used, then the number of bytes written is stored to &lt;st
 <div class="vsub"><a id="Examples"></a>Examples</div>
 To overwrite file "/path/to/file" with "Hello World":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_964' class=notranslate>
+<pre id='code_960' class=notranslate>
 <span class="Statement"> write-file</span> <span class="Constant">&quot;/path/to/file&quot;</span><span class="Identifier"> from</span> <span class="Constant">&quot;Hello World&quot;</span></pre>
-<span id=golf_copied_964 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_964' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_964, code_964, golf_copied_964)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_960 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_960' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_960, code_960, golf_copied_960)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 To append "Hello World" to file:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_965' class=notranslate>
+<pre id='code_961' class=notranslate>
 <span class="Statement"> set-string</span> path=<span class="Constant">&quot;/path/to/file&quot;</span>
 <span class="Statement"> set-string</span> cont=<span class="Constant">&quot;Hello World&quot;</span>
 <span class="Statement"> write-file</span> path<span class="Identifier"> from</span> cont<span class="Identifier"> append</span></pre>
-<span id=golf_copied_965 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_965' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_965, code_965, golf_copied_965)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_961 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_961' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_961, code_961, golf_copied_961)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 To write only 5 bytes (i.e. "Hello") and get status (if successful, number "st" would be "5"):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_966' class=notranslate>
+<pre id='code_962' class=notranslate>
 <span class="Statement"> set-string</span> cont=<span class="Constant">&quot;Hello World&quot;</span>
 <span class="Statement"> write-file</span> <span class="Constant">&quot;file&quot;</span><span class="Identifier"> from</span> cont<span class="Identifier"> length</span> <span class="Constant">5</span><span class="Type"> status</span> st</pre>
-<span id=golf_copied_966 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_966' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_966, code_966, golf_copied_966)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_962 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_962' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_962, code_962, golf_copied_962)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 To write a string "Hello" at byte position 3 in the existing "file":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_967' class=notranslate>
+<pre id='code_963' class=notranslate>
 <span class="Statement"> set-string</span> cont=<span class="Constant">&quot;Hello&quot;</span>
 <span class="Statement"> write-file</span> <span class="Constant">&quot;file&quot;</span><span class="Identifier"> from</span> cont<span class="Identifier"> position</span> <span class="Constant">3</span><span class="Type"> status</span> st</pre>
-<span id=golf_copied_967 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_967' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_967, code_967, golf_copied_967)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_963 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_963' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_963, code_963, golf_copied_963)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 See <a href='/open-file.html'>open-file</a> for an example with "file-id" clause.<br/>
 <a id='write-hash.html'></a>
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Write hash</div><hr/><span style="font-weight:bold;">Purpose</span>: Store key/value pair into a hash.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_968' class=notranslate>
+<pre id='code_964' class=notranslate>
 <span class="Statement"> write-hash</span> &lt;hash&gt; \
     <span class="Identifier"> key</span> &lt;key&gt; \
     <span class="Identifier"> value</span> &lt;value&gt; \
      [<span class="Type"> status</span> &lt;status&gt; ] \
      [<span class="Type"> old-value</span> &lt;old value&gt; ]</pre>
-<span id=golf_copied_968 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_968' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_968, code_968, golf_copied_968)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_964 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_964' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_964, code_964, golf_copied_964)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 write-hash will store string &lt;key&gt; (in "key" clause) and &lt;value&gt; (in "value" clause) into &lt;hash&gt;, which must be created with <a href='/new-hash.html'>new-hash</a>. <br/>
 <br/>
@@ -16780,27 +16747,27 @@ If a &lt;hash&gt; was created with "process-scope" clause (see <a href='/new-has
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Writing data to a hash:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_970' class=notranslate>
+<pre id='code_966' class=notranslate>
 <span class="Statement"> new-hash</span> h
 <span class="Statement"> write-hash</span> h<span class="Identifier"> key</span> <span class="Constant">&quot;mykey&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;some data&quot;</span></pre>
-<span id=golf_copied_970 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_970' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_970, code_970, golf_copied_970)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_966 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_966' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_966, code_966, golf_copied_966)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Writing new value with the same key and obtaining the previous value (which is "some data"):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_972' class=notranslate>
+<pre id='code_968' class=notranslate>
 <span class="Statement"> write-hash</span> h<span class="Identifier"> key</span> <span class="Constant">&quot;mykey&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;new data&quot;</span><span class="Type"> status</span> st<span class="Type"> old-value</span> od
 <span class="Statement"> if-true</span> st<span class="Identifier"> equal</span> GG_INFO_EXIST
 <span class="Statement">     @</span>Previous value for this key is <span class="Statement">&lt;&lt;print-out</span> od<span class="Statement">&gt;&gt;</span>
 <span class="Statement"> end-if</span></pre>
-<span id=golf_copied_972 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_972' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_972, code_972, golf_copied_972)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_968 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_968' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_968, code_968, golf_copied_968)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The following is a key/value service, where a process-scoped hash is created. It provides inserting, deleting and querying key/value pairs. Such a service process can run indefinitely. Create file keysrv.golf:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_973' class=notranslate>
+<pre id='code_969' class=notranslate>
 <span class="Statement"> %%</span> /keysrv<span class="Identifier"> public</span>
 <span class="Statement">     do-once</span>
 <span class="Statement">     new-hash</span> h<span class="Identifier"> hash-size</span> <span class="Constant">1024</span><span class="Identifier"> process-scope</span>
@@ -16835,72 +16802,72 @@ The following is a key/value service, where a process-scoped hash is created. It
 <span class="Statement">         end-if</span>
 <span class="Statement">     end-if</span>
 <span class="Statement"> %%</span></pre>
-<span id=golf_copied_973 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_973' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_973, code_973, golf_copied_973)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_969 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_969' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_969, code_969, golf_copied_969)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Create and make the application, then run it as service:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_969' class=notranslate>
+<pre id='code_965' class=notranslate>
 // Create application
 gg <span class="Special">-k</span> <span class="Statement">hash</span>
 // Make application
 gg <span class="Special">-q</span>
 // Start application <span class="PreProc">(</span><span class="Special">single process key service</span><span class="PreProc">)</span>
 mgrg <span class="Special">-w</span> <span class="Constant">1</span> <span class="Statement">hash</span></pre>
-<span id=golf_copied_969 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_969' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_969, code_969, golf_copied_969)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_965 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_965' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_965, code_965, golf_copied_965)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Try it from a command line client (see <a href='/gg.html'>gg</a>):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_971' class=notranslate>
+<pre id='code_967' class=notranslate>
 // Add data
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/keysrv/op=add/key=15/data=15</span><span class="Statement">&quot;</span> <span class="Special">--service</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/hash</span><span class="Statement">&quot;</span> <span class="Special">--exec</span>
 // Query data
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/keysrv/op=query/key=15</span><span class="Statement">&quot;</span> <span class="Special">--service</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/hash</span><span class="Statement">&quot;</span> <span class="Special">--exec</span>
 // Delete data
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/keysrv/op=delete/key=15</span><span class="Statement">&quot;</span> <span class="Special">--service</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/hash</span><span class="Statement">&quot;</span> <span class="Special">--exec</span></pre>
-<span id=golf_copied_971 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_971' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_971, code_971, golf_copied_971)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_967 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_967' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_967, code_967, golf_copied_967)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 See <a href='/read-hash.html'>read-hash</a> for more examples.<br/>
 <a id='write-lifo.html'></a>
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Write lifo</div><hr/><span style="font-weight:bold;">Purpose</span>: Write key/value pair into a LIFO list.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_974' class=notranslate>
+<pre id='code_970' class=notranslate>
 <span class="Statement"> write-lifo</span> &lt;list&gt; \
     <span class="Identifier"> key</span> &lt;key&gt; \
     <span class="Identifier"> value</span> &lt;value&gt;</pre>
-<span id=golf_copied_974 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_974' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_974, code_974, golf_copied_974)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_970 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_970' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_970, code_970, golf_copied_970)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 write-lifo adds a pair of key/value to the LIFO &lt;list&gt;, specified with strings &lt;key&gt; and &lt;value&gt; (in "key" and "value" clauses, collectively called an "element"). <br/>
 <br/>
 It always adds an element so that the last one written to &lt;list&gt; &nbsp;would be the first to be read with <a href='/read-lifo.html'>read-lifo</a>.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_975' class=notranslate>
+<pre id='code_971' class=notranslate>
 <span class="Statement"> new-lifo</span> nf
 <span class="Statement"> write-lifo</span> nf<span class="Identifier"> key</span> <span class="Constant">&quot;mykey&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;myvalue&quot;</span></pre>
-<span id=golf_copied_975 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_975' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_975, code_975, golf_copied_975)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_971 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_971' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_971, code_971, golf_copied_971)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <a id='write-list.html'></a>
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Write list</div><hr/><span style="font-weight:bold;">Purpose</span>: Write key/value pair into a linked list.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_976' class=notranslate>
+<pre id='code_972' class=notranslate>
 <span class="Statement"> write-list</span> &lt;list&gt;<span class="Identifier"> key</span> &lt;key&gt; \
     <span class="Identifier"> value</span> &lt;value&gt; \
      [<span class="Identifier"> append</span> [ &lt;append&gt; ] ]</pre>
-<span id=golf_copied_976 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_976' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_976, code_976, golf_copied_976)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_972 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_972' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_972, code_972, golf_copied_972)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 write-list adds a pair of key/value strings to the linked &lt;list&gt;, specified with &lt;key&gt; and &lt;value&gt; (in "key" and "value" clauses, collectively called an "element"). <br/>
 <br/>
@@ -16910,16 +16877,16 @@ If "append" clause is used without boolean variable &lt;append&gt;, or if &lt;ap
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Add a key/value pair to the end of the list:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_978' class=notranslate>
+<pre id='code_974' class=notranslate>
 <span class="Statement"> new-list</span> mylist
 <span class="Statement"> write-list</span> mylist<span class="Identifier"> key</span> <span class="Constant">&quot;mykey&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;myvalue&quot;</span><span class="Identifier"> append</span></pre>
-<span id=golf_copied_978 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_978' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_978, code_978, golf_copied_978)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_974 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_974' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_974, code_974, golf_copied_974)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The following is a list that is process-scoped, i.e. it is a linked-list server, which can add, delete, read and position to various elements:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_980' class=notranslate>
+<pre id='code_976' class=notranslate>
 <span class="Statement"> %%</span> /llsrv<span class="Identifier"> public</span>
      <span class="Comment">// Create linked list just once for the life of the process</span>
 <span class="Statement">     do-once</span>
@@ -16991,128 +16958,128 @@ The following is a list that is process-scoped, i.e. it is a linked-list server,
 <span class="Statement">         purge-list</span> t
 <span class="Statement">     end-if</span>
 <span class="Statement"> %%</span></pre>
-<span id=golf_copied_980 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_980' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_980, code_980, golf_copied_980)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_976 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_976' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_976, code_976, golf_copied_976)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Create application:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_977' class=notranslate>
+<pre id='code_973' class=notranslate>
 sudo mgrg <span class="Special">-i</span> <span class="Special">-u</span> <span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span> linkserver</pre>
-<span id=golf_copied_977 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_977' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_977, code_977, golf_copied_977)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_973 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_973' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_973, code_973, golf_copied_973)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Start the server:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_979' class=notranslate>
+<pre id='code_975' class=notranslate>
 mgrg <span class="Special">-w</span> <span class="Constant">1</span> linkserver</pre>
-<span id=golf_copied_979 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_979' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_979, code_979, golf_copied_979)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_975 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_975' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_975, code_975, golf_copied_975)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Try it out:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_981' class=notranslate>
+<pre id='code_977' class=notranslate>
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/llsrv/op=add/key=1/data=1</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--service</span>
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/llsrv/op=add/key=2/data=2</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--service</span>
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/llsrv/op=query</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--service</span>
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/llsrv/op=previous</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--service</span>
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/llsrv/op=query</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--service</span></pre>
-<span id=golf_copied_981 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_981' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_981, code_981, golf_copied_981)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_977 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_977' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_977, code_977, golf_copied_977)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <a id='write-message.html'></a>
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Write message</div><hr/><span style="font-weight:bold;">Purpose</span>: Write key/value to a message.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_982' class=notranslate>
+<pre id='code_978' class=notranslate>
 <span class="Statement"> write-message</span> &lt;message&gt; <span class="Identifier"> key</span> &lt;key&gt;<span class="Identifier"> value</span> &lt;value&gt;</pre>
-<span id=golf_copied_982 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_982' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_982, code_982, golf_copied_982)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_978 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_978' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_978, code_978, golf_copied_978)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 write-message will append to &lt;message&gt; a key/value pair, in the form of string &lt;key&gt; (in "key" clause) and string &lt;value&gt; (in "value" clause). <br/>
 <br/>
 &lt;message&gt; must have been created with <a href='/new-message.html'>new-message</a>. In order to use write-message, a message must not have been read from (see <a href='/read-message.html'>read-message</a>). <br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_983' class=notranslate>
+<pre id='code_979' class=notranslate>
 <span class="Statement"> new-message</span> msg
 <span class="Statement"> write-message</span> msg<span class="Identifier"> key</span> <span class="Constant">&quot;key1&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;value1&quot;</span></pre>
-<span id=golf_copied_983 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_983' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_983, code_983, golf_copied_983)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_979 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_979' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_979, code_979, golf_copied_979)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <a id='write-string.html'></a>
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Write string</div><hr/><span style="font-weight:bold;">Purpose</span>: Create complex strings.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_985' class=notranslate>
+<pre id='code_981' class=notranslate>
 <span class="Statement"> write-string</span> &lt;string&gt;
 
  &lt;any code&gt;
 
 <span class="Statement"> end-write-string</span> [<span class="Identifier"> notrim</span> ]</pre>
-<span id=golf_copied_985 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_985' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_985, code_985, golf_copied_985)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_981 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_981' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_981, code_981, golf_copied_981)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Output of any Golf code can be written into &lt;string&gt; with write-string. In between write-string and end-write-string you can write &lt;any Golf code&gt;. For instance you can use database queries, comparison statements etc., just as you would for any other Golf code. <br/>
 <div class="vsub"><a id="Shortcut code"></a>Shortcut code</div>
 Note that instead of write-string you can also use a shortcut "((" &nbsp;(and instead of end-write-string you can use "))" &nbsp;), for example here a string "fname" holds a full path of a file named "config-install.golf" under the application home directory (see <a href='/directories.html'>directories</a>):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_987' class=notranslate>
+<pre id='code_983' class=notranslate>
 <span class="Statement"> get-app</span><span class="Identifier"> directory</span><span class="Type"> to</span> home_dir
 <span class="Statement"> ((</span> fname
 <span class="Statement"> @</span><span class="Statement">&lt;&lt;print-out</span> home_dir<span class="Statement">&gt;&gt;</span>/config-install.golf
+<span class="Statement"> ))</span></pre>
+<span id=golf_copied_983 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_983' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_983, code_983, golf_copied_983)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+<div class="vsub"><a id="Trimming"></a>Trimming</div>
+Just like with all other Golf code, every line is trimmed both on left and write, so this:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_985' class=notranslate>
+<span class="Statement"> ((</span> mystr
+<span class="Statement"> @</span>Some string
+<span class="Statement"> ))</span></pre>
+<span id=golf_copied_985 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_985' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_985, code_985, golf_copied_985)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+is the same as:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_987' class=notranslate>
+<span class="Statement"> ((</span> mystr
+<span class="Statement">         @</span>Some string &lt;whitespaces&gt;
 <span class="Statement"> ))</span></pre>
 <span id=golf_copied_987 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_987' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_987, code_987, golf_copied_987)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-<div class="vsub"><a id="Trimming"></a>Trimming</div>
-Just like with all other Golf code, every line is trimmed both on left and write, so this:<br/>
-<div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_989' class=notranslate>
-<span class="Statement"> ((</span> mystr
-<span class="Statement"> @</span>Some string
-<span class="Statement"> ))</span></pre>
-<span id=golf_copied_989 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_989' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_989, code_989, golf_copied_989)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-is the same as:<br/>
-<div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_991' class=notranslate>
-<span class="Statement"> ((</span> mystr
-<span class="Statement">         @</span>Some string &lt;whitespaces&gt;
-<span class="Statement"> ))</span></pre>
-<span id=golf_copied_991 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_991' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_991, code_991, golf_copied_991)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
 write-string (or "((") statement must always be on a line by itself (and so does end-write-string, or "))" statement). The string being built starts with the line following write-string, and ends with the line immediately prior to end-write-string. <br/>
 <br/>
 All trailing empty lines are removed, for example:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_993' class=notranslate>
+<pre id='code_989' class=notranslate>
 <span class="Statement"> ((</span> mystr
 <span class="Statement">         @</span>My string
 <span class="Statement">         @</span>
 <span class="Statement">         @</span>
 <span class="Statement"> ))</span></pre>
-<span id=golf_copied_993 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_993' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_993, code_993, golf_copied_993)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_989 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_989' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_989, code_989, golf_copied_989)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 the above string would have two trailing empty lines, however they will be removed. If you want to skip trimming the trailing whitespaces, use "notrim" clause in end-write-string.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 <span style="font-weight:bold;">- Simple</span><br/>
 A simple example:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_995' class=notranslate>
+<pre id='code_991' class=notranslate>
 <span class="Statement"> set-string</span> my_str=<span class="Constant">&quot;world&quot;</span>
 <span class="Statement"> set-string</span> my_str1=<span class="Constant">&quot;and have a nice day too!&quot;</span>
 
@@ -17121,23 +17088,23 @@ A simple example:<br/>
 <span class="Statement"> end-write-string</span>
 
 <span class="Statement"> print-out</span> result_str</pre>
-<span id=golf_copied_995 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_995' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_995, code_995, golf_copied_995)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_991 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_991' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_991, code_991, golf_copied_991)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The output is <br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_986' class=notranslate>
+<pre id='code_982' class=notranslate>
 Hello world (and have a nice day too!)</pre>
-<span id=golf_copied_986 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_986' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_986, code_986, golf_copied_986)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_982 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_982' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_982, code_982, golf_copied_982)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <br/>
 <span style="font-weight:bold;">- Using code inside</span><br/>
 Here is using Golf code inside write-string, including database query and comparison statements to produce different strings at run-time:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_997' class=notranslate>
+<pre id='code_993' class=notranslate>
 <span class="Statement"> get-param</span> selector
 
 <span class="Statement"> set-string</span> my_str=<span class="Constant">&quot;world&quot;</span>
@@ -17156,97 +17123,97 @@ Here is using Golf code inside write-string, including database query and compar
 <span class="Statement"> end-write-string</span>
 
 <span class="Statement"> print-out</span> result_str</pre>
-<span id=golf_copied_997 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_997' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_997, code_997, golf_copied_997)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_993 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_993' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_993, code_993, golf_copied_993)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 If selector variable is "simple", as in URL <br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_988' class=notranslate>
+<pre id='code_984' class=notranslate>
 https://mysite.com/&lt;app name&gt;/some-service?selector=simple</pre>
+<span id=golf_copied_984 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_984' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_984, code_984, golf_copied_984)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+the result is <br/>
+<div class='ncode' style='position:relative;padding-right:16px;'>
+<pre id='code_986' class=notranslate>
+Hello world (and have a nice day too!)</pre>
+<span id=golf_copied_986 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_986' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_986, code_986, golf_copied_986)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+If selector variable is "database", as in URL <br/>
+<div class='ncode' style='position:relative;padding-right:16px;'>
+<pre id='code_988' class=notranslate>
+https://mysite.com/&lt;app name&gt;/some-service?selector=database</pre>
 <span id=golf_copied_988 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_988' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_988, code_988, golf_copied_988)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-the result is <br/>
-<div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_990' class=notranslate>
-Hello world (and have a nice day too!)</pre>
-<span id=golf_copied_990 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_990' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_990, code_990, golf_copied_990)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-If selector variable is "database", as in URL <br/>
-<div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_992' class=notranslate>
-https://mysite.com/&lt;app name&gt;/some-service?selector=database</pre>
-<span id=golf_copied_992 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_992' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_992, code_992, golf_copied_992)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
 the result may be (assuming "Linda" and "John" are the two employees selected):<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_994' class=notranslate>
+<pre id='code_990' class=notranslate>
 Hello Linda
 &lt;br/&gt;
 Hello John
 &lt;br/&gt;</pre>
+<span id=golf_copied_990 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_990' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_990, code_990, golf_copied_990)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+If selector variable is anything else, as in URL <br/>
+<div class='ncode' style='position:relative;padding-right:16px;'>
+<pre id='code_992' class=notranslate>
+https://mysite.com/&lt;app name&gt;/some-service?selector=something_else</pre>
+<span id=golf_copied_992 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_992' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_992, code_992, golf_copied_992)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+the result is <br/>
+<div class='ncode' style='position:relative;padding-right:16px;'>
+<pre id='code_994' class=notranslate>
+No message</pre>
 <span id=golf_copied_994 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_994' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_994, code_994, golf_copied_994)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-If selector variable is anything else, as in URL <br/>
-<div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_996' class=notranslate>
-https://mysite.com/&lt;app name&gt;/some-service?selector=something_else</pre>
-<span id=golf_copied_996 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_996' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_996, code_996, golf_copied_996)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-the result is <br/>
-<div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_998' class=notranslate>
-No message</pre>
-<span id=golf_copied_998 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_998' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_998, code_998, golf_copied_998)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
 <span style="font-weight:bold;">- Using call-handlers calls inside</span><br/>
 The following uses a call-handler inside write-string:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_999' class=notranslate>
+<pre id='code_995' class=notranslate>
 <span class="Statement"> set-string</span> result_str=<span class="Constant">&quot;&quot;</span>
 <span class="Statement"> write-string</span> result_str
 <span class="Statement">     @</span><span class="Statement">&lt;&lt;print-out</span> <span class="Constant">&quot;Result from other-service&quot;</span><span class="Statement">&gt;&gt;</span> is <span class="Statement">&lt;&lt;call-handler</span> <span class="Constant">&quot;/other-service&quot;</span><span class="Statement">&gt;&gt;</span>
 <span class="Statement"> end-write-string</span>
 <span class="Statement"> print-out</span> result_str</pre>
-<span id=golf_copied_999 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_999' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_999, code_999, golf_copied_999)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_995 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_995' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_995, code_995, golf_copied_995)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The "other-service" may be:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1001' class=notranslate>
+<pre id='code_997' class=notranslate>
 <span class="Statement"> begin-handler</span> /other-service<span class="Identifier"> public</span>
 <span class="Statement">     @</span>&quot;Hello from other service&quot;
 <span class="Statement"> end-handler</span></pre>
-<span id=golf_copied_1001 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_1001' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_1001, code_1001, golf_copied_1001)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_997 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_997' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_997, code_997, golf_copied_997)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The output:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_1000' class=notranslate>
+<pre id='code_996' class=notranslate>
 Result from other-service is Hello from other service</pre>
-<span id=golf_copied_1000 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_1000' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_1000, code_1000, golf_copied_1000)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_996 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_996' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_996, code_996, golf_copied_996)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <br/>
 <span style="font-weight:bold;">- Nesting</span><br/>
 An example to nest write-strings:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_984' class=notranslate>
+<pre id='code_980' class=notranslate>
 <span class="Statement"> write-string</span> str1
 <span class="Statement">     @</span>Hi!
 <span class="Statement">     write-string</span> str2
@@ -17255,30 +17222,30 @@ An example to nest write-strings:<br/>
 <span class="Statement">    print-out</span> str2
 <span class="Statement"> end-write-string</span>
 <span class="Statement"> print-out</span> str1</pre>
-<span id=golf_copied_984 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_984' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_984, code_984, golf_copied_984)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_980 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_980' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_980, code_980, golf_copied_980)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The result is <br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_1002' class=notranslate>
+<pre id='code_998' class=notranslate>
 Hi!
 Hi Again!</pre>
-<span id=golf_copied_1002 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_1002' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_1002, code_1002, golf_copied_1002)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_998 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_998' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_998, code_998, golf_copied_998)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <a id='write-tree.html'></a>
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Write tree</div><hr/><span style="font-weight:bold;">Purpose</span>: Insert a key/value pair into a tree.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1003' class=notranslate>
+<pre id='code_999' class=notranslate>
 <span class="Statement"> write-tree</span> &lt;tree&gt;<span class="Identifier"> key</span> &lt;key&gt;<span class="Identifier"> value</span> &lt;value&gt; \
      [<span class="Type"> status</span> &lt;status&gt; ] \
      [<span class="Type"> new-cursor</span> &lt;cursor&gt; ]</pre>
-<span id=golf_copied_1003 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_1003' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_1003, code_1003, golf_copied_1003)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_999 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_999' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_999, code_999, golf_copied_999)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 write-tree inserts string &lt;key&gt; and associated string &lt;value&gt; into &lt;tree&gt; created by <a href='/new-tree.html'>new-tree</a>.<br/>
 <br/>
@@ -17288,17 +17255,17 @@ If "new-cursor" clause is used, then a &lt;cursor&gt; will be positioned on a ne
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Insert key "k" with value "d" into "mytree", and obtain status in "st":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1006' class=notranslate>
+<pre id='code_1002' class=notranslate>
 <span class="Statement"> write-tree</span> mytree<span class="Identifier"> key</span> k<span class="Identifier"> value</span> d<span class="Type"> status</span> st</pre>
-<span id=golf_copied_1006 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_1006' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_1006, code_1006, golf_copied_1006)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_1002 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_1002' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_1002, code_1002, golf_copied_1002)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The following is an example of a process-scoped tree. Such a tree keeps its data across the requests, for as long as the process is alive.<br/>
 <br/>
 In a new directory, create file treesrv.golf and copy to it:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1008' class=notranslate>
+<pre id='code_1004' class=notranslate>
 <span class="Statement"> %%</span> /treesrv<span class="Identifier"> public</span>
 <span class="Statement">     do-once</span>
 <span class="Statement">     new-tree</span> t<span class="Identifier"> process-scope</span>
@@ -17334,37 +17301,37 @@ In a new directory, create file treesrv.golf and copy to it:<br/>
 <span class="Statement">         end-if</span>
 <span class="Statement">     end-if</span>
 <span class="Statement"> %%</span></pre>
-<span id=golf_copied_1008 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_1008' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_1008, code_1008, golf_copied_1008)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_1004 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_1004' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_1004, code_1004, golf_copied_1004)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Create new application ("pt" for "process tree"):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_1005' class=notranslate>
+<pre id='code_1001' class=notranslate>
 sudo mgrg <span class="Special">-i</span> <span class="Special">-u</span> <span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span> pt</pre>
+<span id=golf_copied_1001 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_1001' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_1001, code_1001, golf_copied_1001)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Build application:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_1003' class=notranslate>
+gg <span class="Special">-q</span></pre>
+<span id=golf_copied_1003 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_1003' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_1003, code_1003, golf_copied_1003)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Run the tree service:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_1005' class=notranslate>
+mgrg <span class="Special">-w</span> <span class="Constant">1</span> pt</pre>
 <span id=golf_copied_1005 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_1005' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_1005, code_1005, golf_copied_1005)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Build application:<br/>
-<div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_1007' class=notranslate>
-gg <span class="Special">-q</span></pre>
-<span id=golf_copied_1007 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_1007' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_1007, code_1007, golf_copied_1007)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-Run the tree service:<br/>
-<div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_1009' class=notranslate>
-mgrg <span class="Special">-w</span> <span class="Constant">1</span> pt</pre>
-<span id=golf_copied_1009 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_1009' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_1009, code_1009, golf_copied_1009)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
 Try it out, add key/value pairs, query, delete, query again:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_1004' class=notranslate>
+<pre id='code_1000' class=notranslate>
 # Add key=1 and data=d1
 $ gg -r --req=&quot;/treesrv/op=add/key=1/data=d1&quot; --service --exec --silent-header
 Added [1]
@@ -17388,16 +17355,16 @@ Deleted [d2]
 # Query key=2
 $ gg -r --req=&quot;/treesrv/op=query/key=2&quot; --service --exec --silent-header
 Not found, queried [2]</pre>
-<span id=golf_copied_1004 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_1004' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_1004, code_1004, golf_copied_1004)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_1000 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_1000' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_1000, code_1000, golf_copied_1000)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 See <a href='/read-tree.html'>read-tree</a> for more examples.<br/>
 <a id='xml-doc.html'></a>
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Xml doc</div><hr/><span style="font-weight:bold;">Purpose</span>: Parse XML text.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1010' class=notranslate>
+<pre id='code_1006' class=notranslate>
 <span class="Statement"> xml-doc</span> &lt;text&gt;<span class="Type"> to</span> &lt;xml&gt; \
      [<span class="Type"> status</span> &lt;status&gt; ] [<span class="Identifier"> length</span> &lt;length&gt; ] \
      [<span class="Type"> error-text</span> &lt;error text&gt; ] \
@@ -17405,9 +17372,9 @@ See <a href='/read-tree.html'>read-tree</a> for more examples.<br/>
          [<span class="Type"> error-char</span> &lt;<span class="Type">char</span>&gt; ]
 
 <span class="Statement"> xml-doc</span><span class="Identifier"> delete</span> &lt;xml&gt;</pre>
-<span id=golf_copied_1010 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_1010' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_1010, code_1010, golf_copied_1010)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_1006 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_1006' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_1006, code_1006, golf_copied_1006)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 xml-doc will parse XML &lt;text&gt; into &lt;xml&gt; variable, which can be used with <a href='/read-xml.html'>read-xml</a> to get the data.<br/>
 <br/>
@@ -17425,7 +17392,7 @@ To delete an XML variable, use "delete" clause with the &lt;xml&gt;. This will d
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Parse the following XML document and display all element names and values from it. You can use them as they come along, or store them into <a href='/new-hash.html'>new-hash</a> or <a href='/new-tree.html'>new-tree</a> for instance for searching of large documents. This also demonstrates usage of UTF characters:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1012' class=notranslate>
+<pre id='code_1008' class=notranslate>
 <span class="Statement"> %%</span> /xml<span class="Identifier"> public</span>
 <span class="Statement">     set-string</span> xmld<span class="Identifier"> unquoted</span> =&lt;?xml version=<span class="Constant">&quot;1.0&quot;</span> encoding=<span class="Constant">&quot;UTF-8&quot;</span>?&gt;\
  &lt;countries&gt;\
@@ -17483,13 +17450,13 @@ Parse the following XML document and display all element names and values from i
 <span class="Statement">     end-loop</span>
 <span class="Statement">     xml-doc</span><span class="Identifier"> delete</span> x
 <span class="Statement"> %%</span></pre>
-<span id=golf_copied_1012 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_1012' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_1012, code_1012, golf_copied_1012)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_1008 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_1008' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_1008, code_1008, golf_copied_1008)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The output would be:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_1011' class=notranslate>
+<pre id='code_1007' class=notranslate>
 Key [countries/country/id/@] Value [1]
 Key [countries/country/name/] Value [USA&amp;America]
 Key [countries/country/state/id/@] Value [1]
@@ -17522,9 +17489,9 @@ Key [countries/country/state/city/id/@] Value [1]
 Key [countries/country/state/city/name/] Value [Culiacán Rosales]
 Key [countries/country/state/city/population/] Value [3000000]
 Key [countries/country/state/] Value [Sinaloa]</pre>
-<span id=golf_copied_1011 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_1011' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_1011, code_1011, golf_copied_1011)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_1007 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_1007' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_1007, code_1007, golf_copied_1007)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <br/><div style='width:100%;clear:both;'>
 <hr/>
