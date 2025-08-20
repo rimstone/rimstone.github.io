@@ -254,7 +254,7 @@ Let's start with a simple service that provides current time based on a timezone
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_206' class=notranslate>
 <span class="Statement"> begin-handler</span> /local/time
-<span class="Statement">     get-param</span> tzone<span class="Identifier"> default-value</span> <span class="Constant">&quot;MST&quot;</span> <span class="Comment">// get time zone as input parameter (i.e. </span><span class="Constant">&quot;EST&quot;</span><span class="Comment">, </span><span class="Constant">&quot;MST&quot;</span><span class="Comment">, </span><span class="Constant">&quot;PST&quot;</span><span class="Comment"> etc.)</span>
+<span class="Statement">     get-param</span> tzone<span class="Identifier"> default-value</span> <span class="Constant">&quot;MST&quot;</span> <span class="Comment">// get time zone as input parameter (i.e. &quot;EST&quot;, &quot;MST&quot;, &quot;PST&quot; etc.)</span>
 <span class="Statement">     get-time</span><span class="Type"> to</span> curr_time<span class="Identifier"> timezone</span> tzone
 <span class="Statement">     @</span>&lt;div&gt;Current time is <span class="Statement">&lt;&lt;print-out</span> curr_time<span class="Statement">&gt;&gt;</span>&lt;/div&gt;
 <span class="Statement"> end-handler</span></pre>
@@ -318,9 +318,9 @@ The result parameter will be obtained in the caller, and then output as HTML fro
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_214' class=notranslate>
 <span class="Statement"> begin-handler</span> /some/service
-<span class="Statement">     set-param</span> tzone=<span class="Constant">&quot;EST&quot;</span> <span class="Comment">// set input parameter used by </span><span class="Constant">&quot;/local/time&quot;</span>
+<span class="Statement">     set-param</span> tzone=<span class="Constant">&quot;EST&quot;</span> <span class="Comment">// set input parameter used by &quot;/local/time&quot;</span>
 <span class="Statement">     call-handler</span> <span class="Constant">&quot;/local/time&quot;</span>
-<span class="Statement">     get-param</span> curr_time <span class="Comment">// get parameter that was set by </span><span class="Constant">&quot;/local/time&quot;</span>
+<span class="Statement">     get-param</span> curr_time <span class="Comment">// get parameter that was set by &quot;/local/time&quot;</span>
 <span class="Statement">     @</span>&lt;div&gt;Current time is <span class="Statement">&lt;&lt;print-out</span> curr_time<span class="Statement">&gt;&gt;</span>&lt;/div&gt;
 <span class="Statement"> end-handler</span></pre>
 <span id=golf_copied_214 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>

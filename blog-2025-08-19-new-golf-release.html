@@ -7,11 +7,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 
-<title>Resize hash</title>
+<title>Golf-3.1.0-released</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="canonical" href="https://golf-lang.com/resize-hash.html" />
+<link rel="canonical" href="https://golf-lang.com/blog-2025-08-19-new-golf-release.html" />
 <style>
 
 
@@ -227,28 +227,10 @@ function googleTranslateElementInit() {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Resize hash</div><hr/><span style="font-weight:bold;">Purpose</span>: Resize hash table.<br/>
-<br/>
-<div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_826' class=notranslate>
-<span class="Statement"> resize-hash</span> &lt;hash&gt;<span class="Identifier"> hash-size</span> &lt;new size&gt;</pre>
-<span id=golf_copied_826 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_826' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_826, code_826, golf_copied_826)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-resize-hash will resize &lt;hash&gt; table (created by <a href='https://golf-lang.com/new-hash.html'>new-hash</a>) to size &lt;new size&gt;, which refers to the number of "buckets", or possible hash codes derived from keys stored.<br/>
-<br/>
-When a number of elements stored grows, the search performance may decline if hash size remains the same. Consequently, if the number of elements shrinks, the memory allocated by the hash may be wasted. Use <a href='https://golf-lang.com/get-hash.html'>get-hash</a> to obtain its current hash-size, its length (the number of elements currently stored in it) and the statistics (such as average reads) to determine if you need to resize it.<br/>
-<br/>
-Resizing is generally expensive, so it should not be done too often, and only when needed. The goal is to amortize this expense through future gain of lookup performance. For that reason it may be better to resize proportionally (i.e. by a percentage), unless you have a specific application reason to do otherwise, or to avoid exponential growth.<br/>
-<div class="vsub"><a id="Examples"></a>Examples</div>
-<div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_827' class=notranslate>
-<span class="Statement"> resize-hash</span> h<span class="Identifier"> hash-size</span> <span class="Constant">100000</span></pre>
-<span id=golf_copied_827 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_827' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_827, code_827, golf_copied_827)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Golf-3.1.0-released</div><hr/><br/>
+<ul><li>Performance improvements in building application.<br/>
+</li><li>Added a list of outputs to print-out, so now print-out can output any number of strings and numbers concatenanted together.<br/>
+</li><li>Fixed uninstall and write-string documentation pages errata.<br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
