@@ -38,7 +38,8 @@ body {
     padding-left:5px;
     padding-top:3px;
     padding-bottom:3px;
-    margin-bottom:15px;
+    margin-bottom:8px;
+    margin-top:8px;
     border: 2px solid #d6d6d6;
     background-color:#f5f7f4;
     white-space:nowrap;
@@ -56,7 +57,8 @@ body {
     padding-left:5px;
     padding-top:3px;
     padding-bottom:3px;
-    margin-bottom:15px;
+    margin-bottom:8px;
+    margin-top:8px;
     border: 2px solid #d6d6d6;
     background-color:#f5f7f4;
     white-space:nowrap;
@@ -74,7 +76,8 @@ body {
     padding-left:5px;
     padding-top:3px;
     padding-bottom:3px;
-    margin-bottom:15px;
+    margin-bottom:8px;
+    margin-top:8px;
     border: 2px solid #d6d6d6;
     background-color:#f5f7f4;
     white-space:nowrap;
@@ -92,7 +95,8 @@ body {
     padding-left:5px;
     padding-top:3px;
     padding-bottom:3px;
-    margin-bottom:15px;
+    margin-bottom:8px;
+    margin-top:8px;
     border: 2px solid #d6d6d6;
     background-color:#f5f7f4;
     white-space:nowrap;
@@ -110,7 +114,8 @@ body {
     padding-left:5px;
     padding-top:3px;
     padding-bottom:3px;
-    margin-bottom:15px;
+    margin-bottom:8px;
+    margin-top:8px;
     border: 2px solid #d6d6d6;
     background-color:#f5f7f4;
     white-space:nowrap;
@@ -241,29 +246,29 @@ If you use Apache, you need to connect it to your application, see <a href='http
 <div class="vsub"><a id="Starting Golf server processes"></a>Starting Golf server processes</div>
 Use <a href='https://golf-lang.com/mgrg.html'>mgrg</a>, for example:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_866' class=notranslate>
+<pre id='code_871' class=notranslate>
 mgrg <span class="Statement">&lt;</span>app name<span class="Statement">&gt;</span></pre>
-<span id=golf_copied_866 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_866' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_866, code_866, golf_copied_866)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_871 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_871' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_871, code_871, golf_copied_871)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 which in general will (based on the request load) start zero or more background resident process(es) (daemons) that process requests in parallel, or for instance:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_867' class=notranslate>
+<pre id='code_872' class=notranslate>
 mgrg <span class="Special">-w</span> <span class="Constant">20</span> <span class="Statement">&lt;</span>app name<span class="Statement">&gt;</span></pre>
-<span id=golf_copied_867 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_867' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_867, code_867, golf_copied_867)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_872 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_872' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_872, code_872, golf_copied_872)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 which will start 20 processes.<br/>
 <div class="vsub"><a id="Connection timeout"></a>Connection timeout</div>
 In a heavy-load environment, a client's connection may be rejected by the server. This may happen if the client runs very slowly due to swapping perhaps. Once a client establishes a connection, it has up to 5 seconds by default to send data; if it doesn't, the server will close the connection. Typically, clients send data right away, but due to a heavy load, this time may be longer. To set the connection timeout in seconds, use "--client-timeout" option in gg when making the application:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_868' class=notranslate>
+<pre id='code_873' class=notranslate>
 gg <span class="Special">-q</span> <span class="Special">--client-timeout</span><span class="Statement">=</span><span class="Constant">8</span></pre>
-<span id=golf_copied_868 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_868' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_868, code_868, golf_copied_868)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_873 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_873' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_873, code_873, golf_copied_873)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In this case, the timeout is set to 8 seconds.<br/>
 <!--ENDVDOC90-->
