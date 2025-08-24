@@ -10103,7 +10103,7 @@ Regardless of the type of error and regardless of whether the process exits or n
 When your program errors out, a generic message is output to the standard output, i.e. to the client, that indicates that error has occurred, and to check the error log. The actual details are output to standard error stream, see details above. Note that in case of fatal error (such as Golf internal error), no message is sent to the client; rather the program ends. On how to view the error log (including the stack traces), see <a href='/debugging.html'>debugging</a>.<br/>
 <a id='examples.html'></a>
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Golf examples</div><hr/><br/>
-Updated on 2025-08-23<br/>
+Updated on 2025-08-24<br/>
 <ul><br/>
 <li><a href='/article-capi.html'>Use C language API to talk to Golf Server</a><br/>
 Golf application server can be accessed via C API. Most programming languages allow for C linkage, so this makes it easy to talk to Golf server from anywhere. The <a href='/Client-API.html'>Client-API</a> is very simple with just a few functions and a single data type. It's also MT-safe (i.e. safe for multi-threaded applications). ...<br/>
@@ -11853,7 +11853,7 @@ sudo pacman <span class="Special">-U</span> ./golf-main-arch-any.pkg.tar.zst</pr
 </div><br/>
 </li></ul>
 <div class="vsub"><a id="Building packages"></a>Building packages</div>
-If you are a packaging developer, the following can be used to build a Golf package. All of these use <a href='https://github.com/golf-lang/golf/releases/latest/download/golf_3.1.18.orig.tar.gz'>golf_3.1.18.orig.tar.gz</a> source archive; the naming convention is obviously for Debian, but all other packages have been made to conform for simplicity.<br/>
+If you are a packaging developer, the following can be used to build a Golf package. All of these use <a href='https://github.com/golf-lang/golf/releases/latest/download/golf_3.1.22.orig.tar.gz'>golf_3.1.22.orig.tar.gz</a> source archive; the naming convention is obviously for Debian, but all other packages have been made to conform for simplicity.<br/>
 <span style="font-weight:bold;">- apt packaging</span><br/>
 "debian" folder containing package build files (control, copyright, rules etc.) is <a href='https://github.com/golf-lang/golf/releases/latest/download/debian.tar.gz'>here</a>.<br/>
 <span style="font-weight:bold;">- rpm packaging</span><br/>
