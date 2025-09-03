@@ -488,7 +488,7 @@ Create file "update-order.golf" and copy the following to it:<br/>
 <span class="Statement">     out-header</span><span class="Identifier"> use content-type</span> <span class="Constant">&quot;application/json&quot;</span>
 <span class="Statement">     get-param</span> order_id, item_id, quantity
 <span class="Statement">     set-number</span> arows
-     <span class="Comment">// If quantity update is 0, issue SQL to delete an item from order, otherwise update </span>
+     <span class="Comment">// If quantity update is </span><span class="Constant">0</span><span class="Comment">, issue SQL to delete an item from order, otherwise update </span>
 <span class="Statement">     if-true</span> quantity<span class="Identifier"> equal</span> <span class="Constant">&quot;0&quot;</span>
 <span class="Statement">         run-query</span> @db =<span class="Constant">&quot;delete from orderItems where orderID='</span><span class="Special">%s</span><span class="Constant">' and itemID='</span><span class="Special">%s</span><span class="Constant">'&quot;</span> \
             <span class="Identifier"> :</span> order_id, item_id<span class="Identifier"> no-loop</span><span class="Type"> affected-rows</span> arows

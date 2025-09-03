@@ -404,7 +404,7 @@ The data to encrypt in these examples is a string, i.e. null-delimited. You can 
 <span class="Statement">     @</span>
      <span class="Comment">// Decrypt</span>
 <span class="Statement">     decrypt-data</span> enc_str<span class="Identifier"> password</span> <span class="Constant">&quot;my_password&quot;</span><span class="Type"> to</span> dec_str
-     <span class="Comment">// Output binary data; present null byte as octal \000</span>
+     <span class="Comment">// Output binary data; present null byte as octal \</span><span class="PreProc">0</span><span class="Constant">00</span>
 
 <span class="Statement">     string-length</span> dec_str<span class="Type"> to</span> res_len
 <span class="Statement">     start-loop</span><span class="Identifier"> repeat</span> res_len<span class="Type"> use</span> i<span class="Identifier"> start-with</span> <span class="Constant">0</span>
