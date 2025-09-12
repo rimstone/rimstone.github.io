@@ -247,10 +247,10 @@ Create new directory for the Golf server and also for C API client:<br/>
 Create file "srv.golf" and copy this:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_121' class=notranslate>
-<span class="Statement"> begin-handler</span> /srv<span class="Identifier"> public</span>
-<span class="Statement">     silent-header</span>
-<span class="Statement">     @</span>Hello world!
-<span class="Statement"> end-handler</span></pre>
+<span class="Statement">begin-handler</span> /srv<span class="Identifier"> public</span>
+<span class="Statement">    silent-header</span>
+<span class="Statement">    @</span>Hello world!
+<span class="Statement">end-handler</span></pre>
 <span id=golf_copied_121 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_121' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_121, code_121, golf_copied_121)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
@@ -290,35 +290,35 @@ Next, go to C API client directory:<br/>
 Then create C file "cli.c" and copy this:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_123' class=notranslate>
- <span class="PreProc">#include </span><span class="Constant">&quot;gcli.h&quot;</span>
+<span class="PreProc">#include </span><span class="Constant">&quot;gcli.h&quot;</span>
 
- <span class="Type">int</span> golf_client (gg_cli *req, <span class="Type">char</span> *connection, <span class="Type">char</span> *method, <span class="Type">char</span> *app_path, <span class="Type">char</span> *request, <span class="Type">char</span> *url_params);
+<span class="Type">int</span> golf_client (gg_cli *req, <span class="Type">char</span> *connection, <span class="Type">char</span> *method, <span class="Type">char</span> *app_path, <span class="Type">char</span> *request, <span class="Type">char</span> *url_params);
 
- <span class="Type">int</span> golf_client (gg_cli *req, <span class="Type">char</span> *connection, <span class="Type">char</span> *method, <span class="Type">char</span> *app_path, <span class="Type">char</span> *request, <span class="Type">char</span> *url_params)
-<span class="Statement"> {</span>
-     memset ((<span class="Type">char</span>*)req, <span class="Constant">0</span>, <span class="Statement">sizeof</span>(gg_cli));
-     req-&gt;server = connection;
-     req-&gt;req_method = method;
-     req-&gt;app_path = app_path;
-     req-&gt;req = request;
-     req-&gt;url_params = url_params;
-     <span class="Statement">return</span> gg_cli_request (req);
-<span class="Statement"> }</span>
+<span class="Type">int</span> golf_client (gg_cli *req, <span class="Type">char</span> *connection, <span class="Type">char</span> *method, <span class="Type">char</span> *app_path, <span class="Type">char</span> *request, <span class="Type">char</span> *url_params)
+<span class="Statement">{</span>
+    memset ((<span class="Type">char</span>*)req, <span class="Constant">0</span>, <span class="Statement">sizeof</span>(gg_cli));
+    req-&gt;server = connection;
+    req-&gt;req_method = method;
+    req-&gt;app_path = app_path;
+    req-&gt;req = request;
+    req-&gt;url_params = url_params;
+    <span class="Statement">return</span> gg_cli_request (req);
+<span class="Statement">}</span>
 
- <span class="Type">void</span> main ()
-<span class="Statement"> {</span>
-     <span class="Type">int</span> i;
-     <span class="Type">char</span> dir[GG_MAX_OS_UDIR_LEN];
-     gg_dir (GG_DIR_SOCKFILE, dir, <span class="Statement">sizeof</span>(dir), <span class="Constant">&quot;hello&quot;</span>, <span class="Constant">NULL</span>);
-     <span class="Statement">for</span> (i = <span class="Constant">0</span>; i &lt; <span class="Constant">100000</span>; i++)
-<span class="Statement">     {</span>
-         gg_cli req;
-         <span class="Type">int</span> res = golf_client (&amp;req, dir, <span class="Constant">&quot;GET&quot;</span>, <span class="Constant">&quot;/hello&quot;</span>, <span class="Constant">&quot;/srv&quot;</span>, <span class="Constant">&quot;/&quot;</span>);
-         <span class="Statement">if</span> (res != GG_OKAY) printf(<span class="Constant">&quot;Request failed [</span><span class="Special">%d</span><span class="Constant">] [</span><span class="Special">%s</span><span class="Constant">]</span><span class="Special">\n</span><span class="Constant">&quot;</span>, res, req.errm);
-         <span class="Statement">else</span> printf(<span class="Constant">&quot;</span><span class="Special">%s</span><span class="Constant">&quot;</span>, gg_cli_data(&amp;req));
-         gg_cli_delete(&amp;req);
-<span class="Statement">     }</span>
-<span class="Statement"> }</span></pre>
+<span class="Type">void</span> main ()
+<span class="Statement">{</span>
+    <span class="Type">int</span> i;
+    <span class="Type">char</span> dir[GG_MAX_OS_UDIR_LEN];
+    gg_dir (GG_DIR_SOCKFILE, dir, <span class="Statement">sizeof</span>(dir), <span class="Constant">&quot;hello&quot;</span>, <span class="Constant">NULL</span>);
+    <span class="Statement">for</span> (i = <span class="Constant">0</span>; i &lt; <span class="Constant">100000</span>; i++)
+<span class="Statement">    {</span>
+        gg_cli req;
+        <span class="Type">int</span> res = golf_client (&amp;req, dir, <span class="Constant">&quot;GET&quot;</span>, <span class="Constant">&quot;/hello&quot;</span>, <span class="Constant">&quot;/srv&quot;</span>, <span class="Constant">&quot;/&quot;</span>);
+        <span class="Statement">if</span> (res != GG_OKAY) printf(<span class="Constant">&quot;Request failed [</span><span class="Special">%d</span><span class="Constant">] [</span><span class="Special">%s</span><span class="Constant">]</span><span class="Special">\n</span><span class="Constant">&quot;</span>, res, req.errm);
+        <span class="Statement">else</span> printf(<span class="Constant">&quot;</span><span class="Special">%s</span><span class="Constant">&quot;</span>, gg_cli_data(&amp;req));
+        gg_cli_delete(&amp;req);
+<span class="Statement">    }</span>
+<span class="Statement">}</span></pre>
 <span id=golf_copied_123 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_123' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_123, code_123, golf_copied_123)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
@@ -340,10 +340,6 @@ Run it:<br/>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_129, code_129, golf_copied_129)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The result is "Hello world!" 100,000 times from each request invocation.<br/>
-<div class="vsub"><a id="See also"></a>See also</div>
- <br/>
-<span style="font-weight:bold;">See all</span> <br/>
-<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>

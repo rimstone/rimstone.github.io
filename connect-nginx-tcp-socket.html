@@ -237,39 +237,48 @@ function googleTranslateElementInit() {
 <span style="font-weight:bold;">- Step 1</span>:<br/>
 You will need to edit the Nginx configuration file. For Ubuntu and similar:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_436' class=notranslate>
+<pre id='code_466' class=notranslate>
 sudo vi /etc/nginx/sites-enabled/default</pre>
-<span id=golf_copied_436 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_436' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_436, code_436, golf_copied_436)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_466 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_466' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_466, code_466, golf_copied_466)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 while on Fedora and other systems it might be at:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_437' class=notranslate>
+<pre id='code_467' class=notranslate>
 sudo vi /etc/nginx/nginx.conf</pre>
-<span id=golf_copied_437 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_437' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_437, code_437, golf_copied_437)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_467 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_467' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_467, code_467, golf_copied_467)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <br/>
 Add the following in the "server {}" section ("/&lt;app path&gt;" is the application path, see <a href='https://golf-lang.com/request.html'>request</a>):<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_435' class=notranslate>
+<pre id='code_465' class=notranslate>
 location /&lt;app path&gt;/ { include /etc/nginx/fastcgi_params; fastcgi_pass  127.0.0.1:&lt;port number&gt;; }</pre>
-<span id=golf_copied_435 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_435' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_435, code_435, golf_copied_435)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_465 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_465' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_465, code_465, golf_copied_465)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <span style="font-weight:bold;">- Step 2</span>:<br/>
 Finally, restart Nginx:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_438' class=notranslate>
+<pre id='code_468' class=notranslate>
 sudo systemctl restart nginx</pre>
-<span id=golf_copied_438 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_438' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_438, code_438, golf_copied_438)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_468 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_468' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_468, code_468, golf_copied_468)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Note: you must not have any other URL resource that starts with "/&lt;app path&gt;/" (such as for example "/&lt;app path&gt;/something") as the web server will attempt to pass them as a reverse proxy request, and they will likely not work. If you need to, you can change the application path to be different from "/&lt;app path&gt;", see <a href='https://golf-lang.com/request.html'>request</a>.<br/>
+<div class="vsub"><a id="See also"></a>See also</div>
+ <a name='Web servers'></a><span style="font-weight:bold;">Web servers</span><br/>
+<a href='https://golf-lang.com/connect-apache-tcp-socket.html'>connect-apache-tcp-socket</a> &nbsp;<br/>
+<a href='https://golf-lang.com/connect-apache-unix-socket.html'>connect-apache-unix-socket</a> &nbsp;<br/>
+<a href='https://golf-lang.com/connect-haproxy-tcp-socket.html'>connect-haproxy-tcp-socket</a> &nbsp;<br/>
+<a href='https://golf-lang.com/connect-nginx-tcp-socket.html'>connect-nginx-tcp-socket</a> &nbsp;<br/>
+<a href='https://golf-lang.com/connect-nginx-unix-socket.html'>connect-nginx-unix-socket</a> &nbsp; <br/>
+<span style="font-weight:bold;">See all</span> <br/>
+<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>

@@ -235,13 +235,13 @@ function googleTranslateElementInit() {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Write list</div><hr/><span style="font-weight:bold;">Purpose</span>: Write key/value pair into a linked list.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_978' class=notranslate>
-<span class="Statement"> write-list</span> &lt;list&gt;<span class="Identifier"> key</span> &lt;key&gt; \
-    <span class="Identifier"> value</span> &lt;value&gt; \
-     [<span class="Identifier"> append</span> [ &lt;append&gt; ] ]</pre>
-<span id=golf_copied_978 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_978' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_978, code_978, golf_copied_978)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_1008' class=notranslate>
+<span class="Statement">write-list</span> &lt;list&gt;<span class="Identifier"> key</span> &lt;key&gt; \
+   <span class="Identifier"> value</span> &lt;value&gt; \
+    [<span class="Identifier"> append</span> [ &lt;append&gt; ] ]</pre>
+<span id=golf_copied_1008 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_1008' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_1008, code_1008, golf_copied_1008)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 write-list adds a pair of key/value strings to the linked &lt;list&gt;, specified with &lt;key&gt; and &lt;value&gt; (in "key" and "value" clauses, collectively called an "element"). <br/>
 <br/>
@@ -251,119 +251,130 @@ If "append" clause is used without boolean variable &lt;append&gt;, or if &lt;ap
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Add a key/value pair to the end of the list:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_980' class=notranslate>
-<span class="Statement"> new-list</span> mylist
-<span class="Statement"> write-list</span> mylist<span class="Identifier"> key</span> <span class="Constant">&quot;mykey&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;myvalue&quot;</span><span class="Identifier"> append</span></pre>
-<span id=golf_copied_980 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_980' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_980, code_980, golf_copied_980)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_1010' class=notranslate>
+<span class="Statement">new-list</span> mylist
+<span class="Statement">write-list</span> mylist<span class="Identifier"> key</span> <span class="Constant">&quot;mykey&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;myvalue&quot;</span><span class="Identifier"> append</span></pre>
+<span id=golf_copied_1010 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_1010' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_1010, code_1010, golf_copied_1010)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The following is a list that is process-scoped, i.e. it is a linked-list server, which can add, delete, read and position to various elements:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_982' class=notranslate>
-<span class="Statement"> %%</span> /llsrv<span class="Identifier"> public</span>
-     <span class="Comment">// Create linked list just once for the life of the process</span>
-<span class="Statement">     do-once</span>
-<span class="Statement">     new-list</span> t<span class="Identifier"> process-scope</span>
-<span class="Statement">     end-do-once</span>
+<pre id='code_1012' class=notranslate>
+<span class="Statement">%%</span> /llsrv<span class="Identifier"> public</span>
+    <span class="Comment">// Create linked list just once for the life of the process</span>
+<span class="Statement">    do-once</span>
+<span class="Statement">    new-list</span> t<span class="Identifier"> process-scope</span>
+<span class="Statement">    end-do-once</span>
 
-     <span class="Comment">// Get input parameters</span>
-<span class="Statement">     get-param</span> op
-<span class="Statement">     get-param</span> key
-<span class="Statement">     get-param</span> data
+    <span class="Comment">// Get input parameters</span>
+<span class="Statement">    get-param</span> op
+<span class="Statement">    get-param</span> key
+<span class="Statement">    get-param</span> data
 
-<span class="Statement">     if-true</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;add&quot;</span> <span class="Comment">// Add data to list</span>
-         <span class="Comment">// Make a copy of key,data so they are Golf-allocated</span>
-<span class="Statement">         write-list</span> t<span class="Identifier"> key</span> (key)<span class="Identifier"> value</span> data<span class="Identifier"> append</span>
-<span class="Statement">         @</span>Added [<span class="Statement">&lt;&lt;print-out</span> key<span class="Statement">&gt;&gt;</span>] value [<span class="Statement">&lt;&lt;print-out</span> data<span class="Statement">&gt;&gt;</span>]
+<span class="Statement">    if-true</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;add&quot;</span> <span class="Comment">// Add data to list</span>
+        <span class="Comment">// Make a copy of key,data so they are Golf-allocated</span>
+<span class="Statement">        write-list</span> t<span class="Identifier"> key</span> (key)<span class="Identifier"> value</span> data<span class="Identifier"> append</span>
+<span class="Statement">        @</span>Added [<span class="Statement">&lt;&lt;print-out</span> key<span class="Statement">&gt;&gt;</span>] value [<span class="Statement">&lt;&lt;print-out</span> data<span class="Statement">&gt;&gt;</span>]
 
-<span class="Statement">     else-if</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;delete&quot;</span> <span class="Comment">// Delete first data and obtain the value deleted</span>
-<span class="Statement">         position-list</span> t<span class="Identifier"> first</span>
-<span class="Statement">         read-list</span> t<span class="Type"> key</span> (key)<span class="Type"> value</span> val<span class="Type"> status</span> st
-<span class="Statement">         if-true</span> st<span class="Identifier"> equal</span> GG_ERR_EXIST
-<span class="Statement">             @</span>Not found
-<span class="Statement">         else-if</span>
-             <span class="Comment">// If found, then delete key and value</span>
-<span class="Statement">             @</span>Deleted key [<span class="Statement">&lt;&lt;print-out</span> key<span class="Statement">&gt;&gt;</span>], [<span class="Statement">&lt;&lt;print-out</span> val<span class="Statement">&gt;&gt;</span>]
-<span class="Statement">             delete-list</span> t
-<span class="Statement">         end-if</span>
+<span class="Statement">    else-if</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;delete&quot;</span> <span class="Comment">// Delete first data and obtain the value deleted</span>
+<span class="Statement">        position-list</span> t<span class="Identifier"> first</span>
+<span class="Statement">        read-list</span> t<span class="Type"> key</span> (key)<span class="Type"> value</span> val<span class="Type"> status</span> st
+<span class="Statement">        if-true</span> st<span class="Identifier"> equal</span> GG_ERR_EXIST
+<span class="Statement">            @</span>Not found
+<span class="Statement">        else-if</span>
+            <span class="Comment">// If found, then delete key and value</span>
+<span class="Statement">            @</span>Deleted key [<span class="Statement">&lt;&lt;print-out</span> key<span class="Statement">&gt;&gt;</span>], [<span class="Statement">&lt;&lt;print-out</span> val<span class="Statement">&gt;&gt;</span>]
+<span class="Statement">            delete-list</span> t
+<span class="Statement">        end-if</span>
 
-<span class="Statement">     else-if</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;next&quot;</span> <span class="Comment">// Position to next element</span>
-<span class="Statement">         position-list</span> t<span class="Identifier"> next</span><span class="Type"> status</span> st
-<span class="Statement">         if-true</span> st<span class="Identifier"> equal</span> GG_OKAY
-<span class="Statement">             @</span>Okay
-<span class="Statement">         else-if</span>
-<span class="Statement">             @</span>Not found
-<span class="Statement">         end-if</span>
+<span class="Statement">    else-if</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;next&quot;</span> <span class="Comment">// Position to next element</span>
+<span class="Statement">        position-list</span> t<span class="Identifier"> next</span><span class="Type"> status</span> st
+<span class="Statement">        if-true</span> st<span class="Identifier"> equal</span> GG_OKAY
+<span class="Statement">            @</span>Okay
+<span class="Statement">        else-if</span>
+<span class="Statement">            @</span>Not found
+<span class="Statement">        end-if</span>
 
-<span class="Statement">     else-if</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;last&quot;</span> <span class="Comment">// Position to last element</span>
-<span class="Statement">         position-list</span> t<span class="Identifier"> last</span><span class="Type"> status</span> st
-<span class="Statement">         if-true</span> st<span class="Identifier"> equal</span> GG_OKAY
-<span class="Statement">             @</span>Okay
-<span class="Statement">         else-if</span>
-<span class="Statement">             @</span>Not found
-<span class="Statement">         end-if</span>
+<span class="Statement">    else-if</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;last&quot;</span> <span class="Comment">// Position to last element</span>
+<span class="Statement">        position-list</span> t<span class="Identifier"> last</span><span class="Type"> status</span> st
+<span class="Statement">        if-true</span> st<span class="Identifier"> equal</span> GG_OKAY
+<span class="Statement">            @</span>Okay
+<span class="Statement">        else-if</span>
+<span class="Statement">            @</span>Not found
+<span class="Statement">        end-if</span>
 
-<span class="Statement">     else-if</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;previous&quot;</span> <span class="Comment">// Position to element</span>
-<span class="Statement">         position-list</span> t<span class="Identifier"> previous</span><span class="Type"> status</span> st
-<span class="Statement">         if-true</span> st<span class="Identifier"> equal</span> GG_OKAY
-<span class="Statement">             @</span>Okay
-<span class="Statement">         else-if</span>
-<span class="Statement">             @</span>Not found
-<span class="Statement">         end-if</span>
+<span class="Statement">    else-if</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;previous&quot;</span> <span class="Comment">// Position to element</span>
+<span class="Statement">        position-list</span> t<span class="Identifier"> previous</span><span class="Type"> status</span> st
+<span class="Statement">        if-true</span> st<span class="Identifier"> equal</span> GG_OKAY
+<span class="Statement">            @</span>Okay
+<span class="Statement">        else-if</span>
+<span class="Statement">            @</span>Not found
+<span class="Statement">        end-if</span>
 
-<span class="Statement">     else-if</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;first&quot;</span> <span class="Comment">// Get first element</span>
-<span class="Statement">         position-list</span> t<span class="Identifier"> first</span><span class="Type"> status</span> st
-<span class="Statement">         if-true</span> st<span class="Identifier"> equal</span> GG_OKAY
-<span class="Statement">             @</span>Okay
-<span class="Statement">         else-if</span>
-<span class="Statement">             @</span>Not found
-<span class="Statement">         end-if</span>
+<span class="Statement">    else-if</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;first&quot;</span> <span class="Comment">// Get first element</span>
+<span class="Statement">        position-list</span> t<span class="Identifier"> first</span><span class="Type"> status</span> st
+<span class="Statement">        if-true</span> st<span class="Identifier"> equal</span> GG_OKAY
+<span class="Statement">            @</span>Okay
+<span class="Statement">        else-if</span>
+<span class="Statement">            @</span>Not found
+<span class="Statement">        end-if</span>
 
-<span class="Statement">     else-if</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;query&quot;</span> <span class="Comment">// Get current element</span>
-<span class="Statement">         read-list</span> t<span class="Type"> key</span> (key)<span class="Type"> value</span> val<span class="Type"> status</span> st
-<span class="Statement">         if-true</span> st<span class="Identifier"> equal</span> GG_ERR_EXIST
-<span class="Statement">             @</span>Not found
-<span class="Statement">         else-if</span>
-<span class="Statement">             @</span>Key [<span class="Statement">&lt;&lt;print-out</span> key<span class="Statement">&gt;&gt;</span>], value [<span class="Statement">&lt;&lt;print-out</span> val<span class="Statement">&gt;&gt;</span>]
-<span class="Statement">         end-if</span>
+<span class="Statement">    else-if</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;query&quot;</span> <span class="Comment">// Get current element</span>
+<span class="Statement">        read-list</span> t<span class="Type"> key</span> (key)<span class="Type"> value</span> val<span class="Type"> status</span> st
+<span class="Statement">        if-true</span> st<span class="Identifier"> equal</span> GG_ERR_EXIST
+<span class="Statement">            @</span>Not found
+<span class="Statement">        else-if</span>
+<span class="Statement">            @</span>Key [<span class="Statement">&lt;&lt;print-out</span> key<span class="Statement">&gt;&gt;</span>], value [<span class="Statement">&lt;&lt;print-out</span> val<span class="Statement">&gt;&gt;</span>]
+<span class="Statement">        end-if</span>
 
-<span class="Statement">     else-if</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;purge&quot;</span> <span class="Comment">// remove all, keep the list</span>
-<span class="Statement">         purge-list</span> t
-<span class="Statement">     end-if</span>
-<span class="Statement"> %%</span></pre>
-<span id=golf_copied_982 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_982' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_982, code_982, golf_copied_982)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span class="Statement">    else-if</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;purge&quot;</span> <span class="Comment">// remove all, keep the list</span>
+<span class="Statement">        purge-list</span> t
+<span class="Statement">    end-if</span>
+<span class="Statement">%%</span></pre>
+<span id=golf_copied_1012 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_1012' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_1012, code_1012, golf_copied_1012)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Create application:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_979' class=notranslate>
+<pre id='code_1009' class=notranslate>
 sudo mgrg <span class="Special">-i</span> <span class="Special">-u</span> <span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span> linkserver</pre>
-<span id=golf_copied_979 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_979' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_979, code_979, golf_copied_979)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_1009 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_1009' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_1009, code_1009, golf_copied_1009)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Start the server:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_981' class=notranslate>
+<pre id='code_1011' class=notranslate>
 mgrg <span class="Special">-w</span> <span class="Constant">1</span> linkserver</pre>
-<span id=golf_copied_981 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_981' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_981, code_981, golf_copied_981)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_1011 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_1011' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_1011, code_1011, golf_copied_1011)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Try it out:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_983' class=notranslate>
+<pre id='code_1013' class=notranslate>
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/llsrv/op=add/key=1/data=1</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--service</span>
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/llsrv/op=add/key=2/data=2</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--service</span>
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/llsrv/op=query</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--service</span>
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/llsrv/op=previous</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--service</span>
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/llsrv/op=query</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--service</span></pre>
-<span id=golf_copied_983 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_983' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_983, code_983, golf_copied_983)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_1013 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_1013' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_1013, code_1013, golf_copied_1013)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
+<div class="vsub"><a id="See also"></a>See also</div>
+ <a name='Linked list'></a><span style="font-weight:bold;">Linked list</span><br/>
+<a href='https://golf-lang.com/delete-list.html'>delete-list</a> &nbsp;<br/>
+<a href='https://golf-lang.com/get-list.html'>get-list</a> &nbsp;<br/>
+<a href='https://golf-lang.com/new-list.html'>new-list</a> &nbsp;<br/>
+<a href='https://golf-lang.com/position-list.html'>position-list</a> &nbsp;<br/>
+<a href='https://golf-lang.com/purge-list.html'>purge-list</a> &nbsp;<br/>
+<a href='https://golf-lang.com/read-list.html'>read-list</a> &nbsp;<br/>
+<a href='https://golf-lang.com/write-list.html'>write-list</a> &nbsp; <br/>
+<span style="font-weight:bold;">See all</span> <br/>
+<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>

@@ -238,7 +238,7 @@ One use of HAProxy is to balance the load between different web servers, which i
 <br/>
 However, when you want HAProxy to directly communicate with your Golf application servers, you may use configuration similar to this (shown is just a bare-bone setup needed to accomplish the goal, note sections "frontend", "fcgi-app" and "backend" that are relevant to Golf). The HAProxy configuration file is typically in "/etc/haproxy/haproxy.cfg":<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_432' class=notranslate>
+<pre id='code_462' class=notranslate>
 global
     user haproxy
     group haproxy
@@ -273,17 +273,17 @@ backend backend_servers
     filter fcgi-app golf-fcgi
     use-fcgi-app golf-fcgi
     server s1 127.0.0.1:3000 proto fcgi</pre>
-<span id=golf_copied_432 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_432' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_432, code_432, golf_copied_432)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_462 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_462' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_462, code_462, golf_copied_462)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Restart HAProxy:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_433' class=notranslate>
+<pre id='code_463' class=notranslate>
 sudo systemctl restart haproxy</pre>
-<span id=golf_copied_433 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_433' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_433, code_433, golf_copied_433)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_463 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_463' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_463, code_463, golf_copied_463)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Note that Golf application path is "/&lt;your golf app name&gt;" (and the application name may or may not be the same, see <a href='https://golf-lang.com/request.html'>request</a>). The TCP port of the application is "3000" (could be any port number you choose that's greater than 1000 and lower than 65535). <br/>
 <br/>
@@ -291,13 +291,22 @@ HAProxy itself is bound to port 90 in this example (see "frontend" section above
 <br/>
 A Golf application (named "&lt;your golf app name&gt;") would have been started with (using the same application name "&lt;your golf app name&gt;" and TCP port "3000"):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_434' class=notranslate>
+<pre id='code_464' class=notranslate>
 mgrg <span class="Special">-p</span> <span class="Constant">3000</span> <span class="Statement">&lt;</span>your golf app name<span class="Statement">&gt;</span></pre>
-<span id=golf_copied_434 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_434' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_434, code_434, golf_copied_434)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_464 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_464' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_464, code_464, golf_copied_464)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Now you should be able to connect and load-balance your Golf application servers directly from HAProxy (which in this example listens on port 90, so you'd refer to it with https://your-web-server:90/&lt;your golf app name&gt;/...).<br/>
+<div class="vsub"><a id="See also"></a>See also</div>
+ <a name='Web servers'></a><span style="font-weight:bold;">Web servers</span><br/>
+<a href='https://golf-lang.com/connect-apache-tcp-socket.html'>connect-apache-tcp-socket</a> &nbsp;<br/>
+<a href='https://golf-lang.com/connect-apache-unix-socket.html'>connect-apache-unix-socket</a> &nbsp;<br/>
+<a href='https://golf-lang.com/connect-haproxy-tcp-socket.html'>connect-haproxy-tcp-socket</a> &nbsp;<br/>
+<a href='https://golf-lang.com/connect-nginx-tcp-socket.html'>connect-nginx-tcp-socket</a> &nbsp;<br/>
+<a href='https://golf-lang.com/connect-nginx-unix-socket.html'>connect-nginx-unix-socket</a> &nbsp; <br/>
+<span style="font-weight:bold;">See all</span> <br/>
+<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>

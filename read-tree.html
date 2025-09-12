@@ -235,19 +235,19 @@ function googleTranslateElementInit() {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Read tree</div><hr/><span style="font-weight:bold;">Purpose</span>: Search/update a tree.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_800' class=notranslate>
-<span class="Statement"> read-tree</span> &lt;tree&gt; \
-     (<span class="Identifier"> equal</span> &lt;search key&gt; |<span class="Identifier"> lesser</span> &lt;search key&gt; |<span class="Identifier"> greater</span> &lt;search key&gt; | \
-        <span class="Identifier"> lesser-equal</span> &lt;search key&gt; |<span class="Identifier"> greater-equal</span> &lt;search key&gt; | \
-        <span class="Identifier"> min-key</span> |<span class="Identifier"> max-key</span> ) \
-     [<span class="Type"> value</span> &lt;value&gt; ] \
-     [<span class="Identifier"> update-value</span> &lt;update value&gt; ] \
-     [<span class="Type"> key</span> &lt;key&gt; ] \
-     [<span class="Type"> status</span> &lt;status&gt; ] \
-     [<span class="Type"> new-cursor</span> &lt;cursor&gt; ]</pre>
-<span id=golf_copied_800 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_800' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_800, code_800, golf_copied_800)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_830' class=notranslate>
+<span class="Statement">read-tree</span> &lt;tree&gt; \
+    (<span class="Identifier"> equal</span> &lt;search key&gt; |<span class="Identifier"> lesser</span> &lt;search key&gt; |<span class="Identifier"> greater</span> &lt;search key&gt; | \
+       <span class="Identifier"> lesser-equal</span> &lt;search key&gt; |<span class="Identifier"> greater-equal</span> &lt;search key&gt; | \
+       <span class="Identifier"> min-key</span> |<span class="Identifier"> max-key</span> ) \
+    [<span class="Type"> value</span> &lt;value&gt; ] \
+    [<span class="Identifier"> update-value</span> &lt;update value&gt; ] \
+    [<span class="Type"> key</span> &lt;key&gt; ] \
+    [<span class="Type"> status</span> &lt;status&gt; ] \
+    [<span class="Type"> new-cursor</span> &lt;cursor&gt; ]</pre>
+<span id=golf_copied_830 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_830' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_830, code_830, golf_copied_830)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 read-tree will search &lt;tree&gt; (created with <a href='https://golf-lang.com/new-tree.html'>new-tree</a>) for a node with the string key that is:<br/>
 <ul><li>equal to &lt;search key&gt; ("equal" clause)<br/>
@@ -267,34 +267,45 @@ If you'd like to iterate the ordered list of keys in a tree, create a &lt;cursor
 <div class="vsub"><a id="Examples"></a>Examples</div>
 In this example, a million key/value pairs are inserted into a tree, and then each of them is searched for and then displayed back (see <a href='https://golf-lang.com/write-tree.html'>write-tree</a> for more on inserting into a tree). Both the key and the data are a numerical value of a key:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_801' class=notranslate>
-<span class="Statement"> %%</span> /tree-example<span class="Identifier"> public</span>
+<pre id='code_831' class=notranslate>
+<span class="Statement">%%</span> /tree-example<span class="Identifier"> public</span>
 
-<span class="Statement">     new-tree</span> mytree<span class="Identifier"> key-as</span> <span class="Constant">&quot;positive integer&quot;</span> <span class="Comment">// create new tree</span>
+<span class="Statement">    new-tree</span> mytree<span class="Identifier"> key-as</span> <span class="Constant">&quot;positive integer&quot;</span> <span class="Comment">// create new tree</span>
 
-<span class="Statement">     set-number</span> i
-<span class="Statement">     start-loop</span><span class="Type"> use</span> i<span class="Identifier"> start-with</span> <span class="Constant">0</span><span class="Identifier"> repeat</span> <span class="Constant">1000000</span>
-<span class="Statement">         number-string</span> i<span class="Type"> to</span> key
-<span class="Statement">         set-string</span> data=key
-<span class="Statement">         write-tree</span> mytree<span class="Identifier"> key</span> (key)<span class="Identifier"> value</span> data <span class="Comment">// insert key/data to the tree</span>
-<span class="Statement">     end-loop</span>
+<span class="Statement">    set-number</span> i
+<span class="Statement">    start-loop</span><span class="Type"> use</span> i<span class="Identifier"> start-with</span> <span class="Constant">0</span><span class="Identifier"> repeat</span> <span class="Constant">1000000</span>
+<span class="Statement">        number-string</span> i<span class="Type"> to</span> key
+<span class="Statement">        set-string</span> data=key
+<span class="Statement">        write-tree</span> mytree<span class="Identifier"> key</span> (key)<span class="Identifier"> value</span> data <span class="Comment">// insert key/data to the tree</span>
+<span class="Statement">    end-loop</span>
 
-<span class="Statement">     start-loop</span><span class="Type"> use</span> i<span class="Identifier"> start-with</span> <span class="Constant">0</span><span class="Identifier"> repeat</span> <span class="Constant">1000000</span>
-<span class="Statement">         number-string</span> i<span class="Type"> to</span> key
-         <span class="Comment">// search tree for each key previously inserted</span>
-<span class="Statement">         read-tree</span> mytree<span class="Identifier"> equal</span> (key)<span class="Type"> status</span> st<span class="Type"> value</span> data
-<span class="Statement">         if-true</span> st<span class="Identifier"> not-equal</span> GG_OKAY
-<span class="Statement">             @</span>Could not find key <span class="Statement">&lt;&lt;print-out</span> key<span class="Statement">&gt;&gt;</span>
-<span class="Statement">         else-if</span>
-<span class="Statement">             @</span>Found data <span class="Statement">&lt;&lt;print-out</span> data<span class="Statement">&gt;&gt;</span> associated with key <span class="Statement">&lt;&lt;print-out</span> key<span class="Statement">&gt;&gt;</span>
-<span class="Statement">         end-if</span>
-<span class="Statement">         delete-string</span> key
-<span class="Statement">     end-loop</span>
-<span class="Statement"> %%</span></pre>
-<span id=golf_copied_801 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_801' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_801, code_801, golf_copied_801)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span class="Statement">    start-loop</span><span class="Type"> use</span> i<span class="Identifier"> start-with</span> <span class="Constant">0</span><span class="Identifier"> repeat</span> <span class="Constant">1000000</span>
+<span class="Statement">        number-string</span> i<span class="Type"> to</span> key
+        <span class="Comment">// search tree for each key previously inserted</span>
+<span class="Statement">        read-tree</span> mytree<span class="Identifier"> equal</span> (key)<span class="Type"> status</span> st<span class="Type"> value</span> data
+<span class="Statement">        if-true</span> st<span class="Identifier"> not-equal</span> GG_OKAY
+<span class="Statement">            @</span>Could not find key <span class="Statement">&lt;&lt;print-out</span> key<span class="Statement">&gt;&gt;</span>
+<span class="Statement">        else-if</span>
+<span class="Statement">            @</span>Found data <span class="Statement">&lt;&lt;print-out</span> data<span class="Statement">&gt;&gt;</span> associated with key <span class="Statement">&lt;&lt;print-out</span> key<span class="Statement">&gt;&gt;</span>
+<span class="Statement">        end-if</span>
+<span class="Statement">        delete-string</span> key
+<span class="Statement">    end-loop</span>
+<span class="Statement">%%</span></pre>
+<span id=golf_copied_831 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_831' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_831, code_831, golf_copied_831)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
+<div class="vsub"><a id="See also"></a>See also</div>
+ <a name='Tree'></a><span style="font-weight:bold;">Tree</span><br/>
+<a href='https://golf-lang.com/delete-tree.html'>delete-tree</a> &nbsp;<br/>
+<a href='https://golf-lang.com/get-tree.html'>get-tree</a> &nbsp;<br/>
+<a href='https://golf-lang.com/new-tree.html'>new-tree</a> &nbsp;<br/>
+<a href='https://golf-lang.com/purge-tree.html'>purge-tree</a> &nbsp;<br/>
+<a href='https://golf-lang.com/read-tree.html'>read-tree</a> &nbsp;<br/>
+<a href='https://golf-lang.com/use-cursor.html'>use-cursor</a> &nbsp;<br/>
+<a href='https://golf-lang.com/write-tree.html'>write-tree</a> &nbsp; <br/>
+<span style="font-weight:bold;">See all</span> <br/>
+<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>

@@ -235,11 +235,11 @@ function googleTranslateElementInit() {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Get param</div><hr/><span style="font-weight:bold;">Purpose</span>: Get a parameter value.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_569' class=notranslate>
-<span class="Statement"> get-param</span> ( &lt;name&gt; [<span class="Identifier"> type</span> &lt;type&gt; ] [<span class="Identifier"> default-value</span> &lt;value&gt; ] )<span class="Identifier"> ,</span> ...</pre>
-<span id=golf_copied_569 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_569' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_569, code_569, golf_copied_569)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_599' class=notranslate>
+<span class="Statement">get-param</span> ( &lt;name&gt; [<span class="Identifier"> type</span> &lt;type&gt; ] [<span class="Identifier"> default-value</span> &lt;value&gt; ] )<span class="Identifier"> ,</span> ...</pre>
+<span id=golf_copied_599 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_599' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_599, code_599, golf_copied_599)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 get-param stores a parameter value in variable &lt;name&gt;. A parameter is a name/value pair kept by Golf for each request. The parameter's name must match &lt;name&gt;. A parameter can be of any type. A parameter is set either:<br/>
 <ul><li>by the caller in <a href='https://golf-lang.com/request.html'>request URL</a>, or<br/>
@@ -248,7 +248,7 @@ If parameter is a string, it is &nbsp;trimmed for whitespaces (both on left and 
 <div class="vsub"><a id="Types"></a>Types</div>
 By default, &lt;name&gt; is a string variable, unless &lt;type&gt; (in "type" clause) is specified. &lt;type&gt; can be "string" for a string variable (the default), "bool" for a boolean variable, "number" for a number variable, "string-array" for an array of strings, "number-array" for an array of numbers, "bool-array" for an array of booleans, "message" for a <a href='https://golf-lang.com/new-message.html'>message</a> variable, "split-string" for a <a href='https://golf-lang.com/split-string.html'>split-string</a> variable, "hash" for an <a href='https://golf-lang.com/new-hash.html'>hash</a> variable, "tree" for an <a href='https://golf-lang.com/new-tree.html'>tree</a> variable, "tree-cursor" for an <a href='https://golf-lang.com/use-cursor.html'>tree cursor</a> variable, "fifo" for a <a href='https://golf-lang.com/new-fifo.html'>FIFO</a> variable, "lifo" for a <a href='https://golf-lang.com/new-lifo.html'>LIFO</a> variable, "list" for a <a href='https://golf-lang.com/new-list.html'>list</a> variable, "file" for a <a href='https://golf-lang.com/open-file.html'>file</a> variable, and "service" for a <a href='https://golf-lang.com/new-remote.html'>service</a> variable.<br/>
 <br/>
-The value obtained with get-param is checked to be of the proper &lt;type&gt;, and if it isn't, your request will <a href='https://golf-lang.com/error-handling.html'>error out</a>. The exception to this is that a string parameter can be converted into a number or a boolean, assuming the string value represents a valid number or is "true"/"false". &nbsp;Parameters of "number" and "bool" types are obtained by value, and others by reference. It means for instance, that you can pass a tree to call-handler and read and write nodes there, and such changes will be visible in the caller request.<br/>
+The value obtained with get-param is checked to be of the proper &lt;type&gt;, and if it isn't, your request will <a href='https://golf-lang.com/error-handling.html'>error out</a>. The exception to this is that a string parameter can be converted into a number or a boolean, assuming the string value represents a valid number or is "true"/"false"; this exception is for <a href='https://golf-lang.com/request.html'>request</a> URL parameters only. &nbsp;Parameters of "number" and "bool" types are obtained by value, and others by reference. It means for instance, that you can pass a tree to call-handler and read and write nodes there, and such changes will be visible in the caller request.<br/>
 <div class="vsub"><a id="Default value"></a>Default value</div>
 If "default-value" clause is used, then &lt;value&gt; will be assigned to &lt;name&gt; variable if there is none provided. For example, if the caller does not specify the value for parameter &lt;name&gt;, then its value will be &lt;value&gt;; note that parameter must always have value so if none is provided and there is no default value specified, your program will <a href='https://golf-lang.com/error-handling.html'>error out</a>. "default-value" can only be used with strings, numbers and booleans.<br/>
 <div class="vsub"><a id="Input parameters from a caller"></a>Input parameters from a caller</div>
@@ -258,60 +258,67 @@ File uploads are handled as input parameters as well, see <a href='https://golf-
 <span style="font-weight:bold;">- Web input parameters</span><br/>
 As an example, for HTML form input parameters named "param1" with value "value1" and "param2" with value "value2":<br/>
 <div class='htmlcode' style='position:relative;padding-right:16px;'>
-<pre id='code_570' class=notranslate>
+<pre id='code_600' class=notranslate>
 <span class="Identifier">&lt;</span><span class="Statement">input</span><span class="Identifier"> </span><span class="Type">type</span><span class="Identifier">=</span><span class="Constant">'hidden'</span><span class="Identifier"> </span><span class="Type">name</span><span class="Identifier">=</span><span class="Constant">'param1'</span><span class="Identifier"> </span><span class="Type">value</span><span class="Identifier">=</span><span class="Constant">'value1'</span><span class="Identifier">&gt;</span>
 <span class="Identifier">&lt;</span><span class="Statement">input</span><span class="Identifier"> </span><span class="Type">type</span><span class="Identifier">=</span><span class="Constant">'hidden'</span><span class="Identifier"> </span><span class="Type">name</span><span class="Identifier">=</span><span class="Constant">'param2'</span><span class="Identifier"> </span><span class="Type">value</span><span class="Identifier">=</span><span class="Constant">'value2'</span><span class="Identifier">&gt;</span></pre>
-<span id=golf_copied_570 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_570' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_570, code_570, golf_copied_570)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_600 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_600' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_600, code_600, golf_copied_600)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 you can get these parameters and print out their values by using:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_572' class=notranslate>
-<span class="Statement"> get-param</span> param1, param2</pre>
-<span id=golf_copied_572 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_572' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_572, code_572, golf_copied_572)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_602' class=notranslate>
+<span class="Statement">get-param</span> param1, param2</pre>
+<span id=golf_copied_602 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_602' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_602, code_602, golf_copied_602)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 A request may be in the form of a web link URL, and getting the parameter values is the same:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_571' class=notranslate>
+<pre id='code_601' class=notranslate>
 http://&lt;your web server&gt;/&lt;app name&gt;/&lt;request name&gt;&amp;param1=value1&amp;param2=value2</pre>
-<span id=golf_copied_571 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_571' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_571, code_571, golf_copied_571)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_601 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_601' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_601, code_601, golf_copied_601)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Setting parameters during request's execution"></a>Setting parameters during request's execution</div>
 Use <a href='https://golf-lang.com/set-param.html'>set-param</a> to replace the value of an existing parameter, or create a new one. For instance:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_574' class=notranslate>
-<span class="Statement"> get-param</span> par1
-<span class="Statement"> .</span>..
-<span class="Statement"> set-param</span> par1=<span class="Constant">&quot;new value&quot;</span></pre>
-<span id=golf_copied_574 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_574' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_574, code_574, golf_copied_574)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_604' class=notranslate>
+<span class="Statement">get-param</span> par1
+<span class="Statement">.</span>..
+<span class="Statement">set-param</span> par1=<span class="Constant">&quot;new value&quot;</span></pre>
+<span id=golf_copied_604 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_604' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_604, code_604, golf_copied_604)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In this case the value of an existing parameter "par1" is replaced with "new value". In the following code a new parameter is created, which can be retrieved later with get-param:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_575' class=notranslate>
-<span class="Statement"> set-param</span> par1=<span class="Constant">&quot;new value&quot;</span>
-<span class="Statement"> get-param</span> par1</pre>
-<span id=golf_copied_575 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_575' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_575, code_575, golf_copied_575)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_605' class=notranslate>
+<span class="Statement">set-param</span> par1=<span class="Constant">&quot;new value&quot;</span>
+<span class="Statement">get-param</span> par1</pre>
+<span id=golf_copied_605 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_605' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_605, code_605, golf_copied_605)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 See <a href='https://golf-lang.com/call-handler.html'>call-handler</a> for more examples.<br/>
 <div class="vsub"><a id="Duplicate input parameter names"></a>Duplicate input parameter names</div>
 If there are multiple input parameters with the same name set by the request caller, such as <br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_573' class=notranslate>
+<pre id='code_603' class=notranslate>
 http://&lt;web address&gt;/&lt;app name&gt;/&lt;request name&gt;?par=val1&amp;par=val2</pre>
-<span id=golf_copied_573 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_573' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_573, code_573, golf_copied_573)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_603 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_603' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_603, code_603, golf_copied_603)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 the value of input parameter "par" is undefined. Do not specify multiple input parameters with the same name.<br/>
+<div class="vsub"><a id="See also"></a>See also</div>
+ <a name='Request data'></a><span style="font-weight:bold;">Request data</span><br/>
+<a href='https://golf-lang.com/get-param.html'>get-param</a> &nbsp;<br/>
+<a href='https://golf-lang.com/request-body.html'>request-body</a> &nbsp;<br/>
+<a href='https://golf-lang.com/set-param.html'>set-param</a> &nbsp; <br/>
+<span style="font-weight:bold;">See all</span> <br/>
+<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>

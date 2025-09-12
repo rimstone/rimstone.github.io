@@ -235,15 +235,15 @@ function googleTranslateElementInit() {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Read list</div><hr/><span style="font-weight:bold;">Purpose</span>: Read/update key/value pair from a linked list.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_795' class=notranslate>
-<span class="Statement"> read-list</span> &lt;list&gt; \
-    <span class="Type"> key</span> &lt;key&gt; \
-    <span class="Type"> value</span> &lt;value&gt; \
-     [<span class="Identifier"> update-value</span> &lt;update value&gt; ] [<span class="Identifier"> update-key</span> &lt;update key&gt; ] \
-     [<span class="Type"> status</span> &lt;status&gt; ]</pre>
-<span id=golf_copied_795 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_795' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_795, code_795, golf_copied_795)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_825' class=notranslate>
+<span class="Statement">read-list</span> &lt;list&gt; \
+   <span class="Type"> key</span> &lt;key&gt; \
+   <span class="Type"> value</span> &lt;value&gt; \
+    [<span class="Identifier"> update-value</span> &lt;update value&gt; ] [<span class="Identifier"> update-key</span> &lt;update key&gt; ] \
+    [<span class="Type"> status</span> &lt;status&gt; ]</pre>
+<span id=golf_copied_825 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_825' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_825, code_825, golf_copied_825)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 read-list retrieves an element from the linked &lt;list&gt;, storing it into &lt;key&gt; string (in "key" clause) and &lt;value&gt; string (in "value" clause). After each read-list, the list's current element remains at the element read; use <a href='https://golf-lang.com/position-list.html'>position-list</a> to move it (for instance to the next one). <br/>
 <br/>
@@ -257,41 +257,52 @@ You can update the element's key with "update-key" clause by specifying &lt;upda
 <div class="vsub"><a id="Examples"></a>Examples</div>
 In this example, a linked list is created, and three key/value pairs added. They are then retrieved from the last towards the first element, and then again in the opposite direction:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_796' class=notranslate>
-<span class="Statement"> new-list</span> mylist
+<pre id='code_826' class=notranslate>
+<span class="Statement">new-list</span> mylist
 
- <span class="Comment">// Add data to the list</span>
-<span class="Statement"> write-list</span> mylist<span class="Identifier"> key</span> <span class="Constant">&quot;key1&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;value1&quot;</span>
-<span class="Statement"> write-list</span> mylist<span class="Identifier"> key</span> <span class="Constant">&quot;key2&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;value2&quot;</span>
-<span class="Statement"> write-list</span> mylist<span class="Identifier"> key</span> <span class="Constant">&quot;key3&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;value3&quot;</span>
+<span class="Comment">// Add data to the list</span>
+<span class="Statement">write-list</span> mylist<span class="Identifier"> key</span> <span class="Constant">&quot;key1&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;value1&quot;</span>
+<span class="Statement">write-list</span> mylist<span class="Identifier"> key</span> <span class="Constant">&quot;key2&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;value2&quot;</span>
+<span class="Statement">write-list</span> mylist<span class="Identifier"> key</span> <span class="Constant">&quot;key3&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;value3&quot;</span>
 
-<span class="Statement"> position-list</span> mylist<span class="Identifier"> last</span>
-<span class="Statement"> start-loop</span>
-    <span class="Comment">// Get data from the list starting with the last one, producing value1, value2, value3</span>
-<span class="Statement">    read-list</span> mylist<span class="Type"> key</span> k<span class="Type"> value</span> v
-<span class="Statement">    @</span>Obtained key <span class="Statement">&lt;&lt;print-out</span> k<span class="Statement">&gt;&gt;</span> with value <span class="Statement">&lt;&lt;print-out</span> v<span class="Statement">&gt;&gt;</span>
-<span class="Statement">    position-list</span> mylist<span class="Identifier"> previous</span><span class="Type"> status</span> s
-    <span class="Comment">// Check if no more data</span>
-<span class="Statement">    if-true</span> s<span class="Identifier"> equal</span> GG_ERR_EXIST
-<span class="Statement">        break-loop</span>
-<span class="Statement">    end-if</span>
-<span class="Statement"> end-loop</span>
+<span class="Statement">position-list</span> mylist<span class="Identifier"> last</span>
+<span class="Statement">start-loop</span>
+   <span class="Comment">// Get data from the list starting with the last one, producing value1, value2, value3</span>
+<span class="Statement">   read-list</span> mylist<span class="Type"> key</span> k<span class="Type"> value</span> v
+<span class="Statement">   @</span>Obtained key <span class="Statement">&lt;&lt;print-out</span> k<span class="Statement">&gt;&gt;</span> with value <span class="Statement">&lt;&lt;print-out</span> v<span class="Statement">&gt;&gt;</span>
+<span class="Statement">   position-list</span> mylist<span class="Identifier"> previous</span><span class="Type"> status</span> s
+   <span class="Comment">// Check if no more data</span>
+<span class="Statement">   if-true</span> s<span class="Identifier"> equal</span> GG_ERR_EXIST
+<span class="Statement">       break-loop</span>
+<span class="Statement">   end-if</span>
+<span class="Statement">end-loop</span>
 
- <span class="Comment">// Now the list is positioned at the first element, reading produces value3, value2, value1</span>
-<span class="Statement"> start-loop</span>
-<span class="Statement">    read-list</span> mylist<span class="Type"> key</span> k<span class="Type"> value</span> v<span class="Type"> status</span> s
-<span class="Statement">    if-true</span> s<span class="Identifier"> equal</span> GG_ERR_EXIST
-<span class="Statement">        break-loop</span>
-<span class="Statement">    end-if</span>
-<span class="Statement">    @</span>Again obtained key <span class="Statement">&lt;&lt;print-out</span> k<span class="Statement">&gt;&gt;</span> with value <span class="Statement">&lt;&lt;print-out</span> v<span class="Statement">&gt;&gt;</span>
-<span class="Statement">    position-list</span> mylist<span class="Identifier"> next</span>
-<span class="Statement"> end-loop</span>
+<span class="Comment">// Now the list is positioned at the first element, reading produces value3, value2, value1</span>
+<span class="Statement">start-loop</span>
+<span class="Statement">   read-list</span> mylist<span class="Type"> key</span> k<span class="Type"> value</span> v<span class="Type"> status</span> s
+<span class="Statement">   if-true</span> s<span class="Identifier"> equal</span> GG_ERR_EXIST
+<span class="Statement">       break-loop</span>
+<span class="Statement">   end-if</span>
+<span class="Statement">   @</span>Again obtained key <span class="Statement">&lt;&lt;print-out</span> k<span class="Statement">&gt;&gt;</span> with value <span class="Statement">&lt;&lt;print-out</span> v<span class="Statement">&gt;&gt;</span>
+<span class="Statement">   position-list</span> mylist<span class="Identifier"> next</span>
+<span class="Statement">end-loop</span>
 
-<span class="Statement"> purge-list</span> mylist</pre>
-<span id=golf_copied_796 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_796' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_796, code_796, golf_copied_796)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span class="Statement">purge-list</span> mylist</pre>
+<span id=golf_copied_826 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_826' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_826, code_826, golf_copied_826)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
+<div class="vsub"><a id="See also"></a>See also</div>
+ <a name='Linked list'></a><span style="font-weight:bold;">Linked list</span><br/>
+<a href='https://golf-lang.com/delete-list.html'>delete-list</a> &nbsp;<br/>
+<a href='https://golf-lang.com/get-list.html'>get-list</a> &nbsp;<br/>
+<a href='https://golf-lang.com/new-list.html'>new-list</a> &nbsp;<br/>
+<a href='https://golf-lang.com/position-list.html'>position-list</a> &nbsp;<br/>
+<a href='https://golf-lang.com/purge-list.html'>purge-list</a> &nbsp;<br/>
+<a href='https://golf-lang.com/read-list.html'>read-list</a> &nbsp;<br/>
+<a href='https://golf-lang.com/write-list.html'>write-list</a> &nbsp; <br/>
+<span style="font-weight:bold;">See all</span> <br/>
+<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>

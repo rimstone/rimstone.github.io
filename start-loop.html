@@ -235,17 +235,17 @@ function googleTranslateElementInit() {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Start loop</div><hr/><span style="font-weight:bold;">Purpose</span>: Loop execution based on a condition.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_911' class=notranslate>
-<span class="Statement"> start-loop</span>  [<span class="Identifier"> repeat</span> &lt;repeat&gt; ] \
-     [<span class="Type"> use</span> &lt;loop counter&gt; \
-         [<span class="Identifier"> start-with</span> &lt;start with&gt; ] [<span class="Identifier"> add</span> &lt;add&gt; ] ]
+<pre id='code_941' class=notranslate>
+<span class="Statement">start-loop</span>  [<span class="Identifier"> repeat</span> &lt;repeat&gt; ] \
+    [<span class="Type"> use</span> &lt;loop counter&gt; \
+        [<span class="Identifier"> start-with</span> &lt;start with&gt; ] [<span class="Identifier"> add</span> &lt;add&gt; ] ]
 
-     &lt;any code&gt;
+    &lt;any code&gt;
 
-<span class="Statement"> end-loop</span></pre>
-<span id=golf_copied_911 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_911' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_911, code_911, golf_copied_911)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span class="Statement">end-loop</span></pre>
+<span id=golf_copied_941 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_941' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_941, code_941, golf_copied_941)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 start-loop will execute code between start-loop and "end-loop" clauses certain number of times based on a condition specified and the usage of <a href='https://golf-lang.com/continue-loop.html'>continue-loop</a> and <a href='https://golf-lang.com/break-loop.html'>break-loop</a>, which can be used in-between the two.<br/>
 <br/>
@@ -259,34 +259,49 @@ If either of "start-with" or "add" clauses is used, then "use" must be specified
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Print numbers 0 through 19:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_912' class=notranslate>
-<span class="Statement"> start-loop</span><span class="Identifier"> repeat</span> <span class="Constant">20</span><span class="Type"> use</span> p<span class="Identifier"> start-with</span> <span class="Constant">0</span>
-<span class="Statement">     print-out</span> p
-<span class="Statement">     @</span>
-<span class="Statement"> end-loop</span></pre>
-<span id=golf_copied_912 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_912' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_912, code_912, golf_copied_912)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_942' class=notranslate>
+<span class="Statement">start-loop</span><span class="Identifier"> repeat</span> <span class="Constant">20</span><span class="Type"> use</span> p<span class="Identifier"> start-with</span> <span class="Constant">0</span>
+<span class="Statement">    print-out</span> p
+<span class="Statement">    @</span>
+<span class="Statement">end-loop</span></pre>
+<span id=golf_copied_942 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_942' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_942, code_942, golf_copied_942)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 A loop that is controlled via <a href='https://golf-lang.com/continue-loop.html'>continue-loop</a> and <a href='https://golf-lang.com/break-loop.html'>break-loop</a> statements, displaying numbers from 1 through 30 but omitting those divisible with 3:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_913' class=notranslate>
-<span class="Statement"> set-number</span> n
-<span class="Statement"> set-number</span> max = <span class="Constant">30</span>
-<span class="Statement"> start-loop</span>
-<span class="Statement">     set-number</span> n add <span class="Constant">1</span>
-<span class="Statement">     if-true</span> n<span class="Identifier"> every</span> <span class="Constant">3</span>
-<span class="Statement">         continue-loop</span>
-<span class="Statement">     end-if</span>
-<span class="Statement">     if-true</span> n<span class="Identifier"> greater-than</span> max
-<span class="Statement">         break-loop</span>
-<span class="Statement">     end-if</span>
-<span class="Statement">     print-out</span> n
-<span class="Statement"> end-loop</span></pre>
-<span id=golf_copied_913 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_913' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_913, code_913, golf_copied_913)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_943' class=notranslate>
+<span class="Statement">set-number</span> n
+<span class="Statement">set-number</span> max = <span class="Constant">30</span>
+<span class="Statement">start-loop</span>
+<span class="Statement">    set-number</span> n add <span class="Constant">1</span>
+<span class="Statement">    if-true</span> n<span class="Identifier"> every</span> <span class="Constant">3</span>
+<span class="Statement">        continue-loop</span>
+<span class="Statement">    end-if</span>
+<span class="Statement">    if-true</span> n<span class="Identifier"> greater-than</span> max
+<span class="Statement">        break-loop</span>
+<span class="Statement">    end-if</span>
+<span class="Statement">    print-out</span> n
+<span class="Statement">end-loop</span></pre>
+<span id=golf_copied_943 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_943' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_943, code_943, golf_copied_943)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
+<div class="vsub"><a id="See also"></a>See also</div>
+ <a name='Program flow'></a><span style="font-weight:bold;">Program flow</span><br/>
+<a href='https://golf-lang.com/break-loop.html'>break-loop</a> &nbsp;<br/>
+<a href='https://golf-lang.com/call-handler.html'>call-handler</a> &nbsp;<br/>
+<a href='https://golf-lang.com/code-blocks.html'>code-blocks</a> &nbsp;<br/>
+<a href='https://golf-lang.com/continue-loop.html'>continue-loop</a> &nbsp;<br/>
+<a href='https://golf-lang.com/do-once.html'>do-once</a> &nbsp;<br/>
+<a href='https://golf-lang.com/exit-handler.html'>exit-handler</a> &nbsp;<br/>
+<a href='https://golf-lang.com/if-defined.html'>if-defined</a> &nbsp;<br/>
+<a href='https://golf-lang.com/if-true.html'>if-true</a> &nbsp;<br/>
+<a href='https://golf-lang.com/quit-process.html'>quit-process</a> &nbsp;<br/>
+<a href='https://golf-lang.com/return-handler.html'>return-handler</a> &nbsp;<br/>
+<a href='https://golf-lang.com/start-loop.html'>start-loop</a> &nbsp; <br/>
+<span style="font-weight:bold;">See all</span> <br/>
+<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>

@@ -235,13 +235,13 @@ function googleTranslateElementInit() {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Split string</div><hr/><span style="font-weight:bold;">Purpose</span>: Split a string into pieces based on a delimiter.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_904' class=notranslate>
-<span class="Statement"> split-string</span>  &lt;string&gt;<span class="Identifier"> with</span> &lt;delimiter&gt;<span class="Type"> to</span> &lt;result&gt; [<span class="Type"> count</span> &lt;count&gt; ]
+<pre id='code_934' class=notranslate>
+<span class="Statement">split-string</span>  &lt;string&gt;<span class="Identifier"> with</span> &lt;delimiter&gt;<span class="Type"> to</span> &lt;result&gt; [<span class="Type"> count</span> &lt;count&gt; ]
 
-<span class="Statement"> split-string</span><span class="Identifier"> delete</span> &lt;result&gt;</pre>
-<span id=golf_copied_904 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_904' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_904, code_904, golf_copied_904)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span class="Statement">split-string</span><span class="Identifier"> delete</span> &lt;result&gt;</pre>
+<span id=golf_copied_934 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_934' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_934, code_934, golf_copied_934)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 split-string will find all instances of string &lt;delimiter&gt; in &lt;string&gt; and then split it into pieces delimited by string &lt;delimiter&gt;. The &lt;result&gt; can be used with <a href='https://golf-lang.com/read-split.html'>read-split</a> to obtain the pieces and with split-string to delete it (use "delete" clause with &lt;result&gt; to delete it).<br/>
 <br/>
@@ -249,79 +249,99 @@ If "count" clause is used, then the number of pieces is in &lt;count&gt;.<br/>
 <br/>
 All pieces produced will be trimmed both on left and right. If a piece is double quoted, then double quotes are removed. For instance save this code in "ps.golf" in a separate directory:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_907' class=notranslate>
-<span class="Statement"> %%</span> /parse<span class="Identifier"> public</span>
-<span class="Statement">     set-string</span> clist = <span class="Constant">&quot;a , b, </span><span class="Special">\&quot;</span><span class="Constant">c , d</span><span class="Special">\&quot;</span><span class="Constant"> , e&quot;</span>
-<span class="Statement">     split-string</span> clist<span class="Identifier"> with</span> <span class="Constant">&quot;,&quot;</span><span class="Type"> to</span> res<span class="Type"> count</span> tot
-<span class="Statement">     start-loop</span><span class="Identifier"> repeat</span> tot<span class="Type"> use</span> i
-<span class="Statement">         read-split</span> i<span class="Identifier"> from</span> res<span class="Type"> to</span> item<span class="Type"> status</span> st
-<span class="Statement">         if-true</span> st<span class="Identifier"> not-equal</span> GG_OKAY
-<span class="Statement">             break-loop</span>
-<span class="Statement">         end-if</span>
-         <span class="Comment">// Output each item</span>
-<span class="Statement">         print-format</span> <span class="Constant">&quot; [</span><span class="Special">%s</span><span class="Constant">]&quot;</span>, item
-<span class="Statement">     end-loop</span>
-<span class="Statement"> %%</span></pre>
-<span id=golf_copied_907 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_907' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_907, code_907, golf_copied_907)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_937' class=notranslate>
+<span class="Statement">%%</span> /parse<span class="Identifier"> public</span>
+<span class="Statement">    set-string</span> clist = <span class="Constant">&quot;a , b, </span><span class="Special">\&quot;</span><span class="Constant">c , d</span><span class="Special">\&quot;</span><span class="Constant"> , e&quot;</span>
+<span class="Statement">    split-string</span> clist<span class="Identifier"> with</span> <span class="Constant">&quot;,&quot;</span><span class="Type"> to</span> res<span class="Type"> count</span> tot
+<span class="Statement">    start-loop</span><span class="Identifier"> repeat</span> tot<span class="Type"> use</span> i
+<span class="Statement">        read-split</span> i<span class="Identifier"> from</span> res<span class="Type"> to</span> item<span class="Type"> status</span> st
+<span class="Statement">        if-true</span> st<span class="Identifier"> not-equal</span> GG_OKAY
+<span class="Statement">            break-loop</span>
+<span class="Statement">        end-if</span>
+        <span class="Comment">// Output each item</span>
+<span class="Statement">        print-format</span> <span class="Constant">&quot; [</span><span class="Special">%s</span><span class="Constant">]&quot;</span>, item
+<span class="Statement">    end-loop</span>
+<span class="Statement">%%</span></pre>
+<span id=golf_copied_937 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_937' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_937, code_937, golf_copied_937)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Create the application, build and run it:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_906' class=notranslate>
+<pre id='code_936' class=notranslate>
 sudo mgrg <span class="Special">-i</span> <span class="Special">-u</span> <span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span> ps
 gg <span class="Special">-q</span>
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/parse</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--silent-header</span></pre>
-<span id=golf_copied_906 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_906' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_906, code_906, golf_copied_906)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_936 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_936' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_936, code_936, golf_copied_936)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The output would be:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_905' class=notranslate>
+<pre id='code_935' class=notranslate>
  [a] [b] [c , d] [e]</pre>
-<span id=golf_copied_905 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_905' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_905, code_905, golf_copied_905)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_935 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_935' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_935, code_935, golf_copied_935)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 split-string is useful for parsing CSV (Comma Separated Values) or any other kind of separated values, where separator can be any string of any length, for example if you're parsing an encoded URL-string, then "&amp;amp;" may be a separator, as in the example below.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 The following will parse a string containing name/value pairs (such as "name=value") separated by string "&amp;amp;":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_909' class=notranslate>
-<span class="Statement"> %%</span> /parse-url<span class="Identifier"> public</span>
-     <span class="Comment">// Data to parse - data/value pairs delimited by </span><span class="Constant">&quot;&amp;amp;&quot;</span><span class="Comment"> string, and data and value delimited by equal sign:</span>
-<span class="Statement">     set-string</span> url =<span class="Constant">&quot;x=23&amp;amp;y=good&amp;amp;z=hello_world&quot;</span>
+<pre id='code_939' class=notranslate>
+<span class="Statement">%%</span> /parse-url<span class="Identifier"> public</span>
+    <span class="Comment">// Data to parse - data/value pairs delimited by &quot;&amp;amp;&quot; string, and data and value delimited by equal sign:</span>
+<span class="Statement">    set-string</span> url =<span class="Constant">&quot;x=23&amp;amp;y=good&amp;amp;z=hello_world&quot;</span>
 
-     <span class="Comment">// Split string first into pieces based on </span><span class="Constant">&quot;amp;&quot;</span>
-<span class="Statement">     split-string</span> url<span class="Identifier"> with</span> <span class="Constant">&quot;&amp;amp;&quot;</span><span class="Type"> to</span> url_var<span class="Type"> count</span> tot
+    <span class="Comment">// Split string first into pieces based on &quot;amp;&quot;</span>
+<span class="Statement">    split-string</span> url<span class="Identifier"> with</span> <span class="Constant">&quot;&amp;amp;&quot;</span><span class="Type"> to</span> url_var<span class="Type"> count</span> tot
 
-     <span class="Comment">// For each of name=value pairs, split it with equal sign</span>
-<span class="Statement">     start-loop</span><span class="Identifier"> repeat</span> tot<span class="Type"> use</span> i
-         <span class="Comment">// Get a url pair (each separated with </span><span class="Constant">&quot;&amp;amp;&quot;</span><span class="Comment">)</span>
-<span class="Statement">         read-split</span> i<span class="Identifier"> from</span> url_var<span class="Type"> to</span> item
-         <span class="Comment">// Then split that with </span><span class="Constant">&quot;=&quot;</span><span class="Comment"> </span>
-<span class="Statement">         split-string</span> item<span class="Identifier"> with</span> <span class="Constant">&quot;=&quot;</span><span class="Type"> to</span> item_var
-         <span class="Comment">// Get name and value</span>
-<span class="Statement">         read-split</span> <span class="Constant">1</span><span class="Identifier"> from</span> item_var<span class="Type"> to</span> name
-<span class="Statement">         read-split</span> <span class="Constant">2</span><span class="Identifier"> from</span> item_var<span class="Type"> to</span> val
-<span class="Statement">         print-format</span> <span class="Constant">&quot;Variable </span><span class="Special">%s</span><span class="Constant"> has value </span><span class="Special">%s</span><span class="Special">\n</span><span class="Constant">&quot;</span>, name, val
-<span class="Statement">     end-loop</span>
-<span class="Statement"> %%</span></pre>
-<span id=golf_copied_909 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_909' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_909, code_909, golf_copied_909)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+    <span class="Comment">// For each of name=value pairs, split it with equal sign</span>
+<span class="Statement">    start-loop</span><span class="Identifier"> repeat</span> tot<span class="Type"> use</span> i
+        <span class="Comment">// Get a url pair (each separated with &quot;&amp;amp;&quot;)</span>
+<span class="Statement">        read-split</span> i<span class="Identifier"> from</span> url_var<span class="Type"> to</span> item
+        <span class="Comment">// Then split that with &quot;=&quot; </span>
+<span class="Statement">        split-string</span> item<span class="Identifier"> with</span> <span class="Constant">&quot;=&quot;</span><span class="Type"> to</span> item_var
+        <span class="Comment">// Get name and value</span>
+<span class="Statement">        read-split</span> <span class="Constant">1</span><span class="Identifier"> from</span> item_var<span class="Type"> to</span> name
+<span class="Statement">        read-split</span> <span class="Constant">2</span><span class="Identifier"> from</span> item_var<span class="Type"> to</span> val
+<span class="Statement">        print-format</span> <span class="Constant">&quot;Variable </span><span class="Special">%s</span><span class="Constant"> has value </span><span class="Special">%s</span><span class="Special">\n</span><span class="Constant">&quot;</span>, name, val
+<span class="Statement">    end-loop</span>
+<span class="Statement">%%</span></pre>
+<span id=golf_copied_939 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_939' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_939, code_939, golf_copied_939)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The result is:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_908' class=notranslate>
+<pre id='code_938' class=notranslate>
 Variable x has value 23
 Variable y has value good
 Variable z has value hello_world</pre>
-<span id=golf_copied_908 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_908' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_908, code_908, golf_copied_908)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_938 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_938' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_938, code_938, golf_copied_938)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
+<div class="vsub"><a id="See also"></a>See also</div>
+ <a name='Strings'></a><span style="font-weight:bold;">Strings</span><br/>
+<a href='https://golf-lang.com/copy-string.html'>copy-string</a> &nbsp;<br/>
+<a href='https://golf-lang.com/count-substring.html'>count-substring</a> &nbsp;<br/>
+<a href='https://golf-lang.com/delete-string.html'>delete-string</a> &nbsp;<br/>
+<a href='https://golf-lang.com/lower-string.html'>lower-string</a> &nbsp;<br/>
+<a href='https://golf-lang.com/match-regex.html'>match-regex</a> &nbsp;<br/>
+<a href='https://golf-lang.com/new-string.html'>new-string</a> &nbsp;<br/>
+<a href='https://golf-lang.com/read-split.html'>read-split</a> &nbsp;<br/>
+<a href='https://golf-lang.com/replace-string.html'>replace-string</a> &nbsp;<br/>
+<a href='https://golf-lang.com/scan-string.html'>scan-string</a> &nbsp;<br/>
+<a href='https://golf-lang.com/set-string.html'>set-string</a> &nbsp;<br/>
+<a href='https://golf-lang.com/split-string.html'>split-string</a> &nbsp;<br/>
+<a href='https://golf-lang.com/string-expressions.html'>string-expressions</a> &nbsp;<br/>
+<a href='https://golf-lang.com/string-length.html'>string-length</a> &nbsp;<br/>
+<a href='https://golf-lang.com/trim-string.html'>trim-string</a> &nbsp;<br/>
+<a href='https://golf-lang.com/upper-string.html'>upper-string</a> &nbsp;<br/>
+<a href='https://golf-lang.com/write-string.html'>write-string</a> &nbsp; <br/>
+<span style="font-weight:bold;">See all</span> <br/>
+<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>

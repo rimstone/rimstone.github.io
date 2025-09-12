@@ -239,11 +239,11 @@ Golf offers simple statements to perform complex common tasks, as well as memory
 <br/>
 To make sure a Golf application is memory safe, simply search for extended-mode statement from the root source directory:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_956' class=notranslate>
+<pre id='code_986' class=notranslate>
 <span class="Statement">find</span><span class="Statement"> . </span>-name <span class="Statement">&quot;</span><span class="Constant">*.golf</span><span class="Statement">&quot;</span> <span class="Special">-print</span> <span class="Special">-exec</span> <span class="Statement">grep</span> <span class="Special">-l</span> <span class="Statement">'</span><span class="Constant">^\s*extended\-mode</span><span class="Statement">'</span> <span class="Special">{}</span> \;</pre>
-<span id=golf_copied_956 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_956' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_956, code_956, golf_copied_956)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_986 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_986' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_986, code_986, golf_copied_986)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 If no matches are found, the application is memory safe.<br/>
 <br/>
@@ -252,6 +252,13 @@ However, for applications that are written in C (for performance, access to hard
 The benefit is that the part of your application written in Golf (which may be a vast majority of it) offers memory safety, ease of development and maintenance, server facilities and lots of functionality. Your Golf code would call your C code when needed, thus accomplishing the functionality and goals you set out to do.<br/>
 <br/>
 Just as a note of technicality, when used in extended mode, Golf is considered a framework and not a library, because Golf code will call your C code (and not the other way around).<br/>
+<div class="vsub"><a id="See also"></a>See also</div>
+ <a name='C language'></a><span style="font-weight:bold;">C language</span><br/>
+<a href='https://golf-lang.com/call-extended.html'>call-extended</a> &nbsp;<br/>
+<a href='https://golf-lang.com/extended-mode.html'>extended-mode</a> &nbsp;<br/>
+<a href='https://golf-lang.com/web-framework-for-C-programming-language.html'>web-framework-for-C-programming-language</a> &nbsp; <br/>
+<span style="font-weight:bold;">See all</span> <br/>
+<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>

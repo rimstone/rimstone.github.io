@@ -242,10 +242,6 @@ No matter how careful you are about writing your web service code, memory safety
 A common issue is one of the security design. Some services are internal (or private), and some are external (or public). The external ones can be called by an end-user from a web browser, or via an API from an outside caller. In fact, calling such service could be huge security hole. Imagine if you had a service that updates your internal application data. Such a service clearly must never be external, rather it should only be accessible to your own services acting on behalf of outside actors. Be sure that the back-end software you use has simple and clearly-defined ability to handle such scenarios. Even if so, sometimes overly complicated security schemes can be hard to implement correctly and can be just as detrimental.<br/>
 <br/>
 Virtually all web services authenticate their users. It usually means using email address and password for login, as well as cookies for browser users, or tokens otherwise. Never keep passwords in plain text or even obscured, only as a one-way hash. This way even if your user database is stolen, passwords cannot be (easily) recovered. <br/>
-<div class="vsub"><a id="See also"></a>See also</div>
- <br/>
-<span style="font-weight:bold;">See all</span> <br/>
-<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>

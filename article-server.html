@@ -244,10 +244,6 @@ The socket used can be a Unix or TCP socket. Unix socket is the default one, and
 Golf application server uses FastCGI protocol over TCP, a fast binary multiplexing protocol built for performance. It doesn't have any built-in security, and for the purpose it's used for it shouldn't have any. Essentially, standard input, output and error streams can be sent simultaneously (but retrieved separately). This makes for sturdier and more streamlined architecture because these are standard streams any program will understand. This protocol is widely supported by web languages and web servers (PHP, Apache, Nginx, HAProxy etc.).<br/>
 <br/>
 A Golf server process can serve an unlimited number of requests without having to be restarted and without having to spawn any new processes or threads - meaning lightening fast. Any number of such processes comprises the application server, which can then serve incoming requests truly in parallel. The number of server processes is typically determined by the number of available CPUs.<br/>
-<div class="vsub"><a id="See also"></a>See also</div>
- <br/>
-<span style="font-weight:bold;">See all</span> <br/>
-<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>

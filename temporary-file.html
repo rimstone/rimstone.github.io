@@ -234,17 +234,39 @@ function googleTranslateElementInit() {
 <!--BEGVDOC90-->
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Temporary file</div><hr/>To create a temporary file, use <a href='https://golf-lang.com/uniq-file.html'>uniq-file</a> with a "temporary" clause. Temporary files are the same as any other files in the <a href='https://golf-lang.com/file-storage.html'>file-storage</a> (and are organized in the same fashion), except that they are all under the subdirectory named "t":<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_938' class=notranslate>
+<pre id='code_968' class=notranslate>
 $HOME/.golf/&lt;app_name&gt;/app/file/t</pre>
-<span id=golf_copied_938 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_938' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_938, code_938, golf_copied_938)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_968 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_968' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_968, code_968, golf_copied_968)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 A temporary file is not automatically deleted - you can remove it with <a href='https://golf-lang.com/delete-file.html'>delete-file</a> statement when not needed (or use a periodic shell script to remove old temporary files). The reason for this is that the nature of temporary files varies, and they may not necessarily span a given time frame (such as a lifetime of a <a href='https://golf-lang.com/request.html'>request</a>, or a lifetime of a process that serves any number of such requests), and they may be used across number of requests for a specific purpose. Thus, it is your responsibility to remove a temporary file when it's appropriate for your application to do so.<br/>
 <br/>
 The reason for storing temporary files in a separate directory is to gain a separation of temporary files (which likely at some point can be freely deleted) from other files.<br/>
 <br/>
 See <a href='https://golf-lang.com/uniq-file.html'>uniq-file</a> for an example of creating a temporary file.<br/>
+<div class="vsub"><a id="See also"></a>See also</div>
+ <a name='Files'></a><span style="font-weight:bold;">Files</span><br/>
+<a href='https://golf-lang.com/change-mode.html'>change-mode</a> &nbsp;<br/>
+<a href='https://golf-lang.com/close-file.html'>close-file</a> &nbsp;<br/>
+<a href='https://golf-lang.com/copy-file.html'>copy-file</a> &nbsp;<br/>
+<a href='https://golf-lang.com/delete-file.html'>delete-file</a> &nbsp;<br/>
+<a href='https://golf-lang.com/file-position.html'>file-position</a> &nbsp;<br/>
+<a href='https://golf-lang.com/file-storage.html'>file-storage</a> &nbsp;<br/>
+<a href='https://golf-lang.com/file-uploading.html'>file-uploading</a> &nbsp;<br/>
+<a href='https://golf-lang.com/get-upload.html'>get-upload</a> &nbsp;<br/>
+<a href='https://golf-lang.com/lock-file.html'>lock-file</a> &nbsp;<br/>
+<a href='https://golf-lang.com/open-file.html'>open-file</a> &nbsp;<br/>
+<a href='https://golf-lang.com/read-file.html'>read-file</a> &nbsp;<br/>
+<a href='https://golf-lang.com/read-line.html'>read-line</a> &nbsp;<br/>
+<a href='https://golf-lang.com/rename-file.html'>rename-file</a> &nbsp;<br/>
+<a href='https://golf-lang.com/stat-file.html'>stat-file</a> &nbsp;<br/>
+<a href='https://golf-lang.com/temporary-file.html'>temporary-file</a> &nbsp;<br/>
+<a href='https://golf-lang.com/uniq-file.html'>uniq-file</a> &nbsp;<br/>
+<a href='https://golf-lang.com/unlock-file.html'>unlock-file</a> &nbsp;<br/>
+<a href='https://golf-lang.com/write-file.html'>write-file</a> &nbsp; <br/>
+<span style="font-weight:bold;">See all</span> <br/>
+<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
