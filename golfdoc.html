@@ -9719,24 +9719,112 @@ When your program errors out, a generic message is output to the standard output
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Golf examples</div><hr/><br/>
 Updated on 2025-09-12. Always use the latest Golf version to run these examples.<br/>
 <ul><br/>
-<li><a href='/article-sqlite.html'>SQLite with Golf</a><br/>
-This example will create a service that inserts key and value into SQLite table. It's tested from command line. ...<br/>
+<li><a href='/article-json.html'>Fast JSON parser with little coding</a><br/>
+Golf's JSON parser produces an array of name/value pairs. A name is a path to value, for instance "country"."state"."name", and the value is simply the data associated with it, for instance "Idaho". You can control if the name contains array indexes or not, for instance if there are multiple States in the document, you might have names like "country"."state"[0]."name" with [..] designating an array element. ...<br/>
+</li>
+<br/>
+<li><a href='/article-record-temperature-postgres.html'>More than one table in a database transaction in PostgreSQL</a><br/>
+Here you'll learn how to use a database transaction to insert/update into multiple tables; so that if any of those fail, the entire transaction is cancelled (rollbacked), and if they all succeed, the transaction is committed as a whole, atomically. ...<br/>
+</li>
+<br/>
+<li><a href='/article-capi.html'>Use C language API to talk to Golf Server</a><br/>
+Golf application server can be accessed via C API. Most programming languages allow for C linkage, so this makes it easy to talk to Golf server from anywhere. The <a href='/Client-API.html'>Client-API</a> is very simple with just a few functions and a single data type. It's also MT-safe (i.e. safe for multi-threaded applications). ...<br/>
+</li>
+<br/>
+<li><a href='/article-vim-coloring.html'>Using Vim color schemes with Golf</a><br/>
+Golf installation comes with a Vim module for highlighting Golf code. After installing Golf, run this to install the Vim module: ...<br/>
+</li>
+<br/>
+<li><a href='/article-debug.html'>How to debug Golf programs with gdb</a><br/>
+Debugging information is always included regardless of how you make your application; what varies is the amount of debugging info included. You can compile your Golf application normally: ...<br/>
+</li>
+<br/>
+<li><a href='/article-regex.html'>Using Regex in Golf</a><br/>
+Regex (or "REGular EXpressions") is a powerful way to search strings, as well as to replace parts of strings. It makes it easier to reliably do so, since regular expressions are usually short; at the same time there's a learning curve in becoming proficient. However, given that regex is ubiquitous, it is worth learning at least some of it, as it can come handy. ...<br/>
 </li>
 <br/>
 <li><a href='/article-memory-safety-web.html'>Memory safety: what about performance?</a><br/>
 Memory safety guards against software security risks and malfunctions by assuring data isn't written to or read from unintended areas of memory. Preventing leaks is a separate feature that's important for web services which are long-running processes - memory leaks usually lead to running out of memory and crashes. ...<br/>
 </li>
 <br/>
-<li><a href='/article-distributed.html'>How to write distributed applications</a><br/>
-Distributed computing is two or more servers communicating for a common purpose. Typically, some tasks are divvied up between a number of computers, and they all work together to accomplish it. Note that "separate servers" may mean physically separate computers. It may also mean virtual servers such as Virtual Private Servers (VPS) or containers, that may share the same physical hardware, though they appear as separate computers on the network. &nbsp;...<br/>
+<li><a href='/article-tree.html'>Cache server in 30 lines</a><br/>
+This is a cache server that can add, delete and query key/value pairs, with their number limited only by available memory. &nbsp;...<br/>
+</li>
+<br/>
+<li><a href='/article-status-check.html'>Example of auto status checking with Golf</a><br/>
+When talking about safety in programming, it is memory safety that usually takes the spotlight. However, here we'll touch on another common safety issue that typically causes application logic errors, meaning your program won't function correctly. It's about checking the status of any kind of statement that provides it. Not checking the status could mean that the result of a statement isn't correct, yet your program is proceeding as if it were. Of course, this is bound to cause problems, and this is true for any programming language. ...<br/>
+</li>
+<br/>
+<li><a href='/article-request-function.html'>Functions and parameters in Golf</a><br/>
+In Golf, there are no "functions" or "methods" as you may be used to in other languages. Any encapsulation is a request handler - you can think of it as a simple function that executes to handle a request - it can an external request (i.e. from an outside caller such as web browser, web API, or from a command-line), or internal requests from another handler in your application. &nbsp;...<br/>
+</li>
+<br/>
+<li><a href='/article-memory-safety.html'>How is memory organized in Golf</a><br/>
+Golf is a memory-safe language. A string variable is the actual pointer to a string (whether it's a text or binary). This eliminates at least one extra memory read. Bytes before the string constitute the ID to a memory table entry as well as the length of a string, with additional info used by memory-safety mechanisms: ...<br/>
+</li>
+<br/>
+<li><a href='/article-fifo.html'>First In First Out (FIFO) example</a><br/>
+Golf has built-in FIFO list type. You can create a FIFO variable and then store key/value string pairs in it, which you can then read back in the order you put them in. You can also rewind the FIFO list and obtain the same key/value pairs over and over again if needed. ...<br/>
+</li>
+<br/>
+<li><a href='/article-record-temperature-mariadb.html'>More than one table in a database transaction in MariaDB</a><br/>
+Here you'll learn how to use a database transaction to insert/update into multiple tables; so that if any of those fail, the entire transaction is cancelled (rollbacked), and if they all succeed, the transaction is committed as a whole, atomically. ...<br/>
+</li>
+<br/>
+<li><a href='/article-hello-world-service-web.html'>Web service Hello World</a><br/>
+To access a Golf service on the web, you need to have a web server or load balancer (think Apache, Nginx, HAProxy etc.). ...<br/>
+</li>
+<br/>
+<li><a href='/article-record-temperature-sqlite.html'>More than one table in a database transaction in SQLite</a><br/>
+Here you'll learn how to use a database transaction to insert/update into multiple tables; so that if any of those fail, the entire transaction is cancelled (rollbacked), and if they all succeed, the transaction is committed as a whole, atomically. ...<br/>
+</li>
+<br/>
+<li><a href='/article-hello-world-service.html'>Hello World as a Service</a><br/>
+Writing a <a href='/service.html'>service</a> is the same as writing a <a href='/command-line.html'>command-line</a> program in Golf. Both take the same input and produce the same output, so you can test with either one to begin with. ...<br/>
 </li>
 <br/>
 <li><a href='/article-what-is-web-service.html'>What is web service</a><br/>
 Web service is code that responds to a request and provides a reply over HTTP protocol. It doesn't need to work over the web, despite its name. You can run a web service locally on a server or on a local network. You can even run a web service from command line. In fact, that's an easy way to test them. ...<br/>
 </li>
 <br/>
-<li><a href='/article-json.html'>Fast JSON parser with little coding</a><br/>
-Golf's JSON parser produces an array of name/value pairs. A name is a path to value, for instance "country"."state"."name", and the value is simply the data associated with it, for instance "Idaho". You can control if the name contains array indexes or not, for instance if there are multiple States in the document, you might have names like "country"."state"[0]."name" with [..] designating an array element. ...<br/>
+<li><a href='/article-encryption.html'>Encryption: ciphers, digests, salt, IV and a hands-on guide</a><br/>
+Encryption is a method of turning data into an unusable form that can be made useful only by means of decryption. The purpose is to make data available solely to those who can decrypt it (i.e. make it usable). Typically, data needs to be encrypted to make sure it cannot be obtained in case of unauthorized access. It is the last line of defense after an attacker has managed to break through authorization systems and access control. ...<br/>
+</li>
+<br/>
+<li><a href='/article-file-manager.html'>Web file manager in less than 100 lines of code</a><br/>
+Uploading and download files in web browser is a common task in virtually any web application or service. This article shows how to do this with very little coding - in less than 100 lines of code. The database used is PostgreSQL, and the web server is Nginx. ...<br/>
+</li>
+<br/>
+<li><a href='/article-cookies.html'>Cookies in Golf applications, plus HAProxy</a><br/>
+Cookies are used in web development to remember the state of your application on a client device. This way, your end-user on this client device doesn't have to provide the same (presumably fairly constant) information all the time. A "client device" can be just a plain web browser, or it can be anything else, such as any internet connected device. ...<br/>
+</li>
+<br/>
+<li><a href='/article-language.html'>Golf is a different kind of programming language</a><br/>
+Over the past 50 years, general-purpose programming languages became more complex due to the constant influx of new features (some of which are great, while others are a "feature creep"). Just look at any major programming language in its early days, versus the latest incarnations. From a distance, it may look like you switched from riding a bicycle to flying a passenger jet with a few hundred knobs, buttons and readout consoles. Arguably, the language structure covers many more usage patterns, yields additional power and safety has improved, but the complexity and the learning curve has increased too. While in the beginning there was lots of pitfalls due to the lack of features and safety, which would usually result in too many ways of doing the same thing, in the end there's a minefield due to an overcrowded feature-scape that's paralyzing to deal with and often not quite understood by anyone on the team. ...<br/>
+</li>
+<br/>
+<li><a href='/article-fetch-web-page.html'>How to get the web page source code programmatically</a><br/>
+Fetching a web resource (including web page source) is a one-liner in Golf. First, create a new application ("get-page" here): ...<br/>
+</li>
+<br/>
+<li><a href='/article-how-to-create-golf-application.html'>How to create a Golf application</a><br/>
+To create a Golf application, use "-k" option of gg utility: ...<br/>
+</li>
+<br/>
+<li><a href='/article-hello-server.html'>34000 requests per second on a modest laptop</a><br/>
+Here's a video showing how to create and start an application server, and how to connect to it and make requests from a C client (or from any language that supports C API extension), you can watch a <a href='https://youtu.be/P2bdPP-3ZMY'>video here</a>. ...<br/>
+</li>
+<br/>
+<li><a href='/article-shopping.html'>How to build a Web Service API</a><br/>
+This article will show a simple shopping web API with basic functions, such as adding customers, items and orders, as well as updating and deleting them. It's easy to write and easy to understand with Golf; that's the reason code doesn't have much in a way of comments - there's no need. ...<br/>
+</li>
+<br/>
+<li><a href='/article-web-framework-for-c-programming-language.html'>Web framework for C programming language</a><br/>
+Golf has an "extended" mode, which allows for C code to be used directly. Normally, this is not allowed, but if you use <a href='/extended-mode.html'>extended-mode</a> statement in your .golf file, then you can call C code from it. ...<br/>
+</li>
+<br/>
+<li><a href='/article-notes-postgres.html'>Multi-tenant SaaS (Notes web application) in 200 lines of code</a><br/>
+This is a complete SaaS example (Software-as-a-Service) using PostgreSQL as a database, and Golf as a web service engine; it includes user signup/login/logout with an email and password, separate user accounts and data, and a notes application. All in about 200 lines of code! <a href='https://youtu.be/EQqhue1S1qk'>Here's a video</a> that shows it - two users sign up and create their own notes. ...<br/>
 </li>
 <br/>
 <li><a href='/article-hello-world.html'>Hello World in Golf</a><br/>
@@ -9747,132 +9835,44 @@ Create a directory for your Hello World application and then switch to it: ...<b
  Generating random numbers is important in a wide range of applications. For instance, session IDs often use random numbers; they are also used in generating passwords; another example is load balancing where (say instead of round-robin), the next available process to serve a request is chosen randomly; some applications (like gambling) depend on random qualities; any kind of simulation would heavily rely on random numbers; financial and polling applications use random samples to determine outcomes and policies. The list of possible uses is pretty long. ...<br/>
 </li>
 <br/>
-<li><a href='/article-what-is-golf.html'>Introduction to Golf</a><br/>
-Golf is a new programming language and framework for developing web services and web applications. It is: &nbsp;...<br/>
-</li>
-<br/>
-<li><a href='/article-capi.html'>Use C language API to talk to Golf Server</a><br/>
-Golf application server can be accessed via C API. Most programming languages allow for C linkage, so this makes it easy to talk to Golf server from anywhere. The <a href='/Client-API.html'>Client-API</a> is very simple with just a few functions and a single data type. It's also MT-safe (i.e. safe for multi-threaded applications). ...<br/>
-</li>
-<br/>
-<li><a href='/article-language.html'>Golf is a different kind of programming language</a><br/>
-Over the past 50 years, general-purpose programming languages became more complex due to the constant influx of new features (some of which are great, while others are a "feature creep"). Just look at any major programming language in its early days, versus the latest incarnations. From a distance, it may look like you switched from riding a bicycle to flying a passenger jet with a few hundred knobs, buttons and readout consoles. Arguably, the language structure covers many more usage patterns, yields additional power and safety has improved, but the complexity and the learning curve has increased too. While in the beginning there was lots of pitfalls due to the lack of features and safety, which would usually result in too many ways of doing the same thing, in the end there's a minefield due to an overcrowded feature-scape that's paralyzing to deal with and often not quite understood by anyone on the team. ...<br/>
-</li>
-<br/>
-<li><a href='/article-fifo.html'>First In First Out (FIFO) example</a><br/>
-Golf has built-in FIFO list type. You can create a FIFO variable and then store key/value string pairs in it, which you can then read back in the order you put them in. You can also rewind the FIFO list and obtain the same key/value pairs over and over again if needed. ...<br/>
-</li>
-<br/>
-<li><a href='/article-how-to-create-golf-application.html'>How to create a Golf application</a><br/>
-To create a Golf application, use "-k" option of gg utility: ...<br/>
-</li>
-<br/>
-<li><a href='/article-shopping.html'>How to build a Web Service API</a><br/>
-This article will show a simple shopping web API with basic functions, such as adding customers, items and orders, as well as updating and deleting them. It's easy to write and easy to understand with Golf; that's the reason code doesn't have much in a way of comments - there's no need. ...<br/>
-</li>
-<br/>
-<li><a href='/article-regex.html'>Using Regex in Golf</a><br/>
-Regex (or "REGular EXpressions") is a powerful way to search strings, as well as to replace parts of strings. It makes it easier to reliably do so, since regular expressions are usually short; at the same time there's a learning curve in becoming proficient. However, given that regex is ubiquitous, it is worth learning at least some of it, as it can come handy. ...<br/>
-</li>
-<br/>
-<li><a href='/article-record-temperature-postgres.html'>More than one table in a database transaction in PostgreSQL</a><br/>
-Here you'll learn how to use a database transaction to insert/update into multiple tables; so that if any of those fail, the entire transaction is cancelled (rollbacked), and if they all succeed, the transaction is committed as a whole, atomically. ...<br/>
-</li>
-<br/>
-<li><a href='/article-hello-world-service-web.html'>Web service Hello World</a><br/>
-To access a Golf service on the web, you need to have a web server or load balancer (think Apache, Nginx, HAProxy etc.). ...<br/>
-</li>
-<br/>
-<li><a href='/article-request-function.html'>Functions and parameters in Golf</a><br/>
-In Golf, there are no "functions" or "methods" as you may be used to in other languages. Any encapsulation is a request handler - you can think of it as a simple function that executes to handle a request - it can an external request (i.e. from an outside caller such as web browser, web API, or from a command-line), or internal requests from another handler in your application. &nbsp;...<br/>
-</li>
-<br/>
-<li><a href='/article-record-temperature-mariadb.html'>More than one table in a database transaction in MariaDB</a><br/>
-Here you'll learn how to use a database transaction to insert/update into multiple tables; so that if any of those fail, the entire transaction is cancelled (rollbacked), and if they all succeed, the transaction is committed as a whole, atomically. ...<br/>
-</li>
-<br/>
 <li><a href='/article-security.html'>Security of web services</a><br/>
 The security of web services is a broad subject, but there are a few common topics that one should be well aware. They affect if your web application, or an API service, will be a success or not. ...<br/>
 </li>
 <br/>
-<li><a href='/article-tree.html'>Cache server in 30 lines</a><br/>
-This is a cache server that can add, delete and query key/value pairs, with their number limited only by available memory. &nbsp;...<br/>
-</li>
-<br/>
-<li><a href='/article-hello-server.html'>34000 requests per second on a modest laptop</a><br/>
-Here's a video showing how to create and start an application server, and how to connect to it and make requests from a C client (or from any language that supports C API extension), you can watch a <a href='https://youtu.be/P2bdPP-3ZMY'>video here</a>. ...<br/>
-</li>
-<br/>
-<li><a href='/article-debug.html'>How to debug Golf programs with gdb</a><br/>
-Debugging information is always included regardless of how you make your application; what varies is the amount of debugging info included. You can compile your Golf application normally: ...<br/>
-</li>
-<br/>
-<li><a href='/article-file-manager.html'>Web file manager in less than 100 lines of code</a><br/>
-Uploading and download files in web browser is a common task in virtually any web application or service. This article shows how to do this with very little coding - in less than 100 lines of code. The database used is PostgreSQL, and the web server is Nginx. ...<br/>
-</li>
-<br/>
-<li><a href='/article-sendmail.html'>How to send email with Golf</a><br/>
-This example shows how to send email with Golf. The web service you'll create here is very simple and it will display an HTML form to collect info needed to send email, such as "From" and "To" (the sender and the recipient emails), the Subject and of course the Message itself. Once user clicks Submit, email is sent. &nbsp;...<br/>
-</li>
-<br/>
-<li><a href='/article-fetch-web-page.html'>How to get the web page source code programmatically</a><br/>
-Fetching a web resource (including web page source) is a one-liner in Golf. First, create a new application ("get-page" here): ...<br/>
-</li>
-<br/>
-<li><a href='/article-vim-coloring.html'>Using Vim color schemes with Golf</a><br/>
-Golf installation comes with a Vim module for highlighting Golf code. After installing Golf, run this to install the Vim module: ...<br/>
-</li>
-<br/>
-<li><a href='/article-memory-safety.html'>How is memory organized in Golf</a><br/>
-Golf is a memory-safe language. A string variable is the actual pointer to a string (whether it's a text or binary). This eliminates at least one extra memory read. Bytes before the string constitute the ID to a memory table entry as well as the length of a string, with additional info used by memory-safety mechanisms: ...<br/>
-</li>
-<br/>
-<li><a href='/article-cookies.html'>Cookies in Golf applications, plus HAProxy</a><br/>
-Cookies are used in web development to remember the state of your application on a client device. This way, your end-user on this client device doesn't have to provide the same (presumably fairly constant) information all the time. A "client device" can be just a plain web browser, or it can be anything else, such as any internet connected device. ...<br/>
-</li>
-<br/>
-<li><a href='/article-server.html'>What is an application server</a><br/>
-Every Golf application is built as both an application server and a command-line program. You can use both, depending on what's the nature of your application. Some programs are meant to be used in scripts, or executed directly from command line. Others need to stay in memory and execute user requests as servers. The nice thing is that they both work the same, meaning you can run from command line anything that an application server does, and vice versa. This is also handy for testing; it makes writing tests for an application server much easier because you can run such tests in a plain bash script. ...<br/>
-</li>
-<br/>
-<li><a href='/article-status-check.html'>Example of auto status checking with Golf</a><br/>
-When talking about safety in programming, it is memory safety that usually takes the spotlight. However, here we'll touch on another common safety issue that typically causes application logic errors, meaning your program won't function correctly. It's about checking the status of any kind of statement that provides it. Not checking the status could mean that the result of a statement isn't correct, yet your program is proceeding as if it were. Of course, this is bound to cause problems, and this is true for any programming language. ...<br/>
-</li>
-<br/>
-<li><a href='/article-notes-postgres.html'>Multi-tenant SaaS (Notes web application) in 200 lines of code</a><br/>
-This is a complete SaaS example (Software-as-a-Service) using PostgreSQL as a database, and Golf as a web service engine; it includes user signup/login/logout with an email and password, separate user accounts and data, and a notes application. All in about 200 lines of code! <a href='https://youtu.be/EQqhue1S1qk'>Here's a video</a> that shows it - two users sign up and create their own notes. ...<br/>
-</li>
-<br/>
-<li><a href='/article-encryption.html'>Encryption: ciphers, digests, salt, IV and a hands-on guide</a><br/>
-Encryption is a method of turning data into an unusable form that can be made useful only by means of decryption. The purpose is to make data available solely to those who can decrypt it (i.e. make it usable). Typically, data needs to be encrypted to make sure it cannot be obtained in case of unauthorized access. It is the last line of defense after an attacker has managed to break through authorization systems and access control. ...<br/>
-</li>
-<br/>
-<li><a href='/article-hello-world-service.html'>Hello World as a Service</a><br/>
-Writing a <a href='/service.html'>service</a> is the same as writing a <a href='/command-line.html'>command-line</a> program in Golf. Both take the same input and produce the same output, so you can test with either one to begin with. ...<br/>
-</li>
-<br/>
-<li><a href='/article-mariadb.html'>Web services with MariaDB</a><br/>
-Create a directory for your project, it'll be where this example takes place. Also create Golf application "stock": ...<br/>
-</li>
-<br/>
-<li><a href='/article-statements.html'>Statements in Golf</a><br/>
-Golf is a new programming language and framework for developing web services and web applications. The reason for Golf is to make software development easier and more reliable. ...<br/>
+<li><a href='/article-sqlite.html'>SQLite with Golf</a><br/>
+This example will create a service that inserts key and value into SQLite table. It's tested from command line. ...<br/>
 </li>
 <br/>
 <li><a href='/article-remote-call.html'>Call web service from web service: stacking them up</a><br/>
 A web service doesn't necessarily need to be called from "the web", meaning from the web browser or via API across the web. It can be called from another web service that's on a local network. ...<br/>
 </li>
 <br/>
-<li><a href='/article-web-framework-for-c-programming-language.html'>Web framework for C programming language</a><br/>
-Golf has an "extended" mode, which allows for C code to be used directly. Normally, this is not allowed, but if you use <a href='/extended-mode.html'>extended-mode</a> statement in your .golf file, then you can call C code from it. ...<br/>
+<li><a href='/article-mariadb.html'>Web services with MariaDB</a><br/>
+Create a directory for your project, it'll be where this example takes place. Also create Golf application "stock": ...<br/>
+</li>
+<br/>
+<li><a href='/article-server.html'>What is an application server</a><br/>
+Every Golf application is built as both an application server and a command-line program. You can use both, depending on what's the nature of your application. Some programs are meant to be used in scripts, or executed directly from command line. Others need to stay in memory and execute user requests as servers. The nice thing is that they both work the same, meaning you can run from command line anything that an application server does, and vice versa. This is also handy for testing; it makes writing tests for an application server much easier because you can run such tests in a plain bash script. ...<br/>
 </li>
 <br/>
 <li><a href='/article-tree-web.html'>Cache as a web service</a><br/>
 This example shows Apache as the front-end (or "reverse proxy") for <a href='/article-tree.html'>article-tree</a> - it's assumed you've completed it first. Three steps to setting up Apache quickly: ...<br/>
 </li>
 <br/>
-<li><a href='/article-record-temperature-sqlite.html'>More than one table in a database transaction in SQLite</a><br/>
-Here you'll learn how to use a database transaction to insert/update into multiple tables; so that if any of those fail, the entire transaction is cancelled (rollbacked), and if they all succeed, the transaction is committed as a whole, atomically. ...<br/>
+<li><a href='/article-distributed.html'>How to write distributed applications</a><br/>
+Distributed computing is two or more servers communicating for a common purpose. Typically, some tasks are divvied up between a number of computers, and they all work together to accomplish it. Note that "separate servers" may mean physically separate computers. It may also mean virtual servers such as Virtual Private Servers (VPS) or containers, that may share the same physical hardware, though they appear as separate computers on the network. &nbsp;...<br/>
+</li>
+<br/>
+<li><a href='/article-sendmail.html'>How to send email with Golf</a><br/>
+This example shows how to send email with Golf. The web service you'll create here is very simple and it will display an HTML form to collect info needed to send email, such as "From" and "To" (the sender and the recipient emails), the Subject and of course the Message itself. Once user clicks Submit, email is sent. &nbsp;...<br/>
+</li>
+<br/>
+<li><a href='/article-what-is-golf.html'>Introduction to Golf</a><br/>
+Golf is a new programming language and framework for developing web services and web applications. It is: &nbsp;...<br/>
+</li>
+<br/>
+<li><a href='/article-statements.html'>Statements in Golf</a><br/>
+Golf is a new programming language and framework for developing web services and web applications. The reason for Golf is to make software development easier and more reliable. ...<br/>
 </li>
 <br/>
 </ul>
@@ -17403,7 +17403,7 @@ make uninstall</pre>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_973, code_973, golf_copied_973)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Application files"></a>Application files</div>
-Note that $HOME/.golf directory will not be removed, since it may contain application files; you may delete it if there's no data there you care about, or you backed it up.<br/>
+Note that $HOME/.golf/&lt;app name&gt; directory will not be removed for any application, since it may contain application files; you may delete it if there's no data there you care about, or you backed it up.<br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Install golf'></a><span style="font-weight:bold;">Install golf</span><br/>
 <a href='/install-golf.html'>install-golf</a> &nbsp;<br/>
