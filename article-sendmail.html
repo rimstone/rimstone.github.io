@@ -237,24 +237,24 @@ This example shows how to send email with Golf. The web service you'll create he
 <br/>
 Create directory for your application:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_261' class=notranslate>
+<pre id='code_267' class=notranslate>
 <span class="Statement">mkdir</span> <span class="Special">-p</span> mail
 <span class="Statement">cd</span> mail</pre>
-<span id=golf_copied_261 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_261' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_261, code_261, golf_copied_261)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_267 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_267' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_267, code_267, golf_copied_267)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Create "mail-sender" application:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_263' class=notranslate>
+<pre id='code_269' class=notranslate>
 gg <span class="Special">-k</span> mail-sender</pre>
-<span id=golf_copied_263 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_263' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_263, code_263, golf_copied_263)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_269 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_269' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_269, code_269, golf_copied_269)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Copy the following code to file "mail.golf":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_259' class=notranslate>
+<pre id='code_265' class=notranslate>
 <span class="Statement">begin-handler</span> /mail<span class="Identifier"> public</span>
     <span class="Comment">// Get URL parameter</span>
 <span class="Statement">    get-param</span> action
@@ -303,61 +303,61 @@ Copy the following code to file "mail.golf":<br/>
 <span class="Statement">        @</span>Unrecognized action!&lt;hr/&gt;
 <span class="Statement">    end-if</span>
 <span class="Statement">end-handler</span></pre>
-<span id=golf_copied_259 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_259' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_259, code_259, golf_copied_259)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_265 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_265' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_265, code_265, golf_copied_265)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The example uses <a href='https://golf-lang.com/exec-program.html'>exec-program</a> to invoke a MTA (Mail Transfer Agent), in this case postfix or sendmail, but you can use any other that you like!<br/>
 <br/>
 Build your application server as a native executable:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_264' class=notranslate>
+<pre id='code_270' class=notranslate>
 gg <span class="Special">-q</span></pre>
-<span id=golf_copied_264 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_264' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_264, code_264, golf_copied_264)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_270 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_270' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_270, code_270, golf_copied_270)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Run the application server using Golf's application server manager, called <a href='https://golf-lang.com/mgrg.html'>mgrg</a>:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_265' class=notranslate>
+<pre id='code_271' class=notranslate>
 mgrg mail-sender</pre>
-<span id=golf_copied_265 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_265' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_265, code_265, golf_copied_265)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_271 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_271' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_271, code_271, golf_copied_271)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 You may or may not have MTA (Mail Transfer Agent) installed on your system. Install it anyway, for Ubuntu and Debian:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_266' class=notranslate>
+<pre id='code_272' class=notranslate>
 sudo apt install postfix
 sudo systemctl start postfix</pre>
+<span id=golf_copied_272 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_272' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_272, code_272, golf_copied_272)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+and on RedHat and Fedora systems:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_273' class=notranslate>
+sudo dnf install postfix
+sudo systemctl start postfix</pre>
+<span id=golf_copied_273 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_273' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_273, code_273, golf_copied_273)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Now, since this application server will be accessed via web server, we'll need to setup a web server (aka "reverse proxy"). We'll use Apache, so follow the instructions to <a href='https://golf-lang.com/connect-apache-unix-socket.html'>set up Apache</a>, with &lt;app path&gt; being your application name, which is "mail-sender", and the "ProxyPass" directive in Step 3 will be (replace "your-user" with the name of your OS user):<br/>
+<div class='ncode' style='position:relative;padding-right:16px;'>
+<pre id='code_266' class=notranslate>
+ProxyPass &quot;/mail-sender/&quot; unix:///home/your-user/.golf/apps/mail-sender/sock/.sock|fcgi://localhost/mail-sender</pre>
 <span id=golf_copied_266 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='golft_266' style='position: absolute;left: -500%;'></textarea>
 <img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_266, code_266, golf_copied_266)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-and on RedHat and Fedora systems:<br/>
-<div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_267' class=notranslate>
-sudo dnf install postfix
-sudo systemctl start postfix</pre>
-<span id=golf_copied_267 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_267' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_267, code_267, golf_copied_267)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-Now, since this application server will be accessed via web server, we'll need to setup a web server (aka "reverse proxy"). We'll use Apache, so follow the instructions to <a href='https://golf-lang.com/connect-apache-unix-socket.html'>set up Apache</a>, with &lt;app path&gt; being your application name, which is "mail-sender", and the "ProxyPass" directive in Step 3 will be (replace "your-user" with the name of your OS user):<br/>
-<div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_260' class=notranslate>
-ProxyPass &quot;/mail-sender/&quot; unix:///home/your-user/.golf/apps/mail-sender/sock/.sock|fcgi://localhost/mail-sender</pre>
-<span id=golf_copied_260 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_260' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_260, code_260, golf_copied_260)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
 Once you've restarted Apache web server, go to your browser and try it. In this case, everything is happening locally on your computer. If your server were running on the Internet, then you would use that server's name instead of "127.0.0.1", and email would be with an actual provider instead of a local user name. To get the form that sends email:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_262' class=notranslate>
+<pre id='code_268' class=notranslate>
 http://127.0.0.1/mail-sender/mail/action=show_form</pre>
-<span id=golf_copied_262 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_262' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_262, code_262, golf_copied_262)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_268 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_268' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_268, code_268, golf_copied_268)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In this case local user name we're sending email to is "bear", but you'd put your own user name:<br/>
 <br/><div class='vimg'><img class='imgs' src='send-mail.png' alt='Golf'></img>

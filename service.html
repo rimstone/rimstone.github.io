@@ -246,29 +246,29 @@ If you use Apache, you need to connect it to your application, see <a href='http
 <div class="vsub"><a id="Starting Golf server processes"></a>Starting Golf server processes</div>
 Use <a href='https://golf-lang.com/mgrg.html'>mgrg</a>, for example:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_985' class=notranslate>
+<pre id='code_991' class=notranslate>
 mgrg <span class="Statement">&lt;</span>app name<span class="Statement">&gt;</span></pre>
-<span id=golf_copied_985 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_985' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_985, code_985, golf_copied_985)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_991 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_991' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_991, code_991, golf_copied_991)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 which in general will (based on the request load) start zero or more background resident process(es) (daemons) that process requests in parallel, or for instance:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_986' class=notranslate>
+<pre id='code_992' class=notranslate>
 mgrg <span class="Special">-w</span> <span class="Constant">20</span> <span class="Statement">&lt;</span>app name<span class="Statement">&gt;</span></pre>
-<span id=golf_copied_986 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_986' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_986, code_986, golf_copied_986)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_992 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_992' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_992, code_992, golf_copied_992)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 which will start 20 processes.<br/>
 <div class="vsub"><a id="Connection timeout"></a>Connection timeout</div>
 In a heavy-load environment, a client's connection may be rejected by the server. This may happen if the client runs very slowly due to swapping perhaps. Once a client establishes a connection, it has up to 5 seconds by default to send data; if it doesn't, the server will close the connection. Typically, clients send data right away, but due to a heavy load, this time may be longer. To set the connection timeout in seconds, use "--client-timeout" option in gg when making the application:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_987' class=notranslate>
+<pre id='code_993' class=notranslate>
 gg <span class="Special">-q</span> <span class="Special">--client-timeout</span><span class="Statement">=</span><span class="Constant">8</span></pre>
-<span id=golf_copied_987 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_987' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_987, code_987, golf_copied_987)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_993 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_993' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_993, code_993, golf_copied_993)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In this case, the timeout is set to 8 seconds.<br/>
 <div class="vsub"><a id="See also"></a>See also</div>
