@@ -239,24 +239,24 @@ This is an example of FIFO list usage. This small command-line application will 
 <br/>
 First, let's create a directory for our application:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_102' class=notranslate>
+<pre id='code_112' class=notranslate>
 <span class="Statement">mkdir</span> test-list
 <span class="Statement">cd</span> test-list/</pre>
-<span id=golf_copied_102 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_102' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_102, code_102, golf_copied_102)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_112 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_112' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_112, code_112, golf_copied_112)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 And then create the application itself:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_103' class=notranslate>
+<pre id='code_113' class=notranslate>
 gg <span class="Special">-k</span> list-app</pre>
-<span id=golf_copied_103 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_103' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_103, code_103, golf_copied_103)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_113 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_113' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_113, code_113, golf_copied_113)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Copy and paste the Golf code below to file "list.golf":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_100' class=notranslate>
+<pre id='code_110' class=notranslate>
 <span class="Statement">begin-handler</span> /list
 <span class="Statement">    silent-header</span>
 
@@ -290,38 +290,38 @@ Copy and paste the Golf code below to file "list.golf":<br/>
     <span class="Comment">// Delete FIFO list</span>
 <span class="Statement">    purge-fifo</span> mylist
 <span class="Statement">end-handler</span></pre>
-<span id=golf_copied_100 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_100' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_100, code_100, golf_copied_100)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_110 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_110' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_110, code_110, golf_copied_110)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The code above uses <a href='https://golf-lang.com/new-fifo.html'>new-fifo</a> statement to create a FIFO variable, <a href='https://golf-lang.com/write-fifo.html'>write-fifo</a> to add key/value pairs to it, and <a href='https://golf-lang.com/read-fifo.html'>read-fifo</a> to obtain them back in the order they were put in. You can use <a href='https://golf-lang.com/rewind-fifo.html'>rewind-fifo</a> to rewind back to the beginning at any time, as many times as you need.<br/>
 <br/>
 Make the executable:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_104' class=notranslate>
+<pre id='code_114' class=notranslate>
 gg <span class="Special">-q</span> <span class="Special">--public</span></pre>
-<span id=golf_copied_104 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_104' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_104, code_104, golf_copied_104)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_114 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_114' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_114, code_114, golf_copied_114)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Execute the program:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_105' class=notranslate>
+<pre id='code_115' class=notranslate>
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/list</span><span class="Statement">&quot;</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/list-app</span><span class="Statement">&quot;</span> <span class="Special">--exec</span></pre>
-<span id=golf_copied_105 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_105' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_105, code_105, golf_copied_105)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_115 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_115' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_115, code_115, golf_copied_115)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The result is as expected:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_101' class=notranslate>
+<pre id='code_111' class=notranslate>
 Obtained key key1 with value value1
 Obtained key key2 with value value2
 Again obtained key key1 with value value1
 Again obtained key key2 with value value2</pre>
-<span id=golf_copied_101 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_101' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_101, code_101, golf_copied_101)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_111 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_111' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_111, code_111, golf_copied_111)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>

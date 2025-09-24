@@ -235,11 +235,11 @@ function googleTranslateElementInit() {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>How to debug Golf programs with gdb</div><hr/><br/>
 Debugging information is always included regardless of how you make your application; what varies is the amount of debugging info included. You can compile your Golf application normally:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_39' class=notranslate>
+<pre id='code_49' class=notranslate>
 gg <span class="Special">-q</span></pre>
-<span id=golf_copied_39 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_39' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_39, code_39, golf_copied_39)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_49 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_49' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_49, code_49, golf_copied_49)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 This will create an executable that can be debugged with gdb. You can debug your Golf program with gdb just as if it were a plain C program, which technically it is. This makes it much easier to get to the bottom of any issue directly without having to deal with virtual machines, p-code translation, assembler etc.<br/>
 <br/>
@@ -251,25 +251,25 @@ Here's an example of debugging using Golf. We'll create a little parsing applica
 <br/>
 First, let's create a directory for our application "split" (since you'll be splitting a URL query string into name/value pairs):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_41' class=notranslate>
+<pre id='code_51' class=notranslate>
 <span class="Statement">mkdir</span> split
 <span class="Statement">cd</span> split
 gg <span class="Special">-k</span> split</pre>
-<span id=golf_copied_41 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_41' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_41, code_41, golf_copied_41)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_51 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_51' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_51, code_51, golf_copied_51)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Create a source file "parse.golf" and copy this:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_37' class=notranslate>
+<pre id='code_47' class=notranslate>
 <span class="Statement">begin-handler</span> /parse
 <span class="Statement">    silent-header</span>
 <span class="Statement">    set-string</span> str = <span class="Constant">&quot;a=1&amp;b=2&amp;c=3&quot;</span>
-    <span class="Comment">// Split string using &quot;&amp;&quot; as a delimiter</span>
+    <span class="Comment">// Split string using </span><span class="Constant">&quot;&amp;&quot;</span><span class="Comment"> as a delimiter</span>
 <span class="Statement">    split-string</span> str<span class="Identifier"> with</span> <span class="Constant">&quot;&amp;&quot;</span><span class="Type"> to</span> pair<span class="Type"> count</span> pair_tot
 <span class="Statement">    start-loop</span><span class="Identifier"> repeat</span> pair_tot<span class="Type"> use</span> pair_count
 <span class="Statement">        read-split</span> pair_count<span class="Identifier"> from</span> pair<span class="Type"> to</span> item
-        <span class="Comment">// Now split each item using &quot;=&quot; as a delimiter</span>
+        <span class="Comment">// Now split each item using </span><span class="Constant">&quot;=&quot;</span><span class="Comment"> as a delimiter</span>
 <span class="Statement">        split-string</span> item<span class="Identifier"> with</span> <span class="Constant">&quot;=&quot;</span><span class="Type"> to</span> equal
 <span class="Statement">        read-split</span> <span class="Constant">1</span><span class="Identifier"> from</span> equal<span class="Type"> to</span> name
 <span class="Statement">        read-split</span> <span class="Constant">2</span><span class="Identifier"> from</span> equal<span class="Type"> to</span> value
@@ -277,35 +277,35 @@ Create a source file "parse.golf" and copy this:<br/>
 <span class="Statement">        print-format</span> <span class="Constant">&quot;Name [</span><span class="Special">%s</span><span class="Constant">] value [</span><span class="Special">%s</span><span class="Constant">]</span><span class="Special">\n</span><span class="Constant">&quot;</span>, name, value
 <span class="Statement">    end-loop</span>
 <span class="Statement">end-handler</span></pre>
-<span id=golf_copied_37 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_37' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_37, code_37, golf_copied_37)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_47 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_47' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_47, code_47, golf_copied_47)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <br/>
 This program will parse the string "a=1&amp;b=2&amp;c=3" to produce name/value pairs - this is obviously a parsing of URL query string. It uses split-string statement which will split the string based on some delimiter string, and then you use read-split statement to get the split pieces one by one. Very simple.<br/>
 <br/>
 Compile and link this:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_43' class=notranslate>
+<pre id='code_53' class=notranslate>
 gg <span class="Special">-q</span> <span class="Special">--public</span></pre>
-<span id=golf_copied_43 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_43' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_43, code_43, golf_copied_43)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_53 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_53' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_53, code_53, golf_copied_53)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <br/>
 What's what here? First of all "-q" will make your project (meaning compile and link it, both command-line executable and application server), while "--public" makes all handlers public, meaning they can handle external requests (i.e. those from a caller outside your application).<br/>
 <div class="vsub"><a id="Debugging"></a>Debugging</div>
 Okay so now to execute this with gdb, do this:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_45' class=notranslate>
+<pre id='code_55' class=notranslate>
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/parse</span><span class="Statement">&quot;</span></pre>
-<span id=golf_copied_45 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_45' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_45, code_45, golf_copied_45)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_55 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_55' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_55, code_55, golf_copied_55)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 This will produce something like the following (substitute "your-user" for your OS user name):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_46' class=notranslate>
+<pre id='code_56' class=notranslate>
 <span class="Statement">export</span> <span class="Identifier">CONTENT_TYPE</span>=
 <span class="Statement">export</span> <span class="Identifier">CONTENT_LENGTH</span>=
 <span class="Statement">unset</span><span class="Identifier"> GG_SILENT_HEADER</span>
@@ -315,35 +315,35 @@ This will produce something like the following (substitute "your-user" for your 
 <span class="Statement">export</span> <span class="Identifier">PATH_INFO</span>=<span class="Statement">&quot;</span><span class="Constant">/parse</span><span class="Statement">&quot;</span>
 <span class="Statement">export</span> <span class="Identifier">QUERY_STRING</span>=<span class="Statement">&quot;&quot;</span>
 /home/your-user/.golf/apps/split/.bld/split</pre>
-<span id=golf_copied_46 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_46' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_46, code_46, golf_copied_46)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_56 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_56' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_56, code_56, golf_copied_56)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 This is basically setting the necessary environment variables and then executing the "split" program (specified here in full path). Remember, Golf program can execute exactly the same as a web application server as well as command-line executable; hence the web environment variables need to be set.<br/>
 <br/>
 So if you copy and paste the above into bash shell, you'll get:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_38' class=notranslate>
+<pre id='code_48' class=notranslate>
 Name [a] value [1]
 Name [b] value [2]
 Name [c] value [3]</pre>
-<span id=golf_copied_38 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_38' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_38, code_38, golf_copied_38)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_48 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_48' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_48, code_48, golf_copied_48)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Which is the proper parsing of the string. Okay so far so good.<br/>
 <br/>
 Now to debug your program, do:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_47' class=notranslate>
+<pre id='code_57' class=notranslate>
 gdb /home/your-user/.golf/apps/split/.bld/split</pre>
-<span id=golf_copied_47 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_47' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_47, code_47, golf_copied_47)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_57 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_57' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_57, code_57, golf_copied_57)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 You are now in gdb debugging shell:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_40' class=notranslate>
+<pre id='code_50' class=notranslate>
 GNU gdb (Ubuntu 15.0.50.20240403-0ubuntu1) 15.0.50.20240403-git
 Copyright (C) 2024 Free Software Foundation, Inc.
 License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;
@@ -361,13 +361,13 @@ For help, type &quot;help&quot;.
 Type &quot;apropos word&quot; to search for commands related to &quot;word&quot;...
 Reading symbols from /home/your-user/.golf/apps/split/.bld/split...
 (gdb)</pre>
-<span id=golf_copied_40 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_40' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_40, code_40, golf_copied_40)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_50 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_50' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_50, code_50, golf_copied_50)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Now you can use standard gdb commands. We'll set a break in our code above (which is handler "parse"), and then run the program. Next we'll simply execute one statement at a time, and then we'll print the loop variable:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_42' class=notranslate>
+<pre id='code_52' class=notranslate>
 (gdb) br parse
 Breakpoint 1 at 0x3a5e: file /var/lib/gg/bld/split/__parse.o.c, line 4.
 (gdb) run
@@ -404,9 +404,9 @@ Name [a] value [1]
 6	        read-split pair_count from pair to item
 (gdb) print pair_count
 $1 = 1</pre>
-<span id=golf_copied_42 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_42' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_42, code_42, golf_copied_42)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_52 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_52' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_52, code_52, golf_copied_52)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 As you can see, you're stepping through your Golf program, with the code showing exactly as it is in your source file! You can do here anything that you can in a C program, for instance set breakpoints, conditions etc. In this case we also print the value of variable pair_count.<br/>
 <br/>
@@ -414,15 +414,15 @@ gdb is too powerful to summarize here. There are many tutorials on the web. But 
 <br/>
 Finally, if you're so inclined, you can also step through generated C code and see exactly what makes your program tick. To do that, make your program with "--c-lines" flag, which lets you do that:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_48' class=notranslate>
+<pre id='code_58' class=notranslate>
 gg <span class="Special">-q</span> <span class="Special">--public</span> <span class="Special">--c-lines</span></pre>
-<span id=golf_copied_48 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_48' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_48, code_48, golf_copied_48)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_58 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_58' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_58, code_58, golf_copied_58)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Now, repeat the above to get into gdb, and it may look like this (note that generated code can always change and there's absolutely no guarantee it will stay the same!):<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_44' class=notranslate>
+<pre id='code_54' class=notranslate>
 Breakpoint 1.1, parse () at /home/your-user/.golf/apps/split/.bld/__parse.o.c:4
 4	void parse () {
 (gdb) next
@@ -456,9 +456,9 @@ Breakpoint 1.1, parse () at /home/your-user/.golf/apps/split/.bld/__parse.o.c:4
 (gdb)
 39	gg_num pair_count = 0;
 (gdb)</pre>
-<span id=golf_copied_44 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_44' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_44, code_44, golf_copied_44)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_54 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_54' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_54, code_54, golf_copied_54)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 This is literally the C code that runs your program. It doesn't look as user friendly for sure, but it's useful if you'd like to see what exactly takes place. It's also useful in debugging your program and Golf as well.<br/>
 <br/>

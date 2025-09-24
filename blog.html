@@ -233,9 +233,19 @@ function googleTranslateElementInit() {
 
 <!--BEGVDOC90-->
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Official Golf blog</div><hr/><br/>
-Updated on 2025-09-12<br/>
+Updated on 2025-09-24<br/>
 <span style="font-weight:bold;">Note</span>: This blog is a replacement for golf-lang.blogspot.com; please bookmark this page going forward.<br/>
 <ul><br/>
+<li><span style="font-weight:bold;">Golf-3.4.0-released</span> (2025-09-24) (<span style="font-weight:bold;"><a href='https://golf-lang.com/blog-2025-09-24-new-golf-release.html'>read full article</a></span>)<br/>
+This release gives Golf full-blown general puprose programming capabilities with the extensive support for a double type, including double arrays (see <a href='https://golf-lang.com/new-array.html'>new-array</a>). A double is created with <a href='https://golf-lang.com/set-double.html'>set-double</a> statement. Doubles are extended precision 64 bit floating point values. A long list of math functions have been added. The following return a double:<br/>
+<a href='https://golf-lang.com/dbl.html'>dbl</a><br/>
+<a href='https://golf-lang.com/sin.html'>sin</a> ... </li>
+<br/>
+<li><span style="font-weight:bold;">How-to-insert/update-multiple-tables-in-a-single-transaction?</span> (2025-09-13) (<span style="font-weight:bold;"><a href='https://golf-lang.com/blog-2025-09-13-multiple-tables-in-transaction.html'>read full article</a></span>)<br/>
+Using multiple tables in a single transaction is common enough. You'd want the data to be either inserted/updated in all of them, or in none of them. So if one of such DML operations fail, then the others should not succeed to.<br/>
+In other words, your work should be either all committed, or all rollbacked.<br/>
+This example is a weather application that records temperatures for any given zip code. And it updates the climate (temperature) averages for each code too. So in such a transaction, one table is inserted and other updated, and that's done atomically. ... </li>
+<br/>
 <li><span style="font-weight:bold;">Articles only on official web site</span> (2025-09-12) (<span style="font-weight:bold;"><a href='https://golf-lang.com/blog-2025-09-12-articles-only-official.html'>read full article</a></span>)<br/>
 Golf articles (how-tos, examples, knowledge-base etc.) will no longer be published on external web sites (such as blogging, developer or other sites). Rather, they will only be published here on the Golf's official web site.<br/>
 The reason is that there was lots of effort being put into the external web sites that could be better used for new bug fixes, features, more examples etc. While it's true that such external web pages reach broader audience, the flip side of it is that it takes time and effort to post and maintain such articles.<br/>

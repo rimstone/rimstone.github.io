@@ -239,44 +239,44 @@ What if you wanted to record temperatures in any given zip code, and compute ave
 <br/>
 First, create a new directory for your application, and create a new application "climate":<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_216' class=notranslate>
+<pre id='code_226' class=notranslate>
 <span class="Statement">mkdir</span> temps
 <span class="Statement">cd</span> temps
 gg <span class="Special">-k</span> climate</pre>
-<span id=golf_copied_216 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_216' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_216, code_216, golf_copied_216)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_226 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_226' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_226, code_226, golf_copied_226)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Here's the database setup. We'll use a little "cat" trick with EOF so we can write directly to files. So in this case, all the lines between "cat &lt;&lt; EOF..." and "EOF" are written to file "setup.sql", which is the database setup. We use MariaDB here; you can use other databases too:<br/>
 <div class='sqlcode' style='position:relative;padding-right:16px;'>
-<pre id='code_217' class=notranslate>
+<pre id='code_227' class=notranslate>
 cat &lt;&lt; EOF &gt; setup.sql
 <span class="Statement">drop</span> <span class="Special">table</span> <span class="Special">if</span> <span class="Statement">exists</span> temperature_history;
 <span class="Statement">drop</span> <span class="Special">table</span> <span class="Special">if</span> <span class="Statement">exists</span> climate_avg;
 <span class="Statement">create</span> <span class="Special">table</span> <span class="Special">if</span> <span class="Statement">not</span> <span class="Statement">exists</span> temperature_history (zip <span class="Type">varchar</span>(<span class="Constant">10</span>), temp <span class="Type">int</span>, curr_date <span class="Type">date</span>, curr_time time);
 <span class="Statement">create</span> <span class="Special">table</span> <span class="Special">if</span> <span class="Statement">not</span> <span class="Statement">exists</span> climate_avg (zip <span class="Type">varchar</span>(<span class="Constant">10</span>) primary key, average_temp <span class="Type">int</span>, <span class="Identifier">count</span> <span class="Type">int</span>);
 EOF</pre>
-<span id=golf_copied_217 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_217' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_217, code_217, golf_copied_217)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_227 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_227' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_227, code_227, golf_copied_227)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Run the database setup:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_219' class=notranslate>
+<pre id='code_229' class=notranslate>
 sqlite3 <span class="PreProc">$HOME</span>/.golf/apps/func-test/app/weather_sdb.db <span class="Statement">&lt;</span> setup.sql</pre>
-<span id=golf_copied_219 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_219' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_219, code_219, golf_copied_219)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_229 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_229' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_229, code_229, golf_copied_229)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 This file ("weather_sdb") is the <a href='https://golf-lang.com/database-config-file.html'>database-config-file</a>. It describes your database the way your database needs it, i.e. natively. So if you'd use PostgreSQL you'd use Postgres format. If you'd use MariaDB, you'd use MariaDB format. This makes it easy, since there's no new database config file format to learn:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_220' class=notranslate>
+<pre id='code_230' class=notranslate>
 <span class="Statement">cat</span> <span class="Statement">&lt;&lt; EOF</span><span class="Constant"> &gt; weather_sdb</span>
 <span class="Constant">~/.golf/apps/func-test/app/weather_sdb.db</span>
 <span class="Statement">EOF</span></pre>
-<span id=golf_copied_220 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_220' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_220, code_220, golf_copied_220)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_230 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_230' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_230, code_230, golf_copied_230)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Here's the actual code. It's a Golf file "weather.golf", which contains two services, "/weather/insert" (to insert new temperature data) and &nbsp;"/weather/get-agv" (to get historical data and averages). The code is really quite self-explanatory. In Golf, every statements always starts with the new line (watch out for "\" at end of the line, which continues the line). So you can get documentation for <a href='https://golf-lang.com/get-param.html'>get-param</a> (to get input parameter), or <a href='https://golf-lang.com/run-query.html'>run-query</a> (to run a database query), etc. <br/>
 <br/>
@@ -284,7 +284,7 @@ In this case, for instance, for "/weather/insert" service, you need to provide "
 <br/>
 Here's the code:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_214' class=notranslate>
+<pre id='code_224' class=notranslate>
 cat &lt;&lt; <span class="Constant">EOF</span> &gt; weather-sqlite.golf
 <span class="Statement">%%</span> /weather-sqlite/insert<span class="Identifier"> public</span>
 <span class="Statement">    get-param</span> zip_code
@@ -322,56 +322,56 @@ cat &lt;&lt; <span class="Constant">EOF</span> &gt; weather-sqlite.golf
 <span class="Statement">    end-query</span>
 <span class="Statement">%%</span>
 <span class="Constant">EOF</span></pre>
-<span id=golf_copied_214 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_214' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_214, code_214, golf_copied_214)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_224 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_224' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_224, code_224, golf_copied_224)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Make the application:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_221' class=notranslate>
+<pre id='code_231' class=notranslate>
 gg <span class="Special">-q</span> <span class="Special">--db</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">sqlite:weather_sdb</span><span class="Statement">&quot;</span></pre>
-<span id=golf_copied_221 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_221' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_221, code_221, golf_copied_221)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_231 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_231' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_231, code_231, golf_copied_231)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Insert the data. Note we're using <a href='https://golf-lang.com/gg.html'>gg</a> utility. You can skip the "--exec" here, and see the bash code to run your native application directly from command line. <br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_222' class=notranslate>
+<pre id='code_232' class=notranslate>
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/weather-sqlite/insert/zip_code=11111/temperature=82</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--silent-header</span>
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/weather-sqlite/insert/zip_code=11111/temperature=102</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--silent-header</span>
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/weather-sqlite/insert/zip_code=11111/temperature=91</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--silent-header</span></pre>
-<span id=golf_copied_222 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_222' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_222, code_222, golf_copied_222)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_232 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_232' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_232, code_232, golf_copied_232)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The result is:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_215' class=notranslate>
+<pre id='code_225' class=notranslate>
 Data stored and average updated.
 Data stored and average updated.
 Data stored and average updated.</pre>
-<span id=golf_copied_215 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_215' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_215, code_215, golf_copied_215)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_225 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_225' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_225, code_225, golf_copied_225)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 And now you can query the data:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_223' class=notranslate>
+<pre id='code_233' class=notranslate>
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/weather-sqlite/get-avg/zip_code=11111</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--silent-header</span></pre>
-<span id=golf_copied_223 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_223' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_223, code_223, golf_copied_223)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_233 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_233' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_233, code_233, golf_copied_233)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 With the result like:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_218' class=notranslate>
+<pre id='code_228' class=notranslate>
 Temp [  82] Date [2025-09-07 09:47:42]
 Temp [ 102] Date [2025-09-07 09:47:42]
 Temp [  91] Date [2025-09-07 09:47:42]
 Average is [91] from the total of [3] sample</pre>
-<span id=golf_copied_218 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_218' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_218, code_218, golf_copied_218)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=golf_copied_228 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_228' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_228, code_228, golf_copied_228)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 That's the application! You can run it from <a href='https://golf-lang.com/command-line.html'>command-line</a> or as a web <a href='https://golf-lang.com/service.html'>service</a> (see <a href='https://golf-lang.com/article-tree-web.html'>article-tree-web</a> for an example of a setup).<br/>
 <!--ENDVDOC90-->
