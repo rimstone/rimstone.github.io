@@ -73,16 +73,17 @@
             width: 45%; /* approx half, we need space for gap */
             text-align: left;
             border-radius: 10px;
-            font-size: 0.7em; /* text within squares */
-            /*font-weight:bold;*/
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             box-sizing: border-box; /* padding included in width */
+            font-size: 0.7em; /* text within squares */
+            /*font-weight:bold;*/
             display: flex; /* within squares uses flex for centering */
             flex-direction: column; /* text within square is stacked */
             justify-content: left;
             align-items: left;
         }
-        .square_menu {
+
+        .square_menu { /* this is for menu items*/
             padding: 0px;
             width: 45%; /* approx half, we need space for gap */
             text-align: center;
@@ -100,11 +101,14 @@
 
         /* within the single-box section */
         .one-big-sect {
-            width: 80%;
-            max-width: 2000px;
-            text-align: center;
-            margin-top: 20px; /* Space from heading */
+            width: 95%;
+            max-width: 3000px;
             font-size: 0.7em;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            box-sizing: border-box; /* padding included in width */
+            text-align:left;
+            padding: 20px;
         }
 
         .one-big-sect p {
@@ -203,7 +207,7 @@ Current release (3.4.0). Updated 2025-09-24.
             <img src="golf-large.png" style='width:100%;height:auto;'>
             </div>
             <div style='color:#3d3d3d'>
-                <h2 >Language for Web backend.<br/>Apache 2 License.</h2>
+                <h2 >Language for Web backend.<br/>Massively Powerful.<br/>Apache 2 License.</h2>
             </div>
         </div>
     </sect>
@@ -239,6 +243,22 @@ Current release (3.4.0). Updated 2025-09-24.
     </div>
     </sect>
 
+    <sect class="sect sec-two">
+        <div class="box-container">
+            <div class="square">
+                <h3>Not just another language</h3>
+		            <p>Golf is both a general purpose and an Application DSL (Domain Specific Language).<br/><br/></p>
+                    <p>It's simple: Golf offers built-in functionality for great many tasks needed for web, database, string processing, encoding/encryption, network programming, parsing, data structures and many other tasks you need all the time.<br/><br/></p>
+		            <p>At the same time, Golf is a general purpose language which is easy and memory-safe.</p>
+            </div>
+            <div class="square">
+                <h3>How it helps you</h3>
+                <p>So instead of rolling up your sleeves and programming from scratch or learning APIs of various libraries, you can write natural one-liners.<br/><br/></p>
+                <p>It's like putting together pieces of a puzzle, and what you're doing is conducting an orchestra instead of playing every and all instruments imaginable at the same time.<br/><br/></p>
+		            <p>Golf is both declarative and imperative. That means you can reap the benefits of being both general purpose (so you can do exactly what you want) and Application DSL (so you can build applications from puzzle pieces in no time).</p>
+            </div>
+        </div>
+    </sect>
     <sect class="sect sec-five">
         <div class="one-big-sect">
             Here's what Golf code feels like. Hint: it's short and easy. Below's an example of fetching a web page:<br/></br/>
@@ -260,14 +280,14 @@ Current release (3.4.0). Updated 2025-09-24.
         <div class="box-container">
             <div class="square">
                 <h3>Easy and memory safe</h3>
-		<p>Golf is unlike other languages. It's simpler and declarative. You can do much in a single line.<br/><br/></p>
-		<p>Lots of great features and rich functionality. Build back-end applications super fast.<br/><br/></p>
-                <p>Built with industry-standard Free Open Source libraries for performance, functionality, stability and compatibility.</p>
+		            <p>Golf is unlike other languages. It's simpler and declarative. You can do much in a single line.<br/><br/></p>
+		            <p>Lots of great features and rich functionality. Build back-end applications super fast.<br/><br/></p>
+                    <p>Built with industry-standard Free Open Source libraries for performance, functionality, stability and compatibility.</p>
             </div>
             <div class="square">
                 <h3>Memory safety</h3>
-		<p>Memory safety that's fast and lean, so you can have both performance and safety.<br/><br/></p>
-		    <p>Automatic memory release to avoid leaks in long-running server processes.<br/><br/></p>
+		            <p>Memory safety that's fast and lean, so you can have both performance and safety.<br/><br/></p>
+		            <p>Automatic memory release to avoid leaks in long-running server processes.<br/><br/></p>
                     <p>Smart status checking of your code to avoid mistakes from the get-go.</p>
             </div>
         </div>
