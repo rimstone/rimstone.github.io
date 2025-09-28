@@ -11,7 +11,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="canonical" href="https://golf-lang.com/connect-nginx-tcp-socket.html" />
+<link rel="canonical" href="https://rimstone-lang.com/connect-nginx-tcp-socket.html" />
 <style>
 
 
@@ -232,57 +232,57 @@ function googleTranslateElementInit() {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Connect nginx tcp socket</div><hr/>This shows how to connect your application listening on TCP port &lt;port number&gt; (started with "-p" option in <a href='https://golf-lang.com/mgrg.html'>mgrg</a>) to Nginx web server.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Connect nginx tcp socket</div><hr/>This shows how to connect your application listening on TCP port &lt;port number&gt; (started with "-p" option in <a href='https://rimstone-lang.com/mgrg.html'>mgrg</a>) to Nginx web server.<br/>
 <br/>
 <span style="font-weight:bold;">- Step 1</span>:<br/>
 You will need to edit the Nginx configuration file. For Ubuntu and similar:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_496' class=notranslate>
 sudo vi /etc/nginx/sites-enabled/default</pre>
-<span id=golf_copied_496 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_496' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_496, code_496, golf_copied_496)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_496 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_496' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_496, code_496, rimstone_copied_496)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 while on Fedora and other systems it might be at:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_497' class=notranslate>
 sudo vi /etc/nginx/nginx.conf</pre>
-<span id=golf_copied_497 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_497' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_497, code_497, golf_copied_497)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_497 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_497' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_497, code_497, rimstone_copied_497)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <br/>
-Add the following in the "server {}" section ("/&lt;app path&gt;" is the application path, see <a href='https://golf-lang.com/request.html'>request</a>):<br/>
+Add the following in the "server {}" section ("/&lt;app path&gt;" is the application path, see <a href='https://rimstone-lang.com/request.html'>request</a>):<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
 <pre id='code_495' class=notranslate>
 location /&lt;app path&gt;/ { include /etc/nginx/fastcgi_params; fastcgi_pass  127.0.0.1:&lt;port number&gt;; }</pre>
-<span id=golf_copied_495 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_495' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_495, code_495, golf_copied_495)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_495 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_495' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_495, code_495, rimstone_copied_495)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <span style="font-weight:bold;">- Step 2</span>:<br/>
 Finally, restart Nginx:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_498' class=notranslate>
 sudo systemctl restart nginx</pre>
-<span id=golf_copied_498 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_498' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_498, code_498, golf_copied_498)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_498 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_498' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_498, code_498, rimstone_copied_498)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Note: you must not have any other URL resource that starts with "/&lt;app path&gt;/" (such as for example "/&lt;app path&gt;/something") as the web server will attempt to pass them as a reverse proxy request, and they will likely not work. If you need to, you can change the application path to be different from "/&lt;app path&gt;", see <a href='https://golf-lang.com/request.html'>request</a>.<br/>
+Note: you must not have any other URL resource that starts with "/&lt;app path&gt;/" (such as for example "/&lt;app path&gt;/something") as the web server will attempt to pass them as a reverse proxy request, and they will likely not work. If you need to, you can change the application path to be different from "/&lt;app path&gt;", see <a href='https://rimstone-lang.com/request.html'>request</a>.<br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Web servers'></a><span style="font-weight:bold;">Web servers</span><br/>
-<a href='https://golf-lang.com/connect-apache-tcp-socket.html'>connect-apache-tcp-socket</a> &nbsp;<br/>
-<a href='https://golf-lang.com/connect-apache-unix-socket.html'>connect-apache-unix-socket</a> &nbsp;<br/>
-<a href='https://golf-lang.com/connect-haproxy-tcp-socket.html'>connect-haproxy-tcp-socket</a> &nbsp;<br/>
-<a href='https://golf-lang.com/connect-nginx-tcp-socket.html'>connect-nginx-tcp-socket</a> &nbsp;<br/>
-<a href='https://golf-lang.com/connect-nginx-unix-socket.html'>connect-nginx-unix-socket</a> &nbsp; <br/>
+<a href='https://rimstone-lang.com/connect-apache-tcp-socket.html'>connect-apache-tcp-socket</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/connect-apache-unix-socket.html'>connect-apache-unix-socket</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/connect-haproxy-tcp-socket.html'>connect-haproxy-tcp-socket</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/connect-nginx-tcp-socket.html'>connect-nginx-tcp-socket</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/connect-nginx-unix-socket.html'>connect-nginx-unix-socket</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
-<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
+<a href='https://rimstone-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
-<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://golf-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://rimstone-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
 </div><br/></body></html>
 
 

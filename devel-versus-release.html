@@ -11,7 +11,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="canonical" href="https://golf-lang.com/devel-versus-release.html" />
+<link rel="canonical" href="https://rimstone-lang.com/devel-versus-release.html" />
 <style>
 
 
@@ -232,21 +232,21 @@ function googleTranslateElementInit() {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Devel versus release</div><hr/>By default, when you make your application, a "devel" (or development) version is built, for instance:<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Devel versus release</div><hr/>By default, when you make your application, a "devel" (or development) version is built, for instance:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_575' class=notranslate>
 gg <span class="Special">-q</span></pre>
-<span id=golf_copied_575 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_575' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_575, code_575, golf_copied_575)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_575 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_575' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_575, code_575, rimstone_copied_575)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 You can also explicitly specify this:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_576' class=notranslate>
 gg <span class="Special">-q</span> <span class="Special">--devel</span></pre>
-<span id=golf_copied_576 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_576' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_576, code_576, golf_copied_576)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_576 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_576' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_576, code_576, rimstone_copied_576)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The development version of your application will not use all the compiler optimizations and it will not use the Link Time Optimizations (LTO), sometimes also referred to as "whole program optimization". So this version will exhibit lower run-time performance. However, it is also much faster to build and it includes additional debugging symbols as well.<br/>
 <br/>
@@ -254,25 +254,25 @@ When you wish to produce a release executable, use "--release" option, for insta
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_577' class=notranslate>
 gg <span class="Special">-q</span> <span class="Special">--release</span></pre>
-<span id=golf_copied_577 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_577' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_577, code_577, golf_copied_577)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_577 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_577' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_577, code_577, rimstone_copied_577)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 This will include all the compiler optimizations as well as LTO; it will also include the minimal necessary debugging information. Release executables can be significantly faster than development ones; use them for releases as well as when you wish to do performance testing. Note however that making release executables will take significantly longer, so you probably do not want to do it while developing your application.<br/>
 <br/>
 Note that if your gcc (C compiler) version changes, such as after system updates, Golf may recompile itself. This is because LTO works the best when Golf itself is compiled with the gcc version currently installed. During such rare occassions, Golf will need sudo privilege to install the recompiled executables.<br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='General'></a><span style="font-weight:bold;">General</span><br/>
-<a href='https://golf-lang.com/about-golf.html'>about-golf</a> &nbsp;<br/>
-<a href='https://golf-lang.com/devel-versus-release.html'>devel-versus-release</a> &nbsp;<br/>
-<a href='https://golf-lang.com/directories.html'>directories</a> &nbsp;<br/>
-<a href='https://golf-lang.com/permissions.html'>permissions</a> &nbsp; <br/>
+<a href='https://rimstone-lang.com/about-golf.html'>about-golf</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/devel-versus-release.html'>devel-versus-release</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/directories.html'>directories</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/permissions.html'>permissions</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
-<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
+<a href='https://rimstone-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
-<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://golf-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://rimstone-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
 </div><br/></body></html>
 
 

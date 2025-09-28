@@ -11,7 +11,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="canonical" href="https://golf-lang.com/Client-API.html" />
+<link rel="canonical" href="https://rimstone-lang.com/Client-API.html" />
 <style>
 
 
@@ -232,7 +232,7 @@ function googleTranslateElementInit() {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Client API</div><hr/>You can use C API client library to connect to Golf:<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Client API</div><hr/>You can use C API client library to connect to Golf:<br/>
 <ul><li>The API has only a few functions, and the main one is "gg_cli_request()", which makes a call to the service.<br/>
 </li><li>There is only a single data type used, which is "gg_cli" and it is used to specify a request and its options, as well as to retrieve results.<br/>
 </li><li>There is a single include file ("gcli.h"). <br/>
@@ -242,56 +242,56 @@ See Examples section below for detailed examples.<br/>
 <div class="vsub"><a id="Sending a request to Golf service"></a>Sending a request to Golf service</div>
 The following function is used to make a call using C API:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_441' class=notranslate>
-<span class="Type">int</span> gg_cli_request (gg_cli *req);</pre>
-<span id=golf_copied_441 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_441' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_441, code_441, golf_copied_441)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_442' class=notranslate>
+int gg_cli_request (gg_cli *req);</pre>
+<span id=rimstone_copied_442 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_442' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_442, code_442, rimstone_copied_442)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 All input and output is contained in a single variable of type "gg_cli", the pointer to which is passed to "gg_cli_request()" function that sends a request to the service. A variable of type "gg_cli" must be initialized to zero before using it (such as with {0} initialization, "memset()" or "calloc()"), or otherwise some of its members may have random values:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_445' class=notranslate>
-<span class="Comment">// Define and initialize request variable</span>
-gg_cli req = {<span class="Constant">0</span>};
-<span class="Comment">// You could also do:</span>
-<span class="Comment">// memset ((char*)&amp;req, </span><span class="Constant">0</span><span class="Comment">, sizeof(gg_cli));</span>
-<span class="Statement">.</span>..
-<span class="Comment">// Set members of 'req' variable (see below)</span>
-<span class="Statement">.</span>..
-<span class="Comment">// Make a call</span>
-<span class="Type">int</span> result = gg_cli_request (&amp;req);</pre>
-<span id=golf_copied_445 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_445' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_445, code_445, golf_copied_445)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+// Define and initialize request variable
+gg_cli req = {0};
+// You could also do:
+// memset ((char*)&amp;req, 0, sizeof(gg_cli));
+...
+// Set members of 'req' variable (see below)
+...
+// Make a call
+int result = gg_cli_request (&amp;req);</pre>
+<span id=rimstone_copied_445 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_445' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_445, code_445, rimstone_copied_445)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Type "gg_cli" is defined as (i.e. public members of it):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_447' class=notranslate>
-<span class="Type">typedef</span> <span class="Type">struct</span> {
-    <span class="Type">const</span> <span class="Type">char</span> *server; <span class="Comment">// the IP:port/socket_path to server</span>
-    <span class="Type">const</span> <span class="Type">char</span> *req_method; <span class="Comment">// request method</span>
-    <span class="Type">const</span> <span class="Type">char</span> *app_path; <span class="Comment">// application path</span>
-    <span class="Type">const</span> <span class="Type">char</span> *req; <span class="Comment">// request name</span>
-    <span class="Type">const</span> <span class="Type">char</span> *url_params; <span class="Comment">// URL params (path+query string)</span>
-    <span class="Type">const</span> <span class="Type">char</span> *content_type; <span class="Comment">// content type</span>
-    <span class="Type">int</span> content_len; <span class="Comment">// content len</span>
-    <span class="Type">const</span> <span class="Type">char</span> *req_body; <span class="Comment">// request body (i.e. content)</span>
-    <span class="Type">char</span> **env; <span class="Comment">// environment to pass to servicde</span>
-    <span class="Type">int</span> timeout; <span class="Comment">// timeout for request</span>
-    <span class="Type">int</span> req_status; <span class="Comment">// status of request from service</span>
-    <span class="Type">int</span> data_len; <span class="Comment">// length of response from service</span>
-    <span class="Type">int</span> error_len; <span class="Comment">// length of error from service</span>
-    <span class="Type">char</span> *errm; <span class="Comment">// error message when gg_cli_request returns other than GG_OKAY</span>
-    gg_cli_out_hook out_hook; <span class="Comment">// hook to get data output as soon as it arrives</span>
-    gg_cli_err_hook err_hook; <span class="Comment">// hook get error output as soon as it arrives</span>
-    gg_cli_done_hook done_hook; <span class="Comment">// get all data when request is complete</span>
-    <span class="Type">int</span> thread_id; <span class="Comment">// custom ID when executing in a multithreaded fashion</span>
-    <span class="Type">volatile</span> <span class="Type">char</span> done; <span class="Comment">// indicator that the request has completed</span>
-    <span class="Type">int</span> return_code; <span class="Comment">// the return code from gg_cli_request()</span>
-<span class="Statement">}</span> gg_cli;</pre>
-<span id=golf_copied_447 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_447' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_447, code_447, golf_copied_447)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+typedef struct {
+    const char *server; // the IP:port/socket_path to server
+    const char *req_method; // request method
+    const char *app_path; // application path
+    const char *req; // request name
+    const char *url_params; // URL params (path+query string)
+    const char *content_type; // content type
+    int content_len; // content len
+    const char *req_body; // request body (i.e. content)
+    char **env; // environment to pass to servicde
+    int timeout; // timeout for request
+    int req_status; // status of request from service
+    int data_len; // length of response from service
+    int error_len; // length of error from service
+    char *errm; // error message when gg_cli_request returns other than GG_OKAY
+    gg_cli_out_hook out_hook; // hook to get data output as soon as it arrives
+    gg_cli_err_hook err_hook; // hook get error output as soon as it arrives
+    gg_cli_done_hook done_hook; // get all data when request is complete
+    int thread_id; // custom ID when executing in a multithreaded fashion
+    volatile char done; // indicator that the request has completed
+    int return_code; // the return code from gg_cli_request()
+} gg_cli;</pre>
+<span id=rimstone_copied_447 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_447' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_447, code_447, rimstone_copied_447)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <br/>
 <span style="font-weight:bold;">- Mandatory input</span><br/>
@@ -300,51 +300,51 @@ The following members of "gg_cli" type must be supplied in order to make a call 
 <ul><li>for a Unix socket, a fully qualified name to a Unix socket file used to communicate with the service (use gg_dir() function to obtain it for any Golf application, see below), or<br/>
 </li><li>for a TCP socket, a host name and port name in the form of "&lt;host name&gt;:&lt;port number&gt;", specifying where is the server listening on (for instance "127.0.0.1:2301" if the Golf service is local and runs on TCP port 2301).</li></ul>
 </li><li>"req_method" is a request method, such as "GET", "POST", "PUT", "DELETE" or any other.<br/>
-</li><li>"app_path" is an application path (see <a href='https://golf-lang.com/request.html'>request</a>). By default it's "/&lt;application name&gt;". <br/>
-</li><li>"req" is a request path, i.e. a request name preceded by a forward slash, as in "/&lt;request name&gt;" (see <a href='https://golf-lang.com/request.html'>request</a>).</li></ul>
+</li><li>"app_path" is an application path (see <a href='https://rimstone-lang.com/request.html'>request</a>). By default it's "/&lt;application name&gt;". <br/>
+</li><li>"req" is a request path, i.e. a request name preceded by a forward slash, as in "/&lt;request name&gt;" (see <a href='https://rimstone-lang.com/request.html'>request</a>).</li></ul>
 <span style="font-weight:bold;">- Get Unix socket file</span><br/>
 To get Unix socket file path, use gg_dir() function, where "type" is the type of Golf's file or directory, "dir" is the string buffer for the path, "dir_size" is its size, "app" is the application name, and "user" is Operating System user name who owns the application (NULL if your own):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_449' class=notranslate>
-<span class="Type">size_t</span> gg_dir (<span class="Type">int</span> type, <span class="Type">char</span> *dir, <span class="Type">size_t</span> dir_size, <span class="Type">char</span> *app, <span class="Type">char</span> *user);</pre>
-<span id=golf_copied_449 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_449' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_449, code_449, golf_copied_449)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+size_t gg_dir (int type, char *dir, size_t dir_size, char *app, char *user);</pre>
+<span id=rimstone_copied_449 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_449' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_449, code_449, rimstone_copied_449)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Specifically to get the Unix socket file path, use GG_DIR_SOCKFILE for "type" parameter, and with "app-name" being the application name owned by you:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_451' class=notranslate>
-<span class="Type">char</span> dir[GG_MAX_OS_UDIR_LEN];
-gg_dir (GG_DIR_SOCKFILE, dir, <span class="Statement">sizeof</span>(dir), <span class="Constant">&quot;app-name&quot;</span>, <span class="Constant">NULL</span>);</pre>
-<span id=golf_copied_451 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_451' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_451, code_451, golf_copied_451)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+char dir[GG_MAX_OS_UDIR_LEN];
+gg_dir (GG_DIR_SOCKFILE, dir, sizeof(dir), &quot;app-name&quot;, NULL);</pre>
+<span id=rimstone_copied_451 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_451' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_451, code_451, rimstone_copied_451)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Note that you can use GG_DIR_USER to get user base directory (where all Golf files are for a given user), GG_DIR_APPS to get the directory under which all applications are, GG_DIR_APP to get the directory under which all application files are, GG_DIR_FILE to get the file directory, GG_DIR_TRACE to get the directory where stack trace files are, and GG_DIR_BLD to get the directory where Golf application executables are (see <a href='https://golf-lang.com/directories.html'>directories</a>). <br/>
+Note that you can use GG_DIR_USER to get user base directory (where all Golf files are for a given user), GG_DIR_APPS to get the directory under which all applications are, GG_DIR_APP to get the directory under which all application files are, GG_DIR_FILE to get the file directory, GG_DIR_TRACE to get the directory where stack trace files are, and GG_DIR_BLD to get the directory where Golf application executables are (see <a href='https://rimstone-lang.com/directories.html'>directories</a>). <br/>
 <br/>
 <span style="font-weight:bold;">- URL parameters</span><br/>
-"url_params" is the URL parameters, meaning input parameters (as path segments and query string, see <a href='https://golf-lang.com/request.html'>request</a>). URL parameters can be NULL or empty, in which case it is not used.<br/>
+"url_params" is the URL parameters, meaning input parameters (as path segments and query string, see <a href='https://rimstone-lang.com/request.html'>request</a>). URL parameters can be NULL or empty, in which case it is not used.<br/>
 <br/>
 <span style="font-weight:bold;">- Request body (content)</span><br/>
 "req_body" is the request body, which can be any text or binary data. "content_type" is the content type of request body (for instance "application/json" or "image/jpg"). "content_len" is the length of request body in bytes. A request body is sent only if "content_type" and "req_body" are not NULL and not empty, and if "content_len" is greater than zero.<br/>
 <br/>
 <span style="font-weight:bold;">- Passing environment to service</span><br/>
-"env" is any environment variables that should be passed along to the service. You can access those in Golf via "environment" clause of <a href='https://golf-lang.com/get-sys.html'>get-sys</a> statement. This is an array of strings, where name/value pairs are specified one after the other, and which always must end with NULL. For example, if you want to use variable "REMOTE_USER" with value "John" and variable "MY_VARIABLE" with value "8000", then it might look like this:<br/>
+"env" is any environment variables that should be passed along to the service. You can access those in Golf via "environment" clause of <a href='https://rimstone-lang.com/get-sys.html'>get-sys</a> statement. This is an array of strings, where name/value pairs are specified one after the other, and which always must end with NULL. For example, if you want to use variable "REMOTE_USER" with value "John" and variable "MY_VARIABLE" with value "8000", then it might look like this:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_453' class=notranslate>
-<span class="Type">char</span> *env[<span class="Constant">5</span>];
-env[<span class="Constant">0</span>] = <span class="Constant">&quot;REMOTE_USER&quot;</span>;
-env[<span class="Constant">1</span>] = <span class="Constant">&quot;John&quot;</span>
-env[<span class="Constant">2</span>] = <span class="Constant">&quot;MY_VARIABLE&quot;</span>;
-env[<span class="Constant">3</span>] = <span class="Constant">&quot;8000&quot;</span>
-env[<span class="Constant">4</span>] = <span class="Constant">NULL</span>;</pre>
-<span id=golf_copied_453 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_453' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_453, code_453, golf_copied_453)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+char *env[5];
+env[0] = &quot;REMOTE_USER&quot;;
+env[1] = &quot;John&quot;
+env[2] = &quot;MY_VARIABLE&quot;;
+env[3] = &quot;8000&quot;
+env[4] = NULL;</pre>
+<span id=rimstone_copied_453 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_453' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_453, code_453, rimstone_copied_453)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Thus, if you are passing N environment variables to the service, you must size "env" as "char*" array with 2*N+1 elements. <br/>
 <br/>
-Note that in order to suppress output of HTTP headers from the service, you can include environment variable "GG_SILENT_HEADER" with value "yes"; to let the service control headers output (either by default, with "-z" option of <a href='https://golf-lang.com/mgrg.html'>mgrg</a> or with <a href='https://golf-lang.com/silent-header.html'>silent-header</a>) simply omit this environment variable.<br/>
+Note that in order to suppress output of HTTP headers from the service, you can include environment variable "GG_SILENT_HEADER" with value "yes"; to let the service control headers output (either by default, with "-z" option of <a href='https://rimstone-lang.com/mgrg.html'>mgrg</a> or with <a href='https://rimstone-lang.com/silent-header.html'>silent-header</a>) simply omit this environment variable.<br/>
 <br/>
 <span style="font-weight:bold;">- Timeout</span><br/>
 "timeout" is the number of seconds a call to the service should not exceed. For instance if the remote service is taking too long or if the network connection is too slow, you can limit how long to wait for a reply. If there is no timeout, then "timeout" value should be zero. Note that DNS resolution of the host name (in case you are using a TCP socket) is not counted in timeout. Maximum value for timeout is 86400.<br/>
@@ -377,67 +377,67 @@ The following are possible return values from "gg_cli_request()" (available in "
 </li><li>GG_CLI_ERR_TIMEOUT if the request timed out based on "timeout" parameter or otherwise if the underlying Operating System libraries declared their own timeout.</li></ul>
 You can obtain the error message (corresponding to the above return values) in "errm" member of "gg_cli" type.<br/>
 <div class="vsub"><a id="Server reply"></a>Server reply</div>
-The service reply is split in two. One part is the actual result of processing (called "stdout" or standard output), and that is "data". The other is the error messages (called "stderr" or standard error), and that's "error". All of service output goes to "data", except from <a href='https://golf-lang.com/report-error.html'>report-error</a> and <a href='https://golf-lang.com/print-format.html'>print-format</a> (with "to-error" clause) which goes to "error". Note that "data" and "error" streams can be co-mingled when output by the service, but they will be obtained separately. This allows for clean separation of output from any error messages.<br/>
+The service reply is split in two. One part is the actual result of processing (called "stdout" or standard output), and that is "data". The other is the error messages (called "stderr" or standard error), and that's "error". All of service output goes to "data", except from <a href='https://rimstone-lang.com/report-error.html'>report-error</a> and <a href='https://rimstone-lang.com/print-format.html'>print-format</a> (with "to-error" clause) which goes to "error". Note that "data" and "error" streams can be co-mingled when output by the service, but they will be obtained separately. This allows for clean separation of output from any error messages.<br/>
 <br/>
 You can obtain service reply when it's ready in its entirety (likely most often used), or as it comes alone bit by bit (see more about asynchronous hooks further here).<br/>
 <div class="vsub"><a id="Status of request execution"></a>Status of request execution</div>
-"req_status" member of "gg_cli" type is the request status when a request had executed; it is somewhat similar to an exit status of a program. A Golf service request returns status by means of <a href='https://golf-lang.com/exit-status.html'>exit-status</a> statement. Note that "req_status" is valid only if "gg_cli_request()" returned GG_OKAY (or if "return_code" is GG_OKAY for multi-threaded programs).<br/>
+"req_status" member of "gg_cli" type is the request status when a request had executed; it is somewhat similar to an exit status of a program. A Golf service request returns status by means of <a href='https://rimstone-lang.com/exit-status.html'>exit-status</a> statement. Note that "req_status" is valid only if "gg_cli_request()" returned GG_OKAY (or if "return_code" is GG_OKAY for multi-threaded programs).<br/>
 <div class="vsub"><a id="Getting data reply (stdout)"></a>Getting data reply (stdout)</div>
 Data returned from a request is valid only if "gg_cli_request()" returned GG_OKAY (or if "return_code" is GG_OKAY for multi-threaded programs). In that case, use "gg_cli_data()" function, for example:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_455' class=notranslate>
-<span class="Comment">// Declare and initialize request variable</span>
-gg_cli req = {<span class="Constant">0</span>};
-<span class="Comment">// Setup the req variable</span>
-<span class="Statement">.</span>..
-<span class="Comment">// Execute request</span>
-<span class="Statement">if</span> (gg_cli_request (&amp;req) == GG_OKAY) {
-    <span class="Type">char</span> *data = gg_cli_data (req); <span class="Comment">// data response</span>
-    <span class="Type">int</span> data_len = req-&gt;data_len; <span class="Comment">// length of data response in bytes</span>
-<span class="Statement">}</span></pre>
-<span id=golf_copied_455 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_455' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_455, code_455, golf_copied_455)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+// Declare and initialize request variable
+gg_cli req = {0};
+// Setup the req variable
+...
+// Execute request
+if (gg_cli_request (&amp;req) == GG_OKAY) {
+    char *data = gg_cli_data (req); // data response
+    int data_len = req-&gt;data_len; // length of data response in bytes
+}</pre>
+<span id=rimstone_copied_455 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_455' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_455, code_455, rimstone_copied_455)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 "data_len" member of "gg_cli" type will have the length of data response in bytes. The reply is always null-terminated as a courtesy, and "data_len" does not include the terminating null byte.<br/>
 <br/>
-"gg_cli_data()" returns the actual response (i.e. data output) from service as passed to "data" stream. Any output from service will go there, except when "to-error" clause is used in <a href='https://golf-lang.com/print-format.html'>print-format</a> - use these constructs to output errors without stopping the service execution. Additionally, the output of <a href='https://golf-lang.com/report-error.html'>report-error</a> will also not go to data output.<br/>
+"gg_cli_data()" returns the actual response (i.e. data output) from service as passed to "data" stream. Any output from service will go there, except when "to-error" clause is used in <a href='https://rimstone-lang.com/print-format.html'>print-format</a> - use these constructs to output errors without stopping the service execution. Additionally, the output of <a href='https://rimstone-lang.com/report-error.html'>report-error</a> will also not go to data output.<br/>
 <div class="vsub"><a id="Getting error reply (stderr)"></a>Getting error reply (stderr)</div>
 An error reply returned from a service is valid only if "gg_cli_request()" returned GG_OKAY (or if "return_code" is GG_OKAY for multi-threaded programs). In that case, use "gg_cli_error()" function, for example:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_456' class=notranslate>
-<span class="Comment">// Declare and initialize request variable</span>
-gg_cli req = {<span class="Constant">0</span>};
-<span class="Comment">// Setup the req variable</span>
-<span class="Statement">.</span>..
-<span class="Comment">// Execute request</span>
-<span class="Statement">if</span> (gg_cli_request (&amp;req) == GG_OKAY) {
-    <span class="Type">char</span> *err = gg_cli_error (req); <span class="Comment">// error response</span>
-    <span class="Type">int</span> err_len = req-&gt;error_len; <span class="Comment">// length of error response in bytes</span>
-<span class="Statement">}</span></pre>
-<span id=golf_copied_456 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_456' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_456, code_456, golf_copied_456)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+// Declare and initialize request variable
+gg_cli req = {0};
+// Setup the req variable
+...
+// Execute request
+if (gg_cli_request (&amp;req) == GG_OKAY) {
+    char *err = gg_cli_error (req); // error response
+    int err_len = req-&gt;error_len; // length of error response in bytes
+}</pre>
+<span id=rimstone_copied_456 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_456' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_456, code_456, rimstone_copied_456)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-"gg_cli_error()" returns any error messages from a service response, i.e. data passed to "error" stream. It is comprised of any service output when "to-error" clause is used in <a href='https://golf-lang.com/print-format.html'>print-format</a>, as well as any output from <a href='https://golf-lang.com/report-error.html'>report-error</a>. <br/>
+"gg_cli_error()" returns any error messages from a service response, i.e. data passed to "error" stream. It is comprised of any service output when "to-error" clause is used in <a href='https://rimstone-lang.com/print-format.html'>print-format</a>, as well as any output from <a href='https://rimstone-lang.com/report-error.html'>report-error</a>. <br/>
 <br/>
 "error_len" member (of "gg_cli" type above) will have the length of error response in bytes. The response is always null-terminated as a courtesy, and "error_len" does not include the terminating null byte.<br/>
 <div class="vsub"><a id="Freeing the result of a request"></a>Freeing the result of a request</div>
 Once you have obtained the result of a request, and when no longer needed, you should free it by using "gg_cli_delete()":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_457' class=notranslate>
-<span class="Comment">// Declare and initialize request variable</span>
-gg_cli req = {<span class="Constant">0</span>};
-<span class="Comment">// Setup the req variable</span>
-<span class="Statement">.</span>..
-<span class="Comment">// Execute request</span>
+// Declare and initialize request variable
+gg_cli req = {0};
+// Setup the req variable
+...
+// Execute request
 gg_cli_request (&amp;req);
-<span class="Comment">// .. Use the result ..</span>
-<span class="Comment">// Free request output (data and error streams)</span>
+// .. Use the result ..
+// Free request output (data and error streams)
 gg_cli_delete (&amp;req);</pre>
-<span id=golf_copied_457 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_457' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_457, code_457, golf_copied_457)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_457 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_457' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_457, code_457, rimstone_copied_457)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 If you do not free the result, your program may experience a memory leak. If your program exits right after issuing any request(s), you may skip freeing results as that is automatically done on exit by the Operating System. <br/>
 <br/>
@@ -446,10 +446,10 @@ You can use "gg_cli_delete()" regardless of whether "gg_cli_request()" returned 
 A function you wrote can be called when a request has completed. This is useful in multithreaded invocations, where you may want to receive complete request's results as they are available. To specify a completion hook, you must write a C function with the following signature and assign it to "done_hook" member of "gg_cli" typed variable:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_431' class=notranslate>
-<span class="Type">typedef</span> <span class="Type">void</span> (*gg_cli_done_hook)(<span class="Type">char</span> *recv, <span class="Type">int</span> recv_len, <span class="Type">char</span> *err, <span class="Type">int</span> err_len, gg_cli *req);</pre>
-<span id=golf_copied_431 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_431' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_431, code_431, golf_copied_431)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+typedef void (*gg_cli_done_hook)(char *recv, int recv_len, char *err, int err_len, gg_cli *req);</pre>
+<span id=rimstone_copied_431 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_431' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_431, code_431, rimstone_copied_431)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 "recv" is the request's data output, "recv_len" is its length in bytes, "err" is the request's error output, and "err_len" is its length in bytes. "req" is the request itself which you can use to obtain any other information about the request. In a single threaded environment, these are available as members of the request variable of "gg_cli" type used in the request, and there is not much use for a completion hook. <br/>
 <br/>
@@ -460,20 +460,20 @@ You can obtain the service's reply as it arrives by specifying read hooks. This 
 To specify a hook for data output (i.e. from stdout), you must write a C function with the following signature and assign it to "out_hook":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_432' class=notranslate>
-<span class="Type">typedef</span> <span class="Type">void</span> (*gg_cli_out_hook)(<span class="Type">char</span> *recv, <span class="Type">int</span> recv_len, gg_cli *req);</pre>
-<span id=golf_copied_432 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_432' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_432, code_432, golf_copied_432)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+typedef void (*gg_cli_out_hook)(char *recv, int recv_len, gg_cli *req);</pre>
+<span id=rimstone_copied_432 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_432' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_432, code_432, rimstone_copied_432)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 "recv" is the data received and "recv_len" is its length.<br/>
 <br/>
 To specify a hook for error output (i.e. from stderr), you must write a C function with the following signature and assign it to "err_hook":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_433' class=notranslate>
-<span class="Type">typedef</span> <span class="Type">void</span> (*gg_cli_err_hook)(<span class="Type">char</span> *err, <span class="Type">int</span> err_len, gg_cli *req);</pre>
-<span id=golf_copied_433 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_433' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_433, code_433, golf_copied_433)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+typedef void (*gg_cli_err_hook)(char *err, int err_len, gg_cli *req);</pre>
+<span id=rimstone_copied_433 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_433' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_433, code_433, rimstone_copied_433)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 "err" is the error received and "err_len" is its length.<br/>
 <br/>
@@ -484,94 +484,94 @@ To register these functions with "gg_cli_request()" function, assign their point
 For example, functions "get_output()" and "get_err()" will capture data as it arrives and print it out, and get_complete() will print the final result:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_434' class=notranslate>
-<span class="Comment">// Output hook</span>
-<span class="Type">void</span> get_output(<span class="Type">char</span> *d, <span class="Type">int</span> l, gg_cli *req)
-<span class="Statement">{</span>
-    printf(<span class="Constant">&quot;Got output of [</span><span class="Special">%.*s</span><span class="Constant">] of length [</span><span class="Special">%d</span><span class="Constant">] in thread [</span><span class="Special">%d</span><span class="Constant">]&quot;</span>, l, d, l, req-&gt;thread_id);
-<span class="Statement">}</span>
+// Output hook
+void get_output(char *d, int l, gg_cli *req)
+{
+    printf(&quot;Got output of [%.*s] of length [%d] in thread [%d]&quot;, l, d, l, req-&gt;thread_id);
+}
 
-<span class="Comment">// Error hook</span>
-<span class="Type">void</span> get_err(<span class="Type">char</span> *d, <span class="Type">int</span> l, gg_cli *req)
-<span class="Statement">{</span>
-    printf(<span class="Constant">&quot;Got error of [</span><span class="Special">%.*s</span><span class="Constant">] of length [</span><span class="Special">%d</span><span class="Constant">], status [</span><span class="Special">%d</span><span class="Constant">]&quot;</span>, l, d, l, req-&gt;req_status);
-<span class="Statement">}</span>
+// Error hook
+void get_err(char *d, int l, gg_cli *req)
+{
+    printf(&quot;Got error of [%.*s] of length [%d], status [%d]&quot;, l, d, l, req-&gt;req_status);
+}
 
-<span class="Comment">// Completion hook</span>
-<span class="Type">void</span> get_complete(<span class="Type">char</span> *data, <span class="Type">int</span> data_len, <span class="Type">char</span> *err, <span class="Type">int</span> err_len, gg_cli *req)
-<span class="Statement">{</span>
-    printf(<span class="Constant">&quot;Got data [</span><span class="Special">%.*s</span><span class="Constant">] of length [</span><span class="Special">%d</span><span class="Constant">] and error of [</span><span class="Special">%.*s</span><span class="Constant">] of length [</span><span class="Special">%d</span><span class="Constant">], status [</span><span class="Special">%d</span><span class="Constant">], thread [</span><span class="Special">%d</span><span class="Constant">]</span><span class="Special">\n</span><span class="Constant">&quot;</span>, data_len, data, data_len, err_len, err, err_len, req-&gt;req_status, req-&gt;thread_id);
-<span class="Statement">}</span>
+// Completion hook
+void get_complete(char *data, int data_len, char *err, int err_len, gg_cli *req)
+{
+    printf(&quot;Got data [%.*s] of length [%d] and error of [%.*s] of length [%d], status [%d], thread [%d]\n&quot;, data_len, data, data_len, err_len, err, err_len, req-&gt;req_status, req-&gt;thread_id);
+}
 
-<span class="Statement">.</span>..
+...
 
-gg_cli req = {<span class="Constant">0</span>};
-<span class="Statement">.</span>..
-<span class="Comment">// Register output and error hooks, as well as a completion hook</span>
+gg_cli req = {0};
+...
+// Register output and error hooks, as well as a completion hook
 req.out_hook = &amp;get_output;
 req.err_hook = &amp;get_err;
 req.done_hook = &amp;get_complete;</pre>
-<span id=golf_copied_434 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_434' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_434, code_434, golf_copied_434)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_434 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_434' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_434, code_434, rimstone_copied_434)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Multithreading"></a>Multithreading</div>
 The Golf client is MT-safe, meaning you can use it both in single-threaded and multi-threaded programs. Note that each thread must have its own copy of "gg_cli" request variable, since it provides both input and output parameters to a request call and as such cannot be shared between the threads.<br/>
 <div class="vsub"><a id="Usage"></a>Usage</div>
-Do not use this API directly with Golf - use <a href='https://golf-lang.com/call-remote.html'>call-remote</a> instead which is made specifically for use in .golf files. Otherwise, you can use this API with any client program.<br/>
+Do not use this API directly with Golf - use <a href='https://rimstone-lang.com/call-remote.html'>call-remote</a> instead which is made specifically for use in .golf files. Otherwise, you can use this API with any client program.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 <div class="vsub"><a id="Simple example"></a>Simple example</div>
 The following example is a simple demonstration, with minimum of options used. Copy the C code to file "cli.c" in a directory of its own:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_435' class=notranslate>
-<span class="PreProc">#include </span><span class="Constant">&quot;gcli.h&quot;</span>
+<span class="Comment">#include &quot;gcli.h&quot;</span>
 
-<span class="Type">void</span> main ()
-<span class="Statement">{</span>
-    <span class="Comment">// Request type gg_cli - create a request variable and zero it out</span>
-    gg_cli req = {<span class="Constant">0</span>};
+void main ()
+{
+    // Request type gg_cli - create a request variable and zero it out
+    gg_cli req = {0};
 
-    <span class="Comment">// get socket file to communicate with server</span>
-    <span class="Type">char</span> dir[GG_MAX_OS_UDIR_LEN];
-    gg_dir (GG_DIR_SOCKFILE, dir, <span class="Statement">sizeof</span>(dir), <span class="Constant">&quot;helloworld&quot;</span>, <span class="Constant">NULL</span>);
+    // get socket file to communicate with server
+    char dir[GG_MAX_OS_UDIR_LEN];
+    gg_dir (GG_DIR_SOCKFILE, dir, sizeof(dir), <span class="Constant">&quot;helloworld&quot;</span>, NULL);
     req.server = dir;
 
-    req.req_method = <span class="Constant">&quot;GET&quot;</span>; <span class="Comment">// GET HTTP method</span>
-    req.app_path = <span class="Constant">&quot;/helloworld&quot;</span>; <span class="Comment">// application path</span>
-    req.req = <span class="Constant">&quot;/hello-simple&quot;</span>; <span class="Comment">// request name</span>
+    req.req_method = <span class="Constant">&quot;GET&quot;</span>; // GET HTTP method
+    req.app_path = <span class="Constant">&quot;/helloworld&quot;</span>; // application path
+    req.req = <span class="Constant">&quot;/hello-simple&quot;</span>; // request name
 
-    <span class="Comment">// Make a request</span>
-    <span class="Type">int</span> res = gg_cli_request (&amp;req);
+    // Make a request
+    int res = gg_cli_request (&amp;req);
 
-    <span class="Comment">// Check return status, and if there's an error, display error code and the</span>
-    <span class="Comment">// corresponding error message. Otherwise, print out service response.</span>
-    <span class="Statement">if</span> (res != GG_OKAY) printf(<span class="Constant">&quot;Request failed [</span><span class="Special">%d</span><span class="Constant">] [</span><span class="Special">%s</span><span class="Constant">]</span><span class="Special">\n</span><span class="Constant">&quot;</span>, res, req.errm);
-    <span class="Statement">else</span> printf(<span class="Constant">&quot;</span><span class="Special">%s</span><span class="Constant">&quot;</span>, gg_cli_data(&amp;req));
+    // Check return status, and if there's an error, display error code and the
+    // corresponding error message. Otherwise, print out service response.
+    if (res != GG_OKAY) printf(<span class="Constant">&quot;Request failed [%d] [%s]\n&quot;</span>, res, req.errm);
+    else printf(<span class="Constant">&quot;%s&quot;</span>, gg_cli_data(&amp;req));
 
-    <span class="Comment">// Free up resources so there are no memory leaks</span>
+    // Free up resources so there are no memory leaks
     gg_cli_delete(&amp;req);
-<span class="Statement">}</span></pre>
-<span id=golf_copied_435 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_435' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_435, code_435, golf_copied_435)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+}</pre>
+<span id=rimstone_copied_435 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_435' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_435, code_435, rimstone_copied_435)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 To make this client application:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_443' class=notranslate>
 gcc <span class="Special">-o</span> cli cli.c <span class="PreProc">$(</span><span class="Special">gg </span><span class="Special">-i</span><span class="PreProc">)</span></pre>
-<span id=golf_copied_443 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_443' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_443, code_443, golf_copied_443)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_443 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_443' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_443, code_443, rimstone_copied_443)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In this case, you're using a Unix socket to communicate with the Golf service. To test with a Golf service handler, copy the following code to "hello_simple.golf" file in a separate directory:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_436' class=notranslate>
-<span class="Statement">begin-handler</span> /hello_simple<span class="Identifier"> public</span>
-<span class="Statement">   silent-header</span>
-<span class="Statement">   @</span>Hi there!
-<span class="Statement">end-handler</span></pre>
-<span id=golf_copied_436 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_436' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_436, code_436, golf_copied_436)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+begin-handler /hello_simple public
+   silent-header
+   @Hi there!
+end-handler</pre>
+<span id=rimstone_copied_436 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_436' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_436, code_436, rimstone_copied_436)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Create and make the Golf application and run it via local Unix socket:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
@@ -580,25 +580,25 @@ sudo mgrg <span class="Special">-i</span> <span class="Special">-u</span> <span 
 gg <span class="Special">-q</span>
 mgrg <span class="Special">-m</span> quit helloworld
 mgrg <span class="Special">-w</span> <span class="Constant">1</span> helloworld</pre>
-<span id=golf_copied_446 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_446' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_446, code_446, golf_copied_446)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_446 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_446' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_446, code_446, rimstone_copied_446)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Run the client:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_448' class=notranslate>
 ./cli</pre>
-<span id=golf_copied_448 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_448' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_448, code_448, golf_copied_448)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_448 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_448' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_448, code_448, rimstone_copied_448)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The output is, as expected:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_437' class=notranslate>
 Hi there!</pre>
-<span id=golf_copied_437 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_437' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_437, code_437, golf_copied_437)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_437 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_437' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_437, code_437, rimstone_copied_437)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Example with more options"></a>Example with more options</div>
 This example demonstrates using multiple options, including using TCP sockets connecting to a host and port number, environment variables, query string, request body and request execution timeout. It will also show the separation of "data" and "error" (i.e. stdout and stderr) streams from the service.<br/>
@@ -606,132 +606,132 @@ This example demonstrates using multiple options, including using TCP sockets co
 Copy this to file "cli1.c" in a directory of its own - note that in this example a server will run on localhost (127.0.0.1) and TCP port 2301:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_438' class=notranslate>
-<span class="PreProc">#include </span><span class="Constant">&quot;gcli.h&quot;</span>
+<span class="Comment">#include &quot;gcli.h&quot;</span>
 
-<span class="Type">void</span> main ()
-<span class="Statement">{</span>
-    <span class="Comment">// Request type gg_cli - create a request variable</span>
+void main ()
+{
+    // Request type gg_cli - create a request variable
     gg_cli req;
-    <span class="Comment">// Initialize request</span>
-    memset (&amp;req, <span class="Constant">0</span>, <span class="Statement">sizeof</span>(req));
+    // Initialize request
+    memset (&amp;req, 0, sizeof(req));
 
-    <span class="Comment">// Add </span><span class="Constant">3</span><span class="Comment"> environment variables (in the form of name, value, name, value, ... , NULL)</span>
-    <span class="Type">char</span> *env[] = { <span class="Constant">&quot;REMOTE_USER&quot;</span>, <span class="Constant">&quot;John&quot;</span>, <span class="Constant">&quot;SOME_VAR&quot;</span>, <span class="Constant">&quot;SOME</span><span class="Special">\n</span><span class="Constant">VALUE&quot;</span>, <span class="Constant">&quot;NEW_VAR&quot;</span>, <span class="Constant">&quot;1000&quot;</span>, <span class="Constant">NULL</span> };
+    // Add 3 environment variables (in the form of name, value, name, value, ... , NULL)
+    char *env[] = { <span class="Constant">&quot;REMOTE_USER&quot;</span>, <span class="Constant">&quot;John&quot;</span>, <span class="Constant">&quot;SOME_VAR&quot;</span>, <span class="Constant">&quot;SOME\nVALUE&quot;</span>, <span class="Constant">&quot;NEW_VAR&quot;</span>, <span class="Constant">&quot;1000&quot;</span>, NULL };
 
-    <span class="Comment">// Create a request</span>
-    <span class="Comment">// Environment variables to pass to service request</span>
+    // Create a request
+    // Environment variables to pass to service request
     req.env = env;
-    <span class="Comment">// Server IP and port</span>
+    // Server IP and port
     req.server = <span class="Constant">&quot;127.0.0.1:2301&quot;</span>;
-    <span class="Comment">// Request method</span>
+    // Request method
     req.req_method = <span class="Constant">&quot;GET&quot;</span>;
-    <span class="Comment">// Application path</span>
+    // Application path
     req.app_path = <span class="Constant">&quot;/helloworld&quot;</span>;
-    <span class="Comment">// Request</span>
+    // Request
     req.req = <span class="Constant">&quot;/hello&quot;</span>;
-    <span class="Comment">// URL parameters (path and query string)</span>
+    // URL parameters (path and query string)
     req.url_params = <span class="Constant">&quot;par1=val1&amp;par2=91&quot;</span>;
-    <span class="Comment">// Content type</span>
+    // Content type
     req.content_type = <span class="Constant">&quot;application/json&quot;</span>;
-    <span class="Comment">// Content (i.e. request body)</span>
+    // Content (i.e. request body)
     req.req_body = <span class="Constant">&quot;This is request body&quot;</span>;
-    <span class="Comment">// Content length</span>
+    // Content length
     req.content_len = strlen (req.req_body);
-    <span class="Comment">// No timeout (set to </span><span class="Constant">0</span><span class="Comment">)</span>
-    req.timeout = <span class="Constant">0</span>;
+    // No timeout (set to 0)
+    req.timeout = 0;
 
-    <span class="Comment">// Make a request</span>
-    <span class="Type">int</span> res = gg_cli_request (&amp;req);
+    // Make a request
+    int res = gg_cli_request (&amp;req);
 
-    <span class="Comment">// Check return status, and if there's an error, display error code and the</span>
-    <span class="Comment">// corresponding error message</span>
-    <span class="Statement">if</span> (res != GG_OKAY) printf(<span class="Constant">&quot;Request failed [</span><span class="Special">%d</span><span class="Constant">] [</span><span class="Special">%s</span><span class="Constant">]</span><span class="Special">\n</span><span class="Constant">&quot;</span>, res, req.errm);
-    <span class="Statement">else</span> {
-       <span class="Comment">// If successful, display request results</span>
-       <span class="Comment">// Exit code from the service processing</span>
-       printf(<span class="Constant">&quot;Server status </span><span class="Special">%d</span><span class="Special">\n</span><span class="Constant">&quot;</span>, req.req_status);
-       <span class="Comment">// Length of reply from service</span>
-       printf(<span class="Constant">&quot;Len of data </span><span class="Special">%d</span><span class="Special">\n</span><span class="Constant">&quot;</span>, req.data_len);
-       <span class="Comment">// Length of any error from service</span>
-       printf(<span class="Constant">&quot;Len of error </span><span class="Special">%d</span><span class="Special">\n</span><span class="Constant">&quot;</span>, req.error_len);
-       <span class="Comment">// Reply from service</span>
-       printf(<span class="Constant">&quot;Data [</span><span class="Special">%s</span><span class="Constant">]</span><span class="Special">\n</span><span class="Constant">&quot;</span>, gg_cli_data(&amp;req));
-       <span class="Comment">// Any error message from service</span>
-       printf(<span class="Constant">&quot;Error [</span><span class="Special">%s</span><span class="Constant">]</span><span class="Special">\n</span><span class="Constant">&quot;</span>, gg_cli_error(&amp;req));
-<span class="Statement">    }</span>
+    // Check return status, and if there's an error, display error code and the
+    // corresponding error message
+    if (res != GG_OKAY) printf(<span class="Constant">&quot;Request failed [%d] [%s]\n&quot;</span>, res, req.errm);
+    else {
+       // If successful, display request results
+       // Exit code from the service processing
+       printf(<span class="Constant">&quot;Server status %d\n&quot;</span>, req.req_status);
+       // Length of reply from service
+       printf(<span class="Constant">&quot;Len of data %d\n&quot;</span>, req.data_len);
+       // Length of any error from service
+       printf(<span class="Constant">&quot;Len of error %d\n&quot;</span>, req.error_len);
+       // Reply from service
+       printf(<span class="Constant">&quot;Data [%s]\n&quot;</span>, gg_cli_data(&amp;req));
+       // Any error message from service
+       printf(<span class="Constant">&quot;Error [%s]\n&quot;</span>, gg_cli_error(&amp;req));
+    }
 
-    <span class="Comment">// Free up resources so there are no memory leaks</span>
+    // Free up resources so there are no memory leaks
     gg_cli_delete(&amp;req);
-<span class="Statement">}</span></pre>
-<span id=golf_copied_438 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_438' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_438, code_438, golf_copied_438)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+}</pre>
+<span id=rimstone_copied_438 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_438' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_438, code_438, rimstone_copied_438)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Note that the URL parameters (i.e. "req.url_params") could have been written as a combination of a path segment and query string (see <a href='https://golf-lang.com/request.html'>request</a>):<br/>
+Note that the URL parameters (i.e. "req.url_params") could have been written as a combination of a path segment and query string (see <a href='https://rimstone-lang.com/request.html'>request</a>):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_439' class=notranslate>
-req.url_params = <span class="Constant">&quot;/par1/val1?par2=91&quot;</span>;</pre>
-<span id=golf_copied_439 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_439' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_439, code_439, golf_copied_439)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+req.url_params = &quot;/par1/val1?par2=91&quot;;</pre>
+<span id=rimstone_copied_439 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_439' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_439, code_439, rimstone_copied_439)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 or just as a path segment:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_440' class=notranslate>
-req.url_params = <span class="Constant">&quot;/par1=val1/par2=91&quot;</span>;</pre>
-<span id=golf_copied_440 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_440' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_440, code_440, golf_copied_440)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+req.url_params = &quot;/par1=val1/par2=91&quot;;</pre>
+<span id=rimstone_copied_440 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_440' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_440, code_440, rimstone_copied_440)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 To make this client application:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_450' class=notranslate>
 gcc <span class="Special">-o</span> cli1 cli1.c <span class="PreProc">$(</span><span class="Special">gg </span><span class="Special">-i</span><span class="PreProc">)</span></pre>
-<span id=golf_copied_450 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_450' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_450, code_450, golf_copied_450)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_450 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_450' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_450, code_450, rimstone_copied_450)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 To test it, you can create a Golf application. Copy this to "hello.golf" file in a separate directory:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_444' class=notranslate>
-<span class="Statement">begin-handler</span> /hello<span class="Identifier"> public</span>
-<span class="Statement">    silent-header</span>
+begin-handler /hello public
+    silent-header
 
-    <span class="Comment">// Get request body</span>
-<span class="Statement">    request-body</span> rb
+    // Get request body
+    request-body rb
 
-    <span class="Comment">// Input params</span>
-<span class="Statement">    get-param</span> par1
-<span class="Statement">    get-param</span> par2
+    // Input params
+    get-param par1
+    get-param par2
 
-    <span class="Comment">// Get environment variables passed on from the client</span>
-<span class="Statement">    get-sys</span><span class="Identifier"> environment</span> <span class="Constant">&quot;REMOTE_USER&quot;</span><span class="Type"> to</span> ruser
-<span class="Statement">    get-sys</span><span class="Identifier"> environment</span> <span class="Constant">&quot;SOME_VAR&quot;</span><span class="Type"> to</span> somev
-<span class="Statement">    get-sys</span><span class="Identifier"> environment</span> <span class="Constant">&quot;NEW_VAR&quot;</span><span class="Type"> to</span> newv
+    // Get environment variables passed on from the client
+    get-sys environment &quot;REMOTE_USER&quot; to ruser
+    get-sys environment &quot;SOME_VAR&quot; to somev
+    get-sys environment &quot;NEW_VAR&quot; to newv
 
-    <span class="Comment">// Output, print the environment variables, the PID of server process and the request body received from the client</span>
-<span class="Statement">    get-req</span><span class="Identifier"> process-id</span><span class="Type"> to</span> pid
-<span class="Statement">    @</span>Hello World! [<span class="Statement">&lt;&lt;print-out</span> ruser<span class="Statement">&gt;&gt;</span>] [<span class="Statement">&lt;&lt;print-out</span> somev<span class="Statement">&gt;&gt;</span>] [<span class="Statement">&lt;&lt;print-out</span> newv<span class="Statement">&gt;&gt;</span>] [<span class="Statement">&lt;&lt;print-out</span> par1<span class="Statement">&gt;&gt;</span>] [<span class="Statement">&lt;&lt;print-out</span> par2<span class="Statement">&gt;&gt;</span>] <span class="Statement">&lt;&lt;print-out</span> pid<span class="Statement">&gt;&gt;</span> <span class="Statement">&lt;&lt;print-out</span> rb<span class="Statement">&gt;&gt;</span>
+    // Output, print the environment variables, the PID of server process and the request body received from the client
+    get-req process-id to pid
+    @Hello World! [&lt;&lt;print-out ruser&gt;&gt;] [&lt;&lt;print-out somev&gt;&gt;] [&lt;&lt;print-out newv&gt;&gt;] [&lt;&lt;print-out par1&gt;&gt;] [&lt;&lt;print-out par2&gt;&gt;] &lt;&lt;print-out pid&gt;&gt; &lt;&lt;print-out rb&gt;&gt;
 
-    <span class="Comment">// Output back a number of lines, generally as </span><span class="Constant">&quot;Output line #&lt;num of line&gt;&quot;</span>
-    <span class="Comment">// After line #</span><span class="Constant">1418</span><span class="Comment">, print out </span><span class="Constant">&quot;Line 1419 has an error&quot;</span><span class="Comment"> to stderr</span>
-    <span class="Comment">// After line #</span><span class="Constant">4418</span><span class="Comment">, report an error and exit</span>
-    <span class="Comment">// This demonstrates outputting data to both stdout and stderr</span>
-<span class="Statement">    start-loop</span><span class="Identifier"> repeat</span> <span class="Constant">8000</span><span class="Type"> use</span> i<span class="Identifier"> start-with</span> <span class="Constant">0</span>
-<span class="Statement">        @</span>Output line #<span class="Statement">&lt;&lt;print-out</span> i<span class="Statement">&gt;&gt;</span>
-<span class="Statement">        if-true</span> i<span class="Identifier"> equal</span> <span class="Constant">1419</span>
-<span class="Statement">            print-format</span> <span class="Constant">&quot;Line </span><span class="Special">%ld</span><span class="Constant"> has an error</span><span class="Special">\n</span><span class="Constant">&quot;</span>, i<span class="Identifier"> to-error</span>
-<span class="Statement">        end-if</span>
-<span class="Statement">        if-true</span> i<span class="Identifier"> equal</span> <span class="Constant">4419</span>
-            <span class="Comment">// Exit code of the service execution</span>
-<span class="Statement">            exit-status</span> <span class="Constant">82</span>
-<span class="Statement">            report-error</span> <span class="Constant">&quot;</span><span class="Special">%s</span><span class="Constant">&quot;</span>, <span class="Constant">&quot;Some error!&quot;</span>
-<span class="Statement">        end-if</span>
-<span class="Statement">    end-loop</span>
-<span class="Statement">end-handler</span></pre>
-<span id=golf_copied_444 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_444' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_444, code_444, golf_copied_444)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+    // Output back a number of lines, generally as &quot;Output line #&lt;num of line&gt;&quot;
+    // After line #1418, print out &quot;Line 1419 has an error&quot; to stderr
+    // After line #4418, report an error and exit
+    // This demonstrates outputting data to both stdout and stderr
+    start-loop repeat 8000 use i start-with 0
+        @Output line #&lt;&lt;print-out i&gt;&gt;
+        if-true i equal 1419
+            print-format &quot;Line %ld has an error\n&quot;, i to-error
+        end-if
+        if-true i equal 4419
+            // Exit code of the service execution
+            exit-status 82
+            report-error &quot;%s&quot;, &quot;Some error!&quot;
+        end-if
+    end-loop
+end-handler</pre>
+<span id=rimstone_copied_444 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_444' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_444, code_444, rimstone_copied_444)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Create and make the Golf application and run it on local TCP port 2301 to match the client above:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
@@ -740,21 +740,21 @@ sudo mgrg <span class="Special">-i</span> <span class="Special">-u</span> <span 
 gg <span class="Special">-q</span>
 mgrg <span class="Special">-m</span> quit helloworld
 mgrg <span class="Special">-w</span> <span class="Constant">1</span> <span class="Special">-p</span> <span class="Constant">2301</span> helloworld</pre>
-<span id=golf_copied_452 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_452' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_452, code_452, golf_copied_452)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_452 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_452' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_452, code_452, rimstone_copied_452)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Run the client:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_454' class=notranslate>
 ./cli1</pre>
-<span id=golf_copied_454 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_454' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_454, code_454, golf_copied_454)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_454 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_454' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_454, code_454, rimstone_copied_454)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The output:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_442' class=notranslate>
+<pre id='code_441' class=notranslate>
 Server status 82
 Len of data 78530
 Len of error 35
@@ -781,21 +781,21 @@ Output line #4419
 Error [Line 1419 has an error
 Some error!
 ]</pre>
-<span id=golf_copied_442 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_442' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_442, code_442, golf_copied_442)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_441 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_441' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_441, code_441, rimstone_copied_441)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-The output shows service exit code (82, see <a href='https://golf-lang.com/exit-status.html'>exit-status</a> in the Golf code above), length of data output, and other information which includes environment variables passed to the service from the client, the PID of server process, the request body from the client, and then the error output. Note that the data output (stdout) and the error output (stderr) are separated, since the protocol does use separate streams over the same connection. This makes working with the output easy, while the data transfer is fast at the same time.<br/>
+The output shows service exit code (82, see <a href='https://rimstone-lang.com/exit-status.html'>exit-status</a> in the Golf code above), length of data output, and other information which includes environment variables passed to the service from the client, the PID of server process, the request body from the client, and then the error output. Note that the data output (stdout) and the error output (stderr) are separated, since the protocol does use separate streams over the same connection. This makes working with the output easy, while the data transfer is fast at the same time.<br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='API'></a><span style="font-weight:bold;">API</span><br/>
-<a href='https://golf-lang.com/Client-API.html'>Client-API</a> &nbsp;<br/>
-<a href='https://golf-lang.com/Server-API.html'>Server-API</a> &nbsp; <br/>
+<a href='https://rimstone-lang.com/Client-API.html'>Client-API</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/Server-API.html'>Server-API</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
-<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
+<a href='https://rimstone-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
-<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://golf-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://rimstone-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
 </div><br/></body></html>
 
 

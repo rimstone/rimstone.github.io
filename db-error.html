@@ -11,7 +11,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="canonical" href="https://golf-lang.com/db-error.html" />
+<link rel="canonical" href="https://rimstone-lang.com/db-error.html" />
 <style>
 
 
@@ -232,56 +232,56 @@ function googleTranslateElementInit() {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Db error</div><hr/><span style="font-weight:bold;">Purpose</span>: Either exit request or continue processing when there is an error in a database statement.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Db error</div><hr/><span style="font-weight:bold;">Purpose</span>: Either exit request or continue processing when there is an error in a database statement.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_533' class=notranslate>
-<span class="Statement">db-error</span> [ @&lt;database&gt; ] (<span class="Identifier"> exit</span> |<span class="Identifier"> continue</span> )</pre>
-<span id=golf_copied_533 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_533' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_533, code_533, golf_copied_533)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+db-error [ @&lt;database&gt; ] ( exit | continue )</pre>
+<span id=rimstone_copied_533 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_533' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_533, code_533, rimstone_copied_533)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 db-error sets the response to the failure of database statements. You can change this response at run-time with each execution of db-error.<br/>
 <br/>
-When a database statement (like <a href='https://golf-lang.com/run-query.html'>run-query</a>) fails, Golf will either exit request processing if "exit" is used, or continue if "continue" is used. "Exiting" is equivalent to calling <a href='https://golf-lang.com/report-error.html'>report-error</a> with the message containing details about the error. "Continuing" means that your program will continue but you should examine error code (see for instance "error" clause in <a href='https://golf-lang.com/run-query.html'>run-query</a>).<br/>
+When a database statement (like <a href='https://rimstone-lang.com/run-query.html'>run-query</a>) fails, Golf will either exit request processing if "exit" is used, or continue if "continue" is used. "Exiting" is equivalent to calling <a href='https://rimstone-lang.com/report-error.html'>report-error</a> with the message containing details about the error. "Continuing" means that your program will continue but you should examine error code (see for instance "error" clause in <a href='https://rimstone-lang.com/run-query.html'>run-query</a>).<br/>
 <br/>
 The default action is "exit". You can switch back and forth between "exit" and "continue". Typically, "exit" is preferable because errors in database statemets generally mean application or setup issues, however "continue" may be used when application wants to attempt to recover from errors or perform other actions.<br/>
 <br/>
-Note that you can override the effect of db-error for a specific database statement by using clauses like "on-error-continue" and "on-error-exit" in <a href='https://golf-lang.com/run-query.html'>run-query</a>.<br/>
+Note that you can override the effect of db-error for a specific database statement by using clauses like "on-error-continue" and "on-error-exit" in <a href='https://rimstone-lang.com/run-query.html'>run-query</a>.<br/>
 <div class="vsub"><a id="Database"></a>Database</div>
-&lt;database&gt; is specified in "@" clause and is the name of the <a href='https://golf-lang.com/database-config-file.html'>database-config-file</a>. If omitted, your program must use exactly one database (see --db option in <a href='https://golf-lang.com/gg.html'>gg</a>).<br/>
+&lt;database&gt; is specified in "@" clause and is the name of the <a href='https://rimstone-lang.com/database-config-file.html'>database-config-file</a>. If omitted, your program must use exactly one database (see --db option in <a href='https://rimstone-lang.com/gg.html'>gg</a>).<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 The following will not exit when errors happen going forward, but rather continue execution (and you should check every error henceforth):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_534' class=notranslate>
-<span class="Statement">db-error</span> @mydb<span class="Identifier"> continue</span></pre>
-<span id=golf_copied_534 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_534' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_534, code_534, golf_copied_534)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+db-error @mydb continue</pre>
+<span id=rimstone_copied_534 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_534' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_534, code_534, rimstone_copied_534)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Database'></a><span style="font-weight:bold;">Database</span><br/>
-<a href='https://golf-lang.com/begin-transaction.html'>begin-transaction</a> &nbsp;<br/>
-<a href='https://golf-lang.com/commit-transaction.html'>commit-transaction</a> &nbsp;<br/>
-<a href='https://golf-lang.com/current-row.html'>current-row</a> &nbsp;<br/>
-<a href='https://golf-lang.com/database-config-file.html'>database-config-file</a> &nbsp;<br/>
-<a href='https://golf-lang.com/db-error.html'>db-error</a> &nbsp;<br/>
-<a href='https://golf-lang.com/mariadb-database.html'>mariadb-database</a> &nbsp;<br/>
-<a href='https://golf-lang.com/postgresql-database.html'>postgresql-database</a> &nbsp;<br/>
-<a href='https://golf-lang.com/rollback-transaction.html'>rollback-transaction</a> &nbsp;<br/>
-<a href='https://golf-lang.com/run-query.html'>run-query</a> &nbsp;<br/>
-<a href='https://golf-lang.com/sqlite-database.html'>sqlite-database</a> &nbsp; <br/>
+<a href='https://rimstone-lang.com/begin-transaction.html'>begin-transaction</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/commit-transaction.html'>commit-transaction</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/current-row.html'>current-row</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/database-config-file.html'>database-config-file</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/db-error.html'>db-error</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/mariadb-database.html'>mariadb-database</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/postgresql-database.html'>postgresql-database</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/rollback-transaction.html'>rollback-transaction</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/run-query.html'>run-query</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/sqlite-database.html'>sqlite-database</a> &nbsp; <br/>
  <a name='Error handling'></a><span style="font-weight:bold;">Error handling</span><br/>
-<a href='https://golf-lang.com/db-error.html'>db-error</a> &nbsp;<br/>
-<a href='https://golf-lang.com/error-code.html'>error-code</a> &nbsp;<br/>
-<a href='https://golf-lang.com/error-handling.html'>error-handling</a> &nbsp;<br/>
-<a href='https://golf-lang.com/report-error.html'>report-error</a> &nbsp; <br/>
+<a href='https://rimstone-lang.com/db-error.html'>db-error</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/error-code.html'>error-code</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/error-handling.html'>error-handling</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/report-error.html'>report-error</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
-<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
+<a href='https://rimstone-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
-<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://golf-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://rimstone-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
 </div><br/></body></html>
 
 

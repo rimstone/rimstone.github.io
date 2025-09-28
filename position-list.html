@@ -11,7 +11,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="canonical" href="https://golf-lang.com/position-list.html" />
+<link rel="canonical" href="https://rimstone-lang.com/position-list.html" />
 <style>
 
 
@@ -232,18 +232,18 @@ function googleTranslateElementInit() {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Position list</div><hr/><span style="font-weight:bold;">Purpose</span>: Set current element in a linked list.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Position list</div><hr/><span style="font-weight:bold;">Purpose</span>: Set current element in a linked list.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_846' class=notranslate>
-<span class="Statement">position-list</span> &lt;list&gt; \
-    [<span class="Identifier"> first</span> |<span class="Identifier"> last</span> |<span class="Identifier"> end</span> |<span class="Identifier"> previous</span> |<span class="Identifier"> next</span> | \
-    [<span class="Type"> status</span> &lt;status&gt; ]</pre>
-<span id=golf_copied_846 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_846' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_846, code_846, golf_copied_846)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+position-list &lt;list&gt; \
+    [ first | last | end | previous | next | \
+    [ status &lt;status&gt; ]</pre>
+<span id=rimstone_copied_846 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_846' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_846, code_846, rimstone_copied_846)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-position-list changes the current element of linked &lt;list&gt;. A current element is the one that is read with <a href='https://golf-lang.com/read-list.html'>read-list</a>. A newly added element is written with <a href='https://golf-lang.com/write-list.html'>write-list</a> by inserting it just before the current element, thus becoming a new current element. Reading from &lt;list&gt; does not change its current element; use position-list to explicitly change it.<br/>
+position-list changes the current element of linked &lt;list&gt;. A current element is the one that is read with <a href='https://rimstone-lang.com/read-list.html'>read-list</a>. A newly added element is written with <a href='https://rimstone-lang.com/write-list.html'>write-list</a> by inserting it just before the current element, thus becoming a new current element. Reading from &lt;list&gt; does not change its current element; use position-list to explicitly change it.<br/>
 <br/>
 To position to the first element, use "first" clause. Use "last" clause to make the last element the current one. Use "previous" and "next" to change the current element to just before or just after it. <br/>
 <br/>
@@ -256,37 +256,37 @@ If you attempt to position prior to the first element, after the end of &lt;list
 Position to the next element in list:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_847' class=notranslate>
-<span class="Statement">position-list</span> mylist<span class="Identifier"> next</span><span class="Type"> status</span> st
-<span class="Statement">if-true</span> st<span class="Identifier"> equal</span> GG_ERR_EXIST
-<span class="Statement">    @</span>Beyond the end of list
-<span class="Statement">end-if</span></pre>
-<span id=golf_copied_847 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_847' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_847, code_847, golf_copied_847)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+position-list mylist next status st
+if-true st equal GG_ERR_EXIST
+    @Beyond the end of list
+end-if</pre>
+<span id=rimstone_copied_847 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_847' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_847, code_847, rimstone_copied_847)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Position to the first element in list:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_848' class=notranslate>
-<span class="Statement">position-list</span> mylist<span class="Identifier"> first</span></pre>
-<span id=golf_copied_848 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_848' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_848, code_848, golf_copied_848)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+position-list mylist first</pre>
+<span id=rimstone_copied_848 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_848' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_848, code_848, rimstone_copied_848)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Linked list'></a><span style="font-weight:bold;">Linked list</span><br/>
-<a href='https://golf-lang.com/delete-list.html'>delete-list</a> &nbsp;<br/>
-<a href='https://golf-lang.com/get-list.html'>get-list</a> &nbsp;<br/>
-<a href='https://golf-lang.com/new-list.html'>new-list</a> &nbsp;<br/>
-<a href='https://golf-lang.com/position-list.html'>position-list</a> &nbsp;<br/>
-<a href='https://golf-lang.com/purge-list.html'>purge-list</a> &nbsp;<br/>
-<a href='https://golf-lang.com/read-list.html'>read-list</a> &nbsp;<br/>
-<a href='https://golf-lang.com/write-list.html'>write-list</a> &nbsp; <br/>
+<a href='https://rimstone-lang.com/delete-list.html'>delete-list</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/get-list.html'>get-list</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/new-list.html'>new-list</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/position-list.html'>position-list</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/purge-list.html'>purge-list</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/read-list.html'>read-list</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/write-list.html'>write-list</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
-<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
+<a href='https://rimstone-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
-<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://golf-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://rimstone-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
 </div><br/></body></html>
 
 

@@ -11,7 +11,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="canonical" href="https://golf-lang.com/article-distributed.html" />
+<link rel="canonical" href="https://rimstone-lang.com/article-distributed.html" />
 <style>
 
 
@@ -232,7 +232,7 @@ function googleTranslateElementInit() {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>How to write distributed applications</div><hr/><br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>How to write distributed applications</div><hr/><br/>
 <br/><div class='vimg'><img class='imgs' src='distributed_computing.png' alt='Golf'></img>
 </div><br/>
 <div class="vsub"><a id="What is distributed computing"></a>What is distributed computing</div>
@@ -260,58 +260,58 @@ On a local server, create a new directory for your local application server sour
 <pre id='code_64' class=notranslate>
 <span class="Statement">mkdir</span> <span class="PreProc">$HOME</span>/local_server
 <span class="Statement">cd</span> <span class="PreProc">$HOME</span>/local_server</pre>
-<span id=golf_copied_64 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_64' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_64, code_64, golf_copied_64)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_64 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_64' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_64, code_64, rimstone_copied_64)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 and then create a new file "status.golf" with the following:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_62' class=notranslate>
-<span class="Statement">begin-handler</span> /status<span class="Identifier"> public</span>
-<span class="Statement">    silent-header</span>
-<span class="Statement">    get-param</span> server
-<span class="Statement">    get-param</span> days
+<pre id='code_63' class=notranslate>
+begin-handler /status public
+    silent-header
+    get-param server
+    get-param days
 
-<span class="Statement">    print-format</span> <span class="Constant">&quot;/server/remote-status/days=</span><span class="Special">%s</span><span class="Constant">&quot;</span>, days<span class="Identifier"> to</span> payload
-<span class="Statement">    print-format</span> <span class="Constant">&quot;</span><span class="Special">%s</span><span class="Constant">:3800&quot;</span>, server<span class="Identifier"> to</span> srv_location
+    print-format &quot;/server/remote-status/days=%s&quot;, days to payload
+    print-format &quot;%s:3800&quot;, server to srv_location
 
-<span class="Statement">    new-remote</span> srv<span class="Identifier"> location</span> srv_location \
-       <span class="Identifier"> method</span> <span class="Constant">&quot;GET&quot;</span><span class="Identifier"> url-path</span> payload \
-       <span class="Identifier"> timeout</span> <span class="Constant">30</span>
+    new-remote srv location srv_location \
+        method &quot;GET&quot; url-path payload \
+        timeout 30
 
-<span class="Statement">    call-remote</span> srv
-<span class="Statement">    read-remote</span> srv<span class="Identifier"> data</span> dt
-<span class="Statement">    @</span>Output is: [<span class="Statement">&lt;&lt;print-out</span> dt<span class="Statement">&gt;&gt;</span>]
-<span class="Statement">end-handler</span></pre>
-<span id=golf_copied_62 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_62' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_62, code_62, golf_copied_62)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+    call-remote srv
+    read-remote srv data dt
+    @Output is: [&lt;&lt;print-out dt&gt;&gt;]
+end-handler</pre>
+<span id=rimstone_copied_63 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_63' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_63, code_63, rimstone_copied_63)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-The code here is very simple. <a href='https://golf-lang.com/new-remote.html'>new-remote</a> will create a new connection to a remote server, running on IP address given by input parameter "server" (and obtained with <a href='https://golf-lang.com/get-param.html'>get-param</a>) on TCP port 3800. URL payload created in string variable "payload" is passed to the remote server. If it doesn't reply in 30 seconds, then the code would timeout. Then you're using <a href='https://golf-lang.com/call-remote.html'>call-remote</a> to actually make a call to the remote server (which is served by application "server" and by request handler "remote-status.golf" below), and finally <a href='https://golf-lang.com/read-remote.html'>read-remote</a> to get the reply from it. For simplicity, error handling is omitted here, but you can easily detect a timeout, any network errors, any errors from the remote server, including error code and error text, etc. See the above statements for more on this.<br/>
+The code here is very simple. <a href='https://rimstone-lang.com/new-remote.html'>new-remote</a> will create a new connection to a remote server, running on IP address given by input parameter "server" (and obtained with <a href='https://rimstone-lang.com/get-param.html'>get-param</a>) on TCP port 3800. URL payload created in string variable "payload" is passed to the remote server. If it doesn't reply in 30 seconds, then the code would timeout. Then you're using <a href='https://rimstone-lang.com/call-remote.html'>call-remote</a> to actually make a call to the remote server (which is served by application "server" and by request handler "remote-status.golf" below), and finally <a href='https://rimstone-lang.com/read-remote.html'>read-remote</a> to get the reply from it. For simplicity, error handling is omitted here, but you can easily detect a timeout, any network errors, any errors from the remote server, including error code and error text, etc. See the above statements for more on this.<br/>
 <div class="vsub"><a id="Make and start the local server"></a>Make and start the local server</div>
 Next, create a local application:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_67' class=notranslate>
 gg <span class="Special">-k</span> client</pre>
-<span id=golf_copied_67 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_67' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_67, code_67, golf_copied_67)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_67 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_67' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_67, code_67, rimstone_copied_67)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Make the application (i.e. compile the source code and build the native executable):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_69' class=notranslate>
 gg <span class="Special">-q</span></pre>
-<span id=golf_copied_69 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_69' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_69, code_69, golf_copied_69)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_69 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_69' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_69, code_69, rimstone_copied_69)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Finally, start the local application server:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_70' class=notranslate>
 mgrg <span class="Special">-w</span> <span class="Constant">2</span> client</pre>
-<span id=golf_copied_70 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_70' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_70, code_70, golf_copied_70)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_70 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_70' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_70, code_70, rimstone_copied_70)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 This will start 2 server instances of a local application server.<br/>
 <div class="vsub"><a id="Remote server"></a>Remote server</div>
@@ -320,48 +320,48 @@ Okay, now you have a local server. Next, you'll setup a remote server. Login to 
 <pre id='code_71' class=notranslate>
 <span class="Statement">mkdir</span> <span class="PreProc">$HOME</span>/remote_server
 <span class="Statement">cd</span> <span class="PreProc">$HOME</span>/remote_server</pre>
-<span id=golf_copied_71 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_71' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_71, code_71, golf_copied_71)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_71 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_71' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_71, code_71, rimstone_copied_71)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Then create file "remote-status.golf" with this code:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_65' class=notranslate>
-<span class="Statement">begin-handler</span> /remote-status<span class="Identifier"> public</span>
-<span class="Statement">    silent-header</span>
-<span class="Statement">    get-param</span> days
+<pre id='code_66' class=notranslate>
+begin-handler /remote-status public
+    silent-header
+    get-param days
 
-<span class="Statement">    print-format</span> <span class="Constant">&quot;Status in the past </span><span class="Special">%s</span><span class="Constant"> days is okay&quot;</span>, days
-<span class="Statement">end-handler</span></pre>
-<span id=golf_copied_65 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_65' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_65, code_65, golf_copied_65)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+    print-format &quot;Status in the past %s days is okay&quot;, days
+end-handler</pre>
+<span id=rimstone_copied_66 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_66' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_66, code_66, rimstone_copied_66)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-This is super simple, and it just replies that the status is okay; it accepts the number of days to check for status and displays that back. In a real service, you might query a database to check for status (see <a href='https://golf-lang.com/run-query.html'>run-query</a>).<br/>
+This is super simple, and it just replies that the status is okay; it accepts the number of days to check for status and displays that back. In a real service, you might query a database to check for status (see <a href='https://rimstone-lang.com/run-query.html'>run-query</a>).<br/>
 <div class="vsub"><a id="Make and start remote server"></a>Make and start remote server</div>
 First create your application:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_72' class=notranslate>
 gg <span class="Special">-k</span> server</pre>
-<span id=golf_copied_72 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_72' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_72, code_72, golf_copied_72)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_72 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_72' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_72, code_72, rimstone_copied_72)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Then make your program:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_73' class=notranslate>
 gg <span class="Special">-q</span></pre>
-<span id=golf_copied_73 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_73' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_73, code_73, golf_copied_73)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_73 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_73' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_73, code_73, rimstone_copied_73)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 And finally start the server:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_74' class=notranslate>
 mgrg <span class="Special">-w</span> <span class="Constant">2</span> <span class="Special">-p</span> <span class="Constant">3800</span> server</pre>
-<span id=golf_copied_74 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_74' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_74, code_74, golf_copied_74)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_74 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_74' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_74, code_74, rimstone_copied_74)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 This will start 2 daemon processes running as background servers. They will serve requests from your local server.<br/>
 <br/>
@@ -371,30 +371,30 @@ There is a number of ways you can call the remote service you created. These are
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_75' class=notranslate>
 <span class="Statement">cd</span> <span class="PreProc">$HOME</span>/local_server</pre>
-<span id=golf_copied_75 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_75' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_75, code_75, golf_copied_75)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_75 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_75' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_75, code_75, rimstone_copied_75)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Here's various way to call the remote application server:<br/>
 <ul><li>Execute a command-line program on local server that calls remote application server:<br/>
 <br/><div class='vimg'><img class='imgs' src='distributed_command_line.png' alt='Golf'></img>
 </div><br/>
-To do this, use "-r" option of <a href='https://golf-lang.com/gg.html'>gg</a> utility to generate shell commands you can use to call your program:<br/>
+To do this, use "-r" option of <a href='https://rimstone-lang.com/gg.html'>gg</a> utility to generate shell commands you can use to call your program:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_59' class=notranslate>
 gg <span class="Special">-r</span> <span class="Special">--req</span> <span class="Statement">&quot;</span><span class="Constant">/status/days=18/server=127.0.0.1</span><span class="Statement">&quot;</span> <span class="Special">--exec</span></pre>
-<span id=golf_copied_59 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_59' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_59, code_59, golf_copied_59)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_59 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_59' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_59, code_59, rimstone_copied_59)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Here, you're saying that you want to make a request "status" (which is in source file "status.golf" on your local server). You are also saying that input parameter "days" should have a value of "18" and also that input parameter "server" should have a value of "127.0.0.1" - see <a href='https://golf-lang.com/get-param.html'>get-param</a> statements in the above file "status.golf". If you actually have a different server with a different IP, use it instead of "127.0.0.1". <br/>
+Here, you're saying that you want to make a request "status" (which is in source file "status.golf" on your local server). You are also saying that input parameter "days" should have a value of "18" and also that input parameter "server" should have a value of "127.0.0.1" - see <a href='https://rimstone-lang.com/get-param.html'>get-param</a> statements in the above file "status.golf". If you actually have a different server with a different IP, use it instead of "127.0.0.1". <br/>
 The result will be:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_63' class=notranslate>
+<pre id='code_62' class=notranslate>
 Output is: [Status in the past 18 days is okay]</pre>
-<span id=golf_copied_63 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_63' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_63, code_63, golf_copied_63)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_62 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_62' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_62, code_62, rimstone_copied_62)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 where the part in between "[..]" comes from the remote server, and the "Output is: " part comes from the command line Golf program you executed.<br/>
 </li><li>Call remote application server directly from a command-line program:<br/>
@@ -404,37 +404,37 @@ Do this:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_60' class=notranslate>
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/remote-status/days=18</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--service</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/server</span><span class="Statement">&quot;</span> <span class="Special">--remote</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">127.0.0.1:3800</span><span class="Statement">&quot;</span></pre>
-<span id=golf_copied_60 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_60' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_60, code_60, golf_copied_60)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_60 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_60' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_60, code_60, rimstone_copied_60)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The result is, as expected:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_66' class=notranslate>
+<pre id='code_65' class=notranslate>
 Status in the past 18 days is okay</pre>
-<span id=golf_copied_66 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_66' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_66, code_66, golf_copied_66)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_65 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_65' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_65, code_65, rimstone_copied_65)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In this case, the output comes straight from the remote server, so the "Output is: " part is missing. The above simply copies the output from a remote service to the standard output.<br/>
 </li><li>Use a command-line utility to contact local application server, which then calls the remote server, which replies back to local application server, which replies back to your command-line utility:<br/>
 <br/><div class='vimg'><img class='imgs' src='distributed_command_local.png' alt='Golf'></img>
 </div><br/>
-You will use <a href='https://golf-lang.com/gg.html'>gg</a> to do this:<br/>
+You will use <a href='https://rimstone-lang.com/gg.html'>gg</a> to do this:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_61' class=notranslate>
 gg <span class="Special">-r</span> <span class="Special">--req</span> <span class="Statement">&quot;</span><span class="Constant">/status/server=127.0.0.1/days=10</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--service</span></pre>
-<span id=golf_copied_61 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_61' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_61, code_61, golf_copied_61)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_61 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_61' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_61, code_61, rimstone_copied_61)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The result is:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
 <pre id='code_68' class=notranslate>
 Output is: [Status in the past 10 days is okay]</pre>
-<span id=golf_copied_68 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_68' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_68, code_68, golf_copied_68)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_68 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_68' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_68, code_68, rimstone_copied_68)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 which is what you'd expect. In this case we first send a request to your local application server, which sends it to a remote service, so there is "Output is: " output.<br/>
 </li></ul>
@@ -442,7 +442,7 @@ You have different options when designing your distributed systems, and this art
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
-<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://golf-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://rimstone-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
 </div><br/></body></html>
 
 

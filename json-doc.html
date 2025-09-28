@@ -11,7 +11,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="canonical" href="https://golf-lang.com/json-doc.html" />
+<link rel="canonical" href="https://rimstone-lang.com/json-doc.html" />
 <style>
 
 
@@ -232,23 +232,23 @@ function googleTranslateElementInit() {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Json doc</div><hr/><span style="font-weight:bold;">Purpose</span>: Parse JSON text.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Json doc</div><hr/><span style="font-weight:bold;">Purpose</span>: Parse JSON text.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_741' class=notranslate>
-<span class="Statement">json-doc</span> &lt;text&gt;<span class="Type"> to</span> &lt;json&gt; \
-    [<span class="Type"> status</span> &lt;status&gt; ] [<span class="Identifier"> length</span> &lt;length&gt; ] [<span class="Identifier"> noencode</span> ] [<span class="Identifier"> no-enum</span> ] \
-    [<span class="Type"> error-text</span> &lt;error text&gt; ] \
-        [<span class="Type"> error-position</span> &lt;error position&gt; ] \
-        [<span class="Type"> error-line</span> &lt;line&gt; ] \
-        [<span class="Type"> error-char</span> &lt;<span class="Type">char</span>&gt; ]
+<pre id='code_742' class=notranslate>
+json-doc &lt;text&gt; to &lt;json&gt; \
+    [ status &lt;status&gt; ] [ length &lt;length&gt; ] [ noencode ] [ no-enum ] \
+    [ error-text &lt;error text&gt; ] \
+        [ error-position &lt;error position&gt; ] \
+        [ error-line &lt;line&gt; ] \
+        [ error-char &lt;char&gt; ]
 
-<span class="Statement">json-doc</span> <span class="Identifier"> delete</span> &lt;json&gt;</pre>
-<span id=golf_copied_741 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_741' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_741, code_741, golf_copied_741)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+json-doc  delete &lt;json&gt;</pre>
+<span id=rimstone_copied_742 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_742' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_742, code_742, rimstone_copied_742)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-json-doc will parse JSON &lt;text&gt; into &lt;json&gt; variable, which can be used with <a href='https://golf-lang.com/read-json.html'>read-json</a> to get the data.<br/>
+json-doc will parse JSON &lt;text&gt; into &lt;json&gt; variable, which can be used with <a href='https://rimstone-lang.com/read-json.html'>read-json</a> to get the data.<br/>
 <br/>
 The length of &lt;text&gt; may be specified with "length" clause in &lt;length&gt; variable, or if not, it will be the string length of &lt;text&gt;.<br/>
 <br/>
@@ -256,62 +256,62 @@ The "status" clause specifies the return &lt;status&gt; number, which is GG_OKAY
 <br/>
 "noencode" clause will not encode strings, i.e. convert from JSON Unicode strings to UTF, nor will it perform any validity checks on strings. This may be useful as a performance boost or to pass along strings unencoded, however in most cases it is not needed.<br/>
 <br/>
-"no-enum" clause will not include indexing of arrays in normalized names (with "[..]"), see <a href='https://golf-lang.com/read-json.html'>read-json</a>. This is useful if you want to check the path of each data element, and not worry about counting them; this happens often when using JSON in a structured way to transfer arrays when data elements repeat in a predictable fashion. Parsing of JSON is also faster with "no-enum".<br/>
+"no-enum" clause will not include indexing of arrays in normalized names (with "[..]"), see <a href='https://rimstone-lang.com/read-json.html'>read-json</a>. This is useful if you want to check the path of each data element, and not worry about counting them; this happens often when using JSON in a structured way to transfer arrays when data elements repeat in a predictable fashion. Parsing of JSON is also faster with "no-enum".<br/>
 <br/>
-The maximum depth of nested structures in JSON document (i.e. objects and arrays) is 32, and the maximum length of normalized leaf node name is 1024 (see <a href='https://golf-lang.com/read-json.html'>read-json</a> for more on normalized names). There is no limit on document size.<br/>
+The maximum depth of nested structures in JSON document (i.e. objects and arrays) is 32, and the maximum length of normalized leaf node name is 1024 (see <a href='https://rimstone-lang.com/read-json.html'>read-json</a> for more on normalized names). There is no limit on document size.<br/>
 <div class="vsub"><a id="Deleting"></a>Deleting</div>
 To delete a JSON variable, use "delete" clause with the &lt;json&gt;. This will delete all memory associated with it, and the variable &lt;json&gt; itself.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
-Parse the following JSON document and display all keys and values from it. You can use them as they come along, or store them into <a href='https://golf-lang.com/new-hash.html'>new-hash</a> or <a href='https://golf-lang.com/new-tree.html'>new-tree</a> for instance for searching of large documents. This also demonstrates usage of UTF8 characters:<br/>
+Parse the following JSON document and display all keys and values from it. You can use them as they come along, or store them into <a href='https://rimstone-lang.com/new-hash.html'>new-hash</a> or <a href='https://rimstone-lang.com/new-tree.html'>new-tree</a> for instance for searching of large documents. This also demonstrates usage of UTF8 characters:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_743' class=notranslate>
 
-<span class="Comment">// JSON to parse</span>
-<span class="Statement">set-string</span> jd<span class="Identifier"> unquoted</span> = {<span class="Constant">&quot;menu&quot;</span>:\
-    {<span class="Constant">&quot;id&quot;</span>: <span class="Constant">&quot;file&quot;</span>,\
-    <span class="Constant">&quot;value&quot;</span>: <span class="Constant">23091</span>,\
-    <span class="Constant">&quot;active&quot;</span>: <span class="Constant">false</span>,\
-    <span class="Constant">&quot;popup&quot;</span>:\
-        {<span class="Constant">&quot;menuitem&quot;</span>:\
-            [{<span class="Constant">&quot;value&quot;</span>: <span class="Constant">&quot;New&quot;</span>, <span class="Constant">&quot;onclick&quot;</span>: <span class="Constant">&quot;CreateNewDoc with</span><span class="Special">\uD834\uDD1E</span><span class="Constant">music&quot;</span>},\
-            {<span class="Constant">&quot;value&quot;</span>: <span class="Constant">&quot;Open&quot;</span>, <span class="Constant">&quot;onclick&quot;</span>: <span class="Constant">&quot;OpenDoc() with </span><span class="Special">\uD834\uDD1E\uD834\uDD1E</span><span class="Constant">&quot;</span>},\
-            {<span class="Constant">&quot;value&quot;</span>: <span class="Constant">&quot;Close&quot;</span>, <span class="Constant">&quot;onclick&quot;</span>: <span class="Constant">&quot;</span><span class="Special">\uD834\uDD1E</span><span class="Constant">CloseDoc()&quot;</span>}\
+// JSON to parse
+set-string jd unquoted = {&quot;menu&quot;:\
+    {&quot;id&quot;: &quot;file&quot;,\
+    &quot;value&quot;: 23091,\
+    &quot;active&quot;: false,\
+    &quot;popup&quot;:\
+        {&quot;menuitem&quot;:\
+            [{&quot;value&quot;: &quot;New&quot;, &quot;onclick&quot;: &quot;CreateNewDoc with\uD834\uDD1Emusic&quot;},\
+            {&quot;value&quot;: &quot;Open&quot;, &quot;onclick&quot;: &quot;OpenDoc() with \uD834\uDD1E\uD834\uDD1E&quot;},\
+            {&quot;value&quot;: &quot;Close&quot;, &quot;onclick&quot;: &quot;\uD834\uDD1ECloseDoc()&quot;}\
             ]\
         }\
     }\
 }
 
-<span class="Comment">// Parse JSON</span>
-<span class="Statement">json-doc</span> jd<span class="Type"> status</span> st<span class="Type"> error-text</span> et<span class="Type"> error-position</span> ep<span class="Type"> to</span> nj
+// Parse JSON
+json-doc jd status st error-text et error-position ep to nj
 
-<span class="Comment">// Check parsing okay, if not display error details</span>
-<span class="Statement">if-true</span> st<span class="Identifier"> not-equal</span> GG_OKAY
-<span class="Statement">    @</span>Error [<span class="Statement">&lt;&lt;print-out</span> et<span class="Statement">&gt;&gt;</span>] at [<span class="Statement">&lt;&lt;print-out</span> ep<span class="Statement">&gt;&gt;</span>]
-<span class="Statement">    exit-handler</span> -<span class="Constant">1</span>
-<span class="Statement">end-if</span>
+// Check parsing okay, if not display error details
+if-true st not-equal GG_OKAY
+    @Error [&lt;&lt;print-out et&gt;&gt;] at [&lt;&lt;print-out ep&gt;&gt;]
+    exit-handler -1
+end-if
 
-<span class="Comment">// Display all data elements in order from top to bottom</span>
-<span class="Statement">start-loop</span>
-<span class="Statement">    read-json</span> nj<span class="Type"> key</span> k<span class="Type"> value</span> v<span class="Type"> type</span> t<span class="Identifier"> next</span>
-<span class="Statement">    if-true</span> t<span class="Identifier"> equal</span> GG_JSON_TYPE_NONE
-<span class="Statement">        break-loop</span>
-<span class="Statement">    end-if</span>
-<span class="Statement">    @</span>Key [<span class="Statement">&lt;&lt;print-out</span> k<span class="Statement">&gt;&gt;</span>]
-<span class="Statement">    @</span>Value [<span class="Statement">&lt;&lt;print-out</span> v<span class="Statement">&gt;&gt;</span>]
-<span class="Statement">    @</span>Type [<span class="Statement">&lt;&lt;print-out</span> t<span class="Statement">&gt;&gt;</span>]
-<span class="Statement">    @</span>--------
-<span class="Statement">end-loop</span>
-<span class="Statement">@</span>
+// Display all data elements in order from top to bottom
+start-loop
+    read-json nj key k value v type t next
+    if-true t equal GG_JSON_TYPE_NONE
+        break-loop
+    end-if
+    @Key [&lt;&lt;print-out k&gt;&gt;]
+    @Value [&lt;&lt;print-out v&gt;&gt;]
+    @Type [&lt;&lt;print-out t&gt;&gt;]
+    @--------
+end-loop
+@
 
-<span class="Comment">// Delete JSON document</span>
-<span class="Statement">json-doc</span><span class="Identifier"> delete</span> nj</pre>
-<span id=golf_copied_743 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_743' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_743, code_743, golf_copied_743)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+// Delete JSON document
+json-doc delete nj</pre>
+<span id=rimstone_copied_743 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_743' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_743, code_743, rimstone_copied_743)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The output would be:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_742' class=notranslate>
+<pre id='code_741' class=notranslate>
 Key [&quot;menu&quot;.&quot;id&quot;]
 Value [file]
 Type [0]
@@ -348,21 +348,21 @@ Key [&quot;menu&quot;.&quot;popup&quot;.&quot;menuitem&quot;[2].&quot;onclick&qu
 Value [𝄞CloseDoc()]
 Type [0]
 --------</pre>
-<span id=golf_copied_742 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_742' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_742, code_742, golf_copied_742)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_741 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_741' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_741, code_741, rimstone_copied_741)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Note that if "no-enum" were used in json-doc, then all keys with arrays would not have "[..]", for instance the very last key above would be "menu"."popup"."menuitem"."onclick", i.e. there would be no indexing of arrays.<br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='JSON parsing'></a><span style="font-weight:bold;">JSON parsing</span><br/>
-<a href='https://golf-lang.com/json-doc.html'>json-doc</a> &nbsp;<br/>
-<a href='https://golf-lang.com/read-json.html'>read-json</a> &nbsp; <br/>
+<a href='https://rimstone-lang.com/json-doc.html'>json-doc</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/read-json.html'>read-json</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
-<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
+<a href='https://rimstone-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
-<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://golf-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://rimstone-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
 </div><br/></body></html>
 
 

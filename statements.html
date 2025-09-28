@@ -11,7 +11,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="canonical" href="https://golf-lang.com/statements.html" />
+<link rel="canonical" href="https://rimstone-lang.com/statements.html" />
 <style>
 
 
@@ -232,7 +232,7 @@ function googleTranslateElementInit() {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Statements</div><hr/><div class="vsub"><a id="Statements"></a>Statements</div>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Statements</div><hr/><div class="vsub"><a id="Statements"></a>Statements</div>
 Golf statements generally have three components separated by space(s):<br/>
 <ul><li>a name,<br/>
 </li><li>an object,<br/>
@@ -248,10 +248,10 @@ An object must immediately follow the statement's name, while clauses may be spe
 For example, in the following Golf code:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_1046' class=notranslate>
-<span class="Statement">encrypt-data</span> orig_data<span class="Identifier"> input-length</span> <span class="Constant">6</span><span class="Identifier"> password</span> <span class="Constant">&quot;mypass&quot;</span><span class="Identifier"> salt</span> newsalt<span class="Type"> to</span> res<span class="Identifier"> binary</span></pre>
-<span id=golf_copied_1046 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_1046' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_1046, code_1046, golf_copied_1046)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+encrypt-data orig_data input-length 6 password &quot;mypass&quot; salt newsalt to res binary</pre>
+<span id=rimstone_copied_1046 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1046' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_1046, code_1046, rimstone_copied_1046)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 encrypt-data is the statement's name, and "orig_data" is its object. The clauses are:<br/>
 <ul><li>input-length 6<br/>
@@ -262,28 +262,28 @@ encrypt-data is the statement's name, and "orig_data" is its object. The clauses
 The clauses can be in any order, so the above can be restated as:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_1047' class=notranslate>
-<span class="Statement">encrypt-data</span> orig_data<span class="Type"> to</span> res<span class="Identifier"> password</span> <span class="Constant">&quot;mypass&quot;</span><span class="Identifier"> salt</span> newsalt<span class="Identifier"> binary input-length</span> <span class="Constant">6</span></pre>
-<span id=golf_copied_1047 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_1047' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_1047, code_1047, golf_copied_1047)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+encrypt-data orig_data to res password &quot;mypass&quot; salt newsalt binary input-length 6</pre>
+<span id=rimstone_copied_1047 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1047' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_1047, code_1047, rimstone_copied_1047)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Golf documentation provides a concise BNF-like notation of how each statement works, which in case of <a href='https://golf-lang.com/encrypt-data.html'>encrypt-data</a> is (backslash simply allows continuing to multiple lines):<br/>
+Golf documentation provides a concise BNF-like notation of how each statement works, which in case of <a href='https://rimstone-lang.com/encrypt-data.html'>encrypt-data</a> is (backslash simply allows continuing to multiple lines):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_1048' class=notranslate>
-<span class="Statement">encrypt-data</span> &lt;data&gt;<span class="Type"> to</span> &lt;result&gt; \
-    [<span class="Identifier"> input-length</span> &lt;input length&gt; ] \
-    [<span class="Identifier"> binary</span> [ &lt;binary&gt; ] ] \
-    (<span class="Identifier"> password</span> &lt;password&gt; \
-        [<span class="Identifier"> salt</span> &lt;salt&gt; [<span class="Identifier"> salt-length</span> &lt;salt length&gt; ] ] \
-        [<span class="Identifier"> iterations</span> &lt;iterations&gt; ] \
-        [<span class="Identifier"> cipher</span> &lt;cipher algorithm&gt; ] \
-        [<span class="Identifier"> digest</span> &lt;digest algorithm&gt; ]
-        [<span class="Identifier"> cache</span> ]
-        [<span class="Identifier"> clear-cache</span> &lt;clear cache&gt; <span class="Error">)</span> \
-    [<span class="Identifier"> init-vector</span> &lt;init vector&gt; ]</pre>
-<span id=golf_copied_1048 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_1048' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_1048, code_1048, golf_copied_1048)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+encrypt-data &lt;data&gt; to &lt;result&gt; \
+    [ input-length &lt;input length&gt; ] \
+    [ binary [ &lt;binary&gt; ] ] \
+    ( password &lt;password&gt; \
+        [ salt &lt;salt&gt; [ salt-length &lt;salt length&gt; ] ] \
+        [ iterations &lt;iterations&gt; ] \
+        [ cipher &lt;cipher algorithm&gt; ] \
+        [ digest &lt;digest algorithm&gt; ]
+        [ cache ]
+        [ clear-cache &lt;clear cache&gt; ) \
+    [ init-vector &lt;init vector&gt; ]</pre>
+<span id=rimstone_copied_1048 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1048' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_1048, code_1048, rimstone_copied_1048)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Note the color scheme: clauses with input data are in blue, and with output data in green.<br/>
 <br/>
@@ -298,13 +298,13 @@ A group of clauses that cannot be separated, or to remove ambiguity, are enclose
 Keywords (other than statement names such as encrypt-data above) are generally specific to each statement. So, keyword "salt", for example, has meaning only within encrypt-data and a few other related statements. In order to have the freedom to choose your variable names, you can simply surround them in parenthesis (i.e. "(" and ")") and use any names you want, even keywords, for example:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_1049' class=notranslate>
-<span class="Statement">set-string</span> password = <span class="Constant">&quot;some password&quot;</span>
-<span class="Statement">set-string</span> salt = <span class="Constant">&quot;0123456789012345&quot;</span>
-<span class="Statement">encrypt-data</span> <span class="Constant">&quot;some data&quot;</span><span class="Identifier"> password</span> (password)<span class="Identifier"> salt</span> (salt)<span class="Type"> to</span> enc_data
-<span class="Statement">print-out</span> enc_data</pre>
-<span id=golf_copied_1049 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_1049' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_1049, code_1049, golf_copied_1049)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+set-string password = &quot;some password&quot;
+set-string salt = &quot;0123456789012345&quot;
+encrypt-data &quot;some data&quot; password (password) salt (salt) to enc_data
+print-out enc_data</pre>
+<span id=rimstone_copied_1049 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1049' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_1049, code_1049, rimstone_copied_1049)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In this example, keywords "password" and "salt" are used as variable names as well.<br/>
 <br/>
@@ -313,30 +313,30 @@ Note that while you can use tab characters at the beginning of the line (such as
 To split a statement into multiple lines (including string continuations), use a backslash (\), for instance:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_1050' class=notranslate>
-<span class="Statement">encrypt-data</span> orig_data<span class="Identifier"> input-length</span> <span class="Constant">6</span> \
-   <span class="Identifier"> password</span> <span class="Constant">&quot;my</span><span class="Special">\</span>
-<span class="Constant">    pass&quot;</span><span class="Identifier"> salt</span> \
-    newsalt<span class="Type"> to</span> res<span class="Identifier"> binary</span></pre>
-<span id=golf_copied_1050 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_1050' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_1050, code_1050, golf_copied_1050)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+encrypt-data orig_data input-length 6 \
+    password &quot;my\
+    pass&quot; salt \
+    newsalt to res binary</pre>
+<span id=rimstone_copied_1050 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1050' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_1050, code_1050, rimstone_copied_1050)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Note that all statements are always left-trimmed for whitespace. Thus the resulting string literal in the above example is "mypass", and not "my &nbsp; pass", as the whitespaces prior to line starting with "pass" are trimmed first. Also, all statements are right-trimmed for white space, except if backslash is used at the end, in which case any spaces prior to backslash are conserved. For that reason, in the above example there is a space prior to a backslash where clauses need to be separated.<br/>
 <br/>
-Note that <a href='https://golf-lang.com/begin-handler.html'>begin-handler</a> statement cannot be split with backsplash, i.e. it must always be on a single line for readability.<br/>
+Note that <a href='https://rimstone-lang.com/begin-handler.html'>begin-handler</a> statement cannot be split with backsplash, i.e. it must always be on a single line for readability.<br/>
 <div class="vsub"><a id="Comments"></a>Comments</div>
 You can use both C style (i.e. /* ... */) and C++ style (i.e. //) comments with Golf statements, including within statements (with the exception of /*..*/ before statement name for readability), for example:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_1051' class=notranslate>
-<span class="Statement">run-query</span> @db = \
-    <span class="Constant">&quot;select firstName, lastName from employee where yearOfHire&gt;='</span><span class="Special">%s</span><span class="Constant">'&quot;</span> \
-   <span class="Type"> output</span> <span class="Comment">/*</span><span class="Comment"> comment within </span><span class="Comment">*/</span> firstName, lastName<span class="Identifier"> :</span> <span class="Constant">&quot;2015&quot;</span> <span class="Comment">// other comment</span></pre>
-<span id=golf_copied_1051 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_1051' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_1051, code_1051, golf_copied_1051)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+run-query @db = \
+    &quot;select firstName, lastName from employee where yearOfHire&gt;='%s'&quot; \
+    output /* comment within */ firstName, lastName : &quot;2015&quot; // other comment</pre>
+<span id=rimstone_copied_1051 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1051' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_1051, code_1051, rimstone_copied_1051)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Error handling"></a>Error handling</div>
-A statement that fails for reasons that are generally irrecoverable will <a href='https://golf-lang.com/error-handling.html'>error out</a>, for example out of memory or disk space, bad input parameters etc. <br/>
+A statement that fails for reasons that are generally irrecoverable will <a href='https://rimstone-lang.com/error-handling.html'>error out</a>, for example out of memory or disk space, bad input parameters etc. <br/>
 <br/>
 Golf philosophy is to minimize the need to check for such conditions by preventing the program from continuing. This is preferable, as forgetting to check usually results in unforeseen bugs and safety issues, and the program should have stopped anyway. <br/>
 <br/>
@@ -345,17 +345,17 @@ Errors that are correctable programmatically are reported and you can check them
 Overall, the goal is to stop execution when necessary and to offer the ability to handle an issue when warranted, in order to increase run-time safety and provide instant clues about conditions that must be corrected.<br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Language'></a><span style="font-weight:bold;">Language</span><br/>
-<a href='https://golf-lang.com/inline-code.html'>inline-code</a> &nbsp;<br/>
-<a href='https://golf-lang.com/statements.html'>statements</a> &nbsp;<br/>
-<a href='https://golf-lang.com/syntax-highlighting.html'>syntax-highlighting</a> &nbsp;<br/>
-<a href='https://golf-lang.com/unused-var.html'>unused-var</a> &nbsp;<br/>
-<a href='https://golf-lang.com/variable-scope.html'>variable-scope</a> &nbsp; <br/>
+<a href='https://rimstone-lang.com/inline-code.html'>inline-code</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/statements.html'>statements</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/syntax-highlighting.html'>syntax-highlighting</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/unused-var.html'>unused-var</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/variable-scope.html'>variable-scope</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
-<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
+<a href='https://rimstone-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
-<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://golf-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://rimstone-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
 </div><br/></body></html>
 
 

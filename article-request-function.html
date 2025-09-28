@@ -11,7 +11,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="canonical" href="https://golf-lang.com/article-request-function.html" />
+<link rel="canonical" href="https://rimstone-lang.com/article-request-function.html" />
 <style>
 
 
@@ -232,16 +232,16 @@ function googleTranslateElementInit() {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Functions and parameters in Golf</div><hr/><br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Functions and parameters in Golf</div><hr/><br/>
 In Golf, there are no "functions" or "methods" as you may be used to in other languages. Any encapsulation is a request handler - you can think of it as a simple function that executes to handle a request - it can an external request (i.e. from an outside caller such as web browser, web API, or from a command-line), or internal requests from another handler in your application. <br/>
 <br/>
-By the same token, there are no formal parameters in a way that you may be used to. Instead, there are named parameters, basically name/value pairs, which you can set or get anywhere during the request execution. In addition, your request handler can handle the request body, environment variables, the specific request method etc. (see <a href='https://golf-lang.com/request.html'>request</a>). Here though, we'll focus on parameters only.<br/>
+By the same token, there are no formal parameters in a way that you may be used to. Instead, there are named parameters, basically name/value pairs, which you can set or get anywhere during the request execution. In addition, your request handler can handle the request body, environment variables, the specific request method etc. (see <a href='https://rimstone-lang.com/request.html'>request</a>). Here though, we'll focus on parameters only.<br/>
 <br/>
-You'll use <a href='https://golf-lang.com/set-param.html'>set-param</a> to set a parameter, which can then be obtained anywhere in the current request, including in the current handler's caller or callee. Use <a href='https://golf-lang.com/get-param.html'>get-param</a> to obtain a parameter that's set with set-param. <br/>
+You'll use <a href='https://rimstone-lang.com/set-param.html'>set-param</a> to set a parameter, which can then be obtained anywhere in the current request, including in the current handler's caller or callee. Use <a href='https://rimstone-lang.com/get-param.html'>get-param</a> to obtain a parameter that's set with set-param. <br/>
 <br/>
 Parameters are very fast - they are static creatures implemented at compile time, meaning only fixed memory locations are used to store them (making for great CPU caching), and any name-based resolution is used only when necessary, and always with fast hash tables and static caching. <br/>
 <div class="vsub"><a id="Calling one handler from another"></a>Calling one handler from another</div>
-In this article, we'll talk about <a href='https://golf-lang.com/call-handler.html'>call-handler</a> which is used to call a handler from within another handler.<br/>
+In this article, we'll talk about <a href='https://rimstone-lang.com/call-handler.html'>call-handler</a> which is used to call a handler from within another handler.<br/>
 <br/>
 Here you'll see a few examples of passing input and output parameters between requests handlers. These handlers are both running in the same process of an application (note that application can run as many processes working in parallel). To begin, create an application:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
@@ -249,155 +249,155 @@ Here you'll see a few examples of passing input and output parameters between re
 <span class="Statement">mkdir</span> param
 <span class="Statement">cd</span> param
 gg <span class="Special">-k</span> param</pre>
-<span id=golf_copied_254 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_254' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_254, code_254, golf_copied_254)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_254 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_254' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_254, code_254, rimstone_copied_254)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 You'll also create two source files ("local.golf" and "some.golf") a bit later with the code below.<br/>
 <div class="vsub"><a id="Simple service"></a>Simple service</div>
 Let's start with a simple service that provides current time based on a timezone as an input parameter (in file "local.golf"):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_252' class=notranslate>
-<span class="Statement">begin-handler</span> /local/time
-<span class="Statement">    get-param</span> tzone<span class="Identifier"> default-value</span> <span class="Constant">&quot;MST&quot;</span> <span class="Comment">// get time zone as input parameter (i.e. </span><span class="Constant">&quot;EST&quot;</span><span class="Comment">, </span><span class="Constant">&quot;MST&quot;</span><span class="Comment">, </span><span class="Constant">&quot;PST&quot;</span><span class="Comment"> etc.)</span>
-<span class="Statement">    get-time</span><span class="Type"> to</span> curr_time<span class="Identifier"> timezone</span> tzone
-<span class="Statement">    @</span>&lt;div&gt;Current time is <span class="Statement">&lt;&lt;print-out</span> curr_time<span class="Statement">&gt;&gt;</span>&lt;/div&gt;
-<span class="Statement">end-handler</span></pre>
-<span id=golf_copied_252 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_252' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_252, code_252, golf_copied_252)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_253' class=notranslate>
+begin-handler /local/time
+    get-param tzone default-value &quot;MST&quot; // get time zone as input parameter (i.e. &quot;EST&quot;, &quot;MST&quot;, &quot;PST&quot; etc.)
+    get-time to curr_time timezone tzone
+    @&lt;div&gt;Current time is &lt;&lt;print-out curr_time&gt;&gt;&lt;/div&gt;
+end-handler</pre>
+<span id=rimstone_copied_253 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_253' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_253, code_253, rimstone_copied_253)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In this case, HTML code is output. Make the application:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_257' class=notranslate>
 gg <span class="Special">-q</span> <span class="Special">--public</span></pre>
-<span id=golf_copied_257 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_257' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_257, code_257, golf_copied_257)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_257 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_257' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_257, code_257, rimstone_copied_257)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 and run it from command line (just as if it were called from a web browser):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_259' class=notranslate>
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/local/time</span><span class="Statement">&quot;</span> <span class="Special">--silent-header</span> <span class="Special">--exec</span></pre>
-<span id=golf_copied_259 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_259' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_259, code_259, golf_copied_259)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_259 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_259' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_259, code_259, rimstone_copied_259)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 with the result something like:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_253' class=notranslate>
+<pre id='code_252' class=notranslate>
 &lt;div&gt;Current time is Mon, 02 Dec 2024 16:27:03 EST&lt;/div&gt;</pre>
-<span id=golf_copied_253 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_253' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_253, code_253, golf_copied_253)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_252 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_252' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_252, code_252, rimstone_copied_252)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Calling request from another, example #1"></a>Calling request from another, example #1</div>
-In this example, one request handler calls another from within the same process of an application using <a href='https://golf-lang.com/call-handler.html'>call-handler</a>.<br/>
+In this example, one request handler calls another from within the same process of an application using <a href='https://rimstone-lang.com/call-handler.html'>call-handler</a>.<br/>
 <br/>
 For instance, here's the caller code which calls the above "/local/time" service (in file "some.golf"):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_255' class=notranslate>
-<span class="Statement">begin-handler</span> /some/service
-<span class="Statement">    set-param</span> tzone=<span class="Constant">&quot;EST&quot;</span> <span class="Comment">// set the input parameter to be obtained by /local/time handler</span>
-<span class="Statement">    call-handler</span> <span class="Constant">&quot;/local/time&quot;</span>
-<span class="Statement">end-handler</span></pre>
-<span id=golf_copied_255 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_255' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_255, code_255, golf_copied_255)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_256' class=notranslate>
+begin-handler /some/service
+    set-param tzone=&quot;EST&quot; // set the input parameter to be obtained by /local/time handler
+    call-handler &quot;/local/time&quot;
+end-handler</pre>
+<span id=rimstone_copied_256 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_256' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_256, code_256, rimstone_copied_256)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 and in this case the output of the "/local/time" would simply become output of "/some/service" (and be presumably sent to a client like web browser). <br/>
 <br/>
-You can also, however, return the string to the caller using <a href='https://golf-lang.com/set-param.html'>set-param</a> - here's the reworked "/local/time" service (in file "local.golf"):<br/>
+You can also, however, return the string to the caller using <a href='https://rimstone-lang.com/set-param.html'>set-param</a> - here's the reworked "/local/time" service (in file "local.golf"):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_258' class=notranslate>
-<span class="Statement">begin-handler</span> /local/time
-<span class="Statement">    get-param</span> tzone<span class="Identifier"> default-value</span> <span class="Constant">&quot;MST&quot;</span>
-<span class="Statement">    get-time</span><span class="Type"> to</span> curr_time<span class="Identifier"> timezone</span> tzone
-<span class="Statement">    set-param</span> curr_time <span class="Comment">// set the return parameter to be obtained by the caller</span>
-<span class="Statement">end-handler</span></pre>
-<span id=golf_copied_258 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_258' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_258, code_258, golf_copied_258)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+begin-handler /local/time
+    get-param tzone default-value &quot;MST&quot;
+    get-time to curr_time timezone tzone
+    set-param curr_time // set the return parameter to be obtained by the caller
+end-handler</pre>
+<span id=rimstone_copied_258 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_258' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_258, code_258, rimstone_copied_258)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The result parameter will be obtained in the caller, and then output as HTML from there (we could save it to a file instead, or whatever), so here's what it'd be now in file "some.golf":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_260' class=notranslate>
-<span class="Statement">begin-handler</span> /some/service
-<span class="Statement">    set-param</span> tzone=<span class="Constant">&quot;EST&quot;</span> <span class="Comment">// set input parameter used by </span><span class="Constant">&quot;/local/time&quot;</span>
-<span class="Statement">    call-handler</span> <span class="Constant">&quot;/local/time&quot;</span>
-<span class="Statement">    get-param</span> curr_time <span class="Comment">// get parameter that was set by </span><span class="Constant">&quot;/local/time&quot;</span>
-<span class="Statement">    @</span>&lt;div&gt;Current time is <span class="Statement">&lt;&lt;print-out</span> curr_time<span class="Statement">&gt;&gt;</span>&lt;/div&gt;
-<span class="Statement">end-handler</span></pre>
-<span id=golf_copied_260 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_260' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_260, code_260, golf_copied_260)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+begin-handler /some/service
+    set-param tzone=&quot;EST&quot; // set input parameter used by &quot;/local/time&quot;
+    call-handler &quot;/local/time&quot;
+    get-param curr_time // get parameter that was set by &quot;/local/time&quot;
+    @&lt;div&gt;Current time is &lt;&lt;print-out curr_time&gt;&gt;&lt;/div&gt;
+end-handler</pre>
+<span id=rimstone_copied_260 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_260' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_260, code_260, rimstone_copied_260)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Make the project and run it:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_261' class=notranslate>
 gg <span class="Special">-q</span> <span class="Special">--public</span>
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/some/service</span><span class="Statement">&quot;</span> <span class="Special">--silent-header</span> <span class="Special">--exec</span></pre>
-<span id=golf_copied_261 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_261' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_261, code_261, golf_copied_261)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_261 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_261' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_261, code_261, rimstone_copied_261)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 with the similar end result.<br/>
 <div class="vsub"><a id="Calling request from another, example #2"></a>Calling request from another, example #2</div>
 Consider this handler, which checks if number is even, and returns true or false (file "check.golf"):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_262' class=notranslate>
-<span class="Statement">begin-handler</span> /check/even
-<span class="Statement">    get-param</span> num<span class="Identifier"> type number</span> <span class="Comment">// get input parameter</span>
-<span class="Statement">    if-true</span> num<span class="Identifier"> every</span> <span class="Constant">2</span>
-<span class="Statement">        set-param</span> is_even = <span class="Constant">true</span> <span class="Comment">// set output parameter</span>
-<span class="Statement">    else-if</span>
-<span class="Statement">        set-param</span> is_even = <span class="Constant">false</span> <span class="Comment">// set output parameter</span>
-<span class="Statement">    end-if</span>
-<span class="Statement">end-handler</span></pre>
-<span id=golf_copied_262 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_262' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_262, code_262, golf_copied_262)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+begin-handler /check/even
+    get-param num type number // get input parameter
+    if-true num every 2
+        set-param is_even = true // set output parameter
+    else-if
+        set-param is_even = false // set output parameter
+    end-if
+end-handler</pre>
+<span id=rimstone_copied_262 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_262' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_262, code_262, rimstone_copied_262)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Here's calling it from another handler (add this to file "some.golf"): <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_264' class=notranslate>
-<span class="Statement">begin-handler</span> /some/task
-<span class="Statement">    set-param</span> num = <span class="Constant">23</span> <span class="Comment">// set input parameter for /check/even</span>
-<span class="Statement">    call-handler</span> <span class="Constant">&quot;/check/even&quot;</span>
-<span class="Statement">    get-param</span> is_even<span class="Identifier"> type bool</span> <span class="Comment">//get output from /check/even</span>
-<span class="Statement">    if-true</span> is_even<span class="Identifier"> equal</span> <span class="Constant">true</span>
-<span class="Statement">        @</span>EVEN
-<span class="Statement">    else-if</span>
-<span class="Statement">        @</span>ODD
-<span class="Statement">    end-if</span>
-<span class="Statement">end-handler</span></pre>
-<span id=golf_copied_264 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_264' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_264, code_264, golf_copied_264)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+begin-handler /some/task
+    set-param num = 23 // set input parameter for /check/even
+    call-handler &quot;/check/even&quot;
+    get-param is_even type bool //get output from /check/even
+    if-true is_even equal true
+        @EVEN
+    else-if
+        @ODD
+    end-if
+end-handler</pre>
+<span id=rimstone_copied_264 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_264' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_264, code_264, rimstone_copied_264)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Make the project and run it:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_263' class=notranslate>
 gg <span class="Special">-q</span> <span class="Special">--public</span>
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/some/task</span><span class="Statement">&quot;</span> <span class="Special">--silent-header</span> <span class="Special">--exec</span></pre>
-<span id=golf_copied_263 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_263' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_263, code_263, golf_copied_263)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_263 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_263' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_263, code_263, rimstone_copied_263)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 with the result (since 23 is an odd number):<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_256' class=notranslate>
+<pre id='code_255' class=notranslate>
 ODD</pre>
-<span id=golf_copied_256 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_256' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_256, code_256, golf_copied_256)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_255 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_255' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_255, code_255, rimstone_copied_255)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Conclusion"></a>Conclusion</div>
 Golf is a language and a platform built to provide native web services, and everything in it is centered around the notion of handling service calls. Simple name/value constructs rule the communication between handlers on the network as well as locally. Suffice it to say, Golf's not a classic C-like programming language (though ironically is built in C and compiles to C).<br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
-<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://golf-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://rimstone-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
 </div><br/></body></html>
 
 

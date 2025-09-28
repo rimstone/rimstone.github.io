@@ -11,7 +11,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="canonical" href="https://golf-lang.com/article-installing-golf.html" />
+<link rel="canonical" href="https://rimstone-lang.com/article-installing-golf.html" />
 <style>
 
 
@@ -232,7 +232,7 @@ function googleTranslateElementInit() {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Here's what installing Golf looks like</div><hr/><br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Here's what installing Golf looks like</div><hr/><br/>
 The installation script is "gginst.sh". It installs Golf in a location folder ".golf" (under home directory), so a base installation does not require sudo. However, some external components do. For instance, if you want to access a database you'll need a database access library, or to use regex expressions you'll need PCRE2 library etc. These are industry-standard tried-and-true Free Open Source libraries; using them helps with reliability and safety. These libraries are called "toolkit" libraries for obvious reasons. You don't have to install them immediately, but rather only when you need them. When you build an application that needs one of them, Golf will ask you to install it, along with the instructions on how to do it.<br/>
 <br/>
 Golf is installed as source code only and then compiled during the install. The reason is safety, usability and performance:<br/>
@@ -265,9 +265,9 @@ sudo dnf -y install  tar
 Installing [tar]...
 sudo dnf -y install  policycoreutils policycoreutils-devel libselinux-utils
 Installing [SELinux-devel]...</pre>
-<span id=golf_copied_159 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_159' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_159, code_159, golf_copied_159)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_159 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_159' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_159, code_159, rimstone_copied_159)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Now gginst.sh will ask you if you wish to install the toolkit libraries. You can say no (by pressing N) and install them when you need them. Golf will alert you when they are needed, and show you the instructions like below (i.e. the sudo dnf ...). You can also cancel the installation (by pressing Ctrl-C) and copy and paste those instructions and install them yourself, and then run installation again, so you won't be asked this. Finally, you can let gginst.sh to install these for you, which is what's shown below:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
@@ -296,9 +296,9 @@ sudo dnf -y install  libcurl-devel
 Installing [libcurl-devel]...
 sudo dnf -y install  pcre2-devel
 Installing [pcre2-devel]...</pre>
-<span id=golf_copied_160 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_160' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_160, code_160, golf_copied_160)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_160 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_160' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_160, code_160, rimstone_copied_160)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Next, Golf will build itself. It will create LTO modules, which allow Golf code to link with your application in a way that increases performance, as I described above (with LTO):<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
@@ -310,9 +310,9 @@ Copying Golf binaries (devel)
 ..............................................................Built Golf binaries (release)
 Creating Golf directories (release)
 Copying Golf binaries (release)</pre>
-<span id=golf_copied_161 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_161' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_161, code_161, golf_copied_161)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_161 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_161' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_161, code_161, rimstone_copied_161)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Next, the SELinux modules are compiled (they are distributed as source too, see files below):<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
@@ -324,11 +324,11 @@ Creating targeted gg.pp policy package
 rm tmp/gg.mod tmp/gg.mod.fc
 Setting environment variables...
 Setting permissions...</pre>
-<span id=golf_copied_162 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_162' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_162, code_162, golf_copied_162)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_162 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_162' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_162, code_162, rimstone_copied_162)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Finally, help man pages are installed, so you can get help (i.e. "man read-file" from command line to get help on statement <a href='https://golf-lang.com/read-file.html'>read-file</a>). Of course, you can always use the Golf's web site and it's documentation (it's the same documentation), but in a pinch it's useful to quickly get help from command line:<br/>
+Finally, help man pages are installed, so you can get help (i.e. "man read-file" from command line to get help on statement <a href='https://rimstone-lang.com/read-file.html'>read-file</a>). Of course, you can always use the Golf's web site and it's documentation (it's the same documentation), but in a pinch it's useful to quickly get help from command line:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
 <pre id='code_163' class=notranslate>
 /usr/bin/mandb
@@ -341,25 +341,25 @@ Processing manual pages under /home/dasoftver/.golf/man/cat2...
 1 man subdirectory contained newer manual pages.
 245 manual pages were added.
 0 stray cats were added.</pre>
-<span id=golf_copied_163 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_163' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_163, code_163, golf_copied_163)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_163 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_163' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_163, code_163, rimstone_copied_163)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Next, just run .bashrc to set up Golf's PATH variables:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
 <pre id='code_164' class=notranslate>
 $ . $HOME/.bashrc</pre>
-<span id=golf_copied_164 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_164' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_164, code_164, golf_copied_164)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_164 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_164' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_164, code_164, rimstone_copied_164)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 And you have installed Golf! You can now try the examples, or start writing your applications!<br/>
 <br/>
-To install Golf takes only a few minutes. Go to <a href='https://golf-lang.com/install-golf.html'>install-golf</a> for instructions.<br/>
+To install Golf takes only a few minutes. Go to <a href='https://rimstone-lang.com/install-rimstone.html'>install-rimstone</a> for instructions.<br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
-<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://golf-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://rimstone-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
 </div><br/></body></html>
 
 

@@ -11,7 +11,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="canonical" href="https://golf-lang.com/blog-2025-09-13-multiple-tables-in-transaction.html" />
+<link rel="canonical" href="https://rimstone-lang.com/blog-2025-09-13-multiple-tables-in-transaction.html" />
 <style>
 
 
@@ -232,7 +232,7 @@ function googleTranslateElementInit() {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>How to insert/update multiple-tables in a single transaction?</div><hr/><br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>How to insert/update multiple-tables in a single transaction?</div><hr/><br/>
 Using multiple tables in a single transaction is common enough. You'd want the data to be either inserted/updated in all of them, or in none of them. So if one of such DML operations fail, then the others should not succeed to.<br/>
 <br/>
 In other words, your work should be either all committed, or all rollbacked.<br/>
@@ -240,14 +240,14 @@ In other words, your work should be either all committed, or all rollbacked.<br/
 This example is a weather application that records temperatures for any given zip code. And it updates the climate (temperature) averages for each code too. So in such a transaction, one table is inserted and other updated, and that's done atomically.<br/>
 <br/>
 There's one example each of the database:<br/>
-<ul><li><a href='https://golf-lang.com/article-record-temperature-postgres.html'>PostgreSQL</a><br/>
-</li><li><a href='https://golf-lang.com/article-record-temperature-sqlite.html'>SQLite</a><br/>
-</li><li><a href='https://golf-lang.com/article-record-temperature-mariadb.html'>MariaDB</a></li></ul>
+<ul><li><a href='https://rimstone-lang.com/article-record-temperature-postgres.html'>PostgreSQL</a><br/>
+</li><li><a href='https://rimstone-lang.com/article-record-temperature-sqlite.html'>SQLite</a><br/>
+</li><li><a href='https://rimstone-lang.com/article-record-temperature-mariadb.html'>MariaDB</a></li></ul>
 Of course, they are very similar, with minor differences in SQL; however database setup is different so each is in a separate example. That way it's easy to follow.<br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
-<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://golf-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://rimstone-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
 </div><br/></body></html>
 
 

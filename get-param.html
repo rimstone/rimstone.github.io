@@ -11,7 +11,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="canonical" href="https://golf-lang.com/get-param.html" />
+<link rel="canonical" href="https://rimstone-lang.com/get-param.html" />
 <style>
 
 
@@ -232,97 +232,97 @@ function googleTranslateElementInit() {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Get param</div><hr/><span style="font-weight:bold;">Purpose</span>: Get a parameter value.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Get param</div><hr/><span style="font-weight:bold;">Purpose</span>: Get a parameter value.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_657' class=notranslate>
-<span class="Statement">get-param</span> ( &lt;name&gt; [<span class="Identifier"> type</span> &lt;type&gt; ] [<span class="Identifier"> default-value</span> &lt;value&gt; ] )<span class="Identifier"> ,</span> ...</pre>
-<span id=golf_copied_657 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_657' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_657, code_657, golf_copied_657)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_659' class=notranslate>
+get-param ( &lt;name&gt; [ type &lt;type&gt; ] [ default-value &lt;value&gt; ] ) , ...</pre>
+<span id=rimstone_copied_659 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_659' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_659, code_659, rimstone_copied_659)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 get-param stores a parameter value in variable &lt;name&gt;. A parameter is a name/value pair kept by Golf for each request. The parameter's name must match &lt;name&gt;. A parameter can be of any type. A parameter is set either:<br/>
-<ul><li>by the caller in <a href='https://golf-lang.com/request.html'>request URL</a>, or<br/>
-</li><li>with <a href='https://golf-lang.com/set-param.html'>set-param</a> statement anywhere during request's execution, including in <a href='https://golf-lang.com/call-handler.html'>call-handler</a>.</li></ul>
+<ul><li>by the caller in <a href='https://rimstone-lang.com/request.html'>request URL</a>, or<br/>
+</li><li>with <a href='https://rimstone-lang.com/set-param.html'>set-param</a> statement anywhere during request's execution, including in <a href='https://rimstone-lang.com/call-handler.html'>call-handler</a>.</li></ul>
 If parameter is a string, it is &nbsp;trimmed for whitespaces (both on left and right). You can specify any number of parameters, separated by a comma.<br/>
 <div class="vsub"><a id="Types"></a>Types</div>
-By default, &lt;name&gt; is a string variable, unless &lt;type&gt; (in "type" clause) is specified. &lt;type&gt; can be "string" for a string variable (the default), "bool" for a boolean variable, "number" for a number variable, "double" for a double variable, "string-array" for an array of strings, "number-array" for an array of numbers, "double-array" for an array of doubles, "bool-array" for an array of booleans, "message" for a <a href='https://golf-lang.com/new-message.html'>message</a> variable, "split-string" for a <a href='https://golf-lang.com/split-string.html'>split-string</a> variable, "hash" for an <a href='https://golf-lang.com/new-hash.html'>hash</a> variable, "tree" for an <a href='https://golf-lang.com/new-tree.html'>tree</a> variable, "tree-cursor" for an <a href='https://golf-lang.com/use-cursor.html'>tree cursor</a> variable, "fifo" for a <a href='https://golf-lang.com/new-fifo.html'>FIFO</a> variable, "lifo" for a <a href='https://golf-lang.com/new-lifo.html'>LIFO</a> variable, "list" for a <a href='https://golf-lang.com/new-list.html'>list</a> variable, "file" for a <a href='https://golf-lang.com/open-file.html'>file</a> variable, and "service" for a <a href='https://golf-lang.com/new-remote.html'>service</a> variable.<br/>
+By default, &lt;name&gt; is a string variable, unless &lt;type&gt; (in "type" clause) is specified. &lt;type&gt; can be "string" for a string variable (the default), "bool" for a boolean variable, "number" for a number variable, "double" for a double variable, "string-array" for an array of strings, "number-array" for an array of numbers, "double-array" for an array of doubles, "bool-array" for an array of booleans, "message" for a <a href='https://rimstone-lang.com/new-message.html'>message</a> variable, "split-string" for a <a href='https://rimstone-lang.com/split-string.html'>split-string</a> variable, "hash" for an <a href='https://rimstone-lang.com/new-hash.html'>hash</a> variable, "tree" for an <a href='https://rimstone-lang.com/new-tree.html'>tree</a> variable, "tree-cursor" for an <a href='https://rimstone-lang.com/use-cursor.html'>tree cursor</a> variable, "fifo" for a <a href='https://rimstone-lang.com/new-fifo.html'>FIFO</a> variable, "lifo" for a <a href='https://rimstone-lang.com/new-lifo.html'>LIFO</a> variable, "list" for a <a href='https://rimstone-lang.com/new-list.html'>list</a> variable, "file" for a <a href='https://rimstone-lang.com/open-file.html'>file</a> variable, and "service" for a <a href='https://rimstone-lang.com/new-remote.html'>service</a> variable.<br/>
 <br/>
-The value obtained with get-param is checked to be of the proper &lt;type&gt;, and if it isn't, your request will <a href='https://golf-lang.com/error-handling.html'>error out</a>. The exception to this is that a string parameter can be converted into a number, double or a boolean, assuming the string value represents a valid number, double or is "true"/"false"; this exception is for <a href='https://golf-lang.com/request.html'>request</a> URL parameters only. &nbsp;Parameters of "number", "double" and "bool" types are obtained by value, and others by reference. It means for instance, that you can pass a tree to call-handler and read and write nodes there, and such changes will be visible in the caller request.<br/>
+The value obtained with get-param is checked to be of the proper &lt;type&gt;, and if it isn't, your request will <a href='https://rimstone-lang.com/error-handling.html'>error out</a>. The exception to this is that a string parameter can be converted into a number, double or a boolean, assuming the string value represents a valid number, double or is "true"/"false"; this exception is for <a href='https://rimstone-lang.com/request.html'>request</a> URL parameters only. &nbsp;Parameters of "number", "double" and "bool" types are obtained by value, and others by reference. It means for instance, that you can pass a tree to call-handler and read and write nodes there, and such changes will be visible in the caller request.<br/>
 <div class="vsub"><a id="Default value"></a>Default value</div>
-If "default-value" clause is used, then &lt;value&gt; will be assigned to &lt;name&gt; variable if there is none provided. For example, if the caller does not specify the value for parameter &lt;name&gt;, then its value will be &lt;value&gt;; note that parameter must always have value so if none is provided and there is no default value specified, your program will <a href='https://golf-lang.com/error-handling.html'>error out</a>. "default-value" can only be used with strings, numbers, doubles and booleans.<br/>
+If "default-value" clause is used, then &lt;value&gt; will be assigned to &lt;name&gt; variable if there is none provided. For example, if the caller does not specify the value for parameter &lt;name&gt;, then its value will be &lt;value&gt;; note that parameter must always have value so if none is provided and there is no default value specified, your program will <a href='https://rimstone-lang.com/error-handling.html'>error out</a>. "default-value" can only be used with strings, numbers, doubles and booleans.<br/>
 <div class="vsub"><a id="Input parameters from a caller"></a>Input parameters from a caller</div>
-Input parameters in an external request (i.e. those &nbsp;parameters set by a caller outside of your application) are specified as name/value pairs (see <a href='https://golf-lang.com/service.html'>service</a> or <a href='https://golf-lang.com/command-line.html'>command-line</a>). Input parameter name can be made up of alphanumeric characters, hyphen or underscore only and cannot start with a digit. Note that a hyphen is automatically converted to underscore, so for instance an input parameter "some-parameter" in HTTP request will be "some_parameter" in get-param. <br/>
+Input parameters in an external request (i.e. those &nbsp;parameters set by a caller outside of your application) are specified as name/value pairs (see <a href='https://rimstone-lang.com/service.html'>service</a> or <a href='https://rimstone-lang.com/command-line.html'>command-line</a>). Input parameter name can be made up of alphanumeric characters, hyphen or underscore only and cannot start with a digit. Note that a hyphen is automatically converted to underscore, so for instance an input parameter "some-parameter" in HTTP request will be "some_parameter" in get-param. <br/>
 <span style="font-weight:bold;">- File uploads</span><br/>
-File uploads are handled as input parameters as well, see <a href='https://golf-lang.com/file-uploading.html'>file-uploading</a>.<br/>
+File uploads are handled as input parameters as well, see <a href='https://rimstone-lang.com/file-uploading.html'>file-uploading</a>.<br/>
 <span style="font-weight:bold;">- Web input parameters</span><br/>
 As an example, for HTML form input parameters named "param1" with value "value1" and "param2" with value "value2":<br/>
 <div class='htmlcode' style='position:relative;padding-right:16px;'>
-<pre id='code_658' class=notranslate>
+<pre id='code_657' class=notranslate>
 <span class="Identifier">&lt;</span><span class="Statement">input</span><span class="Identifier"> </span><span class="Type">type</span><span class="Identifier">=</span><span class="Constant">'hidden'</span><span class="Identifier"> </span><span class="Type">name</span><span class="Identifier">=</span><span class="Constant">'param1'</span><span class="Identifier"> </span><span class="Type">value</span><span class="Identifier">=</span><span class="Constant">'value1'</span><span class="Identifier">&gt;</span>
 <span class="Identifier">&lt;</span><span class="Statement">input</span><span class="Identifier"> </span><span class="Type">type</span><span class="Identifier">=</span><span class="Constant">'hidden'</span><span class="Identifier"> </span><span class="Type">name</span><span class="Identifier">=</span><span class="Constant">'param2'</span><span class="Identifier"> </span><span class="Type">value</span><span class="Identifier">=</span><span class="Constant">'value2'</span><span class="Identifier">&gt;</span></pre>
-<span id=golf_copied_658 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_658' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_658, code_658, golf_copied_658)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_657 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_657' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_657, code_657, rimstone_copied_657)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 you can get these parameters and print out their values by using:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_660' class=notranslate>
-<span class="Statement">get-param</span> param1, param2</pre>
-<span id=golf_copied_660 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_660' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_660, code_660, golf_copied_660)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_661' class=notranslate>
+get-param param1, param2</pre>
+<span id=rimstone_copied_661 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_661' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_661, code_661, rimstone_copied_661)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 A request may be in the form of a web link URL, and getting the parameter values is the same:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_659' class=notranslate>
+<pre id='code_658' class=notranslate>
 http://&lt;your web server&gt;/&lt;app name&gt;/&lt;request name&gt;&amp;param1=value1&amp;param2=value2</pre>
-<span id=golf_copied_659 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_659' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_659, code_659, golf_copied_659)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_658 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_658' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_658, code_658, rimstone_copied_658)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Setting parameters during request's execution"></a>Setting parameters during request's execution</div>
-Use <a href='https://golf-lang.com/set-param.html'>set-param</a> to replace the value of an existing parameter, or create a new one. For instance:<br/>
+Use <a href='https://rimstone-lang.com/set-param.html'>set-param</a> to replace the value of an existing parameter, or create a new one. For instance:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_662' class=notranslate>
-<span class="Statement">get-param</span> par1
-<span class="Statement">.</span>..
-<span class="Statement">set-param</span> par1=<span class="Constant">&quot;new value&quot;</span></pre>
-<span id=golf_copied_662 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_662' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_662, code_662, golf_copied_662)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+get-param par1
+...
+set-param par1=&quot;new value&quot;</pre>
+<span id=rimstone_copied_662 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_662' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_662, code_662, rimstone_copied_662)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In this case the value of an existing parameter "par1" is replaced with "new value". In the following code a new parameter is created, which can be retrieved later with get-param:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_663' class=notranslate>
-<span class="Statement">set-param</span> par1=<span class="Constant">&quot;new value&quot;</span>
-<span class="Statement">get-param</span> par1</pre>
-<span id=golf_copied_663 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_663' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_663, code_663, golf_copied_663)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+set-param par1=&quot;new value&quot;
+get-param par1</pre>
+<span id=rimstone_copied_663 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_663' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_663, code_663, rimstone_copied_663)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-See <a href='https://golf-lang.com/call-handler.html'>call-handler</a> for more examples.<br/>
+See <a href='https://rimstone-lang.com/call-handler.html'>call-handler</a> for more examples.<br/>
 <div class="vsub"><a id="Duplicate input parameter names"></a>Duplicate input parameter names</div>
 If there are multiple input parameters with the same name set by the request caller, such as <br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_661' class=notranslate>
+<pre id='code_660' class=notranslate>
 http://&lt;web address&gt;/&lt;app name&gt;/&lt;request name&gt;?par=val1&amp;par=val2</pre>
-<span id=golf_copied_661 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_661' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_661, code_661, golf_copied_661)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_660 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_660' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_660, code_660, rimstone_copied_660)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 the value of input parameter "par" is undefined. Do not specify multiple input parameters with the same name.<br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Request data'></a><span style="font-weight:bold;">Request data</span><br/>
-<a href='https://golf-lang.com/get-param.html'>get-param</a> &nbsp;<br/>
-<a href='https://golf-lang.com/request-body.html'>request-body</a> &nbsp;<br/>
-<a href='https://golf-lang.com/set-param.html'>set-param</a> &nbsp; <br/>
+<a href='https://rimstone-lang.com/get-param.html'>get-param</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/request-body.html'>request-body</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/set-param.html'>set-param</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
-<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
+<a href='https://rimstone-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
-<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://golf-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://rimstone-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
 </div><br/></body></html>
 
 

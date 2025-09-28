@@ -11,7 +11,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="canonical" href="https://golf-lang.com/run-remote.html" />
+<link rel="canonical" href="https://rimstone-lang.com/run-remote.html" />
 <style>
 
 
@@ -232,73 +232,73 @@ function googleTranslateElementInit() {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Run remote</div><hr/><span style="font-weight:bold;">Purpose</span>: Call a remote service in a single statement.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Run remote</div><hr/><span style="font-weight:bold;">Purpose</span>: Call a remote service in a single statement.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_967' class=notranslate>
-<span class="Statement">run-remote</span> &lt;service&gt; \
-    (<span class="Identifier"> local</span> &lt;app name&gt; ) | (<span class="Identifier"> location</span> &lt;location&gt; ) \
-   <span class="Identifier"> url-path</span> &lt;service URL&gt; |
+run-remote &lt;service&gt; \
+    ( local &lt;app name&gt; ) | ( location &lt;location&gt; ) \
+    url-path &lt;service URL&gt; |
         ( \
-       <span class="Identifier"> app-path</span> &lt;app path&gt; \
-       <span class="Identifier"> request-path</span> &lt;request path&gt; \
-        [<span class="Identifier"> url-params</span> &lt;url params&gt; ] \
+        app-path &lt;app path&gt; \
+        request-path &lt;request path&gt; \
+        [ url-params &lt;url params&gt; ] \
         ) \
-    [<span class="Identifier"> request-body content</span> &lt;content&gt; \
-        [<span class="Identifier"> content-length</span> &lt;content length&gt; ] \
-        [<span class="Identifier"> content-type</span> &lt;content type&gt; ] ] \
-    [<span class="Identifier"> method</span> &lt;request method&gt; ] \
-    [<span class="Identifier"> environment</span> &lt;name&gt;=&lt;value&gt; [<span class="Statement"> ,</span> ... ] ] \
-    [<span class="Identifier"> timeout</span> &lt;timeout&gt; ]\
-    [<span class="Type"> status</span> &lt;status&gt; ]  \
-    [<span class="Identifier"> started</span> &lt;started&gt; ] \
-    [<span class="Identifier"> finished-okay</span> &lt;finished okay&gt; ]\
-    [<span class="Identifier"> data</span> &lt;data&gt; ] \
-    [<span class="Type"> error</span> &lt;error&gt; ] \
-    [<span class="Type"> status</span> &lt;status&gt; ] \
-    [<span class="Identifier"> status-text</span> &lt;status text&gt; ] \
-    [<span class="Identifier"> exit-status</span> &lt;service status&gt; ]</pre>
-<span id=golf_copied_967 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_967' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_967, code_967, golf_copied_967)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+    [ request-body content &lt;content&gt; \
+        [ content-length &lt;content length&gt; ] \
+        [ content-type &lt;content type&gt; ] ] \
+    [ method &lt;request method&gt; ] \
+    [ environment &lt;name&gt;=&lt;value&gt; [ , ... ] ] \
+    [ timeout &lt;timeout&gt; ]\
+    [ status &lt;status&gt; ]  \
+    [ started &lt;started&gt; ] \
+    [ finished-okay &lt;finished okay&gt; ]\
+    [ data &lt;data&gt; ] \
+    [ error &lt;error&gt; ] \
+    [ status &lt;status&gt; ] \
+    [ status-text &lt;status text&gt; ] \
+    [ exit-status &lt;service status&gt; ]</pre>
+<span id=rimstone_copied_967 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_967' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_967, code_967, rimstone_copied_967)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <br/>
-run-remote is a combination of <a href='https://golf-lang.com/new-remote.html'>new-remote</a>, <a href='https://golf-lang.com/call-remote.html'>call-remote</a> and <a href='https://golf-lang.com/read-remote.html'>read-remote</a> in one. Clauses for each of those can be specified in any order. Only a single &lt;service&gt; can be used. If a call to &lt;service&gt; succeeds, its results are read. Use either:<br/>
+run-remote is a combination of <a href='https://rimstone-lang.com/new-remote.html'>new-remote</a>, <a href='https://rimstone-lang.com/call-remote.html'>call-remote</a> and <a href='https://rimstone-lang.com/read-remote.html'>read-remote</a> in one. Clauses for each of those can be specified in any order. Only a single &lt;service&gt; can be used. If a call to &lt;service&gt; succeeds, its results are read. Use either:<br/>
 <ul><li>&lt;status&gt; (in "status" clause) to check if there are results to be read: if it is GG_OKAY, then you can use the results.<br/>
 </li><li>&lt;finished okay&gt; (in "finished-okay" clause) to check if service call executed: if it's 1, then it has.</li></ul>
-See details for each clause in <a href='https://golf-lang.com/new-remote.html'>new-remote</a> (for "local" through "timeout" clauses), <a href='https://golf-lang.com/call-remote.html'>call-remote</a> (for "status" through "finished-okay" clauses) and <a href='https://golf-lang.com/read-remote.html'>read-remote</a> (for "data" through "exit-status" clauses).<br/>
+See details for each clause in <a href='https://rimstone-lang.com/new-remote.html'>new-remote</a> (for "local" through "timeout" clauses), <a href='https://rimstone-lang.com/call-remote.html'>call-remote</a> (for "status" through "finished-okay" clauses) and <a href='https://rimstone-lang.com/read-remote.html'>read-remote</a> (for "data" through "exit-status" clauses).<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_968' class=notranslate>
-<span class="Statement">begin-handler</span> /serv<span class="Identifier"> public</span>
-<span class="Statement">    run-remote</span> nf<span class="Identifier"> local</span> <span class="Constant">&quot;hash-server-yey&quot;</span> \
-       <span class="Identifier"> url-path</span> <span class="Constant">&quot;/hash-server-yey/server/op=add/key=sb_XYZ/data=sdb_123&quot;</span> \
-       <span class="Identifier"> finished-okay</span> sfok \
-       <span class="Identifier"> data</span> rdata<span class="Identifier"> error</span> edata  \
-       <span class="Identifier"> status</span> st<span class="Identifier"> exit-status</span> rstatus
-<span class="Statement">    if-true</span> sfok <span class="Identifier"> not-equal</span>  <span class="Constant">1</span><span class="Identifier"> or</span> st <span class="Identifier"> not-equal</span>  GG_OKAY
-<span class="Statement">        @</span>Call did not succeed
-<span class="Statement">    else-if</span>
-<span class="Statement">        @</span>Result is <span class="Statement">&lt;&lt;print-out</span> rdata&gt; and (any) error is <span class="Statement">&lt;&lt;print-out</span> edata<span class="Statement">&gt;&gt;</span>
-<span class="Statement">    end-if</span>
+begin-handler /serv public
+    run-remote nf local &quot;hash-server-yey&quot; \
+        url-path &quot;/hash-server-yey/server/op=add/key=sb_XYZ/data=sdb_123&quot; \
+        finished-okay sfok \
+        data rdata error edata  \
+        status st exit-status rstatus
+    if-true sfok  not-equal  1 or st  not-equal  GG_OKAY
+        @Call did not succeed
+    else-if
+        @Result is &lt;&lt;print-out rdata&gt; and (any) error is &lt;&lt;print-out edata&gt;&gt;
+    end-if
 
-<span class="Statement">end-handler</span></pre>
-<span id=golf_copied_968 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_968' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_968, code_968, golf_copied_968)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+end-handler</pre>
+<span id=rimstone_copied_968 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_968' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_968, code_968, rimstone_copied_968)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Distributed computing'></a><span style="font-weight:bold;">Distributed computing</span><br/>
-<a href='https://golf-lang.com/call-remote.html'>call-remote</a> &nbsp;<br/>
-<a href='https://golf-lang.com/new-remote.html'>new-remote</a> &nbsp;<br/>
-<a href='https://golf-lang.com/read-remote.html'>read-remote</a> &nbsp;<br/>
-<a href='https://golf-lang.com/run-remote.html'>run-remote</a> &nbsp; <br/>
+<a href='https://rimstone-lang.com/call-remote.html'>call-remote</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/new-remote.html'>new-remote</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/read-remote.html'>read-remote</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/run-remote.html'>run-remote</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
-<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
+<a href='https://rimstone-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
-<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://golf-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://rimstone-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
 </div><br/></body></html>
 
 

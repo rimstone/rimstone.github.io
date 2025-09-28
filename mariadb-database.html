@@ -11,7 +11,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="canonical" href="https://golf-lang.com/mariadb-database.html" />
+<link rel="canonical" href="https://rimstone-lang.com/mariadb-database.html" />
 <style>
 
 
@@ -232,21 +232,21 @@ function googleTranslateElementInit() {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Mariadb database</div><hr/>MariaDB configuration file is written as a MariaDB client options file. <br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Mariadb database</div><hr/>MariaDB configuration file is written as a MariaDB client options file. <br/>
 <br/>
 You can see the parameters available at <a href='https://mariadb.com/kb/en/configuring-mariadb-connectorc-with-option-files/#options'>https://mariadb.com/kb/en/configuring-mariadb-connectorc-with-option-files/#options</a>. <br/>
 <br/>
 Most of the time, though, you would likely use only a few of those options, as in (for local connection):<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_759' class=notranslate>
+<pre id='code_758' class=notranslate>
 [client]
 user=myuser
 password=mypwd 
 database=mydb
 socket=/run/mysqld/mysqld.sock</pre>
-<span id=golf_copied_759 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_759' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_759, code_759, golf_copied_759)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_758 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_758' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_758, code_758, rimstone_copied_758)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The above file has fields "user" (MariaDB user), "password" (the password for MariaDB user), "database" (the MariaDB database name) and MariaDB communication "socket" location (assuming your database is local to your computer - if the database is across network you would not use sockets!). <br/>
 <br/>
@@ -254,30 +254,30 @@ If you use passwordless MariaDB login (such as when the MariaDB user name is the
 <br/>
 To get the location of the socket, you might use:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_758' class=notranslate>
-sudo mysql -u root -e <span class="Constant">&quot;show variables like 'socket'&quot;</span></pre>
-<span id=golf_copied_758 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_758' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_758, code_758, golf_copied_758)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_759' class=notranslate>
+sudo mysql -u root -e &quot;show variables like 'socket'&quot;</pre>
+<span id=rimstone_copied_759 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_759' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_759, code_759, rimstone_copied_759)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Database'></a><span style="font-weight:bold;">Database</span><br/>
-<a href='https://golf-lang.com/begin-transaction.html'>begin-transaction</a> &nbsp;<br/>
-<a href='https://golf-lang.com/commit-transaction.html'>commit-transaction</a> &nbsp;<br/>
-<a href='https://golf-lang.com/current-row.html'>current-row</a> &nbsp;<br/>
-<a href='https://golf-lang.com/database-config-file.html'>database-config-file</a> &nbsp;<br/>
-<a href='https://golf-lang.com/db-error.html'>db-error</a> &nbsp;<br/>
-<a href='https://golf-lang.com/mariadb-database.html'>mariadb-database</a> &nbsp;<br/>
-<a href='https://golf-lang.com/postgresql-database.html'>postgresql-database</a> &nbsp;<br/>
-<a href='https://golf-lang.com/rollback-transaction.html'>rollback-transaction</a> &nbsp;<br/>
-<a href='https://golf-lang.com/run-query.html'>run-query</a> &nbsp;<br/>
-<a href='https://golf-lang.com/sqlite-database.html'>sqlite-database</a> &nbsp; <br/>
+<a href='https://rimstone-lang.com/begin-transaction.html'>begin-transaction</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/commit-transaction.html'>commit-transaction</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/current-row.html'>current-row</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/database-config-file.html'>database-config-file</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/db-error.html'>db-error</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/mariadb-database.html'>mariadb-database</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/postgresql-database.html'>postgresql-database</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/rollback-transaction.html'>rollback-transaction</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/run-query.html'>run-query</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/sqlite-database.html'>sqlite-database</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
-<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
+<a href='https://rimstone-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
-<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://golf-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://rimstone-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
 </div><br/></body></html>
 
 

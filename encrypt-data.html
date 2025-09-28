@@ -11,7 +11,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="canonical" href="https://golf-lang.com/encrypt-data.html" />
+<link rel="canonical" href="https://rimstone-lang.com/encrypt-data.html" />
 <style>
 
 
@@ -232,24 +232,24 @@ function googleTranslateElementInit() {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Encrypt data</div><hr/><span style="font-weight:bold;">Purpose</span>: Encrypt data.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Encrypt data</div><hr/><span style="font-weight:bold;">Purpose</span>: Encrypt data.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_601' class=notranslate>
-<span class="Statement">encrypt-data</span> &lt;data&gt;<span class="Type"> to</span> &lt;result&gt; \
-    [<span class="Identifier"> input-length</span> &lt;input length&gt; ] \
-    [<span class="Identifier"> binary</span> [ &lt;binary&gt; ] ] \
-    (<span class="Identifier"> password</span> &lt;password&gt; \
-        [<span class="Identifier"> salt</span> &lt;salt&gt; [<span class="Identifier"> salt-length</span> &lt;salt length&gt; ] ] \
-        [<span class="Identifier"> iterations</span> &lt;iterations&gt; ] \
-        [<span class="Identifier"> cipher</span> &lt;cipher algorithm&gt; ] \
-        [<span class="Identifier"> digest</span> &lt;digest algorithm&gt; ]
-        [<span class="Identifier"> cache</span> ]
-        [<span class="Identifier"> clear-cache</span> &lt;clear cache&gt; <span class="Error">)</span> \
-    [<span class="Identifier"> init-vector</span> &lt;init vector&gt; ]</pre>
-<span id=golf_copied_601 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_601' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_601, code_601, golf_copied_601)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+encrypt-data &lt;data&gt; to &lt;result&gt; \
+    [ input-length &lt;input length&gt; ] \
+    [ binary [ &lt;binary&gt; ] ] \
+    ( password &lt;password&gt; \
+        [ salt &lt;salt&gt; [ salt-length &lt;salt length&gt; ] ] \
+        [ iterations &lt;iterations&gt; ] \
+        [ cipher &lt;cipher algorithm&gt; ] \
+        [ digest &lt;digest algorithm&gt; ]
+        [ cache ]
+        [ clear-cache &lt;clear cache&gt; ) \
+    [ init-vector &lt;init vector&gt; ]</pre>
+<span id=rimstone_copied_601 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_601' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_601, code_601, rimstone_copied_601)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 encrypt-data encrypts &lt;data&gt; and stores the ciphertext to &lt;result&gt; specified by "to" clause.<br/>
 <div class="vsub"><a id="Cipher and digest"></a>Cipher and digest</div>
@@ -261,34 +261,34 @@ openssl list <span class="Special">-cipher-algorithms</span>
 
 <span class="Comment">#get list of digest providers</span>
 openssl list <span class="Special">-digest-algorithms</span></pre>
-<span id=golf_copied_602 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_602' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_602, code_602, golf_copied_602)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_602 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_602' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_602, code_602, rimstone_copied_602)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Note that the default algorithms will typically suffice. If you use different algorithms, you should have a specific reason. If you use a specific cipher and digest for encoding, you must use the same for decoding. The key derivation method is PBKDF2.<br/>
 <div class="vsub"><a id="Data to be encrypted"></a>Data to be encrypted</div>
-If "input-length" clause is missing, then the number of bytes encrypted is the length of &lt;data&gt; (see <a href='https://golf-lang.com/string-length.html'>string-length</a>). If "input-length" clause is used, then &lt;input length&gt; bytes are encrypted.<br/>
+If "input-length" clause is missing, then the number of bytes encrypted is the length of &lt;data&gt; (see <a href='https://rimstone-lang.com/string-length.html'>string-length</a>). If "input-length" clause is used, then &lt;input length&gt; bytes are encrypted.<br/>
 <div class="vsub"><a id="Password"></a>Password</div>
 String &lt;password&gt; (in "password" clause) is the password used to encrypt and it must be a null-terminated string. <br/>
 <div class="vsub"><a id="Salt"></a>Salt</div>
-String &lt;salt&gt; (in "salt" clause) is the salt used in Key Derivation Function (KDF) when an actual symmetric encryption key is created. If &lt;salt length&gt; (in "salt-length" clause) is not specified, then the salt is null-terminated, otherwise it is a binary value of length &lt;salt length&gt;. See <a href='https://golf-lang.com/random-string.html'>random-string</a> or <a href='https://golf-lang.com/random-crypto.html'>random-crypto</a> for generating a random salt. If you use the "salt" clause, then you must use the exact same &lt;salt&gt; when data is decrypted with <a href='https://golf-lang.com/decrypt-data.html'>decrypt-data</a> - typically salt values are stored or transmitted unencrypted.<br/>
+String &lt;salt&gt; (in "salt" clause) is the salt used in Key Derivation Function (KDF) when an actual symmetric encryption key is created. If &lt;salt length&gt; (in "salt-length" clause) is not specified, then the salt is null-terminated, otherwise it is a binary value of length &lt;salt length&gt;. See <a href='https://rimstone-lang.com/random-string.html'>random-string</a> or <a href='https://rimstone-lang.com/random-crypto.html'>random-crypto</a> for generating a random salt. If you use the "salt" clause, then you must use the exact same &lt;salt&gt; when data is decrypted with <a href='https://rimstone-lang.com/decrypt-data.html'>decrypt-data</a> - typically salt values are stored or transmitted unencrypted.<br/>
 <div class="vsub"><a id="Iterations"></a>Iterations</div>
 The number of iterations used in producing a key is specified in &lt;iterations&gt; in "iterations" clause. The default is 1000 per <a href='https://www.rfc-editor.org/rfc/rfc8018'>RFC 8018</a>, though depending on your needs and the quality of password you may choose a different value.<br/>
 <div class="vsub"><a id="Initialization vector (IV)"></a>Initialization vector (IV)</div>
-Different encrypted messages should have a different IV value, which is specified with &lt;init vector&gt; in the "init-vector" clause. See <a href='https://golf-lang.com/random-string.html'>random-string</a> or <a href='https://golf-lang.com/random-crypto.html'>random-crypto</a> for generating IV values. The decrypting side must use the same IV value to decrypt the message. Just like salt, IV is not a secret and is transmitted in plain text. Each cipher algorithm may require a certain number of bytes for IV.<br/>
+Different encrypted messages should have a different IV value, which is specified with &lt;init vector&gt; in the "init-vector" clause. See <a href='https://rimstone-lang.com/random-string.html'>random-string</a> or <a href='https://rimstone-lang.com/random-crypto.html'>random-crypto</a> for generating IV values. The decrypting side must use the same IV value to decrypt the message. Just like salt, IV is not a secret and is transmitted in plain text. Each cipher algorithm may require a certain number of bytes for IV.<br/>
 <div class="vsub"><a id="Encrypted data"></a>Encrypted data</div>
 The encrypted data is stored in &lt;result&gt; (in "to" clause). The encrypted data can be a binary data (if "binary" clause is present without boolean variable &lt;binary&gt;, or if &lt;binary&gt; evaluates to true), which is binary-mode encryption; or if not, it will be a null-terminated string, which is character-mode encryption, consisting of hexadecimal characters (i.e. ranging from "0" to "9" and "a" to "f"). Character mode of encryption is convenient if the result of encryption should be a human readable string, or for the purposes of non-binary storage in the database.<br/>
 <div class="vsub"><a id="Caching key"></a>Caching key</div>
 A key used to actually encrypt/decrypt data is produced by using password, salt, cipher, digest and the number of iterations. Depending on these parameters (especially the number of iterations), computing the key can be a resource intensive and lengthy operation. You can cache the key value and compute it only once (or once in a while) by using "cache" clause. If you need to recompute the key once in a while, use "clear-cache" clause. &lt;clear cache&gt; is a "bool" variable; the key cache is cleared if it is true, and stays if it is false. For example with encrypt-data (the same applies to decrypt-data):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_603' class=notranslate>
-<span class="Statement">set-bool</span> clear = <span class="Constant">true</span> if-true q<span class="Identifier"> equal</span> <span class="Constant">0</span>
-<span class="Statement">encrypt-data</span> dt<span class="Identifier"> init-vector</span> non<span class="Identifier"> password</span> pwd \
-   <span class="Identifier"> salt</span> rs<span class="Identifier"> salt-length</span> <span class="Constant">10</span><span class="Identifier"> iterations</span> iter<span class="Type"> to</span> \
-    dt_enc<span class="Identifier"> cache clear-cache</span> clear</pre>
-<span id=golf_copied_603 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_603' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_603, code_603, golf_copied_603)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+set-bool clear = true if-true q equal 0
+encrypt-data dt init-vector non password pwd \
+    salt rs salt-length 10 iterations iter to \
+    dt_enc cache clear-cache clear</pre>
+<span id=rimstone_copied_603 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_603' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_603, code_603, rimstone_copied_603)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In this case, when "q" is 0, cache will be cleared, with values of password, salt and iterations presumably changed, and the new key is computed and then cached. In all other cases, the last computed key stays the same. Normally, with IV usage (in "init-vector" clause), there is no need to change the key often, or at all.<br/>
 <br/>
@@ -303,76 +303,76 @@ Each cipher/digest combination carries separate recommendations about the usage 
 In the following example, the data is encrypted, and then decrypted, producing the very same data:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_604' class=notranslate>
-<span class="Comment">// Original string to encrypt</span>
-<span class="Statement">set-string</span> orig_data=<span class="Constant">&quot;something to encrypt!&quot;</span>
+// Original string to encrypt
+set-string orig_data=&quot;something to encrypt!&quot;
 
-<span class="Comment">// Encrypted data is in </span><span class="Constant">&quot;res&quot;</span><span class="Comment"> variable</span>
-<span class="Statement">encrypt-data</span> orig_data<span class="Identifier"> password</span> <span class="Constant">&quot;mypass&quot;</span><span class="Type"> to</span> res
+// Encrypted data is in &quot;res&quot; variable
+encrypt-data orig_data password &quot;mypass&quot; to res
 
-<span class="Comment">// Decrypt what was just encrypted, decrypted data is in </span><span class="Constant">&quot;dec_data&quot;</span>
-<span class="Statement">decrypt-data</span> res<span class="Identifier"> password</span> <span class="Constant">&quot;mypass&quot;</span><span class="Type"> to</span> dec_data
+// Decrypt what was just encrypted, decrypted data is in &quot;dec_data&quot;
+decrypt-data res password &quot;mypass&quot; to dec_data
 
-<span class="Comment">// Check that decrypted data matches the original </span>
-<span class="Statement">if</span> (!strcmp (orig_data, dec_data)) {
-<span class="Statement">    @</span>Success!
-<span class="Statement">}</span> else {
-<span class="Statement">    @</span>Failure!
-<span class="Statement">}</span></pre>
-<span id=golf_copied_604 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_604' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_604, code_604, golf_copied_604)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+// Check that decrypted data matches the original
+if (!strcmp (orig_data, dec_data)) {
+    @Success!
+} else {
+    @Failure!
+}</pre>
+<span id=rimstone_copied_604 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_604' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_604, code_604, rimstone_copied_604)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-A more involved example below encrypts specific number of bytes (6 in this case). <a href='https://golf-lang.com/random-string.html'>random-string</a> is used to produce salt. The length of data to encrypt is given with "input-length" clause. The encrypted data is specified to be "binary" (meaning not as a human-readable string), so the "output-length" of such binary output is specified. The decryption thus uses "input-length" clause to specify the length of data to decrypt, and also "output-length" to get the length of decrypted data. Finally, the original data is compared with the decrypted data, and the length of such data must be the same as the original (meaning 6):<br/>
+A more involved example below encrypts specific number of bytes (6 in this case). <a href='https://rimstone-lang.com/random-string.html'>random-string</a> is used to produce salt. The length of data to encrypt is given with "input-length" clause. The encrypted data is specified to be "binary" (meaning not as a human-readable string), so the "output-length" of such binary output is specified. The decryption thus uses "input-length" clause to specify the length of data to decrypt, and also "output-length" to get the length of decrypted data. Finally, the original data is compared with the decrypted data, and the length of such data must be the same as the original (meaning 6):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_605' class=notranslate>
-<span class="Comment">// Original data (only the first </span><span class="Constant">6</span><span class="Comment"> bytes are encrypted)</span>
-<span class="Statement">set-string</span> orig_data=<span class="Constant">&quot;something to encrypt!&quot;</span>
+// Original data (only the first 6 bytes are encrypted)
+set-string orig_data=&quot;something to encrypt!&quot;
 
-<span class="Comment">// Get </span><span class="Constant">8</span><span class="Comment"> random binary bytes to be the salt</span>
-<span class="Statement">random-string</span><span class="Type"> to</span> newsalt<span class="Identifier"> length</span> <span class="Constant">8</span><span class="Identifier"> binary</span>
+// Get 8 random binary bytes to be the salt
+random-string to newsalt length 8 binary
 
-<span class="Comment">// Encrypt data using salt and produce binary output (meaning it's not a null-terminated character string), with the</span>
-<span class="Comment">// length of such output in </span><span class="Constant">&quot;encrypted_len&quot;</span><span class="Comment"> variable.</span>
-<span class="Statement">encrypt-data</span> orig_data<span class="Identifier"> input-length</span> <span class="Constant">6</span> output-length encrypted_len<span class="Identifier"> password</span> <span class="Constant">&quot;mypass&quot;</span><span class="Identifier"> salt</span> newsalt<span class="Type"> to</span> res<span class="Identifier"> binary</span>
+// Encrypt data using salt and produce binary output (meaning it's not a null-terminated character string), with the
+// length of such output in &quot;encrypted_len&quot; variable.
+encrypt-data orig_data input-length 6 output-length encrypted_len password &quot;mypass&quot; salt newsalt to res binary
 
-<span class="Comment">// Decrypt the data encrypted above. The length of encrypted data is passed in </span><span class="Constant">&quot;encrypted_len&quot;</span><span class="Comment"> variable, and then length of decrypted data</span>
-<span class="Comment">// is obtained in </span><span class="Constant">&quot;decrypted_len&quot;</span><span class="Comment"> variable.</span>
-<span class="Statement">decrypt-data</span> res output-length decrypted_len<span class="Identifier"> password</span> <span class="Constant">&quot;mypass&quot;</span><span class="Identifier"> salt</span> newsalt<span class="Type"> to</span> dec_data<span class="Identifier"> input-length</span> encrypted_len<span class="Identifier"> binary</span>
+// Decrypt the data encrypted above. The length of encrypted data is passed in &quot;encrypted_len&quot; variable, and then length of decrypted data
+// is obtained in &quot;decrypted_len&quot; variable.
+decrypt-data res output-length decrypted_len password &quot;mypass&quot; salt newsalt to dec_data input-length encrypted_len binary
 
-<span class="Comment">// Check if the </span><span class="Constant">6</span><span class="Comment"> bytes of the original data matches decrypted data, and if exactly </span><span class="Constant">6</span><span class="Comment"> bytes was decrypted</span>
-<span class="Statement">if</span> (!strncmp(orig_data,dec_data, <span class="Constant">6</span>)<span class="Identifier"> &amp;&amp;</span> decrypted_len == <span class="Constant">6</span>) {
-<span class="Statement">    @</span>Success!
-<span class="Statement">}</span> else {
-<span class="Statement">    @</span>Failure!
-<span class="Statement">}</span></pre>
-<span id=golf_copied_605 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_605' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_605, code_605, golf_copied_605)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+// Check if the 6 bytes of the original data matches decrypted data, and if exactly 6 bytes was decrypted
+if (!strncmp(orig_data,dec_data, 6) &amp;&amp; decrypted_len == 6) {
+    @Success!
+} else {
+    @Failure!
+}</pre>
+<span id=rimstone_copied_605 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_605' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_605, code_605, rimstone_copied_605)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 An example of using different algorithms:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_606' class=notranslate>
-<span class="Statement">encrypt-data</span> <span class="Constant">&quot;some data!&quot;</span><span class="Identifier"> password</span> <span class="Constant">&quot;mypwd&quot;</span><span class="Identifier"> salt</span> rs1<span class="Type"> to</span> encd1<span class="Identifier"> cipher</span> <span class="Constant">&quot;camellia-256-cfb1&quot;</span><span class="Identifier"> digest</span> <span class="Constant">&quot;sha3-256&quot;</span>
-<span class="Statement">decrypt-data</span> encd1<span class="Identifier"> password</span> <span class="Constant">&quot;mypwd&quot;</span><span class="Identifier"> salt</span> rs1<span class="Type"> to</span> decd1<span class="Identifier"> cipher</span> <span class="Constant">&quot;camellia-256-cfb1&quot;</span><span class="Identifier"> digest</span> <span class="Constant">&quot;sha3-256&quot;</span></pre>
-<span id=golf_copied_606 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_606' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_606, code_606, golf_copied_606)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+encrypt-data &quot;some data!&quot; password &quot;mypwd&quot; salt rs1 to encd1 cipher &quot;camellia-256-cfb1&quot; digest &quot;sha3-256&quot;
+decrypt-data encd1 password &quot;mypwd&quot; salt rs1 to decd1 cipher &quot;camellia-256-cfb1&quot; digest &quot;sha3-256&quot;</pre>
+<span id=rimstone_copied_606 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_606' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_606, code_606, rimstone_copied_606)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Encryption'></a><span style="font-weight:bold;">Encryption</span><br/>
-<a href='https://golf-lang.com/decrypt-data.html'>decrypt-data</a> &nbsp;<br/>
-<a href='https://golf-lang.com/derive-key.html'>derive-key</a> &nbsp;<br/>
-<a href='https://golf-lang.com/encrypt-data.html'>encrypt-data</a> &nbsp;<br/>
-<a href='https://golf-lang.com/hash-string.html'>hash-string</a> &nbsp;<br/>
-<a href='https://golf-lang.com/hmac-string.html'>hmac-string</a> &nbsp;<br/>
-<a href='https://golf-lang.com/random-crypto.html'>random-crypto</a> &nbsp;<br/>
-<a href='https://golf-lang.com/random-string.html'>random-string</a> &nbsp; <br/>
+<a href='https://rimstone-lang.com/decrypt-data.html'>decrypt-data</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/derive-key.html'>derive-key</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/encrypt-data.html'>encrypt-data</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/hash-string.html'>hash-string</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/hmac-string.html'>hmac-string</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/random-crypto.html'>random-crypto</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/random-string.html'>random-string</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
-<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
+<a href='https://rimstone-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
-<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://golf-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://rimstone-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
 </div><br/></body></html>
 
 

@@ -11,7 +11,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="canonical" href="https://golf-lang.com/scan-string.html" />
+<link rel="canonical" href="https://rimstone-lang.com/scan-string.html" />
 <style>
 
 
@@ -232,16 +232,16 @@ function googleTranslateElementInit() {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Scan string</div><hr/><span style="font-weight:bold;">Purpose</span>: Scans string for another string or a character.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Scan string</div><hr/><span style="font-weight:bold;">Purpose</span>: Scans string for another string or a character.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_969' class=notranslate>
-<span class="Statement">scan-string</span> &lt;string&gt; [<span class="Identifier"> start-with</span> &lt;start with&gt; ] [<span class="Identifier"> length</span> &lt;length&gt; ] \
-   <span class="Identifier"> for</span> &lt;for string&gt; \
-   <span class="Type"> status</span> &lt;status&gt;</pre>
-<span id=golf_copied_969 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_969' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_969, code_969, golf_copied_969)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+scan-string &lt;string&gt; [ start-with &lt;start with&gt; ] [ length &lt;length&gt; ] \
+    for &lt;for string&gt; \
+    status &lt;status&gt;</pre>
+<span id=rimstone_copied_969 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_969' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_969, code_969, rimstone_copied_969)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 scan-string will search &lt;string&gt; for &lt;for string&gt; (which can be a string or character such as 'A' for instance) specified in "for" clause.<br/>
 <br/>
@@ -254,55 +254,55 @@ If "length" clause is used, then only the &lt;length&gt; bytes are scanned, star
 Getting the byte position of a string:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_970' class=notranslate>
-<span class="Statement">set-string</span> s = <span class="Constant">&quot;wow this is a string!&quot;</span>
-<span class="Statement">scan-string</span> s<span class="Identifier"> start-with</span> <span class="Constant">3</span><span class="Identifier"> length</span> <span class="Constant">13</span><span class="Identifier"> for</span> <span class="Constant">&quot;this&quot;</span><span class="Type"> status</span> pos
-<span class="Statement">if-true</span> pos<span class="Identifier"> equal</span> <span class="Constant">4</span>
-<span class="Statement">    @</span>Found string where it should be!
-<span class="Statement">end-if</span></pre>
-<span id=golf_copied_970 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_970' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_970, code_970, golf_copied_970)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+set-string s = &quot;wow this is a string!&quot;
+scan-string s start-with 3 length 13 for &quot;this&quot; status pos
+if-true pos equal 4
+    @Found string where it should be!
+end-if</pre>
+<span id=rimstone_copied_970 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_970' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_970, code_970, rimstone_copied_970)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Getting the byte position of a character:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_971' class=notranslate>
-<span class="Statement">set-string</span> s = <span class="Constant">&quot;wow this is a string!&quot;</span>
-<span class="Statement">scan-string</span> s<span class="Identifier"> for</span> 'g'<span class="Type"> status</span> pos
-<span class="Statement">if-true</span> pos<span class="Identifier"> equal</span> <span class="Constant">19</span>
-<span class="Statement">    @</span>Found character where it should be!
-<span class="Statement">end-if</span></pre>
-<span id=golf_copied_971 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_971' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_971, code_971, golf_copied_971)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+set-string s = &quot;wow this is a string!&quot;
+scan-string s for 'g' status pos
+if-true pos equal 19
+    @Found character where it should be!
+end-if</pre>
+<span id=rimstone_copied_971 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_971' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_971, code_971, rimstone_copied_971)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Strings'></a><span style="font-weight:bold;">Strings</span><br/>
-<a href='https://golf-lang.com/copy-string.html'>copy-string</a> &nbsp;<br/>
-<a href='https://golf-lang.com/count-substring.html'>count-substring</a> &nbsp;<br/>
-<a href='https://golf-lang.com/delete-string.html'>delete-string</a> &nbsp;<br/>
-<a href='https://golf-lang.com/double-string.html'>double-string</a> &nbsp;<br/>
-<a href='https://golf-lang.com/lower-string.html'>lower-string</a> &nbsp;<br/>
-<a href='https://golf-lang.com/match-regex.html'>match-regex</a> &nbsp;<br/>
-<a href='https://golf-lang.com/new-string.html'>new-string</a> &nbsp;<br/>
-<a href='https://golf-lang.com/number-string.html'>number-string</a> &nbsp;<br/>
-<a href='https://golf-lang.com/read-split.html'>read-split</a> &nbsp;<br/>
-<a href='https://golf-lang.com/replace-string.html'>replace-string</a> &nbsp;<br/>
-<a href='https://golf-lang.com/scan-string.html'>scan-string</a> &nbsp;<br/>
-<a href='https://golf-lang.com/set-string.html'>set-string</a> &nbsp;<br/>
-<a href='https://golf-lang.com/split-string.html'>split-string</a> &nbsp;<br/>
-<a href='https://golf-lang.com/string-double.html'>string-double</a> &nbsp;<br/>
-<a href='https://golf-lang.com/string-expressions.html'>string-expressions</a> &nbsp;<br/>
-<a href='https://golf-lang.com/string-length.html'>string-length</a> &nbsp;<br/>
-<a href='https://golf-lang.com/string-number.html'>string-number</a> &nbsp;<br/>
-<a href='https://golf-lang.com/trim-string.html'>trim-string</a> &nbsp;<br/>
-<a href='https://golf-lang.com/upper-string.html'>upper-string</a> &nbsp;<br/>
-<a href='https://golf-lang.com/write-string.html'>write-string</a> &nbsp; <br/>
+<a href='https://rimstone-lang.com/copy-string.html'>copy-string</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/count-substring.html'>count-substring</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/delete-string.html'>delete-string</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/double-string.html'>double-string</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/lower-string.html'>lower-string</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/match-regex.html'>match-regex</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/new-string.html'>new-string</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/number-string.html'>number-string</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/read-split.html'>read-split</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/replace-string.html'>replace-string</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/scan-string.html'>scan-string</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/set-string.html'>set-string</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/split-string.html'>split-string</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/string-double.html'>string-double</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/string-expressions.html'>string-expressions</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/string-length.html'>string-length</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/string-number.html'>string-number</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/trim-string.html'>trim-string</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/upper-string.html'>upper-string</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/write-string.html'>write-string</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
-<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
+<a href='https://rimstone-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
-<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://golf-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://rimstone-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
 </div><br/></body></html>
 
 

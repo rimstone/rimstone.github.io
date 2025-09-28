@@ -11,7 +11,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="canonical" href="https://golf-lang.com/number-string.html" />
+<link rel="canonical" href="https://rimstone-lang.com/number-string.html" />
 <style>
 
 
@@ -232,16 +232,16 @@ function googleTranslateElementInit() {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Number string</div><hr/><span style="font-weight:bold;">Purpose</span>: Convert number to string.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Number string</div><hr/><span style="font-weight:bold;">Purpose</span>: Convert number to string.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_820' class=notranslate>
-<span class="Statement">number-string</span> &lt;number&gt; [<span class="Type"> to</span> &lt;string&gt; ] \
-    [<span class="Identifier"> base</span> &lt;base&gt; ] \
-    [<span class="Type"> status</span> &lt;status&gt; ]</pre>
-<span id=golf_copied_820 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_820' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_820, code_820, golf_copied_820)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+number-string &lt;number&gt; [ to &lt;string&gt; ] \
+    [ base &lt;base&gt; ] \
+    [ status &lt;status&gt; ]</pre>
+<span id=rimstone_copied_820 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_820' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_820, code_820, rimstone_copied_820)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 &lt;number&gt; is converted to &lt;string&gt; in "to" clause, using &lt;base&gt; in "base" clause, where &lt;base&gt; is by default 10. &lt;base&gt; can be between 2 and 36, inclusive. &lt;number&gt; can be positive or negative (i.e. signed) and can be of any integer type up to 64-bit (char, int, long, long long etc.). &nbsp;If "to" clause is omitted, then &lt;number&gt; is printed out.<br/>
 <br/>
@@ -249,103 +249,103 @@ Note that any letters in &lt;string&gt; (depending on the &lt;base&gt;) are alwa
 <br/>
 If there is an error, such as if &lt;base&gt; is incorrect, then &lt;status&gt; number (in "status" clause) is GG_ERR_FAILED, otherwise it's GG_OKAY.<br/>
 <br/>
-If number-string prints out a number (i.e. "to" clause is omitted), and this is within <a href='https://golf-lang.com/write-string.html'>write-string</a>, then &lt;number&gt; is output into the buffer that builds a new string.<br/>
+If number-string prints out a number (i.e. "to" clause is omitted), and this is within <a href='https://rimstone-lang.com/write-string.html'>write-string</a>, then &lt;number&gt; is output into the buffer that builds a new string.<br/>
 <div class="vsub"><a id="Shortcut"></a>Shortcut</div>
 For convenience, you can use a shortcut for converting a number to a string, by prepending a "$" sign to the variable name, for example:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_821' class=notranslate>
-<span class="Statement">set-number</span> n = -<span class="Constant">10</span>
-<span class="Statement">set-string</span> s = <span class="Constant">&quot;This is number &quot;</span> + $n</pre>
-<span id=golf_copied_821 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_821' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_821, code_821, golf_copied_821)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+set-number n = -10
+set-string s = &quot;This is number &quot; + $n</pre>
+<span id=rimstone_copied_821 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_821' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_821, code_821, rimstone_copied_821)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The above is the same as:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_822' class=notranslate>
-<span class="Statement">set-number</span> n = -<span class="Constant">10</span>
-<span class="Statement">number-string</span> n<span class="Type"> to</span> sval
-<span class="Statement">set-string</span> s = <span class="Constant">&quot;This is number &quot;</span> + sval</pre>
-<span id=golf_copied_822 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_822' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_822, code_822, golf_copied_822)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+set-number n = -10
+number-string n to sval
+set-string s = &quot;This is number &quot; + sval</pre>
+<span id=rimstone_copied_822 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_822' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_822, code_822, rimstone_copied_822)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Effectively, $ in front of a number variable is the same as number-string that converts it to a string with the base of 10. If a string cannot be converted to a number, your program will error out. To check values with a status, or to use different bases, use number-string.<br/>
 <br/>
 You can use $ for an expression, in which case the expression must be within parenthesis:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_823' class=notranslate>
-<span class="Statement">set-number</span> n1 = -<span class="Constant">10</span>
-<span class="Statement">set-number</span> n2 = <span class="Constant">15</span>
-<span class="Statement">set-string</span> s = <span class="Constant">&quot;This is number &quot;</span> + $(n1+n2)</pre>
-<span id=golf_copied_823 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_823' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_823, code_823, golf_copied_823)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+set-number n1 = -10
+set-number n2 = 15
+set-string s = &quot;This is number &quot; + $(n1+n2)</pre>
+<span id=rimstone_copied_823 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_823' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_823, code_823, rimstone_copied_823)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In this case number "s" will have value of "This is number 5", because numbers -10 and 15 are added to produce 5, which is then converted to a string and finally added to the first string.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 The following will allocate memory for string "x" to be "801":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_824' class=notranslate>
-<span class="Statement">set-number</span> x = <span class="Constant">801</span>
-<span class="Statement">number-string</span> x<span class="Type"> to</span> res</pre>
-<span id=golf_copied_824 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_824' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_824, code_824, golf_copied_824)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+set-number x = 801
+number-string x to res</pre>
+<span id=rimstone_copied_824 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_824' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_824, code_824, rimstone_copied_824)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The following will store "-238f" to string "res":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_825' class=notranslate>
-<span class="Statement">set-number</span> x = -<span class="Constant">9103</span>
-<span class="Statement">number-string</span> x<span class="Type"> to</span> res<span class="Identifier"> base</span> <span class="Constant">16</span></pre>
-<span id=golf_copied_825 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_825' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_825, code_825, golf_copied_825)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+set-number x = -9103
+number-string x to res base 16</pre>
+<span id=rimstone_copied_825 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_825' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_825, code_825, rimstone_copied_825)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 To print out a number -131:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_826' class=notranslate>
-<span class="Statement">set-number</span> x = -<span class="Constant">131</span>
-<span class="Statement">number-string</span> x</pre>
-<span id=golf_copied_826 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_826' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_826, code_826, golf_copied_826)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+set-number x = -131
+number-string x</pre>
+<span id=rimstone_copied_826 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_826' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_826, code_826, rimstone_copied_826)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Numbers'></a><span style="font-weight:bold;">Numbers</span><br/>
-<a href='https://golf-lang.com/abs-number.html'>abs-number</a> &nbsp;<br/>
-<a href='https://golf-lang.com/mixing-doubles-and-numbers.html'>mixing-doubles-and-numbers</a> &nbsp;<br/>
-<a href='https://golf-lang.com/number-expressions.html'>number-expressions</a> &nbsp;<br/>
-<a href='https://golf-lang.com/number-string.html'>number-string</a> &nbsp;<br/>
-<a href='https://golf-lang.com/set-number.html'>set-number</a> &nbsp;<br/>
-<a href='https://golf-lang.com/string-number.html'>string-number</a> &nbsp; <br/>
+<a href='https://rimstone-lang.com/abs-number.html'>abs-number</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/mixing-doubles-and-numbers.html'>mixing-doubles-and-numbers</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/number-expressions.html'>number-expressions</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/number-string.html'>number-string</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/set-number.html'>set-number</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/string-number.html'>string-number</a> &nbsp; <br/>
  <a name='Strings'></a><span style="font-weight:bold;">Strings</span><br/>
-<a href='https://golf-lang.com/copy-string.html'>copy-string</a> &nbsp;<br/>
-<a href='https://golf-lang.com/count-substring.html'>count-substring</a> &nbsp;<br/>
-<a href='https://golf-lang.com/delete-string.html'>delete-string</a> &nbsp;<br/>
-<a href='https://golf-lang.com/double-string.html'>double-string</a> &nbsp;<br/>
-<a href='https://golf-lang.com/lower-string.html'>lower-string</a> &nbsp;<br/>
-<a href='https://golf-lang.com/match-regex.html'>match-regex</a> &nbsp;<br/>
-<a href='https://golf-lang.com/new-string.html'>new-string</a> &nbsp;<br/>
-<a href='https://golf-lang.com/number-string.html'>number-string</a> &nbsp;<br/>
-<a href='https://golf-lang.com/read-split.html'>read-split</a> &nbsp;<br/>
-<a href='https://golf-lang.com/replace-string.html'>replace-string</a> &nbsp;<br/>
-<a href='https://golf-lang.com/scan-string.html'>scan-string</a> &nbsp;<br/>
-<a href='https://golf-lang.com/set-string.html'>set-string</a> &nbsp;<br/>
-<a href='https://golf-lang.com/split-string.html'>split-string</a> &nbsp;<br/>
-<a href='https://golf-lang.com/string-double.html'>string-double</a> &nbsp;<br/>
-<a href='https://golf-lang.com/string-expressions.html'>string-expressions</a> &nbsp;<br/>
-<a href='https://golf-lang.com/string-length.html'>string-length</a> &nbsp;<br/>
-<a href='https://golf-lang.com/string-number.html'>string-number</a> &nbsp;<br/>
-<a href='https://golf-lang.com/trim-string.html'>trim-string</a> &nbsp;<br/>
-<a href='https://golf-lang.com/upper-string.html'>upper-string</a> &nbsp;<br/>
-<a href='https://golf-lang.com/write-string.html'>write-string</a> &nbsp; <br/>
+<a href='https://rimstone-lang.com/copy-string.html'>copy-string</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/count-substring.html'>count-substring</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/delete-string.html'>delete-string</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/double-string.html'>double-string</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/lower-string.html'>lower-string</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/match-regex.html'>match-regex</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/new-string.html'>new-string</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/number-string.html'>number-string</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/read-split.html'>read-split</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/replace-string.html'>replace-string</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/scan-string.html'>scan-string</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/set-string.html'>set-string</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/split-string.html'>split-string</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/string-double.html'>string-double</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/string-expressions.html'>string-expressions</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/string-length.html'>string-length</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/string-number.html'>string-number</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/trim-string.html'>trim-string</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/upper-string.html'>upper-string</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/write-string.html'>write-string</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
-<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
+<a href='https://rimstone-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
-<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://golf-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://rimstone-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
 </div><br/></body></html>
 
 

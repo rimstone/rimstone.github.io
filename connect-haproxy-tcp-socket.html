@@ -11,7 +11,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="canonical" href="https://golf-lang.com/connect-haproxy-tcp-socket.html" />
+<link rel="canonical" href="https://rimstone-lang.com/connect-haproxy-tcp-socket.html" />
 <style>
 
 
@@ -232,7 +232,7 @@ function googleTranslateElementInit() {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Connect haproxy tcp socket</div><hr/>This shows how to connect your application listening on TCP port &lt;port number&gt; (started with "-p" option in <a href='https://golf-lang.com/mgrg.html'>mgrg</a>) to HAProxy load balancer.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Connect haproxy tcp socket</div><hr/>This shows how to connect your application listening on TCP port &lt;port number&gt; (started with "-p" option in <a href='https://rimstone-lang.com/mgrg.html'>mgrg</a>) to HAProxy load balancer.<br/>
 <br/>
 One use of HAProxy is to balance the load between different web servers, which in turn are connected to your Golf applications; in this case HAProxy does not directly communicate with your Golf applications (which are behind other web servers).<br/>
 <br/>
@@ -273,44 +273,44 @@ backend backend_servers
     filter fcgi-app golf-fcgi
     use-fcgi-app golf-fcgi
     server s1 127.0.0.1:3000 proto fcgi</pre>
-<span id=golf_copied_492 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_492' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_492, code_492, golf_copied_492)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_492 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_492' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_492, code_492, rimstone_copied_492)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Restart HAProxy:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_493' class=notranslate>
 sudo systemctl restart haproxy</pre>
-<span id=golf_copied_493 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_493' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_493, code_493, golf_copied_493)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_493 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_493' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_493, code_493, rimstone_copied_493)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Note that Golf application path is "/&lt;your golf app name&gt;" (and the application name may or may not be the same, see <a href='https://golf-lang.com/request.html'>request</a>). The TCP port of the application is "3000" (could be any port number you choose that's greater than 1000 and lower than 65535). <br/>
+Note that Golf application path is "/&lt;your golf app name&gt;" (and the application name may or may not be the same, see <a href='https://rimstone-lang.com/request.html'>request</a>). The TCP port of the application is "3000" (could be any port number you choose that's greater than 1000 and lower than 65535). <br/>
 <br/>
-HAProxy itself is bound to port 90 in this example (see "frontend" section above), and "path_reg" specifies which URLs will be passed to your Golf application (i.e. they must have "/&lt;your golf app name&gt;/" in the URL). "path-info" specifies SCRIPT_NAME and PATH_INFO (as "()" regular sub-expressions), which are as such passed to your Golf application. "docroot" is set to the application home directory (see <a href='https://golf-lang.com/directories.html'>directories</a>) in case you wish to serve HTML documents from it; however if you keep sensitive data there, specify another directory.<br/>
+HAProxy itself is bound to port 90 in this example (see "frontend" section above), and "path_reg" specifies which URLs will be passed to your Golf application (i.e. they must have "/&lt;your golf app name&gt;/" in the URL). "path-info" specifies SCRIPT_NAME and PATH_INFO (as "()" regular sub-expressions), which are as such passed to your Golf application. "docroot" is set to the application home directory (see <a href='https://rimstone-lang.com/directories.html'>directories</a>) in case you wish to serve HTML documents from it; however if you keep sensitive data there, specify another directory.<br/>
 <br/>
 A Golf application (named "&lt;your golf app name&gt;") would have been started with (using the same application name "&lt;your golf app name&gt;" and TCP port "3000"):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_494' class=notranslate>
 mgrg <span class="Special">-p</span> <span class="Constant">3000</span> <span class="Statement">&lt;</span>your golf app name<span class="Statement">&gt;</span></pre>
-<span id=golf_copied_494 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_494' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_494, code_494, golf_copied_494)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_494 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_494' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_494, code_494, rimstone_copied_494)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Now you should be able to connect and load-balance your Golf application servers directly from HAProxy (which in this example listens on port 90, so you'd refer to it with https://your-web-server:90/&lt;your golf app name&gt;/...).<br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Web servers'></a><span style="font-weight:bold;">Web servers</span><br/>
-<a href='https://golf-lang.com/connect-apache-tcp-socket.html'>connect-apache-tcp-socket</a> &nbsp;<br/>
-<a href='https://golf-lang.com/connect-apache-unix-socket.html'>connect-apache-unix-socket</a> &nbsp;<br/>
-<a href='https://golf-lang.com/connect-haproxy-tcp-socket.html'>connect-haproxy-tcp-socket</a> &nbsp;<br/>
-<a href='https://golf-lang.com/connect-nginx-tcp-socket.html'>connect-nginx-tcp-socket</a> &nbsp;<br/>
-<a href='https://golf-lang.com/connect-nginx-unix-socket.html'>connect-nginx-unix-socket</a> &nbsp; <br/>
+<a href='https://rimstone-lang.com/connect-apache-tcp-socket.html'>connect-apache-tcp-socket</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/connect-apache-unix-socket.html'>connect-apache-unix-socket</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/connect-haproxy-tcp-socket.html'>connect-haproxy-tcp-socket</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/connect-nginx-tcp-socket.html'>connect-nginx-tcp-socket</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/connect-nginx-unix-socket.html'>connect-nginx-unix-socket</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
-<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
+<a href='https://rimstone-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
-<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://golf-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://rimstone-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
 </div><br/></body></html>
 
 

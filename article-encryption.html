@@ -11,7 +11,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="canonical" href="https://golf-lang.com/article-encryption.html" />
+<link rel="canonical" href="https://rimstone-lang.com/article-encryption.html" />
 <style>
 
 
@@ -232,7 +232,7 @@ function googleTranslateElementInit() {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Encryption: ciphers, digests, salt, IV and a hands-on guide</div><hr/><br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Encryption: ciphers, digests, salt, IV and a hands-on guide</div><hr/><br/>
 <br/><div class='vimg'><img class='imgs' src='encryption.jpg' alt='Golf'></img>
 </div><br/>
 <div class="vsub"><a id="What is encryption"></a>What is encryption</div>
@@ -256,35 +256,35 @@ You will often hear about "iterations" in encryption. An iteration is a single c
 <br/>
 IV (or "Initialization Vector") is typically a random value that's used for encryption of each message. Now, salt is used for producing a key based on a password. And IV is used when you already have a key and now are encrypting messages. The purpose of IV is to make the same messages appear differently when encrypted. Sometimes, IV also has a sequential component, so it's made of a random string plus a sequence that constantly increases. This makes "replay" attacks difficult, which is where attacker doesn't need to decrypt a message; but rather an encrypted message was "sniffed" (i.e. intercepted between the sender and receiver) and then replayed, hoping to repeat the action already performed. Though in reality, most high-level protocols already have a sequence in place, where each message has, as a part of it, an increasing packet number, so in most cases IV doesn't need it.<br/>
 <div class="vsub"><a id="Encryption example"></a>Encryption example</div>
-To run the examples here, create an application "enc" in a directory of its own (see <a href='https://golf-lang.com/mgrg.html'>mgrg</a> for more on Golf's program manager):<br/>
+To run the examples here, create an application "enc" in a directory of its own (see <a href='https://rimstone-lang.com/mgrg.html'>mgrg</a> for more on Golf's program manager):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_84' class=notranslate>
 <span class="Statement">mkdir</span> enc_example
 <span class="Statement">cd</span> enc_example
 gg <span class="Special">-k</span> enc</pre>
-<span id=golf_copied_84 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_84' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_84, code_84, golf_copied_84)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_84 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_84' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_84, code_84, rimstone_copied_84)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-To encrypt data use <a href='https://golf-lang.com/encrypt-data.html'>encrypt-data</a> statement. The simplest form is to encrypt a null-terminated string. Create a file "encrypt.golf" and copy this:<br/>
+To encrypt data use <a href='https://rimstone-lang.com/encrypt-data.html'>encrypt-data</a> statement. The simplest form is to encrypt a null-terminated string. Create a file "encrypt.golf" and copy this:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_82' class=notranslate>
-<span class="Statement">begin-handler</span> /encrypt<span class="Identifier"> public</span>
-<span class="Statement">    set-string</span> str = <span class="Constant">&quot;This contains a secret code, which is Open Sesame!&quot;</span>
-    <span class="Comment">// Encrypt</span>
-<span class="Statement">    encrypt-data</span> str<span class="Type"> to</span> enc_str<span class="Identifier"> password</span> <span class="Constant">&quot;my_password&quot;</span>
-<span class="Statement">    print-out</span> enc_str
-<span class="Statement">    @</span>
-    <span class="Comment">// Decrypt</span>
-<span class="Statement">    decrypt-data</span> enc_str<span class="Identifier"> password</span> <span class="Constant">&quot;my_password&quot;</span><span class="Type"> to</span> dec_str
-<span class="Statement">    print-out</span> dec_str
-<span class="Statement">    @</span>
-<span class="Statement">end-handler</span></pre>
-<span id=golf_copied_82 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_82' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_82, code_82, golf_copied_82)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_83' class=notranslate>
+begin-handler /encrypt public
+    set-string str = &quot;This contains a secret code, which is Open Sesame!&quot;
+    // Encrypt
+    encrypt-data str to enc_str password &quot;my_password&quot;
+    print-out enc_str
+    @
+    // Decrypt
+    decrypt-data enc_str password &quot;my_password&quot; to dec_str
+    print-out dec_str
+    @
+end-handler</pre>
+<span id=rimstone_copied_83 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_83' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_83, code_83, rimstone_copied_83)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-You can see the basic usage of encrypt-data and <a href='https://golf-lang.com/decrypt-data.html'>decrypt-data</a>. You supply data (original or encrypted), the password, and off you go. The data is encrypted and then decrypted, yielding the original. <br/>
+You can see the basic usage of encrypt-data and <a href='https://rimstone-lang.com/decrypt-data.html'>decrypt-data</a>. You supply data (original or encrypted), the password, and off you go. The data is encrypted and then decrypted, yielding the original. <br/>
 <br/>
 In the source code, a string variable "enc_str" (which is created as a "char *") will contain the encrypted version of "This contains a secret code, which is Open Sesame!" and "dec_str" will be the decrypted data which must be exactly the same.<br/>
 <br/>
@@ -292,26 +292,26 @@ To run this code from command line, make the application first:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_87' class=notranslate>
 gg <span class="Special">-q</span></pre>
-<span id=golf_copied_87 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_87' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_87, code_87, golf_copied_87)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_87 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_87' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_87, code_87, rimstone_copied_87)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Then have Golf produce the bash code to run it - the request path is "/encrypt", which in our case is handled by function "void encrypt()" defined in source file "encrypt.golf". In Golf, these names always match, making it easy to write, read and execute code. Use "-r" option in <a href='https://golf-lang.com/gg.html'>gg</a> to specify the request path and get the code you need to run the program:<br/>
+Then have Golf produce the bash code to run it - the request path is "/encrypt", which in our case is handled by function "void encrypt()" defined in source file "encrypt.golf". In Golf, these names always match, making it easy to write, read and execute code. Use "-r" option in <a href='https://rimstone-lang.com/gg.html'>gg</a> to specify the request path and get the code you need to run the program:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_90' class=notranslate>
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/encrypt</span><span class="Statement">&quot;</span> <span class="Special">--silent-header</span> <span class="Special">--exec</span></pre>
-<span id=golf_copied_90 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_90' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_90, code_90, golf_copied_90)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_90 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_90' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_90, code_90, rimstone_copied_90)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 You will get a response like this:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_83' class=notranslate>
+<pre id='code_82' class=notranslate>
 72ddd44c10e9693be6ac77caabc64e05f809290a109df7cfc57400948cb888cd23c7e98e15bcf21b25ab1337ddc6d02094232111aa20a2d548c08f230b6d56e9
 This contains a secret code, which is Open Sesame!</pre>
-<span id=golf_copied_83 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_83' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_83, code_83, golf_copied_83)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_82 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_82' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_82, code_82, rimstone_copied_82)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 What you have here is the encrypted data, and then this encrypted data is decrypted using the same password. Unsurprisingly, the result matches the string you encrypted in the first place.<br/>
 <br/>
@@ -319,25 +319,25 @@ Note that by default encrypt-data will produce encrypted value in a human-readab
 <div class="vsub"><a id="Encrypt data into a binary result"></a>Encrypt data into a binary result</div>
 In the previous example, the resulting encrypted data is in a human-readable hexadecimal form. You can also create binary encrypted data, which is not a human-readable string and is also shorter. To do that, use "binary" clause. Replace the code in "encrypt.golf" with:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_85' class=notranslate>
-<span class="Statement">begin-handler</span> /encrypt<span class="Identifier"> public</span>
-<span class="Statement">    set-string</span> str = <span class="Constant">&quot;This contains a secret code, which is Open Sesame!&quot;</span>
-    <span class="Comment">// Encrypt</span>
-<span class="Statement">    encrypt-data</span> str<span class="Type"> to</span> enc_str<span class="Identifier"> password</span> <span class="Constant">&quot;my_password&quot;</span><span class="Identifier"> binary</span>
-    <span class="Comment">// Save the encrypted data to a file</span>
-<span class="Statement">    write-file</span> <span class="Constant">&quot;encrypted_data&quot;</span><span class="Identifier"> from</span> enc_str
-<span class="Statement">    get-app</span><span class="Identifier"> directory</span><span class="Type"> to</span> app_dir
-<span class="Statement">    @</span>Encrypted data written to file <span class="Statement">&lt;&lt;print-out</span> app_dir<span class="Statement">&gt;&gt;</span>/encrypted_data
-    <span class="Comment">// Decrypt data</span>
-<span class="Statement">    decrypt-data</span> enc_str<span class="Identifier"> password</span> <span class="Constant">&quot;my_password&quot;</span><span class="Identifier"> binary</span><span class="Type"> to</span> dec_str
-<span class="Statement">    print-out</span> dec_str
-<span class="Statement">    @</span>
-<span class="Statement">end-handler</span></pre>
-<span id=golf_copied_85 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_85' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_85, code_85, golf_copied_85)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_86' class=notranslate>
+begin-handler /encrypt public
+    set-string str = &quot;This contains a secret code, which is Open Sesame!&quot;
+    // Encrypt
+    encrypt-data str to enc_str password &quot;my_password&quot; binary
+    // Save the encrypted data to a file
+    write-file &quot;encrypted_data&quot; from enc_str
+    get-app directory to app_dir
+    @Encrypted data written to file &lt;&lt;print-out app_dir&gt;&gt;/encrypted_data
+    // Decrypt data
+    decrypt-data enc_str password &quot;my_password&quot; binary to dec_str
+    print-out dec_str
+    @
+end-handler</pre>
+<span id=rimstone_copied_86 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_86' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_86, code_86, rimstone_copied_86)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-When you want to get binary encrypted data, you should get its length in bytes too, or otherwise you won't know where it ends, since it may contain null bytes in it. Use "output-length" clause for that purpose. In this code, the encrypted data in variable "enc_str" is written to file "encrypted_data", and the length written is "outlen" bytes. When a file is written without a path, it's always written in the application home directory (see <a href='https://golf-lang.com/directories.html'>directories</a>), so you'd use <a href='https://golf-lang.com/get-app.html'>get-app</a> to get that directory.<br/>
+When you want to get binary encrypted data, you should get its length in bytes too, or otherwise you won't know where it ends, since it may contain null bytes in it. Use "output-length" clause for that purpose. In this code, the encrypted data in variable "enc_str" is written to file "encrypted_data", and the length written is "outlen" bytes. When a file is written without a path, it's always written in the application home directory (see <a href='https://rimstone-lang.com/directories.html'>directories</a>), so you'd use <a href='https://rimstone-lang.com/get-app.html'>get-app</a> to get that directory.<br/>
 <br/>
 When decrypting data, notice the use of "input-length" clause. It says how many bytes the encrypted data has. Obviously you can get that from "outlen" variable, where encrypt-data stored the length of encrypted data. When encryption and decryption are decoupled, i.e. running in separate programs, you'd make sure this length is made available.<br/>
 <br/>
@@ -347,26 +347,26 @@ Make the application:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_93' class=notranslate>
 gg <span class="Special">-q</span></pre>
-<span id=golf_copied_93 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_93' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_93, code_93, golf_copied_93)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_93 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_93' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_93, code_93, rimstone_copied_93)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Run it the same as before:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_96' class=notranslate>
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/encrypt</span><span class="Statement">&quot;</span> <span class="Special">--silent-header</span> <span class="Special">--exec</span></pre>
-<span id=golf_copied_96 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_96' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_96, code_96, golf_copied_96)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_96 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_96' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_96, code_96, rimstone_copied_96)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The result is:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_86' class=notranslate>
+<pre id='code_85' class=notranslate>
 Encrypted data written to file ~/.golf/apps/enc/app/encrypted_data
 This contains a secret code, which is Open Sesame!</pre>
-<span id=golf_copied_86 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_86' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_86, code_86, golf_copied_86)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_85 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_85' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_85, code_85, rimstone_copied_85)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The decrypted data is exactly the same as the original.<br/>
 <br/>
@@ -374,51 +374,51 @@ You can see the actual encrypted data written to the file by using "octal dump" 
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_99' class=notranslate>
 od <span class="Special">-c</span> ~/.golf/apps/enc/app/encrypted_data</pre>
-<span id=golf_copied_99 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_99' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_99, code_99, golf_copied_99)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_99 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_99' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_99, code_99, rimstone_copied_99)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 with the result like:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_89' class=notranslate>
+<pre id='code_88' class=notranslate>
 $ od -c ~/.golf/apps/enc/app/encrypted_data
 0000000   r 335 324   L 020 351   i   ; 346 254   w 312 253 306   N 005
 0000020 370  \t   )  \n 020 235 367 317 305   t  \0 224 214 270 210 315
 0000040   # 307 351 216 025 274 362 033   % 253 023   7 335 306 320
 0000060 224   #   ! 021 252     242 325   H 300 217   #  \v   m   V 351
 0000100</pre>
-<span id=golf_copied_89 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_89' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_89, code_89, golf_copied_89)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_88 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_88' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_88, code_88, rimstone_copied_88)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 There you have it. You will notice the data is binary and it actually contains the null byte(s).<br/>
 <div class="vsub"><a id="Encrypt binary data"></a>Encrypt binary data</div>
 The data to encrypt in these examples is a string, i.e. null-delimited. You can encrypt binary data just as easily by specifying it whole (since Golf keeps track of how many bytes are there!), or specifying its length in "input-length" clause, for example copy this to "encrypt.golf":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_88' class=notranslate>
-<span class="Statement">begin-handler</span> /encrypt<span class="Identifier"> public</span>
-<span class="Statement">    set-string</span> str = <span class="Constant">&quot;This c</span><span class="Special">\000</span><span class="Constant">ontains a secret code, which is Open Sesame!&quot;</span>
-    <span class="Comment">// Encrypt</span>
-<span class="Statement">    encrypt-data</span> str<span class="Type"> to</span> enc_str<span class="Identifier"> password</span> <span class="Constant">&quot;my_password&quot;</span><span class="Identifier"> input-length</span> <span class="Constant">12</span>
-<span class="Statement">    print-out</span> enc_str
-<span class="Statement">    @</span>
-    <span class="Comment">// Decrypt</span>
-<span class="Statement">    decrypt-data</span> enc_str<span class="Identifier"> password</span> <span class="Constant">&quot;my_password&quot;</span><span class="Type"> to</span> dec_str
-    <span class="Comment">// Output binary data; present null byte as octal \</span><span class="PreProc">0</span><span class="Constant">00</span>
+<pre id='code_89' class=notranslate>
+begin-handler /encrypt public
+    set-string str = &quot;This c\000ontains a secret code, which is Open Sesame!&quot;
+    // Encrypt
+    encrypt-data str to enc_str password &quot;my_password&quot; input-length 12
+    print-out enc_str
+    @
+    // Decrypt
+    decrypt-data enc_str password &quot;my_password&quot; to dec_str
+    // Output binary data; present null byte as octal \000
 
-<span class="Statement">    string-length</span> dec_str<span class="Type"> to</span> res_len
-<span class="Statement">    start-loop</span><span class="Identifier"> repeat</span> res_len<span class="Type"> use</span> i<span class="Identifier"> start-with</span> <span class="Constant">0</span>
-<span class="Statement">        if-true</span> dec_str[i]<span class="Identifier"> equal</span> <span class="Constant">0</span>
-<span class="Statement">            print-out</span> <span class="Constant">&quot;</span><span class="Special">\\</span><span class="Constant">000&quot;</span>
-<span class="Statement">        else-if</span>
-<span class="Statement">            print-format</span> <span class="Constant">&quot;</span><span class="Special">%c</span><span class="Constant">&quot;</span>, dec_str[i]
-<span class="Statement">        end-if</span>
-<span class="Statement">    end-loop</span>
-<span class="Statement">    @</span>
-<span class="Statement">end-handler</span></pre>
-<span id=golf_copied_88 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_88' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_88, code_88, golf_copied_88)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+    string-length dec_str to res_len
+    start-loop repeat res_len use i start-with 0
+        if-true dec_str[i] equal 0
+            print-out &quot;\\000&quot;
+        else-if
+            print-format &quot;%c&quot;, dec_str[i]
+        end-if
+    end-loop
+    @
+end-handler</pre>
+<span id=rimstone_copied_89 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_89' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_89, code_89, rimstone_copied_89)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 This will encrypt 12 bytes at memory location "enc_str" regardless of any null bytes. In this case that's "This c" followed by a null byte followed by "ontain" string, but it can be any kind of binary data, for example the contents of a JPG file.<br/>
 <br/>
@@ -428,26 +428,26 @@ Make the application:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_101' class=notranslate>
 gg <span class="Special">-q</span></pre>
-<span id=golf_copied_101 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_101' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_101, code_101, golf_copied_101)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_101 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_101' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_101, code_101, rimstone_copied_101)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Run it the same as before:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_102' class=notranslate>
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/encrypt</span><span class="Statement">&quot;</span> <span class="Special">--silent-header</span> <span class="Special">--exec</span></pre>
-<span id=golf_copied_102 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_102' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_102, code_102, golf_copied_102)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_102 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_102' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_102, code_102, rimstone_copied_102)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The result is:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_92' class=notranslate>
+<pre id='code_91' class=notranslate>
 6bea45c2f901c0913c87fccb9b347d0a
 This c\000ontai</pre>
-<span id=golf_copied_92 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_92' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_92, code_92, golf_copied_92)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_91 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_91' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_91, code_91, rimstone_copied_91)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The encrypted value is shorter because the data is shorter in this case too, and the result matches exactly the original.<br/>
 <div class="vsub"><a id="Use any cipher or digest"></a>Use any cipher or digest</div>
@@ -461,54 +461,54 @@ openssl list <span class="Special">-cipher-algorithms</span>
 
 <span class="Comment">#get list of digest providers</span>
 openssl list <span class="Special">-digest-algorithms</span></pre>
-<span id=golf_copied_103 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_103' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_103, code_103, golf_copied_103)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_103 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_103' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_103, code_103, rimstone_copied_103)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 These two will provide a list of cipher and digest (hash) algorithms. Some of them may be weaker than the default ones chosen by Golf, and others may be there just for backward compatibility with older systems. Yet others may be quite new and did not have enough time to be validated to the extent you may want them to be. So be careful when choosing these algorithms and be sure to know why you're changing the default ones. That said, here's an example of using Camellia-256 (i.e. "CAMELLIA-256-CFB1") encryption with "SHA3-512" digest. Replace the code in "encrypt.golf" with:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_91' class=notranslate>
-<span class="Statement">begin-handler</span> /encrypt<span class="Identifier"> public</span>
-<span class="Statement">    set-string</span> str = <span class="Constant">&quot;This contains a secret code, which is Open Sesame!&quot;</span>
-    <span class="Comment">// Encrypt data</span>
-<span class="Statement">    encrypt-data</span> str<span class="Type"> to</span> enc_str<span class="Identifier"> password</span> <span class="Constant">&quot;my_password&quot;</span> \
-       <span class="Identifier"> cipher</span> <span class="Constant">&quot;CAMELLIA-256-CFB1&quot;</span><span class="Identifier"> digest</span> <span class="Constant">&quot;SHA3-512&quot;</span>
-<span class="Statement">    print-out</span> enc_str
-<span class="Statement">    @</span>
-    <span class="Comment">// Decrypt data</span>
-<span class="Statement">    decrypt-data</span> enc_str<span class="Identifier"> password</span> <span class="Constant">&quot;my_password&quot;</span> <span class="Type"> to</span> dec_str \
-       <span class="Identifier"> cipher</span> <span class="Constant">&quot;CAMELLIA-256-CFB1&quot;</span><span class="Identifier"> digest</span> <span class="Constant">&quot;SHA3-512&quot;</span>
-<span class="Statement">    print-out</span> dec_str
-<span class="Statement">    @</span>
-<span class="Statement">end-handler</span></pre>
-<span id=golf_copied_91 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_91' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_91, code_91, golf_copied_91)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_92' class=notranslate>
+begin-handler /encrypt public
+    set-string str = &quot;This contains a secret code, which is Open Sesame!&quot;
+    // Encrypt data
+    encrypt-data str to enc_str password &quot;my_password&quot; \
+        cipher &quot;CAMELLIA-256-CFB1&quot; digest &quot;SHA3-512&quot;
+    print-out enc_str
+    @
+    // Decrypt data
+    decrypt-data enc_str password &quot;my_password&quot;  to dec_str \
+        cipher &quot;CAMELLIA-256-CFB1&quot; digest &quot;SHA3-512&quot;
+    print-out dec_str
+    @
+end-handler</pre>
+<span id=rimstone_copied_92 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_92' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_92, code_92, rimstone_copied_92)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Make the application:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_76' class=notranslate>
 gg <span class="Special">-q</span></pre>
-<span id=golf_copied_76 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_76' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_76, code_76, golf_copied_76)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_76 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_76' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_76, code_76, rimstone_copied_76)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Run it:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_77' class=notranslate>
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/encrypt</span><span class="Statement">&quot;</span> <span class="Special">--silent-header</span> <span class="Special">--exec</span></pre>
-<span id=golf_copied_77 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_77' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_77, code_77, golf_copied_77)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_77 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_77' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_77, code_77, rimstone_copied_77)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In this case the result is:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_95' class=notranslate>
+<pre id='code_94' class=notranslate>
 f4d64d920756f7220516567727cef2c47443973de03449915d50a1d2e5e8558e7e06914532a0b0bf13842f67f0a268c98da6
 This contains a secret code, which is Open Sesame!</pre>
-<span id=golf_copied_95 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_95' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_95, code_95, golf_copied_95)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_94 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_94' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_94, code_94, rimstone_copied_94)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Again, you get the original data. Note you have to use the same cipher and digest in both encrypt-data and decrypt-data!<br/>
 <br/>
@@ -516,32 +516,32 @@ You can of course produce the binary encrypted value just like before by using "
 <br/>
 If you've got external systems that encrypt data, and you know which cipher and digest they use, you can match those and make your code interoperable. Golf uses standard OpenSSL library so chances are that other software may too.<br/>
 <div class="vsub"><a id="Using salt"></a>Using salt</div>
-To add a salt to encryption, use "salt" clause. You can generate random salt by using <a href='https://golf-lang.com/random-string.html'>random-string</a> statement (or <a href='https://golf-lang.com/random-crypto.html'>random-crypto</a> if there is a need). Here is the code for "encrypt.golf":<br/>
+To add a salt to encryption, use "salt" clause. You can generate random salt by using <a href='https://rimstone-lang.com/random-string.html'>random-string</a> statement (or <a href='https://rimstone-lang.com/random-crypto.html'>random-crypto</a> if there is a need). Here is the code for "encrypt.golf":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_94' class=notranslate>
-<span class="Statement">begin-handler</span> /encrypt<span class="Identifier"> public</span>
-<span class="Statement">    set-string</span> str = <span class="Constant">&quot;This contains a secret code, which is Open Sesame!&quot;</span>
-    <span class="Comment">// Get salt</span>
-<span class="Statement">    random-string</span><span class="Type"> to</span> rs<span class="Identifier"> length</span> <span class="Constant">16</span>
-    <span class="Comment">// Encrypt data</span>
-<span class="Statement">    encrypt-data</span> str<span class="Type"> to</span> enc_str<span class="Identifier"> password</span> <span class="Constant">&quot;my_password&quot;</span><span class="Identifier"> salt</span> rs
-<span class="Statement">    @</span>Salt used is <span class="Statement">&lt;&lt;print-out</span> rs<span class="Statement">&gt;&gt;</span>, and the encrypted string is <span class="Statement">&lt;&lt;print-out</span> enc_str<span class="Statement">&gt;&gt;</span>
-    <span class="Comment">// Decrypt data</span>
-<span class="Statement">    decrypt-data</span> enc_str<span class="Identifier"> password</span> <span class="Constant">&quot;my_password&quot;</span><span class="Identifier"> salt</span> rs<span class="Type"> to</span> dec_str
-<span class="Statement">    print-out</span> dec_str
-<span class="Statement">    @</span>
-<span class="Statement">end-handler</span></pre>
-<span id=golf_copied_94 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_94' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_94, code_94, golf_copied_94)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_95' class=notranslate>
+begin-handler /encrypt public
+    set-string str = &quot;This contains a secret code, which is Open Sesame!&quot;
+    // Get salt
+    random-string to rs length 16
+    // Encrypt data
+    encrypt-data str to enc_str password &quot;my_password&quot; salt rs
+    @Salt used is &lt;&lt;print-out rs&gt;&gt;, and the encrypted string is &lt;&lt;print-out enc_str&gt;&gt;
+    // Decrypt data
+    decrypt-data enc_str password &quot;my_password&quot; salt rs to dec_str
+    print-out dec_str
+    @
+end-handler</pre>
+<span id=rimstone_copied_95 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_95' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_95, code_95, rimstone_copied_95)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Make the application:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_78' class=notranslate>
 gg <span class="Special">-q</span></pre>
-<span id=golf_copied_78 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_78' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_78, code_78, golf_copied_78)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_78 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_78' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_78, code_78, rimstone_copied_78)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Run it a few times:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
@@ -549,22 +549,22 @@ Run it a few times:<br/>
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/encrypt</span><span class="Statement">&quot;</span> <span class="Special">--silent-header</span> <span class="Special">--exec</span>
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/encrypt</span><span class="Statement">&quot;</span> <span class="Special">--silent-header</span> <span class="Special">--exec</span>
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/encrypt</span><span class="Statement">&quot;</span> <span class="Special">--silent-header</span> <span class="Special">--exec</span></pre>
-<span id=golf_copied_79 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_79' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_79, code_79, golf_copied_79)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_79 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_79' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_79, code_79, rimstone_copied_79)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The result:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_98' class=notranslate>
+<pre id='code_97' class=notranslate>
 Salt used is VA9agPKxL9hf3bMd, and the encrypted string is 3272aa49c9b10cb2edf5d8a5e23803a5aa153c1b124296d318e3b3ad22bc911d1c0889d195d800c2bd92153ef7688e8d1cd368dbca3c5250d456f05c81ce0fdd
 This contains a secret code, which is Open Sesame!
 Salt used is FeWcGkBO5hQ1uo1A, and the encrypted string is 48b97314c1bc88952c798dfde7a416180dda6b00361217ea25278791c43b34f9c2e31cab6d9f4f28eea59baa70aadb4e8f1ed0709db81dff19f24cb7677c7371
 This contains a secret code, which is Open Sesame!
 Salt used is nCQClR0NMjdetTEf, and the encrypted string is f19cdd9c1ddec487157ac727b2c8d0cdeb728a4ecaf838ca8585e279447bcdce83f7f95fa53b054775be1bb2de3b95f2e66a8b26b216ea18aa8b47f3d177e917
 This contains a secret code, which is Open Sesame!</pre>
-<span id=golf_copied_98 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_98' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_98, code_98, golf_copied_98)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_97 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_97' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_97, code_97, rimstone_copied_97)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 As you can see, a random salt value (16 bytes long in this case) is generated for each encryption, and the encrypted value is different each time, even though the data being encrypted was the same! This makes it difficult to crack encryption like this.<br/>
 <br/>
@@ -574,32 +574,32 @@ In practice, you wouldn't use a different salt value for each message. It create
 <br/>
 Instead, you'd use an IV (Initialization Vector) for each message. It's usually a random string that makes same messages appear different, and increases the computational cost of cracking the password. Here is the new code for "encrypt.golf":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_97' class=notranslate>
-<span class="Statement">begin-handler</span> /encrypt<span class="Identifier"> public</span>
-    <span class="Comment">// Get salt</span>
-<span class="Statement">    random-string</span><span class="Type"> to</span> rs<span class="Identifier"> length</span> <span class="Constant">16</span>
-    <span class="Comment">// Encrypt data</span>
-<span class="Statement">    start-loop</span><span class="Identifier"> repeat</span> <span class="Constant">10</span>
-<span class="Statement">        random-string</span><span class="Type"> to</span> iv<span class="Identifier"> length</span> <span class="Constant">16</span>
-<span class="Statement">        encrypt-data</span> <span class="Constant">&quot;The same message&quot;</span><span class="Type"> to</span> enc_str<span class="Identifier"> password</span> <span class="Constant">&quot;my_password&quot;</span><span class="Identifier"> salt</span> rs<span class="Identifier"> iterations</span> <span class="Constant">2000</span><span class="Identifier"> init-vector</span> iv<span class="Identifier"> cache</span>
-<span class="Statement">        @</span>The encrypted string is <span class="Statement">&lt;&lt;print-out</span> enc_str<span class="Statement">&gt;&gt;</span>
-        <span class="Comment">// Decrypt data</span>
-<span class="Statement">        decrypt-data</span> enc_str<span class="Identifier"> password</span> <span class="Constant">&quot;my_password&quot;</span><span class="Identifier"> salt</span> rs<span class="Identifier"> iterations</span> <span class="Constant">2000</span><span class="Identifier"> init-vector</span> iv<span class="Type"> to</span> dec_str<span class="Identifier"> cache</span>
-<span class="Statement">        print-out</span> dec_str
-<span class="Statement">        @</span>
-<span class="Statement">    end-loop</span>
-<span class="Statement">end-handler</span></pre>
-<span id=golf_copied_97 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_97' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_97, code_97, golf_copied_97)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_98' class=notranslate>
+begin-handler /encrypt public
+    // Get salt
+    random-string to rs length 16
+    // Encrypt data
+    start-loop repeat 10
+        random-string to iv length 16
+        encrypt-data &quot;The same message&quot; to enc_str password &quot;my_password&quot; salt rs iterations 2000 init-vector iv cache
+        @The encrypted string is &lt;&lt;print-out enc_str&gt;&gt;
+        // Decrypt data
+        decrypt-data enc_str password &quot;my_password&quot; salt rs iterations 2000 init-vector iv to dec_str cache
+        print-out dec_str
+        @
+    end-loop
+end-handler</pre>
+<span id=rimstone_copied_98 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_98' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_98, code_98, rimstone_copied_98)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Make the application:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_80' class=notranslate>
 gg <span class="Special">-q</span></pre>
-<span id=golf_copied_80 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_80' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_80, code_80, golf_copied_80)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_80 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_80' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_80, code_80, rimstone_copied_80)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Run it a few times:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
@@ -607,9 +607,9 @@ Run it a few times:<br/>
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/encrypt</span><span class="Statement">&quot;</span> <span class="Special">--silent-header</span> <span class="Special">--exec</span>
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/encrypt</span><span class="Statement">&quot;</span> <span class="Special">--silent-header</span> <span class="Special">--exec</span>
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/encrypt</span><span class="Statement">&quot;</span> <span class="Special">--silent-header</span> <span class="Special">--exec</span></pre>
-<span id=golf_copied_81 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_81' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_81, code_81, golf_copied_81)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_81 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_81' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_81, code_81, rimstone_copied_81)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The result may be:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
@@ -634,21 +634,21 @@ The encrypted string is ae594c4d6e72c05c186383e63c89d93880c8a8a085bf9367bdfd772e
 The same message
 The encrypted string is 2b28cdf5a67a5a036139fd410112735aa96bc341a170dafb56818dc78efe2e00
 The same message</pre>
-<span id=golf_copied_100 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_100' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_100, code_100, golf_copied_100)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_100 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_100' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_100, code_100, rimstone_copied_100)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 You can see that the same message appears different when encrypted, though when decrypted it's again the same. Of course, the password, salt, number of iterations, and init-vector must be the same for both encryption and decryption.<br/>
 <br/>
 Note the use of "cache" clause in encrypt-data and decrypt-data. It effectively caches the computed key (given password, salt, cipher/digest algorithms and number of iterations), so it's not computed each time through the loop. With "cache" the key is computed once, and then a different IV (in "init-vector" clause) is used for each message. <br/>
 <br/>
-If you want to occasionally rebuild the key, use "clear-cache" clause, which supplies a boolean. If true, the key is recomputed, otherwise it's left alone. See <a href='https://golf-lang.com/encrypt-data.html'>encrypt-data</a> for more on this.<br/>
+If you want to occasionally rebuild the key, use "clear-cache" clause, which supplies a boolean. If true, the key is recomputed, otherwise it's left alone. See <a href='https://rimstone-lang.com/encrypt-data.html'>encrypt-data</a> for more on this.<br/>
 <div class="vsub"><a id="Conclusion"></a>Conclusion</div>
 You have learned how to encrypt and decrypt data using different ciphers, digests, salt and IV values in Golf. You can also create a human-readable encrypted value and a binary output, as well as encrypt both strings and binary values (like documents).<br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
-<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://golf-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://rimstone-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
 </div><br/></body></html>
 
 

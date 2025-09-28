@@ -11,7 +11,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="canonical" href="https://golf-lang.com/report-error.html" />
+<link rel="canonical" href="https://rimstone-lang.com/report-error.html" />
 <style>
 
 
@@ -232,25 +232,25 @@ function googleTranslateElementInit() {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Report error</div><hr/><span style="font-weight:bold;">Purpose</span>: Reports a fatal error.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Report error</div><hr/><span style="font-weight:bold;">Purpose</span>: Reports a fatal error.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_931' class=notranslate>
-<span class="Statement">report-error</span> &lt;format&gt;, &lt;variable&gt; [<span class="Identifier"> ,</span> ... ]</pre>
-<span id=golf_copied_931 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_931' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_931, code_931, golf_copied_931)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+report-error &lt;format&gt;, &lt;variable&gt; [ , ... ]</pre>
+<span id=rimstone_copied_931 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_931' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_931, code_931, rimstone_copied_931)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 report-error will report a fatal error. It will format an error message according to the &lt;format&gt; string and a list of &lt;variable&gt;s and then &nbsp;write it to the standard error output; no HTTP header is output specifically for report-error. <br/>
 <br/>
-In general, before issuing report-error, you would provide an output for the client that is appropriate. report-error's purpose is only to output a message to the standard error output, stop the processing of the current request, and move on to the next one for the <a href='https://golf-lang.com/service.html'>service</a> or exit if this is a <a href='https://golf-lang.com/command-line.html'>command-line</a> program; it is your responsibility to provide any meaningful output to the client prior to that.<br/>
+In general, before issuing report-error, you would provide an output for the client that is appropriate. report-error's purpose is only to output a message to the standard error output, stop the processing of the current request, and move on to the next one for the <a href='https://rimstone-lang.com/service.html'>service</a> or exit if this is a <a href='https://rimstone-lang.com/command-line.html'>command-line</a> program; it is your responsibility to provide any meaningful output to the client prior to that.<br/>
 <br/>
-See <a href='https://golf-lang.com/error-handling.html'>error-handling</a> when report-error is called.<br/>
+See <a href='https://rimstone-lang.com/error-handling.html'>error-handling</a> when report-error is called.<br/>
 <br/>
 &lt;format&gt; string must be present and there must be at least one &lt;variable&gt; (it means if you want to output a simple string literal you still have to use "%s" as format). The reason for this is to avoid formatting errors, and to use formatting in a consistent fashion.<br/>
 <br/>
 <div class="vsub"><a id="Format"></a>Format</div>
-&lt;format&gt; string must be a literal. Variables must follow &lt;format&gt; separated by commas in the same order as placeholders. If you use any placeholders other than specified below, or the type of variables you use do not match the type of a corresponding placeholder in &lt;format&gt;, your program will <a href='https://golf-lang.com/error-handling.html'>error out</a>. You can use the following placeholders in &lt;format&gt;:<br/>
+&lt;format&gt; string must be a literal. Variables must follow &lt;format&gt; separated by commas in the same order as placeholders. If you use any placeholders other than specified below, or the type of variables you use do not match the type of a corresponding placeholder in &lt;format&gt;, your program will <a href='https://rimstone-lang.com/error-handling.html'>error out</a>. You can use the following placeholders in &lt;format&gt;:<br/>
 <ul><li>%s for a string<br/>
 </li><li>%c for a number displayed as a character,<br/>
 </li><li>%&lt;number&gt;s for a string output with a width of at least &lt;number&gt; (any excess filled with spaces to the left),<br/>
@@ -260,27 +260,27 @@ See <a href='https://golf-lang.com/error-handling.html'>error-handling</a> when 
 </li><li>%&lt;number&gt;hd for a 32-bit signed number output with a width of at least &lt;number&gt; (any excess filled with spaces to the left). Use "ho" for displaying as unsigned number, "ho" for displaying in octal notation and "hx" for hexadecimal notation.<br/>
 </li><li>%hhd for a signed 8-bit number. Use "hhu" for displaying as unsigned number, "hho" for displaying in octal notation and "hhx" for hexadecimal notation.<br/>
 </li><li>%&lt;number&gt;hhd for a number output with a width of at least &lt;number&gt; (any excess filled with spaces to the left). Use "hhu" for displaying as unsigned number, "hho" for displaying in octal notation and "hhx" for hexadecimal notation.<br/>
-</li><li>%&lt;width&gt;f for a double output in fixed-point notation, with the 6 digits after decimal point ("format-floating" clause in <a href='https://golf-lang.com/double-string.html'>double-string</a>); %&lt;width&gt;e for scientific notation with one digit before the decimal point, along with the exponent ("format-scientific" clause in <a href='https://golf-lang.com/double-string.html'>double-string</a>); %&lt;width&gt;g displays either %f or %e format based on which is more compact ("format-compact" clause in <a href='https://golf-lang.com/double-string.html'>double-string</a>); in any case &lt;width&gt; represents the width of at least &lt;width&gt; bytes output. You can also use &lt;widith&gt;.&lt;precision&gt; to specify both width and precision, or ".&lt;precision&gt;" for just precision; for instance, "%10f" or "%12.4e" etc.</li></ul>
+</li><li>%&lt;width&gt;f for a double output in fixed-point notation, with the 6 digits after decimal point ("format-floating" clause in <a href='https://rimstone-lang.com/double-string.html'>double-string</a>); %&lt;width&gt;e for scientific notation with one digit before the decimal point, along with the exponent ("format-scientific" clause in <a href='https://rimstone-lang.com/double-string.html'>double-string</a>); %&lt;width&gt;g displays either %f or %e format based on which is more compact ("format-compact" clause in <a href='https://rimstone-lang.com/double-string.html'>double-string</a>); in any case &lt;width&gt; represents the width of at least &lt;width&gt; bytes output. You can also use &lt;widith&gt;.&lt;precision&gt; to specify both width and precision, or ".&lt;precision&gt;" for just precision; for instance, "%10f" or "%12.4e" etc.</li></ul>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_932' class=notranslate>
-<span class="Statement">report-error</span> <span class="Constant">&quot;Too many input parameters for </span><span class="Special">%s</span><span class="Constant">, encountered total of [</span><span class="Special">%ld</span><span class="Constant">]&quot;</span>, <span class="Constant">&quot;customer&quot;</span>, num_count</pre>
-<span id=golf_copied_932 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_932' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_932, code_932, golf_copied_932)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+report-error &quot;Too many input parameters for %s, encountered total of [%ld]&quot;, &quot;customer&quot;, num_count</pre>
+<span id=rimstone_copied_932 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_932' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_932, code_932, rimstone_copied_932)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Error handling'></a><span style="font-weight:bold;">Error handling</span><br/>
-<a href='https://golf-lang.com/db-error.html'>db-error</a> &nbsp;<br/>
-<a href='https://golf-lang.com/error-code.html'>error-code</a> &nbsp;<br/>
-<a href='https://golf-lang.com/error-handling.html'>error-handling</a> &nbsp;<br/>
-<a href='https://golf-lang.com/report-error.html'>report-error</a> &nbsp; <br/>
+<a href='https://rimstone-lang.com/db-error.html'>db-error</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/error-code.html'>error-code</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/error-handling.html'>error-handling</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/report-error.html'>report-error</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
-<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
+<a href='https://rimstone-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
-<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://golf-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://rimstone-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
 </div><br/></body></html>
 
 

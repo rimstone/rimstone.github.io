@@ -11,7 +11,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="canonical" href="https://golf-lang.com/read-line.html" />
+<link rel="canonical" href="https://rimstone-lang.com/read-line.html" />
 <style>
 
 
@@ -232,22 +232,22 @@ function googleTranslateElementInit() {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Read line</div><hr/><span style="font-weight:bold;">Purpose</span>: Read text file line by line in a loop.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Read line</div><hr/><span style="font-weight:bold;">Purpose</span>: Read text file line by line in a loop.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_910' class=notranslate>
-<span class="Statement">read-line</span> &lt;file&gt;<span class="Type"> to</span> &lt;line content&gt; [<span class="Type"> status</span> &lt;status&gt; ] [<span class="Identifier"> delimiter</span> &lt;delimiter&gt; ]
+read-line &lt;file&gt; to &lt;line content&gt; [ status &lt;status&gt; ] [ delimiter &lt;delimiter&gt; ]
 
 &lt;any code&gt;
 
-<span class="Statement">end-read-line</span></pre>
-<span id=golf_copied_910 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_910' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_910, code_910, golf_copied_910)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+end-read-line</pre>
+<span id=rimstone_copied_910 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_910' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_910, code_910, rimstone_copied_910)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 read-line starts the loop in which a text &lt;file&gt; is read line by line into string &lt;line content&gt;, with end-read-line ending this loop. Once the end of &lt;file&gt; has been reached, or an error occurs, the loop exits. <br/>
 <br/>
-&lt;file&gt; can be a full path name, or a path relative to the application home directory (see <a href='https://golf-lang.com/directories.html'>directories</a>). <br/>
+&lt;file&gt; can be a full path name, or a path relative to the application home directory (see <a href='https://rimstone-lang.com/directories.html'>directories</a>). <br/>
 <br/>
 &lt;status&gt; number will be GG_ERR_READ if there is an error in reading file, or GG_ERR_OPEN if file cannot be opened, or GG_OKAY if end-of-file has been reached. Check for error after end-read-line statement. If a line was read successfully, then &lt;status&gt; is its length. <br/>
 <br/>
@@ -258,58 +258,58 @@ String &lt;delimiter&gt; separates the lines in the file, and is by default new 
 A new line (or a &lt;delimiter&gt;) remains in &lt;line content&gt; if it was present in the file (note that the very last line may not have it). <br/>
 <br/>
 <br/>
-Use <a href='https://golf-lang.com/break-loop.html'>break-loop</a> and <a href='https://golf-lang.com/continue-loop.html'>continue-loop</a> statements to exit and continue the loop.<br/>
+Use <a href='https://rimstone-lang.com/break-loop.html'>break-loop</a> and <a href='https://rimstone-lang.com/continue-loop.html'>continue-loop</a> statements to exit and continue the loop.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 To read a text file line by line, and display as a web page with line breaks:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_911' class=notranslate>
-<span class="Statement">read-line</span> <span class="Constant">&quot;/home/bear/tmp/ll/filexx&quot;</span><span class="Type"> to</span> one_line<span class="Type"> status</span> st
-<span class="Statement">    string-length</span> one_line<span class="Type"> to</span> line_len
-<span class="Statement">    @</span>Line length is <span class="Statement">&lt;&lt;print-out</span> line_len<span class="Statement">&gt;&gt;</span>, line is <span class="Statement">&lt;&lt;print-out</span> one_line<span class="Statement"> web-encode&gt;&gt;</span> status <span class="Statement">&lt;&lt;print-out</span> st<span class="Statement">&gt;&gt;</span>&lt;br/&gt;
-<span class="Statement">end-read-line</span>
-<span class="Statement">if-true</span> st<span class="Identifier"> lesser-than</span> <span class="Constant">0</span>
-<span class="Statement">    get-req</span><span class="Identifier"> error</span><span class="Type"> to</span> err
-<span class="Statement">    @</span>Error in reading, error [<span class="Statement">&lt;&lt;print-out</span> err<span class="Statement">&gt;&gt;</span>]
-<span class="Statement">end-if</span></pre>
-<span id=golf_copied_911 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_911' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_911, code_911, golf_copied_911)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+read-line &quot;/home/bear/tmp/ll/filexx&quot; to one_line status st
+    string-length one_line to line_len
+    @Line length is &lt;&lt;print-out line_len&gt;&gt;, line is &lt;&lt;print-out one_line web-encode&gt;&gt; status &lt;&lt;print-out st&gt;&gt;&lt;br/&gt;
+end-read-line
+if-true st lesser-than 0
+    get-req error to err
+    @Error in reading, error [&lt;&lt;print-out err&gt;&gt;]
+end-if</pre>
+<span id=rimstone_copied_911 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_911' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_911, code_911, rimstone_copied_911)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 To read a text file delimited by "|" character:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_912' class=notranslate>
-<span class="Statement">read-line</span> <span class="Constant">&quot;/home/user/dir/file&quot;</span><span class="Type"> to</span> one_line<span class="Type"> status</span> len<span class="Identifier"> delimiter</span> '|'
-<span class="Statement">.</span>..</pre>
-<span id=golf_copied_912 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_912' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_912, code_912, golf_copied_912)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+read-line &quot;/home/user/dir/file&quot; to one_line status len delimiter '|'
+...</pre>
+<span id=rimstone_copied_912 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_912' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_912, code_912, rimstone_copied_912)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Files'></a><span style="font-weight:bold;">Files</span><br/>
-<a href='https://golf-lang.com/change-mode.html'>change-mode</a> &nbsp;<br/>
-<a href='https://golf-lang.com/close-file.html'>close-file</a> &nbsp;<br/>
-<a href='https://golf-lang.com/copy-file.html'>copy-file</a> &nbsp;<br/>
-<a href='https://golf-lang.com/delete-file.html'>delete-file</a> &nbsp;<br/>
-<a href='https://golf-lang.com/file-position.html'>file-position</a> &nbsp;<br/>
-<a href='https://golf-lang.com/file-storage.html'>file-storage</a> &nbsp;<br/>
-<a href='https://golf-lang.com/file-uploading.html'>file-uploading</a> &nbsp;<br/>
-<a href='https://golf-lang.com/get-upload.html'>get-upload</a> &nbsp;<br/>
-<a href='https://golf-lang.com/lock-file.html'>lock-file</a> &nbsp;<br/>
-<a href='https://golf-lang.com/open-file.html'>open-file</a> &nbsp;<br/>
-<a href='https://golf-lang.com/read-file.html'>read-file</a> &nbsp;<br/>
-<a href='https://golf-lang.com/read-line.html'>read-line</a> &nbsp;<br/>
-<a href='https://golf-lang.com/rename-file.html'>rename-file</a> &nbsp;<br/>
-<a href='https://golf-lang.com/stat-file.html'>stat-file</a> &nbsp;<br/>
-<a href='https://golf-lang.com/temporary-file.html'>temporary-file</a> &nbsp;<br/>
-<a href='https://golf-lang.com/uniq-file.html'>uniq-file</a> &nbsp;<br/>
-<a href='https://golf-lang.com/unlock-file.html'>unlock-file</a> &nbsp;<br/>
-<a href='https://golf-lang.com/write-file.html'>write-file</a> &nbsp; <br/>
+<a href='https://rimstone-lang.com/change-mode.html'>change-mode</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/close-file.html'>close-file</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/copy-file.html'>copy-file</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/delete-file.html'>delete-file</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/file-position.html'>file-position</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/file-storage.html'>file-storage</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/file-uploading.html'>file-uploading</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/get-upload.html'>get-upload</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/lock-file.html'>lock-file</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/open-file.html'>open-file</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/read-file.html'>read-file</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/read-line.html'>read-line</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/rename-file.html'>rename-file</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/stat-file.html'>stat-file</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/temporary-file.html'>temporary-file</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/uniq-file.html'>uniq-file</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/unlock-file.html'>unlock-file</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/write-file.html'>write-file</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
-<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
+<a href='https://rimstone-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
-<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://golf-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://rimstone-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
 </div><br/></body></html>
 
 

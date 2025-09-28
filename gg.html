@@ -11,7 +11,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="canonical" href="https://golf-lang.com/gg.html" />
+<link rel="canonical" href="https://rimstone-lang.com/gg.html" />
 <style>
 
 
@@ -232,27 +232,27 @@ function googleTranslateElementInit() {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Gg</div><hr/><span style="font-weight:bold;">Purpose</span>: Golf general purpose utility: build, test, run, miscellaneous (pronounced "gigi").<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Gg</div><hr/><span style="font-weight:bold;">Purpose</span>: Golf general purpose utility: build, test, run, miscellaneous (pronounced "gigi").<br/>
 <br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_684' class=notranslate>
 gg <span class="Statement">&lt;</span>options<span class="Statement">&gt;</span></pre>
-<span id=golf_copied_684 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_684' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_684, code_684, golf_copied_684)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_684 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_684' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_684, code_684, rimstone_copied_684)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Command-line options"></a>Command-line options</div>
 <ul><li>-k &lt;app name&gt;<br/>
-Create Golf application &lt;app name&gt; with default settings (see <a href='https://golf-lang.com/mgrg.html'>mgrg</a> with "-i" option on creating applications with non-default settings). The default settings mean that your application is owned by the currently-logged on Operating System user (see "-u" option in mgrg), and that a Unix socket connecting to your application server isn't restricted by any group (see "-r" option in mgrg). You must have sudo privilege to create an application. This option does nothing if the application already exists. You can combine this option with "-q" to create and then build an application in the same step.<br/>
+Create Golf application &lt;app name&gt; with default settings (see <a href='https://rimstone-lang.com/mgrg.html'>mgrg</a> with "-i" option on creating applications with non-default settings). The default settings mean that your application is owned by the currently-logged on Operating System user (see "-u" option in mgrg), and that a Unix socket connecting to your application server isn't restricted by any group (see "-r" option in mgrg). You must have sudo privilege to create an application. This option does nothing if the application already exists. You can combine this option with "-q" to create and then build an application in the same step.<br/>
 <br/>
-</li><li>-q Build Golf application from source code in the current directory. <a href='https://golf-lang.com/mgrg.html'>mgrg</a> must run first in this directory with "-i" option to create the application. You must have at least one Golf source file (.golf file), with each such file implementing a single <a href='https://golf-lang.com/request.html'>request</a> handler. All application source files must be contained in a flat directory; however, each request handler can handle any hierarchical path, so your API can be fully hierarchical. On rare occassions when C compiler version changes, you'll need sudo privileges to recompile and install Golf's LTO objects.<br/>
+</li><li>-q Build Golf application from source code in the current directory. <a href='https://rimstone-lang.com/mgrg.html'>mgrg</a> must run first in this directory with "-i" option to create the application. You must have at least one Golf source file (.golf file), with each such file implementing a single <a href='https://rimstone-lang.com/request.html'>request</a> handler. All application source files must be contained in a flat directory; however, each request handler can handle any hierarchical path, so your API can be fully hierarchical. On rare occassions when C compiler version changes, you'll need sudo privileges to recompile and install Golf's LTO objects.<br/>
 <br/>
 The following options can be used when building an application:<br/>
 <br/>
 <ul><li>--db="&lt;database vendor&gt;:&lt;db config file&gt; ..."<br/>
-Specify a list of databases used in your application. Each element of the list is &lt;database vendor&gt; (which is 'mariadb', 'postgres' or 'sqlite'), followed by a colon (:) and then &lt;db config file&gt;, where &lt;db config file&gt; is used to refer to a database in <a href='https://golf-lang.com/statements.html'>statements</a> such as <a href='https://golf-lang.com/run-query.html'>run-query</a>. <br/>
+Specify a list of databases used in your application. Each element of the list is &lt;database vendor&gt; (which is 'mariadb', 'postgres' or 'sqlite'), followed by a colon (:) and then &lt;db config file&gt;, where &lt;db config file&gt; is used to refer to a database in <a href='https://rimstone-lang.com/statements.html'>statements</a> such as <a href='https://rimstone-lang.com/run-query.html'>run-query</a>. <br/>
 <br/>
-Each &lt;database vendor&gt;:&lt;db config file&gt; is separated by a space. You can list any number of databases for use in your application. A file in current directory with name &lt;db config file&gt; must exist and contain the connection parameters for database access, and is copied to Golf's database configuration directory (see <a href='https://golf-lang.com/directories.html'>directories</a>). See <a href='https://golf-lang.com/database-config-file.html'>database-config-file</a> for more details on the content of this file.<br/>
+Each &lt;database vendor&gt;:&lt;db config file&gt; is separated by a space. You can list any number of databases for use in your application. A file in current directory with name &lt;db config file&gt; must exist and contain the connection parameters for database access, and is copied to Golf's database configuration directory (see <a href='https://rimstone-lang.com/directories.html'>directories</a>). See <a href='https://rimstone-lang.com/database-config-file.html'>database-config-file</a> for more details on the content of this file.<br/>
 <br/>
 </li><li>--lflag=&lt;linker flags&gt;<br/>
 If you wish to add any additional linker flags (such as any non-Golf libraries), specify them quoted under this option. <br/>
@@ -261,13 +261,13 @@ If you wish to add any additional linker flags (such as any non-Golf libraries),
 If you wish to add any additional C compiler (gcc) flags, specify them quoted under this option. <br/>
 <br/>
 </li><li>--path=&lt;application path&gt;<br/>
-This option lets you specify the <a href='https://golf-lang.com/request.html'>application path</a> for your request URLs. It is a leading path of a URL prior to request name and any parameters. If empty, the default is the application name preceded by a forward slash:<br/>
+This option lets you specify the <a href='https://rimstone-lang.com/request.html'>application path</a> for your request URLs. It is a leading path of a URL prior to request name and any parameters. If empty, the default is the application name preceded by a forward slash:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
 <pre id='code_683' class=notranslate>
 /&lt;app name&gt;</pre>
-<span id=golf_copied_683 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_683' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_683, code_683, golf_copied_683)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_683 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_683' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_683, code_683, rimstone_copied_683)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li><li>--maxupload=&lt;max upload size&gt;<br/>
 Specify maximum upload size for a file (in bytes). The default is approximately 25MB. <br/>
@@ -282,7 +282,7 @@ During building of C code precompiled from .golf source code, gcc will emit a ma
 "--devel" will not use all of the compile-time optimizations and will not use any link-time optimizations (LTO). This is the default when developing applications. Use "--release" option when you want to create release executables, which typically exhibit considerably higher performance (thus always use "--release" when testing performance or for release). Note that compiler debugging information is always included, though with this option more of it is present.<br/>
 <br/>
 </li><li>--fpe<br/>
-"--fpe" will add floating point and signed integer checks that are designed to catch problems such as overflow, division by zero and illegal instructions; with this option such issues will cause your program to <a href='https://golf-lang.com/error-handling.html'>error out</a>. Note that division by zero is always checked for numbers; however for doubles, this option is needed to do so. For both numbers and doubles, this option is needed to detect overflows. <br/>
+"--fpe" will add floating point and signed integer checks that are designed to catch problems such as overflow, division by zero and illegal instructions; with this option such issues will cause your program to <a href='https://rimstone-lang.com/error-handling.html'>error out</a>. Note that division by zero is always checked for numbers; however for doubles, this option is needed to do so. For both numbers and doubles, this option is needed to detect overflows. <br/>
 <br/>
 This option can only be used with "--devel" option, since it will affect performance and should not be used in release/production code. Use this option during the development and testing to catch potential bugs with floating point and signed number arithmetic. Note that if your gcc version is lower than 14, then overflows for signed integers may not error out your program, but rather the error message will display on standard error and the program will continue; to produce the behaviour described above, upgrade your gcc or the distribution you're running.<br/>
 <br/>
@@ -295,10 +295,10 @@ This will include all optimizations, including LTO. Use when you wish to build r
 Skip generating line information when compiling .golf files. By default line information is included, which allows errors to be reported with line numbers in .golf files. If you want only generated C code line numbers to be used, use this option. This is mostly useful if you think you found a bug in Golf in order to pinpoint the issue.<br/>
 <br/>
 </li><li>--public<br/>
-Change the default behavior of request handler safety so that request handlers without "public" or "private" clause are by default "public"; see <a href='https://golf-lang.com/begin-handler.html'>begin-handler</a> for more details.<br/>
+Change the default behavior of request handler safety so that request handlers without "public" or "private" clause are by default "public"; see <a href='https://rimstone-lang.com/begin-handler.html'>begin-handler</a> for more details.<br/>
 <br/>
 </li><li>--single-file<br/>
-A request handler is written in a source file whose path matches fully or partially that of the <a href='https://golf-lang.com/request.html'>request</a>, and such a file can contain any number of request handlers that match, see <a href='https://golf-lang.com/request.html'>request</a>. If, however "--single-file" is used, each request has to be in its own file whose path matches fully the request path, and no other request can be implemented in such file. For example, with "--single-file", request "/myreq" has to be in file "myreq.golf" in the source directory, while request "/other/newreq" has to be in file "other/newreq.golf" (meaning in file "newreq.golf" in subdirectory "other" in the source directory).<br/>
+A request handler is written in a source file whose path matches fully or partially that of the <a href='https://rimstone-lang.com/request.html'>request</a>, and such a file can contain any number of request handlers that match, see <a href='https://rimstone-lang.com/request.html'>request</a>. If, however "--single-file" is used, each request has to be in its own file whose path matches fully the request path, and no other request can be implemented in such file. For example, with "--single-file", request "/myreq" has to be in file "myreq.golf" in the source directory, while request "/other/newreq" has to be in file "other/newreq.golf" (meaning in file "newreq.golf" in subdirectory "other" in the source directory).<br/>
 <br/>
 </li><li>--exclude-dir<br/>
 By default, all ".golf" files (including in all subdirectories regardless of how many levels there may be), are picked up for compilation. If "--exclude-dir" is used, then you can specify any number of subdirectories, separated by commas, to be excluded. <br/>
@@ -313,7 +313,7 @@ Display more detailed information about the making of your application.<br/>
 Use &lt;threads&gt; number of threads to compile application. By default, the number of threads is equal to the number of CPUs (including virtual), allowing each CPU to compile one source files at a time; this is usually the fastest way. You can serialize compilation with "--parallel=1"; or you can set &lt;threads&gt; to any number between 1 and three time the number of CPUs in order to reach your performance and CPU utilization goals.<br/>
 <br/>
 </li><li>--posix-regex<br/>
-Use ERE (Extended Regular Expression) POSIX regex library built into Linux instead of default PCRE2, see <a href='https://golf-lang.com/match-regex.html'>match-regex</a>. While the two are largely compatible, you can use either one depending on your needs.<br/>
+Use ERE (Extended Regular Expression) POSIX regex library built into Linux instead of default PCRE2, see <a href='https://rimstone-lang.com/match-regex.html'>match-regex</a>. While the two are largely compatible, you can use either one depending on your needs.<br/>
 <br/>
 </li><li>-c,--clean <br/>
 Clean all object and other intermediate files, so that consequent application build is a full recompilation. Use it alone and prior to rebuilding the application.</li></ul>
@@ -321,7 +321,7 @@ Clean all object and other intermediate files, so that consequent application bu
 Note that when any gg compilation options change, the application is rebuilt (i.e. the change has the effect of "--clean").<br/>
 <br/>
 </li><li>-i<br/>
-Display both include and linking flags for an application that uses <a href='https://golf-lang.com/Client-API.html'>Client-API</a> to connect to Golf <a href='https://golf-lang.com/service.html'>service</a>. The flags are for C compiler (gcc). If "--include" option is used in addition, then only include flags are displayed. If "--link" option is used in addition, then only linking flags are displayed. Use this to automate building of client applications with tools like Makefile.<br/>
+Display both include and linking flags for an application that uses <a href='https://rimstone-lang.com/Client-API.html'>Client-API</a> to connect to Golf <a href='https://rimstone-lang.com/service.html'>service</a>. The flags are for C compiler (gcc). If "--include" option is used in addition, then only include flags are displayed. If "--link" option is used in addition, then only linking flags are displayed. Use this to automate building of client applications with tools like Makefile.<br/>
 <br/>
 </li><li>-v<br/>
 Display Golf version as well as the Operating System version. <br/>
@@ -330,14 +330,14 @@ Display Golf version as well as the Operating System version. <br/>
 Trace the execution of gg utility and display all the steps in making your application. <br/>
 <br/>
 </li><li>-e &lt;number of stack traces&gt;<br/>
-Display the last &lt;number of stack traces&gt;, i.e. the most recent stack trace files, which receive stack traces when program errors out, such as for instance due to your program attempting to access memory outside of it (but not for <a href='https://golf-lang.com/report-error.html'>report-error</a> statement). See <a href='https://golf-lang.com/error-handling.html'>error-handling</a>.<br/>
+Display the last &lt;number of stack traces&gt;, i.e. the most recent stack trace files, which receive stack traces when program errors out, such as for instance due to your program attempting to access memory outside of it (but not for <a href='https://rimstone-lang.com/report-error.html'>report-error</a> statement). See <a href='https://rimstone-lang.com/error-handling.html'>error-handling</a>.<br/>
 <br/>
 <br/>
 </li><li>-o<br/>
 Show documentation directory - web page documentation is located here in the form of a golfdoc.html file.<br/>
 <br/>
 </li><li>-g<br/>
-Show Golf root directory (i.e. where Golf is installed, see <a href='https://golf-lang.com/directories.html'>directories</a>). <br/>
+Show Golf root directory (i.e. where Golf is installed, see <a href='https://rimstone-lang.com/directories.html'>directories</a>). <br/>
 <br/>
 </li><li>-l<br/>
 Show library directory - Golf's libraries and v1 code processor are located there.<br/>
@@ -345,7 +345,7 @@ Show library directory - Golf's libraries and v1 code processor are located ther
 </li><li>-p &lt;app name&gt; --version &lt;version&gt; [ --force-user ]<br/>
 Create application package file for application &lt;app name&gt;, which can be used to install the application on a different computer; such computer must have a compatible Operating System (the same Linux distribution and the same or higher minor version number) and the compatible version of Golf must be installed (the same major and the same or higher minor version number). &lt;version&gt; is your application's version number, which is assigned by you. If "--force-user" is used, then this application, when installed elsewhere, must be installed into Operating System user account with the same user name as the current user when package is created. <br/>
 Note that packaging an application will transfer all that's necessary for your application to run elsewhere (executables, database configuration files, the information about which libraries are required etc.). It does not (and cannot) deal with your own infrastructure, such as for example your own actual databases; those external dependencies are your responsibility. <br/>
-If you have client applications built (see <a href='https://golf-lang.com/Client-API.html'>Client-API</a>), you can copy their built executables as-is to a target machine, provided above versioning rules are observed and no extra libraries were linked with it. This is because Golf client executables do not have any external dependencies, other than any that you introduce (by linking with additional external libraries).<br/>
+If you have client applications built (see <a href='https://rimstone-lang.com/Client-API.html'>Client-API</a>), you can copy their built executables as-is to a target machine, provided above versioning rules are observed and no extra libraries were linked with it. This is because Golf client executables do not have any external dependencies, other than any that you introduce (by linking with additional external libraries).<br/>
 Note that if your application uses databases, check database files (specified in "--db" option when your application is built), and blank out any database passwords you do not wish packaged. You should use passwordless database authentication or "dummy" passwords on the development and testing sites and never actual production passwords.<br/>
 The result of packaging is a file &lt;app name&gt;.tar.gz which you can use elsewhere with "-a" option to install the application; you can rename this file as long as it remains with ".tar.gz" extension.<br/>
 <br/>
@@ -362,23 +362,23 @@ Note that if your application uses databases, check database files located in $H
  &nbsp; &nbsp;[ --silent-header ] <br/>
  &nbsp; &nbsp;[ --arg="&lt;arguments&gt;" ] <br/>
  &nbsp; &nbsp;[ --exec ] <br/>
-Run a <a href='https://golf-lang.com/command-line.html'>command-line</a> program, or make a <a href='https://golf-lang.com/service.html'>service</a> request, or display bash code to do the same for use in scripts. <br/>
+Run a <a href='https://rimstone-lang.com/command-line.html'>command-line</a> program, or make a <a href='https://rimstone-lang.com/service.html'>service</a> request, or display bash code to do the same for use in scripts. <br/>
 <br/>
-If you are not in application's source code directory, then you must specify "--app" option to supply the application path (typically "/&lt;application name&gt;", see <a href='https://golf-lang.com/request.html'>request</a>). You can use "--req" option to specify the request name and optional URL parameters (see <a href='https://golf-lang.com/request.html'>request</a>), for example it may be:<br/>
+If you are not in application's source code directory, then you must specify "--app" option to supply the application path (typically "/&lt;application name&gt;", see <a href='https://rimstone-lang.com/request.html'>request</a>). You can use "--req" option to specify the request name and optional URL parameters (see <a href='https://rimstone-lang.com/request.html'>request</a>), for example it may be:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
 <pre id='code_685' class=notranslate>
 gg -r --req=&quot;/encrypt&quot; --exec</pre>
-<span id=golf_copied_685 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_685' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_685, code_685, golf_copied_685)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_685 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_685' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_685, code_685, rimstone_copied_685)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 to execute request "encrypt", or<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
 <pre id='code_687' class=notranslate>
 gg -r --req=&quot;/encrypt/data=somedata?method=aes256&quot; --exec</pre>
-<span id=golf_copied_687 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_687' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_687, code_687, golf_copied_687)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_687 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_687' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_687, code_687, rimstone_copied_687)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 where "/encrypt" is the request name, and "/data=somedata?method=aes256" represents the URL parameters. <br/>
 <br/>
@@ -386,15 +386,15 @@ Use --method to specify the HTTP request method, for instance:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
 <pre id='code_689' class=notranslate>
 gg -r --req=&quot;/encrypt/data=somedata?method=aes256&quot; --method=POST --exec</pre>
-<span id=golf_copied_689 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_689' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_689, code_689, golf_copied_689)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_689 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_689' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_689, code_689, rimstone_copied_689)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 If not specified, the default method is "GET". <br/>
 <br/>
-If "--service" is not used, then <a href='https://golf-lang.com/command-line.html'>command-line</a> program will execute and you can specify program arguments with "--arg" option, in which case "&lt;arguments&gt;" is a string (double or single quoted) that contains any number of program arguments. To specify arguments for a service see "-a" option in <a href='https://golf-lang.com/mgrg.html'>mgrg</a>.<br/>
+If "--service" is not used, then <a href='https://rimstone-lang.com/command-line.html'>command-line</a> program will execute and you can specify program arguments with "--arg" option, in which case "&lt;arguments&gt;" is a string (double or single quoted) that contains any number of program arguments. To specify arguments for a service see "-a" option in <a href='https://rimstone-lang.com/mgrg.html'>mgrg</a>.<br/>
 <br/>
-If "--service" is used, then application server will be contacted to execute a service; in this case if "--remote" is not specified, a local Unix socket is used to contact the server; otherwise "server:port" specified in "--remote" is the IP/name and port of the server to call, separated by a colon (":"). In case of a local Unix socket, for the default location of the socket path see "socket-file" clause in <a href='https://golf-lang.com/get-app.html'>get-app</a>; otherwise the socket path is given by "--socket" option. <br/>
+If "--service" is used, then application server will be contacted to execute a service; in this case if "--remote" is not specified, a local Unix socket is used to contact the server; otherwise "server:port" specified in "--remote" is the IP/name and port of the server to call, separated by a colon (":"). In case of a local Unix socket, for the default location of the socket path see "socket-file" clause in <a href='https://rimstone-lang.com/get-app.html'>get-app</a>; otherwise the socket path is given by "--socket" option. <br/>
 <br/>
 By default, the output in any case will have the HTTP headers. If you don't want those to appear, use "--silent-header" option.<br/>
 <br/>
@@ -402,11 +402,11 @@ If "--content" is used, then file &lt;input file&gt; is either piped to the stan
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_686' class=notranslate>
 gg <span class="Special">-r</span> <span class="Special">-app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/my_app</span><span class="Statement">&quot;</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/some_request?par1=val1&amp;par2=20&amp;par3=4</span><span class="Statement">&quot;</span> <span class="Special">--method</span><span class="Statement">=</span>PATCH <span class="Special">--content</span><span class="Statement">=</span>something.json <span class="Special">--content-type</span><span class="Statement">=</span>application/json <span class="Special">--exec</span></pre>
-<span id=golf_copied_686 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_686' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_686, code_686, golf_copied_686)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_686 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_686' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_686, code_686, rimstone_copied_686)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Examples of using "-r" option to execute <a href='https://golf-lang.com/command-line.html'>command-line</a> program or to call a <a href='https://golf-lang.com/service.html'>service</a>:<br/>
+Examples of using "-r" option to execute <a href='https://rimstone-lang.com/command-line.html'>command-line</a> program or to call a <a href='https://rimstone-lang.com/service.html'>service</a>:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_688' class=notranslate>
 <span class="Comment">#Execute current application as a command-line program, request &quot;json&quot;</span>
@@ -422,9 +422,9 @@ gg <span class="Special">-r</span> <span class="Special">--req</span><span class
 <span class="Comment">#Execute application &quot;app_name&quot;, service &quot;json&quot; by calling the application server running with a TCP socket on port 2301</span>
 <span class="Comment">#Request has input parameter &quot;act&quot; with value &quot;perf&quot;</span>
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/json/act=perf</span><span class="Statement">&quot;</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/app_name</span><span class="Statement">&quot;</span> <span class="Special">--service</span> <span class="Special">--remote</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">192.168.0.21:2301</span><span class="Statement">&quot;</span>  <span class="Special">--exec</span></pre>
-<span id=golf_copied_688 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_688' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_688, code_688, golf_copied_688)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_688 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_688' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_688, code_688, rimstone_copied_688)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <span style="font-weight:bold;">- Performance</span><br/>
 "gg -r" can be used both for testing and in production, however for maximum performance, skip "--exec" option to display direct bash code that you can copy and paste to use in production. This direct code is about 300% faster than using "gg -r"; keep this in mind if performance of using "gg -r" is important. When "--exec" is not used, the output may look like this:<br/>
@@ -439,11 +439,11 @@ gg <span class="Special">-r</span> <span class="Special">--req</span><span class
 <span class="Statement">export</span> <span class="Identifier">PATH_INFO</span>=<span class="Statement">&quot;</span><span class="Constant">/json/act=perf</span><span class="Statement">&quot;</span>
 <span class="Statement">export</span> <span class="Identifier">QUERY_STRING</span>=<span class="Statement">&quot;&quot;</span>
 /usr/lib/golf/ggcli <span class="Statement">&quot;</span><span class="Constant">192.168.0.21:2301</span><span class="Statement">&quot;</span></pre>
-<span id=golf_copied_690 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_690' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_690, code_690, golf_copied_690)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_690 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_690' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_690, code_690, rimstone_copied_690)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-If you copy the above and paste into bash shell, it will execute the command line program which handles the request specified (which gg would do when "--exec" is specified, but not as fast). Note that SCRIPT_NAME will be set to whatever application path you use (i.e. the default or if set with "--path" option when making the application; or with "--app" option here), see <a href='https://golf-lang.com/request.html'>request</a>. <br/>
+If you copy the above and paste into bash shell, it will execute the command line program which handles the request specified (which gg would do when "--exec" is specified, but not as fast). Note that SCRIPT_NAME will be set to whatever application path you use (i.e. the default or if set with "--path" option when making the application; or with "--app" option here), see <a href='https://rimstone-lang.com/request.html'>request</a>. <br/>
 </li><li>-u <br/>
 Read stdin (standard input) and substitute any environment variables in the form of ${&lt;var name&gt;} with their values, and output to stdout (stdout). This is useful in processing configuration files that do not have parameter values hardcoded, but rather take them from the environment.<br/>
 <br/>
@@ -460,36 +460,36 @@ Display help. </li></ul>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_691' class=notranslate>
 gg <span class="Special">-q</span> <span class="Special">--db</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">mariadb:mdb postgres:pdb sqlite:sdb</span><span class="Statement">&quot;</span></pre>
-<span id=golf_copied_691 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_691' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_691, code_691, golf_copied_691)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_691 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_691' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_691, code_691, rimstone_copied_691)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li><li>make application, use MariaDB database db (--db), specify linker and C compilation flags, specify maximum upload size of about 18M:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_692' class=notranslate>
 gg <span class="Special">-q</span> <span class="Special">--db</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">mariadb:db</span><span class="Statement">&quot;</span> <span class="Special">--lflag</span> <span class="Statement">&quot;</span><span class="Constant">-Wl,-z,defs</span><span class="Statement">&quot;</span> <span class="Special">--cflag</span> <span class="Statement">&quot;</span><span class="Constant">-DXYZ123</span><span class="Statement">&quot;</span> <span class="Special">--maxupload</span> <span class="Constant">18000000</span></pre>
-<span id=golf_copied_692 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_692' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_692, code_692, golf_copied_692)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_692 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_692' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_692, code_692, rimstone_copied_692)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li><li>Make application that doesn't use any databases:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_693' class=notranslate>
 gg <span class="Special">-q</span></pre>
-<span id=golf_copied_693 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_693' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_693, code_693, golf_copied_693)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_693 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_693' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_693, code_693, rimstone_copied_693)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li></ul>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Golf compiler and utility'></a><span style="font-weight:bold;">Golf compiler and utility</span><br/>
-<a href='https://golf-lang.com/gg.html'>gg</a> &nbsp; <br/>
+<a href='https://rimstone-lang.com/gg.html'>gg</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
-<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
+<a href='https://rimstone-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
-<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://golf-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://rimstone-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
 </div><br/></body></html>
 
 

@@ -11,7 +11,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="canonical" href="https://golf-lang.com/SELinux.html" />
+<link rel="canonical" href="https://rimstone-lang.com/SELinux.html" />
 <style>
 
 
@@ -232,7 +232,7 @@ function googleTranslateElementInit() {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>SELinux</div><hr/>If you do not use SELinux, you can ignore this. <br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>SELinux</div><hr/>If you do not use SELinux, you can ignore this. <br/>
 <br/>
 SELinux is MAC (Mandatory Access Control) system, which means anything that isn't allowed is prohibited. This is as opposed to DAC, Discretionary Access Control, where everything is allowed except what's prohibited. MAC generally works on top of DAC, and they are expected to work in a complementary fashion. Golf deploys both methods for enhanced security.<br/>
 <br/>
@@ -245,9 +245,9 @@ Golf policy files (including .te files) can be found here:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_972' class=notranslate>
 <span class="Statement">ls</span> <span class="PreProc">$(</span><span class="Special">gg </span><span class="Special">-l</span><span class="PreProc">)</span>/selinux/</pre>
-<span id=golf_copied_972 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_972' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_972, code_972, golf_copied_972)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_972 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_972' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_972, code_972, rimstone_copied_972)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 As a part of installing Golf, the following SELinux types will be installed:<br/>
 <ul><li>ggfile_t: all files within Golf directory ($HOME/.golf) are labeled with this type.<br/>
@@ -256,58 +256,58 @@ As a part of installing Golf, the following SELinux types will be installed:<br/
 Golf policy:<br/>
 <ul><li>allows Golf processes unconfined access. This is expected as Golf is a general purpose framework. It means you do not have to do anything to connect to database, use files, connect to other servers etc.<br/>
 </li><li>allows web servers (httpd_t domain type) to connect to sockets labeled with ggfile_t, but does not allow any other access. This allows communication between reverse-proxy web servers and Golf applications.<br/>
-</li><li>allows web servers to connect to any Golf process that is listening on a TCP port (see <a href='https://golf-lang.com/gg.html'>gg</a>), but does not allow any other access (i.e. to any other ports).</ul>
+</li><li>allows web servers to connect to any Golf process that is listening on a TCP port (see <a href='https://rimstone-lang.com/gg.html'>gg</a>), but does not allow any other access (i.e. to any other ports).</ul>
 Golf policy allows normal functioning of Golf features only, but does not introduce any unnecessary privileges to the rest of the system.<br/>
 <br/>
 Note: Golf installation does not distribute .pp (compile) policy files, because it is not currently part of distro repos. Due to changes in SELinux and difference in versions installed across derived distros, Golf will compile source .te files during the installation, ensuring the best possibility of successful SELinux policy setup.<br/>
 <div class="vsub"><a id="Unix domain sockets"></a>Unix domain sockets</div>
-Using Unix domain sockets for Golf processes to communicate with a web server (see <a href='https://golf-lang.com/gg.html'>gg</a>) is the default method and no further action is needed.<br/>
+Using Unix domain sockets for Golf processes to communicate with a web server (see <a href='https://rimstone-lang.com/gg.html'>gg</a>) is the default method and no further action is needed.<br/>
 <div class="vsub"><a id="Unix TCP sockets"></a>Unix TCP sockets</div>
-Using TCP sockets for Golf processes to communicate with a web server (see <a href='https://golf-lang.com/gg.html'>gg</a>) requires you to label such ports as ggport_t, for example if you plan to use port 2109:<br/>
+Using TCP sockets for Golf processes to communicate with a web server (see <a href='https://rimstone-lang.com/gg.html'>gg</a>) requires you to label such ports as ggport_t, for example if you plan to use port 2109:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_973' class=notranslate>
 sudo semanage port <span class="Special">-a</span> <span class="Special">-t</span> ggport_t <span class="Special">-p</span> tcp  <span class="Constant">2109</span></pre>
-<span id=golf_copied_973 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_973' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_973, code_973, golf_copied_973)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_973 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_973' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_973, code_973, rimstone_copied_973)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 When you no longer need a port, for example if you are switching to another port (for instance 2209), remove the old one and add the new one:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_974' class=notranslate>
 sudo semanage port <span class="Special">-d</span> <span class="Special">-t</span> ggport_t <span class="Special">-p</span> tcp  <span class="Constant">2109</span>
 sudo semanage port <span class="Special">-a</span> <span class="Special">-t</span> ggport_t <span class="Special">-p</span> tcp  <span class="Constant">2209</span></pre>
-<span id=golf_copied_974 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_974' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_974, code_974, golf_copied_974)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_974 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_974' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_974, code_974, rimstone_copied_974)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Changing or adding directories"></a>Changing or adding directories</div>
-If you are adding directories to be used by Golf program, or changing a directory, for example using a different storage instead of "$HOME/.golf" (see <a href='https://golf-lang.com/directories.html'>directories</a>), you need to label files in new directories:<br/>
+If you are adding directories to be used by Golf program, or changing a directory, for example using a different storage instead of "$HOME/.golf" (see <a href='https://rimstone-lang.com/directories.html'>directories</a>), you need to label files in new directories:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_975' class=notranslate>
 sudo semanage fcontext <span class="Special">-a</span> <span class="Special">-t</span> ggfile_t <span class="Statement">&quot;</span><span class="Constant">/your/new/dir(/.*)?</span><span class="Statement">&quot;</span>
 sudo restorecon <span class="Special">-R</span> /your/new/dir</pre>
-<span id=golf_copied_975 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_975' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_975, code_975, golf_copied_975)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_975 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_975' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_975, code_975, rimstone_copied_975)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 To remove context from such directories (if you are not using them anymore), use:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_976' class=notranslate>
 sudo semanage fcontext <span class="Special">-d</span> <span class="Special">-t</span> ggfile_t <span class="Statement">&quot;</span><span class="Constant">/your/new/dir(/.*)?</span><span class="Statement">&quot;</span>
 sudo restorecon <span class="Special">-R</span> /your/new/dir</pre>
-<span id=golf_copied_976 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_976' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_976, code_976, golf_copied_976)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_976 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_976' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_976, code_976, rimstone_copied_976)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='SELinux'></a><span style="font-weight:bold;">SELinux</span><br/>
-<a href='https://golf-lang.com/SELinux.html'>SELinux</a> &nbsp; <br/>
+<a href='https://rimstone-lang.com/SELinux.html'>SELinux</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
-<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
+<a href='https://rimstone-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
-<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://golf-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://rimstone-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
 </div><br/></body></html>
 
 

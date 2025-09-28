@@ -11,7 +11,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="canonical" href="https://golf-lang.com/set-cookie.html" />
+<link rel="canonical" href="https://rimstone-lang.com/set-cookie.html" />
 <style>
 
 
@@ -232,25 +232,25 @@ function googleTranslateElementInit() {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Set cookie</div><hr/><span style="font-weight:bold;">Purpose</span>: Set cookie.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Set cookie</div><hr/><span style="font-weight:bold;">Purpose</span>: Set cookie.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_998' class=notranslate>
-<span class="Statement">set-cookie</span> ( &lt;cookie name&gt;=&lt;cookie value&gt; \
-    [<span class="Identifier"> expires</span> &lt;expiration&gt; ] \
-    [<span class="Identifier"> path</span> &lt;path&gt; ] \
-    [<span class="Identifier"> same-site</span> <span class="Constant">&quot;Lax&quot;</span>|<span class="Constant">&quot;Strict&quot;</span>|<span class="Constant">&quot;None&quot;</span> ] \
-    [<span class="Identifier"> no-http-only</span> [ &lt;no-http-only&gt; ] ] \
-    [<span class="Identifier"> secure</span> [ &lt;secure&gt; ] ] ) ,...</pre>
-<span id=golf_copied_998 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_998' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_998, code_998, golf_copied_998)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+set-cookie ( &lt;cookie name&gt;=&lt;cookie value&gt; \
+    [ expires &lt;expiration&gt; ] \
+    [ path &lt;path&gt; ] \
+    [ same-site &quot;Lax&quot;|&quot;Strict&quot;|&quot;None&quot; ] \
+    [ no-http-only [ &lt;no-http-only&gt; ] ] \
+    [ secure [ &lt;secure&gt; ] ] ) ,...</pre>
+<span id=rimstone_copied_998 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_998' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_998, code_998, rimstone_copied_998)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-To set a cookie named by string &lt;cookie name&gt; to string value &lt;cookie value&gt;, use set-cookie statement. A cookie must be set prior to outputting any actual response (such as with <a href='https://golf-lang.com/output-statement.html'>output-statement</a> or <a href='https://golf-lang.com/print-out.html'>print-out</a> for example), or the program will <a href='https://golf-lang.com/error-handling.html'>error out</a> and stop. <br/>
+To set a cookie named by string &lt;cookie name&gt; to string value &lt;cookie value&gt;, use set-cookie statement. A cookie must be set prior to outputting any actual response (such as with <a href='https://rimstone-lang.com/output-statement.html'>output-statement</a> or <a href='https://rimstone-lang.com/print-out.html'>print-out</a> for example), or the program will <a href='https://rimstone-lang.com/error-handling.html'>error out</a> and stop. <br/>
 <br/>
-Cookie's &lt;expiration&gt; date (as a string, see <a href='https://golf-lang.com/get-time.html'>get-time</a>) is given with "expires" clause. The default is session cookie meaning the cookie expires when client session closes.<br/>
+Cookie's &lt;expiration&gt; date (as a string, see <a href='https://rimstone-lang.com/get-time.html'>get-time</a>) is given with "expires" clause. The default is session cookie meaning the cookie expires when client session closes.<br/>
 <br/>
-Cookie's &lt;path&gt; is specified with "path" clause. The default is the URL path of the <a href='https://golf-lang.com/request.html'>request</a> URL.<br/>
+Cookie's &lt;path&gt; is specified with "path" clause. The default is the URL path of the <a href='https://rimstone-lang.com/request.html'>request</a> URL.<br/>
 <br/>
 Whether a cookie applies to the same site is given with "same-site" clause along with possible values of "Lax", "Strict" or "None". <br/>
 <br/>
@@ -258,47 +258,47 @@ By default a cookie is not accessible to client scripting (i.e. "HttpOnly") -you
 <br/>
 Use "secure" if a secure connection (https) is used, in order to specify this cookie is available only with a secure connection. That will be the case if "secure" is used without bool expression &lt;secure&gt;, or if &lt;secure&gt; evaluates to true.<br/>
 <br/>
-Cookies are commonly used for session maintenance, tracking and other purposes. Use <a href='https://golf-lang.com/get-cookie.html'>get-cookie</a> and <a href='https://golf-lang.com/delete-cookie.html'>delete-cookie</a> together with set-cookie to manage cookies.<br/>
+Cookies are commonly used for session maintenance, tracking and other purposes. Use <a href='https://rimstone-lang.com/get-cookie.html'>get-cookie</a> and <a href='https://rimstone-lang.com/delete-cookie.html'>delete-cookie</a> together with set-cookie to manage cookies.<br/>
 <br/>
 You can set multiple cookies separated by a comma:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_999' class=notranslate>
-<span class="Statement">get-time</span><span class="Type"> to</span> tm<span class="Identifier"> year</span> <span class="Constant">1</span>
-<span class="Statement">set-cookie</span> <span class="Constant">&quot;mycookie1&quot;</span>=<span class="Constant">&quot;4900&quot;</span><span class="Identifier"> expires</span> tm<span class="Identifier"> path</span> <span class="Constant">&quot;/&quot;</span>, <span class="Constant">&quot;mycookie2&quot;</span>=<span class="Constant">&quot;900&quot;</span><span class="Identifier"> expires</span> tm <span class="Identifier"> path</span> <span class="Constant">&quot;/my-app&quot;</span><span class="Identifier"> same-site</span> <span class="Constant">&quot;Strict&quot;</span></pre>
-<span id=golf_copied_999 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_999' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_999, code_999, golf_copied_999)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+get-time to tm year 1
+set-cookie &quot;mycookie1&quot;=&quot;4900&quot; expires tm path &quot;/&quot;, &quot;mycookie2&quot;=&quot;900&quot; expires tm  path &quot;/my-app&quot; same-site &quot;Strict&quot;</pre>
+<span id=rimstone_copied_999 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_999' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_999, code_999, rimstone_copied_999)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 To set a cookie named "my_cookie_name" to value "XYZ", that will go with the reply and expire in 1 year and 2 months from now, use:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_1000' class=notranslate>
-<span class="Statement">get-time</span><span class="Type"> to</span> mytime<span class="Identifier"> year</span> <span class="Constant">1</span><span class="Identifier"> month</span> <span class="Constant">2</span>
-<span class="Statement">set-string</span> my_cookie_value=<span class="Constant">&quot;XYZ&quot;</span>
-<span class="Statement">set-cookie</span> <span class="Constant">&quot;my_cookie_name&quot;</span>=my_cookie_value<span class="Identifier"> expires</span> mytime<span class="Identifier"> path</span> <span class="Constant">&quot;/&quot;</span><span class="Identifier"> same-site</span> <span class="Constant">&quot;Lax&quot;</span></pre>
-<span id=golf_copied_1000 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_1000' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_1000, code_1000, golf_copied_1000)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+get-time to mytime year 1 month 2
+set-string my_cookie_value=&quot;XYZ&quot;
+set-cookie &quot;my_cookie_name&quot;=my_cookie_value expires mytime path &quot;/&quot; same-site &quot;Lax&quot;</pre>
+<span id=rimstone_copied_1000 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1000' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_1000, code_1000, rimstone_copied_1000)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 A cookie that can be used by JavaScript (meaning we use no-http-only clause):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_1001' class=notranslate>
-<span class="Statement">set-cookie</span> <span class="Constant">&quot;my_cookie_name&quot;</span>=my_cookie_value<span class="Identifier"> no-http-only</span></pre>
-<span id=golf_copied_1001 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_1001' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_1001, code_1001, golf_copied_1001)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+set-cookie &quot;my_cookie_name&quot;=my_cookie_value no-http-only</pre>
+<span id=rimstone_copied_1001 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1001' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_1001, code_1001, rimstone_copied_1001)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Cookies'></a><span style="font-weight:bold;">Cookies</span><br/>
-<a href='https://golf-lang.com/delete-cookie.html'>delete-cookie</a> &nbsp;<br/>
-<a href='https://golf-lang.com/get-cookie.html'>get-cookie</a> &nbsp;<br/>
-<a href='https://golf-lang.com/set-cookie.html'>set-cookie</a> &nbsp; <br/>
+<a href='https://rimstone-lang.com/delete-cookie.html'>delete-cookie</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/get-cookie.html'>get-cookie</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/set-cookie.html'>set-cookie</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
-<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
+<a href='https://rimstone-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
-<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://golf-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://rimstone-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
 </div><br/></body></html>
 
 

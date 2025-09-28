@@ -11,7 +11,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="canonical" href="https://golf-lang.com/hmac-string.html" />
+<link rel="canonical" href="https://rimstone-lang.com/hmac-string.html" />
 <style>
 
 
@@ -232,26 +232,26 @@ function googleTranslateElementInit() {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Hmac string</div><hr/><span style="font-weight:bold;">Purpose</span>: Create HMAC.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Hmac string</div><hr/><span style="font-weight:bold;">Purpose</span>: Create HMAC.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_700' class=notranslate>
-<span class="Statement">hmac-string</span> &lt;string&gt;<span class="Type"> to</span> &lt;result&gt; \
-   <span class="Identifier"> key</span> &lt;key&gt; \
-    [<span class="Identifier"> binary</span> [ &lt;binary&gt; ] \
-    [<span class="Identifier"> digest</span> &lt;digest algorithm&gt; ]</pre>
-<span id=golf_copied_700 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_700' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_700, code_700, golf_copied_700)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+hmac-string &lt;string&gt; to &lt;result&gt; \
+    key &lt;key&gt; \
+    [ binary [ &lt;binary&gt; ] \
+    [ digest &lt;digest algorithm&gt; ]</pre>
+<span id=rimstone_copied_700 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_700' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_700, code_700, rimstone_copied_700)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 hmac-string produces by default a SHA256-based HMAC (Hash Message Authentication Code) of &lt;string&gt; (if "digest" clause is not used) using secret &lt;key&gt;, and stores the result into &lt;result&gt;. &nbsp;You can use a different &lt;digest algorithm&gt; in "digest" clause (for example "SHA3-256"). To see a list of available digests:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_701' class=notranslate>
 <span class="Comment">#get digests</span>
 openssl list <span class="Special">-digest-algorithms</span></pre>
-<span id=golf_copied_701 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_701' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_701, code_701, golf_copied_701)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_701 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_701' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_701, code_701, rimstone_copied_701)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 If "binary" clause is used without boolean variable &lt;binary&gt;, or if &lt;binary&gt; evaluates to true, then the &lt;result&gt; is a binary string that may contain null-characters. With the default SHA256, it is 32 bytes in length, while for instance with SHA3-384 it is 48 bytes in length, etc. <br/>
 <br/>
@@ -260,43 +260,43 @@ Without "binary" clause, or if &lt;binary&gt; evaluates to false, each binary by
 String "result" will have a HMAC value of a given string, an example of which might look like "2d948cc89148ef96fa4f1876e74af4ce984423d355beb12f7fdba5383143bee0"<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_702' class=notranslate>
-<span class="Statement">hmac-string</span> <span class="Constant">&quot;some data&quot;</span><span class="Identifier"> key</span> <span class="Constant">&quot;mykey&quot;</span><span class="Type"> to</span> result</pre>
-<span id=golf_copied_702 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_702' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_702, code_702, golf_copied_702)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+hmac-string &quot;some data&quot; key &quot;mykey&quot; to result</pre>
+<span id=rimstone_copied_702 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_702' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_702, code_702, rimstone_copied_702)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Using a different digest:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_703' class=notranslate>
-<span class="Statement">hmac-string</span> <span class="Constant">&quot;some data&quot;</span><span class="Identifier"> key</span> <span class="Constant">&quot;mykey&quot;</span><span class="Type"> to</span> result<span class="Identifier"> digest</span> <span class="Constant">&quot;sha3-384&quot;</span></pre>
-<span id=golf_copied_703 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_703' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_703, code_703, golf_copied_703)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+hmac-string &quot;some data&quot; key &quot;mykey&quot; to result digest &quot;sha3-384&quot;</pre>
+<span id=rimstone_copied_703 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_703' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_703, code_703, rimstone_copied_703)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Producing a binary value instead of a null-terminated hexadecimal string, and then making a Base64 string out of it:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_704' class=notranslate>
-<span class="Statement">hmac-string</span> <span class="Constant">&quot;some data&quot;</span><span class="Identifier"> key</span> <span class="Constant">&quot;mykey&quot;</span><span class="Identifier"> digest</span> <span class="Constant">&quot;SHA256&quot;</span><span class="Type"> to</span> result<span class="Identifier"> binary</span>
-<span class="Statement">encode-base64</span> result<span class="Type"> to</span> bresult</pre>
-<span id=golf_copied_704 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_704' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_704, code_704, golf_copied_704)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+hmac-string &quot;some data&quot; key &quot;mykey&quot; digest &quot;SHA256&quot; to result binary
+encode-base64 result to bresult</pre>
+<span id=rimstone_copied_704 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_704' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_704, code_704, rimstone_copied_704)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Encryption'></a><span style="font-weight:bold;">Encryption</span><br/>
-<a href='https://golf-lang.com/decrypt-data.html'>decrypt-data</a> &nbsp;<br/>
-<a href='https://golf-lang.com/derive-key.html'>derive-key</a> &nbsp;<br/>
-<a href='https://golf-lang.com/encrypt-data.html'>encrypt-data</a> &nbsp;<br/>
-<a href='https://golf-lang.com/hash-string.html'>hash-string</a> &nbsp;<br/>
-<a href='https://golf-lang.com/hmac-string.html'>hmac-string</a> &nbsp;<br/>
-<a href='https://golf-lang.com/random-crypto.html'>random-crypto</a> &nbsp;<br/>
-<a href='https://golf-lang.com/random-string.html'>random-string</a> &nbsp; <br/>
+<a href='https://rimstone-lang.com/decrypt-data.html'>decrypt-data</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/derive-key.html'>derive-key</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/encrypt-data.html'>encrypt-data</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/hash-string.html'>hash-string</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/hmac-string.html'>hmac-string</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/random-crypto.html'>random-crypto</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/random-string.html'>random-string</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
-<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
+<a href='https://rimstone-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
-<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://golf-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://rimstone-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
 </div><br/></body></html>
 
 

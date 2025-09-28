@@ -11,7 +11,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="canonical" href="https://golf-lang.com/command-line.html" />
+<link rel="canonical" href="https://rimstone-lang.com/command-line.html" />
 <style>
 
 
@@ -232,44 +232,44 @@ function googleTranslateElementInit() {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Command line</div><hr/>A Golf application can run as a web application or a command-line program, or both - such as when some requests can be either fulfilled through web interface or executed otherwise (such as on the command line). Note that Golf produces two separate executables: a <a href='https://golf-lang.com/service.html'>service</a> one and a command-line one - they are different because command-line program does not need the service library and thus is smaller. <br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Command line</div><hr/>A Golf application can run as a web application or a command-line program, or both - such as when some requests can be either fulfilled through web interface or executed otherwise (such as on the command line). Note that Golf produces two separate executables: a <a href='https://rimstone-lang.com/service.html'>service</a> one and a command-line one - they are different because command-line program does not need the service library and thus is smaller. <br/>
 <br/>
 The name of the command-line executable is the same as the application name, and its path is (assuming &lt;app name&gt; is the application name):<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
 <pre id='code_460' class=notranslate>
 $HOME/.golf/bld/&lt;app name&gt;/&lt;app name&gt;</pre>
-<span id=golf_copied_460 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_460' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_460, code_460, golf_copied_460)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_460 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_460' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_460, code_460, rimstone_copied_460)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Output"></a>Output</div>
 A command-line program works the same way as a service executable, and the output is the same, except that it is directed to stdout (standard output) and stderr (standard error). <br/>
 <div class="vsub"><a id="Exit code"></a>Exit code</div>
-To specify the exit code of a command-line program, use <a href='https://golf-lang.com/exit-status.html'>exit-status</a>. To exit the program, use <a href='https://golf-lang.com/exit-handler.html'>exit-handler</a>, or otherwise the program will exit when it reaches the end of a <a href='https://golf-lang.com/request.html'>request</a>.<br/>
+To specify the exit code of a command-line program, use <a href='https://rimstone-lang.com/exit-status.html'>exit-status</a>. To exit the program, use <a href='https://rimstone-lang.com/exit-handler.html'>exit-handler</a>, or otherwise the program will exit when it reaches the end of a <a href='https://rimstone-lang.com/request.html'>request</a>.<br/>
 <div class="vsub"><a id="Executing a request"></a>Executing a request</div>
 Here is how to execute a request "add-stock" in application "stock" with parameters "name" having a value of "ABC" and "price" a value of "300":<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_461' class=notranslate>
 gg <span class="Special">-r</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/stock</span><span class="Statement">&quot;</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/add-stock?name=ABC&amp;price=300</span><span class="Statement">&quot;</span> <span class="Special">--exec</span></pre>
-<span id=golf_copied_461 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_461' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_461, code_461, golf_copied_461)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_461 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_461' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_461, code_461, rimstone_copied_461)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Note that you if specify parameters as part of the path, you could write the above the same way as in a URL:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_462' class=notranslate>
 gg <span class="Special">-r</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/stock</span><span class="Statement">&quot;</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/add-stock/name=ABC/price=300</span><span class="Statement">&quot;</span> <span class="Special">--exec</span></pre>
-<span id=golf_copied_462 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_462' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_462, code_462, golf_copied_462)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_462 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_462' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_462, code_462, rimstone_copied_462)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-You can generate the shell code to execute the above without using <a href='https://golf-lang.com/gg.html'>gg</a> by omitting "--exec" option, for instance:<br/>
+You can generate the shell code to execute the above without using <a href='https://rimstone-lang.com/gg.html'>gg</a> by omitting "--exec" option, for instance:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_463' class=notranslate>
 gg <span class="Special">-r</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/stock</span><span class="Statement">&quot;</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/add-stock/name=ABC/price=300</span><span class="Statement">&quot;</span></pre>
-<span id=golf_copied_463 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_463' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_463, code_463, golf_copied_463)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_463 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_463' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_463, code_463, rimstone_copied_463)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Including a request body"></a>Including a request body</div>
 You can include a request body when executing a singe-run program. It is always included as the standard input (stdin) to the program. <br/>
@@ -280,19 +280,19 @@ Here is an example of using a request body to make a POST request on the command
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_464' class=notranslate>
 gg <span class="Special">-r</span> <span class="Special">--app</span><span class="Statement">=</span>/json <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">'</span><span class="Constant">/process?act=get_total&amp;period=YTD</span><span class="Statement">'</span> <span class="Special">--method</span><span class="Statement">=</span>POST <span class="Special">--content</span><span class="Statement">=</span>prices.json <span class="Special">--content-type</span><span class="Statement">=</span>application/json <span class="Special">--exec</span></pre>
-<span id=golf_copied_464 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_464' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_464, code_464, golf_copied_464)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_464 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_464' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_464, code_464, rimstone_copied_464)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-You can generate the shell code for the above by omitting "--exec" option of <a href='https://golf-lang.com/gg.html'>gg</a> utility.<br/>
+You can generate the shell code for the above by omitting "--exec" option of <a href='https://rimstone-lang.com/gg.html'>gg</a> utility.<br/>
 <br/>
 Note that you can also include any other headers as environment variables by using the "HTTP_" convention, where custom headers are capitalized with use of underscore for dashes and prefixed with "HTTP_", for example header "Golf-Header" would be set as:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_465' class=notranslate>
 <span class="Statement">export</span> <span class="Identifier">HTTP_GOLF_HEADER</span>=<span class="Statement">&quot;</span><span class="Constant">some value</span><span class="Statement">&quot;</span></pre>
-<span id=golf_copied_465 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_465' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_465, code_465, golf_copied_465)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_465 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_465' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_465, code_465, rimstone_copied_465)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 You would set the "HTTP_" variable(s) prior to executing the program.<br/>
 <div class="vsub"><a id="Suppressing HTTP header output for the entire application"></a>Suppressing HTTP header output for the entire application</div>
@@ -300,19 +300,19 @@ If you wish to suppress the output of HTTP headers for all requests, use "--sile
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_466' class=notranslate>
 gg <span class="Special">-r</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/stock</span><span class="Statement">&quot;</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/add-stock/name=ABC/price=300</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--silent-header</span></pre>
-<span id=golf_copied_466 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_466' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_466, code_466, golf_copied_466)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_466 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_466' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_466, code_466, rimstone_copied_466)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-This will suppress the output of HTTP headers (either the default or with <a href='https://golf-lang.com/out-header.html'>out-header</a>), or for any other case where headers are output. This has the same effect as <a href='https://golf-lang.com/silent-header.html'>silent-header</a>, the only difference is that the environment variable applies to the entire application.<br/>
+This will suppress the output of HTTP headers (either the default or with <a href='https://rimstone-lang.com/out-header.html'>out-header</a>), or for any other case where headers are output. This has the same effect as <a href='https://rimstone-lang.com/silent-header.html'>silent-header</a>, the only difference is that the environment variable applies to the entire application.<br/>
 <div class="vsub"><a id="URL-encoding the input"></a>URL-encoding the input</div>
 Any data in "--req" option (and consequently in PATH_INFO or QUERY_STRING environment vairables if calling directly from shell) must be formatted to be a valid URL; for example, data that contains special characters (like "&amp;" or "?") must be URL-encoded, for instance:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_467' class=notranslate>
 gg <span class="Special">-r</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/stock</span><span class="Statement">&quot;</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/add-stock/name=ABC%3F/price=300</span><span class="Statement">&quot;</span></pre>
-<span id=golf_copied_467 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_467' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_467, code_467, golf_copied_467)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_467 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_467' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_467, code_467, rimstone_copied_467)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In this case, parameter "name" has value of "ABC?", where special character "?" is encoded as "%3F". <br/>
 <br/>
@@ -320,33 +320,33 @@ To make sure all your input parameters are properly URL-encoded, you can use Gol
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_468' class=notranslate>
 <span class="PreProc">$($(</span><span class="Special">gg </span><span class="Special">-l</span><span class="PreProc">)</span><span class="Special">/v1 </span><span class="Special">-urlencode</span><span class="Special"> </span><span class="Statement">'</span><span class="Constant">&lt;your data&gt;</span><span class="Statement">'</span><span class="PreProc">)</span></pre>
-<span id=golf_copied_468 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_468' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_468, code_468, golf_copied_468)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_468 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_468' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_468, code_468, rimstone_copied_468)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 For instance, to encode "a?=b" as a parameter:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_469' class=notranslate>
 gg <span class="Special">-r</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/stock</span><span class="Statement">&quot;</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/add-stock/name=</span><span class="PreProc">$($(</span><span class="Special">gg </span><span class="Special">-l</span><span class="PreProc">)</span><span class="Special">/v1 </span><span class="Special">-urlencode</span><span class="Special"> </span><span class="Statement">'</span><span class="Constant">AB?</span><span class="Statement">'</span><span class="PreProc">)</span><span class="Constant">/price=300</span><span class="Statement">&quot;</span></pre>
-<span id=golf_copied_469 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_469' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_469, code_469, golf_copied_469)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_469 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_469' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_469, code_469, rimstone_copied_469)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 If your parameters do not contain characters that need URL encoding, then you can skip this.<br/>
 <div class="vsub"><a id="CGI"></a>CGI</div>
-You can also use a command-line program with <a href='https://golf-lang.com/CGI.html'>CGI</a> (Common Gateway Interface). <br/>
+You can also use a command-line program with <a href='https://rimstone-lang.com/CGI.html'>CGI</a> (Common Gateway Interface). <br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Running application'></a><span style="font-weight:bold;">Running application</span><br/>
-<a href='https://golf-lang.com/application-setup.html'>application-setup</a> &nbsp;<br/>
-<a href='https://golf-lang.com/CGI.html'>CGI</a> &nbsp;<br/>
-<a href='https://golf-lang.com/command-line.html'>command-line</a> &nbsp;<br/>
-<a href='https://golf-lang.com/service.html'>service</a> &nbsp; <br/>
+<a href='https://rimstone-lang.com/application-setup.html'>application-setup</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/CGI.html'>CGI</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/command-line.html'>command-line</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/service.html'>service</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
-<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
+<a href='https://rimstone-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
-<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://golf-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://rimstone-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
 </div><br/></body></html>
 
 

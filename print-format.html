@@ -11,7 +11,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="canonical" href="https://golf-lang.com/print-format.html" />
+<link rel="canonical" href="https://rimstone-lang.com/print-format.html" />
 <style>
 
 
@@ -232,20 +232,20 @@ function googleTranslateElementInit() {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Print format</div><hr/><span style="font-weight:bold;">Purpose</span>: Outputs formatted data.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Print format</div><hr/><span style="font-weight:bold;">Purpose</span>: Outputs formatted data.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_852' class=notranslate>
-<span class="Statement">print-format</span> &lt;format&gt;<span class="Identifier"> ,</span> &lt;variable&gt; [<span class="Identifier"> ,</span> &lt;variable&gt; ]... \
-    [<span class="Identifier"> to-error</span> ] \
-    [<span class="Identifier"> to</span> &lt;string&gt; ] [<span class="Identifier"> url-encode</span> |<span class="Identifier"> web-encode</span> ]</pre>
-<span id=golf_copied_852 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_852' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_852, code_852, golf_copied_852)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+print-format &lt;format&gt; , &lt;variable&gt; [ , &lt;variable&gt; ]... \
+    [ to-error ] \
+    [ to &lt;string&gt; ] [ url-encode | web-encode ]</pre>
+<span id=rimstone_copied_852 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_852' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_852, code_852, rimstone_copied_852)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 print-format will format a string according to the &lt;format&gt; string and a list of &lt;variable&gt;s and then outputs the result. By default, the output is not encoded (meaning a string is output exactly as it is, and the client may interpret such text in any way it sees fit). If "web-encode" clause is used, then the output is web-encoded (or HTML-encoded);this means such output is suited for use in web pages - meaning any HTML-markup will be properly encoded. If "url-encode" clause is used, then the output is URL-encoded; this means such output is suited for use in URL parameters.<br/>
 <div class="vsub"><a id="Format"></a>Format</div>
-&lt;format&gt; string must be a literal. Variables must follow &lt;format&gt; separated by commas in the same order as placeholders. If you use any placeholders other than specified below, or the type of variables you use do not match the type of a corresponding placeholder in &lt;format&gt;, your program will <a href='https://golf-lang.com/error-handling.html'>error out</a>. You can use the following placeholders in &lt;format&gt;:<br/>
+&lt;format&gt; string must be a literal. Variables must follow &lt;format&gt; separated by commas in the same order as placeholders. If you use any placeholders other than specified below, or the type of variables you use do not match the type of a corresponding placeholder in &lt;format&gt;, your program will <a href='https://rimstone-lang.com/error-handling.html'>error out</a>. You can use the following placeholders in &lt;format&gt;:<br/>
 <ul><li>%s for a string<br/>
 </li><li>%c for a number displayed as a character,<br/>
 </li><li>%&lt;number&gt;s for a string output with a width of at least &lt;number&gt; (any excess filled with spaces to the left),<br/>
@@ -255,61 +255,61 @@ print-format will format a string according to the &lt;format&gt; string and a l
 </li><li>%&lt;number&gt;hd for a 32-bit signed number output with a width of at least &lt;number&gt; (any excess filled with spaces to the left). Use "ho" for displaying as unsigned number, "ho" for displaying in octal notation and "hx" for hexadecimal notation.<br/>
 </li><li>%hhd for a signed 8-bit number. Use "hhu" for displaying as unsigned number, "hho" for displaying in octal notation and "hhx" for hexadecimal notation.<br/>
 </li><li>%&lt;number&gt;hhd for a number output with a width of at least &lt;number&gt; (any excess filled with spaces to the left). Use "hhu" for displaying as unsigned number, "hho" for displaying in octal notation and "hhx" for hexadecimal notation.<br/>
-</li><li>%&lt;width&gt;f for a double output in fixed-point notation, with the 6 digits after decimal point ("format-floating" clause in <a href='https://golf-lang.com/double-string.html'>double-string</a>); %&lt;width&gt;e for scientific notation with one digit before the decimal point, along with the exponent ("format-scientific" clause in <a href='https://golf-lang.com/double-string.html'>double-string</a>); %&lt;width&gt;g displays either %f or %e format based on which is more compact ("format-compact" clause in <a href='https://golf-lang.com/double-string.html'>double-string</a>); in any case &lt;width&gt; represents the width of at least &lt;width&gt; bytes output. You can also use &lt;widith&gt;.&lt;precision&gt; to specify both width and precision, or ".&lt;precision&gt;" for just precision; for instance, "%10f" or "%12.4e" etc.</li></ul>
+</li><li>%&lt;width&gt;f for a double output in fixed-point notation, with the 6 digits after decimal point ("format-floating" clause in <a href='https://rimstone-lang.com/double-string.html'>double-string</a>); %&lt;width&gt;e for scientific notation with one digit before the decimal point, along with the exponent ("format-scientific" clause in <a href='https://rimstone-lang.com/double-string.html'>double-string</a>); %&lt;width&gt;g displays either %f or %e format based on which is more compact ("format-compact" clause in <a href='https://rimstone-lang.com/double-string.html'>double-string</a>); in any case &lt;width&gt; represents the width of at least &lt;width&gt; bytes output. You can also use &lt;widith&gt;.&lt;precision&gt; to specify both width and precision, or ".&lt;precision&gt;" for just precision; for instance, "%10f" or "%12.4e" etc.</li></ul>
 If "to-error" clause is used, the output is sent to "stderr", or standard output stream.<br/>
 <br/>
 If "to" clause is used, then the output of print-format is stored into &lt;string&gt;. <br/>
 To output data (the string output is "the number is 20"):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_853' class=notranslate>
-<span class="Statement">print-format</span> <span class="Constant">&quot;</span><span class="Special">%s</span><span class="Constant"> is </span><span class="Special">%d</span><span class="Constant">&quot;</span>, <span class="Constant">&quot;the number&quot;</span>, <span class="Constant">20</span></pre>
-<span id=golf_copied_853 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_853' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_853, code_853, golf_copied_853)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+print-format &quot;%s is %d&quot;, &quot;the number&quot;, 20</pre>
+<span id=rimstone_copied_853 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_853' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_853, code_853, rimstone_copied_853)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Create a query text string by means of <a href='https://golf-lang.com/write-string.html'>write-string</a> statement:<br/>
+Create a query text string by means of <a href='https://rimstone-lang.com/write-string.html'>write-string</a> statement:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_854' class=notranslate>
-<span class="Comment">//</span>
+//
 / Construct the run-time text of dynamic SQL
-<span class="Comment">//</span>
-<span class="Statement">write-string</span> qry_txt
-<span class="Statement">@</span>select * from <span class="Statement">&lt;&lt;print-format</span> <span class="Constant">&quot;</span><span class="Special">%s</span><span class="Constant"> where id=&quot;</span><span class="Special">%ld</span><span class="Constant">&quot;, table_name, id_num&gt;&gt;</span>
-<span class="Constant">end-write-string</span></pre>
-<span id=golf_copied_854 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_854' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_854, code_854, golf_copied_854)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+//
+write-string qry_txt
+@select * from &lt;&lt;print-format &quot;%s where id=&quot;%ld&quot;, table_name, id_num&gt;&gt;
+end-write-string</pre>
+<span id=rimstone_copied_854 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_854' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_854, code_854, rimstone_copied_854)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 This example of web encoding displayes text containing HTML tags without them being rendered in the browser:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_855' class=notranslate>
-<span class="Statement">print-format</span> <span class="Constant">&quot;We use </span><span class="Special">%s</span><span class="Constant"> markup&quot;</span>, <span class="Constant">&quot;&lt;hr/&gt;&quot;</span><span class="Identifier"> web-encode</span></pre>
-<span id=golf_copied_855 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_855' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_855, code_855, golf_copied_855)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+print-format &quot;We use %s markup&quot;, &quot;&lt;hr/&gt;&quot; web-encode</pre>
+<span id=rimstone_copied_855 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_855' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_855, code_855, rimstone_copied_855)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Here's an example of URL encoding. It creates a URL based on arbitrary strings used as URL parameters - for instance space would be encoded as "%20" in the final output:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_856' class=notranslate>
-<span class="Statement">@</span>&lt;a href='<span class="Statement">&lt;&lt;print-path</span> <span class="Constant">&quot;/update&quot;</span><span class="Statement">&gt;&gt;</span>?val=<span class="Statement">&lt;&lt;print-format</span> <span class="Constant">&quot;Purchased </span><span class="Special">%s</span><span class="Constant"> for </span><span class="Special">%ld</span><span class="Constant"> dollars&quot;</span>, piece_desc, price<span class="Statement"> url-encode&gt;&gt;</span>'&gt;Log transaction&lt;/a&gt;</pre>
-<span id=golf_copied_856 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_856' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_856, code_856, golf_copied_856)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+@&lt;a href='&lt;&lt;print-path &quot;/update&quot;&gt;&gt;?val=&lt;&lt;print-format &quot;Purchased %s for %ld dollars&quot;, piece_desc, price url-encode&gt;&gt;'&gt;Log transaction&lt;/a&gt;</pre>
+<span id=rimstone_copied_856 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_856' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_856, code_856, rimstone_copied_856)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Output'></a><span style="font-weight:bold;">Output</span><br/>
-<a href='https://golf-lang.com/finish-output.html'>finish-output</a> &nbsp;<br/>
-<a href='https://golf-lang.com/flush-output.html'>flush-output</a> &nbsp;<br/>
-<a href='https://golf-lang.com/output-statement.html'>output-statement</a> &nbsp;<br/>
-<a href='https://golf-lang.com/print-format.html'>print-format</a> &nbsp;<br/>
-<a href='https://golf-lang.com/print-out.html'>print-out</a> &nbsp;<br/>
-<a href='https://golf-lang.com/print-path.html'>print-path</a> &nbsp; <br/>
+<a href='https://rimstone-lang.com/finish-output.html'>finish-output</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/flush-output.html'>flush-output</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/output-statement.html'>output-statement</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/print-format.html'>print-format</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/print-out.html'>print-out</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/print-path.html'>print-path</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
-<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
+<a href='https://rimstone-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
-<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://golf-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://rimstone-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
 </div><br/></body></html>
 
 

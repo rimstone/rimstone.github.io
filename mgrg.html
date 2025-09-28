@@ -11,7 +11,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="canonical" href="https://golf-lang.com/mgrg.html" />
+<link rel="canonical" href="https://rimstone-lang.com/mgrg.html" />
 <style>
 
 
@@ -232,14 +232,14 @@ function googleTranslateElementInit() {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>Mgrg</div><hr/><span style="font-weight:bold;">Purpose</span>: Run and manage services.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Mgrg</div><hr/><span style="font-weight:bold;">Purpose</span>: Run and manage services.<br/>
 <br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_771' class=notranslate>
 mgrg <span class="Statement">&lt;</span>options<span class="Statement">&gt;</span> <span class="Statement">&lt;</span>app name<span class="Statement">&gt;</span></pre>
-<span id=golf_copied_771 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_771' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_771, code_771, golf_copied_771)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_771 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_771' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_771, code_771, rimstone_copied_771)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 mgrg (pronounced "em-greg") is a service manager. A service is started as a number of concurrent processes serving application requests, typically from reverse-proxy servers such as Apache, Nginx, HAProxy or others. Use mgrg to create Golf applications, including both service and command-line.<br/>
 <br/>
@@ -253,7 +253,7 @@ mgrg will re-start service processes that exited or died, keeping the number of 
 <br/>
 &lt;options&gt; are:<br/>
 <ul><li>-i<br/>
-Initialize the directory and file structure for application &lt;app name&gt;. If you are building application from source code, this must be executed in the source code directory; mgrg will create file ".golfapp" which identifies the application so <a href='https://golf-lang.com/gg.html'>gg</a> can run in the directory. The directory structure is setup in $HOME/.golf/apps/&lt;app name&gt; (see <a href='https://golf-lang.com/directories.html'>directories</a>).<br/>
+Initialize the directory and file structure for application &lt;app name&gt;. If you are building application from source code, this must be executed in the source code directory; mgrg will create file ".golfapp" which identifies the application so <a href='https://rimstone-lang.com/gg.html'>gg</a> can run in the directory. The directory structure is setup in $HOME/.golf/apps/&lt;app name&gt; (see <a href='https://rimstone-lang.com/directories.html'>directories</a>).<br/>
 </li><li>-u &lt;OS user&gt;<br/>
 The owner of your application. This is only used when initializing directory structure used by mgrg (see -i option). Do not use it otherwise. It cannot be root. <br/>
 </li><li>-r &lt;proxy group&gt;<br/>
@@ -261,9 +261,9 @@ The group of proxy web server (such as Apache or Nginx). This is only used when 
 </li><li>-f<br/>
 Run in the foreground. The process does not return to the command line prompt until it is stopped. Useful for debugging and where foreground processing is required.<br/>
 </li><li>-p &lt;port number&gt;<br/>
-TCP/IP port number your service program will listen on (and accept connections), if you are using TCP/IP. You typically need to specify ProxyPass, "location" or similar FastCGI directives in your proxy web server so it can connect to your application. If you are using <a href='https://golf-lang.com/Client-API.html'>Client-API</a> or <a href='https://golf-lang.com/call-remote.html'>call-remote</a>, you would use "&lt;host name&gt;:&lt;port number&gt;", for instance "127.0.0.1:2301" if the server is local and &lt;port number&gt; is 2301. You can either use TCP/IP or Unix domain sockets (-x option). Typically, you would use Unix domain sockets if proxy web server runs on the same computer as your application server. If you specify neither -x nor -p, -x (unix domain socket) is the default. <br/>
+TCP/IP port number your service program will listen on (and accept connections), if you are using TCP/IP. You typically need to specify ProxyPass, "location" or similar FastCGI directives in your proxy web server so it can connect to your application. If you are using <a href='https://rimstone-lang.com/Client-API.html'>Client-API</a> or <a href='https://rimstone-lang.com/call-remote.html'>call-remote</a>, you would use "&lt;host name&gt;:&lt;port number&gt;", for instance "127.0.0.1:2301" if the server is local and &lt;port number&gt; is 2301. You can either use TCP/IP or Unix domain sockets (-x option). Typically, you would use Unix domain sockets if proxy web server runs on the same computer as your application server. If you specify neither -x nor -p, -x (unix domain socket) is the default. <br/>
 </li><li>-x<br/>
-Use Unix domain socket to connect from proxy web server to your application server. This socket is automatically created by mgrg and its full path name is "$HOME/.golf/apps/&lt;app name&gt;/sock/sock" (you can connect to it via <a href='https://golf-lang.com/Client-API.html'>Client-API</a>, <a href='https://golf-lang.com/call-remote.html'>call-remote</a> etc.). When using a proxy web server (like Apache or Nginx), you typically need to specify ProxyPass, "location" or similar FastCGI directives so it can connect to your application. If you specify neither -x nor -p (TCP/IP socket), then -x (unix domain socket) is the default.<br/>
+Use Unix domain socket to connect from proxy web server to your application server. This socket is automatically created by mgrg and its full path name is "$HOME/.golf/apps/&lt;app name&gt;/sock/sock" (you can connect to it via <a href='https://rimstone-lang.com/Client-API.html'>Client-API</a>, <a href='https://rimstone-lang.com/call-remote.html'>call-remote</a> etc.). When using a proxy web server (like Apache or Nginx), you typically need to specify ProxyPass, "location" or similar FastCGI directives so it can connect to your application. If you specify neither -x nor -p (TCP/IP socket), then -x (unix domain socket) is the default.<br/>
 </li><li>-l &lt;backlog size&gt;<br/>
 The size of socket listening backlog for incoming connections. It must be a number between 10 and SOMAXCONN-1, inclusive. The default is 400. Increase it if your system is very busy to improve performance.<br/>
 </li><li>-d<br/>
@@ -283,9 +283,9 @@ Do not restart service processes if they exit or die. However, in adaptive mode 
 </li><li>-g<br/>
 Do not restart service processes when their executable changes. By default, they will be automatically restarted, which is useful when in development, or upgrading the server executable.<br/>
 </li><li>-a &lt;args&gt;<br/>
-Specify any command-line arguments for your application (see "arg-count" and "arg-value" clauses in <a href='https://golf-lang.com/get-req.html'>get-req</a>). The &lt;args&gt; should be double-quoted as a whole, while use of single quotes to quote arguments that contain whitespaces is permitted. <br/>
+Specify any command-line arguments for your application (see "arg-count" and "arg-value" clauses in <a href='https://rimstone-lang.com/get-req.html'>get-req</a>). The &lt;args&gt; should be double-quoted as a whole, while use of single quotes to quote arguments that contain whitespaces is permitted. <br/>
 </li><li>-z<br/>
-Suppress HTTP headers in all <a href='https://golf-lang.com/service.html'>service</a> handlers in the application. This is equivalent to having <a href='https://golf-lang.com/silent-header.html'>silent-header</a> implied at the beginning of each <a href='https://golf-lang.com/begin-handler.html'>service handler</a>. Use this option only if service is not used as a web service (i.e. the output will not have HTTP headers), or for testing or elsewhere where such headers may not be needed. Otherwise, you can use "--silent-header" option in <a href='https://golf-lang.com/gg.html'>gg</a> or "GG_SILENT_HEADER" environment variable in <a href='https://golf-lang.com/Client-API.html'>Client-API</a> to control from command-line or a client if headers are output or not.<br/>
+Suppress HTTP headers in all <a href='https://rimstone-lang.com/service.html'>service</a> handlers in the application. This is equivalent to having <a href='https://rimstone-lang.com/silent-header.html'>silent-header</a> implied at the beginning of each <a href='https://rimstone-lang.com/begin-handler.html'>service handler</a>. Use this option only if service is not used as a web service (i.e. the output will not have HTTP headers), or for testing or elsewhere where such headers may not be needed. Otherwise, you can use "--silent-header" option in <a href='https://rimstone-lang.com/gg.html'>gg</a> or "GG_SILENT_HEADER" environment variable in <a href='https://rimstone-lang.com/Client-API.html'>Client-API</a> to control from command-line or a client if headers are output or not.<br/>
 </li><li>-s &lt;sleep millisecs&gt;<br/>
 The basis time period (in milliseconds) that mgrg will sleep before checking for commands (specified by -m option), or check for dead service processes that need restarting. It can be between 100 and 5000 milliseconds. Smaller value will mean higher responsiveness but also higher CPU usage. The default value usually suffices, and should not be changed without due consideration.<br/>
 </li><li>-e<br/>
@@ -309,50 +309,50 @@ If mgrg is terminated without "-m stop", (for example with SIGKILL signal), then
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_772' class=notranslate>
 sudo <span class="PreProc">$(</span><span class="Special">which mgrg</span><span class="PreProc">)</span> <span class="Special">-i</span> <span class="Special">-u</span> <span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span> myapp</pre>
-<span id=golf_copied_772 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_772' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_772, code_772, golf_copied_772)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_772 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_772' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_772, code_772, rimstone_copied_772)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Note that you need to use $(which mgrg) when using sudo, since root's user directory has no Golf installation and mgrg executable won't be found. Since shell $() construct is executed by bash prior to the command, this will produce the correct executable path for mgrg.<br/>
 </li><li>The initialization needs to be done only once. Following the above, you can start your service application with 3 server processes:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_773' class=notranslate>
 mgrg <span class="Special">-w</span> <span class="Constant">3</span> myapp</pre>
-<span id=golf_copied_773 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_773' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_773, code_773, golf_copied_773)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_773 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_773' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_773, code_773, rimstone_copied_773)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li><li>To stop your service processes:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_774' class=notranslate>
 mgrg <span class="Special">-m</span> <span class="Statement">stop</span> <span class="Special">--</span> myapp</pre>
-<span id=golf_copied_774 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_774' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_774, code_774, golf_copied_774)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_774 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_774' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_774, code_774, rimstone_copied_774)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li><li>To restart them:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_775' class=notranslate>
 mgrg <span class="Special">-m</span> restart <span class="Special">--</span> myapp</pre>
-<span id=golf_copied_775 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_775' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_775, code_775, golf_copied_775)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_775 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_775' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_775, code_775, rimstone_copied_775)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li><li>To stop the server entirely (meaning to stop the resident mgrg daemon serving your particular application):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_776' class=notranslate>
 mgrg <span class="Special">-m</span> quit <span class="Special">--</span> myapp</pre>
-<span id=golf_copied_776 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_776' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_776, code_776, golf_copied_776)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_776 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_776' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_776, code_776, rimstone_copied_776)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li><li>To view status of mgrg daemon for your application:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_777' class=notranslate>
 mgrg <span class="Special">-m</span> status <span class="Special">--</span> myapp</pre>
-<span id=golf_copied_777 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_777' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_777, code_777, golf_copied_777)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_777 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_777' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_777, code_777, rimstone_copied_777)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li></ul>
 <div class="vsub"><a id="Running your application server on system startup"></a>Running your application server on system startup</div>
@@ -373,28 +373,28 @@ User=&lt;app owner&gt;
 
 [Install]
 WantedBy=multi-user.target</pre>
-<span id=golf_copied_770 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_770' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_770, code_770, golf_copied_770)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_770 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_770' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_770, code_770, rimstone_copied_770)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The above should be saved in the directory given by the output of the following system command:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_778' class=notranslate>
 pkg-config systemd <span class="Special">--variable</span><span class="Statement">=</span>systemdsystemunitdir</pre>
-<span id=golf_copied_778 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_778' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_778, code_778, golf_copied_778)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_778 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_778' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_778, code_778, rimstone_copied_778)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The file should be saved as &lt;app name&gt;.service (or similar). Once saved, you can use standard systemctl commands to start, stop and restart your service.<br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Service manager'></a><span style="font-weight:bold;">Service manager</span><br/>
-<a href='https://golf-lang.com/mgrg.html'>mgrg</a> &nbsp; <br/>
+<a href='https://rimstone-lang.com/mgrg.html'>mgrg</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
-<a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
+<a href='https://rimstone-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
-<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://golf-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://rimstone-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
 </div><br/></body></html>
 
 

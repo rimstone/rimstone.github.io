@@ -11,7 +11,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="canonical" href="https://golf-lang.com/article-memory-safety.html" />
+<link rel="canonical" href="https://rimstone-lang.com/article-memory-safety.html" />
 <style>
 
 
@@ -232,7 +232,7 @@ function googleTranslateElementInit() {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>How is memory organized in Golf</div><hr/><br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>How is memory organized in Golf</div><hr/><br/>
 Golf is a memory-safe language. A string variable is the actual pointer to a string (whether it's a text or binary). This eliminates at least one extra memory read. Bytes before the string constitute the ID to a memory table entry as well as the length of a string, with additional info used by memory-safety mechanisms:<br/>
 <ul><li>"Ref count" (Reference count), stating how many Golf variables point to string,<br/>
 </li><li>Status is used to describe string, such as whether it's scope is process-wide, if it's a string literal etc,<br/>
@@ -247,11 +247,11 @@ Golf performs memory-safety check only at the entrance of a statement, meaning a
 <br/>
 This is in contrast to general purpose memory-safe languages where libraries, modules, methods etc. are implemented in the memory-safe language and the entire implementation is subject to memory-safe instrumentation and/or other methods, such as bounds checking etc. It means that inherently such languages may perform more work doing such safe-memory checks.<br/>
 <br/>
-Finally, by default memory is not deallocated immediately after it's out of scope. Rather, the freeing happens when a request is complete, because the <a href='https://golf-lang.com/request.html'>request</a> is really the "unit" of work in a web-service based language like Golf. <br/>
+Finally, by default memory is not deallocated immediately after it's out of scope. Rather, the freeing happens when a request is complete, because the <a href='https://rimstone-lang.com/request.html'>request</a> is really the "unit" of work in a web-service based language like Golf. <br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
-<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://golf-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://rimstone-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
 </div><br/></body></html>
 
 
