@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<!--__GOLF_REDIRECT__-->
+<!--__RIM_REDIRECT__-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
@@ -212,7 +212,7 @@ ul {
 <div id="google_translate_element" style='float:right'></div>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
-function gg_copy(gt, eid, gc) {
+function rim_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
   gt.select();
   document.execCommand("copy");
@@ -225,32 +225,32 @@ function googleTranslateElementInit() {
 
 </script>
 
-<!--GOLFMENU13-->
+<!--RIMMENU13-->
 
-<!--GOLFENDMENU13-->
+<!--RIMENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>More than one table in a database transaction in MariaDB</div><hr/><br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>More than one table in a database transaction in MariaDB</div><hr/><br/>
 Here you'll learn how to use a database transaction to insert/update into multiple tables; so that if any of those fail, the entire transaction is cancelled (rollbacked), and if they all succeed, the transaction is committed as a whole, atomically.<br/>
 <br/>
 What if you wanted to record temperatures in any given zip code, and compute averages as you go along, so both historical temperatures and averages are available at will, without computation? Here's how to do it. Setting up the database is probably the most of it, so that can't be avoided. But the actual application to do the job is super simple.<br/>
 <br/>
 First, create a new directory for your application, and create a new application "climate":<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_212' class=notranslate>
+<pre id='code_210' class=notranslate>
 <span class="Statement">mkdir</span> temps
 <span class="Statement">cd</span> temps
-gg <span class="Special">-k</span> climate</pre>
-<span id=rimstone_copied_212 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_212' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_212, code_212, rimstone_copied_212)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+rim <span class="Special">-k</span> climate</pre>
+<span id=rimstone_copied_210 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_210' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_210, code_210, rimstone_copied_210)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Here's the database setup. We'll use a little "cat" trick with EOF so we can write directly to files. So in this case, all the lines between "cat &lt;&lt; EOF..." and "EOF" are written to file "setup.sql", which is the database setup. We use MariaDB here; you can use other databases too:<br/>
+Here's the database setup. We'll use a little "cat" trick with EOF so we can write directly to files. So in this case, all the lines between "cat &lt;&lt; 'EOF'..." and "EOF" are written to file "setup.sql", which is the database setup. We use MariaDB here; you can use other databases too:<br/>
 <div class='sqlcode' style='position:relative;padding-right:16px;'>
-<pre id='code_213' class=notranslate>
-cat &lt;&lt; EOF &gt; setup.sql
+<pre id='code_211' class=notranslate>
+cat &lt;&lt; <span class="Special">'</span><span class="Constant">EOF</span><span class="Special">'</span> &gt; setup.sql
 <span class="Statement">create</span> <span class="Identifier">user</span> weather;
 <span class="Statement">create</span> database weather_journal;
 <span class="Statement">grant</span> <span class="Statement">all</span> <span class="Special">privileges</span> <span class="Special">on</span> weather_journal.* <span class="Special">to</span> weather@localhost <span class="Special">identified</span> <span class="Special">by</span> <span class="Special">'</span><span class="Constant">pwd</span><span class="Special">'</span>;
@@ -258,126 +258,126 @@ use weather_journal;
 <span class="Statement">create</span> <span class="Special">table</span> <span class="Special">if</span> <span class="Statement">not</span> <span class="Statement">exists</span> temperature_history (zip <span class="Type">varchar</span>(<span class="Constant">10</span>), temp <span class="Type">int</span>, curr_date <span class="Type">date</span>, curr_time time);
 <span class="Statement">create</span> <span class="Special">table</span> <span class="Special">if</span> <span class="Statement">not</span> <span class="Statement">exists</span> climate_avg (zip <span class="Type">varchar</span>(<span class="Constant">10</span>) primary key, average_temp <span class="Type">int</span>, <span class="Identifier">count</span> <span class="Type">int</span>);
 EOF</pre>
-<span id=rimstone_copied_213 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_213' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_213, code_213, rimstone_copied_213)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_211 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_211' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_211, code_211, rimstone_copied_211)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Run the database setup:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_215' class=notranslate>
+<pre id='code_213' class=notranslate>
 sudo mysql <span class="Statement">&lt;</span> setup.sql</pre>
-<span id=rimstone_copied_215 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_215' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_215, code_215, rimstone_copied_215)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_213 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_213' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_213, code_213, rimstone_copied_213)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 This file ("weather_db") is the <a href='https://rimstone-lang.com/database-config-file.html'>database-config-file</a>. It describes your database the way your database needs it, i.e. natively. So if you'd use PostgreSQL you'd use Postgres format. If you'd use SQLite, you'd use SQLite format. This makes it easy, since there's no new database config file format to learn:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_216' class=notranslate>
-<span class="Statement">cat</span> <span class="Statement">&lt;&lt; EOF</span><span class="Constant"> &gt; weather_db</span>
+<pre id='code_214' class=notranslate>
+<span class="Statement">cat</span> <span class="Statement">&lt;&lt; 'EOF'</span><span class="Constant"> &gt; weather_db</span>
 <span class="Constant">[client]</span>
 <span class="Constant">user=weather</span>
 <span class="Constant">password=pwd</span>
 <span class="Constant">database=weather_journal</span>
 <span class="Constant">socket=/run/mysqld/mysqld.sock</span>
 <span class="Statement">EOF</span></pre>
-<span id=rimstone_copied_216 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_216' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_216, code_216, rimstone_copied_216)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_214 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_214' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_214, code_214, rimstone_copied_214)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Here's the actual code. It's a Golf file "weather.golf", which contains two services, "/weather/insert" (to insert new temperature data) and &nbsp;"/weather/get-agv" (to get historical data and averages). The code is really quite self-explanatory. In Golf, every statements always starts with the new line (watch out for "\" at end of the line, which continues the line). So you can get documentation for <a href='https://rimstone-lang.com/get-param.html'>get-param</a> (to get input parameter), or <a href='https://rimstone-lang.com/run-query.html'>run-query</a> (to run a database query), etc. <br/>
+Here's the actual code. It's a RimStone file "weather.rim", which contains two services, "/weather/insert" (to insert new temperature data) and &nbsp;"/weather/get-agv" (to get historical data and averages). The code is really quite self-explanatory. In RimStone, every statements always starts with the new line (watch out for "\" at end of the line, which continues the line). So you can get documentation for <a href='https://rimstone-lang.com/get-param.html'>get-param</a> (to get input parameter), or <a href='https://rimstone-lang.com/run-query.html'>run-query</a> (to run a database query), etc. <br/>
 <br/>
 In this case, for instance, for "/weather/insert" service, you need to provide "zip_code" and "temperature" parameters. The URL path to do that might be for instance "/weather/insert/zip_code=11111/temperature=75", or "/weather/insert?zip_code=11111&amp;temperature=75", depending on what looks better to you, or to what practices you subscribe. If this is a web service, you can pass those parameters as a part of HTTP request body in a POST request; the point is, there's ways to supply them.<br/>
 <br/>
 Here's the code:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_211' class=notranslate>
-cat &lt;&lt; EOF &gt; weather.golf
-%% /weather/insert public
-    get-param zip_code
-    get-param temperature
-    begin-transaction
-        run-query @weather_db = &quot;insert into temperature_history (zip, temp, curr_date, curr_time) \
-            values ('%s', '%s', CURRENT_DATE(), CURRENT_TIME())&quot; \
-            input zip_code, temperature no-loop error-text et
-        if-true et not-equal &quot;&quot;
-            @Error in inserting temperature history [&lt;&lt;print-out et&gt;&gt;]
-            rollback-transaction @weather_db
-            exit-handler
-        else-if
-            run-query @weather_db = &quot;insert into climate_avg (zip, average_temp, count) values ('%s', '%s', 1) \
-                on duplicate key update count=count+1, average_temp=(average_temp*(count-1)+'%s')/count&quot; \
-                input zip_code, temperature, temperature no-loop error-text et
-            if-true et not-equal &quot;&quot;
-                @Error in updating temperature average [&lt;&lt;print-out et&gt;&gt;]
-                rollback-transaction @weather_db
-                exit-handler
-            end-if
-        end-if
-    commit-transaction @weather_db
-    @Data stored and average updated.
-%%
+<pre id='code_209' class=notranslate>
+cat &lt;&lt; '<span class="Constant">EOF</span>' &gt; weather.rim
+<span class="Statement">%%</span> /weather/insert<span class="Identifier"> public</span>
+<span class="Statement">    get-param</span> zip_code
+<span class="Statement">    get-param</span> temperature
+<span class="Statement">    begin-transaction</span>
+<span class="Statement">        run-query</span> @weather_db = <span class="Constant">&quot;insert into temperature_history (zip, temp, curr_date, curr_time) </span><span class="Special">\</span>
+<span class="Constant">            values ('</span><span class="Special">%s</span><span class="Constant">', '</span><span class="Special">%s</span><span class="Constant">', CURRENT_DATE(), CURRENT_TIME())&quot;</span> \
+           <span class="Identifier"> input</span> zip_code, temperature<span class="Identifier"> no-loop</span><span class="Type"> error-text</span> et
+<span class="Statement">        if-true</span> et<span class="Identifier"> not-equal</span> <span class="Constant">&quot;&quot;</span>
+<span class="Statement">            @</span>Error in inserting temperature history [<span class="Statement">&lt;&lt;print-out</span> et<span class="Statement">&gt;&gt;</span>]
+<span class="Statement">            rollback-transaction</span> @weather_db
+<span class="Statement">            exit-handler</span>
+<span class="Statement">        else-if</span>
+<span class="Statement">            run-query</span> @weather_db = <span class="Constant">&quot;insert into climate_avg (zip, average_temp, count) values ('</span><span class="Special">%s</span><span class="Constant">', '</span><span class="Special">%s</span><span class="Constant">', 1) </span><span class="Special">\</span>
+<span class="Constant">                on duplicate key update count=count+1, average_temp=(average_temp*(count-1)+'</span><span class="Special">%s</span><span class="Constant">')/count&quot;</span> \
+               <span class="Identifier"> input</span> zip_code, temperature, temperature<span class="Identifier"> no-loop</span><span class="Type"> error-text</span> et
+<span class="Statement">            if-true</span> et<span class="Identifier"> not-equal</span> <span class="Constant">&quot;&quot;</span>
+<span class="Statement">                @</span>Error in updating temperature average [<span class="Statement">&lt;&lt;print-out</span> et<span class="Statement">&gt;&gt;</span>]
+<span class="Statement">                rollback-transaction</span> @weather_db
+<span class="Statement">                exit-handler</span>
+<span class="Statement">            end-if</span>
+<span class="Statement">        end-if</span>
+<span class="Statement">    commit-transaction</span> @weather_db
+<span class="Statement">    @</span>Data stored and average updated.
+<span class="Statement">%%</span>
 
-%% /weather/get-avg public
-    get-param zip_code
-    run-query @weather_db = &quot;select temp, curr_date, curr_time from temperature_history \
-        where zip='%s' order by curr_date, curr_time asc&quot; input zip_code output temp, date, time
-        print-format &quot;Temp [%4ld] Date [%s %s]\n&quot;, #temp, date, time
-    end-query
-    run-query @weather_db = &quot;select average_temp, count from climate_avg where zip='%s'&quot; input zip_code output avg, count
-        @Average is [&lt;&lt;print-out avg&gt;&gt;] from the total of [&lt;&lt;print-out count&gt;&gt;] samples
-    end-query
-%%
-EOF</pre>
-<span id=rimstone_copied_211 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_211' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_211, code_211, rimstone_copied_211)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span class="Statement">%%</span> /weather/get-avg<span class="Identifier"> public</span>
+<span class="Statement">    get-param</span> zip_code
+<span class="Statement">    run-query</span> @weather_db = <span class="Constant">&quot;select temp, curr_date, curr_time from temperature_history </span><span class="Special">\</span>
+<span class="Constant">        where zip='</span><span class="Special">%s</span><span class="Constant">' order by curr_date, curr_time asc&quot;</span><span class="Identifier"> input</span> zip_code<span class="Type"> output</span> temp, date, time
+<span class="Statement">        print-format</span> <span class="Constant">&quot;Temp [</span><span class="Special">%4ld</span><span class="Constant">] Date [</span><span class="Special">%s</span><span class="Constant"> </span><span class="Special">%s</span><span class="Constant">]</span><span class="Special">\n</span><span class="Constant">&quot;</span>, #temp, date, time
+<span class="Statement">    end-query</span>
+<span class="Statement">    run-query</span> @weather_db = <span class="Constant">&quot;select average_temp, count from climate_avg where zip='</span><span class="Special">%s</span><span class="Constant">'&quot;</span><span class="Identifier"> input</span> zip_code<span class="Type"> output</span> avg, count
+<span class="Statement">        @</span>Average is [<span class="Statement">&lt;&lt;print-out</span> avg<span class="Statement">&gt;&gt;</span>] from the total of [<span class="Statement">&lt;&lt;print-out</span> count<span class="Statement">&gt;&gt;</span>] samples
+<span class="Statement">    end-query</span>
+<span class="Statement">%%</span>
+<span class="Constant">EOF</span></pre>
+<span id=rimstone_copied_209 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_209' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_209, code_209, rimstone_copied_209)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Make the application:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_217' class=notranslate>
-gg <span class="Special">-q</span> <span class="Special">--db</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">mariadb:weather_db</span><span class="Statement">&quot;</span></pre>
-<span id=rimstone_copied_217 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_217' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_217, code_217, rimstone_copied_217)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_215' class=notranslate>
+rim <span class="Special">-q</span> <span class="Special">--db</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">mariadb:weather_db</span><span class="Statement">&quot;</span></pre>
+<span id=rimstone_copied_215 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_215' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_215, code_215, rimstone_copied_215)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Insert the data. Note we're using <a href='https://rimstone-lang.com/gg.html'>gg</a> utility. You can skip the "--exec" here, and see the bash code to run your native application directly from command line. <br/>
+Insert the data. Note we're using <a href='https://rimstone-lang.com/rim.html'>rim</a> utility. You can skip the "--exec" here, and see the bash code to run your native application directly from command line. <br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_218' class=notranslate>
-gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/weather/insert/zip_code=11111/temperature=82</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--silent-header</span>
-gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/weather/insert/zip_code=11111/temperature=102</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--silent-header</span>
-gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/weather/insert/zip_code=11111/temperature=91</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--silent-header</span></pre>
-<span id=rimstone_copied_218 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_218' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_218, code_218, rimstone_copied_218)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_216' class=notranslate>
+rim <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/weather/insert/zip_code=11111/temperature=82</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--silent-header</span>
+rim <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/weather/insert/zip_code=11111/temperature=102</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--silent-header</span>
+rim <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/weather/insert/zip_code=11111/temperature=91</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--silent-header</span></pre>
+<span id=rimstone_copied_216 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_216' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_216, code_216, rimstone_copied_216)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The result is:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_210' class=notranslate>
+<pre id='code_208' class=notranslate>
 Data stored and average updated.
 Data stored and average updated.
 Data stored and average updated.</pre>
-<span id=rimstone_copied_210 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_210' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_210, code_210, rimstone_copied_210)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_208 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_208' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_208, code_208, rimstone_copied_208)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 And now you can query the data:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_219' class=notranslate>
-gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/weather/get-avg/zip_code=11111</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--silent-header</span></pre>
-<span id=rimstone_copied_219 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_219' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_219, code_219, rimstone_copied_219)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_217' class=notranslate>
+rim <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/weather/get-avg/zip_code=11111</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--silent-header</span></pre>
+<span id=rimstone_copied_217 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_217' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_217, code_217, rimstone_copied_217)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 With the result like:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_214' class=notranslate>
+<pre id='code_212' class=notranslate>
 Temp [  82] Date [2025-09-07 09:47:42]
 Temp [ 102] Date [2025-09-07 09:47:42]
 Temp [  91] Date [2025-09-07 09:47:42]
 Average is [92] from the total of [3] sample</pre>
-<span id=rimstone_copied_214 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_214' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_214, code_214, rimstone_copied_214)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_212 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_212' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_212, code_212, rimstone_copied_212)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 That's the application! You can run it from <a href='https://rimstone-lang.com/command-line.html'>command-line</a> or as a web <a href='https://rimstone-lang.com/service.html'>service</a> (see <a href='https://rimstone-lang.com/article-tree-web.html'>article-tree-web</a> for an example of a setup).<br/>
 <!--ENDVDOC90-->

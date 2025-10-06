@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<!--__GOLF_REDIRECT__-->
+<!--__RIM_REDIRECT__-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
@@ -212,7 +212,7 @@ ul {
 <div id="google_translate_element" style='float:right'></div>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
-function gg_copy(gt, eid, gc) {
+function rim_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
   gt.select();
   document.execCommand("copy");
@@ -225,61 +225,61 @@ function googleTranslateElementInit() {
 
 </script>
 
-<!--GOLFMENU13-->
+<!--RIMMENU13-->
 
-<!--GOLFENDMENU13-->
+<!--RIMENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Open file</div><hr/><span style="font-weight:bold;">Purpose</span>: Open file for reading and writing.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Open file</div><hr/><span style="font-weight:bold;">Purpose</span>: Open file for reading and writing.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_827' class=notranslate>
-open-file &lt;file name&gt; file-id &lt;file id&gt; \
-    [ new-truncate ] \
-    [ status &lt;status&gt; ]</pre>
-<span id=rimstone_copied_827 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_827' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_827, code_827, rimstone_copied_827)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_815' class=notranslate>
+<span class="Statement">open-file</span> &lt;file name&gt;<span class="Type"> file-id</span> &lt;file id&gt; \
+    [<span class="Identifier"> new-truncate</span> ] \
+    [<span class="Type"> status</span> &lt;status&gt; ]</pre>
+<span id=rimstone_copied_815 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_815' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_815, code_815, rimstone_copied_815)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Opens file given by &lt;file name&gt; for reading and writing and creates an open file variable identified by &lt;file id&gt;.<br/>
 <br/>
 &lt;file name&gt; can be a full path name, or a path relative to the application home directory (see <a href='https://rimstone-lang.com/directories.html'>directories</a>).<br/>
 <br/>
-You can obtain the status of file opening via &lt;status&gt; number (in "status" clause). The &lt;status&gt; is GG_OKAY if file is opened, or GG_ERR_OPEN if could not open file.<br/>
+You can obtain the status of file opening via &lt;status&gt; number (in "status" clause). The &lt;status&gt; is RIM_OKAY if file is opened, or RIM_ERR_OPEN if could not open file.<br/>
 <br/>
 If "new-truncate" clause is used, a new file is created if it doesn't exist, or it is truncated if it does.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Create a file (or truncate an existing one), write 25,000 rows and the read back those rows and display them, then close file:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_828' class=notranslate>
-%% /ofile public
-    // Create new file, or truncate an old file if it exists
-    open-file &quot;testwrite&quot; file-id nf new-truncate
+<pre id='code_816' class=notranslate>
+<span class="Statement">%%</span> /ofile<span class="Identifier"> public</span>
+    <span class="Comment">// Create new file, or truncate an old file if it exists</span>
+<span class="Statement">    open-file</span> <span class="Constant">&quot;testwrite&quot;</span><span class="Type"> file-id</span> nf<span class="Identifier"> new-truncate</span>
 
-    // Write 25000 rows
-    start-loop repeat 25000 use i
-       (( line
-       @some text in line &lt;&lt;print-out i&gt;&gt;
-       )) notrim
-       string-length line to line_len
-       write-file file-id nf from line length line_len
-    end-loop
+    <span class="Comment">// Write 25000 rows</span>
+<span class="Statement">    start-loop</span><span class="Identifier"> repeat</span> <span class="Constant">25000</span><span class="Type"> use</span> i
+<span class="Statement">       ((</span> line
+<span class="Statement">       @</span>some text in line <span class="Statement">&lt;&lt;print-out</span> i<span class="Statement">&gt;&gt;</span>
+<span class="Statement">       ))</span><span class="Identifier"> notrim</span>
+<span class="Statement">       string-length</span> line<span class="Type"> to</span> line_len
+<span class="Statement">       write-file</span><span class="Identifier"> file-id</span> nf<span class="Identifier"> from</span> line<span class="Identifier"> length</span> line_len
+<span class="Statement">    end-loop</span>
 
-    // Rewind back to the beginning
-    file-position set 0 file-id nf
+    <span class="Comment">// Rewind back to the beginning</span>
+<span class="Statement">    file-position</span><span class="Identifier"> set</span> <span class="Constant">0</span><span class="Identifier"> file-id</span> nf
 
-    // Read all 25000 rows back, and print them out
-    read-file file-id nf  to whole_file
-    print-out whole_file
+    <span class="Comment">// Read all 25000 rows back, and print them out</span>
+<span class="Statement">    read-file</span><span class="Identifier"> file-id</span> nf <span class="Type"> to</span> whole_file
+<span class="Statement">    print-out</span> whole_file
 
-    // Close the file
-    close-file file-id nf
-%%</pre>
-<span id=rimstone_copied_828 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_828' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_828, code_828, rimstone_copied_828)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+    <span class="Comment">// Close the file</span>
+<span class="Statement">    close-file</span><span class="Identifier"> file-id</span> nf
+<span class="Statement">%%</span></pre>
+<span id=rimstone_copied_816 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_816' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_816, code_816, rimstone_copied_816)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Files'></a><span style="font-weight:bold;">Files</span><br/>

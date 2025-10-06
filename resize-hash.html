@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<!--__GOLF_REDIRECT__-->
+<!--__RIM_REDIRECT__-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
@@ -212,7 +212,7 @@ ul {
 <div id="google_translate_element" style='float:right'></div>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
-function gg_copy(gt, eid, gc) {
+function rim_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
   gt.select();
   document.execCommand("copy");
@@ -225,21 +225,21 @@ function googleTranslateElementInit() {
 
 </script>
 
-<!--GOLFMENU13-->
+<!--RIMMENU13-->
 
-<!--GOLFENDMENU13-->
+<!--RIMENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Resize hash</div><hr/><span style="font-weight:bold;">Purpose</span>: Resize hash table.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Resize hash</div><hr/><span style="font-weight:bold;">Purpose</span>: Resize hash table.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_949' class=notranslate>
-resize-hash &lt;hash&gt; hash-size &lt;new size&gt;</pre>
-<span id=rimstone_copied_949 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_949' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_949, code_949, rimstone_copied_949)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_939' class=notranslate>
+<span class="Statement">resize-hash</span> &lt;hash&gt;<span class="Identifier"> hash-size</span> &lt;new size&gt;</pre>
+<span id=rimstone_copied_939 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_939' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_939, code_939, rimstone_copied_939)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 resize-hash will resize &lt;hash&gt; table (created by <a href='https://rimstone-lang.com/new-hash.html'>new-hash</a>) to size &lt;new size&gt;, which refers to the number of "buckets", or possible hash codes derived from keys stored.<br/>
 <br/>
@@ -248,11 +248,11 @@ When a number of elements stored grows, the search performance may decline if ha
 Resizing is generally expensive, so it should not be done too often, and only when needed. The goal is to amortize this expense through future gain of lookup performance. For that reason it may be better to resize proportionally (i.e. by a percentage), unless you have a specific application reason to do otherwise, or to avoid exponential growth.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_950' class=notranslate>
-resize-hash h hash-size 100000</pre>
-<span id=rimstone_copied_950 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_950' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_950, code_950, rimstone_copied_950)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_940' class=notranslate>
+<span class="Statement">resize-hash</span> h<span class="Identifier"> hash-size</span> <span class="Constant">100000</span></pre>
+<span id=rimstone_copied_940 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_940' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_940, code_940, rimstone_copied_940)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Hash'></a><span style="font-weight:bold;">Hash</span><br/>

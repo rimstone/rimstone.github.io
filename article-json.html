@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<!--__GOLF_REDIRECT__-->
+<!--__RIM_REDIRECT__-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
@@ -212,7 +212,7 @@ ul {
 <div id="google_translate_element" style='float:right'></div>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
-function gg_copy(gt, eid, gc) {
+function rim_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
   gt.select();
   document.execCommand("copy");
@@ -225,32 +225,33 @@ function googleTranslateElementInit() {
 
 </script>
 
-<!--GOLFMENU13-->
+<!--RIMMENU13-->
 
-<!--GOLFENDMENU13-->
+<!--RIMENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Fast JSON parser with little coding</div><hr/><br/>
-Golf's JSON parser produces an array of name/value pairs. A name is a path to value, for instance "country"."state"."name", and the value is simply the data associated with it, for instance "Idaho". You can control if the name contains array indexes or not, for instance if there are multiple States in the document, you might have names like "country"."state"[0]."name" with [..] designating an array element.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Fast JSON parser with little coding</div><hr/><br/>
+RimStone's JSON parser produces an array of name/value pairs. A name is a path to value, for instance "country"."state"."name", and the value is simply the data associated with it, for instance "Idaho". You can control if the name contains array indexes or not, for instance if there are multiple States in the document, you might have names like "country"."state"[0]."name" with [..] designating an array element.<br/>
 <br/>
-You can iterate through this array and get names of JSON elements, examine if they are of interest to you, and if so, get the values. This typical scenario is how Golf's parser is built, since it uses a "lazy" approach, where values are not allocated until needed, speeding up parsing. That is the case in this example. The JSON document below is examined and only the names of the cities are extracted.<br/>
+You can iterate through this array and get names of JSON elements, examine if they are of interest to you, and if so, get the values. This typical scenario is how RimStone's parser is built, since it uses a "lazy" approach, where values are not allocated until needed, speeding up parsing. That is the case in this example. The JSON document below is examined and only the names of the cities are extracted.<br/>
 <br/>
 You can also store JSON elements into trees or hashes for future fast retrieval, or store them into a database, etc.<br/>
 <br/>
 To get started, create a directory for this example and position in it:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_167' class=notranslate>
+<pre id='code_165' class=notranslate>
 <span class="Statement">mkdir</span> <span class="Special">-p</span> json
 <span class="Statement">cd</span> json</pre>
-<span id=rimstone_copied_167 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_167' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_167, code_167, rimstone_copied_167)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_165 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_165' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_165, code_165, rimstone_copied_165)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Save this JSON into a file "countries.json" - we will get the names of the cities from it:<br/>
+JSON will be in file "countries.json" - we will get the names of the cities from it:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_165' class=notranslate>
+<pre id='code_163' class=notranslate>
+cat &lt;&lt; &apos;EOF&apos; &gt; countries.json
 { &quot;country&quot;: [
     { 
         &quot;name&quot;: &quot;USA&quot;,
@@ -311,88 +312,91 @@ Save this JSON into a file "countries.json" - we will get the names of the citie
         ] 
     }
     ]
-}</pre>
-<span id=rimstone_copied_165 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_165' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_165, code_165, rimstone_copied_165)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+}
+EOF</pre>
+<span id=rimstone_copied_163 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_163' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_163, code_163, rimstone_copied_163)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-What follows is the code to parse JSON. We open a JSON file, process the document, check for errors, and then read elements one by one. We look for a key "country"."state"."city"."name" because those contains city names. Note use "no-enum" clause in <a href='https://rimstone-lang.com/json-doc.html'>json-doc</a> (which is the Golf's JSON parser), so that element designations aren't showing (meaning we don't have [0], [1] etc. for arrays). <br/>
+What follows is the code to parse JSON. We open a JSON file, process the document, check for errors, and then read elements one by one. We look for a key "country"."state"."city"."name" because those contains city names. Note use "no-enum" clause in <a href='https://rimstone-lang.com/json-doc.html'>json-doc</a> (which is the RimStone's JSON parser), so that element designations aren't showing (meaning we don't have [0], [1] etc. for arrays). <br/>
 <br/>
-Save this code to "parse-json.golf":<br/>
+Thi code will be in "parse-json.rim":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_166' class=notranslate>
-begin-handler /parse-json public
-    // Read the JSON file
-    read-file &quot;countries.json&quot; to countries status st
-    if-true st lesser-equal 0
-        @Cannot read file or file empty
-        exit-handler -1
-    end-if
+<pre id='code_164' class=notranslate>
+cat &lt;&lt; '<span class="Constant">EOF</span>' &gt; parse-json.rim
+<span class="Statement">begin-handler</span> /parse-json<span class="Identifier"> public</span>
+    <span class="Comment">// Read the JSON file</span>
+<span class="Statement">    read-file</span> <span class="Constant">&quot;countries.json&quot;</span><span class="Type"> to</span> countries<span class="Type"> status</span> st
+<span class="Statement">    if-true</span> st<span class="Identifier"> lesser-equal</span> <span class="Constant">0</span>
+<span class="Statement">        @</span>Cannot read file or file empty
+<span class="Statement">        exit-handler</span> -<span class="Constant">1</span>
+<span class="Statement">    end-if</span>
 
-    // Parse JSON
-    json-doc countries no-enum status st error-text et error-position ep to json
+    <span class="Comment">// Parse JSON</span>
+<span class="Statement">    json-doc</span> countries<span class="Identifier"> no-enum</span><span class="Type"> status</span> st<span class="Type"> error-text</span> et<span class="Type"> error-position</span> ep<span class="Type"> to</span> json
 
-    // Check for errors in JSON document
-    if-true st not-equal GG_OKAY
-        @Error [&lt;&lt;print-out et&gt;&gt;] at [&lt;&lt;print-out ep&gt;&gt;]
-        exit-handler -2
-    end-if
+    <span class="Comment">// Check for errors in JSON document</span>
+<span class="Statement">    if-true</span> st<span class="Identifier"> not-equal</span> RIM_OKAY
+<span class="Statement">        @</span>Error [<span class="Statement">&lt;&lt;print-out</span> et<span class="Statement">&gt;&gt;</span>] at [<span class="Statement">&lt;&lt;print-out</span> ep<span class="Statement">&gt;&gt;</span>]
+<span class="Statement">        exit-handler</span> -<span class="Constant">2</span>
+<span class="Statement">    end-if</span>
 
-    // This is the JSON element we're looking for
-    set-string city_name unquoted =&quot;country&quot;.&quot;state&quot;.&quot;city&quot;.&quot;name&quot;
+    <span class="Comment">// This is the JSON element we're looking for</span>
+<span class="Statement">    set-string</span> city_name<span class="Identifier"> unquoted</span> =<span class="Constant">&quot;country&quot;</span>.<span class="Constant">&quot;state&quot;</span>.<span class="Constant">&quot;city&quot;</span>.<span class="Constant">&quot;name&quot;</span>
 
-    // Read elements one by one - note you can then store them in a tree or hash for future fast searches
-    start-loop
-        // Read just a key
-        read-json json key k type t
-        // Exit if end of document
-        if-true t equal GG_JSON_TYPE_NONE
-            break-loop
-        end-if
-        // If matches key we're looking for, get the value, and output it
-        if-true city_name equal k
-            read-json json value v
-            @Value [&lt;&lt;print-out v&gt;&gt;]
-            @--------
-        end-if
-        // Move on to the next JSON element
-        read-json json next
-    end-loop
+    <span class="Comment">// Read elements one by one - note you can then store them in a tree or hash for future fast searches</span>
+<span class="Statement">    start-loop</span>
+        <span class="Comment">// Read just a key</span>
+<span class="Statement">        read-json</span> json<span class="Type"> key</span> k<span class="Type"> type</span> t
+        <span class="Comment">// Exit if end of document</span>
+<span class="Statement">        if-true</span> t<span class="Identifier"> equal</span> RIM_JSON_TYPE_NONE
+<span class="Statement">            break-loop</span>
+<span class="Statement">        end-if</span>
+        <span class="Comment">// If matches key we're looking for, get the value, and output it</span>
+<span class="Statement">        if-true</span> city_name<span class="Identifier"> equal</span> k
+<span class="Statement">            read-json</span> json<span class="Type"> value</span> v
+<span class="Statement">            @</span>Value [<span class="Statement">&lt;&lt;print-out</span> v<span class="Statement">&gt;&gt;</span>]
+<span class="Statement">            @</span>--------
+<span class="Statement">        end-if</span>
+        <span class="Comment">// Move on to the next JSON element</span>
+<span class="Statement">        read-json</span> json<span class="Identifier"> next</span>
+<span class="Statement">    end-loop</span>
 
-    // Optionally delete JSON object, or it will be automatically deleted
-    json-doc delete json
-end-handler</pre>
-<span id=rimstone_copied_166 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_166' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_166, code_166, rimstone_copied_166)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+    <span class="Comment">// Optionally delete JSON object, or it will be automatically deleted</span>
+<span class="Statement">    json-doc</span><span class="Identifier"> delete</span> json
+<span class="Statement">end-handler</span>
+<span class="Constant">EOF</span></pre>
+<span id=rimstone_copied_164 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_164' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_164, code_164, rimstone_copied_164)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Create "json" application ("-k") and compile it ("-q"):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_169' class=notranslate>
-gg <span class="Special">-k</span> json <span class="Special">-q</span></pre>
-<span id=rimstone_copied_169 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_169' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_169, code_169, rimstone_copied_169)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_167' class=notranslate>
+rim <span class="Special">-k</span> json <span class="Special">-q</span></pre>
+<span id=rimstone_copied_167 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_167' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_167, code_167, rimstone_copied_167)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Copy the above JSON file into application home directory so we can use it without a path (since this directory is your program's default directory) - you can, of course, also specify any absolute or relative path in Golf code above:<br/>
+Copy the above JSON file into application home directory so we can use it without a path (since this directory is your program's default directory) - you can, of course, also specify any absolute or relative path in RimStone code above:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_170' class=notranslate>
-<span class="Statement">cp</span> countries.json ~/.golf/apps/json/app</pre>
-<span id=rimstone_copied_170 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_170' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_170, code_170, rimstone_copied_170)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_168' class=notranslate>
+<span class="Statement">cp</span> countries.json ~/.rimstone/apps/json/app</pre>
+<span id=rimstone_copied_168 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_168' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_168, code_168, rimstone_copied_168)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Run it:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_171' class=notranslate>
-gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/parse-json</span><span class="Statement">&quot;</span> <span class="Special">--exec</span></pre>
-<span id=rimstone_copied_171 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_171' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_171, code_171, rimstone_copied_171)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_169' class=notranslate>
+rim <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/parse-json</span><span class="Statement">&quot;</span> <span class="Special">--exec</span></pre>
+<span id=rimstone_copied_169 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_169' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_169, code_169, rimstone_copied_169)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The result is:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_168' class=notranslate>
+<pre id='code_166' class=notranslate>
 Content-Type: text/html;charset=utf-8
 Cache-Control: max-age=0, no-cache
 Pragma: no-cache
@@ -411,13 +415,13 @@ Value [Xalapa-Enríquez]
 Value [Córdoba]
 --------
 Value [Culiacán Rosales]</pre>
-<span id=rimstone_copied_168 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_168' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_168, code_168, rimstone_copied_168)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_166 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_166' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_166, code_166, rimstone_copied_166)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Golf programs work exactly the same when you run them from command line as they do as web services or applications, hence you get the HTTP header in the output. You can avoid it by using <a href='https://rimstone-lang.com/silent-header.html'>silent-header</a> in your Golf code, or by using "--silent-header" option in the above <a href='https://rimstone-lang.com/gg.html'>gg</a> execution call. <br/>
+RimStone programs work exactly the same when you run them from command line as they do as web services or applications, hence you get the HTTP header in the output. You can avoid it by using <a href='https://rimstone-lang.com/silent-header.html'>silent-header</a> in your RimStone code, or by using "--silent-header" option in the above <a href='https://rimstone-lang.com/rim.html'>rim</a> execution call. <br/>
 <br/>
-You can also omit "--exec" option in the above gg execution call, which will display environment variable settings and the path to your executable. Then you can run those directly. This is useful if you're running a Golf command line program in batch mode from command line repeatedly, as it's faster than using gg.<br/>
+You can also omit "--exec" option in the above rim execution call, which will display environment variable settings and the path to your executable. Then you can run those directly. This is useful if you're running a RimStone command line program in batch mode from command line repeatedly, as it's faster than using <a href='https://rimstone-lang.com/rim.html'>rim</a>.<br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>

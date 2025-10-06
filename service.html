@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<!--__GOLF_REDIRECT__-->
+<!--__RIM_REDIRECT__-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
@@ -212,7 +212,7 @@ ul {
 <div id="google_translate_element" style='float:right'></div>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
-function gg_copy(gt, eid, gc) {
+function rim_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
   gt.select();
   document.execCommand("copy");
@@ -225,50 +225,50 @@ function googleTranslateElementInit() {
 
 </script>
 
-<!--GOLFMENU13-->
+<!--RIMMENU13-->
 
-<!--GOLFENDMENU13-->
+<!--RIMENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Service</div><hr/>You can run a Golf application as a service by using <a href='https://rimstone-lang.com/mgrg.html'>mgrg</a> program manager. Your application can then use commonly used web servers or load balancers (such as Apache, Nginx or HAProxy) so it becomes available on the web.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Service</div><hr/>You can run a RimStone application as a service by using <a href='https://rimstone-lang.com/mrim.html'>mrim</a> program manager. Your application can then use commonly used web servers or load balancers (such as Apache, Nginx or HAProxy) so it becomes available on the web.<br/>
 <br/>
 You can access your server application by means of:<br/>
 <ul><li>A web server (which is probably the most common way). You need to setup a reverse proxy, i.e. a web server that will forward requests and send replies back to clients; see below.<br/>
-</li><li>The command line, in which case you can use <a href='https://rimstone-lang.com/gg.html'>gg</a> (see -r option). <br/>
+</li><li>The command line, in which case you can use <a href='https://rimstone-lang.com/rim.html'>rim</a> (see -r option). <br/>
 </li><li><a href='https://rimstone-lang.com/Client-API.html'>Client-API</a>, which allows any application in any programming language to access your server, as long as it has C linkage (by far most do). This method allows for MT (multithreaded) access to your application, where many client requests can be made in parallel.</ul>
-Golf server runs as a number of (zero or more) background processes in parallel, processing requests simultaneously.<br/>
+RimStone server runs as a number of (zero or more) background processes in parallel, processing requests simultaneously.<br/>
 <div class="vsub"><a id="Setting up reverse proxy (web server)"></a>Setting up reverse proxy (web server)</div>
 To access your application via a reverse proxy (i.e. web server), generally you need to add a proxy directive and restart the web server. <br/>
 <br/>
-If you use Apache, you need to connect it to your application, see <a href='https://rimstone-lang.com/connect-apache-tcp-socket.html'>connect-apache-tcp-socket</a> (for using TCP sockets) and <a href='https://rimstone-lang.com/connect-apache-unix-socket.html'>connect-apache-unix-socket</a> (for using Unix sockets). If you use Nginx, you need to connect it to your application, see <a href='https://rimstone-lang.com/connect-nginx-tcp-socket.html'>connect-nginx-tcp-socket</a> (for using TCP sockets) and <a href='https://rimstone-lang.com/connect-nginx-unix-socket.html'>connect-nginx-unix-socket</a> (for using Unix sockets). For HAProxy, see <a href='https://rimstone-lang.com/connect-haproxy-tcp-socket.html'>connect-haproxy-tcp-socket</a>. Virtually all web servers/proxies support FastCGI protocol used by Golf; please see your server's documentation.<br/>
-<div class="vsub"><a id="Starting Golf server processes"></a>Starting Golf server processes</div>
-Use <a href='https://rimstone-lang.com/mgrg.html'>mgrg</a>, for example:<br/>
+If you use Apache, you need to connect it to your application, see <a href='https://rimstone-lang.com/connect-apache-tcp-socket.html'>connect-apache-tcp-socket</a> (for using TCP sockets) and <a href='https://rimstone-lang.com/connect-apache-unix-socket.html'>connect-apache-unix-socket</a> (for using Unix sockets). If you use Nginx, you need to connect it to your application, see <a href='https://rimstone-lang.com/connect-nginx-tcp-socket.html'>connect-nginx-tcp-socket</a> (for using TCP sockets) and <a href='https://rimstone-lang.com/connect-nginx-unix-socket.html'>connect-nginx-unix-socket</a> (for using Unix sockets). For HAProxy, see <a href='https://rimstone-lang.com/connect-haproxy-tcp-socket.html'>connect-haproxy-tcp-socket</a>. Virtually all web servers/proxies support FastCGI protocol used by RimStone; please see your server's documentation.<br/>
+<div class="vsub"><a id="Starting RimStone server processes"></a>Starting RimStone server processes</div>
+Use <a href='https://rimstone-lang.com/mrim.html'>mrim</a>, for example:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_991' class=notranslate>
-mgrg <span class="Statement">&lt;</span>app name<span class="Statement">&gt;</span></pre>
-<span id=rimstone_copied_991 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_991' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_991, code_991, rimstone_copied_991)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_993' class=notranslate>
+mrim <span class="Statement">&lt;</span>app name<span class="Statement">&gt;</span></pre>
+<span id=rimstone_copied_993 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_993' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_993, code_993, rimstone_copied_993)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 which in general will (based on the request load) start zero or more background resident process(es) (daemons) that process requests in parallel, or for instance:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_992' class=notranslate>
-mgrg <span class="Special">-w</span> <span class="Constant">20</span> <span class="Statement">&lt;</span>app name<span class="Statement">&gt;</span></pre>
-<span id=rimstone_copied_992 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_992' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_992, code_992, rimstone_copied_992)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_994' class=notranslate>
+mrim <span class="Special">-w</span> <span class="Constant">20</span> <span class="Statement">&lt;</span>app name<span class="Statement">&gt;</span></pre>
+<span id=rimstone_copied_994 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_994' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_994, code_994, rimstone_copied_994)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 which will start 20 processes.<br/>
 <div class="vsub"><a id="Connection timeout"></a>Connection timeout</div>
-In a heavy-load environment, a client's connection may be rejected by the server. This may happen if the client runs very slowly due to swapping perhaps. Once a client establishes a connection, it has up to 5 seconds by default to send data; if it doesn't, the server will close the connection. Typically, clients send data right away, but due to a heavy load, this time may be longer. To set the connection timeout in seconds, use "--client-timeout" option in gg when making the application:<br/>
+In a heavy-load environment, a client's connection may be rejected by the server. This may happen if the client runs very slowly due to swapping perhaps. Once a client establishes a connection, it has up to 5 seconds by default to send data; if it doesn't, the server will close the connection. Typically, clients send data right away, but due to a heavy load, this time may be longer. To set the connection timeout in seconds, use "--client-timeout" option in rim when making the application:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_993' class=notranslate>
-gg <span class="Special">-q</span> <span class="Special">--client-timeout</span><span class="Statement">=</span><span class="Constant">8</span></pre>
-<span id=rimstone_copied_993 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_993' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_993, code_993, rimstone_copied_993)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_995' class=notranslate>
+rim <span class="Special">-q</span> <span class="Special">--client-timeout</span><span class="Statement">=</span><span class="Constant">8</span></pre>
+<span id=rimstone_copied_995 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_995' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_995, code_995, rimstone_copied_995)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In this case, the timeout is set to 8 seconds.<br/>
 <div class="vsub"><a id="See also"></a>See also</div>

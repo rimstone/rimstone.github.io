@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<!--__GOLF_REDIRECT__-->
+<!--__RIM_REDIRECT__-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
@@ -212,7 +212,7 @@ ul {
 <div id="google_translate_element" style='float:right'></div>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
-function gg_copy(gt, eid, gc) {
+function rim_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
   gt.select();
   document.execCommand("copy");
@@ -225,26 +225,26 @@ function googleTranslateElementInit() {
 
 </script>
 
-<!--GOLFMENU13-->
+<!--RIMMENU13-->
 
-<!--GOLFENDMENU13-->
+<!--RIMENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Set cookie</div><hr/><span style="font-weight:bold;">Purpose</span>: Set cookie.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Set cookie</div><hr/><span style="font-weight:bold;">Purpose</span>: Set cookie.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_998' class=notranslate>
-set-cookie ( &lt;cookie name&gt;=&lt;cookie value&gt; \
-    [ expires &lt;expiration&gt; ] \
-    [ path &lt;path&gt; ] \
-    [ same-site &quot;Lax&quot;|&quot;Strict&quot;|&quot;None&quot; ] \
-    [ no-http-only [ &lt;no-http-only&gt; ] ] \
-    [ secure [ &lt;secure&gt; ] ] ) ,...</pre>
-<span id=rimstone_copied_998 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_998' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_998, code_998, rimstone_copied_998)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_1000' class=notranslate>
+<span class="Statement">set-cookie</span> ( &lt;cookie name&gt;=&lt;cookie value&gt; \
+    [<span class="Identifier"> expires</span> &lt;expiration&gt; ] \
+    [<span class="Identifier"> path</span> &lt;path&gt; ] \
+    [<span class="Identifier"> same-site</span> <span class="Constant">&quot;Lax&quot;</span>|<span class="Constant">&quot;Strict&quot;</span>|<span class="Constant">&quot;None&quot;</span> ] \
+    [<span class="Identifier"> no-http-only</span> [ &lt;no-http-only&gt; ] ] \
+    [<span class="Identifier"> secure</span> [ &lt;secure&gt; ] ] ) ,...</pre>
+<span id=rimstone_copied_1000 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1000' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1000, code_1000, rimstone_copied_1000)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 To set a cookie named by string &lt;cookie name&gt; to string value &lt;cookie value&gt;, use set-cookie statement. A cookie must be set prior to outputting any actual response (such as with <a href='https://rimstone-lang.com/output-statement.html'>output-statement</a> or <a href='https://rimstone-lang.com/print-out.html'>print-out</a> for example), or the program will <a href='https://rimstone-lang.com/error-handling.html'>error out</a> and stop. <br/>
 <br/>
@@ -262,31 +262,31 @@ Cookies are commonly used for session maintenance, tracking and other purposes. 
 <br/>
 You can set multiple cookies separated by a comma:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_999' class=notranslate>
-get-time to tm year 1
-set-cookie &quot;mycookie1&quot;=&quot;4900&quot; expires tm path &quot;/&quot;, &quot;mycookie2&quot;=&quot;900&quot; expires tm  path &quot;/my-app&quot; same-site &quot;Strict&quot;</pre>
-<span id=rimstone_copied_999 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_999' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_999, code_999, rimstone_copied_999)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_1001' class=notranslate>
+<span class="Statement">get-time</span><span class="Type"> to</span> tm<span class="Identifier"> year</span> <span class="Constant">1</span>
+<span class="Statement">set-cookie</span> <span class="Constant">&quot;mycookie1&quot;</span>=<span class="Constant">&quot;4900&quot;</span><span class="Identifier"> expires</span> tm<span class="Identifier"> path</span> <span class="Constant">&quot;/&quot;</span>, <span class="Constant">&quot;mycookie2&quot;</span>=<span class="Constant">&quot;900&quot;</span><span class="Identifier"> expires</span> tm <span class="Identifier"> path</span> <span class="Constant">&quot;/my-app&quot;</span><span class="Identifier"> same-site</span> <span class="Constant">&quot;Strict&quot;</span></pre>
+<span id=rimstone_copied_1001 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1001' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1001, code_1001, rimstone_copied_1001)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 To set a cookie named "my_cookie_name" to value "XYZ", that will go with the reply and expire in 1 year and 2 months from now, use:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1000' class=notranslate>
-get-time to mytime year 1 month 2
-set-string my_cookie_value=&quot;XYZ&quot;
-set-cookie &quot;my_cookie_name&quot;=my_cookie_value expires mytime path &quot;/&quot; same-site &quot;Lax&quot;</pre>
-<span id=rimstone_copied_1000 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1000' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_1000, code_1000, rimstone_copied_1000)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_1002' class=notranslate>
+<span class="Statement">get-time</span><span class="Type"> to</span> mytime<span class="Identifier"> year</span> <span class="Constant">1</span><span class="Identifier"> month</span> <span class="Constant">2</span>
+<span class="Statement">set-string</span> my_cookie_value=<span class="Constant">&quot;XYZ&quot;</span>
+<span class="Statement">set-cookie</span> <span class="Constant">&quot;my_cookie_name&quot;</span>=my_cookie_value<span class="Identifier"> expires</span> mytime<span class="Identifier"> path</span> <span class="Constant">&quot;/&quot;</span><span class="Identifier"> same-site</span> <span class="Constant">&quot;Lax&quot;</span></pre>
+<span id=rimstone_copied_1002 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1002' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1002, code_1002, rimstone_copied_1002)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 A cookie that can be used by JavaScript (meaning we use no-http-only clause):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1001' class=notranslate>
-set-cookie &quot;my_cookie_name&quot;=my_cookie_value no-http-only</pre>
-<span id=rimstone_copied_1001 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1001' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_1001, code_1001, rimstone_copied_1001)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_1003' class=notranslate>
+<span class="Statement">set-cookie</span> <span class="Constant">&quot;my_cookie_name&quot;</span>=my_cookie_value<span class="Identifier"> no-http-only</span></pre>
+<span id=rimstone_copied_1003 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1003' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1003, code_1003, rimstone_copied_1003)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Cookies'></a><span style="font-weight:bold;">Cookies</span><br/>

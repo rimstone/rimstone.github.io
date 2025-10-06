@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<!--__GOLF_REDIRECT__-->
+<!--__RIM_REDIRECT__-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
@@ -212,7 +212,7 @@ ul {
 <div id="google_translate_element" style='float:right'></div>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
-function gg_copy(gt, eid, gc) {
+function rim_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
   gt.select();
   document.execCommand("copy");
@@ -225,45 +225,45 @@ function googleTranslateElementInit() {
 
 </script>
 
-<!--GOLFMENU13-->
+<!--RIMMENU13-->
 
-<!--GOLFENDMENU13-->
+<!--RIMENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Encrypt data</div><hr/><span style="font-weight:bold;">Purpose</span>: Encrypt data.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Encrypt data</div><hr/><span style="font-weight:bold;">Purpose</span>: Encrypt data.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_601' class=notranslate>
-encrypt-data &lt;data&gt; to &lt;result&gt; \
-    [ input-length &lt;input length&gt; ] \
-    [ binary [ &lt;binary&gt; ] ] \
-    ( password &lt;password&gt; \
-        [ salt &lt;salt&gt; [ salt-length &lt;salt length&gt; ] ] \
-        [ iterations &lt;iterations&gt; ] \
-        [ cipher &lt;cipher algorithm&gt; ] \
-        [ digest &lt;digest algorithm&gt; ]
-        [ cache ]
-        [ clear-cache &lt;clear cache&gt; ) \
-    [ init-vector &lt;init vector&gt; ]</pre>
-<span id=rimstone_copied_601 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_601' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_601, code_601, rimstone_copied_601)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_597' class=notranslate>
+<span class="Statement">encrypt-data</span> &lt;data&gt;<span class="Type"> to</span> &lt;result&gt; \
+    [<span class="Identifier"> input-length</span> &lt;input length&gt; ] \
+    [<span class="Identifier"> binary</span> [ &lt;binary&gt; ] ] \
+    (<span class="Identifier"> password</span> &lt;password&gt; \
+        [<span class="Identifier"> salt</span> &lt;salt&gt; [<span class="Identifier"> salt-length</span> &lt;salt length&gt; ] ] \
+        [<span class="Identifier"> iterations</span> &lt;iterations&gt; ] \
+        [<span class="Identifier"> cipher</span> &lt;cipher algorithm&gt; ] \
+        [<span class="Identifier"> digest</span> &lt;digest algorithm&gt; ]
+        [<span class="Identifier"> cache</span> ]
+        [<span class="Identifier"> clear-cache</span> &lt;clear cache&gt; <span class="Error">)</span> \
+    [<span class="Identifier"> init-vector</span> &lt;init vector&gt; ]</pre>
+<span id=rimstone_copied_597 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_597' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_597, code_597, rimstone_copied_597)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 encrypt-data encrypts &lt;data&gt; and stores the ciphertext to &lt;result&gt; specified by "to" clause.<br/>
 <div class="vsub"><a id="Cipher and digest"></a>Cipher and digest</div>
 By default, AES-256-CBC encryption and SHA256 hashing is used. You can however specify different cipher and digest algorithms with &lt;cipher algorithm&gt; (in "cipher" clause) and &lt;digest algorithm&gt; (in "digest" clause) as long as <a href='https://www.openssl.org/'>OpenSSL</a> supports them, or you have added them to OpenSSL. You can see the available ones by using:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_602' class=notranslate>
+<pre id='code_598' class=notranslate>
 <span class="Comment">#get list of cipher providers</span>
 openssl list <span class="Special">-cipher-algorithms</span>
 
 <span class="Comment">#get list of digest providers</span>
 openssl list <span class="Special">-digest-algorithms</span></pre>
-<span id=rimstone_copied_602 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_602' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_602, code_602, rimstone_copied_602)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_598 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_598' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_598, code_598, rimstone_copied_598)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Note that the default algorithms will typically suffice. If you use different algorithms, you should have a specific reason. If you use a specific cipher and digest for encoding, you must use the same for decoding. The key derivation method is PBKDF2.<br/>
 <div class="vsub"><a id="Data to be encrypted"></a>Data to be encrypted</div>
@@ -281,14 +281,14 @@ The encrypted data is stored in &lt;result&gt; (in "to" clause). The encrypted d
 <div class="vsub"><a id="Caching key"></a>Caching key</div>
 A key used to actually encrypt/decrypt data is produced by using password, salt, cipher, digest and the number of iterations. Depending on these parameters (especially the number of iterations), computing the key can be a resource intensive and lengthy operation. You can cache the key value and compute it only once (or once in a while) by using "cache" clause. If you need to recompute the key once in a while, use "clear-cache" clause. &lt;clear cache&gt; is a "bool" variable; the key cache is cleared if it is true, and stays if it is false. For example with encrypt-data (the same applies to decrypt-data):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_603' class=notranslate>
-set-bool clear = true if-true q equal 0
-encrypt-data dt init-vector non password pwd \
-    salt rs salt-length 10 iterations iter to \
-    dt_enc cache clear-cache clear</pre>
-<span id=rimstone_copied_603 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_603' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_603, code_603, rimstone_copied_603)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_599' class=notranslate>
+<span class="Statement">set-bool</span> clear = <span class="Constant">true</span> if-true q<span class="Identifier"> equal</span> <span class="Constant">0</span>
+<span class="Statement">encrypt-data</span> dt<span class="Identifier"> init-vector</span> non<span class="Identifier"> password</span> pwd \
+   <span class="Identifier"> salt</span> rs<span class="Identifier"> salt-length</span> <span class="Constant">10</span><span class="Identifier"> iterations</span> iter<span class="Type"> to</span> \
+    dt_enc<span class="Identifier"> cache clear-cache</span> clear</pre>
+<span id=rimstone_copied_599 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_599' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_599, code_599, rimstone_copied_599)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In this case, when "q" is 0, cache will be cleared, with values of password, salt and iterations presumably changed, and the new key is computed and then cached. In all other cases, the last computed key stays the same. Normally, with IV usage (in "init-vector" clause), there is no need to change the key often, or at all.<br/>
 <br/>
@@ -302,61 +302,62 @@ Each cipher/digest combination carries separate recommendations about the usage 
 <div class="vsub"><a id="Examples"></a>Examples</div>
 In the following example, the data is encrypted, and then decrypted, producing the very same data:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_604' class=notranslate>
-// Original string to encrypt
-set-string orig_data=&quot;something to encrypt!&quot;
+<pre id='code_600' class=notranslate>
+<span class="Comment">// Original string to encrypt</span>
+<span class="Statement">set-string</span> orig_data=<span class="Constant">&quot;something to encrypt!&quot;</span>
 
-// Encrypted data is in &quot;res&quot; variable
-encrypt-data orig_data password &quot;mypass&quot; to res
+<span class="Comment">// Encrypted data is in &quot;res&quot; variable</span>
+<span class="Statement">encrypt-data</span> orig_data<span class="Identifier"> password</span> <span class="Constant">&quot;mypass&quot;</span><span class="Type"> to</span> res
 
-// Decrypt what was just encrypted, decrypted data is in &quot;dec_data&quot;
-decrypt-data res password &quot;mypass&quot; to dec_data
+<span class="Comment">// Decrypt what was just encrypted, decrypted data is in &quot;dec_data&quot;</span>
+<span class="Statement">decrypt-data</span> res<span class="Identifier"> password</span> <span class="Constant">&quot;mypass&quot;</span><span class="Type"> to</span> dec_data
 
-// Check that decrypted data matches the original
-if (!strcmp (orig_data, dec_data)) {
-    @Success!
-} else {
-    @Failure!
-}</pre>
-<span id=rimstone_copied_604 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_604' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_604, code_604, rimstone_copied_604)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span class="Comment">// Check that decrypted data matches the original </span>
+<span class="Statement">if-true</span> orig_data<span class="Identifier"> equal</span> dec_data
+<span class="Statement">    @</span>Success!
+<span class="Statement">else-if</span>
+<span class="Statement">    @</span>Failure!
+<span class="Statement">end-if</span></pre>
+<span id=rimstone_copied_600 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_600' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_600, code_600, rimstone_copied_600)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-A more involved example below encrypts specific number of bytes (6 in this case). <a href='https://rimstone-lang.com/random-string.html'>random-string</a> is used to produce salt. The length of data to encrypt is given with "input-length" clause. The encrypted data is specified to be "binary" (meaning not as a human-readable string), so the "output-length" of such binary output is specified. The decryption thus uses "input-length" clause to specify the length of data to decrypt, and also "output-length" to get the length of decrypted data. Finally, the original data is compared with the decrypted data, and the length of such data must be the same as the original (meaning 6):<br/>
+A more involved example below encrypts specific number of bytes (6 in this case). <a href='https://rimstone-lang.com/random-string.html'>random-string</a> is used to produce salt. The length of data to encrypt is given with "input-length" clause. The encrypted data is specified to be "binary" (meaning not as a human-readable string); note that RimStone keeps accurate count of how many bytes are in any binary data. The decryption thus uses "input-length" clause to specify the length of data to decrypt. Finally, the original data is compared with the decrypted data, and the length of such data must be the same as the original (meaning 6):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_605' class=notranslate>
-// Original data (only the first 6 bytes are encrypted)
-set-string orig_data=&quot;something to encrypt!&quot;
+<pre id='code_601' class=notranslate>
+<span class="Comment">// Original data (only the first 6 bytes are encrypted)</span>
+<span class="Statement">set-string</span> orig_data=<span class="Constant">&quot;something to encrypt!&quot;</span>
 
-// Get 8 random binary bytes to be the salt
-random-string to newsalt length 8 binary
+<span class="Comment">// Get 8 random binary bytes to be the salt</span>
+<span class="Statement">random-string</span><span class="Type"> to</span> newsalt<span class="Identifier"> length</span> <span class="Constant">8</span><span class="Identifier"> binary</span>
 
-// Encrypt data using salt and produce binary output (meaning it's not a null-terminated character string), with the
-// length of such output in &quot;encrypted_len&quot; variable.
-encrypt-data orig_data input-length 6 output-length encrypted_len password &quot;mypass&quot; salt newsalt to res binary
+<span class="Comment">// Encrypt data using salt and produce binary output (meaning it's not a null-terminated character string), with the</span>
+<span class="Comment">// length of such output in &quot;encrypted_len&quot; variable.</span>
+<span class="Statement">encrypt-data</span> orig_data<span class="Identifier"> input-length</span> <span class="Constant">6</span><span class="Identifier"> password</span> <span class="Constant">&quot;mypass&quot;</span><span class="Identifier"> salt</span> newsalt<span class="Type"> to</span> res<span class="Identifier"> binary</span>
 
-// Decrypt the data encrypted above. The length of encrypted data is passed in &quot;encrypted_len&quot; variable, and then length of decrypted data
-// is obtained in &quot;decrypted_len&quot; variable.
-decrypt-data res output-length decrypted_len password &quot;mypass&quot; salt newsalt to dec_data input-length encrypted_len binary
+<span class="Comment">// Decrypt the data encrypted above. The length of encrypted data is passed in &quot;encrypted_len&quot; variable, and then length of decrypted data</span>
+<span class="Comment">// is obtained in &quot;decrypted_len&quot; variable.</span>
+<span class="Statement">decrypt-data</span> res<span class="Identifier"> password</span> <span class="Constant">&quot;mypass&quot;</span><span class="Identifier"> salt</span> newsalt<span class="Type"> to</span> dec_data<span class="Identifier"> binary</span>
 
-// Check if the 6 bytes of the original data matches decrypted data, and if exactly 6 bytes was decrypted
-if (!strncmp(orig_data,dec_data, 6) &amp;&amp; decrypted_len == 6) {
-    @Success!
-} else {
-    @Failure!
-}</pre>
-<span id=rimstone_copied_605 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_605' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_605, code_605, rimstone_copied_605)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span class="Comment">// Check if the 6 bytes of the original data matches decrypted data, and if exactly 6 bytes was decrypted</span>
+<span class="Statement">string-length</span> dec_data<span class="Type"> to</span> decrypted_len
+<span class="Statement">if-true</span> orig_data<span class="Identifier"> equal</span> dec_data<span class="Identifier"> length</span> <span class="Constant">6</span><span class="Identifier"> and</span> decrypted_len<span class="Identifier"> equal</span> <span class="Constant">6</span>
+<span class="Statement">    @</span>Success!
+<span class="Statement">else-if</span>
+<span class="Statement">    @</span>Failure!
+<span class="Statement">end-if</span></pre>
+<span id=rimstone_copied_601 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_601' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_601, code_601, rimstone_copied_601)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 An example of using different algorithms:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_606' class=notranslate>
-encrypt-data &quot;some data!&quot; password &quot;mypwd&quot; salt rs1 to encd1 cipher &quot;camellia-256-cfb1&quot; digest &quot;sha3-256&quot;
-decrypt-data encd1 password &quot;mypwd&quot; salt rs1 to decd1 cipher &quot;camellia-256-cfb1&quot; digest &quot;sha3-256&quot;</pre>
-<span id=rimstone_copied_606 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_606' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_606, code_606, rimstone_copied_606)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_602' class=notranslate>
+<span class="Statement">encrypt-data</span> <span class="Constant">&quot;some data!&quot;</span><span class="Identifier"> password</span> <span class="Constant">&quot;mypwd&quot;</span><span class="Identifier"> salt</span> rs1<span class="Type"> to</span> encd1<span class="Identifier"> cipher</span> <span class="Constant">&quot;camellia-256-cfb1&quot;</span><span class="Identifier"> digest</span> <span class="Constant">&quot;sha3-256&quot;</span>
+<span class="Statement">decrypt-data</span> encd1<span class="Identifier"> password</span> <span class="Constant">&quot;mypwd&quot;</span><span class="Identifier"> salt</span> rs1<span class="Type"> to</span> decd1<span class="Identifier"> cipher</span> <span class="Constant">&quot;camellia-256-cfb1&quot;</span><span class="Identifier"> digest</span> <span class="Constant">&quot;sha3-256&quot;</span></pre>
+<span id=rimstone_copied_602 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_602' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_602, code_602, rimstone_copied_602)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Encryption'></a><span style="font-weight:bold;">Encryption</span><br/>

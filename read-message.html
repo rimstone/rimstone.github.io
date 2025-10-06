@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<!--__GOLF_REDIRECT__-->
+<!--__RIM_REDIRECT__-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
@@ -212,7 +212,7 @@ ul {
 <div id="google_translate_element" style='float:right'></div>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
-function gg_copy(gt, eid, gc) {
+function rim_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
   gt.select();
   document.execCommand("copy");
@@ -225,30 +225,30 @@ function googleTranslateElementInit() {
 
 </script>
 
-<!--GOLFMENU13-->
+<!--RIMMENU13-->
 
-<!--GOLFENDMENU13-->
+<!--RIMENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Read message</div><hr/><span style="font-weight:bold;">Purpose</span>: Read key/value from message.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Read message</div><hr/><span style="font-weight:bold;">Purpose</span>: Read key/value from message.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_915' class=notranslate>
-read-message &lt;message&gt; \
-    key &lt;key&gt; \
-    value &lt;value&gt; \
-    [ status &lt;status&gt;</pre>
-<span id=rimstone_copied_915 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_915' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_915, code_915, rimstone_copied_915)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_905' class=notranslate>
+<span class="Statement">read-message</span> &lt;message&gt; \
+   <span class="Type"> key</span> &lt;key&gt; \
+   <span class="Type"> value</span> &lt;value&gt; \
+    [<span class="Type"> status</span> &lt;status&gt;</pre>
+<span id=rimstone_copied_905 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_905' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_905, code_905, rimstone_copied_905)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 read-message reads strings &lt;key&gt; (in "key" clause) and &lt;value&gt; (in "value" clause) from &lt;message&gt;, which must have been created with <a href='https://rimstone-lang.com/new-message.html'>new-message</a>. <br/>
 <br/>
 The reading of key/value pairs starts from the beginning of message and proceeds sequentially forward. Once a key/value pair is read it cannot be read again.<br/>
 <br/>
-&lt;status&gt; number (in "status" clause) will be GG_OKAY for a successful read, GG_ERR_FORMAT if message is not in <a href='https://rimstone-lang.com/SEMI.html'>SEMI</a> format or GG_ERR_LENGTH if message isn't of proper length.<br/>
+&lt;status&gt; number (in "status" clause) will be RIM_OKAY for a successful read, RIM_ERR_FORMAT if message is not in <a href='https://rimstone-lang.com/SEMI.html'>SEMI</a> format or RIM_ERR_LENGTH if message isn't of proper length.<br/>
 <br/>
 Once a message is read from, it cannot be written to (see <a href='https://rimstone-lang.com/write-message.html'>write-message</a>).<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>

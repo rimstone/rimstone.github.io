@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<!--__GOLF_REDIRECT__-->
+<!--__RIM_REDIRECT__-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
@@ -212,7 +212,7 @@ ul {
 <div id="google_translate_element" style='float:right'></div>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
-function gg_copy(gt, eid, gc) {
+function rim_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
   gt.select();
   document.execCommand("copy");
@@ -225,20 +225,20 @@ function googleTranslateElementInit() {
 
 </script>
 
-<!--GOLFMENU13-->
+<!--RIMMENU13-->
 
-<!--GOLFENDMENU13-->
+<!--RIMENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Connect haproxy tcp socket</div><hr/>This shows how to connect your application listening on TCP port &lt;port number&gt; (started with "-p" option in <a href='https://rimstone-lang.com/mgrg.html'>mgrg</a>) to HAProxy load balancer.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Connect haproxy tcp socket</div><hr/>This shows how to connect your application listening on TCP port &lt;port number&gt; (started with "-p" option in <a href='https://rimstone-lang.com/mrim.html'>mrim</a>) to HAProxy load balancer.<br/>
 <br/>
-One use of HAProxy is to balance the load between different web servers, which in turn are connected to your Golf applications; in this case HAProxy does not directly communicate with your Golf applications (which are behind other web servers).<br/>
+One use of HAProxy is to balance the load between different web servers, which in turn are connected to your RimStone applications; in this case HAProxy does not directly communicate with your RimStone applications (which are behind other web servers).<br/>
 <br/>
-However, when you want HAProxy to directly communicate with your Golf application servers, you may use configuration similar to this (shown is just a bare-bone setup needed to accomplish the goal, note sections "frontend", "fcgi-app" and "backend" that are relevant to Golf). The HAProxy configuration file is typically in "/etc/haproxy/haproxy.cfg":<br/>
+However, when you want HAProxy to directly communicate with your RimStone application servers, you may use configuration similar to this (shown is just a bare-bone setup needed to accomplish the goal, note sections "frontend", "fcgi-app" and "backend" that are relevant to RimStone). The HAProxy configuration file is typically in "/etc/haproxy/haproxy.cfg":<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_492' class=notranslate>
+<pre id='code_488' class=notranslate>
 global
     user haproxy
     group haproxy
@@ -260,44 +260,44 @@ defaults
 frontend front_server
     mode http
     bind *:90
-    use_backend backend_servers if { path_reg -i ^.*\/&lt;your golf app name&gt;\/.*$ } 
+    use_backend backend_servers if { path_reg -i ^.*\/&lt;your RimStone app name&gt;\/.*$ } 
     option forwardfor
 
-fcgi-app golf-fcgi
+fcgi-app RimStone-fcgi
     log-stderr global
-    docroot &lt;user home dir&gt;/.golf/apps/&lt;your golf app name&gt;/app
-    path-info ^.+(/&lt;your golf app name&gt;)(/.+)$ 
+    docroot &lt;user home dir&gt;/.rimstone/apps/&lt;your RimStone app name&gt;/app
+    path-info ^.+(/&lt;your RimStone app name&gt;)(/.+)$ 
 
 backend backend_servers                                                                                                                     
     mode http
-    filter fcgi-app golf-fcgi
-    use-fcgi-app golf-fcgi
+    filter fcgi-app RimStone-fcgi
+    use-fcgi-app RimStone-fcgi
     server s1 127.0.0.1:3000 proto fcgi</pre>
-<span id=rimstone_copied_492 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_492' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_492, code_492, rimstone_copied_492)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_488 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_488' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_488, code_488, rimstone_copied_488)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Restart HAProxy:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_493' class=notranslate>
+<pre id='code_489' class=notranslate>
 sudo systemctl restart haproxy</pre>
-<span id=rimstone_copied_493 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_493' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_493, code_493, rimstone_copied_493)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_489 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_489' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_489, code_489, rimstone_copied_489)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Note that Golf application path is "/&lt;your golf app name&gt;" (and the application name may or may not be the same, see <a href='https://rimstone-lang.com/request.html'>request</a>). The TCP port of the application is "3000" (could be any port number you choose that's greater than 1000 and lower than 65535). <br/>
+Note that RimStone application path is "/&lt;your RimStone app name&gt;" (and the application name may or may not be the same, see <a href='https://rimstone-lang.com/request.html'>request</a>). The TCP port of the application is "3000" (could be any port number you choose that's greater than 1000 and lower than 65535). <br/>
 <br/>
-HAProxy itself is bound to port 90 in this example (see "frontend" section above), and "path_reg" specifies which URLs will be passed to your Golf application (i.e. they must have "/&lt;your golf app name&gt;/" in the URL). "path-info" specifies SCRIPT_NAME and PATH_INFO (as "()" regular sub-expressions), which are as such passed to your Golf application. "docroot" is set to the application home directory (see <a href='https://rimstone-lang.com/directories.html'>directories</a>) in case you wish to serve HTML documents from it; however if you keep sensitive data there, specify another directory.<br/>
+HAProxy itself is bound to port 90 in this example (see "frontend" section above), and "path_reg" specifies which URLs will be passed to your RimStone application (i.e. they must have "/&lt;your RimStone app name&gt;/" in the URL). "path-info" specifies SCRIPT_NAME and PATH_INFO (as "()" regular sub-expressions), which are as such passed to your RimStone application. "docroot" is set to the application home directory (see <a href='https://rimstone-lang.com/directories.html'>directories</a>) in case you wish to serve HTML documents from it; however if you keep sensitive data there, specify another directory.<br/>
 <br/>
-A Golf application (named "&lt;your golf app name&gt;") would have been started with (using the same application name "&lt;your golf app name&gt;" and TCP port "3000"):<br/>
+A RimStone application (named "&lt;your RimStone app name&gt;") would have been started with (using the same application name "&lt;your RimStone app name&gt;" and TCP port "3000"):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_494' class=notranslate>
-mgrg <span class="Special">-p</span> <span class="Constant">3000</span> <span class="Statement">&lt;</span>your golf app name<span class="Statement">&gt;</span></pre>
-<span id=rimstone_copied_494 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_494' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_494, code_494, rimstone_copied_494)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_490' class=notranslate>
+mrim <span class="Special">-p</span> <span class="Constant">3000</span> <span class="Statement">&lt;</span>your RimStone app name<span class="Statement">&gt;</span></pre>
+<span id=rimstone_copied_490 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_490' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_490, code_490, rimstone_copied_490)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Now you should be able to connect and load-balance your Golf application servers directly from HAProxy (which in this example listens on port 90, so you'd refer to it with https://your-web-server:90/&lt;your golf app name&gt;/...).<br/>
+Now you should be able to connect and load-balance your RimStone application servers directly from HAProxy (which in this example listens on port 90, so you'd refer to it with https://your-web-server:90/&lt;your RimStone app name&gt;/...).<br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Web servers'></a><span style="font-weight:bold;">Web servers</span><br/>
 <a href='https://rimstone-lang.com/connect-apache-tcp-socket.html'>connect-apache-tcp-socket</a> &nbsp;<br/>

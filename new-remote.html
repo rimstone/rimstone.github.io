@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<!--__GOLF_REDIRECT__-->
+<!--__RIM_REDIRECT__-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
@@ -212,7 +212,7 @@ ul {
 <div id="google_translate_element" style='float:right'></div>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
-function gg_copy(gt, eid, gc) {
+function rim_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
   gt.select();
   document.execCommand("copy");
@@ -225,41 +225,41 @@ function googleTranslateElementInit() {
 
 </script>
 
-<!--GOLFMENU13-->
+<!--RIMMENU13-->
 
-<!--GOLFENDMENU13-->
+<!--RIMENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>New remote</div><hr/><span style="font-weight:bold;">Purpose</span>: Create resources for a service call.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>New remote</div><hr/><span style="font-weight:bold;">Purpose</span>: Create resources for a service call.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_800' class=notranslate>
-new-remote &lt;service&gt; \
-    ( local &lt;app name&gt; ) | ( location &lt;location&gt; ) \
-    url-path &lt;service URL&gt; |
+<pre id='code_788' class=notranslate>
+<span class="Statement">new-remote</span> &lt;service&gt; \
+    (<span class="Identifier"> local</span> &lt;app name&gt; ) | (<span class="Identifier"> location</span> &lt;location&gt; ) \
+   <span class="Identifier"> url-path</span> &lt;service URL&gt; |
         ( \
-        app-path &lt;app path&gt; \
-        request-path &lt;request path&gt; \
-        [ url-params &lt;url params&gt; ] \
+       <span class="Identifier"> app-path</span> &lt;app path&gt; \
+       <span class="Identifier"> request-path</span> &lt;request path&gt; \
+        [<span class="Identifier"> url-params</span> &lt;url params&gt; ] \
         ) \
-    [ request-body content &lt;content&gt; \
-        [ content-length &lt;content length&gt; ] \
-        [ content-type &lt;content type&gt; ] ] \
-    [ method &lt;request method&gt; ] \
-    [ environment &lt;name&gt;=&lt;value&gt; [ , ... ] ] \
-    [ timeout &lt;timeout&gt; ]</pre>
-<span id=rimstone_copied_800 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_800' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_800, code_800, rimstone_copied_800)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+    [<span class="Identifier"> request-body content</span> &lt;content&gt; \
+        [<span class="Identifier"> content-length</span> &lt;content length&gt; ] \
+        [<span class="Identifier"> content-type</span> &lt;content type&gt; ] ] \
+    [<span class="Identifier"> method</span> &lt;request method&gt; ] \
+    [<span class="Identifier"> environment</span> &lt;name&gt;=&lt;value&gt; [<span class="Statement"> ,</span> ... ] ] \
+    [<span class="Identifier"> timeout</span> &lt;timeout&gt; ]</pre>
+<span id=rimstone_copied_788 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_788' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_788, code_788, rimstone_copied_788)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 new-remote will create resources needed for a service call (see <a href='https://rimstone-lang.com/call-remote.html'>call-remote</a>); these resources are contained in variable &lt;service&gt;.<br/>
 <div class="vsub"><a id="Local or location"></a>Local or location</div>
-If "local" clause is used, then service is a Golf application running on the same computer, and the name of this application is string &lt;app name&gt;. <br/>
+If "local" clause is used, then service is a RimStone application running on the same computer, and the name of this application is string &lt;app name&gt;. <br/>
 <br/>
 If "local" is not used, then you must use "location" clause. &lt;location&gt; (in "location" clause) is a string representing either a Unix socket or a TCP socket of a remote service, and is:<br/>
-<ul><li>for a Unix socket, a fully qualified name to a Unix socket file used to communicate with the service (for a Golf server, it's "$HOME/.golf/apps/&lt;app name&gt;/sock/sock", where &lt;app name&gt; is the application name), or<br/>
+<ul><li>for a Unix socket, a fully qualified name to a Unix socket file used to communicate with the service (for a RimStone server, it's "$HOME/.rimstone/apps/&lt;app name&gt;/sock/sock", where &lt;app name&gt; is the application name), or<br/>
 </li><li>for a TCP socket, a host name and a port number in the form of "&lt;host name&gt;:&lt;port number&gt;", specifying where the service is listening on (for instance "127.0.0.1:2301" if the service is local and runs on TCP port 2301).</li></ul>
 <div class="vsub"><a id="url-path or its components"></a>url-path or its components</div>
 If "url-path" is used, then it's a <a href='https://rimstone-lang.com/request.html'>URL path</a> to a service. <br/>
@@ -272,9 +272,9 @@ Request body (i.e. body content) is specified via "request-body" clause. Within 
 <br/>
 &lt;url params&gt; string (in "url-params" clause) is the URL parameters, see <a href='https://rimstone-lang.com/request.html'>request</a>.<br/>
 <br/>
-&lt;environment&gt; (in "environment" clause) is the environment passed to a service call, in the form of "name"="value" string list where such environment elements are separated by a comma. This way you can send any environment variables to the request executed remotely. For a Golf server, you can access those variables in a remote request by using "environment" clause of <a href='https://rimstone-lang.com/get-sys.html'>get-sys</a> statement. There is no limit on the number of environment variables you can use this way, other than the underlying communication library.<br/>
+&lt;environment&gt; (in "environment" clause) is the environment passed to a service call, in the form of "name"="value" string list where such environment elements are separated by a comma. This way you can send any environment variables to the request executed remotely. For a RimStone server, you can access those variables in a remote request by using "environment" clause of <a href='https://rimstone-lang.com/get-sys.html'>get-sys</a> statement. There is no limit on the number of environment variables you can use this way, other than the underlying communication library.<br/>
 <br/>
-&lt;timeout&gt; (in "timeout" clause) is the number of seconds after which a service call will timeout; meaning the duration of a service call should not exceed this period of time. For no timeout, specify 0. Note that time needed for a DNS resolution of &lt;location&gt; is not counted in &lt;timeout&gt;. Maximum value is 86400 seconds. Even though it's optional, it is recommended to specify &lt;timeout&gt; in order to avoid a Golf process waiting for a very long time. Note that even if your service call times out, the actual request executing on the server may continue until it's done.<br/>
+&lt;timeout&gt; (in "timeout" clause) is the number of seconds after which a service call will timeout; meaning the duration of a service call should not exceed this period of time. For no timeout, specify 0. Note that time needed for a DNS resolution of &lt;location&gt; is not counted in &lt;timeout&gt;. Maximum value is 86400 seconds. Even though it's optional, it is recommended to specify &lt;timeout&gt; in order to avoid a RimStone process waiting for a very long time. Note that even if your service call times out, the actual request executing on the server may continue until it's done.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 In this example, 3 service calls are created ("srv1", "srv2" and "srv3"), and they will each make a service request. <br/>
 <br/>
@@ -284,126 +284,126 @@ All three service calls connect via Unix socket. <br/>
 <br/>
 A full URL path of a service request (for "srv1" for example), would be "/app/manage-keys/op=add/key=key_1/data=data_1" (note that "app" is the application name and "manage-keys" is the request handler that provides the service).<br/>
 <br/>
-Copy this to "manage_keys.golf" source file:<br/>
+Copy this to "manage_keys.rim" source file:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_802' class=notranslate>
-%% /manage-keys public
-   do-once
-   new-hash h hash-size 1024 process-scope
-   end-do-once
+<pre id='code_790' class=notranslate>
+<span class="Statement">%%</span> /manage-keys<span class="Identifier"> public</span>
+<span class="Statement">   do-once</span>
+<span class="Statement">   new-hash</span> h<span class="Identifier"> hash-size</span> <span class="Constant">1024</span><span class="Identifier"> process-scope</span>
+<span class="Statement">   end-do-once</span>
 
-   // Get input parameters
-   get-param op
-   get-param key
-   get-param data
+   <span class="Comment">// Get input parameters</span>
+<span class="Statement">   get-param</span> op
+<span class="Statement">   get-param</span> key
+<span class="Statement">   get-param</span> data<span class="Identifier"> default-value</span> <span class="Constant">&quot;&quot;</span>
 
-   if-true op equal &quot;add&quot; // Add data to hash,
-       write-hash h key (key) value data status st
-       @Added [&lt;&lt;print-out key&gt;&gt;]
-   else-if op equal &quot;delete&quot; // Delete data and obtain the value deleted
-       read-hash h key (key) value val \
-           delete \
-           status st
-       if-true st equal GG_ERR_EXIST
-           @Not found [&lt;&lt;print-out key&gt;&gt;]
-       else-if
-           // If found, then delete key and value
-           @Deleted [&lt;&lt;print-out val&gt;&gt;]
-           delete-string val
-       end-if
-   else-if op equal &quot;query&quot; // Query hash based on key value
-       read-hash h key (key) value val status st
-       if-true st equal GG_ERR_EXIST
-           @Not found, queried [&lt;&lt;print-out key&gt;&gt;]
-       else-if
-           @Value [&lt;&lt;print-out val&gt;&gt;]
-       end-if
-   end-if
-%%</pre>
-<span id=rimstone_copied_802 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_802' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_802, code_802, rimstone_copied_802)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span class="Statement">   if-true</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;add&quot;</span> <span class="Comment">// Add data to hash,</span>
+<span class="Statement">       write-hash</span> h<span class="Identifier"> key</span> (key)<span class="Identifier"> value</span> data<span class="Type"> status</span> st
+<span class="Statement">       @</span>Added [<span class="Statement">&lt;&lt;print-out</span> key<span class="Statement">&gt;&gt;</span>]
+<span class="Statement">   else-if</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;delete&quot;</span> <span class="Comment">// Delete data and obtain the value deleted</span>
+<span class="Statement">       read-hash</span> h<span class="Type"> key</span> (key)<span class="Type"> value</span> val \
+          <span class="Identifier"> delete</span> \
+          <span class="Type"> status</span> st
+<span class="Statement">       if-true</span> st<span class="Identifier"> equal</span> RIM_ERR_EXIST
+<span class="Statement">           @</span>Not found [<span class="Statement">&lt;&lt;print-out</span> key<span class="Statement">&gt;&gt;</span>]
+<span class="Statement">       else-if</span>
+           <span class="Comment">// If found, then delete key and value</span>
+<span class="Statement">           @</span>Deleted [<span class="Statement">&lt;&lt;print-out</span> val<span class="Statement">&gt;&gt;</span>]
+<span class="Statement">           delete-string</span> val
+<span class="Statement">       end-if</span>
+<span class="Statement">   else-if</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;query&quot;</span> <span class="Comment">// Query hash based on key value</span>
+<span class="Statement">       read-hash</span> h<span class="Type"> key</span> (key)<span class="Type"> value</span> val<span class="Type"> status</span> st
+<span class="Statement">       if-true</span> st<span class="Identifier"> equal</span> RIM_ERR_EXIST
+<span class="Statement">           @</span>Not found, queried [<span class="Statement">&lt;&lt;print-out</span> key<span class="Statement">&gt;&gt;</span>]
+<span class="Statement">       else-if</span>
+<span class="Statement">           @</span>Value [<span class="Statement">&lt;&lt;print-out</span> val<span class="Statement">&gt;&gt;</span>]
+<span class="Statement">       end-if</span>
+<span class="Statement">   end-if</span>
+<span class="Statement">%%</span></pre>
+<span id=rimstone_copied_790 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_790' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_790, code_790, rimstone_copied_790)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Then <a href='https://rimstone-lang.com/call-remote.html'>call-remote</a> will make three service calls to the above request handler in parallel (i.e. as threads executing at the same time). You can examine if everything went okay, how many threads have started, and how many finished with a reply from the service (this means any kind of reply, even if an error). Finally, the output from each call is displayed (that's "data" clause in <a href='https://rimstone-lang.com/read-remote.html'>read-remote</a> statement at the end).<br/>
 <br/>
-Create file "srv.golf" and copy to it this code:<br/>
+Create file "srv.rim" and copy to it this code:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_804' class=notranslate>
-begin-handler /srv public
- // Create resources (prepare) for 3 service calls
- // We pass environment variable GG_SILENT_HEADER to these calls
- // so they don't emit HTTP header
- new-remote srv1 local &quot;app&quot; \
-     url-path &quot;/app/manage-keys/op=add/key=key1/data=data1&quot; \
-     environment &quot;GG_SILENT_HEADER&quot;=&quot;yes&quot;
- new-remote srv2 local &quot;app&quot; \
-     url-path &quot;/app/manage-keys/op=add/key=key2/data=data2&quot; \
-     environment &quot;GG_SILENT_HEADER&quot;=&quot;yes&quot;
- new-remote srv3 local &quot;app&quot; \
-     url-path &quot;/app/manage-keys/op=add/key=key3/data=data3&quot; \
-     environment &quot;GG_SILENT_HEADER&quot;=&quot;yes&quot;
- // Make 3 service calls in parallel, each in it own thread
- call-remote srv1, srv2, srv3 status st \
-     started start \
-     finished-okay fok
- // Check if all calls were completed
- if-true st equal GG_OKAY
-     @No errors from call-remote
- end-if
- if-true start equal 3
-     @All three service calls started.
- end-if
- if-true fok equal 3
-     @All three service calls finished.
- end-if
- read-remote srv1 data rdata1
- read-remote srv2 data rdata2
- read-remote srv3 data rdata3
- print-out rdata1
- @
- print-out rdata2
- @
- print-out rdata3
- @
-end-handler</pre>
-<span id=rimstone_copied_804 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_804' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_804, code_804, rimstone_copied_804)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_792' class=notranslate>
+<span class="Statement">begin-handler</span> /srv<span class="Identifier"> public</span>
+ <span class="Comment">// Create resources (prepare) for 3 service calls</span>
+ <span class="Comment">// We pass environment variable RIM_SILENT_HEADER to these calls</span>
+ <span class="Comment">// so they don't emit HTTP header</span>
+<span class="Statement"> new-remote</span> srv1<span class="Identifier"> local</span> <span class="Constant">&quot;app&quot;</span> \
+    <span class="Identifier"> url-path</span> <span class="Constant">&quot;/app/manage-keys/op=add/key=key1/data=data1&quot;</span> \
+    <span class="Identifier"> environment</span> <span class="Constant">&quot;RIM_SILENT_HEADER&quot;</span>=<span class="Constant">&quot;yes&quot;</span>
+<span class="Statement"> new-remote</span> srv2<span class="Identifier"> local</span> <span class="Constant">&quot;app&quot;</span> \
+    <span class="Identifier"> url-path</span> <span class="Constant">&quot;/app/manage-keys/op=add/key=key2/data=data2&quot;</span> \
+    <span class="Identifier"> environment</span> <span class="Constant">&quot;RIM_SILENT_HEADER&quot;</span>=<span class="Constant">&quot;yes&quot;</span>
+<span class="Statement"> new-remote</span> srv3<span class="Identifier"> local</span> <span class="Constant">&quot;app&quot;</span> \
+    <span class="Identifier"> url-path</span> <span class="Constant">&quot;/app/manage-keys/op=add/key=key3/data=data3&quot;</span> \
+    <span class="Identifier"> environment</span> <span class="Constant">&quot;RIM_SILENT_HEADER&quot;</span>=<span class="Constant">&quot;yes&quot;</span>
+ <span class="Comment">// Make 3 service calls in parallel, each in it own thread</span>
+<span class="Statement"> call-remote</span> srv1, srv2, srv3<span class="Type"> status</span> st \
+    <span class="Type"> started</span> start \
+    <span class="Type"> finished-okay</span> fok
+ <span class="Comment">// Check if all calls were completed</span>
+<span class="Statement"> if-true</span> st<span class="Identifier"> equal</span> RIM_OKAY
+<span class="Statement">     @</span>No errors from call-remote
+<span class="Statement"> end-if</span>
+<span class="Statement"> if-true</span> start<span class="Identifier"> equal</span> <span class="Constant">3</span>
+<span class="Statement">     @</span>All three service calls started.
+<span class="Statement"> end-if</span>
+<span class="Statement"> if-true</span> fok<span class="Identifier"> equal</span> <span class="Constant">3</span>
+<span class="Statement">     @</span>All three service calls finished.
+<span class="Statement"> end-if</span>
+<span class="Statement"> read-remote</span> srv1<span class="Identifier"> data</span> rdata1
+<span class="Statement"> read-remote</span> srv2<span class="Identifier"> data</span> rdata2
+<span class="Statement"> read-remote</span> srv3<span class="Identifier"> data</span> rdata3
+<span class="Statement"> print-out</span> rdata1
+<span class="Statement"> @</span>
+<span class="Statement"> print-out</span> rdata2
+<span class="Statement"> @</span>
+<span class="Statement"> print-out</span> rdata3
+<span class="Statement"> @</span>
+<span class="Statement">end-handler</span></pre>
+<span id=rimstone_copied_792 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_792' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_792, code_792, rimstone_copied_792)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Create the application:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_801' class=notranslate>
-sudo mgrg <span class="Special">-i</span> <span class="Special">-u</span> <span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span> app</pre>
-<span id=rimstone_copied_801 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_801' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_801, code_801, rimstone_copied_801)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_789' class=notranslate>
+rim <span class="Special">-k</span> app</pre>
+<span id=rimstone_copied_789 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_789' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_789, code_789, rimstone_copied_789)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Make it:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_803' class=notranslate>
-gg <span class="Special">-q</span></pre>
-<span id=rimstone_copied_803 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_803' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_803, code_803, rimstone_copied_803)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_791' class=notranslate>
+rim <span class="Special">-q</span></pre>
+<span id=rimstone_copied_791 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_791' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_791, code_791, rimstone_copied_791)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Run it:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_805' class=notranslate>
-mgrg <span class="Special">-w</span> <span class="Constant">1</span> app</pre>
-<span id=rimstone_copied_805 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_805' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_805, code_805, rimstone_copied_805)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_793' class=notranslate>
+mrim <span class="Special">-w</span> <span class="Constant">1</span> app</pre>
+<span id=rimstone_copied_793 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_793' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_793, code_793, rimstone_copied_793)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_806' class=notranslate>
-gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/srv</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--silent-header</span></pre>
-<span id=rimstone_copied_806 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_806' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_806, code_806, rimstone_copied_806)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_794' class=notranslate>
+rim <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/srv</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--silent-header</span></pre>
+<span id=rimstone_copied_794 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_794' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_794, code_794, rimstone_copied_794)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 And the result is (assuming you have started hash example above):<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_799' class=notranslate>
+<pre id='code_787' class=notranslate>
 No errors from call-remote
 All three service calls started.
 All three service calls finished.
@@ -412,9 +412,9 @@ Added [key1]
 Added [key2]
 
 Added [key3]</pre>
-<span id=rimstone_copied_799 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_799' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_799, code_799, rimstone_copied_799)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_787 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_787' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_787, code_787, rimstone_copied_787)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Distributed computing'></a><span style="font-weight:bold;">Distributed computing</span><br/>

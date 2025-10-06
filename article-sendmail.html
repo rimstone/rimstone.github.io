@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-<!--__GOLF_REDIRECT__-->
+<!--__RIM_REDIRECT__-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 
-<title>How to send email with Golf</title>
+<title>How to send email with RimStone</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -212,7 +212,7 @@ ul {
 <div id="google_translate_element" style='float:right'></div>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
-function gg_copy(gt, eid, gc) {
+function rim_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
   gt.select();
   document.execCommand("copy");
@@ -225,145 +225,147 @@ function googleTranslateElementInit() {
 
 </script>
 
-<!--GOLFMENU13-->
+<!--RIMMENU13-->
 
-<!--GOLFENDMENU13-->
+<!--RIMENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>How to send email with Golf</div><hr/><br/>
-This example shows how to send email with Golf. The web service you'll create here is very simple and it will display an HTML form to collect info needed to send email, such as "From" and "To" (the sender and the recipient emails), the Subject and of course the Message itself. Once user clicks Submit, email is sent. <br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>How to send email with RimStone</div><hr/><br/>
+This example shows how to send email with RimStone. The web service you'll create here is very simple and it will display an HTML form to collect info needed to send email, such as "From" and "To" (the sender and the recipient emails), the Subject and of course the Message itself. Once user clicks Submit, email is sent. <br/>
 <br/>
 Create directory for your application:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_267' class=notranslate>
+<pre id='code_265' class=notranslate>
 <span class="Statement">mkdir</span> <span class="Special">-p</span> mail
 <span class="Statement">cd</span> mail</pre>
-<span id=rimstone_copied_267 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_267' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_267, code_267, rimstone_copied_267)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_265 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_265' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_265, code_265, rimstone_copied_265)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Create "mail-sender" application:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_269' class=notranslate>
-gg <span class="Special">-k</span> mail-sender</pre>
-<span id=rimstone_copied_269 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_269' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_269, code_269, rimstone_copied_269)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_267' class=notranslate>
+rim <span class="Special">-k</span> mail-sender</pre>
+<span id=rimstone_copied_267 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_267' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_267, code_267, rimstone_copied_267)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Copy the following code to file "mail.golf":<br/>
+Here's the code save to file "mail.rim":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_266' class=notranslate>
-begin-handler /mail public
-    // Get URL parameter
-    get-param action
+<pre id='code_264' class=notranslate>
+cat &lt;&lt; '<span class="Constant">EOF</span>' &gt; mail.rim
+<span class="Statement">begin-handler</span> /mail<span class="Identifier"> public</span>
+    <span class="Comment">// Get URL parameter</span>
+<span class="Statement">    get-param</span> action
 
-    if-true action equal &quot;show_form&quot;
-        // Display HTML form
-        @&lt;h2&gt;Enter email and click Send to send it&lt;/h2&gt;
-        @Note: 'From' field must be the email address from the domain of your server.&lt;br/&gt;&lt;br/&gt;
-        @&lt;form action=&quot;&lt;&lt;print-path &quot;/mail&quot;&gt;&gt;&quot; method=&quot;POST&quot;&gt;
-        @    &lt;input type=&quot;hidden&quot; name=&quot;action&quot; value=&quot;submit_form&quot;&gt;
-        @    &lt;label for=&quot;from_mail&quot;&gt;From:&lt;/label&gt;&lt;br&gt;
-        @    &lt;input type=&quot;text&quot; name=&quot;from_mail&quot; value=&quot;&quot;&gt;&lt;br&gt;
-        @    &lt;label for=&quot;to_mail&quot;&gt;To:&lt;/label&gt;&lt;br&gt;
-        @    &lt;input type=&quot;text&quot; name=&quot;to_mail&quot; value=&quot;&quot;&gt;&lt;br&gt;&lt;br&gt;
-        @    &lt;label for=&quot;subject_mail&quot;&gt;Subject:&lt;/label&gt;&lt;br&gt;
-        @    &lt;input type=&quot;text&quot; name=&quot;subject_mail&quot; value=&quot;&quot;&gt;&lt;br&gt;&lt;br&gt;
-        @    &lt;label for=&quot;message&quot;&gt;Message:&lt;/label&gt;&lt;br&gt;
-        @    &lt;textarea name=&quot;message&quot; rows=&quot;3&quot; columns=&quot;50&quot;&gt;&lt;/textarea&gt;
-        @    &lt;br/&gt;&lt;br/&gt;
-        @    &lt;input type=&quot;submit&quot; value=&quot;Send&quot;&gt;
-        @&lt;/form&gt;
-    else-if action equal &quot;submit_form&quot;
-        // Get data from HTML form
-        get-param from_mail
-        get-param to_mail
-        get-param message
-        get-param subject_mail
-        // Construct email message
-        write-string msg
-            @From: &lt;&lt;print-out from_mail&gt;&gt;
-            @To: &lt;&lt;print-out to_mail&gt;&gt;
-            @Subject: &lt;&lt;print-out subject_mail&gt;&gt;
-            @
+<span class="Statement">    if-true</span> action<span class="Identifier"> equal</span> <span class="Constant">&quot;show_form&quot;</span>
+        <span class="Comment">// Display HTML form</span>
+<span class="Statement">        @</span>&lt;h2&gt;Enter email and click Send to send it&lt;/h2&gt;
+<span class="Statement">        @</span>Note: 'From' field must be the email address from the domain of your server.&lt;br/&gt;&lt;br/&gt;
+<span class="Statement">        @</span>&lt;form action=&quot;<span class="Statement">&lt;&lt;print-path</span> <span class="Constant">&quot;/mail&quot;</span><span class="Statement">&gt;&gt;</span>&quot; method=&quot;POST&quot;&gt;
+<span class="Statement">        @</span>    &lt;input type=&quot;hidden&quot; name=&quot;action&quot; value=&quot;submit_form&quot;&gt;
+<span class="Statement">        @</span>    &lt;label for=&quot;from_mail&quot;&gt;From:&lt;/label&gt;&lt;br&gt;
+<span class="Statement">        @</span>    &lt;input type=&quot;text&quot; name=&quot;from_mail&quot; value=&quot;&quot;&gt;&lt;br&gt;
+<span class="Statement">        @</span>    &lt;label for=&quot;to_mail&quot;&gt;To:&lt;/label&gt;&lt;br&gt;
+<span class="Statement">        @</span>    &lt;input type=&quot;text&quot; name=&quot;to_mail&quot; value=&quot;&quot;&gt;&lt;br&gt;&lt;br&gt;
+<span class="Statement">        @</span>    &lt;label for=&quot;subject_mail&quot;&gt;Subject:&lt;/label&gt;&lt;br&gt;
+<span class="Statement">        @</span>    &lt;input type=&quot;text&quot; name=&quot;subject_mail&quot; value=&quot;&quot;&gt;&lt;br&gt;&lt;br&gt;
+<span class="Statement">        @</span>    &lt;label for=&quot;message&quot;&gt;Message:&lt;/label&gt;&lt;br&gt;
+<span class="Statement">        @</span>    &lt;textarea name=&quot;message&quot; rows=&quot;<span class="Constant">3</span>&quot; columns=&quot;<span class="Constant">50</span>&quot;&gt;&lt;/textarea&gt;
+<span class="Statement">        @</span>    &lt;br/&gt;&lt;br/&gt;
+<span class="Statement">        @</span>    &lt;input type=&quot;submit&quot; value=&quot;Send&quot;&gt;
+<span class="Statement">        @</span>&lt;/form&gt;
+<span class="Statement">    else-if</span> action<span class="Identifier"> equal</span> <span class="Constant">&quot;submit_form&quot;</span>
+        <span class="Comment">// Get data from HTML form</span>
+<span class="Statement">        get-param</span> from_mail
+<span class="Statement">        get-param</span> to_mail
+<span class="Statement">        get-param</span><span class="Identifier"> message</span>
+<span class="Statement">        get-param</span> subject_mail
+        <span class="Comment">// Construct email message</span>
+<span class="Statement">        write-string</span> msg
+<span class="Statement">            @</span>From: <span class="Statement">&lt;&lt;print-out</span> from_mail<span class="Statement">&gt;&gt;</span>
+<span class="Statement">            @</span>To: <span class="Statement">&lt;&lt;print-out</span> to_mail<span class="Statement">&gt;&gt;</span>
+<span class="Statement">            @</span>Subject: <span class="Statement">&lt;&lt;print-out</span> subject_mail<span class="Statement">&gt;&gt;</span>
+<span class="Statement">            @</span>
             &lt;&lt;print-out message&gt;&gt;
-        end-write-string
-        // Send email
-        exec-program &quot;/usr/sbin/sendmail&quot; args &quot;-i&quot;, &quot;-t&quot; input msg status st
-        // Check status of email sending
-        if-true st not-equal GG_OKAY
-            @Could not send email!
-        else-if
-            @Email sent!
-        end-if
-        @&lt;hr/&gt;
-    else-if
-        @Unrecognized action!&lt;hr/&gt;
-    end-if
-end-handler</pre>
-<span id=rimstone_copied_266 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_266' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_266, code_266, rimstone_copied_266)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span class="Statement">        end-write-string</span>
+        <span class="Comment">// Send email</span>
+<span class="Statement">        exec-program</span> <span class="Constant">&quot;/usr/sbin/sendmail&quot;</span><span class="Identifier"> args</span> <span class="Constant">&quot;-i&quot;</span>, <span class="Constant">&quot;-t&quot;</span><span class="Identifier"> input</span> msg<span class="Type"> status</span> st
+        <span class="Comment">// Check status of email sending</span>
+<span class="Statement">        if-true</span> st<span class="Identifier"> not-equal</span> RIM_OKAY
+<span class="Statement">            @</span>Could not send email!
+<span class="Statement">        else-if</span>
+<span class="Statement">            @</span>Email sent!
+<span class="Statement">        end-if</span>
+<span class="Statement">        @</span>&lt;hr/&gt;
+<span class="Statement">    else-if</span>
+<span class="Statement">        @</span>Unrecognized action!&lt;hr/&gt;
+<span class="Statement">    end-if</span>
+<span class="Statement">end-handler</span>
+<span class="Constant">EOF</span></pre>
+<span id=rimstone_copied_264 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_264' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_264, code_264, rimstone_copied_264)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The example uses <a href='https://rimstone-lang.com/exec-program.html'>exec-program</a> to invoke a MTA (Mail Transfer Agent), in this case postfix or sendmail, but you can use any other that you like!<br/>
 <br/>
 Build your application server as a native executable:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_270' class=notranslate>
-gg <span class="Special">-q</span></pre>
-<span id=rimstone_copied_270 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_270' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_270, code_270, rimstone_copied_270)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_268' class=notranslate>
+rim <span class="Special">-q</span></pre>
+<span id=rimstone_copied_268 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_268' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_268, code_268, rimstone_copied_268)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Run the application server using Golf's application server manager, called <a href='https://rimstone-lang.com/mgrg.html'>mgrg</a>:<br/>
+Run the application server using RimStone's application server manager, called <a href='https://rimstone-lang.com/mrim.html'>mrim</a>:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_271' class=notranslate>
-mgrg mail-sender</pre>
-<span id=rimstone_copied_271 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_271' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_271, code_271, rimstone_copied_271)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_269' class=notranslate>
+mrim mail-sender</pre>
+<span id=rimstone_copied_269 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_269' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_269, code_269, rimstone_copied_269)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 You may or may not have MTA (Mail Transfer Agent) installed on your system. Install it anyway, for Ubuntu and Debian:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_272' class=notranslate>
+<pre id='code_270' class=notranslate>
 sudo apt install postfix
 sudo systemctl start postfix</pre>
-<span id=rimstone_copied_272 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_272' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_272, code_272, rimstone_copied_272)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_270 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_270' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_270, code_270, rimstone_copied_270)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 and on RedHat and Fedora systems:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_273' class=notranslate>
+<pre id='code_271' class=notranslate>
 sudo dnf install postfix
 sudo systemctl start postfix</pre>
-<span id=rimstone_copied_273 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_273' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_273, code_273, rimstone_copied_273)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_271 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_271' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_271, code_271, rimstone_copied_271)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Now, since this application server will be accessed via web server, we'll need to setup a web server (aka "reverse proxy"). We'll use Apache, so follow the instructions to <a href='https://golf-lang.com/connect-apache-unix-socket.html'>set up Apache</a>, with &lt;app path&gt; being your application name, which is "mail-sender", and the "ProxyPass" directive in Step 3 will be (replace "your-user" with the name of your OS user):<br/>
+Now, since this application server will be accessed via web server, we'll need to setup a web server (aka "reverse proxy"). We'll use Apache, so follow the instructions to <a href='https://rimstone-lang.com/connect-apache-unix-socket.html'>set up Apache</a>, with &lt;app path&gt; being your application name, which is "mail-sender", and the "ProxyPass" directive in Step 3 will be (replace "your-user" with the name of your OS user):<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_265' class=notranslate>
-ProxyPass &quot;/mail-sender/&quot; unix:///home/your-user/.golf/apps/mail-sender/sock/.sock|fcgi://localhost/mail-sender</pre>
-<span id=rimstone_copied_265 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_265' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_265, code_265, rimstone_copied_265)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_263' class=notranslate>
+ProxyPass &quot;/mail-sender/&quot; unix:///home/your-user/.rimstone/apps/mail-sender/sock/.sock|fcgi://localhost/mail-sender</pre>
+<span id=rimstone_copied_263 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_263' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_263, code_263, rimstone_copied_263)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Once you've restarted Apache web server, go to your browser and try it. In this case, everything is happening locally on your computer. If your server were running on the Internet, then you would use that server's name instead of "127.0.0.1", and email would be with an actual provider instead of a local user name. To get the form that sends email:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_268' class=notranslate>
+<pre id='code_266' class=notranslate>
 http://127.0.0.1/mail-sender/mail/action=show_form</pre>
-<span id=rimstone_copied_268 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_268' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_268, code_268, rimstone_copied_268)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_266 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_266' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_266, code_266, rimstone_copied_266)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In this case local user name we're sending email to is "bear", but you'd put your own user name:<br/>
-<br/><div class='vimg'><img class='imgs' src='send-mail.png' alt='Golf'></img>
+<br/><div class='vimg'><img class='imgs' src='send-mail.png' alt='RimStone'></img>
 </div><br/>
 And once you click Submit:<br/>
-<br/><div class='vimg'><img class='imgs' src='send-mail-sent.png' alt='Golf'></img>
+<br/><div class='vimg'><img class='imgs' src='send-mail-sent.png' alt='RimStone'></img>
 </div><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>

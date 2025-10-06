@@ -2,16 +2,16 @@
 <html lang="en">
 
 <head>
-<!--__GOLF_REDIRECT__-->
+<!--__RIM_REDIRECT__-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 
-<title>Golf-3.3.0-released</title>
+<title>Major new RimStone version coming out soon</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="canonical" href="https://rimstone-lang.com/blog-2025-09-11-new-golf-release.html" />
+<link rel="canonical" href="https://rimstone-lang.com/blog-2025-08-12-major-new-rimstone-coming-soon.html" />
 <style>
 
 
@@ -212,7 +212,7 @@ ul {
 <div id="google_translate_element" style='float:right'></div>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
-function gg_copy(gt, eid, gc) {
+function rim_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
   gt.select();
   document.execCommand("copy");
@@ -225,22 +225,21 @@ function googleTranslateElementInit() {
 
 </script>
 
-<!--GOLFMENU13-->
+<!--RIMMENU13-->
 
-<!--GOLFENDMENU13-->
+<!--RIMENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Golf-3.3.0-released</div><hr/><br/>
-<ul><li>Fix a bug where error text for a SQL with MariaDB database would be empty (error code would still be correct though).<br/>
-</li><li>Fixed a help display issue with <a href='https://rimstone-lang.com/gg.html'>gg</a> where SQLite would not be shown in help for --db option.<br/>
-</li><li>vim highlighting and indenting is now automatically added during install.<br/>
-</li><li>Fixed a bug where input parameter provided by external caller (such as web URL) would not be converted into a number or a boolean, if the parameters were specified as such. This has always been documented, but the functionality wasn't there.<br/>
-</li><li>For SQLite database, now a tilde (~) character can be used as a first byte in a SQLite <a href='https://rimstone-lang.com/database-config-file.html'>database-config-file</a>. This substitutes for a home directory, just like in bash, and it's useful when creating packages and installing them where the home directory is different.<br/>
-</li><li>Added colon (:) to separate database error code from error message for better readability.<br/>
-</li><li>Finished refactoring of mgrg.c (Golf program manager) to use atomic volatile shared memory only (POSIX) for better reliability. Fixed an issue where quitting the manager would not happen in very rare circumstances.<br/>
-</li><li>Enhanced error messages for some of the database errors by removing internal query name, which isn't known to the developer. The source code file and line number are already present in the error message, making such information supefluous.</li></ul>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Major new RimStone version coming out soon</div><hr/><br/>
+A new version of RimStone is coming soon, bringing many new features, better performance and stability.<br/>
+<br/>
+Going forward, RimStone will install locally in a user's home folder, and will not require sudo privileges.<br/>
+<br/>
+The improvements will include stack depth control (for recursion for instance), better support for file uploading, default values for input parameters, many new string statements and expressions, new formats of output, new number expression (such as binary), better usage of hashes and arrays, much better error handling/message and run-time stack trace (using libbacktrace directly), many new optimizations such as new fast memory system, prefetching and other significant performance improvements. Also, quite a few bugs have been fixed as well.<br/>
+<br/>
+Stay tuned for details.<br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>

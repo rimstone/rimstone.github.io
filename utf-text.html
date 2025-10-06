@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<!--__GOLF_REDIRECT__-->
+<!--__RIM_REDIRECT__-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
@@ -212,7 +212,7 @@ ul {
 <div id="google_translate_element" style='float:right'></div>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
-function gg_copy(gt, eid, gc) {
+function rim_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
   gt.select();
   document.execCommand("copy");
@@ -225,57 +225,60 @@ function googleTranslateElementInit() {
 
 </script>
 
-<!--GOLFMENU13-->
+<!--RIMMENU13-->
 
-<!--GOLFENDMENU13-->
+<!--RIMENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Utf text</div><hr/><span style="font-weight:bold;">Purpose</span>: Convert UTF (UTF8 or UTF16) string to text.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Utf text</div><hr/><span style="font-weight:bold;">Purpose</span>: Convert UTF-8 string to text.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1098' class=notranslate>
-utf-text &lt;utf&gt; \
-    [ to &lt;text&gt; ] \
-    [ length &lt;length&gt; ] \
-    [ status &lt;status&gt; ] \
-    [ error-text &lt;error text&gt; ]</pre>
-<span id=rimstone_copied_1098 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1098' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_1098, code_1098, rimstone_copied_1098)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_1100' class=notranslate>
+<span class="Statement">utf-text</span> &lt;utf&gt; \
+    [<span class="Type"> to</span> &lt;text&gt; ] \
+    [<span class="Identifier"> length</span> &lt;length&gt; ] \
+    [<span class="Type"> status</span> &lt;status&gt; ] \
+    [<span class="Type"> error-text</span> &lt;error text&gt; ] \
+    [<span class="Identifier"> for-json</span> ]</pre>
+<span id=rimstone_copied_1100 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1100' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1100, code_1100, rimstone_copied_1100)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 utf-text will convert &lt;utf&gt; text to &lt;text&gt; (specified with "to" clause). If &lt;text&gt; is omitted, then the result of conversion is output.<br/>
 <br/>
-&lt;utf&gt; is a string that may contain UTF characters (as 2, 3 or 4 bytes representing a unicode character). Encoding creates a string that can be used as a value where text representation of UTF is required. utf-text is performed according to <a href='https://datatracker.ietf.org/doc/html/rfc7159'>RFC7159</a> and <a href='https://www.rfc-editor.org/rfc/rfc3629'>RFC3629</a> (UTF standard).<br/>
+&lt;utf&gt; is a string that may contain UTF characters (as 2, 3 or 4 bytes representing a Unicode character). Encoding creates a string that can be used as a value where text representation of UTF-8 is required. utf-text is performed according to <a href='https://datatracker.ietf.org/doc/html/rfc7159'>RFC7159</a> and <a href='https://www.rfc-editor.org/rfc/rfc3629'>RFC3629</a> (UTF standard).<br/>
 <br/>
 Note that hexadecimal characters used for Unicode (such as \u21d7) are always lowercase. Solidus character ("/") is not escaped, although <a href='https://rimstone-lang.com/text-utf.html'>text-utf</a> will correctly process it if the input has it escaped.<br/>
 <br/>
-The number of bytes in &lt;utf&gt; to be converted can be specified with &lt;length&gt; in "length" clause. If &lt;length&gt; is not specified, it is the length of string &lt;utf&gt;. Note that a single UTF character can be anywhere between 1 to 4 bytes. For example "љ" is 2 bytes in length. <br/>
+The number of bytes in &lt;utf&gt; to be converted can be specified with &lt;length&gt; in "length" clause. If &lt;length&gt; is not specified, it is the length of string &lt;utf&gt;. Note that a single UTF-8 character can be anywhere between 1 to 4 bytes. For example "љ" is 2 bytes in length. <br/>
 <br/>
-The status of encoding can be obtained in number &lt;status&gt;. &lt;status&gt; is the string length of the result in &lt;text&gt; (or the number of bytes output if &lt;text&gt; is omitted), or -1 if error occurred (meaning &lt;utf&gt; is an invalid UTF) in which case &lt;text&gt; (if specified) is an empty string and the error text can be obtained in &lt;error text&gt; in "error-text" clause.<br/>
+The status of encoding can be obtained in number &lt;status&gt;. &lt;status&gt; is the string length of the result in &lt;text&gt; (or the number of bytes output if &lt;text&gt; is omitted), or -1 if error occurred (meaning &lt;utf&gt; is an invalid UTF-8) in which case &lt;text&gt; (if specified) is an empty string and the error text can be obtained in &lt;error text&gt; in "error-text" clause.<br/>
+<br/>
+"for-json" clause will produce a JSON suitable text representation of &lt;utf&gt; - it means 32 bit values (that cannot be represented with "\uXXXX" notation) will be represented as surrogate pairs (as JSON standard prescribes). Without this clause, a standard "\UXXXXXXXX" notation will be used. For example, a G clef character (𝄞) will be "\ud834\udd1e" when "for-json" clause is used, otherwise it will be "\U0001d11e".<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
-Convert UTF string to text and verify the expected result:<br/>
+Convert UTF-8 string to text and verify the expected result:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1099' class=notranslate>
-// UTF string
-set-string utf_str = &quot;\&quot;Doc\&quot;\n\t\b\f\r\t⇗⇘\t▷◮𝄞ᏫⲠш\n/\&quot;()\t&quot;
+<pre id='code_1101' class=notranslate>
+<span class="Comment">// UTF string </span>
+<span class="Statement">set-string</span> utf_str = <span class="Constant">&quot;</span><span class="Special">\&quot;</span><span class="Constant">Doc</span><span class="Special">\&quot;\n\t\b\f\r\t</span><span class="Constant">⇗⇘</span><span class="Special">\t</span><span class="Constant">▷◮𝄞ᏫⲠш</span><span class="Special">\n</span><span class="Constant">/</span><span class="Special">\&quot;</span><span class="Constant">()</span><span class="Special">\t</span><span class="Constant">&quot;</span>
 
-// Convert UTF string to text
-utf-text utf_str status encstatus to text_text
+<span class="Comment">// Convert UTF string to text</span>
+<span class="Statement">utf-text</span> utf_str<span class="Type"> status</span> encstatus<span class="Type"> to</span> text_text<span class="Identifier"> for-json</span>
 
-// This is the text expected
-(( expected_result
-@\&quot;Doc\&quot;\n\t\b\f\r\t\u21d7\u21d8\t\u25b7\u25ee\ud834\udd1e\u13eb\u2ca0\u0448\n/\&quot;()\t
-))
+<span class="Comment">// This is the text expected</span>
+<span class="Statement">((</span> expected_result
+<span class="Statement">@</span>\&quot;Doc\&quot;\n\t\b\f\r\t\u21d7\u21d8\t\u25b7\u25ee\ud834\udd1e\u13eb\u2ca0\u0448\n/\&quot;()\t
+<span class="Statement">))</span>
 
-// Make sure conversion was okay, decs is the length of the result (encj string)
-if-true text_text equal expected_result and encstatus not-equal -1
-    @decode-text worked okay
-end-if</pre>
-<span id=rimstone_copied_1099 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1099' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_1099, code_1099, rimstone_copied_1099)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span class="Comment">// Make sure conversion was okay, decs is the length of the result (encj string)</span>
+<span class="Statement">if-true</span> text_text<span class="Identifier"> equal</span> expected_result<span class="Identifier"> and</span> encstatus<span class="Identifier"> not-equal</span> -<span class="Constant">1</span>
+<span class="Statement">    @</span>decode-text worked okay
+<span class="Statement">end-if</span></pre>
+<span id=rimstone_copied_1101 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1101' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1101, code_1101, rimstone_copied_1101)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='UTF'></a><span style="font-weight:bold;">UTF</span><br/>

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<!--__GOLF_REDIRECT__-->
+<!--__RIM_REDIRECT__-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
@@ -212,7 +212,7 @@ ul {
 <div id="google_translate_element" style='float:right'></div>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
-function gg_copy(gt, eid, gc) {
+function rim_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
   gt.select();
   document.execCommand("copy");
@@ -225,119 +225,123 @@ function googleTranslateElementInit() {
 
 </script>
 
-<!--GOLFMENU13-->
+<!--RIMMENU13-->
 
-<!--GOLFENDMENU13-->
+<!--RIMENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>34000 requests per second on a modest laptop</div><hr/><br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>34000 requests per second on a modest laptop</div><hr/><br/>
 Here's a video showing how to create and start an application server, and how to connect to it and make requests from a C client (or from any language that supports C API extension), you can watch a <a href='https://youtu.be/P2bdPP-3ZMY'>video here</a>.<br/>
-Create new directory for the Golf server and also for C API client:<br/>
+Create new directory for the RimStone server and also for C API client:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_132' class=notranslate>
+<pre id='code_131' class=notranslate>
 <span class="Statement">mkdir</span> <span class="Special">-p</span> srv-example
 <span class="Statement">cd</span> srv-example
 <span class="Statement">mkdir</span> <span class="Special">-p</span> client</pre>
-<span id=rimstone_copied_132 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_132' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_132, code_132, rimstone_copied_132)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-Create file "srv.golf" and copy this:<br/>
-<div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_131' class=notranslate>
-begin-handler /srv public
-    silent-header
-    @Hello world!
-end-handler</pre>
 <span id=rimstone_copied_131 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='rimstonet_131' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_131, code_131, rimstone_copied_131)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_131, code_131, rimstone_copied_131)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Create Golf application server:<br/>
+File "srv.rim" will have the code:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_130' class=notranslate>
+cat &lt;&lt; '<span class="Constant">EOF</span>' &gt; srv.rim
+<span class="Statement">begin-handler</span> /srv<span class="Identifier"> public</span>
+<span class="Statement">    silent-header</span>
+<span class="Statement">    @</span>Hello world!
+<span class="Statement">end-handler</span>
+<span class="Constant">EOF</span></pre>
+<span id=rimstone_copied_130 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_130' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_130, code_130, rimstone_copied_130)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Create RimStone application server:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_133' class=notranslate>
+rim <span class="Special">-k</span> hello</pre>
+<span id=rimstone_copied_133 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_133' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_133, code_133, rimstone_copied_133)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Build RimStone application server (exclude client directory as it contains C API client). We use --release for a production executable of high performance:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_134' class=notranslate>
-gg <span class="Special">-k</span> hello</pre>
+rim <span class="Special">-q</span> <span class="Special">--exclude-dir</span><span class="Statement">=</span>client <span class="Special">--release</span></pre>
 <span id=rimstone_copied_134 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='rimstonet_134' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_134, code_134, rimstone_copied_134)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-Build Golf application server (exclude client directory as it contains C API client):<br/>
-<div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_135' class=notranslate>
-gg <span class="Special">-q</span> <span class="Special">--exclude-dir</span><span class="Statement">=</span>client</pre>
-<span id=rimstone_copied_135 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_135' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_135, code_135, rimstone_copied_135)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_134, code_134, rimstone_copied_134)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Start the application server (a single-process server in this case):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_136' class=notranslate>
-mgrg <span class="Special">-w</span> <span class="Constant">1</span> hello</pre>
-<span id=rimstone_copied_136 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_136' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_136, code_136, rimstone_copied_136)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_135' class=notranslate>
+mrim <span class="Special">-w</span> <span class="Constant">1</span> hello</pre>
+<span id=rimstone_copied_135 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_135' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_135, code_135, rimstone_copied_135)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Next, go to C API client directory:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_137' class=notranslate>
+<pre id='code_136' class=notranslate>
 <span class="Statement">cd</span> client</pre>
-<span id=rimstone_copied_137 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_137' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_137, code_137, rimstone_copied_137)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_136 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_136' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_136, code_136, rimstone_copied_136)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Then create C file "cli.c" and copy this:<br/>
+C file "cli.c" is created here:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_133' class=notranslate>
-<span class="Comment">#include &quot;gcli.h&quot;</span>
+<pre id='code_132' class=notranslate>
+cat &lt;&lt; '<span class="Constant">EOF</span>' &gt; cli.c
+<span class="PreProc">#include </span><span class="Constant">&quot;rcli.h&quot;</span>
 
-int golf_client (gg_cli *req, char *connection, char *method, char *app_path, char *request, char *url_params);
+<span class="Type">int</span> golf_client (rim_cli *req, <span class="Type">char</span> *connection, <span class="Type">char</span> *method, <span class="Type">char</span> *app_path, <span class="Type">char</span> *request, <span class="Type">char</span> *url_params);
 
-int golf_client (gg_cli *req, char *connection, char *method, char *app_path, char *request, char *url_params)
-{
-    memset ((char*)req, 0, sizeof(gg_cli));
+<span class="Type">int</span> golf_client (rim_cli *req, <span class="Type">char</span> *connection, <span class="Type">char</span> *method, <span class="Type">char</span> *app_path, <span class="Type">char</span> *request, <span class="Type">char</span> *url_params)
+<span class="Statement">{</span>
+    memset ((<span class="Type">char</span>*)req, <span class="Constant">0</span>, <span class="Statement">sizeof</span>(rim_cli));
     req-&gt;server = connection;
     req-&gt;req_method = method;
     req-&gt;app_path = app_path;
     req-&gt;req = request;
     req-&gt;url_params = url_params;
-    return gg_cli_request (req);
-}
+    <span class="Statement">return</span> rim_cli_request (req);
+<span class="Statement">}</span>
 
-void main ()
-{
-    int i;
-    char dir[GG_MAX_OS_UDIR_LEN];
-    gg_dir (GG_DIR_SOCKFILE, dir, sizeof(dir), <span class="Constant">&quot;hello&quot;</span>, NULL);
-    for (i = 0; i &lt; 100000; i++)
-    {
-        gg_cli req;
-        int res = golf_client (&amp;req, dir, <span class="Constant">&quot;GET&quot;</span>, <span class="Constant">&quot;/hello&quot;</span>, <span class="Constant">&quot;/srv&quot;</span>, <span class="Constant">&quot;/&quot;</span>);
-        if (res != GG_OKAY) printf(<span class="Constant">&quot;Request failed [%d] [%s]\n&quot;</span>, res, req.errm);
-        else printf(<span class="Constant">&quot;%s&quot;</span>, gg_cli_data(&amp;req));
-        gg_cli_delete(&amp;req);
-    }
-}</pre>
-<span id=rimstone_copied_133 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_133' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_133, code_133, rimstone_copied_133)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span class="Type">void</span> main ()
+<span class="Statement">{</span>
+    <span class="Type">int</span> i;
+    <span class="Type">char</span> dir[RIM_MAX_OS_UDIR_LEN];
+    rim_dir (RIM_DIR_SOCKFILE, dir, <span class="Statement">sizeof</span>(dir), <span class="Constant">&quot;hello&quot;</span>, <span class="Constant">NULL</span>);
+    <span class="Statement">for</span> (i = <span class="Constant">0</span>; i &lt; <span class="Constant">100000</span>; i++)
+<span class="Statement">    {</span>
+        rim_cli req;
+        <span class="Type">int</span> res = golf_client (&amp;req, dir, <span class="Constant">&quot;GET&quot;</span>, <span class="Constant">&quot;/hello&quot;</span>, <span class="Constant">&quot;/srv&quot;</span>, <span class="Constant">&quot;/&quot;</span>);
+        <span class="Statement">if</span> (res != RIM_OKAY) printf(<span class="Constant">&quot;Request failed [</span><span class="Special">%d</span><span class="Constant">] [</span><span class="Special">%s</span><span class="Constant">]</span><span class="Special">\n</span><span class="Constant">&quot;</span>, res, req.errm);
+        <span class="Statement">else</span> printf(<span class="Constant">&quot;</span><span class="Special">%s</span><span class="Constant">&quot;</span>, rim_cli_data(&amp;req));
+        rim_cli_delete(&amp;req);
+<span class="Statement">    }</span>
+<span class="Statement">}</span>
+<span class="Constant">EOF</span></pre>
+<span id=rimstone_copied_132 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_132' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_132, code_132, rimstone_copied_132)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Compile the client:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_138' class=notranslate>
-gcc <span class="Special">-o</span> cli cli.c <span class="PreProc">$(</span><span class="Special">gg </span><span class="Special">-i</span><span class="PreProc">)</span> <span class="Special">-O</span>3</pre>
-<span id=rimstone_copied_138 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_138' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_138, code_138, rimstone_copied_138)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_137' class=notranslate>
+gcc <span class="Special">-o</span> cli cli.c <span class="PreProc">$(</span><span class="Special">rim </span><span class="Special">-i</span><span class="PreProc">)</span> <span class="Special">-O</span>3</pre>
+<span id=rimstone_copied_137 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_137' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_137, code_137, rimstone_copied_137)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Run it:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_139' class=notranslate>
+<pre id='code_138' class=notranslate>
 ./cli</pre>
-<span id=rimstone_copied_139 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_139' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_139, code_139, rimstone_copied_139)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_138 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_138' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_138, code_138, rimstone_copied_138)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The result is "Hello world!" 100,000 times from each request invocation.<br/>
 <!--ENDVDOC90-->

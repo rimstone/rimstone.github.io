@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<!--__GOLF_REDIRECT__-->
+<!--__RIM_REDIRECT__-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
@@ -212,7 +212,7 @@ ul {
 <div id="google_translate_element" style='float:right'></div>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
-function gg_copy(gt, eid, gc) {
+function rim_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
   gt.select();
   document.execCommand("copy");
@@ -225,32 +225,32 @@ function googleTranslateElementInit() {
 
 </script>
 
-<!--GOLFMENU13-->
+<!--RIMMENU13-->
 
-<!--GOLFENDMENU13-->
+<!--RIMENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Copy file</div><hr/><span style="font-weight:bold;">Purpose</span>: Copies one file to another.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Copy file</div><hr/><span style="font-weight:bold;">Purpose</span>: Copies one file to another.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_505' class=notranslate>
-copy-file &lt;source file&gt; to &lt;target file&gt; [ status &lt;status&gt; ]</pre>
-<span id=rimstone_copied_505 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_505' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_505, code_505, rimstone_copied_505)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_501' class=notranslate>
+<span class="Statement">copy-file</span> &lt;source file&gt;<span class="Identifier"> to</span> &lt;target file&gt; [<span class="Type"> status</span> &lt;status&gt; ]</pre>
+<span id=rimstone_copied_501 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_501' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_501, code_501, rimstone_copied_501)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 File &lt;source file&gt; is copied into &lt;target file&gt;, which is created if it does not exist. <br/>
 <br/>
-Status can be obtained in &lt;status&gt; variable, which is GG_ERR_OPEN if cannot open source file, GG_ERR_CREATE if cannot create target file, GG_ERR_READ if cannot read source file, GG_ERR_WRITE if cannot write target file, or number of bytes copied (including 0) on success. <br/>
+Status can be obtained in &lt;status&gt; variable, which is RIM_ERR_OPEN if cannot open source file, RIM_ERR_CREATE if cannot create target file, RIM_ERR_READ if cannot read source file, RIM_ERR_WRITE if cannot write target file, or number of bytes copied (including 0) on success. <br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_506' class=notranslate>
-copy-file &quot;/home/user/source_file&quot; to &quot;/home/user/target_file&quot; status st</pre>
-<span id=rimstone_copied_506 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_506' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_506, code_506, rimstone_copied_506)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_502' class=notranslate>
+<span class="Statement">copy-file</span> <span class="Constant">&quot;/home/user/source_file&quot;</span><span class="Identifier"> to</span> <span class="Constant">&quot;/home/user/target_file&quot;</span><span class="Type"> status</span> st</pre>
+<span id=rimstone_copied_502 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_502' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_502, code_502, rimstone_copied_502)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Files'></a><span style="font-weight:bold;">Files</span><br/>

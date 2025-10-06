@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<!--__GOLF_REDIRECT__-->
+<!--__RIM_REDIRECT__-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
@@ -212,7 +212,7 @@ ul {
 <div id="google_translate_element" style='float:right'></div>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
-function gg_copy(gt, eid, gc) {
+function rim_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
   gt.select();
   document.execCommand("copy");
@@ -225,23 +225,23 @@ function googleTranslateElementInit() {
 
 </script>
 
-<!--GOLFMENU13-->
+<!--RIMMENU13-->
 
-<!--GOLFENDMENU13-->
+<!--RIMENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Memory safety: what about performance?</div><hr/><br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Memory safety: what about performance?</div><hr/><br/>
 Memory safety guards against software security risks and malfunctions by assuring data isn't written to or read from unintended areas of memory. Preventing leaks is a separate feature that's important for web services which are long-running processes - memory leaks usually lead to running out of memory and crashes.<br/>
 <br/>
-But what of the performance cost of memory safety? &nbsp;Golf is a very high level programming language. It's not like other languages, and you can intuitively experience that just by looking at the code. It feels more like speaking in English than moving bits and bytes or calling APIs. <br/>
+But what of the performance cost of memory safety? &nbsp;RimStone is a very high level programming language. It's not like other languages, and you can intuitively experience that just by looking at the code. It feels more like speaking in English than moving bits and bytes or calling APIs. <br/>
 <br/>
 So when you build your web services, you won't write a lot of code, rather you'd express what you want done in a declarative language. This code is designed to be memory safe, but because it's C, it avoids the penalty of being implemented in a general-purpose memory-safe language, where everything that's done, from bottom up and top down, would be subject to memory-safety checks. <br/>
 <br/>
-As a result, the cost incurred on memory safety is mostly in checking input data of such statements and significantly less so in the actual implementation which is where most of the performance penalty would be. In addition, the output of Golf statements is generally new immutable memory, hence it needs no checking. This means memory safety checks are truly minimal, and likely close to a theoretical minimum.<br/>
+As a result, the cost incurred on memory safety is mostly in checking input data of such statements and significantly less so in the actual implementation which is where most of the performance penalty would be. In addition, the output of RimStone statements is generally new immutable memory, hence it needs no checking. This means memory safety checks are truly minimal, and likely close to a theoretical minimum.<br/>
 <br/>
-Golf also has a light implementation of memory safety. One example is that any memory used in a request is by default released at the end of it, and not every time the memory's out of scope, which saves a lot of run-time checks. <br/>
+RimStone also has a light implementation of memory safety. One example is that any memory used in a request is by default released at the end of it, and not every time the memory's out of scope, which saves a lot of run-time checks. <br/>
 <br/>
 In summary, the choices made when designing and implementing a memory safe programming language profoundly affect the resulting performance.<br/>
 <!--ENDVDOC90-->

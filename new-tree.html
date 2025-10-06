@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<!--__GOLF_REDIRECT__-->
+<!--__RIM_REDIRECT__-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
@@ -212,7 +212,7 @@ ul {
 <div id="google_translate_element" style='float:right'></div>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
-function gg_copy(gt, eid, gc) {
+function rim_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
   gt.select();
   document.execCommand("copy");
@@ -225,24 +225,24 @@ function googleTranslateElementInit() {
 
 </script>
 
-<!--GOLFMENU13-->
+<!--RIMMENU13-->
 
-<!--GOLFENDMENU13-->
+<!--RIMENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>New tree</div><hr/><span style="font-weight:bold;">Purpose</span>: Create new tree structure for fast key searching.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>New tree</div><hr/><span style="font-weight:bold;">Purpose</span>: Create new tree structure for fast key searching.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_809' class=notranslate>
-new-tree &lt;tree&gt; \
-    [ key-as &quot;positive integer&quot; ] \
-    [ unsorted ]
-    [ process-scope ]</pre>
-<span id=rimstone_copied_809 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_809' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_809, code_809, rimstone_copied_809)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_797' class=notranslate>
+<span class="Statement">new-tree</span> &lt;tree&gt; \
+    [<span class="Identifier"> key-as</span> <span class="Constant">&quot;positive integer&quot;</span> ] \
+    [<span class="Identifier"> unsorted</span> ]
+    [<span class="Identifier"> process-scope</span> ]</pre>
+<span id=rimstone_copied_797 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_797' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_797, code_797, rimstone_copied_797)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 new-tree initializes a new &lt;tree&gt;. <br/>
 <br/>
@@ -250,7 +250,7 @@ An tree is a hierarchical balanced binary tree structure that allows data access
 <br/>
 Information in a tree can be inserted, updated or deleted in any order, and accessed in any order as well.<br/>
 <br/>
-Information in a tree is organized in nodes. Each node has a key and a value. A key is used to search for a node in a tree. By default (if "unsorted" is omitted), all nodes in a Golf tree are also connected in an ordered linked list, allowing for very fast range searches.<br/>
+Information in a tree is organized in nodes. Each node has a key and a value. A key is used to search for a node in a tree. By default (if "unsorted" is omitted), all nodes in a RimStone tree are also connected in an ordered linked list, allowing for very fast range searches.<br/>
 <div class="vsub"><a id="Keys and data"></a>Keys and data</div>
 A node in a tree consists of two strings: key and value. There is no limit on the number of nodes in the tree, other than available memory. Each key in the tree must be unique. Keys should be as short as possible. Generally, longer keys take longer to search for, insert or delete. <br/>
 <div class="vsub"><a id="Key comparison"></a>Key comparison</div>
@@ -270,11 +270,11 @@ A tree is accessible to the current process only, unless "process-scope" clause 
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Create a new tree:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_810' class=notranslate>
-new-tree my_tree</pre>
-<span id=rimstone_copied_810 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_810' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_810, code_810, rimstone_copied_810)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_798' class=notranslate>
+<span class="Statement">new-tree</span> my_tree</pre>
+<span id=rimstone_copied_798 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_798' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_798, code_798, rimstone_copied_798)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Tree'></a><span style="font-weight:bold;">Tree</span><br/>

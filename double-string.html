@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<!--__GOLF_REDIRECT__-->
+<!--__RIM_REDIRECT__-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
@@ -212,7 +212,7 @@ ul {
 <div id="google_translate_element" style='float:right'></div>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
-function gg_copy(gt, eid, gc) {
+function rim_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
   gt.select();
   document.execCommand("copy");
@@ -225,24 +225,24 @@ function googleTranslateElementInit() {
 
 </script>
 
-<!--GOLFMENU13-->
+<!--RIMMENU13-->
 
-<!--GOLFENDMENU13-->
+<!--RIMENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Double string</div><hr/><span style="font-weight:bold;">Purpose</span>: Convert double to string.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Double string</div><hr/><span style="font-weight:bold;">Purpose</span>: Convert double to string.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_586' class=notranslate>
-double-string &lt;double&gt; [ to &lt;string&gt; ] \
-    [ width &lt;width&gt; ] \
-    [ precision &lt;precision&gt; ] \
-    [ format-floating | format-scientific | format-compact ]</pre>
-<span id=rimstone_copied_586 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_586' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_586, code_586, rimstone_copied_586)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_582' class=notranslate>
+<span class="Statement">double-string</span> &lt;<span class="Type">double</span>&gt; [<span class="Type"> to</span> &lt;string&gt; ] \
+    [<span class="Identifier"> width</span> &lt;width&gt; ] \
+    [<span class="Identifier"> precision</span> &lt;precision&gt; ] \
+    [<span class="Identifier"> format-floating</span> |<span class="Identifier"> format-scientific</span> |<span class="Identifier"> format-compact</span> ]</pre>
+<span id=rimstone_copied_582 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_582' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_582, code_582, rimstone_copied_582)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 &lt;double&gt; is converted to &lt;string&gt; in "to" clause, using &lt;width&gt; and &lt;precision&gt; (in "width" and "precision" clauses) and using one of the formats ("format-floating", "format-scientific" or "format-compact"). By default "format-floating" is used with the &lt;precision&gt; of 6. "format-scientific" will output in the format that uses the exponent with a single digit before the decimal point. "format-compact" will choose the shorter of the two. &lt;double&gt; can be positive or negative (i.e. signed) and is a 64-bit double-precision floating point value. &nbsp;If "to" clause is omitted, then &lt;double&gt; is printed out.<br/>
 <br/>
@@ -252,44 +252,44 @@ Note that if there's an overflow the result is "inf" or "-inf" for positive and 
 <div class="vsub"><a id="Shortcut"></a>Shortcut</div>
 For convenience, you can use a shortcut for converting a double to a string, by prepending "$$" to the variable name, for example:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_587' class=notranslate>
-set-double n = -10.41
-set-string s = &quot;This is double &quot; + $$n</pre>
-<span id=rimstone_copied_587 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_587' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_587, code_587, rimstone_copied_587)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_583' class=notranslate>
+<span class="Statement">set-double</span> n = -<span class="Constant">10</span><span class="Constant">.41</span>
+<span class="Statement">set-string</span> s = <span class="Constant">&quot;This is double &quot;</span> + $$n</pre>
+<span id=rimstone_copied_583 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_583' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_583, code_583, rimstone_copied_583)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The above is the same as:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_588' class=notranslate>
-set-double n = -10.41
-double-string n to sval
-set-string s = &quot;This is double &quot; + sval</pre>
-<span id=rimstone_copied_588 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_588' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_588, code_588, rimstone_copied_588)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_584' class=notranslate>
+<span class="Statement">set-double</span> n = -<span class="Constant">10</span><span class="Constant">.41</span>
+<span class="Statement">double-string</span> n<span class="Type"> to</span> sval
+<span class="Statement">set-string</span> s = <span class="Constant">&quot;This is double &quot;</span> + sval</pre>
+<span id=rimstone_copied_584 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_584' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_584, code_584, rimstone_copied_584)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Effectively, $$ in front of a double variable is the same as double-string that converts it to a string with all the default options. <br/>
 <br/>
 You can use $$ for an expression, in which case the expression must be within parenthesis:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_589' class=notranslate>
-set-double n1 = -10.41
-set-double n2 = 15.13
-set-string s = &quot;This is double &quot; + $$(n1+n2)</pre>
-<span id=rimstone_copied_589 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_589' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_589, code_589, rimstone_copied_589)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_585' class=notranslate>
+<span class="Statement">set-double</span> n1 = -<span class="Constant">10</span><span class="Constant">.41</span>
+<span class="Statement">set-double</span> n2 = <span class="Constant">15</span><span class="Constant">.13</span>
+<span class="Statement">set-string</span> s = <span class="Constant">&quot;This is double &quot;</span> + $$(n1+n2)</pre>
+<span id=rimstone_copied_585 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_585' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_585, code_585, rimstone_copied_585)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In this case double "s" will have value of "This is double 4.72", because doubles -10.41 and 15.13 are added to produce 4.72, which is then converted to a string and finally added to the first string.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 The following will allocate memory for string "x" to be " &nbsp; &nbsp;8.8422000000e+02":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_590' class=notranslate>
-double-string 884.22 width 20 to str precision 10 format-scientific to x</pre>
-<span id=rimstone_copied_590 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_590' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_590, code_590, rimstone_copied_590)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_586' class=notranslate>
+<span class="Statement">double-string</span> <span class="Constant">884</span><span class="Constant">.22</span><span class="Identifier"> width</span> <span class="Constant">20</span><span class="Type"> to</span> str<span class="Identifier"> precision</span> <span class="Constant">10</span><span class="Identifier"> format-scientific</span><span class="Type"> to</span> x</pre>
+<span id=rimstone_copied_586 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_586' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_586, code_586, rimstone_copied_586)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Doubles'></a><span style="font-weight:bold;">Doubles</span><br/>

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<!--__GOLF_REDIRECT__-->
+<!--__RIM_REDIRECT__-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
@@ -212,7 +212,7 @@ ul {
 <div id="google_translate_element" style='float:right'></div>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
-function gg_copy(gt, eid, gc) {
+function rim_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
   gt.select();
   document.execCommand("copy");
@@ -225,61 +225,55 @@ function googleTranslateElementInit() {
 
 </script>
 
-<!--GOLFMENU13-->
+<!--RIMMENU13-->
 
-<!--GOLFENDMENU13-->
+<!--RIMENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>How to get the web page source code programmatically</div><hr/><br/>
-Fetching a web resource (including web page source) is a one-liner in Golf. First, create a new application ("get-page" here):<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>How to get the web page source code programmatically</div><hr/><br/>
+Fetching a web resource (including web page source) is a one-liner in RimStone. First, create a new application ("get-page" here):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_106' class=notranslate>
 <span class="Comment">#new directory for this tiny app</span>
 <span class="Statement">mkdir</span> get-page
 <span class="Statement">cd</span> get-page
 <span class="Comment">#create app</span>
-gg <span class="Special">-k</span> get-page</pre>
+rim <span class="Special">-k</span> get-page</pre>
 <span id=rimstone_copied_106 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='rimstonet_106' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_106, code_106, rimstone_copied_106)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_106, code_106, rimstone_copied_106)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Edit our sole Golf file (I use vi, but you can use anything):<br/>
-<div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_107' class=notranslate>
-vi fetch.golf</pre>
-<span id=rimstone_copied_107 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_107' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_107, code_107, rimstone_copied_107)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-Copy and paste this - it's rather obvious what it does (it gets Google home page HTTP headers and web page source code, and it prints it out):<br/>
+Create file "fetch.rim" - it's rather obvious what it does (it gets Google home page HTTP headers and web page source code, and it prints it out):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_105' class=notranslate>
-begin-handler /fetch public
-    call-web &quot;<a href="https://google.com">https://google.com</a>&quot; response text response-headers head
-    print-out head new-line
-    print-out text new-line
-end-handler</pre>
+cat &lt;&lt; '<span class="Constant">EOF</span>' &gt; fetch.rim
+<span class="Statement">begin-handler</span> /fetch<span class="Identifier"> public</span>
+<span class="Statement">    call-web</span> <span class="Constant">&quot;<a href="https://google.com">https://google.com</a>&quot;</span><span class="Type"> response</span> text<span class="Type"> response-headers</span> head
+<span class="Statement">    print-out</span> head<span class="Identifier"> new-line</span>
+<span class="Statement">    print-out</span> text<span class="Identifier"> new-line</span>
+<span class="Statement">end-handler</span>
+<span class="Constant">EOF</span></pre>
 <span id=rimstone_copied_105 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='rimstonet_105' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_105, code_105, rimstone_copied_105)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_105, code_105, rimstone_copied_105)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Build your application (it makes a native executable):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_108' class=notranslate>
-gg <span class="Special">-q</span></pre>
-<span id=rimstone_copied_108 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_108' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_108, code_108, rimstone_copied_108)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_107' class=notranslate>
+rim <span class="Special">-q</span></pre>
+<span id=rimstone_copied_107 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_107' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_107, code_107, rimstone_copied_107)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Run it (since we run it in command line, skip the HTTP response header, which would normally be sent to a web client):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_109' class=notranslate>
-gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/fetch</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--silent-header</span></pre>
-<span id=rimstone_copied_109 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_109' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_109, code_109, rimstone_copied_109)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_108' class=notranslate>
+rim <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/fetch</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--silent-header</span></pre>
+<span id=rimstone_copied_108 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_108' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_108, code_108, rimstone_copied_108)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The result is something like this (I used ... for the remainder of the header and the web page, as they are rather long):<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
@@ -296,9 +290,9 @@ content-type: text/html; charset=ISO-8859-1
 s and more. Google has many special features to help you find exactly what you&apos;re looking for.&quot; name=&quot;description&quot;&gt;&lt;meta content= ...</pre>
 <span id=rimstone_copied_104 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='rimstonet_104' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_104, code_104, rimstone_copied_104)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_104, code_104, rimstone_copied_104)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-There you have it. Web programming is easy with Golf.<br/>
+There you have it. Web programming is easy with RimStone.<br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>

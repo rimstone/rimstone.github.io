@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<!--__GOLF_REDIRECT__-->
+<!--__RIM_REDIRECT__-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
@@ -212,7 +212,7 @@ ul {
 <div id="google_translate_element" style='float:right'></div>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
-function gg_copy(gt, eid, gc) {
+function rim_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
   gt.select();
   document.execCommand("copy");
@@ -225,25 +225,25 @@ function googleTranslateElementInit() {
 
 </script>
 
-<!--GOLFMENU13-->
+<!--RIMMENU13-->
 
-<!--GOLFENDMENU13-->
+<!--RIMENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Silent header</div><hr/><span style="font-weight:bold;">Purpose</span>: Do not output HTTP headers.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Silent header</div><hr/><span style="font-weight:bold;">Purpose</span>: Do not output HTTP headers.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1027' class=notranslate>
-silent-header</pre>
-<span id=rimstone_copied_1027 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1027' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_1027, code_1027, rimstone_copied_1027)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_1029' class=notranslate>
+<span class="Statement">silent-header</span></pre>
+<span id=rimstone_copied_1029 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1029' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1029, code_1029, rimstone_copied_1029)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 silent-header will suppress the output of HTTP headers, such as with <a href='https://rimstone-lang.com/out-header.html'>out-header</a>, or in any other case where headers are output. The effect applies to current <a href='https://rimstone-lang.com/request.html'>request</a> only; if you use it conditionally, then you can have it on or off dynamically. <br/>
 <br/>
-If you want to suppress the headers for all <a href='https://rimstone-lang.com/begin-handler.html'>service handlers</a> (as if silent-header were implied at the beginning of each), then for a <a href='https://rimstone-lang.com/command-line.html'>command-line</a> program, use "--silent-header" option in "gg -r" when running it; to suppress the headers in <a href='https://rimstone-lang.com/service.html'>service</a>s, use "-z" option in <a href='https://rimstone-lang.com/mgrg.html'>mgrg</a>.<br/>
+If you want to suppress the headers for all <a href='https://rimstone-lang.com/begin-handler.html'>service handlers</a> (as if silent-header were implied at the beginning of each), then for a <a href='https://rimstone-lang.com/command-line.html'>command-line</a> program, use "--silent-header" option in "rim -r" when running it; to suppress the headers in <a href='https://rimstone-lang.com/service.html'>service</a>s, use "-z" option in <a href='https://rimstone-lang.com/mrim.html'>mrim</a>.<br/>
 <br/>
 silent-header must be used prior to outputting headers, meaning either prior to any output (if out-header is not used) or prior to first out-header.<br/>
 <br/>
@@ -253,13 +253,13 @@ There are many uses for silent-header, among them:<br/>
 </li><li>a web program may output a completely different (non-HTTP) set of headers, etc.</li></ul>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1028' class=notranslate>
-silent-header
+<pre id='code_1030' class=notranslate>
+<span class="Statement">silent-header</span>
 
-// No headers output</pre>
-<span id=rimstone_copied_1028 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1028' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_1028, code_1028, rimstone_copied_1028)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span class="Comment">// No headers output </span></pre>
+<span id=rimstone_copied_1030 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1030' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1030, code_1030, rimstone_copied_1030)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Web'></a><span style="font-weight:bold;">Web</span><br/>

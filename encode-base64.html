@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<!--__GOLF_REDIRECT__-->
+<!--__RIM_REDIRECT__-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
@@ -212,7 +212,7 @@ ul {
 <div id="google_translate_element" style='float:right'></div>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
-function gg_copy(gt, eid, gc) {
+function rim_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
   gt.select();
   document.execCommand("copy");
@@ -225,22 +225,22 @@ function googleTranslateElementInit() {
 
 </script>
 
-<!--GOLFMENU13-->
+<!--RIMMENU13-->
 
-<!--GOLFENDMENU13-->
+<!--RIMENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Encode base64</div><hr/><span style="font-weight:bold;">Purpose</span>: Base64 encode.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Encode base64</div><hr/><span style="font-weight:bold;">Purpose</span>: Base64 encode.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_591' class=notranslate>
-encode-base64 &lt;data&gt; to &lt;output data&gt; \
-    [ input-length &lt;input length&gt; ]</pre>
-<span id=rimstone_copied_591 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_591' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_591, code_591, rimstone_copied_591)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_587' class=notranslate>
+<span class="Statement">encode-base64</span> &lt;data&gt;<span class="Type"> to</span> &lt;output data&gt; \
+    [<span class="Identifier"> input-length</span> &lt;input length&gt; ]</pre>
+<span id=rimstone_copied_587 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_587' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_587, code_587, rimstone_copied_587)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 encode-base64 will encode string &lt;data&gt; into base64 string &lt;output data&gt;.<br/>
 <br/>
@@ -252,52 +252,52 @@ Base64-encoded strings are often used where binary data needs to be in a format 
 <div class="vsub"><a id="Examples"></a>Examples</div>
 An example that encodes a string, decodes, and finally checks if they match:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_592' class=notranslate>
-// Original string, generally this would be binary data in most cases
-set-string dt =&quot;  oh well  &quot;
+<pre id='code_588' class=notranslate>
+<span class="Comment">// Original string, generally this would be binary data in most cases</span>
+<span class="Statement">set-string</span> dt =<span class="Constant">&quot;  oh well  &quot;</span>
 
-// Encode in base64
-encode-base64 dt to out_dt
+<span class="Comment">// Encode in base64</span>
+<span class="Statement">encode-base64</span> dt<span class="Type"> to</span> out_dt
 
-decode-base64 out_dt to new_dt
+<span class="Statement">decode-base64</span> out_dt<span class="Type"> to</span> new_dt
 
-if-true dt equal new_dt
-    @Success!
-else-if
-    @Failure!
-end-if</pre>
-<span id=rimstone_copied_592 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_592' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_592, code_592, rimstone_copied_592)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span class="Statement">if-true</span> dt<span class="Identifier"> equal</span> new_dt
+<span class="Statement">    @</span>Success!
+<span class="Statement">else-if</span>
+<span class="Statement">    @</span>Failure!
+<span class="Statement">end-if</span></pre>
+<span id=rimstone_copied_588 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_588' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_588, code_588, rimstone_copied_588)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In the next example, "input-length" clause is used, and only a partial of the input string is encoded, then later compared to the original:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_593' class=notranslate>
-// Original string, generally this would be binary data in most cases
-set-string dt =&quot;  oh well  &quot;
+<pre id='code_589' class=notranslate>
+<span class="Comment">// Original string, generally this would be binary data in most cases</span>
+<span class="Statement">set-string</span> dt =<span class="Constant">&quot;  oh well  &quot;</span>
 
-// Encode in base64, encode only 6 bytes
-encode-base64 dt input-length 6 to out_dt
+<span class="Comment">// Encode in base64, encode only 6 bytes</span>
+<span class="Statement">encode-base64</span> dt<span class="Identifier"> input-length</span> <span class="Constant">6</span><span class="Type"> to</span> out_dt
 
-decode-base64 out_dt to new_dt
+<span class="Statement">decode-base64</span> out_dt<span class="Type"> to</span> new_dt
 
-// Get length of decoded string
-string-length new_dt to new_len
+<span class="Comment">// Get length of decoded string</span>
+<span class="Statement">string-length</span> new_dt<span class="Type"> to</span> new_len
 
-if-true new_len not-equal 6
-    @Failure!
-else-if
-    @Success!
-end-if
+<span class="Statement">if-true</span> new_len<span class="Identifier"> not-equal</span> <span class="Constant">6</span>
+<span class="Statement">    @</span>Failure!
+<span class="Statement">else-if</span>
+<span class="Statement">    @</span>Success!
+<span class="Statement">end-if</span>
 
-if-true dt equal new_dt length new_len
-    @Success!
-else-if
-    @Failure! [&lt;&lt;print-out dt&gt;&gt;] [&lt;&lt;print-out new_dt&gt;&gt;]
-end-if</pre>
-<span id=rimstone_copied_593 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_593' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_593, code_593, rimstone_copied_593)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span class="Statement">if-true</span> dt<span class="Identifier"> equal</span> new_dt<span class="Identifier"> length</span> new_len
+<span class="Statement">    @</span>Success!
+<span class="Statement">else-if</span>
+<span class="Statement">    @</span>Failure! [<span class="Statement">&lt;&lt;print-out</span> dt<span class="Statement">&gt;&gt;</span>] [<span class="Statement">&lt;&lt;print-out</span> new_dt<span class="Statement">&gt;&gt;</span>]
+<span class="Statement">end-if</span></pre>
+<span id=rimstone_copied_589 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_589' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_589, code_589, rimstone_copied_589)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Base64'></a><span style="font-weight:bold;">Base64</span><br/>

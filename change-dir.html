@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<!--__GOLF_REDIRECT__-->
+<!--__RIM_REDIRECT__-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
@@ -212,7 +212,7 @@ ul {
 <div id="google_translate_element" style='float:right'></div>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
-function gg_copy(gt, eid, gc) {
+function rim_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
   gt.select();
   document.execCommand("copy");
@@ -225,58 +225,58 @@ function googleTranslateElementInit() {
 
 </script>
 
-<!--GOLFMENU13-->
+<!--RIMMENU13-->
 
-<!--GOLFENDMENU13-->
+<!--RIMENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Change dir</div><hr/><span style="font-weight:bold;">Purpose</span>: Change current working directory.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Change dir</div><hr/><span style="font-weight:bold;">Purpose</span>: Change current working directory.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_425' class=notranslate>
-change-dir [ &lt;directory&gt;  | home | run-dir ] [ status &lt;status&gt; ]</pre>
-<span id=rimstone_copied_425 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_425' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_425, code_425, rimstone_copied_425)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_421' class=notranslate>
+<span class="Statement">change-dir</span> [ &lt;directory&gt;  |<span class="Identifier"> home</span> |<span class="Identifier"> run-dir</span> ] [<span class="Type"> status</span> &lt;status&gt; ]</pre>
+<span id=rimstone_copied_421 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_421' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_421, code_421, rimstone_copied_421)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 change-dir will change current working directory to &lt;directory&gt; (which is a string that can be an absolute or relative path), or to application home directory (see <a href='https://rimstone-lang.com/directories.html'>directories</a>) if "home" clause is used.<br/>
 <br/>
 If "run-dir" clause is used, then current working directory is changed to the directory where you ran the program from. Note that this only applies to <a href='https://rimstone-lang.com/command-line.html'>command-line</a> programs. If you program runs as a <a href='https://rimstone-lang.com/service.html'>service</a>, then this clause has the same effect as "home" clause.<br/>
 <br/>
-If "status" clause is used, then number &lt;status&gt; is GG_OKAY if change-dir is successful, or GG_FAILED if not (in which case you can use "errno" clause in <a href='https://rimstone-lang.com/get-req.html'>get-req</a> to find the specific reason why).<br/>
+If "status" clause is used, then number &lt;status&gt; is RIM_OKAY if change-dir is successful, or RIM_FAILED if not (in which case you can use "errno" clause in <a href='https://rimstone-lang.com/get-req.html'>get-req</a> to find the specific reason why).<br/>
 <br/>
-Note that if you change current working directory with <a href='https://rimstone-lang.com/call-extended.html'>call-extended</a>, then you must set Golf internal boolean variable "gg_path_changed" to true.<br/>
+Note that if you change current working directory with <a href='https://rimstone-lang.com/call-extended.html'>call-extended</a>, then you must set RimStone internal boolean variable "rim_path_changed" to true.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_426' class=notranslate>
-change-dir &quot;/home/user/new_dir&quot; status s
-if-true s equal GG_OKAY
-    @Directory changed
-else
-    get-req errno to eno
-    @Error &lt;&lt;print-out eno&gt;&gt;
-end-if</pre>
-<span id=rimstone_copied_426 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_426' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_426, code_426, rimstone_copied_426)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_422' class=notranslate>
+<span class="Statement">change-dir</span> <span class="Constant">&quot;/home/user/new_dir&quot;</span><span class="Type"> status</span> s
+<span class="Statement">if-true</span> s<span class="Identifier"> equal</span> RIM_OKAY
+<span class="Statement">    @</span>Directory changed
+<span class="Statement">else</span>
+<span class="Statement">    get-req</span><span class="Identifier"> errno</span><span class="Type"> to</span> eno
+<span class="Statement">    @</span>Error <span class="Statement">&lt;&lt;print-out</span> eno<span class="Statement">&gt;&gt;</span>
+<span class="Statement">end-if</span></pre>
+<span id=rimstone_copied_422 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_422' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_422, code_422, rimstone_copied_422)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Use relative path:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_427' class=notranslate>
-change-dir &quot;./new_dir&quot;</pre>
-<span id=rimstone_copied_427 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_427' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_427, code_427, rimstone_copied_427)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_423' class=notranslate>
+<span class="Statement">change-dir</span> <span class="Constant">&quot;./new_dir&quot;</span></pre>
+<span id=rimstone_copied_423 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_423' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_423, code_423, rimstone_copied_423)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Go back to application home directory:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_428' class=notranslate>
-change-dir home</pre>
-<span id=rimstone_copied_428 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_428' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_428, code_428, rimstone_copied_428)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_424' class=notranslate>
+<span class="Statement">change-dir</span><span class="Identifier"> home</span></pre>
+<span id=rimstone_copied_424 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_424' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_424, code_424, rimstone_copied_424)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Directories'></a><span style="font-weight:bold;">Directories</span><br/>

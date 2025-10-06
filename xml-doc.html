@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<!--__GOLF_REDIRECT__-->
+<!--__RIM_REDIRECT__-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
@@ -212,7 +212,7 @@ ul {
 <div id="google_translate_element" style='float:right'></div>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
-function gg_copy(gt, eid, gc) {
+function rim_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
   gt.select();
   document.execCommand("copy");
@@ -225,109 +225,109 @@ function googleTranslateElementInit() {
 
 </script>
 
-<!--GOLFMENU13-->
+<!--RIMMENU13-->
 
-<!--GOLFENDMENU13-->
+<!--RIMENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Xml doc</div><hr/><span style="font-weight:bold;">Purpose</span>: Parse XML text.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Xml doc</div><hr/><span style="font-weight:bold;">Purpose</span>: Parse XML text.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1157' class=notranslate>
-xml-doc &lt;text&gt; to &lt;xml&gt; \
-    [ status &lt;status&gt; ] [ length &lt;length&gt; ] \
-    [ error-text &lt;error text&gt; ] \
-        [ error-line &lt;line&gt; ] \
-        [ error-char &lt;char&gt; ]
+<pre id='code_1160' class=notranslate>
+<span class="Statement">xml-doc</span> &lt;text&gt;<span class="Type"> to</span> &lt;xml&gt; \
+    [<span class="Type"> status</span> &lt;status&gt; ] [<span class="Identifier"> length</span> &lt;length&gt; ] \
+    [<span class="Type"> error-text</span> &lt;error text&gt; ] \
+        [<span class="Type"> error-line</span> &lt;line&gt; ] \
+        [<span class="Type"> error-char</span> &lt;<span class="Type">char</span>&gt; ]
 
-xml-doc delete &lt;xml&gt;</pre>
-<span id=rimstone_copied_1157 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1157' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_1157, code_1157, rimstone_copied_1157)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span class="Statement">xml-doc</span><span class="Identifier"> delete</span> &lt;xml&gt;</pre>
+<span id=rimstone_copied_1160 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1160' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1160, code_1160, rimstone_copied_1160)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 xml-doc will parse XML &lt;text&gt; into &lt;xml&gt; variable, which can be used with <a href='https://rimstone-lang.com/read-xml.html'>read-xml</a> to get the data.<br/>
 <br/>
 The length of &lt;text&gt; may be specified with "length" clause in &lt;length&gt; variable, or if not, it will be the string length of &lt;text&gt;.<br/>
 <br/>
-The "status" clause specifies the return &lt;status&gt; number, which is GG_OKAY if successful or GG_ERR_XML if there is an error in parsing, in which case &lt;error text&gt; in "error-text" clause is the error message. You can also obtain the error's line number (with number &lt;line&gt; in clause "error-line") and the character position within that line (with number &lt;char&gt; in clause "error-char").<br/>
+The "status" clause specifies the return &lt;status&gt; number, which is RIM_OKAY if successful or RIM_ERR_XML if there is an error in parsing, in which case &lt;error text&gt; in "error-text" clause is the error message. You can also obtain the error's line number (with number &lt;line&gt; in clause "error-line") and the character position within that line (with number &lt;char&gt; in clause "error-char").<br/>
 <br/>
 The maximum depth of nested elements in XML document is 32, and the maximum length of a normalized element name is 500 (see <a href='https://rimstone-lang.com/read-xml.html'>read-xml</a> for more on normalized names). <br/>
 <br/>
 An XML element that is comprised of multiple anonymous sub-elements is presented as a concatenated single element; this is likely how most applications expect to see such data. All data is trimmed for whitespace on left and right.<br/>
 <br/>
-Golf uses libxml2 library for XML parsing.<br/>
+RimStone uses libxml2 library for XML parsing.<br/>
 <div class="vsub"><a id="Deleting"></a>Deleting</div>
 To delete an XML variable, use "delete" clause with the &lt;xml&gt;. This will delete all memory associated with it, and the variable &lt;xml&gt; itself.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Parse the following XML document and display all element names and values from it. You can use them as they come along, or store them into <a href='https://rimstone-lang.com/new-hash.html'>new-hash</a> or <a href='https://rimstone-lang.com/new-tree.html'>new-tree</a> for instance for searching of large documents. This also demonstrates usage of UTF characters:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1158' class=notranslate>
-%% /xml public
-    set-string xmld unquoted =&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;\
+<pre id='code_1161' class=notranslate>
+<span class="Statement">%%</span> /xml<span class="Identifier"> public</span>
+<span class="Statement">    set-string</span> xmld<span class="Identifier"> unquoted</span> =&lt;?xml version=<span class="Constant">&quot;1.0&quot;</span> encoding=<span class="Constant">&quot;UTF-8&quot;</span>?&gt;\
 &lt;countries&gt;\
-    &lt;country id='1'&gt;\
+    &lt;country id='<span class="Constant">1</span>'&gt;\
         &lt;name&gt;USA&amp;amp;America&lt;/name&gt;\
-        &lt;state id='1'&gt;Arizona\
-            &lt;city id=&quot;1&quot;&gt;\
+        &lt;state id='<span class="Constant">1</span>'&gt;Arizona\
+            &lt;city id=<span class="Constant">&quot;1&quot;</span>&gt;\
                 &lt;name&gt;Phoenix&lt;/name&gt;\
-                &lt;population&gt;5000000&lt;/population&gt;\
+                &lt;population&gt;<span class="Constant">5000000</span>&lt;/population&gt;\
             &lt;/city&gt;\
-            &lt;city id=&quot;2&quot;&gt;\
+            &lt;city id=<span class="Constant">&quot;2&quot;</span>&gt;\
                 &lt;name&gt;Tuscon&lt;/name&gt;\
-                &lt;population&gt;1000000&lt;/population&gt;\
+                &lt;population&gt;<span class="Constant">1000000</span>&lt;/population&gt;\
             &lt;/city&gt;\
         &lt;/state&gt;\
-        &lt;state id='2'&gt;California\
-            &lt;city id=&quot;1&quot;&gt;\
+        &lt;state id='<span class="Constant">2</span>'&gt;California\
+            &lt;city id=<span class="Constant">&quot;1&quot;</span>&gt;\
                 &lt;name&gt;Los Angeles&lt;/name&gt;\
-                &lt;population&gt;19000000&lt;/population&gt;\
+                &lt;population&gt;<span class="Constant">19000000</span>&lt;/population&gt;\
             &lt;/city&gt;\
-            &lt;city id=&quot;2&quot;&gt;\
+            &lt;city id=<span class="Constant">&quot;2&quot;</span>&gt;\
                 &lt;name&gt;Irvine&lt;/name&gt;\
             &lt;/city&gt;\
         &lt;/state&gt;\
     &lt;/country&gt;\
-    &lt;country id='2'&gt;\
+    &lt;country id='<span class="Constant">2</span>'&gt;\
         &lt;name&gt;Mexico&lt;/name&gt;\
-        &lt;state id='1'&gt;Veracruz\
-            &lt;city id=&quot;1&quot;&gt;\
+        &lt;state id='<span class="Constant">1</span>'&gt;Veracruz\
+            &lt;city id=<span class="Constant">&quot;1&quot;</span>&gt;\
                 &lt;name&gt;Xalapa-Enriquez&lt;/name&gt;\
-                &lt;population&gt;8000000&lt;/population&gt;\
+                &lt;population&gt;<span class="Constant">8000000</span>&lt;/population&gt;\
             &lt;/city&gt;\
-            &lt;city id=&quot;2&quot;&gt;\
+            &lt;city id=<span class="Constant">&quot;2&quot;</span>&gt;\
                 &lt;name&gt;C\u00F3rdoba&lt;/name&gt;\
-                &lt;population&gt;220000&lt;/population&gt;\
+                &lt;population&gt;<span class="Constant">220000</span>&lt;/population&gt;\
             &lt;/city&gt;\
         &lt;/state&gt;\
-        &lt;state id='2'&gt;Sinaloa\
-            &lt;city id=&quot;1&quot;&gt;\
+        &lt;state id='<span class="Constant">2</span>'&gt;Sinaloa\
+            &lt;city id=<span class="Constant">&quot;1&quot;</span>&gt;\
                 &lt;name&gt;Culiac\u00E1n Rosales&lt;/name&gt;\
-                &lt;population&gt;3000000&lt;/population&gt;\
+                &lt;population&gt;<span class="Constant">3000000</span>&lt;/population&gt;\
             &lt;/city&gt;\
         &lt;/state&gt;\
     &lt;/country&gt;\
 &lt;/countries&gt;
 
-    xml-doc xmld to x
-    start-loop
-        read-xml x key k value v status s next
-        if-true s equal GG_ERR_EXIST
-            break-loop
-        end-if
-        text-utf v
-        @Key [&lt;&lt;print-out k&gt;&gt;] Value [&lt;&lt;print-out v&gt;&gt;]
-    end-loop
-    xml-doc delete x
-%%</pre>
-<span id=rimstone_copied_1158 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1158' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_1158, code_1158, rimstone_copied_1158)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span class="Statement">    xml-doc</span> xmld<span class="Type"> to</span> x
+<span class="Statement">    start-loop</span>
+<span class="Statement">        read-xml</span> x<span class="Type"> key</span> k<span class="Type"> value</span> v<span class="Type"> status</span> s<span class="Identifier"> next</span>
+<span class="Statement">        if-true</span> s<span class="Identifier"> equal</span> RIM_ERR_EXIST
+<span class="Statement">            break-loop</span>
+<span class="Statement">        end-if</span>
+<span class="Statement">        text-utf</span> v
+<span class="Statement">        @</span>Key [<span class="Statement">&lt;&lt;print-out</span> k<span class="Statement">&gt;&gt;</span>] Value [<span class="Statement">&lt;&lt;print-out</span> v<span class="Statement">&gt;&gt;</span>]
+<span class="Statement">    end-loop</span>
+<span class="Statement">    xml-doc</span><span class="Identifier"> delete</span> x
+<span class="Statement">%%</span></pre>
+<span id=rimstone_copied_1161 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1161' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1161, code_1161, rimstone_copied_1161)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The output would be:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_1156' class=notranslate>
+<pre id='code_1159' class=notranslate>
 Key [countries/country/id/@] Value [1]
 Key [countries/country/name/] Value [USA&amp;America]
 Key [countries/country/state/id/@] Value [1]
@@ -360,9 +360,9 @@ Key [countries/country/state/city/id/@] Value [1]
 Key [countries/country/state/city/name/] Value [Culiacán Rosales]
 Key [countries/country/state/city/population/] Value [3000000]
 Key [countries/country/state/] Value [Sinaloa]</pre>
-<span id=rimstone_copied_1156 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1156' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_1156, code_1156, rimstone_copied_1156)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1159 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1159' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1159, code_1159, rimstone_copied_1159)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='XML parsing'></a><span style="font-weight:bold;">XML parsing</span><br/>

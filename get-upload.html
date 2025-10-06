@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<!--__GOLF_REDIRECT__-->
+<!--__RIM_REDIRECT__-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
@@ -212,7 +212,7 @@ ul {
 <div id="google_translate_element" style='float:right'></div>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
-function gg_copy(gt, eid, gc) {
+function rim_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
   gt.select();
   document.execCommand("copy");
@@ -225,29 +225,29 @@ function googleTranslateElementInit() {
 
 </script>
 
-<!--GOLFMENU13-->
+<!--RIMMENU13-->
 
-<!--GOLFENDMENU13-->
+<!--RIMENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Get upload</div><hr/><span style="font-weight:bold;">Purpose</span>: Get information about file uploaded.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Get upload</div><hr/><span style="font-weight:bold;">Purpose</span>: Get information about file uploaded.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_682' class=notranslate>
-get-upload &lt;param&gt; local-file &lt;local file&gt;  \
-    [ size &lt;size&gt; ] \
-    [ extension &lt;extension&gt; ] \
-    [ status &lt;status&gt; ] \
-    [ client-file &lt;client file&gt; ]</pre>
-<span id=rimstone_copied_682 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_682' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_682, code_682, rimstone_copied_682)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_678' class=notranslate>
+<span class="Statement">get-upload</span> &lt;param&gt;<span class="Type"> local-file</span> &lt;local file&gt;  \
+    [<span class="Type"> size</span> &lt;size&gt; ] \
+    [<span class="Type"> extension</span> &lt;extension&gt; ] \
+    [<span class="Identifier"> status</span> &lt;status&gt; ] \
+    [<span class="Type"> client-file</span> &lt;client file&gt; ]</pre>
+<span id=rimstone_copied_678 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_678' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_678, code_678, rimstone_copied_678)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-When a file is uploaded by Golf via any client (such as a browser, curl, <a href='https://rimstone-lang.com/call-web.html'>call-web</a> etc.), you can obtain the full-path location in your local file system by using get-upload.<br/>
+When a file is uploaded by RimStone via any client (such as a browser, curl, <a href='https://rimstone-lang.com/call-web.html'>call-web</a> etc.), you can obtain the full-path location in your local file system by using get-upload.<br/>
 <br/>
-&lt;param&gt; is the name of the HTML parameter (in an HTML form used to upload the file, or otherwise specified in other clients such as curl or Golf's call-web).<br/>
+&lt;param&gt; is the name of the HTML parameter (in an HTML form used to upload the file, or otherwise specified in other clients such as curl or RimStone's call-web).<br/>
 <br/>
 &lt;local file&gt; (in "local-file" clause) is the full-path location of the local file (on your computer) where the file is uploaded (see <a href='https://rimstone-lang.com/file-storage.html'>file-storage</a>).<br/>
 <br/>
@@ -255,7 +255,7 @@ When a file is uploaded by Golf via any client (such as a browser, curl, <a href
 <br/>
 &lt;extension&gt; (in "extension" clause) is the extension of the file uploaded (such as ".jpg"), if any. Note that the extension is always lower case; also ".jpeg" is always abbreviated as ".jpg".<br/>
 <br/>
-&lt;status&gt; (in "status" clause) is the status of upload; it is GG_OKAY if successful and GG_ERR_EXIST if not (most likely &lt;param&gt; parameter is not found, i.e. there was no file uploaded).<br/>
+&lt;status&gt; (in "status" clause) is the status of upload; it is RIM_OKAY if successful and RIM_ERR_EXIST if not (most likely &lt;param&gt; parameter is not found, i.e. there was no file uploaded).<br/>
 <br/>
 &lt;client file&gt; (in "client-file" clause) is the file name as given by the client.<br/>
 <br/>

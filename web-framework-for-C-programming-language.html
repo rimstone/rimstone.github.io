@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<!--__GOLF_REDIRECT__-->
+<!--__RIM_REDIRECT__-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
@@ -212,7 +212,7 @@ ul {
 <div id="google_translate_element" style='float:right'></div>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
-function gg_copy(gt, eid, gc) {
+function rim_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
   gt.select();
   document.execCommand("copy");
@@ -225,33 +225,33 @@ function googleTranslateElementInit() {
 
 </script>
 
-<!--GOLFMENU13-->
+<!--RIMMENU13-->
 
-<!--GOLFENDMENU13-->
+<!--RIMENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Web framework for C programming language</div><hr/><div class="vsub"><a id="Golf as a web framework for C programming language"></a>Golf as a web framework for C programming language</div>
-Golf source code translates to C before compilation; as a result, Golf offers the ability to include C code directly in extended mode (via <a href='https://rimstone-lang.com/call-extended.html'>call-extended</a> statement and <a href='https://rimstone-lang.com/Server-API.html'>Server-API</a>) which means Golf is also an effective framework for C programming language.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Web framework for C programming language</div><hr/><div class="vsub"><a id="RimStone as a web framework for C programming language"></a>RimStone as a web framework for C programming language</div>
+RimStone source code translates to C before compilation; as a result, RimStone offers the ability to include C code directly in extended mode (via <a href='https://rimstone-lang.com/call-extended.html'>call-extended</a> statement and <a href='https://rimstone-lang.com/Server-API.html'>Server-API</a>) which means RimStone is also an effective framework for C programming language.<br/>
 <br/>
-Golf offers simple statements to perform complex common tasks, as well as memory safety. The C code that you'd include via call-extended statement may or may not be memory safe; thus once your application is in extended mode (see <a href='https://rimstone-lang.com/extended-mode.html'>extended-mode</a>), your application may no longer be memory safe.<br/>
+RimStone offers simple statements to perform complex common tasks, as well as memory safety. The C code that you'd include via call-extended statement may or may not be memory safe; thus once your application is in extended mode (see <a href='https://rimstone-lang.com/extended-mode.html'>extended-mode</a>), your application may no longer be memory safe.<br/>
 <br/>
-To make sure a Golf application is memory safe, simply search for extended-mode statement from the root source directory:<br/>
+To make sure a RimStone application is memory safe, simply search for extended-mode statement from the root source directory:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_1100' class=notranslate>
-<span class="Statement">find</span><span class="Statement"> . </span>-name <span class="Statement">&quot;</span><span class="Constant">*.golf</span><span class="Statement">&quot;</span> <span class="Special">-print</span> <span class="Special">-exec</span> <span class="Statement">grep</span> <span class="Special">-l</span> <span class="Statement">'</span><span class="Constant">^\s*extended\-mode</span><span class="Statement">'</span> <span class="Special">{}</span> \;</pre>
-<span id=rimstone_copied_1100 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1100' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_1100, code_1100, rimstone_copied_1100)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_1102' class=notranslate>
+<span class="Statement">find</span><span class="Statement"> . </span>-name <span class="Statement">&quot;</span><span class="Constant">*.rim</span><span class="Statement">&quot;</span> <span class="Special">-print</span> <span class="Special">-exec</span> <span class="Statement">grep</span> <span class="Special">-l</span> <span class="Statement">'</span><span class="Constant">^\s*extended\-mode</span><span class="Statement">'</span> <span class="Special">{}</span> \;</pre>
+<span id=rimstone_copied_1102 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1102' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1102, code_1102, rimstone_copied_1102)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 If no matches are found, the application is memory safe.<br/>
 <br/>
-However, for applications that are written in C (for performance, access to hardware or OS features, or for any other reason), Golf offers a framework that can offload many tasks from your project, while you write C code where it's needed or necessary.<br/>
+However, for applications that are written in C (for performance, access to hardware or OS features, or for any other reason), RimStone offers a framework that can offload many tasks from your project, while you write C code where it's needed or necessary.<br/>
 <br/>
-The benefit is that the part of your application written in Golf (which may be a vast majority of it) offers memory safety, ease of development and maintenance, server facilities and lots of functionality. Your Golf code would call your C code when needed, thus accomplishing the functionality and goals you set out to do.<br/>
+The benefit is that the part of your application written in RimStone (which may be a vast majority of it) offers memory safety, ease of development and maintenance, server facilities and lots of functionality. Your RimStone code would call your C code when needed, thus accomplishing the functionality and goals you set out to do.<br/>
 <br/>
-Just as a note of technicality, when used in extended mode, Golf is considered a framework and not a library, because Golf code will call your C code (and not the other way around).<br/>
+Just as a note of technicality, when used in extended mode, RimStone is considered a framework and not a library, because RimStone code will call your C code (and not the other way around).<br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='C language'></a><span style="font-weight:bold;">C language</span><br/>
 <a href='https://rimstone-lang.com/call-extended.html'>call-extended</a> &nbsp;<br/>

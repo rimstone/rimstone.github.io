@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<!--__GOLF_REDIRECT__-->
+<!--__RIM_REDIRECT__-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
@@ -212,7 +212,7 @@ ul {
 <div id="google_translate_element" style='float:right'></div>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
-function gg_copy(gt, eid, gc) {
+function rim_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
   gt.select();
   document.execCommand("copy");
@@ -225,26 +225,26 @@ function googleTranslateElementInit() {
 
 </script>
 
-<!--GOLFMENU13-->
+<!--RIMMENU13-->
 
-<!--GOLFENDMENU13-->
+<!--RIMENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>File storage</div><hr/>Golf provides a file directory that you can use for any general purpose, including for storing <a href='https://rimstone-lang.com/temporary-file.html'>temporary-file</a>s. This directory is also used for automatic upload of files from clients. It provides a two-tier directory system, with sub-directories automatically created to spread the files for faster access.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>File storage</div><hr/>RimStone provides a file directory that you can use for any general purpose, including for storing <a href='https://rimstone-lang.com/temporary-file.html'>temporary-file</a>s. This directory is also used for automatic upload of files from clients. It provides a two-tier directory system, with sub-directories automatically created to spread the files for faster access.<br/>
 <br/>
-Files in Golf file directory are located in the sub-directories of:<br/>
+Files in RimStone file directory are located in the sub-directories of:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_633' class=notranslate>
-$HOME/.golf/&lt;app-name&gt;/app/file</pre>
-<span id=rimstone_copied_633 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_633' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_633, code_633, rimstone_copied_633)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_629' class=notranslate>
+$HOME/.rimstone/apps/&lt;app-name&gt;/file</pre>
+<span id=rimstone_copied_629 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_629' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_629, code_629, rimstone_copied_629)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-If you wish to place this directory in another physical location, see <a href='https://rimstone-lang.com/gg.html'>gg</a>.<br/>
+If you wish to place this directory in another physical location, see <a href='https://rimstone-lang.com/rim.html'>rim</a>.<br/>
 <br/>
-You can create files here by means of <a href='https://rimstone-lang.com/uniq-file.html'>uniq-file</a>, where a new unique file is created - with the file name made available to you. This directory is also used for uploading of files from clients (such as web browsers or mobile device cameras) - the uploading is handled automatically by Golf (see <a href='https://rimstone-lang.com/get-param.html'>get-param</a>).<br/>
+You can create files here by means of <a href='https://rimstone-lang.com/uniq-file.html'>uniq-file</a>, where a new unique file is created - with the file name made available to you. This directory is also used for uploading of files from clients (such as web browsers or mobile device cameras) - the uploading is handled automatically by RimStone (see <a href='https://rimstone-lang.com/get-param.html'>get-param</a>).<br/>
 <br/>
 In general, a number of sub-directories is created within the file directory that contain files, which allows for billions of files to be kept. This scheme also allows for faster access to file nodes due to relatively low number of sub-directories and files randomly spread per each such sub-directory. The random spreading of files across subdirectories is done automatically.<br/>
 <br/>

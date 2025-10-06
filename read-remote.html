@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<!--__GOLF_REDIRECT__-->
+<!--__RIM_REDIRECT__-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
@@ -212,7 +212,7 @@ ul {
 <div id="google_translate_element" style='float:right'></div>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
-function gg_copy(gt, eid, gc) {
+function rim_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
   gt.select();
   document.execCommand("copy");
@@ -225,26 +225,26 @@ function googleTranslateElementInit() {
 
 </script>
 
-<!--GOLFMENU13-->
+<!--RIMMENU13-->
 
-<!--GOLFENDMENU13-->
+<!--RIMENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Read remote</div><hr/><span style="font-weight:bold;">Purpose</span>: Get results of a service call.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Read remote</div><hr/><span style="font-weight:bold;">Purpose</span>: Get results of a service call.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_916' class=notranslate>
-read-remote &lt;service&gt; \
-    [ data &lt;data&gt; ] \
-    [ error &lt;error&gt; ] \
-    [ status &lt;status&gt; ] \
-    [ status-text &lt;status text&gt; ] \
-    [ exit-status &lt;service status&gt; ]</pre>
-<span id=rimstone_copied_916 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_916' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_916, code_916, rimstone_copied_916)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_906' class=notranslate>
+<span class="Statement">read-remote</span> &lt;service&gt; \
+    [<span class="Identifier"> data</span> &lt;data&gt; ] \
+    [<span class="Identifier"> error</span> &lt;error&gt; ] \
+    [<span class="Identifier"> status</span> &lt;status&gt; ] \
+    [<span class="Identifier"> status-text</span> &lt;status text&gt; ] \
+    [<span class="Identifier"> exit-status</span> &lt;service status&gt; ]</pre>
+<span id=rimstone_copied_906 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_906' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_906, code_906, rimstone_copied_906)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Use read-remote to get the results of <a href='https://rimstone-lang.com/call-remote.html'>call-remote</a> created in <a href='https://rimstone-lang.com/new-remote.html'>new-remote</a>; the same &lt;service&gt; must be used in all.<br/>
 <br/>
@@ -255,23 +255,23 @@ The service reply is split in two. One part is the actual result of processing (
 <br/>
 <span style="font-weight:bold;">- Getting status of a service call</span><br/>
 The status of a service call (as a number) can be obtained in &lt;status&gt; (in "status" clause). This is the protocol status, and it may be:<br/>
-<ul><li>GG_OKAY if request succeeded,<br/>
-</li><li>GG_CLI_ERR_RESOLVE_ADDR if host name for TCP connection cannot be resolved,<br/>
-</li><li>GG_CLI_ERR_PATH_TOO_LONG if path name of Unix socket is too long,<br/>
-</li><li>GG_CLI_ERR_SOCKET if cannot create a socket (for instance they are exhausted for the process or system),<br/>
-</li><li>GG_CLI_ERR_CONNECT if cannot connect to server (TCP or Unix alike),<br/>
-</li><li>GG_CLI_ERR_SOCK_WRITE if cannot write data to server (for instance if server has encountered an error or is down, or if network connection is no longer available),<br/>
-</li><li>GG_CLI_ERR_SOCK_READ if cannot read data from server (for instance if server has encountered an error or is down, or if network connection is no longer available),<br/>
-</li><li>GG_CLI_ERR_PROT_ERR if there is a protocol error, which indicates a protocol issue on either or both sides,<br/>
-</li><li>GG_CLI_ERR_BAD_VER if either side does not support protocol used by the other,<br/>
-</li><li>GG_CLI_ERR_SRV if server cannot complete the request,<br/>
-</li><li>GG_CLI_ERR_UNK if server does not recognize record types used by the client,<br/>
-</li><li>GG_CLI_ERR_OUT_MEM if client is out of memory,<br/>
-</li><li>GG_CLI_ERR_ENV_TOO_LONG if the combined length of all environment variables is too long,<br/>
-</li><li>GG_CLI_ERR_ENV_ODD if the number of supplied environment name/value pairs is incorrect,<br/>
-</li><li>GG_CLI_ERR_BAD_TIMEOUT if the value for timeout is incorrect,<br/>
-</li><li>GG_CLI_ERR_TIMEOUT if the request timed out based on "timeout" parameter or otherwise if the underlying Operating System libraries declared their own timeout.</li></ul>
-You can also obtain the status text in &lt;status text&gt; (in "status-text" clause); this is a human readable status message which is am empty string (i.e. "") if there is no error (meaning if &lt;status&gt; is GG_OKAY).<br/>
+<ul><li>RIM_OKAY if request succeeded,<br/>
+</li><li>RIM_CLI_ERR_RESOLVE_ADDR if host name for TCP connection cannot be resolved,<br/>
+</li><li>RIM_CLI_ERR_PATH_TOO_LONG if path name of Unix socket is too long,<br/>
+</li><li>RIM_CLI_ERR_SOCKET if cannot create a socket (for instance they are exhausted for the process or system),<br/>
+</li><li>RIM_CLI_ERR_CONNECT if cannot connect to server (TCP or Unix alike),<br/>
+</li><li>RIM_CLI_ERR_SOCK_WRITE if cannot write data to server (for instance if server has encountered an error or is down, or if network connection is no longer available),<br/>
+</li><li>RIM_CLI_ERR_SOCK_READ if cannot read data from server (for instance if server has encountered an error or is down, or if network connection is no longer available),<br/>
+</li><li>RIM_CLI_ERR_PROT_ERR if there is a protocol error, which indicates a protocol issue on either or both sides,<br/>
+</li><li>RIM_CLI_ERR_BAD_VER if either side does not support protocol used by the other,<br/>
+</li><li>RIM_CLI_ERR_SRV if server cannot complete the request,<br/>
+</li><li>RIM_CLI_ERR_UNK if server does not recognize record types used by the client,<br/>
+</li><li>RIM_CLI_ERR_OUT_MEM if client is out of memory,<br/>
+</li><li>RIM_CLI_ERR_ENV_TOO_LONG if the combined length of all environment variables is too long,<br/>
+</li><li>RIM_CLI_ERR_ENV_ODD if the number of supplied environment name/value pairs is incorrect,<br/>
+</li><li>RIM_CLI_ERR_BAD_TIMEOUT if the value for timeout is incorrect,<br/>
+</li><li>RIM_CLI_ERR_TIMEOUT if the request timed out based on "timeout" parameter or otherwise if the underlying Operating System libraries declared their own timeout.</li></ul>
+You can also obtain the status text in &lt;status text&gt; (in "status-text" clause); this is a human readable status message which is am empty string (i.e. "") if there is no error (meaning if &lt;status&gt; is RIM_OKAY).<br/>
 <br/>
 <span style="font-weight:bold;">- Getting service status</span><br/>
 &lt;service status&gt; (in "exit-status" clause) is the return status (as a number) of the code executing a remote service handler; it is conceptually similar to a return value from a function (as a number). The particular service handler you are calling may or may not return the status; if it does, its return status can be sent back via <a href='https://rimstone-lang.com/exit-status.html'>exit-status</a> and/or <a href='https://rimstone-lang.com/exit-handler.html'>exit-handler</a> statement.<br/>

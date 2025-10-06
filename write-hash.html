@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<!--__GOLF_REDIRECT__-->
+<!--__RIM_REDIRECT__-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
@@ -212,7 +212,7 @@ ul {
 <div id="google_translate_element" style='float:right'></div>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
-function gg_copy(gt, eid, gc) {
+function rim_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
   gt.select();
   document.execCommand("copy");
@@ -225,122 +225,122 @@ function googleTranslateElementInit() {
 
 </script>
 
-<!--GOLFMENU13-->
+<!--RIMMENU13-->
 
-<!--GOLFENDMENU13-->
+<!--RIMENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Write hash</div><hr/><span style="font-weight:bold;">Purpose</span>: Store key/value pair into a hash.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Write hash</div><hr/><span style="font-weight:bold;">Purpose</span>: Store key/value pair into a hash.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1114' class=notranslate>
-write-hash &lt;hash&gt; \
-    key &lt;key&gt; \
-    value &lt;value&gt; \
-    [ status &lt;status&gt; ] \
-    [ old-value &lt;old value&gt; ]</pre>
-<span id=rimstone_copied_1114 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1114' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_1114, code_1114, rimstone_copied_1114)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_1116' class=notranslate>
+<span class="Statement">write-hash</span> &lt;hash&gt; \
+   <span class="Identifier"> key</span> &lt;key&gt; \
+   <span class="Identifier"> value</span> &lt;value&gt; \
+    [<span class="Type"> status</span> &lt;status&gt; ] \
+    [<span class="Type"> old-value</span> &lt;old value&gt; ]</pre>
+<span id=rimstone_copied_1116 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1116' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1116, code_1116, rimstone_copied_1116)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 write-hash will store string &lt;key&gt; (in "key" clause) and &lt;value&gt; (in "value" clause) into &lt;hash&gt;, which must be created with <a href='https://rimstone-lang.com/new-hash.html'>new-hash</a>. <br/>
 <br/>
 &lt;key&gt; and &lt;value&gt; are collectively called an "element". <br/>
 <br/>
-If &lt;key&gt; already exists in the hash, then the old value associated with it is returned in string &lt;old value&gt; (in "old-value" clause) and &lt;value&gt; will replace the old value - in this case &lt;status&gt; number (in "status" clause) has a value of GG_INFO_EXIST. <br/>
+If &lt;key&gt; already exists in the hash, then the old value associated with it is returned in string &lt;old value&gt; (in "old-value" clause) and &lt;value&gt; will replace the old value - in this case &lt;status&gt; number (in "status" clause) has a value of RIM_INFO_EXIST. <br/>
 <br/>
-If &lt;key&gt; did not exist, &lt;status&gt; will be GG_OKAY and &lt;old value&gt; is unchanged.<br/>
+If &lt;key&gt; did not exist, &lt;status&gt; will be RIM_OKAY and &lt;old value&gt; is unchanged.<br/>
 <br/>
 If a &lt;hash&gt; was created with "process-scope" clause (see <a href='https://rimstone-lang.com/new-hash.html'>new-hash</a>), then the element (including &lt;key&gt; and &lt;value&gt;) will not be freed when the current request ends, rather it will persist while the process runs, unless deleted (see <a href='https://rimstone-lang.com/read-hash.html'>read-hash</a> with delete clause).<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Writing data to a hash:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1116' class=notranslate>
-new-hash h
-write-hash h key &quot;mykey&quot; value &quot;some data&quot;</pre>
-<span id=rimstone_copied_1116 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1116' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_1116, code_1116, rimstone_copied_1116)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_1118' class=notranslate>
+<span class="Statement">new-hash</span> h
+<span class="Statement">write-hash</span> h<span class="Identifier"> key</span> <span class="Constant">&quot;mykey&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;some data&quot;</span></pre>
+<span id=rimstone_copied_1118 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1118' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1118, code_1118, rimstone_copied_1118)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Writing new value with the same key and obtaining the previous value (which is "some data"):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1118' class=notranslate>
-write-hash h key &quot;mykey&quot; value &quot;new data&quot; status st old-value od
-if-true st equal GG_INFO_EXIST
-    @Previous value for this key is &lt;&lt;print-out od&gt;&gt;
-end-if</pre>
-<span id=rimstone_copied_1118 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1118' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_1118, code_1118, rimstone_copied_1118)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_1120' class=notranslate>
+<span class="Statement">write-hash</span> h<span class="Identifier"> key</span> <span class="Constant">&quot;mykey&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;new data&quot;</span><span class="Type"> status</span> st<span class="Type"> old-value</span> od
+<span class="Statement">if-true</span> st<span class="Identifier"> equal</span> RIM_INFO_EXIST
+<span class="Statement">    @</span>Previous value for this key is <span class="Statement">&lt;&lt;print-out</span> od<span class="Statement">&gt;&gt;</span>
+<span class="Statement">end-if</span></pre>
+<span id=rimstone_copied_1120 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1120' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1120, code_1120, rimstone_copied_1120)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-The following is a key/value service, where a process-scoped hash is created. It provides inserting, deleting and querying key/value pairs. Such a service process can run indefinitely. Create file keysrv.golf:<br/>
+The following is a key/value service, where a process-scoped hash is created. It provides inserting, deleting and querying key/value pairs. Such a service process can run indefinitely. Create file keysrv.rim:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1119' class=notranslate>
-%% /keysrv public
-    do-once
-    new-hash h hash-size 1024 process-scope
-    end-do-once
+<pre id='code_1121' class=notranslate>
+<span class="Statement">%%</span> /keysrv<span class="Identifier"> public</span>
+<span class="Statement">    do-once</span>
+<span class="Statement">    new-hash</span> h<span class="Identifier"> hash-size</span> <span class="Constant">1024</span><span class="Identifier"> process-scope</span>
+<span class="Statement">    end-do-once</span>
 
-    // Get input parameters
-    get-param op
-    get-param key
-    get-param data
+    <span class="Comment">// Get input parameters</span>
+<span class="Statement">    get-param</span> op
+<span class="Statement">    get-param</span> key
+<span class="Statement">    get-param</span> data<span class="Identifier"> default-value</span> <span class="Constant">&quot;&quot;</span>
 
-    if-true op equal &quot;add&quot; // Add data to hash
-        write-hash h key key value data old-value old_data status st
-        if-true st equal GG_INFO_EXIST
-            delete-string old_data
-        end-if
-        @Added [&lt;&lt;print-out key&gt;&gt;]
-    else-if op equal &quot;delete&quot; // Delete data and obtain the value deleted
-        read-hash h key (key) value val delete status st
-        if-true st equal GG_ERR_EXIST
-            @Not found [&lt;&lt;print-out key&gt;&gt;]
-        else-if
-            // If found, then delete key and value
-            @Deleted [&lt;&lt;print-out val&gt;&gt;]
-            delete-string val
-        end-if
-    else-if op equal &quot;query&quot; // Query hash based on key value
-        read-hash h key (key) value val status st
-        if-true st equal GG_ERR_EXIST
-            @Not found, queried [&lt;&lt;print-out key&gt;&gt;]
-        else-if
-            @Value [&lt;&lt;print-out val&gt;&gt;]
-        end-if
-    end-if
-%%</pre>
-<span id=rimstone_copied_1119 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1119' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_1119, code_1119, rimstone_copied_1119)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span class="Statement">    if-true</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;add&quot;</span> <span class="Comment">// Add data to hash </span>
+<span class="Statement">        write-hash</span> h<span class="Identifier"> key key value</span> data<span class="Type"> old-value</span> old_data<span class="Type"> status</span> st
+<span class="Statement">        if-true</span> st<span class="Identifier"> equal</span> RIM_INFO_EXIST
+<span class="Statement">            delete-string</span> old_data
+<span class="Statement">        end-if</span>
+<span class="Statement">        @</span>Added [<span class="Statement">&lt;&lt;print-out</span> key<span class="Statement">&gt;&gt;</span>]
+<span class="Statement">    else-if</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;delete&quot;</span> <span class="Comment">// Delete data and obtain the value deleted</span>
+<span class="Statement">        read-hash</span> h<span class="Type"> key</span> (key)<span class="Type"> value</span> val<span class="Identifier"> delete</span><span class="Type"> status</span> st
+<span class="Statement">        if-true</span> st<span class="Identifier"> equal</span> RIM_ERR_EXIST
+<span class="Statement">            @</span>Not found [<span class="Statement">&lt;&lt;print-out</span> key<span class="Statement">&gt;&gt;</span>]
+<span class="Statement">        else-if</span>
+            <span class="Comment">// If found, then delete key and value</span>
+<span class="Statement">            @</span>Deleted [<span class="Statement">&lt;&lt;print-out</span> val<span class="Statement">&gt;&gt;</span>]
+<span class="Statement">            delete-string</span> val
+<span class="Statement">        end-if</span>
+<span class="Statement">    else-if</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;query&quot;</span> <span class="Comment">// Query hash based on key value</span>
+<span class="Statement">        read-hash</span> h<span class="Type"> key</span> (key)<span class="Type"> value</span> val<span class="Type"> status</span> st
+<span class="Statement">        if-true</span> st<span class="Identifier"> equal</span> RIM_ERR_EXIST
+<span class="Statement">            @</span>Not found, queried [<span class="Statement">&lt;&lt;print-out</span> key<span class="Statement">&gt;&gt;</span>]
+<span class="Statement">        else-if</span>
+<span class="Statement">            @</span>Value [<span class="Statement">&lt;&lt;print-out</span> val<span class="Statement">&gt;&gt;</span>]
+<span class="Statement">        end-if</span>
+<span class="Statement">    end-if</span>
+<span class="Statement">%%</span></pre>
+<span id=rimstone_copied_1121 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1121' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1121, code_1121, rimstone_copied_1121)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Create and make the application, then run it as service:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_1115' class=notranslate>
-// Create application
-gg <span class="Special">-k</span> <span class="Statement">hash</span>
-// Make application
-gg <span class="Special">-q</span>
-// Start application <span class="PreProc">(</span><span class="Special">single process key service</span><span class="PreProc">)</span>
-mgrg <span class="Special">-w</span> <span class="Constant">1</span> <span class="Statement">hash</span></pre>
-<span id=rimstone_copied_1115 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1115' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_1115, code_1115, rimstone_copied_1115)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-Try it from a command line client (see <a href='https://rimstone-lang.com/gg.html'>gg</a>):<br/>
-<div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_1117' class=notranslate>
-// Add data
-gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/keysrv/op=add/key=15/data=15</span><span class="Statement">&quot;</span> <span class="Special">--service</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/hash</span><span class="Statement">&quot;</span> <span class="Special">--exec</span>
-// Query data
-gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/keysrv/op=query/key=15</span><span class="Statement">&quot;</span> <span class="Special">--service</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/hash</span><span class="Statement">&quot;</span> <span class="Special">--exec</span>
-// Delete data
-gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/keysrv/op=delete/key=15</span><span class="Statement">&quot;</span> <span class="Special">--service</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/hash</span><span class="Statement">&quot;</span> <span class="Special">--exec</span></pre>
+// Create application
+rim <span class="Special">-k</span> <span class="Statement">hash</span>
+// Make application
+rim <span class="Special">-q</span>
+// Start application <span class="PreProc">(</span><span class="Special">single process key service</span><span class="PreProc">)</span>
+mrim <span class="Special">-w</span> <span class="Constant">1</span> <span class="Statement">hash</span></pre>
 <span id=rimstone_copied_1117 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='rimstonet_1117' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_1117, code_1117, rimstone_copied_1117)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1117, code_1117, rimstone_copied_1117)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Try it from a command line client (see <a href='https://rimstone-lang.com/rim.html'>rim</a>):<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_1119' class=notranslate>
+// Add data
+rim <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/keysrv/op=add/key=15/data=15</span><span class="Statement">&quot;</span> <span class="Special">--service</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/hash</span><span class="Statement">&quot;</span> <span class="Special">--exec</span>
+// Query data
+rim <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/keysrv/op=query/key=15</span><span class="Statement">&quot;</span> <span class="Special">--service</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/hash</span><span class="Statement">&quot;</span> <span class="Special">--exec</span>
+// Delete data
+rim <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/keysrv/op=delete/key=15</span><span class="Statement">&quot;</span> <span class="Special">--service</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/hash</span><span class="Statement">&quot;</span> <span class="Special">--exec</span></pre>
+<span id=rimstone_copied_1119 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1119' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1119, code_1119, rimstone_copied_1119)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 See <a href='https://rimstone-lang.com/read-hash.html'>read-hash</a> for more examples.<br/>
 <div class="vsub"><a id="See also"></a>See also</div>

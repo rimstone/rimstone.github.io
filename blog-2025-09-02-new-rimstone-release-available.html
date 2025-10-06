@@ -2,16 +2,16 @@
 <html lang="en">
 
 <head>
-<!--__GOLF_REDIRECT__-->
+<!--__RIM_REDIRECT__-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 
-<title>Golf-3.2.2-released</title>
+<title>RimStone-3.2.0-released</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="canonical" href="https://rimstone-lang.com/blog-2025-09-06-new-golf-release.html" />
+<link rel="canonical" href="https://rimstone-lang.com/blog-2025-09-02-new-rimstone-release-available.html" />
 <style>
 
 
@@ -212,7 +212,7 @@ ul {
 <div id="google_translate_element" style='float:right'></div>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
-function gg_copy(gt, eid, gc) {
+function rim_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
   gt.select();
   document.execCommand("copy");
@@ -225,17 +225,18 @@ function googleTranslateElementInit() {
 
 </script>
 
-<!--GOLFMENU13-->
+<!--RIMMENU13-->
 
-<!--GOLFENDMENU13-->
+<!--RIMENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Golf-3.2.2-released</div><hr/><br/>
-<ul><li>Fixed a bug with MariaDB where error message text isn't available in error-text of run-query.<br/>
-</li><li>vim coloring and indentation setup is now done automatically during installation (no need for gg -m).<br/>
-</li><li>Better formatting of database error reporting, and better error message reporting for database queries errors.</li></ul>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>RimStone-3.2.0-released</div><hr/><br/>
+<ul><li>Added RimStone application packaging and installation. "-p" option to rim utility will package an application into a .tar.gz file which can be installed on another computer with "-a" option.<br/>
+</li><li>Development version of programs like mrim (process manager) can now be attached to with gdb without sudo privilege.<br/>
+</li><li>Fixed RimStone installation issue on debian-like distros where the installation of toolkit packages would hang.<br/>
+</li><li>Process manager (mrim) is now more reliable in situations with heavy load and many processes being started, stopped, as well as with manager quitting and restarting. Also, when starting many worker processes, they are pre-warmed for better performance right after startup.</li></ul>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>

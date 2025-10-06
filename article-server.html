@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<!--__GOLF_REDIRECT__-->
+<!--__RIM_REDIRECT__-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
@@ -212,7 +212,7 @@ ul {
 <div id="google_translate_element" style='float:right'></div>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
-function gg_copy(gt, eid, gc) {
+function rim_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
   gt.select();
   document.execCommand("copy");
@@ -225,15 +225,15 @@ function googleTranslateElementInit() {
 
 </script>
 
-<!--GOLFMENU13-->
+<!--RIMMENU13-->
 
-<!--GOLFENDMENU13-->
+<!--RIMENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>What is an application server</div><hr/><br/>
-Every Golf application is built as both an application server and a command-line program. You can use both, depending on what's the nature of your application. Some programs are meant to be used in scripts, or executed directly from command line. Others need to stay in memory and execute user requests as servers. The nice thing is that they both work the same, meaning you can run from command line anything that an application server does, and vice versa. This is also handy for testing; it makes writing tests for an application server much easier because you can run such tests in a plain bash script.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>What is an application server</div><hr/><br/>
+Every RimStone application is built as both an application server and a command-line program. You can use both, depending on what's the nature of your application. Some programs are meant to be used in scripts, or executed directly from command line. Others need to stay in memory and execute user requests as servers. The nice thing is that they both work the same, meaning you can run from command line anything that an application server does, and vice versa. This is also handy for testing; it makes writing tests for an application server much easier because you can run such tests in a plain bash script.<br/>
 <br/>
 What is an application server? It is a set of background resident processes. Each such process can be contacted via socket with a request, and it will provide a reply. An application server often sits behind a web server which accepts user requests, passes them to the application server, receives its reply and the passes this reply back to the user. This is a "reverse proxy" configuration. Note that this configuration, though typical, isn't a hard rule; end users can talk to an application server directly in some cases, such as on a secure local network.<br/>
 <br/>
@@ -241,9 +241,9 @@ A socket is always opened by an application server and it's listening for user r
 <br/>
 The socket used can be a Unix or TCP socket. Unix socket is the default one, and it works locally, meaning the caller and the application server must be on the same physical server. This is the most common scenario, and it's also the fastest method of delivering requests and replies. TCP sockets are used when the caller and the application server are on two separate machines - their performance depends on the bandwidth and especially the latency of network connection. A Unix socket is a kind of a special kernel file, while TCP socket is the the same kind of socket most network/internet programs use.<br/>
 <br/>
-Golf application server uses FastCGI protocol over TCP, a fast binary multiplexing protocol built for performance. It doesn't have any built-in security, and for the purpose it's used for it shouldn't have any. Essentially, standard input, output and error streams can be sent simultaneously (but retrieved separately). This makes for sturdier and more streamlined architecture because these are standard streams any program will understand. This protocol is widely supported by web languages and web servers (PHP, Apache, Nginx, HAProxy etc.).<br/>
+RimStone application server uses FastCGI protocol over TCP, a fast binary multiplexing protocol built for performance. It doesn't have any built-in security, and for the purpose it's used for it shouldn't have any. Essentially, standard input, output and error streams can be sent simultaneously (but retrieved separately). This makes for sturdier and more streamlined architecture because these are standard streams any program will understand. This protocol is widely supported by web languages and web servers (PHP, Apache, Nginx, HAProxy etc.).<br/>
 <br/>
-A Golf server process can serve an unlimited number of requests without having to be restarted and without having to spawn any new processes or threads - meaning lightening fast. Any number of such processes comprises the application server, which can then serve incoming requests truly in parallel. The number of server processes is typically determined by the number of available CPUs.<br/>
+A RimStone server process can serve an unlimited number of requests without having to be restarted and without having to spawn any new processes or threads - meaning lightening fast. Any number of such processes comprises the application server, which can then serve incoming requests truly in parallel. The number of server processes is typically determined by the number of available CPUs.<br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>

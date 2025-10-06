@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<!--__GOLF_REDIRECT__-->
+<!--__RIM_REDIRECT__-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
@@ -212,7 +212,7 @@ ul {
 <div id="google_translate_element" style='float:right'></div>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
-function gg_copy(gt, eid, gc) {
+function rim_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
   gt.select();
   document.execCommand("copy");
@@ -225,28 +225,28 @@ function googleTranslateElementInit() {
 
 </script>
 
-<!--GOLFMENU13-->
+<!--RIMMENU13-->
 
-<!--GOLFENDMENU13-->
+<!--RIMENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Memory handling</div><hr/>Golf is a memory-safe language. <br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Memory handling</div><hr/>RimStone is a memory-safe language. <br/>
 <br/>
 Your application cannot access memory outside of valid statement results. Trying to do so will result in your program <a href='https://rimstone-lang.com/error-handling.html'>erroring out</a>. <br/>
 <br/>
-Memory allocated by Golf statements is tracked and freed at the end of the request. <br/>
+Memory allocated by RimStone statements is tracked and freed at the end of the request. <br/>
 <br/>
-With Golf there is no need to free memory manually. Memory is automatically freed even if it is no longer accessible to the program, thus preventing memory leaks; this is important for stability of long-running processes. <br/>
+With RimStone there is no need to free memory manually. Memory is automatically freed even if it is no longer accessible to the program, thus preventing memory leaks; this is important for stability of long-running processes. <br/>
 <br/>
 Some statements (<a href='https://rimstone-lang.com/new-tree.html'>new-tree</a>, <a href='https://rimstone-lang.com/new-hash.html'>new-hash</a>, <a href='https://rimstone-lang.com/new-list.html'>new-list</a>, <a href='https://rimstone-lang.com/new-array.html'>new-array</a> and <a href='https://rimstone-lang.com/set-string.html'>set-string</a>) have the option of allocating memory that won't get freed at the end of the request and is available to any request served by the same process. This kind of memory is called "process-scoped". A process-scoped string can be manually freed.<br/>
 <br/>
-Golf handles memory references and assignments automatically, preventing dangling memory.<br/>
+RimStone handles memory references and assignments automatically, preventing dangling memory.<br/>
 <br/>
-String results of any Golf <a href='https://rimstone-lang.com/statements.html'>statements</a> will always create new memory, unless stated otherwise.<br/>
+String results of any RimStone <a href='https://rimstone-lang.com/statements.html'>statements</a> will always create new memory, unless stated otherwise.<br/>
 <div class="vsub"><a id="Open file descriptors"></a>Open file descriptors</div>
-Any files opened by <a href='https://rimstone-lang.com/open-file.html'>open-file</a> statement are automatically closed by Golf at the end of the request. This enhances stability of long-running server processes because Linux system by default offers only about 1000 open files to a process. A bug can quickly exhaust this pool and cause a malfunction or a crash - Golf prevents this by closing any such open files when the request ends. <br/>
+Any files opened by <a href='https://rimstone-lang.com/open-file.html'>open-file</a> statement are automatically closed by RimStone at the end of the request. This enhances stability of long-running server processes because Linux system by default offers only about 1000 open files to a process. A bug can quickly exhaust this pool and cause a malfunction or a crash - RimStone prevents this by closing any such open files when the request ends. <br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Memory'></a><span style="font-weight:bold;">Memory</span><br/>
 <a href='https://rimstone-lang.com/memory-handling.html'>memory-handling</a> &nbsp; <br/>

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<!--__GOLF_REDIRECT__-->
+<!--__RIM_REDIRECT__-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
@@ -212,7 +212,7 @@ ul {
 <div id="google_translate_element" style='float:right'></div>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
-function gg_copy(gt, eid, gc) {
+function rim_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
   gt.select();
   document.execCommand("copy");
@@ -225,55 +225,55 @@ function googleTranslateElementInit() {
 
 </script>
 
-<!--GOLFMENU13-->
+<!--RIMMENU13-->
 
-<!--GOLFENDMENU13-->
+<!--RIMENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Web services with MariaDB</div><hr/><br/>
-Create a directory for your project, it'll be where this example takes place. Also create Golf application "stock":<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Web services with MariaDB</div><hr/><br/>
+Create a directory for your project, it'll be where this example takes place. Also create RimStone application "stock":<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_174' class=notranslate>
+<pre id='code_172' class=notranslate>
 <span class="Statement">mkdir</span> <span class="Special">-p</span> stock-app
 <span class="Statement">cd</span> stock-app
-mgrg <span class="Special">-i</span> <span class="Special">-u</span> <span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span> stock</pre>
-<span id=rimstone_copied_174 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_174' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_174, code_174, rimstone_copied_174)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+rim <span class="Special">-k</span> stock</pre>
+<span id=rimstone_copied_172 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_172' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_172, code_172, rimstone_copied_172)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Start MariaDB command line interface:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_178' class=notranslate>
+<pre id='code_176' class=notranslate>
 sudo mysql</pre>
-<span id=rimstone_copied_178 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_178' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_178, code_178, rimstone_copied_178)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_176 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_176' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_176, code_176, rimstone_copied_176)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Create an application user, database and a stock table (with stock name and price):<br/>
 <div class='sqlcode' style='position:relative;padding-right:16px;'>
-<pre id='code_175' class=notranslate>
+<pre id='code_173' class=notranslate>
 <span class="Statement">create</span> <span class="Identifier">user</span> stock_user;
 <span class="Statement">create</span> database stock_db;
 <span class="Statement">grant</span> <span class="Statement">all</span> <span class="Special">privileges</span> <span class="Special">on</span> stock_db.* <span class="Special">to</span> stock_user@localhost <span class="Special">identified</span> <span class="Special">by</span> <span class="Special">'</span><span class="Constant">stock_pwd</span><span class="Special">'</span>;
 use stock_db
 <span class="Statement">create</span> <span class="Special">table</span> <span class="Special">if</span> <span class="Statement">not</span> <span class="Statement">exists</span> stock (stock_name <span class="Type">varchar</span>(<span class="Constant">100</span>) primary key, stock_price bigint);</pre>
-<span id=rimstone_copied_175 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_175' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_175, code_175, rimstone_copied_175)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_173 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_173' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_173, code_173, rimstone_copied_173)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Golf wants you to describe the database: the user name and password, database name, and the rest is the default setup for MariaDB database connection. So create a file "db_stock" (which is your database configuration file, one per each you use):<br/>
+RimStone wants you to describe the database: the user name and password, database name, and the rest is the default setup for MariaDB database connection. So create a file "db_stock" (which is your database configuration file, one per each you use):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_180' class=notranslate>
+<pre id='code_178' class=notranslate>
 vi db_stock</pre>
-<span id=rimstone_copied_180 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_180' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_180, code_180, rimstone_copied_180)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_178 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_178' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_178, code_178, rimstone_copied_178)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 and copy and paste this:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_172' class=notranslate>
+<pre id='code_170' class=notranslate>
 [client]
 user=stock_user
 password=stock_pwd
@@ -281,99 +281,99 @@ database=stock_db
 protocol=TCP
 host=127.0.0.1
 port=3306</pre>
-<span id=rimstone_copied_172 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_172' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_172, code_172, rimstone_copied_172)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_170 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_170' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_170, code_170, rimstone_copied_170)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Now to the code. Here's the web service to insert stock name and price into the stock table - create file "add-stock.golf":<br/>
+Now to the code. Here's the web service to insert stock name and price into the stock table - create file "add-stock.rim":<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_179' class=notranslate>
+vi add-stock.rim</pre>
+<span id=rimstone_copied_179 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_179' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_179, code_179, rimstone_copied_179)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+and copy and paste this:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_171' class=notranslate>
+<span class="Statement">%%</span> /add-stock<span class="Identifier"> public</span>
+<span class="Statement">    @</span>&lt;html&gt;
+<span class="Statement">        @</span>&lt;body&gt;
+<span class="Statement">        get-param</span> name
+<span class="Statement">        get-param</span> price
+        <span class="Comment">// Add data to stock table, update if the stock exists</span>
+<span class="Statement">        run-query</span> @db_stock = <span class="Constant">&quot;insert into stock (stock_name, stock_price) values ('</span><span class="Special">%s</span><span class="Constant">', '</span><span class="Special">%s</span><span class="Constant">') on duplicate key update stock_price='</span><span class="Special">%s</span><span class="Constant">'&quot;</span> \
+           <span class="Identifier"> input</span> name, price, price<span class="Type"> error</span> err<span class="Identifier"> no-loop</span>
+<span class="Statement">        if-true</span> err<span class="Identifier"> not-equal</span> <span class="Constant">&quot;0&quot;</span>
+<span class="Statement">            report-error</span> <span class="Constant">&quot;Cannot update stock price, error [</span><span class="Special">%s</span><span class="Constant">]&quot;</span>, err
+<span class="Statement">        end-if</span>
+<span class="Statement">        @</span>&lt;div&gt;
+<span class="Statement">            @</span>Stock price updated!
+<span class="Statement">        @</span>&lt;/div&gt;
+<span class="Statement">        @</span>&lt;/body&gt;
+<span class="Statement">    @</span>&lt;/html&gt;
+<span class="Statement">%%</span></pre>
+<span id=rimstone_copied_171 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_171' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_171, code_171, rimstone_copied_171)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Next is the web service to display a web page with all stock names and prices from the stock table - create file "show-stock.rim":<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_180' class=notranslate>
+vi show-stock.rim</pre>
+<span id=rimstone_copied_180 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_180' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_180, code_180, rimstone_copied_180)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+and copy and paste this:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_175' class=notranslate>
+<span class="Statement">%%</span> /show-stock<span class="Identifier"> public</span>
+<span class="Statement">    @</span>&lt;html&gt;
+<span class="Statement">        @</span>&lt;body&gt;
+<span class="Statement">            @</span>&lt;table&gt;
+<span class="Statement">                @</span>&lt;tr&gt;
+<span class="Statement">                    @</span>&lt;td&gt;Stock name&lt;/td&gt;
+<span class="Statement">                    @</span>&lt;td&gt;Stock price&lt;/td&gt;
+<span class="Statement">                @</span>&lt;/tr&gt;
+<span class="Statement">                run-query</span> @db_stock = <span class="Constant">&quot;select stock_name, stock_price from stock&quot;</span><span class="Type"> output</span> stock_name, stock_price
+<span class="Statement">                    @</span>&lt;tr&gt;
+<span class="Statement">                        @</span>&lt;td&gt;
+<span class="Statement">                        print-out</span> stock_name
+<span class="Statement">                        @</span>&lt;/td&gt;
+<span class="Statement">                        @</span>&lt;td&gt;
+<span class="Statement">                        print-out</span>  stock_price
+<span class="Statement">                        @</span>&lt;/td&gt;
+<span class="Statement">                    @</span>&lt;/tr&gt;
+<span class="Statement">                end-query</span>
+<span class="Statement">            @</span>&lt;/table&gt;
+<span class="Statement">        @</span>&lt;/body&gt;
+<span class="Statement">    @</span>&lt;/html&gt;
+<span class="Statement">%%</span></pre>
+<span id=rimstone_copied_175 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_175' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_175, code_175, rimstone_copied_175)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+You're done! Now it's time to make your application. You need to tell RimStone that your database configuration file "db_stock" is MariaDB (because you could use PostgreSQL or SQLite for instance):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_181' class=notranslate>
-vi add-stock.golf</pre>
+rim <span class="Special">-q</span> <span class="Special">--db</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">mariadb:db_stock</span><span class="Statement">&quot;</span></pre>
 <span id=rimstone_copied_181 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='rimstonet_181' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_181, code_181, rimstone_copied_181)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-and copy and paste this:<br/>
-<div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_173' class=notranslate>
-%% /add-stock public
-    @&lt;html&gt;
-        @&lt;body&gt;
-        get-param name
-        get-param price
-        // Add data to stock table, update if the stock exists
-        run-query @db_stock = &quot;insert into stock (stock_name, stock_price) values ('%s', '%s') on duplicate key update stock_price='%s'&quot; \
-            input name, price, price error err no-loop
-        if-true err not-equal &quot;0&quot;
-            report-error &quot;Cannot update stock price, error [%s]&quot;, err
-        end-if
-        @&lt;div&gt;
-            @Stock price updated!
-        @&lt;/div&gt;
-        @&lt;/body&gt;
-    @&lt;/html&gt;
-%%</pre>
-<span id=rimstone_copied_173 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_173' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_173, code_173, rimstone_copied_173)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-Next is the web service to display a web page with all stock names and prices from the stock table - create file "show-stock.golf":<br/>
-<div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_182' class=notranslate>
-vi show-stock.golf</pre>
-<span id=rimstone_copied_182 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_182' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_182, code_182, rimstone_copied_182)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-and copy and paste this:<br/>
-<div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_177' class=notranslate>
-%% /show-stock public
-    @&lt;html&gt;
-        @&lt;body&gt;
-            @&lt;table&gt;
-                @&lt;tr&gt;
-                    @&lt;td&gt;Stock name&lt;/td&gt;
-                    @&lt;td&gt;Stock price&lt;/td&gt;
-                @&lt;/tr&gt;
-                run-query @db_stock = &quot;select stock_name, stock_price from stock&quot; output stock_name, stock_price
-                    @&lt;tr&gt;
-                        @&lt;td&gt;
-                        print-out stock_name
-                        @&lt;/td&gt;
-                        @&lt;td&gt;
-                        print-out  stock_price
-                        @&lt;/td&gt;
-                    @&lt;/tr&gt;
-                end-query
-            @&lt;/table&gt;
-        @&lt;/body&gt;
-    @&lt;/html&gt;
-%%</pre>
-<span id=rimstone_copied_177 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_177' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_177, code_177, rimstone_copied_177)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-You're done! Now it's time to make your application. You need to tell Golf that your database configuration file "db_stock" is MariaDB (because you could use PostgreSQL or SQLite for instance):<br/>
-<div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_183' class=notranslate>
-gg <span class="Special">-q</span> <span class="Special">--db</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">mariadb:db_stock</span><span class="Statement">&quot;</span></pre>
-<span id=rimstone_copied_183 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_183' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_183, code_183, rimstone_copied_183)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_181, code_181, rimstone_copied_181)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Test your web service. Here you'd run it as a command line program. That's neat because you can test your web services without even using a web server or a browser:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_184' class=notranslate>
-gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/add-stock/name=ABC/price=882</span><span class="Statement">&quot;</span> <span class="Special">--exec</span>
-gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/add-stock/name=XYZ/price=112</span><span class="Statement">&quot;</span> <span class="Special">--exec</span></pre>
-<span id=rimstone_copied_184 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_184' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_184, code_184, rimstone_copied_184)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_182' class=notranslate>
+rim <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/add-stock/name=ABC/price=882</span><span class="Statement">&quot;</span> <span class="Special">--exec</span>
+rim <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/add-stock/name=XYZ/price=112</span><span class="Statement">&quot;</span> <span class="Special">--exec</span></pre>
+<span id=rimstone_copied_182 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_182' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_182, code_182, rimstone_copied_182)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The result for each:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_176' class=notranslate>
+<pre id='code_174' class=notranslate>
 Content-Type: text/html;charset=utf-8
 Cache-Control: max-age=0, no-cache
 Pragma: no-cache
@@ -386,21 +386,21 @@ Stock price updated!
 &lt;/div&gt;
 &lt;/body&gt;
 &lt;/html&gt;</pre>
-<span id=rimstone_copied_176 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_176' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_176, code_176, rimstone_copied_176)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_174 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_174' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_174, code_174, rimstone_copied_174)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 And to test the list of stocks:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_185' class=notranslate>
-gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/show-stock</span><span class="Statement">&quot;</span> <span class="Special">--exe</span></pre>
-<span id=rimstone_copied_185 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_185' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_185, code_185, rimstone_copied_185)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_183' class=notranslate>
+rim <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/show-stock</span><span class="Statement">&quot;</span> <span class="Special">--exe</span></pre>
+<span id=rimstone_copied_183 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_183' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_183, code_183, rimstone_copied_183)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The result:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_179' class=notranslate>
+<pre id='code_177' class=notranslate>
 Content-Type: text/html;charset=utf-8
 Cache-Control: max-age=0, no-cache
 Pragma: no-cache
@@ -428,9 +428,9 @@ XYZ&lt;/td&gt;
 &lt;/table&gt;
 &lt;/body&gt;
 &lt;/html&gt;</pre>
-<span id=rimstone_copied_179 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_179' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_179, code_179, rimstone_copied_179)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_177 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_177' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_177, code_177, rimstone_copied_177)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 You can see the actual response, the way it would be sent to a browser, or an API web client, or any other kind of web client.<br/>
 <!--ENDVDOC90-->

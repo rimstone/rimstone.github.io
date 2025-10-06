@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-<!--__GOLF_REDIRECT__-->
+<!--__RIM_REDIRECT__-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 
-<title>How is memory organized in Golf</title>
+<title>How is memory organized in RimStone</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -212,7 +212,7 @@ ul {
 <div id="google_translate_element" style='float:right'></div>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
-function gg_copy(gt, eid, gc) {
+function rim_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
   gt.select();
   document.execCommand("copy");
@@ -225,29 +225,33 @@ function googleTranslateElementInit() {
 
 </script>
 
-<!--GOLFMENU13-->
+<!--RIMMENU13-->
 
-<!--GOLFENDMENU13-->
+<!--RIMENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>How is memory organized in Golf</div><hr/><br/>
-Golf is a memory-safe language. A string variable is the actual pointer to a string (whether it's a text or binary). This eliminates at least one extra memory read. Bytes before the string constitute the ID to a memory table entry as well as the length of a string, with additional info used by memory-safety mechanisms:<br/>
-<ul><li>"Ref count" (Reference count), stating how many Golf variables point to string,<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>How is memory organized in RimStone</div><hr/><br/>
+RimStone is a memory-safe language. A string variable is the actual pointer to a string (whether it's a text or binary). This eliminates at least one extra dereferencing and a memory read (such as the case in many other languages); it makes RimStone memory performance very close to C. <br/>
+<br/>
+Bytes before the string constitute the ID to a memory table entry as well as the length of a string, with additional info used by memory-safety mechanisms:<br/>
+<ul><li>"Ref count" (Reference count), stating how many RimStone variables point to string,<br/>
 </li><li>Status is used to describe string, such as whether it's scope is process-wide, if it's a string literal etc,<br/>
 </li><li>"Next free" points to the next available string block (if this one was freed too),<br/>
 </li><li>"Data ptr" points back to the string, which is used to speed up access.</li></ul>
 Memory is always null-terminated, regardless of whether it's text or binary. Here's what that looks like in a picture:<br/>
-<br/><div class='vimg'><img class='imgs' src='golf-memory.png' alt='Golf'></img>
+<br/><div class='vimg'><img class='imgs' src='golf-memory.png' alt='RimStone'></img>
 </div><br/>
 Each memory block (ID+Length+string+trailing null) is a memory allocated by standard C'd memory allocation, while memory table is a continuous block that's frequently cached to produce fast access to string's properties.<br/>
 <br/>
-Golf performs memory-safety check only at the entrance of a statement, meaning at input and output points (if needed). The actual implementation of any Golf statement does not use memory safety internally, because each is implemented in C as a memory safe algorithm to begin with. Because vast majority (probably close to 100%) of the functionality and computation happens inside statements (for a typical web application), the actual cost of memory safety is very small.<br/>
+RimStone performs memory-safety check only at the entrance of a statement, meaning at input and output points (if needed). The actual implementation of any RimStone statement does not use memory safety internally, because each is implemented in C as a memory safe algorithm to begin with. Because vast majority (probably close to 100%) of the functionality and computation happens inside statements (for a typical web application), the actual cost of memory safety is very small.<br/>
 <br/>
-This is in contrast to general purpose memory-safe languages where libraries, modules, methods etc. are implemented in the memory-safe language and the entire implementation is subject to memory-safe instrumentation and/or other methods, such as bounds checking etc. It means that inherently such languages may perform more work doing such safe-memory checks.<br/>
+This is in contrast to many general purpose memory-safe languages where libraries, modules, methods etc. are implemented in the memory-safe language and the entire implementation is subject to memory-safe instrumentation and/or other methods, such as bounds checking etc. It means that inherently such languages may perform more work doing such safe-memory checks, and therefore may be slower.<br/>
 <br/>
-Finally, by default memory is not deallocated immediately after it's out of scope. Rather, the freeing happens when a request is complete, because the <a href='https://rimstone-lang.com/request.html'>request</a> is really the "unit" of work in a web-service based language like Golf. <br/>
+Also, the length of memory allocated is stored just prior to memory (i.e. in a continuous block) and generally pre-fetched using CPU's hardware prefetching, making access to it faster than if it were part of the memory structure.<br/>
+<br/>
+Finally, by default memory is not deallocated immediately after it's out of scope. Rather, the freeing happens when a request is complete, because the <a href='https://rimstone-lang.com/request.html'>request</a> is really the "unit" of work in a web-service based language like RimStone. This also makes final deallocation of memory faster because access to memory structure block is cached and optimized for such operation. <br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>

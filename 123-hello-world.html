@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<!--__GOLF_REDIRECT__-->
+<!--__RIM_REDIRECT__-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
@@ -212,7 +212,7 @@ ul {
 <div id="google_translate_element" style='float:right'></div>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
-function gg_copy(gt, eid, gc) {
+function rim_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
   gt.select();
   document.execCommand("copy");
@@ -225,67 +225,67 @@ function googleTranslateElementInit() {
 
 </script>
 
-<!--GOLFMENU13-->
+<!--RIMMENU13-->
 
-<!--GOLFENDMENU13-->
+<!--RIMENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>123 hello world</div><hr/><div class="vsub"><a id="Step 1: Install Golf"></a>Step 1: Install Golf</div>
-First, <a href='https://rimstone-lang.com/index.html'>install Golf</a>.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>123 hello world</div><hr/><div class="vsub"><a id="Step 1: Install RimStone"></a>Step 1: Install RimStone</div>
+First, <a href='https://rimstone-lang.com/index.html'>install RimStone</a>.<br/>
 <div class="vsub"><a id="Step 2: Build it"></a>Step 2: Build it</div>
-Create Hello World source file (hello.golf) in a new directory; note it's all one bash command:<br/>
+Create Hello World source file (hello.rim) in a new directory; note it's all one bash command:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_2' class=notranslate>
 <span class="Statement">echo</span><span class="Constant"> </span><span class="Statement">'</span><span class="Constant">begin-handler /hello public</span>
 <span class="Constant">    @Hello World!</span>
-<span class="Constant">end-handler</span><span class="Statement">'</span><span class="Constant"> </span><span class="Statement">&gt;</span> hello.golf</pre>
+<span class="Constant">end-handler</span><span class="Statement">'</span><span class="Constant"> </span><span class="Statement">&gt;</span> hello.rim</pre>
 <span id=rimstone_copied_2 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='rimstonet_2' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_2, code_2, rimstone_copied_2)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_2, code_2, rimstone_copied_2)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Create Hello World application:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_3' class=notranslate>
-gg <span class="Special">-k</span> helloworld</pre>
+rim <span class="Special">-k</span> helloworld</pre>
 <span id=rimstone_copied_3 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='rimstonet_3' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_3, code_3, rimstone_copied_3)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_3, code_3, rimstone_copied_3)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Make Hello World application:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_4' class=notranslate>
-gg <span class="Special">-q</span></pre>
+rim <span class="Special">-q</span></pre>
 <span id=rimstone_copied_4 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='rimstonet_4' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_4, code_4, rimstone_copied_4)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_4, code_4, rimstone_copied_4)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Step 3: Run it"></a>Step 3: Run it</div>
 You can run Hello World both as a service and from command line:<br/>
 <ul><li>As a service, first start your Hello World application server:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_5' class=notranslate>
-mgrg <span class="Special">-w</span> <span class="Constant">3</span> helloworld</pre>
+mrim <span class="Special">-w</span> <span class="Constant">3</span> helloworld</pre>
 <span id=rimstone_copied_5 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='rimstonet_5' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_5, code_5, rimstone_copied_5)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_5, code_5, rimstone_copied_5)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 then connect to the <a href='https://rimstone-lang.com/service.html'>service</a>:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_6' class=notranslate>
-gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/hello</span><span class="Statement">&quot;</span> <span class="Special">--silent-header</span> <span class="Special">--service</span> <span class="Special">--exec</span></pre>
+rim <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/hello</span><span class="Statement">&quot;</span> <span class="Special">--silent-header</span> <span class="Special">--service</span> <span class="Special">--exec</span></pre>
 <span id=rimstone_copied_6 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='rimstonet_6' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_6, code_6, rimstone_copied_6)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_6, code_6, rimstone_copied_6)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li><li>Execute as <a href='https://rimstone-lang.com/command-line.html'>command-line</a> program:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_7' class=notranslate>
-gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/hello</span><span class="Statement">&quot;</span> <span class="Special">--silent-header</span> <span class="Special">--exec</span></pre>
+rim <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/hello</span><span class="Statement">&quot;</span> <span class="Special">--silent-header</span> <span class="Special">--exec</span></pre>
 <span id=rimstone_copied_7 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='rimstonet_7' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_7, code_7, rimstone_copied_7)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_7, code_7, rimstone_copied_7)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li></ul>
 <div class="vsub"><a id="Expected result"></a>Expected result</div>
@@ -294,7 +294,7 @@ gg <span class="Special">-r</span> <span class="Special">--req</span><span class
 Hello World!</pre>
 <span id=rimstone_copied_1 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='rimstonet_1' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_1, code_1, rimstone_copied_1)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1, code_1, rimstone_copied_1)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Quick start'></a><span style="font-weight:bold;">Quick start</span><br/>

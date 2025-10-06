@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<!--__GOLF_REDIRECT__-->
+<!--__RIM_REDIRECT__-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
@@ -212,7 +212,7 @@ ul {
 <div id="google_translate_element" style='float:right'></div>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
-function gg_copy(gt, eid, gc) {
+function rim_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
   gt.select();
   document.execCommand("copy");
@@ -225,103 +225,103 @@ function googleTranslateElementInit() {
 
 </script>
 
-<!--GOLFMENU13-->
+<!--RIMMENU13-->
 
-<!--GOLFENDMENU13-->
+<!--RIMENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Read hash</div><hr/><span style="font-weight:bold;">Purpose</span>: Get data from hash.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Read hash</div><hr/><span style="font-weight:bold;">Purpose</span>: Get data from hash.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_902' class=notranslate>
-// Random access to hash data:
+<pre id='code_892' class=notranslate>
+<span class="Comment">// Random access to hash data:</span>
 
-read-hash &lt;hash&gt; \
-    key &lt;key&gt; \
-    value &lt;value&gt; \
-    [ delete [ &lt;delete&gt; ] ] \
-    [ status &lt;status&gt; ]
+<span class="Statement">read-hash</span> &lt;hash&gt; \
+   <span class="Type"> key</span> &lt;key&gt; \
+   <span class="Type"> value</span> &lt;value&gt; \
+    [<span class="Identifier"> delete</span> [ &lt;delete&gt; ] ] \
+    [<span class="Type"> status</span> &lt;status&gt; ]
 
-// Sequential access to hash data:
+<span class="Comment">// Sequential access to hash data:</span>
 
-read-hash &lt;hash&gt; traverse begin
+<span class="Statement">read-hash</span> &lt;hash&gt;<span class="Identifier"> traverse begin</span>
 
-read-hash &lt;hash&gt; traverse \
-    key &lt;key&gt; \
-    value &lt;value&gt;  \
-    [ delete [ &lt;delete&gt; ] ] \
-    [ status &lt;status&gt; ] \</pre>
-<span id=rimstone_copied_902 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_902' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_902, code_902, rimstone_copied_902)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span class="Statement">read-hash</span> &lt;hash&gt;<span class="Identifier"> traverse</span> \
+   <span class="Type"> key</span> &lt;key&gt; \
+   <span class="Type"> value</span> &lt;value&gt;  \
+    [<span class="Identifier"> delete</span> [ &lt;delete&gt; ] ] \
+    [<span class="Type"> status</span> &lt;status&gt; ] \</pre>
+<span id=rimstone_copied_892 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_892' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_892, code_892, rimstone_copied_892)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Without "traverse" clause"></a>Without "traverse" clause</div>
 read-hash will obtain an element from &lt;hash&gt;, which is a string &lt;value&gt; (in "value" clause) based on a string &lt;key&gt; (in "key" clause). &lt;hash&gt; was created by <a href='https://rimstone-lang.com/new-hash.html'>new-hash</a>. <br/>
 <br/>
 You can also delete an element from the hash by using "delete" clause - the &lt;value&gt; is still obtained though it is no longer in the hash. The hash element is deleted if "delete" clause is used without boolean variable &lt;delete&gt;, or if &lt;delete&gt; evaluates to true.<br/>
 <br/>
-If no &lt;key&gt; was found in the hash, &lt;status&gt; number (in "status" clause) is GG_ERR_EXIST and &lt;value&gt; is unchanged, otherwise &lt;status&gt; is GG_OKAY. <br/>
+If no &lt;key&gt; was found in the hash, &lt;status&gt; number (in "status" clause) is RIM_ERR_EXIST and &lt;value&gt; is unchanged, otherwise &lt;status&gt; is RIM_OKAY. <br/>
 <br/>
 <span style="font-weight:bold;">- Subscription shortcut</span><br/>
 You can also get the value of a &lt;hash&gt; element by using subscription operator ([]), for instance here you'd reference the element "one" of hash 'vals' in the comparison statement:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_903' class=notranslate>
-new-hash sub
-write-hash sub key &quot;three&quot; value &quot;some value&quot;
-...
-if-true sub[&quot;three&quot;] equal &quot;some value&quot;
-    @Found element
-end-if</pre>
-<span id=rimstone_copied_903 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_903' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_903, code_903, rimstone_copied_903)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_893' class=notranslate>
+<span class="Statement">new-hash</span> sub
+<span class="Statement">write-hash</span> sub<span class="Identifier"> key</span> <span class="Constant">&quot;three&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;some value&quot;</span>
+<span class="Statement">.</span>..
+<span class="Statement">if-true</span> sub[<span class="Constant">&quot;three&quot;</span>]<span class="Identifier"> equal</span> <span class="Constant">&quot;some value&quot;</span>
+<span class="Statement">    @</span>Found element
+<span class="Statement">end-if</span></pre>
+<span id=rimstone_copied_893 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_893' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_893, code_893, rimstone_copied_893)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 You can use the subscriptive form of &lt;hash&gt;[&lt;index&gt;] in any expression, where &lt;index&gt; is a string value that matches the hash key. Note that if element &lt;hash&gt;[&lt;index&gt;] does not exist, the value returned is an empty string (""); use read-hash form to check status or delete an element.<br/>
 <div class="vsub"><a id="With "traverse" clause"></a>With "traverse" clause</div>
 read-hash with "traverse" clause obtains &lt;key&gt; and &lt;value&gt; of the current element, and then positions to the next one. You can also delete this element from the hash by using "delete" clause - the &lt;key&gt; and &lt;value&gt; are still obtained though the element is no longer in the hash. The hash element is deleted if "delete" clause is used without boolean variable &lt;delete&gt;, or if &lt;delete&gt; evaluates to true.<br/>
 <br/>
-Use "begin" clause to position at the very first element. This is useful if you wish to get all the key/value pairs from a hash - note they are not extracted in any particular order. When there are no more elements, &lt;key&gt; and &lt;value&gt; are unchanged and &lt;status&gt; number (in "status" clause) is GG_ERR_EXIST, otherwise &lt;status&gt; is GG_OKAY.<br/>
+Use "begin" clause to position at the very first element. This is useful if you wish to get all the key/value pairs from a hash - note they are not extracted in any particular order. When there are no more elements, &lt;key&gt; and &lt;value&gt; are unchanged and &lt;status&gt; number (in "status" clause) is RIM_ERR_EXIST, otherwise &lt;status&gt; is RIM_OKAY.<br/>
 <br/>
 You may search, add or delete elements while traversing a hash, and this will be reflected in all elements not yet traversed.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 In this example, a new hash is created, a key/value pair is written to it, and then the value is obtained and the element deleted; return status is checked:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_904' class=notranslate>
-// Create new hash
-new-hash h
+<pre id='code_894' class=notranslate>
+<span class="Comment">// Create new hash</span>
+<span class="Statement">new-hash</span> h
 
-// Write to a hash
-write-hash h key &quot;X0029&quot; value &quot;some data&quot;
+<span class="Comment">// Write to a hash</span>
+<span class="Statement">write-hash</span> h<span class="Identifier"> key</span> <span class="Constant">&quot;X0029&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;some data&quot;</span>
 
-// Read from a hash
-read-hash h key &quot;X0029&quot; value res status f delete
-if-true f equal GG_ERR_EXIST
-    @No data in the hash!
-else-if
-    @Deleted value is &lt;&lt;print-out res&gt;&gt;
-end-if</pre>
-<span id=rimstone_copied_904 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_904' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_904, code_904, rimstone_copied_904)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span class="Comment">// Read from a hash </span>
+<span class="Statement">read-hash</span> h<span class="Type"> key</span> <span class="Constant">&quot;X0029&quot;</span><span class="Type"> value</span> res<span class="Type"> status</span> f<span class="Identifier"> delete</span>
+<span class="Statement">if-true</span> f<span class="Identifier"> equal</span> RIM_ERR_EXIST
+<span class="Statement">    @</span>No data in the hash!
+<span class="Statement">else-if</span>
+<span class="Statement">    @</span>Deleted value is <span class="Statement">&lt;&lt;print-out</span> res<span class="Statement">&gt;&gt;</span>
+<span class="Statement">end-if</span></pre>
+<span id=rimstone_copied_894 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_894' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_894, code_894, rimstone_copied_894)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The following will traverse the entire hash and display all the data:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_905' class=notranslate>
-// Position at the beginning of the hash
-read-hash h traverse begin
-start-loop
-    // Get elements, one by one, until NULL returned as a key
-    read-hash h traverse key k value r status f
-    if-true f equal GG_ERR_EXIST
-        break;
-    end-if
-    print-format &quot;Key [%s] data [%s]\n&quot;, k, r
-end-loop</pre>
-<span id=rimstone_copied_905 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_905' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_905, code_905, rimstone_copied_905)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_895' class=notranslate>
+<span class="Comment">// Position at the beginning of the hash </span>
+<span class="Statement">read-hash</span> h<span class="Identifier"> traverse begin</span>
+<span class="Statement">start-loop</span>
+    <span class="Comment">// Get elements, one by one, until NULL returned as a key</span>
+<span class="Statement">    read-hash</span> h<span class="Identifier"> traverse</span><span class="Type"> key</span> k<span class="Type"> value</span> r<span class="Type"> status</span> f
+<span class="Statement">    if-true</span> f<span class="Identifier"> equal</span> RIM_ERR_EXIST
+        <span class="Statement">break</span>;
+<span class="Statement">    end-if</span>
+<span class="Statement">    print-format</span> <span class="Constant">&quot;Key [</span><span class="Special">%s</span><span class="Constant">] data [</span><span class="Special">%s</span><span class="Constant">]</span><span class="Special">\n</span><span class="Constant">&quot;</span>, k, r
+<span class="Statement">end-loop</span></pre>
+<span id=rimstone_copied_895 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_895' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_895, code_895, rimstone_copied_895)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Hash'></a><span style="font-weight:bold;">Hash</span><br/>

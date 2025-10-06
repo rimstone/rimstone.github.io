@@ -2,16 +2,16 @@
 <html lang="en">
 
 <head>
-<!--__GOLF_REDIRECT__-->
+<!--__RIM_REDIRECT__-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 
-<title>Golf 3.0.1: Major Golf rewrite brings no-sudo installation, better performance and many new features</title>
+<title>RimStone 3.0.1: Major RimStone rewrite brings no-sudo installation, better performance and many new features</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="canonical" href="https://rimstone-lang.com/blog-2025-08-13-major-golf-rewrite.html" />
+<link rel="canonical" href="https://rimstone-lang.com/blog-2025-08-13-major-rimstone-rewrite.html" />
 <style>
 
 
@@ -212,7 +212,7 @@ ul {
 <div id="google_translate_element" style='float:right'></div>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
-function gg_copy(gt, eid, gc) {
+function rim_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
   gt.select();
   document.execCommand("copy");
@@ -225,51 +225,51 @@ function googleTranslateElementInit() {
 
 </script>
 
-<!--GOLFMENU13-->
+<!--RIMMENU13-->
 
-<!--GOLFENDMENU13-->
+<!--RIMENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Golf 3.0.1: Major Golf rewrite brings no-sudo installation, better performance and many new features</div><hr/><br/>
-<ul><li> Golf now installs without sudo in a local home folder. New gginst.sh utility is used to install Golf without sudo.<br/>
-</li><li> Golf is now source-only. The reason is performance and transparency; Golf generates C code for user applications, and then links (via Link Time Optimization, LTO) with Golf code. It's as if your code is directly compiled and optimized across whole program with Golf code. This can produce significant performance gains.<br/>
-</li><li> To use features that depend on other FOSS libraries, you need to install those libraries and you need sudo for that, which has nothing to do with Golf. The same goes for SELinux support. You can still use Golf without those features. Note that Golf installed can install them for you, or if you use them, it will tell you exactly how to install them yourself.<br/>
-</li><li> Making Golf from source will now use N parallel processes, where N is the number of available processors (you can always override this with -j option)<br/>
-</li><li> Added V=1 option when compiling Golf from source &nbsp;to show all the details. By default now Golf makes from source in a clean manner of brevity, without clutter.<br/>
-</li><li> Golf now compiles into Devel and Release binaries. Devel is much faster to develop Golf applications with, however Release includes additional optimizations (including Link-Time-Optimization, or LTO) which can speed up the run-time execution considerably.<br/>
-</li><li> Golf now uses LTO for Release executables to achieve maximum performance with a whole-program optimization.<br/>
-</li><li> When gcc version changes, Golf will now automatically recompile itself in order to always produce the fastest LTO object modules and executables possible - even a 1% improvement in performance matters!<br/>
-</li><li> Golf now statically links its own libraries as well as a few critical-path ones (FastCGI and Libbacktrace) for better performance.<br/>
-</li><li> FastCGI library source code has been significantly altered to be completely integrated and statically linked with Golf. All low-level functions (and many application-level) in this library have been rewritten, many removed, and some functions and data added for maximum performance with Golf. This resulted in about 10% overall improvement in Golf application server performance.<br/>
-</li><li> Reporting errors in Golf has been completely reworked to statically link with libbacktrace (or a portion of it anyway), that reliably brings the full stack of any error (application-induced such as with report-error, application-caused such as with memory violation, or an internal Golf one) every time. Also, the performance of producing the post-mortem stack of a request and seamless continuation of the server's functioning without any interruption, has been improved many folds, since we don't execute any external programs any more to perform this task. The stack trace shows exact Golf file names and line numbers (or C files if used in extended mode).<br/>
-</li><li> Added proper visual indentation for Golf's statements. Golf already has full syntax highlighting in Vim, and now it has proper indentation (automatic for statements as if-true, start-loop, run-query etc.). This makes programming faster and easier with Golf.<br/>
-</li><li> Added hundreds of new functional tests for Golf.<br/>
-</li><li> Refactoring of all Golf code for performance with LTO.<br/>
-</li><li> Fixed man pages rendering for escape characters, and certain combination of characters (including quotes) that were not previously rendered properly. In addition to man, in case it's not installed, you can also use gg --man to the same effect.<br/>
-</li><li> gg -e N now shows last N backtraces, for clarity and ease of understanding<br/>
-</li><li> gg --devel is now default, using development binaries. gg --release will produce release executables.<br/>
-</li><li> gg --verbose will show details of making application<br/>
-</li><li> gg --client-timeout=N option will set the timeout for a client to send any data after connecting to Golf server.<br/>
-</li><li> --plain-diag option in gg has been removed<br/>
-</li><li> -t option in gg has been removed<br/>
-</li><li> Added significant performance improvements in building Golf applications.<br/>
-</li><li> New ggcli fastcgi client is added. It can be used to connect to a FastCGI server, deliver request and obtain the response. This is formerly cgi-fcgi utility from FastCGI library re-written from the ground up.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>RimStone 3.0.1: Major RimStone rewrite brings no-sudo installation, better performance and many new features</div><hr/><br/>
+<ul><li> RimStone now installs without sudo in a local home folder. New riminst.sh utility is used to install RimStone without sudo.<br/>
+</li><li> RimStone is now source-only. The reason is performance and transparency; RimStone generates C code for user applications, and then links (via Link Time Optimization, LTO) with RimStone code. It's as if your code is directly compiled and optimized across whole program with RimStone code. This can produce significant performance gains.<br/>
+</li><li> To use features that depend on other FOSS libraries, you need to install those libraries and you need sudo for that, which has nothing to do with RimStone. The same goes for SELinux support. You can still use RimStone without those features. Note that RimStone installed can install them for you, or if you use them, it will tell you exactly how to install them yourself.<br/>
+</li><li> Making RimStone from source will now use N parallel processes, where N is the number of available processors (you can always override this with -j option)<br/>
+</li><li> Added V=1 option when compiling RimStone from source &nbsp;to show all the details. By default now RimStone makes from source in a clean manner of brevity, without clutter.<br/>
+</li><li> RimStone now compiles into Devel and Release binaries. Devel is much faster to develop RimStone applications with, however Release includes additional optimizations (including Link-Time-Optimization, or LTO) which can speed up the run-time execution considerably.<br/>
+</li><li> RimStone now uses LTO for Release executables to achieve maximum performance with a whole-program optimization.<br/>
+</li><li> When gcc version changes, RimStone will now automatically recompile itself in order to always produce the fastest LTO object modules and executables possible - even a 1% improvement in performance matters!<br/>
+</li><li> RimStone now statically links its own libraries as well as a few critical-path ones (FastCGI and Libbacktrace) for better performance.<br/>
+</li><li> FastCGI library source code has been significantly altered to be completely integrated and statically linked with RimStone. All low-level functions (and many application-level) in this library have been rewritten, many removed, and some functions and data added for maximum performance with RimStone. This resulted in about 10% overall improvement in RimStone application server performance.<br/>
+</li><li> Reporting errors in RimStone has been completely reworked to statically link with libbacktrace (or a portion of it anyway), that reliably brings the full stack of any error (application-induced such as with report-error, application-caused such as with memory violation, or an internal RimStone one) every time. Also, the performance of producing the post-mortem stack of a request and seamless continuation of the server's functioning without any interruption, has been improved many folds, since we don't execute any external programs any more to perform this task. The stack trace shows exact RimStone file names and line numbers (or C files if used in extended mode).<br/>
+</li><li> Added proper visual indentation for RimStone's statements. RimStone already has full syntax highlighting in Vim, and now it has proper indentation (automatic for statements as if-true, start-loop, run-query etc.). This makes programming faster and easier with RimStone.<br/>
+</li><li> Added hundreds of new functional tests for RimStone.<br/>
+</li><li> Refactoring of all RimStone code for performance with LTO.<br/>
+</li><li> Fixed man pages rendering for escape characters, and certain combination of characters (including quotes) that were not previously rendered properly. In addition to man, in case it's not installed, you can also use rim --man to the same effect.<br/>
+</li><li> rim -e N now shows last N backtraces, for clarity and ease of understanding<br/>
+</li><li> rim --devel is now default, using development binaries. rim --release will produce release executables.<br/>
+</li><li> rim --verbose will show details of making application<br/>
+</li><li> rim --client-timeout=N option will set the timeout for a client to send any data after connecting to RimStone server.<br/>
+</li><li> --plain-diag option in rim has been removed<br/>
+</li><li> -t option in rim has been removed<br/>
+</li><li> Added significant performance improvements in building RimStone applications.<br/>
+</li><li> New rimcli fastcgi client is added. It can be used to connect to a FastCGI server, deliver request and obtain the response. This is formerly cgi-fcgi utility from FastCGI library re-written from the ground up.<br/>
 </li><li> New performance improvements in native code created, including CPU prefetching.<br/>
 </li><li> Error reporting was made more robust and simpler, with the intention of being able to find error and correct it faster and easier.<br/>
-</li><li> Memory subsystem for Golf has been rewritten for better performance, memory footprint and reliability. Accessing memory in Golf now has no de-referencing and the locality of accessing length of string is now direct (i.e. no need for fetching it via pointer as most languages do). As a result, memory access in Golf is now much faster.<br/>
+</li><li> Memory subsystem for RimStone has been rewritten for better performance, memory footprint and reliability. Accessing memory in RimStone now has no de-referencing and the locality of accessing length of string is now direct (i.e. no need for fetching it via pointer as most languages do). As a result, memory access in RimStone is now much faster.<br/>
 </li><li> Rewritten parameter access for better performance, close to C's stack.<br/>
-</li><li> 107 is now the exit code when Golf's program is in trouble (memory violation, unchecked negative status, Golf issue etc)<br/>
+</li><li> 107 is now the exit code when RimStone's program is in trouble (memory violation, unchecked negative status, RimStone issue etc)<br/>
 </li><li> Bug fixed in compilation with {} not recognized correctly in edge cases.<br/>
 </li><li> Fixed issues when some internal memory is allocated and status of allocation unchecked.<br/>
 </li><li> Fixed bugs with process-scoped memory, where it wouldn't hold value in some case, or memory wouldn't be freed when it was supposed to.<br/>
-</li><li> Golf strings now support all escape sequences as in C, including Unicode characters.<br/>
+</li><li> RimStone strings now support all escape sequences as in C, including Unicode characters.<br/>
 </li><li> Added new format specifiers, such as %hd, %hhd and their octal and hexadecimal equivalents.<br/>
-</li><li> Constant strings are now represented as native linker data-section data without any overhead, while still recognized by Golf's memory subsystem.<br/>
+</li><li> Constant strings are now represented as native linker data-section data without any overhead, while still recognized by RimStone's memory subsystem.<br/>
 </li><li> Fixed bugs in comparisons in if-true in some cases.<br/>
 </li><li> Added [] operators for hash and arrays to be used in string expressions.<br/>
-</li><li> Improved performance of compilation of .golf files.<br/>
+</li><li> Improved performance of compilation of .rim files.<br/>
 </li><li> Improved performance of call-handler significantly; recursive example runs 50x faster, close to C performance.<br/>
 </li><li> get-app statement now has stack-depth clause to obtain current maximum stack depth.<br/>
 </li><li> Added set-app statement; currently sets stack-depth to limit the number of recursions (or just plain handler calls).<br/>

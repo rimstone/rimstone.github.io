@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<!--__GOLF_REDIRECT__-->
+<!--__RIM_REDIRECT__-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
@@ -212,7 +212,7 @@ ul {
 <div id="google_translate_element" style='float:right'></div>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
-function gg_copy(gt, eid, gc) {
+function rim_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
   gt.select();
   document.execCommand("copy");
@@ -225,103 +225,103 @@ function googleTranslateElementInit() {
 
 </script>
 
-<!--GOLFMENU13-->
+<!--RIMMENU13-->
 
-<!--GOLFENDMENU13-->
+<!--RIMENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Debugging</div><hr/><div class="vsub"><a id="Stack traces"></a>Stack traces</div>
-If there is an error in a Golf program (such as trying to access invalid memory, negative status that hasn't been checked etc.), or if there's an internal issue (such as a bug in Golf), a stack trace is created in trace directory (see <a href='https://rimstone-lang.com/directories.html'>directories</a>). A single stack trace file is created for each such incident, containing the description of the issue and the file names, function names and line numbers in your source code that led to it. The file names are based on the process-ID of the affected process. There is a limit on how many stack frames Golf will show this way (from the bottom up) - currently it's 150.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Debugging</div><hr/><div class="vsub"><a id="Stack traces"></a>Stack traces</div>
+If there is an error in a RimStone program (such as trying to access invalid memory, negative status that hasn't been checked etc.), or if there's an internal issue (such as a bug in RimStone), a stack trace is created in trace directory (see <a href='https://rimstone-lang.com/directories.html'>directories</a>). A single stack trace file is created for each such incident, containing the description of the issue and the file names, function names and line numbers in your source code that led to it. The file names are based on the process-ID of the affected process. There is a limit on how many stack frames RimStone will show this way (from the bottom up) - currently it's 150.<br/>
 <div class="vsub"><a id="View stack traces"></a>View stack traces</div>
-To see errors reported by Golf (such as trying to access invalid memory, or crashes; but not those from <a href='https://rimstone-lang.com/report-error.html'>report-error</a>), use -e option of <a href='https://rimstone-lang.com/gg.html'>gg</a> to check the stack trace files, which contain the stack along with file names, function names and line numbers. For example, to see the last 3 errors reported:<br/>
+To see errors reported by RimStone (such as trying to access invalid memory, or crashes; but not those from <a href='https://rimstone-lang.com/report-error.html'>report-error</a>), use -e option of <a href='https://rimstone-lang.com/rim.html'>rim</a> to check the stack trace files, which contain the stack along with file names, function names and line numbers. For example, to see the last 3 errors reported:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_539' class=notranslate>
-gg <span class="Special">-e</span> <span class="Constant">3</span></pre>
-<span id=rimstone_copied_539 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_539' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_539, code_539, rimstone_copied_539)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_535' class=notranslate>
+rim <span class="Special">-e</span> <span class="Constant">3</span></pre>
+<span id=rimstone_copied_535 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_535' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_535, code_535, rimstone_copied_535)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Note that function names are decorated; meaning if a request name has a hyphen ("-"), then it is substituted with an underscore ("_") in a function name; if it has a forward slash ("/"), then it is substituted with a double underscore ("__"). For instance, request "request/sub-request" will be internally represented as function "request__sub_request" and will show up like that in a stack trace.<br/>
-<div class="vsub"><a id="Output from Golf service without a web server"></a>Output from Golf service without a web server</div>
-Use <a href='https://rimstone-lang.com/gg.html'>gg</a> (see -r option) to send a request from command line, and receive reply from your <a href='https://rimstone-lang.com/service.html'>service</a>s. This is useful in debugging issues and automating tests. For instance, the following will issue a request and receive a reply from your service:<br/>
+<div class="vsub"><a id="Output from RimStone service without a web server"></a>Output from RimStone service without a web server</div>
+Use <a href='https://rimstone-lang.com/rim.html'>rim</a> (see -r option) to send a request from command line, and receive reply from your <a href='https://rimstone-lang.com/service.html'>service</a>s. This is useful in debugging issues and automating tests. For instance, the following will issue a request and receive a reply from your service:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_538' class=notranslate>
-gg -r --req=&quot;/my-service&quot; --service --exec</pre>
-<span id=rimstone_copied_538 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_538' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_538, code_538, rimstone_copied_538)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_534' class=notranslate>
+rim -r --req=<span class="Constant">&quot;/my-service&quot;</span> --service --exec</pre>
+<span id=rimstone_copied_534 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_534' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_534, code_534, rimstone_copied_534)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-<div class="vsub"><a id="Issues in starting mgrg"></a>Issues in starting mgrg</div>
-<a href='https://rimstone-lang.com/mgrg.html'>mgrg</a> starts your <a href='https://rimstone-lang.com/service.html'>service</a> process(es). If you're having issues with mgrg, check out its log. Assuming your application name is "app-name", the log file is:<br/>
+<div class="vsub"><a id="Issues in starting mrim"></a>Issues in starting mrim</div>
+<a href='https://rimstone-lang.com/mrim.html'>mrim</a> starts your <a href='https://rimstone-lang.com/service.html'>service</a> process(es). If you're having issues with mrim, check out its log. Assuming your application name is "app-name", the log file is:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_537' class=notranslate>
-$HOME/.golf/app-name/mgrglog/log</pre>
-<span id=rimstone_copied_537 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_537' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_537, code_537, rimstone_copied_537)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_533' class=notranslate>
+$HOME/.rimstone/apps/app-name/.mrimlog</pre>
+<span id=rimstone_copied_533 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_533' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_533, code_533, rimstone_copied_533)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Web server error log"></a>Web server error log</div>
 If you are using a web server as a reverse proxy, check its error log, which would store the error messages emitted. Typically, such files are in the following location:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_540' class=notranslate>
+<pre id='code_536' class=notranslate>
 /var/log/&lt;web server&gt;</pre>
-<span id=rimstone_copied_540 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_540' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_540, code_540, rimstone_copied_540)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_536 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_536' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_536, code_536, rimstone_copied_536)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 (for example /var/log/apache2), but the location may vary - consult your web server's documentation.<br/>
 <div class="vsub"><a id="Using gdb debugger"></a>Using gdb debugger</div>
-In order to use gdb debugger, you don't need to do anything special. Golf itself as well as applications created with Golf already come with debugging information.<br/>
+In order to use gdb debugger, you don't need to do anything special. RimStone itself as well as applications created with RimStone already come with debugging information.<br/>
 <br/>
-Ultimately, you can attach a debugger to a running Golf process. If your application name is "app-name", first find the PID (process ID) of its process(es):<br/>
+Ultimately, you can attach a debugger to a running RimStone process. If your application name is "app-name", first find the PID (process ID) of its process(es):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_541' class=notranslate>
+<pre id='code_537' class=notranslate>
 ps <span class="Special">-ef</span>|<span class="Statement">grep</span> app-name.srvc</pre>
-<span id=rimstone_copied_541 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_541' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_541, code_541, rimstone_copied_541)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_537 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_537' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_537, code_537, rimstone_copied_537)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Note that you can control the number of worker processes started, and thus have only a single worker process (or the minimum necessary), which will make attaching to the process that actually processes a request easier (see <a href='https://rimstone-lang.com/gg.html'>gg</a>).<br/>
+Note that you can control the number of worker processes started, and thus have only a single worker process (or the minimum necessary), which will make attaching to the process that actually processes a request easier (see <a href='https://rimstone-lang.com/rim.html'>rim</a>).<br/>
 <br/>
 Use gdb to load your program:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_543' class=notranslate>
-sudo gdb <span class="PreProc">$HOME</span>/.golf/apps/app-name/.bld/app-name.srvc</pre>
-<span id=rimstone_copied_543 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_543' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_543, code_543, rimstone_copied_543)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_539' class=notranslate>
+sudo gdb <span class="PreProc">$HOME</span>/.rimstone/apps/app-name/.bld/app-name.srvc</pre>
+<span id=rimstone_copied_539 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_539' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_539, code_539, rimstone_copied_539)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 and then attach to the process (&lt;PID&gt; is the process ID you obtained above):<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_542' class=notranslate>
+<pre id='code_538' class=notranslate>
 att &lt;PID&gt;</pre>
-<span id=rimstone_copied_542 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_542' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_542, code_542, rimstone_copied_542)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_538 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_538' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_538, code_538, rimstone_copied_538)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Once attached, you can break in the request you're debugging:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_544' class=notranslate>
+<pre id='code_540' class=notranslate>
 br &lt;request name&gt;</pre>
-<span id=rimstone_copied_544 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_544' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_544, code_544, rimstone_copied_544)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_540 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_540' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_540, code_540, rimstone_copied_540)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-or in general Golf request dispatcher:<br/>
+or in general RimStone request dispatcher:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_545' class=notranslate>
-br gg_dispatch_request</pre>
-<span id=rimstone_copied_545 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_545' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_545, code_545, rimstone_copied_545)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_541' class=notranslate>
+br rim_dispatch_request</pre>
+<span id=rimstone_copied_541 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_541' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_541, code_541, rimstone_copied_541)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 which would handle any request to your application. Request names are decorated to become function names (see above).<br/>
 <br/>
-Note that by default, gdb will show Golf code and you can step through it as you've written it, which is easy to follow and understand. <br/>
+Note that by default, gdb will show RimStone code and you can step through it as you've written it, which is easy to follow and understand. <br/>
 <br/>
-However, if you wish to step through the underlying C libraries, use "--c-lines" option in <a href='https://rimstone-lang.com/gg.html'>gg</a> when making your application. <br/>
+However, if you wish to step through the underlying C libraries, use "--c-lines" option in <a href='https://rimstone-lang.com/rim.html'>rim</a> when making your application. <br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Debugging'></a><span style="font-weight:bold;">Debugging</span><br/>
 <a href='https://rimstone-lang.com/debugging.html'>debugging</a> &nbsp; <br/>

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<!--__GOLF_REDIRECT__-->
+<!--__RIM_REDIRECT__-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
@@ -212,7 +212,7 @@ ul {
 <div id="google_translate_element" style='float:right'></div>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
-function gg_copy(gt, eid, gc) {
+function rim_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
   gt.select();
   document.execCommand("copy");
@@ -225,23 +225,23 @@ function googleTranslateElementInit() {
 
 </script>
 
-<!--GOLFMENU13-->
+<!--RIMMENU13-->
 
-<!--GOLFENDMENU13-->
+<!--RIMENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Position list</div><hr/><span style="font-weight:bold;">Purpose</span>: Set current element in a linked list.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Position list</div><hr/><span style="font-weight:bold;">Purpose</span>: Set current element in a linked list.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_846' class=notranslate>
-position-list &lt;list&gt; \
-    [ first | last | end | previous | next | \
-    [ status &lt;status&gt; ]</pre>
-<span id=rimstone_copied_846 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_846' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_846, code_846, rimstone_copied_846)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_834' class=notranslate>
+<span class="Statement">position-list</span> &lt;list&gt; \
+    [<span class="Identifier"> first</span> |<span class="Identifier"> last</span> |<span class="Identifier"> end</span> |<span class="Identifier"> previous</span> |<span class="Identifier"> next</span> | \
+    [<span class="Type"> status</span> &lt;status&gt; ]</pre>
+<span id=rimstone_copied_834 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_834' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_834, code_834, rimstone_copied_834)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 position-list changes the current element of linked &lt;list&gt;. A current element is the one that is read with <a href='https://rimstone-lang.com/read-list.html'>read-list</a>. A newly added element is written with <a href='https://rimstone-lang.com/write-list.html'>write-list</a> by inserting it just before the current element, thus becoming a new current element. Reading from &lt;list&gt; does not change its current element; use position-list to explicitly change it.<br/>
 <br/>
@@ -251,26 +251,26 @@ A position just beyond the last element in &lt;list&gt; is considered the "end" 
 <br/>
 Use "end" clause to set current element to &lt;list&gt;'s end. Note that "end" clause is equivalent to using "next" clause on the last element in &lt;list&gt;.<br/>
 <br/>
-If you attempt to position prior to the first element, after the end of &lt;list&gt;, or anywhere in an empty list, then &lt;status&gt; number (in "status" clause") is GG_ERR_EXIST, otherwise it is GG_OKAY. Note that if &lt;status&gt; is GG_ERR_EXIST, the current element will not change.<br/>
+If you attempt to position prior to the first element, after the end of &lt;list&gt;, or anywhere in an empty list, then &lt;status&gt; number (in "status" clause") is RIM_ERR_EXIST, otherwise it is RIM_OKAY. Note that if &lt;status&gt; is RIM_ERR_EXIST, the current element will not change.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Position to the next element in list:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_847' class=notranslate>
-position-list mylist next status st
-if-true st equal GG_ERR_EXIST
-    @Beyond the end of list
-end-if</pre>
-<span id=rimstone_copied_847 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_847' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_847, code_847, rimstone_copied_847)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_835' class=notranslate>
+<span class="Statement">position-list</span> mylist<span class="Identifier"> next</span><span class="Type"> status</span> st
+<span class="Statement">if-true</span> st<span class="Identifier"> equal</span> RIM_ERR_EXIST
+<span class="Statement">    @</span>Beyond the end of list
+<span class="Statement">end-if</span></pre>
+<span id=rimstone_copied_835 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_835' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_835, code_835, rimstone_copied_835)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Position to the first element in list:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_848' class=notranslate>
-position-list mylist first</pre>
-<span id=rimstone_copied_848 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_848' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_848, code_848, rimstone_copied_848)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_836' class=notranslate>
+<span class="Statement">position-list</span> mylist<span class="Identifier"> first</span></pre>
+<span id=rimstone_copied_836 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_836' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_836, code_836, rimstone_copied_836)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Linked list'></a><span style="font-weight:bold;">Linked list</span><br/>

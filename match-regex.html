@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<!--__GOLF_REDIRECT__-->
+<!--__RIM_REDIRECT__-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
@@ -212,7 +212,7 @@ ul {
 <div id="google_translate_element" style='float:right'></div>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
-function gg_copy(gt, eid, gc) {
+function rim_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
   gt.select();
   document.execCommand("copy");
@@ -225,33 +225,33 @@ function googleTranslateElementInit() {
 
 </script>
 
-<!--GOLFMENU13-->
+<!--RIMMENU13-->
 
-<!--GOLFENDMENU13-->
+<!--RIMENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Match regex</div><hr/><span style="font-weight:bold;">Purpose</span>: Find, or find and replace patterns in strings using regex (regular expressions).<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Match regex</div><hr/><span style="font-weight:bold;">Purpose</span>: Find, or find and replace patterns in strings using regex (regular expressions).<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_761' class=notranslate>
-match-regex &lt;pattern&gt; in &lt;target&gt; \
+<pre id='code_749' class=notranslate>
+<span class="Statement">match-regex</span> &lt;pattern&gt;<span class="Identifier"> in</span> &lt;target&gt; \
     [ \
-        ( replace-with &lt;replace pattern&gt; \
-            result &lt;result&gt; \
-            [ status &lt;status&gt; ] )  \
+        (<span class="Identifier"> replace-with</span> &lt;replace pattern&gt; \
+           <span class="Type"> result</span> &lt;result&gt; \
+            [<span class="Type"> status</span> &lt;status&gt; ] )  \
     | \
-        ( status &lt;status&gt; \
-            [ case-insensitive [ &lt;case-insensitive&gt; ] ] \
-            [ single-match [ &lt;single-match&gt; ] ] \
-            [ utf [ &lt;utf&gt; ] ] ) \
+        (<span class="Type"> status</span> &lt;status&gt; \
+            [<span class="Identifier"> case-insensitive</span> [ &lt;case-insensitive&gt; ] ] \
+            [<span class="Identifier"> single-match</span> [ &lt;single-match&gt; ] ] \
+            [<span class="Identifier"> utf</span> [ &lt;utf&gt; ] ] ) \
     ] \
-    [ cache ] \
-    [ clear-cache &lt;clear cache&gt; )</pre>
-<span id=rimstone_copied_761 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_761' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_761, code_761, rimstone_copied_761)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+    [<span class="Identifier"> cache</span> ] \
+    [<span class="Identifier"> clear-cache</span> &lt;clear cache&gt; )</pre>
+<span id=rimstone_copied_749 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_749' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_749, code_749, rimstone_copied_749)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 match-regex searches &lt;target&gt; string for regex &lt;pattern&gt;. If "replace-with" is specified, then instance(s) of &lt;pattern&gt; in &lt;target&gt; are replaced with &lt;replace pattern&gt; string, and the result is stored in &lt;result&gt; string.<br/>
 <br/>
@@ -267,21 +267,21 @@ If "utf" is used, then the pattern itself and all data strings used for matching
 <br/>
 &lt;result&gt; and &lt;status&gt; variables can be created within the statement.<br/>
 <br/>
-If the pattern is bad (i.e. &lt;pattern&gt; is not a correct regular expression), Golf will <a href='https://rimstone-lang.com/error-handling.html'>error out</a> with a message.<br/>
+If the pattern is bad (i.e. &lt;pattern&gt; is not a correct regular expression), RimStone will <a href='https://rimstone-lang.com/error-handling.html'>error out</a> with a message.<br/>
 <div class="vsub"><a id="PCRE2 and Posix Regex"></a>PCRE2 and Posix Regex</div>
-By default, <a href='https://www.pcre.org/current/doc/html/pcre2pattern.html'>PCRE2 regex syntax</a> (Perl-compatible Regular Expressions v2) is used. To use <a href='https://en.wikibooks.org/wiki/Regular_Expressions/POSIX-Extended_Regular_Expressions'>extended regex syntax</a> (Posix ERE), specify "--posix-regex" when building your application with <a href='https://rimstone-lang.com/gg.html'>gg</a>. See more below in Limitations about differences.<br/>
+By default, <a href='https://www.pcre.org/current/doc/html/pcre2pattern.html'>PCRE2 regex syntax</a> (Perl-compatible Regular Expressions v2) is used. To use <a href='https://en.wikibooks.org/wiki/Regular_Expressions/POSIX-Extended_Regular_Expressions'>extended regex syntax</a> (Posix ERE), specify "--posix-regex" when building your application with <a href='https://rimstone-lang.com/rim.html'>rim</a>. See more below in Limitations about differences.<br/>
 <div class="vsub"><a id="Caching and performance"></a>Caching and performance</div>
 If "cache" clause is used, then regex compilation of &lt;pattern&gt; will be done only once and saved for future use. There is a significant performance benefit when match-regex executes repeatedly with "cache" (such as in case of web applications or in any kind of loop). If &lt;pattern&gt; changes and you need to recompile it once in a while, use "clear-cache" clause. &lt;clear cache&gt; is a "bool" variable; the regex cache is cleared if it is true, and stays if it is false. For example:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_762' class=notranslate>
-set-bool cl_c
-if-true q equal 0
-    set-bool cl_c = true
-end-if
-match-regex ps in look_in replace-with &quot;Yes it is \\1!&quot; result res cache clear-cache cl_c</pre>
-<span id=rimstone_copied_762 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_762' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_762, code_762, rimstone_copied_762)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_750' class=notranslate>
+<span class="Statement">set-bool</span> cl_c
+<span class="Statement">if-true</span> q<span class="Identifier"> equal</span> <span class="Constant">0</span>
+<span class="Statement">    set-bool</span> cl_c = <span class="Constant">true</span>
+<span class="Statement">end-if</span>
+<span class="Statement">match-regex</span> ps<span class="Identifier"> in</span> look_in<span class="Identifier"> replace-with</span> <span class="Constant">&quot;Yes it is </span><span class="Special">\\</span><span class="Constant">1!&quot;</span><span class="Type"> result</span> res<span class="Identifier"> cache clear-cache</span> cl_c</pre>
+<span id=rimstone_copied_750 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_750' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_750, code_750, rimstone_copied_750)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In this case, when "q" is 0, cache will be cleared, and the pattern in variable "ps" will be recompiled. In all other cases, the last computed regex stays the same. <br/>
 <br/>
@@ -289,87 +289,87 @@ While every pattern is different, when using cache, even a relatively small patt
 <div class="vsub"><a id="Subexpressions and back-referencing"></a>Subexpressions and back-referencing</div>
 Subexpressions are referenced via a backslash followed by a number. Because in strings a backslash followed by a number is an octal number, you must use double backslash (\\). For example:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_763' class=notranslate>
-match-regex &quot;(good).*(day)&quot; \
-    in &quot;Hello, good day!&quot; \
-    replace-with &quot;\\2 \\1&quot; \
-    result res</pre>
-<span id=rimstone_copied_763 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_763' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_763, code_763, rimstone_copied_763)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_751' class=notranslate>
+<span class="Statement">match-regex</span> <span class="Constant">&quot;(good).*(day)&quot;</span> \
+   <span class="Identifier"> in</span> <span class="Constant">&quot;Hello, good day!&quot;</span> \
+   <span class="Identifier"> replace-with</span> <span class="Constant">&quot;</span><span class="Special">\\</span><span class="Constant">2 </span><span class="Special">\\</span><span class="Constant">1&quot;</span> \
+   <span class="Type"> result</span> res</pre>
+<span id=rimstone_copied_751 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_751' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_751, code_751, rimstone_copied_751)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 will produce string "Hello, day good!" as a result in "res" variable. Each subexpression is within () parenthesis, so for instance "day" in the above pattern is the 2nd subexpression, and is back-referenced as \\2 in replacement.<br/>
 <br/>
 There can be a maximum of 23 subexpressions. <br/>
 <br/>
-Note that backreferences to non-existing subexpressions are ignored - for example \\4 when there are only 3 subexpressions. Golf is "smart" about using two digits and differentiating between \\1 and \\10 for instance - it takes into account the actual number of subexpressions and their validity, and selects a proper subexpression even when two digits are used in a backreference.<br/>
+Note that backreferences to non-existing subexpressions are ignored - for example \\4 when there are only 3 subexpressions. RimStone is "smart" about using two digits and differentiating between \\1 and \\10 for instance - it takes into account the actual number of subexpressions and their validity, and selects a proper subexpression even when two digits are used in a backreference.<br/>
 <div class="vsub"><a id="Lookaheads and lookbehinds"></a>Lookaheads and lookbehinds</div>
 match-regex supports syntax for lookaheads (i.e. "(?=...)" and "(?!...)") and lookbehinds (i.e. "(?&lt;=...)" and "(?&lt;!...)"). See <a href='https://www.pcre.org/current/doc/html/pcre2pattern.html'>PCRE2 pattern matching</a> for more details. For instance, the following matches "bar" only if preceded by "foo":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_764' class=notranslate>
-match-regex &quot;\\w*(?&lt;=foo)bar&quot; in &quot;foobar&quot; status st single-match</pre>
-<span id=rimstone_copied_764 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_764' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_764, code_764, rimstone_copied_764)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_752' class=notranslate>
+<span class="Statement">match-regex</span> <span class="Constant">&quot;</span><span class="Special">\\</span><span class="Constant">w*(?&lt;=foo)bar&quot;</span><span class="Identifier"> in</span> <span class="Constant">&quot;foobar&quot;</span><span class="Type"> status</span> st<span class="Identifier"> single-match</span></pre>
+<span id=rimstone_copied_752 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_752' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_752, code_752, rimstone_copied_752)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 and the following matches "foo" if followed by "bar":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_765' class=notranslate>
-match-regex &quot;\\w*foo(?=bar)&quot; in &quot;foofoo&quot; status st single-match</pre>
-<span id=rimstone_copied_765 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_765' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_765, code_765, rimstone_copied_765)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_753' class=notranslate>
+<span class="Statement">match-regex</span> <span class="Constant">&quot;</span><span class="Special">\\</span><span class="Constant">w*foo(?=bar)&quot;</span><span class="Identifier"> in</span> <span class="Constant">&quot;foofoo&quot;</span><span class="Type"> status</span> st<span class="Identifier"> single-match</span></pre>
+<span id=rimstone_copied_753 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_753' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_753, code_753, rimstone_copied_753)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Limitations"></a>Limitations</div>
 If you are using older versions of PCRE2 (10.36 or earlier) such as by default in Debian 10 or Ubuntu 18, then instead of PCRE2, an <a href='https://en.wikibooks.org/wiki/Regular_Expressions/POSIX-Extended_Regular_Expressions'>Extended Regex Expressions</a> (ERE) from the &nbsp;built-in Linux regex library is used, due to older PCRE2 versions having name conflicts with other libraries. In this case, "utf" clause will have no effect, and lookaheads/lookbehinds functionality will not work; possibly a few others as well, however for the most part the two are compatible. If your system uses an older PCRE2 library, you can upgrade to 10.37 or later to use PCRE2.<br/>
 <br/>
-In any case, if you need to use Posix ERE instead of PCRE2 (for compatibility, to reduce memory footprint or some other reason), you can use "--posix-regex" option of <a href='https://rimstone-lang.com/gg.html'>gg</a>; the same limitations as above apply. Note that PCRE2 (the default) is generally faster than ERE.<br/>
+In any case, if you need to use Posix ERE instead of PCRE2 (for compatibility, to reduce memory footprint or some other reason), you can use "--posix-regex" option of <a href='https://rimstone-lang.com/rim.html'>rim</a>; the same limitations as above apply. Note that PCRE2 (the default) is generally faster than ERE.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Use match-regex statement to find out if a string matches a pattern, for example:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_766' class=notranslate>
-match-regex &quot;SOME (.*) IS (.*)&quot; in &quot;WOW SOME THING IS GOOD HERE&quot; status st</pre>
-<span id=rimstone_copied_766 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_766' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_766, code_766, rimstone_copied_766)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_754' class=notranslate>
+<span class="Statement">match-regex</span> <span class="Constant">&quot;SOME (.*) IS (.*)&quot;</span><span class="Identifier"> in</span> <span class="Constant">&quot;WOW SOME THING IS GOOD HERE&quot;</span><span class="Type"> status</span> st</pre>
+<span id=rimstone_copied_754 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_754' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_754, code_754, rimstone_copied_754)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In this case, the first parameter ("SOME (.*) IS (.*)") is a pattern and you're matching it with string ("WOW SOME THING IS GOOD HERE"). Since there is a match, status variable (defined on the fly as integer) "st" will be "1" (meaning one match was found) - in general it will contain the number of patterns matched. <br/>
 <br/>
 Search for patterns and replace them by using replace-with clause, for example:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_767' class=notranslate>
-match-regex &quot;SOME (.*) IS ([^ ]+)&quot; in &quot;WOW SOME THING IS GOOD HERE FOR SURE&quot; replace-with &quot;THINGS ARE \\2 YES!&quot; result res status st</pre>
-<span id=rimstone_copied_767 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_767' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_767, code_767, rimstone_copied_767)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_755' class=notranslate>
+<span class="Statement">match-regex</span> <span class="Constant">&quot;SOME (.*) IS ([^ ]+)&quot;</span><span class="Identifier"> in</span> <span class="Constant">&quot;WOW SOME THING IS GOOD HERE FOR SURE&quot;</span><span class="Identifier"> replace-with</span> <span class="Constant">&quot;THINGS ARE </span><span class="Special">\\</span><span class="Constant">2 YES!&quot;</span><span class="Type"> result</span> res<span class="Type"> status</span> st</pre>
+<span id=rimstone_copied_755 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_755' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_755, code_755, rimstone_copied_755)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In this case, the result from replacement will be in a new string variable "res" specified with the result clause, and it will be <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_768' class=notranslate>
+<pre id='code_756' class=notranslate>
 WOW THINGS ARE GOOD YES! HERE FOR SURE</pre>
-<span id=rimstone_copied_768 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_768' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_768, code_768, rimstone_copied_768)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_756 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_756' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_756, code_756, rimstone_copied_756)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The above demonstrates a typical use of subexpressions in regex (meaning "()" statements) and their referencing with "\\1", "\\2" etc. in the order in which they appear. Consult regex documentation for more information. &nbsp;Status variable specified with status clause ("st" in this example) will contain the number of patterns matched and replaced. <br/>
 <br/>
 Matching is by default case sensitive. Use "case-insensitive" clause to change it to case insensitive, for instance:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_769' class=notranslate>
-match-regex &quot;SOME (.*) IS (.*)&quot; in &quot;WOW some THING IS GOOD HERE&quot; status st case-insensitive</pre>
-<span id=rimstone_copied_769 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_769' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_769, code_769, rimstone_copied_769)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_757' class=notranslate>
+<span class="Statement">match-regex</span> <span class="Constant">&quot;SOME (.*) IS (.*)&quot;</span><span class="Identifier"> in</span> <span class="Constant">&quot;WOW some THING IS GOOD HERE&quot;</span><span class="Type"> status</span> st<span class="Identifier"> case-insensitive</span></pre>
+<span id=rimstone_copied_757 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_757' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_757, code_757, rimstone_copied_757)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In the above case, the pattern would not be found without "case-insensitive" clause because "SOME" and "some" would not match. This clause works the same in matching-only as well as replacing strings.<br/>
 <br/>
 If you want to match only the first occurrence of a pattern, use "single-match" option:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_760' class=notranslate>
-match-regex &quot;SOME ([^ ]+) IS ([^ ]+)&quot; in &quot;WOW SOME THING IS GOOD HERE AND SOME STUFF IS GOOD TOO&quot; status st single-match</pre>
-<span id=rimstone_copied_760 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_760' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_760, code_760, rimstone_copied_760)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_748' class=notranslate>
+<span class="Statement">match-regex</span> <span class="Constant">&quot;SOME ([^ ]+) IS ([^ ]+)&quot;</span><span class="Identifier"> in</span> <span class="Constant">&quot;WOW SOME THING IS GOOD HERE AND SOME STUFF IS GOOD TOO&quot;</span><span class="Type"> status</span> st<span class="Identifier"> single-match</span></pre>
+<span id=rimstone_copied_748 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_748' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_748, code_748, rimstone_copied_748)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In this case there would be two matches by default ("SOME THING IS GOOD" and "SOME STUFF IS GOOD") but only the first would be found. This clause works the same for replacing as well - only the first occurrence would be replaced.<br/>
 <div class="vsub"><a id="See also"></a>See also</div>

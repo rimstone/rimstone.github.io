@@ -2,16 +2,16 @@
 <html lang="en">
 
 <head>
-<!--__GOLF_REDIRECT__-->
+<!--__RIM_REDIRECT__-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 
-<title>Golf-3.1.0-released</title>
+<title>Rimcli</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="canonical" href="https://rimstone-lang.com/blog-2025-08-19-new-golf-release.html" />
+<link rel="canonical" href="https://rimstone-lang.com/rimcli.html" />
 <style>
 
 
@@ -212,7 +212,7 @@ ul {
 <div id="google_translate_element" style='float:right'></div>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
-function gg_copy(gt, eid, gc) {
+function rim_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
   gt.select();
   document.execCommand("copy");
@@ -225,17 +225,38 @@ function googleTranslateElementInit() {
 
 </script>
 
-<!--GOLFMENU13-->
+<!--RIMMENU13-->
 
-<!--GOLFENDMENU13-->
+<!--RIMENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Golf-3.1.0-released</div><hr/><br/>
-<ul><li>Performance improvements in building application.<br/>
-</li><li>Added a list of outputs to print-out, so now print-out can output any number of strings and numbers concatenanted together.<br/>
-</li><li>Fixed uninstall and write-string documentation pages errata.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Rimcli</div><hr/><span style="font-weight:bold;">Purpose</span>: FastCGI client utility.<br/>
+<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_957' class=notranslate>
+rimcli <span class="Statement">&lt;</span>address:port<span class="Statement">&gt;</span> | <span class="Statement">&lt;</span>Unix socket<span class="Statement">&gt;</span></pre>
+<span id=rimstone_copied_957 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_957' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_957, code_957, rimstone_copied_957)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+rimcli will contact FastCGI server running on TCP/IP machine specified by &lt;address:port&gt;, where address can be an IP of the machine or its address, and port is the port number. For local sockets, use &lt;Unix socket&gt;, which is a file name of a socket used by the server; note you need to have proper permissions to access this socket file.<br/>
+<br/>
+rimcli will send a request to the server, receive a reply and display it to standard output. Any errors are displayed to standard error stream.<br/>
+<br/>
+Use standard environment variables in order to specify the details of the request. The environment variables recognized by rimcli are CONTENT_TYPE, CONTENT_LENGTH, REQUEST_METHOD, SCRIPT_NAME, PATH_INFO, QUERY_STRING (which are all standard HTTP CGI variables), as well as RimStone's variable RIM_SILENT_HEADER which is used to suppress header output (value of "yes" will do that).<br/>
+<br/>
+The above variables are not explained here; you can find much about them in many other sources. Please note that if CONTENT_LENGTH is specified, then rimcli expect content data to be provided to its standard input.<br/>
+<br/>
+You can see the examples of setting the above environment variables and the usage of rimcli if you use "-r" option of <a href='https://rimstone-lang.com/rim.html'>rim</a>; if you skip "--exec" option, rim will display the settings and the usage of rimcli utility.<br/>
+<br/>
+Note that you should be able to use rimcli when talking to any FastCGI server (such as PHP), not just RimStone.<br/>
+<div class="vsub"><a id="See also"></a>See also</div>
+ <a name='FastCGI client'></a><span style="font-weight:bold;">FastCGI client</span><br/>
+<a href='https://rimstone-lang.com/rimcli.html'>rimcli</a> &nbsp; <br/>
+<span style="font-weight:bold;">See all</span> <br/>
+<a href='https://rimstone-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>

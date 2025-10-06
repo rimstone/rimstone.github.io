@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<!--__GOLF_REDIRECT__-->
+<!--__RIM_REDIRECT__-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
@@ -212,7 +212,7 @@ ul {
 <div id="google_translate_element" style='float:right'></div>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
-function gg_copy(gt, eid, gc) {
+function rim_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
   gt.select();
   document.execCommand("copy");
@@ -225,28 +225,28 @@ function googleTranslateElementInit() {
 
 </script>
 
-<!--GOLFMENU13-->
+<!--RIMMENU13-->
 
-<!--GOLFENDMENU13-->
+<!--RIMENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Exec program</div><hr/><span style="font-weight:bold;">Purpose</span>: Execute a program.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Exec program</div><hr/><span style="font-weight:bold;">Purpose</span>: Execute a program.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_613' class=notranslate>
-exec-program &lt;program path&gt; \
-    [ args &lt;program arg&gt; [ , ... ] ] \
-    [ status &lt;exit status&gt; ] \
-    [ ( input &lt;input string&gt; [ input-length &lt;string length&gt; ] ) \
-        | ( input-file &lt;input file&gt; ) ] \
-    [ ( output &lt;output string&gt;  ) \
-        | ( output-file &lt;output file&gt; ) ] \
-    [ ( error &lt;error string&gt; ) | ( error-file &lt;error file&gt; ) ]</pre>
-<span id=rimstone_copied_613 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_613' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_613, code_613, rimstone_copied_613)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_609' class=notranslate>
+<span class="Statement">exec-program</span> &lt;program path&gt; \
+    [<span class="Identifier"> args</span> &lt;program arg&gt; [ , ... ] ] \
+    [<span class="Type"> status</span> &lt;exit status&gt; ] \
+    [ (<span class="Identifier"> input</span> &lt;input string&gt; [<span class="Identifier"> input-length</span> &lt;string length&gt; ] ) \
+        | (<span class="Identifier"> input-file</span> &lt;input file&gt; ) ] \
+    [ (<span class="Type"> output</span> &lt;output string&gt;  ) \
+        | (<span class="Identifier"> output-file</span> &lt;output file&gt; ) ] \
+    [ (<span class="Type"> error</span> &lt;error string&gt; ) | (<span class="Identifier"> error-file</span> &lt;error file&gt; ) ]</pre>
+<span id=rimstone_copied_609 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_609' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_609, code_609, rimstone_copied_609)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 exec-program executes a program specified in &lt;program path&gt;, which can be a program name without path that exists in the path specified by the PATH environment variable; or an absolute path; or a path relative to the application home directory (see <a href='https://rimstone-lang.com/directories.html'>directories</a>).<br/>
 <br/>
@@ -262,53 +262,53 @@ You can redirect the program's output (which is "stdout") to a file &lt;output f
 <br/>
 To get the program's error output (which is "stderr") to file &lt;error file&gt;, use "error-file" clause. Alternatively, program's error output can be captured in &lt;error string&gt; (via "error" clause).<br/>
 <br/>
-If &lt;input file&gt; cannot be opened, GG_ERR_READ is reported in &lt;exit status&gt;, and if either &lt;output file&gt; or &lt;error file&gt; cannot be opened, the status is GG_ERR_WRITE.<br/>
+If &lt;input file&gt; cannot be opened, RIM_ERR_READ is reported in &lt;exit status&gt;, and if either &lt;output file&gt; or &lt;error file&gt; cannot be opened, the status is RIM_ERR_WRITE.<br/>
 <br/>
-Note that in general a program is considered successfully executed if it returns GG_OKAY (i.e. zero). Most programs returning non-zero value mean failure.<br/>
+Note that in general a program is considered successfully executed if it returns RIM_OKAY (i.e. zero). Most programs returning non-zero value mean failure.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 To simply execute a program that is in the path, without any arguments, input or output:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_614' class=notranslate>
-exec-program &quot;myprogram&quot;</pre>
-<span id=rimstone_copied_614 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_614' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_614, code_614, rimstone_copied_614)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_610' class=notranslate>
+<span class="Statement">exec-program</span> <span class="Constant">&quot;myprogram&quot;</span></pre>
+<span id=rimstone_copied_610 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_610' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_610, code_610, rimstone_copied_610)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Run "grep" program using a string as its standard input in order to remove a line that contains "bad line" in it, and outputting the result into "ovar" variable:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_615' class=notranslate>
-exec-program &quot;grep&quot; args &quot;-v&quot;, &quot;bad line&quot; &quot;config&quot; input &quot;line 1\nline 2\nbad line\nline 3&quot; output ovar
-print-out ovar</pre>
-<span id=rimstone_copied_615 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_615' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_615, code_615, rimstone_copied_615)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_611' class=notranslate>
+<span class="Statement">exec-program</span> <span class="Constant">&quot;grep&quot;</span><span class="Identifier"> args</span> <span class="Constant">&quot;-v&quot;</span>, <span class="Constant">&quot;bad line&quot;</span> <span class="Constant">&quot;config&quot;</span><span class="Identifier"> input</span> <span class="Constant">&quot;line 1</span><span class="Special">\n</span><span class="Constant">line 2</span><span class="Special">\n</span><span class="Constant">bad line</span><span class="Special">\n</span><span class="Constant">line 3&quot;</span><span class="Type"> output</span> ovar
+<span class="Statement">print-out</span> ovar</pre>
+<span id=rimstone_copied_611 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_611' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_611, code_611, rimstone_copied_611)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Get the list of files in the application home directory into buffer "ovar" and then display it:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_616' class=notranslate>
-exec-program &quot;ls&quot; output ovar</pre>
-<span id=rimstone_copied_616 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_616' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_616, code_616, rimstone_copied_616)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_612' class=notranslate>
+<span class="Statement">exec-program</span> <span class="Constant">&quot;ls&quot;</span><span class="Type"> output</span> ovar</pre>
+<span id=rimstone_copied_612 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_612' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_612, code_612, rimstone_copied_612)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Similar to the above example of listing files, but output results to a file (which is then read and the result displayed), and provide options "-a -l -s" to "ls" program:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_617' class=notranslate>
-exec-program &quot;ls&quot; args &quot;-a&quot;, &quot;-l&quot;, &quot;-s&quot; output-file &quot;lsout&quot;
-read-file &quot;lsout&quot; to final_res
-print-out final_res</pre>
-<span id=rimstone_copied_617 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_617' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_617, code_617, rimstone_copied_617)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_613' class=notranslate>
+<span class="Statement">exec-program</span> <span class="Constant">&quot;ls&quot;</span><span class="Identifier"> args</span> <span class="Constant">&quot;-a&quot;</span>, <span class="Constant">&quot;-l&quot;</span>, <span class="Constant">&quot;-s&quot;</span><span class="Identifier"> output-file</span> <span class="Constant">&quot;lsout&quot;</span>
+<span class="Statement">read-file</span> <span class="Constant">&quot;lsout&quot;</span><span class="Type"> to</span> final_res
+<span class="Statement">print-out</span> final_res</pre>
+<span id=rimstone_copied_613 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_613' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_613, code_613, rimstone_copied_613)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Count the lines of file "config" (which is redirected to the standard output of "wc" program) and store the result in variable "ovar" (by means of redirecting the output of "wc" program to it), and then display: <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_618' class=notranslate>
-exec-program &quot;wc&quot; args &quot;-l&quot; input-file &quot;config&quot; output ovar
-print-out ovar</pre>
-<span id=rimstone_copied_618 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_618' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_618, code_618, rimstone_copied_618)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_614' class=notranslate>
+<span class="Statement">exec-program</span> <span class="Constant">&quot;wc&quot;</span><span class="Identifier"> args</span> <span class="Constant">&quot;-l&quot;</span><span class="Identifier"> input-file</span> <span class="Constant">&quot;config&quot;</span><span class="Type"> output</span> ovar
+<span class="Statement">print-out</span> ovar</pre>
+<span id=rimstone_copied_614 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_614' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_614, code_614, rimstone_copied_614)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Program execution'></a><span style="font-weight:bold;">Program execution</span><br/>

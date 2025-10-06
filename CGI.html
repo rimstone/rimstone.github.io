@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<!--__GOLF_REDIRECT__-->
+<!--__RIM_REDIRECT__-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
@@ -212,7 +212,7 @@ ul {
 <div id="google_translate_element" style='float:right'></div>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
-function gg_copy(gt, eid, gc) {
+function rim_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
   gt.select();
   document.execCommand("copy");
@@ -225,20 +225,20 @@ function googleTranslateElementInit() {
 
 </script>
 
-<!--GOLFMENU13-->
+<!--RIMMENU13-->
 
-<!--GOLFENDMENU13-->
+<!--RIMENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>CGI</div><hr/>You can run Golf application as a CGI (Common Gateway Interface) program, if your web server supports CGI. This is not recommended in general, as CGI programs do not exhibit great performance. However in some cases you may need to use CGI, such as when performance is not of critical importance, or when other methods of execution are not feasible.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>CGI</div><hr/>You can run RimStone application as a CGI (Common Gateway Interface) program, if your web server supports CGI. This is not recommended in general, as CGI programs do not exhibit great performance. However in some cases you may need to use CGI, such as when performance is not of critical importance, or when other methods of execution are not feasible.<br/>
 <br/>
-To run your application with CGI, use <a href='https://rimstone-lang.com/command-line.html'>command-line</a> program. Since Golf applications require running in the security context of the user who owns the application, you must use "suexec" (or similar feature) of your web server.<br/>
+To run your application with CGI, use <a href='https://rimstone-lang.com/command-line.html'>command-line</a> program. Since RimStone applications require running in the security context of the user who owns the application, you must use "suexec" (or similar feature) of your web server.<br/>
 <br/>
-The following script sets up an application named "func_test" (any kind of application will do) to run as CGI (after it's been compiled with <a href='https://rimstone-lang.com/gg.html'>gg</a>) on Apache web server running on Ubuntu 18 and up. For other web servers/distros, consult their documentation on how to setup CGI for a program.<br/>
+The following script sets up an application named "func_test" (any kind of application will do) to run as CGI (after it's been compiled with <a href='https://rimstone-lang.com/rim.html'>rim</a>) on Apache web server running on Ubuntu 18 and up. For other web servers/distros, consult their documentation on how to setup CGI for a program.<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_424' class=notranslate>
+<pre id='code_420' class=notranslate>
 <span class="Comment">#prep repos</span>
     sudo apt update
 
@@ -251,26 +251,26 @@ The following script sets up an application named "func_test" (any kind of appli
     sudo a2enmod suexec
     sudo service apache2 restart
 
-<span class="Comment">#setup a &quot;gg&quot; directory under cgi-bin where your application can run</span>
-    sudo <span class="Statement">mkdir</span> <span class="Special">-p</span> /usr/lib/cgi-bin/gg
-    sudo chown <span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span>:<span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span>  /usr/lib/cgi-bin/gg
-    sudo <span class="Statement">sed</span> <span class="Special">-i</span> <span class="Statement">'</span><span class="Constant">1c\/usr/lib/cgi-bin/gg</span><span class="Statement">'</span> /etc/apache2/suexec/www-data
+<span class="Comment">#setup a &quot;rim&quot; directory under cgi-bin where your application can run</span>
+    sudo <span class="Statement">mkdir</span> <span class="Special">-p</span> /usr/lib/cgi-bin/rim
+    sudo chown <span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span>:<span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span>  /usr/lib/cgi-bin/rim
+    sudo <span class="Statement">sed</span> <span class="Special">-i</span> <span class="Statement">'</span><span class="Constant">1c\/usr/lib/cgi-bin/rim</span><span class="Statement">'</span> /etc/apache2/suexec/www-data
 
-<span class="Comment">#copy your program to &quot;gg&quot; directory</span>
-    sudo <span class="Statement">mv</span> <span class="PreProc">$HOME</span>/.golf/apps/func-test/.bld/func-test /usr/lib/cgi-bin/gg
-    sudo chown <span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span>:<span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span>  /usr/lib/cgi-bin/gg/func-test
-    sudo <span class="Statement">chmod</span> <span class="Constant">700</span>  /usr/lib/cgi-bin/gg/func-test
+<span class="Comment">#copy your program to &quot;rim&quot; directory</span>
+    sudo <span class="Statement">mv</span> <span class="PreProc">$HOME</span>/.rimstone/apps/func-test/.bld/func-test /usr/lib/cgi-bin/rim
+    sudo chown <span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span>:<span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span>  /usr/lib/cgi-bin/rim/func-test
+    sudo <span class="Statement">chmod</span> <span class="Constant">700</span>  /usr/lib/cgi-bin/rim/func-test
 
 <span class="Comment">#add user/group of Gliim application user to suexec    </span>
     sudo <span class="Statement">sed</span> <span class="Special">-i</span> <span class="Statement">&quot;</span><span class="Constant">/SuexecUserGroup/d</span><span class="Statement">&quot;</span> /etc/apache2/sites-enabled/000-default.conf
     sudo <span class="Statement">sed</span> <span class="Special">-i</span> <span class="Statement">&quot;</span><span class="Constant">s/&lt;</span><span class="Special">\/</span><span class="Constant">VirtualHost&gt;/SuexecUserGroup </span><span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span><span class="Constant"> </span><span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span><span class="Special">\n</span><span class="Constant">&lt;</span><span class="Special">\/</span><span class="Constant">VirtualHost&gt;/g</span><span class="Statement">&quot;</span> /etc/apache2/sites-enabled/000-default.conf
     sudo service apache2 restart
 
-<span class="Comment">#the application is at <a href="http://127.0.0.1/cgi-bin/gg/func-test?...">http://127.0.0.1/cgi-bin/gg/func-test?...</a></span>
+<span class="Comment">#the application is at <a href="http://127.0.0.1/cgi-bin/rim/func-test?...">http://127.0.0.1/cgi-bin/rim/func-test?...</a></span>
 <span class="Comment">#substitute 127.0.0.1 for your web address</span></pre>
-<span id=rimstone_copied_424 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_424' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_424, code_424, rimstone_copied_424)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_420 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_420' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_420, code_420, rimstone_copied_420)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Running application'></a><span style="font-weight:bold;">Running application</span><br/>

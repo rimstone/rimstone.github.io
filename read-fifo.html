@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<!--__GOLF_REDIRECT__-->
+<!--__RIM_REDIRECT__-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
@@ -212,7 +212,7 @@ ul {
 <div id="google_translate_element" style='float:right'></div>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
-function gg_copy(gt, eid, gc) {
+function rim_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
   gt.select();
   document.execCommand("copy");
@@ -225,68 +225,68 @@ function googleTranslateElementInit() {
 
 </script>
 
-<!--GOLFMENU13-->
+<!--RIMMENU13-->
 
-<!--GOLFENDMENU13-->
+<!--RIMENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Read fifo</div><hr/><span style="font-weight:bold;">Purpose</span>: Reads key/value pair from a FIFO list.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Read fifo</div><hr/><span style="font-weight:bold;">Purpose</span>: Reads key/value pair from a FIFO list.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_897' class=notranslate>
-read-fifo &lt;list&gt; \
-    key &lt;key&gt; \
-    value &lt;value&gt; \
-    [ status &lt;status&gt; ]</pre>
-<span id=rimstone_copied_897 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_897' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_897, code_897, rimstone_copied_897)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_887' class=notranslate>
+<span class="Statement">read-fifo</span> &lt;list&gt; \
+   <span class="Type"> key</span> &lt;key&gt; \
+   <span class="Type"> value</span> &lt;value&gt; \
+    [<span class="Type"> status</span> &lt;status&gt; ]</pre>
+<span id=rimstone_copied_887 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_887' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_887, code_887, rimstone_copied_887)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 read-fifo retrieves an element from the FIFO &lt;list&gt; into &lt;key&gt; string &nbsp;(in "key" clause) and &lt;value&gt; string (in "value" clause).<br/>
 <br/>
 Once an element has been retrieved, the next use of read-fifo will obtain the following one, in the same order they were put in. read-fifo starts with the first element put in, and moves forward from there, unless <a href='https://rimstone-lang.com/rewind-fifo.html'>rewind-fifo</a> is called, which positions back to the first one.<br/>
 <br/>
-If the element is successfully retrieved, &lt;status&gt; number (in "status" clause) is GG_OKAY, otherwise it is GG_ERR_EXIST, which means there are no more elements to retrieve.<br/>
+If the element is successfully retrieved, &lt;status&gt; number (in "status" clause) is RIM_OKAY, otherwise it is RIM_ERR_EXIST, which means there are no more elements to retrieve.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 In this example, a FIFO list is created, and two key/value pairs added. They are then retrieved in a loop and printed out (twice with rewind), and then the list is purged:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_898' class=notranslate>
-// Create a list
-new-fifo mylist
+<pre id='code_888' class=notranslate>
+<span class="Comment">// Create a list</span>
+<span class="Statement">new-fifo</span> mylist
 
-// Add data to the list
-write-fifo mylist key &quot;key1&quot; value &quot;value1&quot;
-write-fifo mylist key &quot;some2&quot; value &quot;other2&quot;
+<span class="Comment">// Add data to the list</span>
+<span class="Statement">write-fifo</span> mylist<span class="Identifier"> key</span> <span class="Constant">&quot;key1&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;value1&quot;</span>
+<span class="Statement">write-fifo</span> mylist<span class="Identifier"> key</span> <span class="Constant">&quot;some2&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;other2&quot;</span>
 
-start-loop
-    // Get data from the list
-    read-fifo mylist key k value v status st
+<span class="Statement">start-loop</span>
+    <span class="Comment">// Get data from the list</span>
+<span class="Statement">    read-fifo</span> mylist<span class="Type"> key</span> k<span class="Type"> value</span> v<span class="Type"> status</span> st
 
-    // Check if no more data
-    if-true st not-equal GG_OKAY
-        break-loop
-    end-if
+    <span class="Comment">// Check if no more data</span>
+<span class="Statement">    if-true</span> st<span class="Identifier"> not-equal</span> RIM_OKAY
+<span class="Statement">        break-loop</span>
+<span class="Statement">    end-if</span>
 
-    @Obtained key &lt;&lt;print-out k&gt;&gt; with value &lt;&lt;print-out v&gt;&gt;
-end-loop
+<span class="Statement">    @</span>Obtained key <span class="Statement">&lt;&lt;print-out</span> k<span class="Statement">&gt;&gt;</span> with value <span class="Statement">&lt;&lt;print-out</span> v<span class="Statement">&gt;&gt;</span>
+<span class="Statement">end-loop</span>
 
-// Go through the list again, use rewind-fifo for that
-rewind-fifo mylist
+<span class="Comment">// Go through the list again, use rewind-fifo for that</span>
+<span class="Statement">rewind-fifo</span> mylist
 
-start-loop
-    read-fifo mylist key k value v status st
-    if-true st not-equal GG_OKAY
-        break-loop
-    end-if
-    @Again obtained key &lt;&lt;print-out k&gt;&gt; with value &lt;&lt;print-out v&gt;&gt;
-end-loop
+<span class="Statement">start-loop</span>
+<span class="Statement">    read-fifo</span> mylist<span class="Type"> key</span> k<span class="Type"> value</span> v<span class="Type"> status</span> st
+<span class="Statement">    if-true</span> st<span class="Identifier"> not-equal</span> RIM_OKAY
+<span class="Statement">        break-loop</span>
+<span class="Statement">    end-if</span>
+<span class="Statement">    @</span>Again obtained key <span class="Statement">&lt;&lt;print-out</span> k<span class="Statement">&gt;&gt;</span> with value <span class="Statement">&lt;&lt;print-out</span> v<span class="Statement">&gt;&gt;</span>
+<span class="Statement">end-loop</span>
 
-purge-fifo mylist</pre>
-<span id=rimstone_copied_898 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_898' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_898, code_898, rimstone_copied_898)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span class="Statement">purge-fifo</span> mylist</pre>
+<span id=rimstone_copied_888 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_888' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_888, code_888, rimstone_copied_888)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='FIFO'></a><span style="font-weight:bold;">FIFO</span><br/>

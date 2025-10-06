@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<!--__GOLF_REDIRECT__-->
+<!--__RIM_REDIRECT__-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
@@ -212,7 +212,7 @@ ul {
 <div id="google_translate_element" style='float:right'></div>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
-function gg_copy(gt, eid, gc) {
+function rim_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
   gt.select();
   document.execCommand("copy");
@@ -225,41 +225,41 @@ function googleTranslateElementInit() {
 
 </script>
 
-<!--GOLFMENU13-->
+<!--RIMMENU13-->
 
-<!--GOLFENDMENU13-->
+<!--RIMENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Directories</div><hr/><div class="vsub"><a id="Application directory structure"></a>Application directory structure</div>
-<a href='https://rimstone-lang.com/mgrg.html'>mgrg</a> will create a Golf directory structure (see "-i" option) when you create your application. While you can keep and compile Golf source files in any directory, the directories used by Golf are always under "$HOME/.golf" directory ("user directory"). This user directory is also available in your environment as $GG_ROOT.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Directories</div><hr/><div class="vsub"><a id="Application directory structure"></a>Application directory structure</div>
+<a href='https://rimstone-lang.com/mrim.html'>mrim</a> will create a RimStone directory structure (see "-i" option) when you create your application. While you can keep and compile RimStone source files in any directory, the directories used by RimStone are always under "$HOME/.rimstone" directory ("user directory"). This user directory is also available in your environment as $RIM_ROOT.<br/>
 <br/>
 This is the directory structure:<br/>
-<ul><li>$HOME/.golf/apps/&lt;app name&gt;/.bld<br/>
+<ul><li>$HOME/.rimstone/apps/&lt;app name&gt;/.bld<br/>
 Build directory is where your application executables are built, with name &lt;app name&gt;.srvc for a <a href='https://rimstone-lang.com/service.html'>service</a> and &lt;app name&gt; for a <a href='https://rimstone-lang.com/command-line.html'>command-line</a> program. This is a scratch-pad directory, thus do not alter files in it, or use for anything else. It is created with 700 privileges.<br/>
 <br/>
-</li><li>$HOME/.golf/apps/&lt;app name&gt;<br/>
+</li><li>$HOME/.rimstone/apps/&lt;app name&gt;<br/>
 Application directory. All application data is kept here. It is created with 711 privileges.<br/>
 <br/>
-</li><li>$HOME/.golf/apps/&lt;app name&gt;/app<br/>
+</li><li>$HOME/.rimstone/apps/&lt;app name&gt;/app<br/>
 Application home directory. This is the current working directory when your application runs. Copy/move here any files and directories your application needs. It is created with 700 privileges.<br/>
 <br/>
-</li><li>$HOME/.golf/apps/&lt;app name&gt;/file<br/>
-This is <a href='https://rimstone-lang.com/file-storage.html'>file-storage</a> used for uploads and new document creation. Do not write there directly; Golf does that for you, such as with <a href='https://rimstone-lang.com/uniq-file.html'>uniq-file</a> for instance, or when uploading files. It is created with 700 privileges.<br/>
+</li><li>$HOME/.rimstone/apps/&lt;app name&gt;/file<br/>
+This is <a href='https://rimstone-lang.com/file-storage.html'>file-storage</a> used for uploads and new document creation. Do not write there directly; RimStone does that for you, such as with <a href='https://rimstone-lang.com/uniq-file.html'>uniq-file</a> for instance, or when uploading files. It is created with 700 privileges.<br/>
 <br/>
-</li><li>$HOME/.golf/apps/&lt;app name&gt;/trace<br/>
+</li><li>$HOME/.rimstone/apps/&lt;app name&gt;/trace<br/>
 This is a trace directory that contains files describing fatal issues with your program(s); information contained in them can help you diagnose the issues and fix them. See <a href='https://rimstone-lang.com/debugging.html'>debugging</a>. It is created with 700 privileges.<br/>
 <br/>
-</li><li>$HOME/.golf/apps/&lt;app name&gt;/db<br/>
-Database configuration directory contains the <a href='https://rimstone-lang.com/database-config-file.html'>database-config-file</a>s used by Golf to connect to databases; this directory is maintained by Golf and you should not use it. It is created with 700 privileges.</li></ul>
-While Golf directories are fixed, you can effectively change their location by creating a soft link. This way, your directories and files can be elsewhere, even on a different disk. For example, to house your file storage on a different disk:<br/>
+</li><li>$HOME/.rimstone/apps/&lt;app name&gt;/db<br/>
+Database configuration directory contains the <a href='https://rimstone-lang.com/database-config-file.html'>database-config-file</a>s used by RimStone to connect to databases; this directory is maintained by RimStone and you should not use it. It is created with 700 privileges.</li></ul>
+While RimStone directories are fixed, you can effectively change their location by creating a soft link. This way, your directories and files can be elsewhere, even on a different disk. For example, to house your file storage on a different disk:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_578' class=notranslate>
-ln <span class="Special">-s</span> /home/disk0/file <span class="PreProc">$HOME</span>/.golf/apps/<span class="Statement">&lt;</span>app name<span class="Statement">&gt;</span>/file</pre>
-<span id=rimstone_copied_578 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_578' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_578, code_578, rimstone_copied_578)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_574' class=notranslate>
+ln <span class="Special">-s</span> /home/disk0/file <span class="PreProc">$HOME</span>/.rimstone/apps/<span class="Statement">&lt;</span>app name<span class="Statement">&gt;</span>/file</pre>
+<span id=rimstone_copied_574 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_574' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_574, code_574, rimstone_copied_574)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Directories'></a><span style="font-weight:bold;">Directories</span><br/>
@@ -269,7 +269,7 @@ ln <span class="Special">-s</span> /home/disk0/file <span class="PreProc">$HOME<
 <a href='https://rimstone-lang.com/directories.html'>directories</a> &nbsp;<br/>
 <a href='https://rimstone-lang.com/new-dir.html'>new-dir</a> &nbsp; <br/>
  <a name='General'></a><span style="font-weight:bold;">General</span><br/>
-<a href='https://rimstone-lang.com/about-golf.html'>about-golf</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/about-rimstone.html'>about-rimstone</a> &nbsp;<br/>
 <a href='https://rimstone-lang.com/devel-versus-release.html'>devel-versus-release</a> &nbsp;<br/>
 <a href='https://rimstone-lang.com/directories.html'>directories</a> &nbsp;<br/>
 <a href='https://rimstone-lang.com/permissions.html'>permissions</a> &nbsp; <br/>

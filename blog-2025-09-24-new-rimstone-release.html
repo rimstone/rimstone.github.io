@@ -2,16 +2,16 @@
 <html lang="en">
 
 <head>
-<!--__GOLF_REDIRECT__-->
+<!--__RIM_REDIRECT__-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 
-<title>Golf 3.4.0 released</title>
+<title>RimStone 3.4.0 released</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="canonical" href="https://rimstone-lang.com/blog-2025-09-24-new-golf-release.html" />
+<link rel="canonical" href="https://rimstone-lang.com/blog-2025-09-24-new-rimstone-release.html" />
 <style>
 
 
@@ -212,7 +212,7 @@ ul {
 <div id="google_translate_element" style='float:right'></div>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
-function gg_copy(gt, eid, gc) {
+function rim_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
   gt.select();
   document.execCommand("copy");
@@ -225,15 +225,15 @@ function googleTranslateElementInit() {
 
 </script>
 
-<!--GOLFMENU13-->
+<!--RIMMENU13-->
 
-<!--GOLFENDMENU13-->
+<!--RIMENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Golf 3.4.0 released</div><hr/><br/>
-This release gives Golf full-blown general puprose programming capabilities with the extensive support for a double type, including double arrays (see <a href='https://rimstone-lang.com/new-array.html'>new-array</a>). A double is created with <a href='https://rimstone-lang.com/set-double.html'>set-double</a> statement. Doubles are extended precision 64 bit floating point values. A long list of math functions have been added. The following return a double:<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>RimStone 3.4.0 released</div><hr/><br/>
+This release gives RimStone full-blown general puprose programming capabilities with the extensive support for a double type, including double arrays (see <a href='https://rimstone-lang.com/new-array.html'>new-array</a>). A double is created with <a href='https://rimstone-lang.com/set-double.html'>set-double</a> statement. Doubles are extended precision 64 bit floating point values. A long list of math functions have been added. The following return a double:<br/>
 <ul><li><a href='https://rimstone-lang.com/dbl.html'>dbl</a><br/>
 </li><li><a href='https://rimstone-lang.com/sin.html'>sin</a><br/>
 </li><li><a href='https://rimstone-lang.com/cos.html'>cos</a><br/>
@@ -279,10 +279,10 @@ The following functions return a number - especially usefull is a num() function
 </li><li>"error-margin" clause is added in conditional <a href='https://rimstone-lang.com/if-true.html'>if-true</a> statement to allow comparing double for equality with a margin of error.<br/>
 </li><li>Added "double" type in arrays, including process-scoped arrays.<br/>
 </li><li>Added $$() for conversion of doubles to strings in string expressions, and ##() for conversion of strings to doubles in double expressions.<br/>
-</li><li>Added a debugging --fpe option to <a href='https://rimstone-lang.com/gg.html'>gg</a> utility to make the application with double and integer instrumentation, so errors like overflows and division by zero can be caught.<br/>
+</li><li>Added a debugging --fpe option to <a href='https://rimstone-lang.com/rim.html'>rim</a> utility to make the application with double and integer instrumentation, so errors like overflows and division by zero can be caught.<br/>
 </li><li>Fixed a bug with error reporting: when an error is reported multiple times in the same process, only the first one would have the error description. Now each is complete as expected.<br/>
 </li><li>Fixed an issue with using vi vs vim: in vi there's no support for highlighting, which would issue a one time error message.<br/>
-</li><li>Fixed an issue when an error message in Golf code compilation is not shown when it contains binary text.<br/>
+</li><li>Fixed an issue when an error message in RimStone code compilation is not shown when it contains binary text.<br/>
 </li><li>Fixed an issue with unary plus ("+") missing in number/double expressions.<br/>
 </li><li>Clarified error message when request name is missing in URL.<br/>
 </li><li>Added <a href='https://rimstone-lang.com/abs-double.html'>abs-double</a>, <a href='https://rimstone-lang.com/string-double.html'>string-double</a>, <a href='https://rimstone-lang.com/double-string.html'>double-string</a>, as well as double type to <a href='https://rimstone-lang.com/get-param.html'>get-param</a> and <a href='https://rimstone-lang.com/set-param.html'>set-param</a> statements.</li></ul>

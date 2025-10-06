@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<!--__GOLF_REDIRECT__-->
+<!--__RIM_REDIRECT__-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
@@ -212,7 +212,7 @@ ul {
 <div id="google_translate_element" style='float:right'></div>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
-function gg_copy(gt, eid, gc) {
+function rim_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
   gt.select();
   document.execCommand("copy");
@@ -225,30 +225,30 @@ function googleTranslateElementInit() {
 
 </script>
 
-<!--GOLFMENU13-->
+<!--RIMMENU13-->
 
-<!--GOLFENDMENU13-->
+<!--RIMENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Get req</div><hr/><span style="font-weight:bold;">Purpose</span>: Obtain data that describes the input request.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Get req</div><hr/><span style="font-weight:bold;">Purpose</span>: Obtain data that describes the input request.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_664' class=notranslate>
-get-req \
-        errno | error | cookie-count | cookie &lt;cookie index&gt; \
-        | arg-count | arg-value &lt;arg index&gt; \
-        | header &lt;header&gt; | referring-url | method \
-        | content-type | process-id | name \
-        | external-call | directory | source-file
-    to &lt;variable&gt;</pre>
-<span id=rimstone_copied_664 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_664' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_664, code_664, rimstone_copied_664)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_660' class=notranslate>
+<span class="Statement">get-req</span> \
+       <span class="Identifier"> errno</span> |<span class="Identifier"> error</span> |<span class="Identifier"> cookie-count</span> |<span class="Identifier"> cookie</span> &lt;cookie index&gt; \
+        |<span class="Identifier"> arg-count</span> |<span class="Identifier"> arg-value</span> &lt;arg index&gt; \
+        |<span class="Identifier"> header</span> &lt;header&gt; |<span class="Identifier"> referring-url</span> |<span class="Identifier"> method</span> \
+        |<span class="Identifier"> content-type</span> |<span class="Identifier"> process-id</span> |<span class="Identifier"> name</span> \
+        |<span class="Identifier"> external-call</span> |<span class="Identifier"> directory</span> |<span class="Identifier"> source-file</span> \
+   <span class="Type"> to</span> &lt;variable&gt;</pre>
+<span id=rimstone_copied_660 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_660' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_660, code_660, rimstone_copied_660)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Information related to an input request can be obtained with get-req statement and the result stored into &lt;variable&gt; (in "to" clause). The following can be obtained (all are strings except where stated otherwise):<br/>
-<ul><li>"errno" obtains the integer value of operating system "errno" tied to a last Golf statement that can return a status code. The "errno" value is saved internally; and restored here. It means that if "errno" changed for whatever reason since such Golf statement (such as with <a href='https://rimstone-lang.com/call-extended.html'>call-extended</a>), you will still obtain the correct value. See <a href='https://rimstone-lang.com/error-code.html'>error-code</a> for an example. Note that errno value is undefined if there is no error, and can be 0 if the error is reported by Golf and not by operating system.<br/>
+<ul><li>"errno" obtains the integer value of operating system "errno" tied to a last RimStone statement that can return a status code. The "errno" value is saved internally; and restored here. It means that if "errno" changed for whatever reason since such RimStone statement (such as with <a href='https://rimstone-lang.com/call-extended.html'>call-extended</a>), you will still obtain the correct value. See <a href='https://rimstone-lang.com/error-code.html'>error-code</a> for an example. Note that errno value is undefined if there is no error, and can be 0 if the error is reported by RimStone and not by operating system.<br/>
 <br/>
 </li><li>"error" returns the error message that correlates to "errno" value. <br/>
 <br/>
@@ -256,47 +256,47 @@ Information related to an input request can be obtained with get-req statement a
 <br/>
 </li><li>"cookie" returns the cookie value specified by &lt;cookie index&gt; (a sequential number starting with 1 up to the number of cookies), for instance:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_665' class=notranslate>
-get-req cookie-count to cookie_c
-start-loop repeat cookie_c use i
-    get-req cookie i to cookie_val
-    print-format &quot;cookie %s\n&quot;, cookie_val web-encode
-    @&lt;br/&gt;
-end-loop</pre>
-<span id=rimstone_copied_665 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_665' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_665, code_665, rimstone_copied_665)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_661' class=notranslate>
+<span class="Statement">get-req</span><span class="Identifier"> cookie-count</span><span class="Type"> to</span> cookie_c
+<span class="Statement">start-loop</span><span class="Identifier"> repeat</span> cookie_c<span class="Type"> use</span> i
+<span class="Statement">    get-req</span><span class="Identifier"> cookie</span> i<span class="Type"> to</span> cookie_val
+<span class="Statement">    print-format</span> <span class="Constant">&quot;cookie </span><span class="Special">%s</span><span class="Special">\n</span><span class="Constant">&quot;</span>, cookie_val<span class="Identifier"> web-encode</span>
+<span class="Statement">    @</span>&lt;br/&gt;
+<span class="Statement">end-loop</span></pre>
+<span id=rimstone_copied_661 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_661' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_661, code_661, rimstone_copied_661)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In this example, we get the number of cookies, and then print out each cookie value.<br/>
 <br/>
-</li><li>"arg-count" is the number of input arguments to your application (passed from a program caller, see "-a" option in <a href='https://rimstone-lang.com/mgrg.html'>mgrg</a> and "--arg" in <a href='https://rimstone-lang.com/gg.html'>gg</a>).<br/>
+</li><li>"arg-count" is the number of input arguments to your application (passed from a program caller, see "-a" option in <a href='https://rimstone-lang.com/mrim.html'>mrim</a> and "--arg" in <a href='https://rimstone-lang.com/rim.html'>rim</a>).<br/>
 <br/>
 </li><li>"arg-value" is the string value of a single element from the array of input arguments, specified by &lt;arg_index&gt;. This array is indexed from 1 to the value obtained by "arg-count". Here is an example of using arg-count and arg-value:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_666' class=notranslate>
-get-req arg-count to ac
-print-format &quot;Total args [%ld]&quot;, ac
-start-loop repeat ac use i
-    get-req arg-value i to av
-    print-format &quot;%s\n&quot;, av
-end-loop</pre>
-<span id=rimstone_copied_666 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_666' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_666, code_666, rimstone_copied_666)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_662' class=notranslate>
+<span class="Statement">get-req</span><span class="Identifier"> arg-count</span><span class="Type"> to</span> ac
+<span class="Statement">print-format</span> <span class="Constant">&quot;Total args [</span><span class="Special">%ld</span><span class="Constant">]&quot;</span>, ac
+<span class="Statement">start-loop</span><span class="Identifier"> repeat</span> ac<span class="Type"> use</span> i
+<span class="Statement">    get-req</span><span class="Identifier"> arg-value</span> i<span class="Type"> to</span> av
+<span class="Statement">    print-format</span> <span class="Constant">&quot;</span><span class="Special">%s</span><span class="Special">\n</span><span class="Constant">&quot;</span>, av
+<span class="Statement">end-loop</span></pre>
+<span id=rimstone_copied_662 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_662' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_662, code_662, rimstone_copied_662)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 This code will display the number of input arguments (as passed to main() function of your program, excluding the first argument which is the name of the program), and then all the arguments. If there are no arguments, then variable 'ac' would be 0. <br/>
 <br/>
 </li><li>"header" is the value of HTTP request header &lt;header&gt; that is set by the client. For example, if the HTTP request contains header "My-Header:30", then hval would be "30":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_667' class=notranslate>
-get-req header &quot;My-Header&quot; to hval</pre>
-<span id=rimstone_copied_667 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_667' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_667, code_667, rimstone_copied_667)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_663' class=notranslate>
+<span class="Statement">get-req</span><span class="Identifier"> header</span> <span class="Constant">&quot;My-Header&quot;</span><span class="Type"> to</span> hval</pre>
+<span id=rimstone_copied_663 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_663' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_663, code_663, rimstone_copied_663)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Note that not all HTTP request headers are set by the caller. For example, SERVER_NAME or QUERY_STRING are set by the web server, and to get such headers, use <a href='https://rimstone-lang.com/get-sys.html'>get-sys</a>.<br/>
 <br/>
-</li><li>"method" is the request method. This is a number with values of GG_GET, GG_POST, GG_PUT, GG_PATCH or GG_DELETE for GET, POST, PUT, PATCH or DELETE requests, respectively. If it is not any of those commonly used ones, then the value is GG_OTHER and you can use <a href='https://rimstone-lang.com/get-sys.html'>get-sys</a> with "environment" clause to obtain "REQUEST_METHOD" variable.<br/>
+</li><li>"method" is the request method. This is a number with values of RIM_GET, RIM_POST, RIM_PUT, RIM_PATCH or RIM_DELETE for GET, POST, PUT, PATCH or DELETE requests, respectively. If it is not any of those commonly used ones, then the value is RIM_OTHER and you can use <a href='https://rimstone-lang.com/get-sys.html'>get-sys</a> with "environment" clause to obtain "REQUEST_METHOD" variable.<br/>
 <br/>
 </li><li>"content-type" is the request content type. It is a string and generally denotes the content type of a <a href='https://rimstone-lang.com/request-body.html'>request-body</a>, if included in the request. Common examples are "application/x-www-form-urlencoded", "multipart/form-data" or "application/json".<br/>
 <br/>
@@ -314,11 +314,11 @@ Note that not all HTTP request headers are set by the caller. For example, SERVE
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Get the process ID:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_668' class=notranslate>
-get-req process-id to pid</pre>
-<span id=rimstone_copied_668 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_668' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_668, code_668, rimstone_copied_668)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_664' class=notranslate>
+<span class="Statement">get-req</span><span class="Identifier"> process-id</span><span class="Type"> to</span> pid</pre>
+<span id=rimstone_copied_664 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_664' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_664, code_664, rimstone_copied_664)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Request information'></a><span style="font-weight:bold;">Request information</span><br/>

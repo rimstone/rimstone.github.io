@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<!--__GOLF_REDIRECT__-->
+<!--__RIM_REDIRECT__-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
@@ -212,7 +212,7 @@ ul {
 <div id="google_translate_element" style='float:right'></div>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
-function gg_copy(gt, eid, gc) {
+function rim_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
   gt.select();
   document.execCommand("copy");
@@ -225,103 +225,105 @@ function googleTranslateElementInit() {
 
 </script>
 
-<!--GOLFMENU13-->
+<!--RIMMENU13-->
 
-<!--GOLFENDMENU13-->
+<!--RIMENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>First In First Out (FIFO) example</div><hr/><br/>
-Golf has built-in FIFO list type. You can create a FIFO variable and then store key/value string pairs in it, which you can then read back in the order you put them in. You can also rewind the FIFO list and obtain the same key/value pairs over and over again if needed.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>First In First Out (FIFO) example</div><hr/><br/>
+RimStone has built-in FIFO list type. You can create a FIFO variable and then store key/value string pairs in it, which you can then read back in the order you put them in. You can also rewind the FIFO list and obtain the same key/value pairs over and over again if needed.<br/>
 <br/>
 This is an example of FIFO list usage. This small command-line application will store key/value pairs "key1"/"value1" and "key2"/"value2" and then obtain them twice.<br/>
 <br/>
 First, let's create a directory for our application:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_112' class=notranslate>
+<pre id='code_111' class=notranslate>
 <span class="Statement">mkdir</span> test-list
 <span class="Statement">cd</span> test-list/</pre>
-<span id=rimstone_copied_112 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_112' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_112, code_112, rimstone_copied_112)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_111 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_111' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_111, code_111, rimstone_copied_111)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 And then create the application itself:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_113' class=notranslate>
-gg <span class="Special">-k</span> list-app</pre>
-<span id=rimstone_copied_113 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_113' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_113, code_113, rimstone_copied_113)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_112' class=notranslate>
+rim <span class="Special">-k</span> list-app</pre>
+<span id=rimstone_copied_112 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_112' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_112, code_112, rimstone_copied_112)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Copy and paste the Golf code below to file "list.golf":<br/>
+The RimStone code will be in file "list.rim":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_111' class=notranslate>
-begin-handler /list
-    silent-header
+<pre id='code_110' class=notranslate>
+cat &lt;&lt; '<span class="Constant">EOF</span>' &gt; list.rim
+<span class="Statement">begin-handler</span> /list
+<span class="Statement">    silent-header</span>
 
-    // Create a list
-    new-fifo mylist
+    <span class="Comment">// Create a list</span>
+<span class="Statement">    new-fifo</span> mylist
 
-    // Add data to the list
-    write-fifo mylist key &quot;key1&quot; value &quot;value1&quot;
-    write-fifo mylist key &quot;key2&quot; value &quot;value2&quot;
+    <span class="Comment">// Add data to the list</span>
+<span class="Statement">    write-fifo</span> mylist<span class="Identifier"> key</span> <span class="Constant">&quot;key1&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;value1&quot;</span>
+<span class="Statement">    write-fifo</span> mylist<span class="Identifier"> key</span> <span class="Constant">&quot;key2&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;value2&quot;</span>
 
-    start-loop
-     // Get data from the list
-     read-fifo mylist key k value v status st
-     // Check if no more data
-     if-true st not-equal GG_OKAY
-         break-loop
-     end-if
-     @Obtained key &lt;&lt;print-out k&gt;&gt; with value &lt;&lt;print-out v&gt;&gt;
-    end-loop
+<span class="Statement">    start-loop</span>
+     <span class="Comment">// Get data from the list</span>
+<span class="Statement">     read-fifo</span> mylist<span class="Type"> key</span> k<span class="Type"> value</span> v<span class="Type"> status</span> st
+     <span class="Comment">// Check if no more data</span>
+<span class="Statement">     if-true</span> st<span class="Identifier"> not-equal</span> RIM_OKAY
+<span class="Statement">         break-loop</span>
+<span class="Statement">     end-if</span>
+<span class="Statement">     @</span>Obtained key <span class="Statement">&lt;&lt;print-out</span> k<span class="Statement">&gt;&gt;</span> with value <span class="Statement">&lt;&lt;print-out</span> v<span class="Statement">&gt;&gt;</span>
+<span class="Statement">    end-loop</span>
 
-    // Go through the list again, use rewind-fifo for that
-    rewind-fifo mylist
-    start-loop
-        read-fifo mylist key k value v status st
-        if-true st not-equal GG_OKAY
-            break-loop
-        end-if
-        @Again obtained key &lt;&lt;print-out k&gt;&gt; with value &lt;&lt;print-out v&gt;&gt;
-    end-loop
+    <span class="Comment">// Go through the list again, use rewind-fifo for that</span>
+<span class="Statement">    rewind-fifo</span> mylist
+<span class="Statement">    start-loop</span>
+<span class="Statement">        read-fifo</span> mylist<span class="Type"> key</span> k<span class="Type"> value</span> v<span class="Type"> status</span> st
+<span class="Statement">        if-true</span> st<span class="Identifier"> not-equal</span> RIM_OKAY
+<span class="Statement">            break-loop</span>
+<span class="Statement">        end-if</span>
+<span class="Statement">        @</span>Again obtained key <span class="Statement">&lt;&lt;print-out</span> k<span class="Statement">&gt;&gt;</span> with value <span class="Statement">&lt;&lt;print-out</span> v<span class="Statement">&gt;&gt;</span>
+<span class="Statement">    end-loop</span>
 
-    // Delete FIFO list
-    purge-fifo mylist
-end-handler</pre>
-<span id=rimstone_copied_111 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_111' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_111, code_111, rimstone_copied_111)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+    <span class="Comment">// Delete FIFO list</span>
+<span class="Statement">    purge-fifo</span> mylist
+<span class="Statement">end-handler</span>
+<span class="Constant">EOF</span></pre>
+<span id=rimstone_copied_110 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_110' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_110, code_110, rimstone_copied_110)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The code above uses <a href='https://rimstone-lang.com/new-fifo.html'>new-fifo</a> statement to create a FIFO variable, <a href='https://rimstone-lang.com/write-fifo.html'>write-fifo</a> to add key/value pairs to it, and <a href='https://rimstone-lang.com/read-fifo.html'>read-fifo</a> to obtain them back in the order they were put in. You can use <a href='https://rimstone-lang.com/rewind-fifo.html'>rewind-fifo</a> to rewind back to the beginning at any time, as many times as you need.<br/>
 <br/>
 Make the executable:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_114' class=notranslate>
-gg <span class="Special">-q</span> <span class="Special">--public</span></pre>
-<span id=rimstone_copied_114 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_114' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_114, code_114, rimstone_copied_114)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_113' class=notranslate>
+rim <span class="Special">-q</span> <span class="Special">--public</span></pre>
+<span id=rimstone_copied_113 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_113' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_113, code_113, rimstone_copied_113)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Execute the program:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_115' class=notranslate>
-gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/list</span><span class="Statement">&quot;</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/list-app</span><span class="Statement">&quot;</span> <span class="Special">--exec</span></pre>
-<span id=rimstone_copied_115 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_115' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_115, code_115, rimstone_copied_115)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_114' class=notranslate>
+rim <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/list</span><span class="Statement">&quot;</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/list-app</span><span class="Statement">&quot;</span> <span class="Special">--exec</span></pre>
+<span id=rimstone_copied_114 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_114' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_114, code_114, rimstone_copied_114)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The result is as expected:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_110' class=notranslate>
+<pre id='code_109' class=notranslate>
 Obtained key key1 with value value1
 Obtained key key2 with value value2
 Again obtained key key1 with value value1
 Again obtained key key2 with value value2</pre>
-<span id=rimstone_copied_110 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_110' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_110, code_110, rimstone_copied_110)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_109 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_109' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_109, code_109, rimstone_copied_109)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>

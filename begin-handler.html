@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<!--__GOLF_REDIRECT__-->
+<!--__RIM_REDIRECT__-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
@@ -212,7 +212,7 @@ ul {
 <div id="google_translate_element" style='float:right'></div>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
-function gg_copy(gt, eid, gc) {
+function rim_copy(gt, eid, gc) {
   gt.textContent = eid.textContent;
   gt.select();
   document.execCommand("copy");
@@ -225,23 +225,23 @@ function googleTranslateElementInit() {
 
 </script>
 
-<!--GOLFMENU13-->
+<!--RIMMENU13-->
 
-<!--GOLFENDMENU13-->
+<!--RIMENDMENU13-->
 
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png'/></a></div><div class='vhub' style='margin-top:10px;'>Begin handler</div><hr/><span style="font-weight:bold;">Purpose</span>: Define a request handler.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Begin handler</div><hr/><span style="font-weight:bold;">Purpose</span>: Define a request handler.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_385' class=notranslate>
-begin-handler &lt;request path&gt; [ private | public ]
+<pre id='code_380' class=notranslate>
+<span class="Statement">begin-handler</span> &lt;request path&gt; [<span class="Identifier"> private</span> |<span class="Identifier"> public</span> ]
     &lt;any code&gt;
-end-handler</pre>
-<span id=rimstone_copied_385 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_385' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_385, code_385, rimstone_copied_385)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span class="Statement">end-handler</span></pre>
+<span id=rimstone_copied_380 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_380' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_380, code_380, rimstone_copied_380)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 begin-handler starts the implementation of a <a href='https://rimstone-lang.com/request.html'>request</a> handler for &lt;request path&gt; (see <a href='https://rimstone-lang.com/request.html'>request</a>), which is &lt;any code&gt; up to end-handler. &lt;request path&gt; is not quoted.<br/>
 <br/>
@@ -249,7 +249,7 @@ A &lt;request path&gt; is a path consisting of any number of path segments. A re
 <br/>
 For example, a &lt;request path&gt; can be "/wine-items" or "/items/wine" etc. In general, it represents the nature of a request, such as an action on an object, a resource path handled by it etc. There is no specific way to interpret a request path, and you can construct it in a way that works for you.<br/>
 <br/>
-The source ".golf" file name that implements a given begin-handler matches its path and name, fully or partially (see <a href='https://rimstone-lang.com/request.html'>request</a>). For example, &lt;request path&gt; of "/items/wine" might be implemented in &nbsp;"items/wine.golf" file (meaning in file "wine.golf" in subdirectory "items").<br/>
+The source ".rim" file name that implements a given begin-handler matches its path and name, fully or partially (see <a href='https://rimstone-lang.com/request.html'>request</a>). For example, &lt;request path&gt; of "/items/wine" might be implemented in &nbsp;"items/wine.rim" file (meaning in file "wine.rim" in subdirectory "items").<br/>
 <br/>
 Note that you can also use "%%" instead of either begin-handler or end-handler or both. A &lt;request path&gt; cannot be a C reserved word, such as for instance "main" or "typedef" etc.<br/>
 <div class="vsub"><a id="Security of request calls"></a>Security of request calls</div>
@@ -259,27 +259,27 @@ If "private" clause is used, then a handler cannot be called from an outside cal
 <br/>
 If neither "public" nor "private" is used, then the default is "private". This default mechanism automatically guards direct execution by outside callers of all handlers not marked "public"; it provides automatic safety guard. <br/>
 <br/>
-You can change this default behavior with "--public" option in <a href='https://rimstone-lang.com/gg.html'>gg</a>, in which case the default is "public". This is useful if either all request handlers should be public, or if only a handful fixed ones are private.<br/>
+You can change this default behavior with "--public" option in <a href='https://rimstone-lang.com/rim.html'>rim</a>, in which case the default is "public". This is useful if either all request handlers should be public, or if only a handful fixed ones are private.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
-The following begin-handler is implemented in file "items/wines/red-wine.golf":<br/>
+The following begin-handler is implemented in file "items/wines/red-wine.rim":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_386' class=notranslate>
-begin-handler  /items/wines/red-wine public
-    @This is a request handler to display a list of red wines!
-end-handler</pre>
-<span id=rimstone_copied_386 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_386' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_386, code_386, rimstone_copied_386)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_381' class=notranslate>
+<span class="Statement">begin-handler</span>  /items/wines/red-wine<span class="Identifier"> public</span>
+<span class="Statement">    @</span>This is a request handler to display a list of red wines!
+<span class="Statement">end-handler</span></pre>
+<span id=rimstone_copied_381 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_381' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_381, code_381, rimstone_copied_381)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Another way to write this is:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_387' class=notranslate>
-%%  /items/wines/red-wine public
-    @This is a request handler to display a list of red wines!
-%%</pre>
-<span id=rimstone_copied_387 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_387' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='gg_copy(rimstonet_387, code_387, rimstone_copied_387)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_382' class=notranslate>
+<span class="Statement">%%</span>  /items/wines/red-wine<span class="Identifier"> public</span>
+<span class="Statement">    @</span>This is a request handler to display a list of red wines!
+<span class="Statement">%%</span></pre>
+<span id=rimstone_copied_382 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_382' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_382, code_382, rimstone_copied_382)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Service processing'></a><span style="font-weight:bold;">Service processing</span><br/>
