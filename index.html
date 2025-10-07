@@ -93,14 +93,6 @@
             flex-direction: column; /* text within square is stacked */
         }
 
-        .thin {
-	    font-weight:300;
-        }
-
-	h2, h3 {
-  		font-weight: 300; /* Example: a semi-bold weight */
-	}
-
         .square p {
             margin: 0; /* no default margin */
             text-align:left;
@@ -165,15 +157,7 @@
         .btn-cont {
             display: flex;
             gap: 20px;
-	    font-weight:500;
-	    transition: box-shadow 0.3s ease-in-out;
-	    border: 1px solid #e4e4e4;
         }
-	.btn-cont:hover {
-  		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* A light, diffused shadow */
-	}
-
-	a.btn { color: black; }
 
         .btn {
             font-size: 26px;
@@ -184,6 +168,14 @@
             cursor: pointer;
         }
 
+        /* Filled button */
+        .button-st {
+            border: 1px solid gray;
+        }
+
+        .button-st:hover {
+            border-color: black;
+        }
 
     </style>
 </head>
@@ -210,7 +202,7 @@
         }
     </style>
     <div style='float:right;padding-bottom:10px;font-style:italic;padding-right:10px;'>
-Current release (4.0.0). Updated 2025-10-06.
+Current release (3.4.0). Updated 2025-10-06.
     </div>
 
 
@@ -222,8 +214,7 @@ Current release (4.0.0). Updated 2025-10-06.
                <img src="rimstone-large.png" style='width:100%;height:auto;'>
             </div>
             <div style='color:#3d3d3d'>
-                <h2 class='thin' >Web Domain-Specific Language.<br/>Massively Powerful.<br/>Apache 2 License.</h2>
-		<h3 class='thin'>RimStone is a better way to build Web backend.</h3>
+                <h2 >A better way for Web backend.<br/>Massively Powerful.<br/>Apache 2 License.</h2>
             </div>
         </div>
     </sect>
@@ -232,32 +223,27 @@ Current release (4.0.0). Updated 2025-10-06.
         <div class="box-container">
             <div class="square_menu">
                 <div class="btn-cont">
-                    <a href="/install-rimstone.html" class="btn ">Install</a>
+                    <a href="/install-rimstone.html" class="btn button-st">Install</a>
                 </div>
             </div>
             <div class="square_menu">
                 <div class="btn-cont">
-                    <a href="/documentation.html" class="btn ">Docs</a>
+                    <a href="/documentation.html" class="btn button-st">Docs</a>
                 </div>
             </div>
             <div class="square_menu">
                 <div class="btn-cont">
-                    <a href="/examples.html" class="btn ">Examples</a>
+                    <a href="/examples.html" class="btn button-st">Examples</a>
                 </div>
             </div>
             <div class="square_menu">
                 <div class="btn-cont">
-                    <a href="/about-rimstone.html" class="btn ">About</a>
+                    <a href="/blog.html" class="btn button-st">Blog</a>
                 </div>
             </div>
             <div class="square_menu">
                 <div class="btn-cont">
-                    <a href="/blog.html" class="btn ">Blog</a>
-                </div>
-            </div>
-            <div class="square_menu">
-                <div class="btn-cont">
-			<a href="https://github.com/rimstone/rimstone" class="btn "><img src="GitHub_Lockup_Dark.png" style='height:1em;vertical-align:middle;'/></a>
+                    <a href="/about-rimstone.html" class="btn button-st">About</a>
                 </div>
             </div>
          </div>
@@ -272,36 +258,29 @@ Current release (4.0.0). Updated 2025-10-06.
     <sect class="sect sec-two">
         <div class="box-container">
             <div class="square">
-                <h2>Not just another language</h2>
-		            <p>RimStone is both a general purpose and a Web Domain-Specific language for creating Web-enabled applications.<br/><br/></p>
+                <h3>Not just another language</h3>
+		            <p>RimStone is both a general purpose and an Application DSL (Domain-Specific) language. It is a Domain-Specific language for creating Web-enabled applications.<br/><br/></p>
                     <p>It's simple: RimStone offers built-in functionality for great many tasks needed for web, database, string processing, encoding/encryption, network programming, parsing, data structures and many other tasks you need all the time.<br/><br/></p>
                     <p>At the same time, RimStone is a general purpose language which is easy and memory-safe.<br/><br/></p>
 		            <p>RimStone is also a high-performance framework that offers tools for building both server-resident (service) and command-line applications.</p>
             </div>
             <div class="square">
-                <h2>How it helps you</h2>
+                <h3>How it helps you</h3>
                 <p>So instead of rolling up your sleeves and programming from scratch or learning APIs of various libraries, you can write natural one-liners.<br/><br/></p>
                 <p>It's like putting together pieces of a puzzle, and what you're doing is conducting an orchestra instead of playing every and all instruments imaginable at the same time.<br/><br/></p>
-                <p>RimStone is both declarative and imperative. That means you can reap the benefits of being both general purpose (so you can do exactly what you want) and Web DSL (so you can build applications from puzzle pieces in no time).<br/><br/></p>
+                <p>RimStone is both declarative and imperative. That means you can reap the benefits of being both general purpose (so you can do exactly what you want) and Application DSL (so you can build applications from puzzle pieces in no time).<br/><br/></p>
 		         <p>Think about what you want to do and not so much about nitty-gritty details. RimStone can take care of the rest, and not sacrifice performance in the process.</p>
             </div>
         </div>
     </sect>
     <sect class="sect sec-five" style='min-height:50px;'>
         <div class="one-big-sect">
-            <h2>Use RimStone for anything</h2>
-            Use RimStone for web applications, command-line programs, cloud applications, middleware, distributed systems, database applications, IOT or anything else. Create and manage application servers and command-line programs.
-        </div>
-    </sect>
-    <sect class="sect sec-five" style='min-height:50px;'>
-        <div class="one-big-sect">
-            <h2>Every millisecond counts</h2>
+            <h3>Every millisecond counts</h3>
             RimStone is a high-performance system that generates C code and uses LTO (Link Time Optimization) to link directly with the Rimstone's source code (instead of linking with pre-build libraries), providing more performance-optimized applications.
         </div>
     </sect>
     <sect class="sect sec-five">
         <div class="one-big-sect">
-            <h2>Take a look</h2>
             Here's what RimStone code feels like. Hint: it's short and easy. Below's an example of fetching a web page:<br/></br/>
         <div class='code'  style='font-size:20px;position:relative;padding-right:16px;text-align:left;padding-left:2px;width:100%;margin-left:2px;background-color:white;color:black'>
 <pre id='code_94' class=notranslate>
@@ -320,13 +299,13 @@ Current release (4.0.0). Updated 2025-10-06.
     <sect class="sect sec-two">
         <div class="box-container">
             <div class="square">
-                <h2>Easy, yes, easier than you'd think</h2>
+                <h3>Easy, yes, easier than you'd think</h3>
 		            <p>RimStone is unlike other languages. It's simpler and declarative. You can do much in a single line.<br/><br/></p>
 		            <p>Lots of great features and rich functionality. Build back-end applications super fast.<br/><br/></p>
                     <p>Built with industry-standard Free Open Source libraries for performance, functionality, stability and compatibility.</p>
             </div>
             <div class="square">
-                <h2>Memory safety</h2>
+                <h3>Memory safety</h3>
 		            <p>Memory safety that's fast and lean, so you can have both performance and safety.<br/><br/></p>
 		            <p>Automatic memory release to avoid leaks in long-running server processes.<br/><br/></p>
                     <p>Smart status checking of your code to avoid mistakes from the get-go.</p>
@@ -338,11 +317,11 @@ Current release (4.0.0). Updated 2025-10-06.
     <!--<h2  style='color:white'>Well rounded</h2>-->
         <div class="box-container">
             <div class="square">
-                <h2>Install with confidence</h2>
+                <h3>Install with confidence</h3>
                 <p>RimStone doesn't need sudo permissions because it installs under a home folder. <a href="/install-rimstone.html">Install RimStone</a> now.</p>
             </div>
             <div class="square">
-                <h2>Well documented with examples, updated often</h2>
+                <h3>Well documented with examples, updated often</h3>
                 <p>Visit <a href='/documentation.html'>Documentation</a> for a clear and concise manual. Check out <a href='/examples.html'>Examples</a> too. Looking for what's new? Bookmark <a href='/blog.html'>RimStone Blog</a></p>
             </div>
         </div>
@@ -352,12 +331,12 @@ Current release (4.0.0). Updated 2025-10-06.
     <!--<h2 style='color:white'>Never skip on important stuff</h2>-->
         <div class="box-container">
             <div class="square">
-                <h2>Every CPU cycle counts</h2>
+                <h3>Every CPU cycle counts</h3>
 		<p>Performance is important. That's why RimStone makes native executables from smartly generated C code, optimized for speed and efficiency.<br/><br/></p>
                 <p>C is the <a href='https://www.sciencedirect.com/science/article/pii/S0167642321000022'>fastest and most efficient</a> and having it as a foundation is important. </p>
             </div>
             <div class="square">
-                <h2>Versatile and powerful</h2>
+                <h3>Versatile and powerful</h3>
 		<p>Build for the web, build command-line programs, build application servers.<br/><br/></p>
                 <p>Powerful features such as database access, JSON, Regex, XML, encryption and more.</p>
             </div>
@@ -368,11 +347,11 @@ Current release (4.0.0). Updated 2025-10-06.
     <!--<h2  style='color:white'>Everything you need</h2>-->
         <div class="box-container">
             <div class="square">
-                <h2>Freedom</h2>
+                <h3>Freedom</h3>
 		<p>Licensed under <a href='/rimstone-license.html'>Apache 2</a> Free Open Source License. Source code always at your fingertips at:<br/><br/><a href='https://github.com/rimstone/rimstone'>https://github.com/rimstone/rimstone</a></p>
             </div>
             <div class="square">
-                <h2>No binaries</h2>
+                <h3>No binaries</h3>
                 <p>RimStone installs from source-only for safety and performance, so you don't need to download any binaries. Not to worry, the install process is fully automated. <a href="/install-rimstone.html">Install RimStone</a> now.</p>
 	    </div>
         </div>
@@ -381,8 +360,7 @@ Current release (4.0.0). Updated 2025-10-06.
     <sect class="sect sec-five">
     <!--<h2  style='color:white'>Here's how easy RimStone is</h2>-->
         <div class="one-big-sect">
-		<h2>Example of RimStone code</h2> 
-		From <a href='https://rimstone-lang.com/article-notes-postgres.html'>SaaS example</a>:<br/><br/>
+		Example of RimStone code (from <a href='https://rimstone-lang.com/article-notes-postgres.html'>SaaS example</a>):<br/><br/>
         <div class='code'  style='font-size:20px;position:relative;padding-right:16px;text-align:left;padding-left:2px;width:100%;margin-left:2px;background-color:white;color:black'>
         <pre id='code_621'>
 <span class="Statement">begin-handler</span> /update-order
@@ -410,14 +388,14 @@ Current release (4.0.0). Updated 2025-10-06.
     <!--<h2  style='color:white'>Quality matters</h2>-->
         <div class="box-container">
             <div class="square ieft-square">
-                <h2>Rigorous QA</h2>
+                <h3>Rigorous QA</h3>
                 <p>
-Current version is 4.0.0. This release passed 3132 functional tests.
+Current version is 3.4.0. This release passed 3132 functional tests.
                 Check out <a href='/blog.html'>RimStone blog</a> for new releases and other news, including new examples.
                 </p>
             </div>
             <div class="square">
-                <h2>Good coverage</h2>
+                <h3>Good coverage</h3>
                 <p>Tested on major Linux distributions, such as Ubuntu, Debian, Redhat, Fedora, OpenSUSE and Arch.</p>
             </div>
         </div>

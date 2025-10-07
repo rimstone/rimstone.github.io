@@ -250,10 +250,8 @@ The new file extension is ".rim". In your project, you can use the following to 
 <br/>
 The following changes were made to accomodate the new name; they involve name changes but not functional changes aside from that. <br/>
 <br/>
-<div class="vsub"><a id="Backward compatibility preserved"></a>Backward compatibility preserved</div>
 Note however, that Golf programs will still work (provided source code files are renamed to .rim extension as above!); RimStone has internal "wrappers" for Golf programs that makes them work. This backward compatibility extends to utilites' names (for example you can still use gg, mgrg etc.).<br/>
 <br/>
-<div class="vsub"><a id="Changes"></a>Changes</div>
 Keep in mind however, that this support will be removed in the future, so you may want to account for the following changes:<br/>
 <ul><li>gg utility is now <a href='https://rimstone-lang.com/rim.html'>rim</a>.<br/>
 </li><li>mgrg utility is now <a href='https://rimstone-lang.com/mrim.html'>mrim</a>.<br/>
@@ -267,7 +265,7 @@ This release also fixes the following:<br/>
 <ul><li>A warning with older Linux distribution from make subsystem regarding the parallelism of jobs is now fixed.<br/>
 </li><li>UTF8 bug where surrogate characters were not properly recognized was fixed.<br/>
 </li><li><a href='https://rimstone-lang.com/text-utf.html'>text-utf</a> and <a href='https://rimstone-lang.com/utf-text.html'>utf-text</a> now support full 32 bit representation in the form of "\UXXXXXXXX", while at the same time properly handling JSON surrogate pairs. These statements now offer full range of UTF8 and JSON translations.<br/>
-</li><li>Added "for-json" in <a href='https://rimstone-lang.com/utf-text.html'>utf-text</a>, which will produce JSON-suitable text; otherwise standard "\UXXXXXXXX" notation will be used for larger than 16 bit values. You should add "for-json" in your utf-text statements in your applications as this clause is now necessary to reliably reproduce behavior before this change.<br/>
+</li><li>Added "for-json" in <span style="font-weight:bold;">urlutf-text", which will produce JSON-suitable text; otherwise standard "\UXXXXXXXX" notation will be used for larger than 16 bit values. You should add "for-json" in your the utf-text statements in your applications as this clause is now necessary to reliably reproduce behavior before this change.<br/>
 </li><li>A top-to-bottom documentation review yielded many typo and errata fixes.</li></ul>
 Again, the new RimStone comes with backward compatibility with Golf (provided .golf files are renamed to .rim), however this will be removed at some point in the future. Please migrate your current Golf applications per the above!<br/>
 <!--ENDVDOC90-->
