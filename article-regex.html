@@ -261,11 +261,11 @@ Create file "reg.rim" with this:<br/>
 <pre id='code_239' class=notranslate>
 cat &lt;&lt; '<span class="Constant">EOF</span>' &gt; reg.rim
 <span class="Statement">%%</span> /reg<span class="Identifier"> public</span>
-    <span class="Comment">// Use backreferences to swap two words, with &quot;Reverse order word&quot; as a result</span>
+    <span class="Comment">// Use backreferences to swap two words, with </span><span class="Constant">&quot;Reverse order word&quot;</span><span class="Comment"> as a result</span>
 <span class="Statement">    match-regex</span> <span class="Constant">&quot;(word)</span><span class="Special">\\</span><span class="Constant">s+(order)&quot;</span><span class="Identifier"> in</span> <span class="Constant">&quot;Reverse word order&quot;</span><span class="Identifier"> replace-with</span> <span class="Constant">&quot;</span><span class="Special">\\</span><span class="Constant">2 </span><span class="Special">\\</span><span class="Constant">1&quot;</span><span class="Type"> result</span> res
 <span class="Statement">    print-out</span> res<span class="Identifier"> new-line</span>
 
-    <span class="Comment">// Recognize a pattern, in this case 3 found</span>
+    <span class="Comment">// Recognize a pattern, in this case </span><span class="Constant">3</span><span class="Comment"> found</span>
 <span class="Statement">    match-regex</span> <span class="Constant">&quot;[abc]{3}&quot;</span><span class="Identifier"> in</span> <span class="Constant">&quot;Recognize 'aaa' or 'aa' or 'abc' or 'cab'&quot;</span><span class="Type"> status</span> st
 <span class="Statement">    print-out</span> st<span class="Identifier"> new-line</span>
 
@@ -273,11 +273,11 @@ cat &lt;&lt; '<span class="Constant">EOF</span>' &gt; reg.rim
 <span class="Statement">    match-regex</span> <span class="Constant">&quot;[abc]{3}&quot;</span><span class="Identifier"> in</span> <span class="Constant">&quot;Recognize 'aa' or 'aa' or 'bc' or 'ca'&quot;</span><span class="Type"> status</span> st
 <span class="Statement">    print-out</span> st<span class="Identifier"> new-line</span>
 
-    <span class="Comment">// Use case insensitive search to recognize a pattern, in this case 3 found</span>
+    <span class="Comment">// Use case insensitive search to recognize a pattern, in this case </span><span class="Constant">3</span><span class="Comment"> found</span>
 <span class="Statement">    match-regex</span> <span class="Constant">&quot;[abc]{3}&quot;</span><span class="Identifier"> in</span> <span class="Constant">&quot;Recognize 'aAa' or 'aa' or 'aBc' or 'Cab'&quot;</span><span class="Identifier"> case-insensitive</span><span class="Type"> status</span> st
 <span class="Statement">    print-out</span> st<span class="Identifier"> new-line</span>
 
-    <span class="Comment">// Use case insensitive search to recognize a pattern and replace, with &quot;Recognize '</span><span class="Todo">XXX</span><span class="Comment">' or 'aa' or '</span><span class="Todo">XXX</span><span class="Comment">' or '</span><span class="Todo">XXX</span><span class="Comment">'&quot; as a result</span>
+    <span class="Comment">// Use case insensitive search to recognize a pattern and replace, with </span><span class="Constant">&quot;Recognize 'XXX' or 'aa' or 'XXX' or 'XXX'&quot;</span><span class="Comment"> as a result</span>
 <span class="Statement">    match-regex</span> <span class="Constant">&quot;[abc]{3}&quot;</span><span class="Identifier"> in</span> <span class="Constant">&quot;Recognize 'aAa' or 'aa' or 'aBc' or 'Cab'&quot;</span><span class="Identifier"> replace-with</span> <span class="Constant">&quot;XXX&quot;</span><span class="Type"> result</span> res<span class="Identifier"> case-insensitive</span><span class="Type"> status</span> st
 <span class="Statement">    print-out</span> res<span class="Identifier"> new-line</span>
 <span class="Statement">    print-out</span> st<span class="Identifier"> new-line</span>

@@ -330,7 +330,7 @@ Create file "srv.rim" and copy to it this code:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_792' class=notranslate>
 <span class="Statement">begin-handler</span> /srv<span class="Identifier"> public</span>
- <span class="Comment">// Create resources (prepare) for 3 service calls</span>
+ <span class="Comment">// Create resources (prepare) for </span><span class="Constant">3</span><span class="Comment"> service calls</span>
  <span class="Comment">// We pass environment variable RIM_SILENT_HEADER to these calls</span>
  <span class="Comment">// so they don't emit HTTP header</span>
 <span class="Statement"> new-remote</span> srv1<span class="Identifier"> local</span> <span class="Constant">&quot;app&quot;</span> \
@@ -342,7 +342,7 @@ Create file "srv.rim" and copy to it this code:<br/>
 <span class="Statement"> new-remote</span> srv3<span class="Identifier"> local</span> <span class="Constant">&quot;app&quot;</span> \
     <span class="Identifier"> url-path</span> <span class="Constant">&quot;/app/manage-keys/op=add/key=key3/data=data3&quot;</span> \
     <span class="Identifier"> environment</span> <span class="Constant">&quot;RIM_SILENT_HEADER&quot;</span>=<span class="Constant">&quot;yes&quot;</span>
- <span class="Comment">// Make 3 service calls in parallel, each in it own thread</span>
+ <span class="Comment">// Make </span><span class="Constant">3</span><span class="Comment"> service calls in parallel, each in it own thread</span>
 <span class="Statement"> call-remote</span> srv1, srv2, srv3<span class="Type"> status</span> st \
     <span class="Type"> started</span> start \
     <span class="Type"> finished-okay</span> fok

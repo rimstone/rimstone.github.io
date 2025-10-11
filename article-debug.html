@@ -265,11 +265,11 @@ Create a source file "parse.rim" and copy this:<br/>
 <span class="Statement">begin-handler</span> /parse
 <span class="Statement">    silent-header</span>
 <span class="Statement">    set-string</span> str = <span class="Constant">&quot;a=1&amp;b=2&amp;c=3&quot;</span>
-    <span class="Comment">// Split string using &quot;&amp;&quot; as a delimiter</span>
+    <span class="Comment">// Split string using </span><span class="Constant">&quot;&amp;&quot;</span><span class="Comment"> as a delimiter</span>
 <span class="Statement">    split-string</span> str<span class="Identifier"> with</span> <span class="Constant">&quot;&amp;&quot;</span><span class="Type"> to</span> pair<span class="Type"> count</span> pair_tot
 <span class="Statement">    start-loop</span><span class="Identifier"> repeat</span> pair_tot<span class="Type"> use</span> pair_count
 <span class="Statement">        read-split</span> pair_count<span class="Identifier"> from</span> pair<span class="Type"> to</span> item
-        <span class="Comment">// Now split each item using &quot;=&quot; as a delimiter</span>
+        <span class="Comment">// Now split each item using </span><span class="Constant">&quot;=&quot;</span><span class="Comment"> as a delimiter</span>
 <span class="Statement">        split-string</span> item<span class="Identifier"> with</span> <span class="Constant">&quot;=&quot;</span><span class="Type"> to</span> equal
 <span class="Statement">        read-split</span> <span class="Constant">1</span><span class="Identifier"> from</span> equal<span class="Type"> to</span> name
 <span class="Statement">        read-split</span> <span class="Constant">2</span><span class="Identifier"> from</span> equal<span class="Type"> to</span> value
