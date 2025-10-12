@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!--__RIM_REDIRECT__-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+<title>Service to calculate mortgage amortization schedule and total interest</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="HandheldFriendly" content="True"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="canonical" href="https://rimstone-lang.com/article-mortgage.html" />
+<style>
+
+
+body, html {
+    font-family: Quicksand,monospace,Helvetica, Arial, sans-serif;
+    line-height: 150%;
+    font-size:16px;
+}
+
+body {
+    padding-left:1vw;
+    padding-right:1vw;
+}
+    
+.ncode {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:8px;
+    margin-top:8px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.shcode {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:8px;
+    margin-top:8px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.sqlcode {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:8px;
+    margin-top:8px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.htmlcode {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:8px;
+    margin-top:8px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.code {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:8px;
+    margin-top:8px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+/*Just like h1 but for pdf conversion it would be indented this way it's not*/
+.vhub {
+    display: block;
+   font-size: 1.6em;
+   margin-top: 0.63em;
+   margin-bottom: 0.63em;
+   margin-left: 0;
+   margin-right: 0;
+   font-weight: bold;
+}
+
+/*Just like h2 but for pdf conversion it would be indented this way it's not*/
+.vsub {
+    display: block;
+   font-size: 1.25em;
+   margin-top: 0.53em;
+   margin-bottom: 0.53em;
+   margin-left: 0;
+   margin-right: 0;
+   font-weight: bold;
+}
+
+ul {
+  margin-left: 0.75vw;
+  padding-left: 0;
+}
+li {
+  margin-left: 0.75vw;
+  padding-left: 0;
+}
+
+/* this must be last, as it overrides previous settings, for mobile */
+@media (hover: none) {
+a {
+   display: inline-block;
+   padding-top: 3px;
+   padding-bottom: 2px;
+}
+body {
+    padding-left:2vw;
+    padding-right:2vw;
+    letter-spacing: 1px;
+}
+}
+
+/*The following is for code snippets that are highlighted by 2html vim*/
+pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
+.Identifier { color: #008b8b; }
+.Statement { color: #af5f00; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
+/*end of highlighted snippets*/
+
+a {
+    text-decoration:none;
+    padding-bottom: 0px; 
+    color:inherit;
+    border-bottom: 2px solid #6cb8f0;
+}
+a:hover {
+    text-decoration: none;
+    color:black;
+    border-bottom: 1px solid red;
+}
+/*do not underline links nor should they be active*/
+pre a {
+    text-decoration:none;
+    color:black;
+    border-bottom: none;
+    pointer-events: none;
+    cursor: default;
+}
+
+
+.golfSnippet {display:none;}
+
+ul {
+  list-style-type:square;
+  list-style-position: outside;
+}
+
+</style>
+
+
+</head>
+<body>
+<div id="google_translate_element" style='float:right'></div>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script>
+function rim_copy(gt, eid, gc) {
+  gt.textContent = eid.textContent;
+  gt.select();
+  document.execCommand("copy");
+  gc.style.visibility="visible"
+  setTimeout(()=>{ gc.style.visibility="hidden"; }, 1000);
+}
+function googleTranslateElementInit() {
+   new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+
+</script>
+
+<!--RIMMENU13-->
+
+<!--RIMENDMENU13-->
+
+
+
+<!--BEGVDOC90-->
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Service to calculate mortgage amortization schedule and total interest</div><hr/><br/>
+This example shows using math functions to compute an amortization schedule for a mortgage, as well as total interest. It shows how much interest vs principal is paid each month.<br/>
+<br/>
+Create a directory for this application and create the application itself:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_186' class=notranslate>
+<span class="Statement">mkdir</span> mortgage
+<span class="Statement">cd</span> mortgage
+rim <span class="Special">-k</span> mortgage</pre>
+<span id=rimstone_copied_186 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_186' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_186, code_186, rimstone_copied_186)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Create file 'amort.rim' with the code:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_185' class=notranslate>
+cat &lt;&lt; '<span class="Constant">EOF</span>' &gt; amort.rim
+<span class="Statement">%%</span> /amort/print-schedule<span class="Identifier"> public</span>
+<span class="Statement">    get-param</span> principal<span class="Identifier"> type double</span>, num_payments<span class="Identifier"> type number</span>, rate<span class="Identifier"> type double</span>
+
+<span class="Statement">    set-double</span> monthly_rate = rate / <span class="Constant">100</span> / <span class="Constant">12</span>
+<span class="Statement">    set-double</span> monthly_payment=principal * (monthly_rate * pow(<span class="Constant">1</span> + monthly_rate, num_payments)) / (pow(<span class="Constant">1</span> + monthly_rate, num_payments) - <span class="Constant">1</span>)
+<span class="Statement">    set-double</span> balance = principal
+
+<span class="Statement">    print-out</span> <span class="Constant">&quot;Amortization Schedule:&quot;</span><span class="Identifier"> new-line</span>
+<span class="Statement">    print-format</span> <span class="Constant">&quot;Payment #</span><span class="Special">\t</span><span class="Constant">Payment</span><span class="Special">\t\t</span><span class="Constant">Principal</span><span class="Special">\t</span><span class="Constant">Interest</span><span class="Special">\t</span><span class="Constant">Balance</span><span class="Special">\n</span><span class="Constant">&quot;</span>
+
+<span class="Statement">    set-double</span> tot_interest
+<span class="Statement">    start-loop</span><span class="Type"> use</span> i<span class="Identifier"> start-with</span> <span class="Constant">1</span><span class="Identifier"> repeat</span> num_payments
+<span class="Statement">        set-double</span> interest = balance * monthly_rate
+<span class="Statement">        set-double</span> principal_payment = monthly_payment - interest
+<span class="Statement">        set-double</span> balance = balance - principal_payment
+<span class="Statement">        set-double</span> tot_interest = tot_interest + interest
+
+<span class="Statement">        print-format</span> <span class="Constant">&quot;</span><span class="Special">%12ld</span><span class="Special">\t</span><span class="Special">%.2f</span><span class="Special">\t\t</span><span class="Special">%.2f</span><span class="Special">\t\t</span><span class="Special">%.2f</span><span class="Special">\t\t</span><span class="Special">%.2f</span><span class="Special">\n</span><span class="Constant">&quot;</span>, i, monthly_payment, principal_payment, interest, balance
+<span class="Statement">    end-loop</span>
+
+<span class="Statement">    print-format</span> <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">Interest paid: </span><span class="Special">%.2f</span><span class="Special">\n</span><span class="Constant">&quot;</span>, tot_interest
+<span class="Statement">%%</span>
+<span class="Constant">EOF</span></pre>
+<span id=rimstone_copied_185 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_185' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_185, code_185, rimstone_copied_185)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Make the application:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_187' class=notranslate>
+rim <span class="Special">-q</span></pre>
+<span id=rimstone_copied_187 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_187' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_187, code_187, rimstone_copied_187)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Run it:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_188' class=notranslate>
+rim <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/amort/print-schedule/principal=350000/rate=6/num_payments=360</span><span class="Statement">&quot;</span> <span class="Special">--exec</span></pre>
+<span id=rimstone_copied_188 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_188' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_188, code_188, rimstone_copied_188)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+The result is (use --silent-header to not display the header, i.e. Content-Type etc.). <br/>
+<div class='ncode' style='position:relative;padding-right:16px;'>
+<pre id='code_184' class=notranslate>
+Content-Type: text/html;charset=utf-8
+Cache-Control: max-age=0, no-cache
+Pragma: no-cache
+Status: 200 OK
+
+Amortization Schedule:
+Payment #	Payment		Principal	Interest	Balance
+           1	2098.43		348.43		1750.00		349651.57
+           2	2098.43		350.17		1748.26		349301.40
+           3	2098.43		351.92		1746.51		348949.48
+           4	2098.43		353.68		1744.75		348595.80
+           5	2098.43		355.45		1742.98		348240.36
+           6	2098.43		357.23		1741.20		347883.13
+           7	2098.43		359.01		1739.42		347524.12
+           8	2098.43		360.81		1737.62		347163.31
+           9	2098.43		362.61		1735.82		346800.70
+          10	2098.43		364.42		1734.00		346436.28
+          11	2098.43		366.25		1732.18		346070.04
+          12	2098.43		368.08		1730.35		345701.96
+          13	2098.43		369.92		1728.51		345332.04
+          14	2098.43		371.77		1726.66		344960.28
+          15	2098.43		373.63		1724.80		344586.65
+          16	2098.43		375.49		1722.93		344211.16
+          17	2098.43		377.37		1721.06		343833.79
+          18	2098.43		379.26		1719.17		343454.53
+          19	2098.43		381.15		1717.27		343073.37
+          20	2098.43		383.06		1715.37		342690.31
+          21	2098.43		384.98		1713.45		342305.34
+          22	2098.43		386.90		1711.53		341918.44
+          23	2098.43		388.83		1709.59		341529.60
+          24	2098.43		390.78		1707.65		341138.82
+          25	2098.43		392.73		1705.69		340746.09
+          26	2098.43		394.70		1703.73		340351.40
+          27	2098.43		396.67		1701.76		339954.73
+          28	2098.43		398.65		1699.77		339556.07
+          29	2098.43		400.65		1697.78		339155.43
+          30	2098.43		402.65		1695.78		338752.78
+          31	2098.43		404.66		1693.76		338348.11
+          32	2098.43		406.69		1691.74		337941.43
+          33	2098.43		408.72		1689.71		337532.71
+          34	2098.43		410.76		1687.66		337121.94
+          35	2098.43		412.82		1685.61		336709.13
+          36	2098.43		414.88		1683.55		336294.25
+          37	2098.43		416.96		1681.47		335877.29
+          38	2098.43		419.04		1679.39		335458.25
+          39	2098.43		421.14		1677.29		335037.11
+          40	2098.43		423.24		1675.19		334613.87
+          41	2098.43		425.36		1673.07		334188.51
+          42	2098.43		427.48		1670.94		333761.03
+          43	2098.43		429.62		1668.81		333331.41
+          44	2098.43		431.77		1666.66		332899.64
+          45	2098.43		433.93		1664.50		332465.71
+          46	2098.43		436.10		1662.33		332029.61
+          47	2098.43		438.28		1660.15		331591.33
+          48	2098.43		440.47		1657.96		331150.86
+          49	2098.43		442.67		1655.75		330708.19
+          50	2098.43		444.89		1653.54		330263.30
+          51	2098.43		447.11		1651.32		329816.19
+          52	2098.43		449.35		1649.08		329366.85
+          53	2098.43		451.59		1646.83		328915.26
+          54	2098.43		453.85		1644.58		328461.41
+          55	2098.43		456.12		1642.31		328005.29
+          56	2098.43		458.40		1640.03		327546.89
+          57	2098.43		460.69		1637.73		327086.19
+          58	2098.43		463.00		1635.43		326623.20
+          59	2098.43		465.31		1633.12		326157.89
+          60	2098.43		467.64		1630.79		325690.25
+          61	2098.43		469.98		1628.45		325220.27
+         ...
+         ...
+         ...
+         341	2098.43		1899.21		199.22		37944.50
+         342	2098.43		1908.70		189.72		36035.80
+         343	2098.43		1918.25		180.18		34117.55
+         344	2098.43		1927.84		170.59		32189.71
+         345	2098.43		1937.48		160.95		30252.23
+         346	2098.43		1947.17		151.26		28305.07
+         347	2098.43		1956.90		141.53		26348.16
+         348	2098.43		1966.69		131.74		24381.48
+         349	2098.43		1976.52		121.91		22404.96
+         350	2098.43		1986.40		112.02		20418.56
+         351	2098.43		1996.33		102.09		18422.22
+         352	2098.43		2006.32		92.11		16415.91
+         353	2098.43		2016.35		82.08		14399.56
+         354	2098.43		2026.43		72.00		12373.13
+         355	2098.43		2036.56		61.87		10336.57
+         356	2098.43		2046.74		51.68		8289.83
+         357	2098.43		2056.98		41.45		6232.85
+         358	2098.43		2067.26		31.16		4165.59
+         359	2098.43		2077.60		20.83		2087.99
+         360	2098.43		2087.99		10.44		-0.00
+
+Interest paid: 405433.66</pre>
+<span id=rimstone_copied_184 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_184' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_184, code_184, rimstone_copied_184)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+You can of course run this program as a service:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_189' class=notranslate>
+mrim <span class="Special">-w</span> mortgage</pre>
+<span id=rimstone_copied_189 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_189' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_189, code_189, rimstone_copied_189)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+And then make a request to this service:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_190' class=notranslate>
+rim <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/amort/print-schedule/principal=350000/rate=6/num_payments=360</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--service</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/mortgage</span><span class="Statement">&quot;</span></pre>
+<span id=rimstone_copied_190 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_190' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_190, code_190, rimstone_copied_190)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+This will produce the same result, but the actual execution will happen in the server process you started with <a href='https://rimstone-lang.com/mrim.html'>mrim</a> above.<br/>
+<br/>
+And finally, this service can serve as a back-end for a web server (Apache, Nginx, HAProxy and pretty much any other). An example of doing this can be <a href='https://rimstone-lang.com/article-hello-world-service-web.html'>found here</a>.<br/>
+<!--ENDVDOC90-->
+<br/><div style='width:100%;clear:both;'>
+<hr/>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://rimstone-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+</div><br/></body></html>
+
+

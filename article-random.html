@@ -237,40 +237,40 @@ function googleTranslateElementInit() {
 <br/>
 So with that in mind, generating random numbers in RimStone is easy. The most common way is <a href='https://rimstone-lang.com/random-string.html'>random-string</a> statement:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_204' class=notranslate>
+<pre id='code_211' class=notranslate>
 <span class="Statement">random-string</span><span class="Type"> to</span> rnd
 <span class="Statement">print-out</span> rnd<span class="Identifier"> new-line</span></pre>
-<span id=rimstone_copied_204 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_204' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_204, code_204, rimstone_copied_204)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_211 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_211' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_211, code_211, rimstone_copied_211)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 By default "rnd" will be a random string of length 20 consisting of digits (0-9) and letters (a-z and A-Z).<br/>
 <br/>
 You can specify the length desired:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_205' class=notranslate>
+<pre id='code_212' class=notranslate>
 <span class="Statement">random-string</span><span class="Type"> to</span> rnd<span class="Identifier"> length</span> <span class="Constant">100</span></pre>
-<span id=rimstone_copied_205 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_205' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_205, code_205, rimstone_copied_205)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_212 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_212' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_212, code_212, rimstone_copied_212)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 which will generate a random string of length 100.<br/>
 <br/>
 You can also insist that it'd be made of digits only:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_206' class=notranslate>
+<pre id='code_213' class=notranslate>
 <span class="Statement">random-string</span><span class="Type"> to</span> rnd<span class="Identifier"> length</span> <span class="Constant">100</span><span class="Identifier"> number</span></pre>
-<span id=rimstone_copied_206 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_206' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_206, code_206, rimstone_copied_206)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_213 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_213' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_213, code_213, rimstone_copied_213)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 And you can make a binary random string, meaning each byte is ranging from 0-255 in value with:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_207' class=notranslate>
+<pre id='code_214' class=notranslate>
 <span class="Statement">random-string</span><span class="Type"> to</span> rnd<span class="Identifier"> length</span> <span class="Constant">100</span><span class="Identifier"> binary</span></pre>
-<span id=rimstone_copied_207 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_207' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_207, code_207, rimstone_copied_207)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_214 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_214' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_214, code_214, rimstone_copied_214)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Of course, such a string could have a zero byte in it. Not to worry, since RimStone keeps track of string lengths, and using this string (for instance copying) will perform correctly.<br/>
 <br/>

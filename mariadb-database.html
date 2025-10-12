@@ -238,15 +238,15 @@ You can see the parameters available at <a href='https://mariadb.com/kb/en/confi
 <br/>
 Most of the time, though, you would likely use only a few of those options, as in (for local connection):<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_746' class=notranslate>
+<pre id='code_753' class=notranslate>
 [client]
 user=myuser
 password=mypwd 
 database=mydb
 socket=/run/mysqld/mysqld.sock</pre>
-<span id=rimstone_copied_746 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_746' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_746, code_746, rimstone_copied_746)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_753 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_753' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_753, code_753, rimstone_copied_753)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The above file has fields "user" (MariaDB user), "password" (the password for MariaDB user), "database" (the MariaDB database name) and MariaDB communication "socket" location (assuming your database is local to your computer - if the database is across network you would not use sockets!). <br/>
 <br/>
@@ -254,11 +254,11 @@ If you use passwordless MariaDB login (such as when the MariaDB user name is the
 <br/>
 To get the location of the socket, you might use:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_747' class=notranslate>
+<pre id='code_754' class=notranslate>
 sudo mysql -u root -e <span class="Constant">&quot;show variables like 'socket'&quot;</span></pre>
-<span id=rimstone_copied_747 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_747' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_747, code_747, rimstone_copied_747)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_754 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_754' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_754, code_754, rimstone_copied_754)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Database'></a><span style="font-weight:bold;">Database</span><br/>

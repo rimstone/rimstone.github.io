@@ -235,15 +235,15 @@ function googleTranslateElementInit() {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Write file</div><hr/><span style="font-weight:bold;">Purpose</span>: Write to a file.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1111' class=notranslate>
+<pre id='code_1118' class=notranslate>
 <span class="Statement">write-file</span> &lt;file&gt; | (<span class="Identifier"> file-id</span> &lt;file id&gt; ) \
    <span class="Identifier"> from</span> &lt;content&gt; \
     [<span class="Identifier"> length</span> &lt;length&gt; ] \
     [ (<span class="Identifier"> position</span> &lt;position&gt; ) | (<span class="Identifier"> append</span> [ &lt;append&gt; ] ) ] \
     [<span class="Type"> status</span> &lt;status&gt; ]</pre>
-<span id=rimstone_copied_1111 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1111' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1111, code_1111, rimstone_copied_1111)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1118 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1118' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1118, code_1118, rimstone_copied_1118)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Without file-id"></a>Without file-id</div>
 This is a simple method of writing a file. File named &lt;file&gt; is opened, data written, and file is closed. &lt;file&gt; can be a full path name, or a path relative to the application home directory (see <a href='https://rimstone-lang.com/directories.html'>directories</a>).<br/>
@@ -269,39 +269,39 @@ If "status" clause is used, then the number of bytes written is stored to &lt;st
 <div class="vsub"><a id="Examples"></a>Examples</div>
 To overwrite file "/path/to/file" with "Hello World":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1112' class=notranslate>
+<pre id='code_1119' class=notranslate>
 <span class="Statement">write-file</span> <span class="Constant">&quot;/path/to/file&quot;</span><span class="Identifier"> from</span> <span class="Constant">&quot;Hello World&quot;</span></pre>
-<span id=rimstone_copied_1112 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1112' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1112, code_1112, rimstone_copied_1112)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1119 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1119' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1119, code_1119, rimstone_copied_1119)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 To append "Hello World" to file:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1113' class=notranslate>
+<pre id='code_1120' class=notranslate>
 <span class="Statement">set-string</span> path=<span class="Constant">&quot;/path/to/file&quot;</span>
 <span class="Statement">set-string</span> cont=<span class="Constant">&quot;Hello World&quot;</span>
 <span class="Statement">write-file</span> path<span class="Identifier"> from</span> cont<span class="Identifier"> append</span></pre>
-<span id=rimstone_copied_1113 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1113' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1113, code_1113, rimstone_copied_1113)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1120 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1120' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1120, code_1120, rimstone_copied_1120)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 To write only 5 bytes (i.e. "Hello") and get status (if successful, number "st" would be "5"):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1114' class=notranslate>
+<pre id='code_1121' class=notranslate>
 <span class="Statement">set-string</span> cont=<span class="Constant">&quot;Hello World&quot;</span>
 <span class="Statement">write-file</span> <span class="Constant">&quot;file&quot;</span><span class="Identifier"> from</span> cont<span class="Identifier"> length</span> <span class="Constant">5</span><span class="Type"> status</span> st</pre>
-<span id=rimstone_copied_1114 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1114' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1114, code_1114, rimstone_copied_1114)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1121 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1121' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1121, code_1121, rimstone_copied_1121)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 To write a string "Hello" at byte position 3 in the existing "file":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1115' class=notranslate>
+<pre id='code_1122' class=notranslate>
 <span class="Statement">set-string</span> cont=<span class="Constant">&quot;Hello&quot;</span>
 <span class="Statement">write-file</span> <span class="Constant">&quot;file&quot;</span><span class="Identifier"> from</span> cont<span class="Identifier"> position</span> <span class="Constant">3</span><span class="Type"> status</span> st</pre>
-<span id=rimstone_copied_1115 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1115' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1115, code_1115, rimstone_copied_1115)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1122 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1122' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1122, code_1122, rimstone_copied_1122)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 See <a href='https://rimstone-lang.com/open-file.html'>open-file</a> for an example with "file-id" clause.<br/>
 <div class="vsub"><a id="See also"></a>See also</div>

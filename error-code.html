@@ -236,16 +236,16 @@ function googleTranslateElementInit() {
 <br/>
 In the following example, a directory is attempted to be deleted via <a href='https://rimstone-lang.com/delete-file.html'>delete-file</a>, which will fail with RIM_ERR_DELETE - however you can get a more specific code via "errno" (which in this case is "21", or "EISDIR", which means that it cannot delete a directory with this statement):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_608' class=notranslate>
+<pre id='code_615' class=notranslate>
 <span class="Statement">delete-file</span> <span class="Constant">&quot;some_directory&quot;</span><span class="Type"> status</span> stc
 <span class="Statement">if-true</span> stc<span class="Identifier"> equal</span> RIM_ERR_DELETE
 <span class="Statement">    get-req</span><span class="Identifier"> errno</span><span class="Type"> to</span> e
 <span class="Statement">    @</span>Cannot delete file
 <span class="Statement">    print-format</span> <span class="Constant">&quot;Error </span><span class="Special">%ld</span><span class="Special">\n</span><span class="Constant">&quot;</span>, e
 <span class="Statement">end-if</span></pre>
-<span id=rimstone_copied_608 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_608' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_608, code_608, rimstone_copied_608)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_615 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_615' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_615, code_615, rimstone_copied_615)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Note that with some RIM_ERR_... codes, the "errno" clause in get-req may return 0. This means the error was detected by RimStone and not reported by the operating system.<br/>
 <br/>

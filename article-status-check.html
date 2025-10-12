@@ -241,17 +241,17 @@ Another future enhancement is in the queue, which would allow (as an option) to 
 <br/>
 Create an application in a separate directory:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_319' class=notranslate>
+<pre id='code_326' class=notranslate>
 <span class="Statement">mkdir</span> status-check
 <span class="Statement">cd</span> status-check
 rim <span class="Special">-k</span> file-transform</pre>
-<span id=rimstone_copied_319 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_319' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_319, code_319, rimstone_copied_319)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_326 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_326' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_326, code_326, rimstone_copied_326)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Create file "file-name.rim" with:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_318' class=notranslate>
+<pre id='code_325' class=notranslate>
 cat &lt;&lt; '<span class="Constant">EOF</span>' &gt; file-name.rim
 <span class="Statement">%%</span> /file-name<span class="Identifier"> public</span>
 <span class="Statement">    silent-header</span> <span class="Comment">// don't output HTTP header</span>
@@ -264,77 +264,77 @@ cat &lt;&lt; '<span class="Constant">EOF</span>' &gt; file-name.rim
 <span class="Statement">    print-out</span> res
 <span class="Statement">%%</span>
 <span class="Constant">EOF</span></pre>
-<span id=rimstone_copied_318 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_318' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_318, code_318, rimstone_copied_318)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_325 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_325' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_325, code_325, rimstone_copied_325)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 This will take file name ("fname") as an input parameter, read that file, and transform any text in it that starts with "File: " followed by a file name that's made up of digits (without an extension), and outputs those file names. So a bit contrived example, and arguably the point here has nothing to do with matching regex patterns. But it's an example from a real-world application, so I plugged it in just the same.<br/>
 <br/>
 So, let's say the input file "myfile" is created here:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_317' class=notranslate>
+<pre id='code_324' class=notranslate>
 cat &lt;&lt; &apos;EOF&apos; &gt; myfile
 File: 99281.imp
 File: 3716243.imp
 File: 124.imp
 EOF</pre>
-<span id=rimstone_copied_317 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_317' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_317, code_317, rimstone_copied_317)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_324 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_324' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_324, code_324, rimstone_copied_324)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Make the application:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_322' class=notranslate>
+<pre id='code_329' class=notranslate>
 rim <span class="Special">-q</span></pre>
-<span id=rimstone_copied_322 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_322' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_322, code_322, rimstone_copied_322)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_329 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_329' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_329, code_329, rimstone_copied_329)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Run it:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_325' class=notranslate>
+<pre id='code_332' class=notranslate>
 rim <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/file-name/fname=myfile</span><span class="Statement">&quot;</span> <span class="Special">--exec</span></pre>
-<span id=rimstone_copied_325 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_325' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_325, code_325, rimstone_copied_325)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_332 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_332' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_332, code_332, rimstone_copied_332)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 And the output is, as it should be:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_320' class=notranslate>
+<pre id='code_327' class=notranslate>
 99281
 3716243
 124</pre>
-<span id=rimstone_copied_320 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_320' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_320, code_320, rimstone_copied_320)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-Okay, so far so good. But let's run this program by specifying a non-existent file:<br/>
-<div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_327' class=notranslate>
-rim <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/file-name/fname=nonexistant</span><span class="Statement">&quot;</span> <span class="Special">--exec</span></pre>
 <span id=rimstone_copied_327 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='rimstonet_327' style='position: absolute;left: -500%;'></textarea>
 <img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_327, code_327, rimstone_copied_327)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
+Okay, so far so good. But let's run this program by specifying a non-existent file:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_334' class=notranslate>
+rim <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/file-name/fname=nonexistant</span><span class="Statement">&quot;</span> <span class="Special">--exec</span></pre>
+<span id=rimstone_copied_334 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_334' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_334, code_334, rimstone_copied_334)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
 The output is (among other things like stack trace):<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_323' class=notranslate>
+<pre id='code_330' class=notranslate>
 File [file-name.rim], line [5], Statement failed without status being obtained and/or checked [-1]</pre>
-<span id=rimstone_copied_323 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_323' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_323, code_323, rimstone_copied_323)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_330 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_330' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_330, code_330, rimstone_copied_330)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Aha! So your program will safely stop as soon there's a failure in code where you didn't check for status, namely this line (number 5) from the code above:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_321' class=notranslate>
+<pre id='code_328' class=notranslate>
 <span class="Statement">read-file</span> fname<span class="Type"> to</span> file_content <span class="Comment">// read file</span></pre>
-<span id=rimstone_copied_321 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_321' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_321, code_321, rimstone_copied_321)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_328 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_328' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_328, code_328, rimstone_copied_328)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Now, let's add status and check it, so rewrite "file-name.rim" with this:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_324' class=notranslate>
+<pre id='code_331' class=notranslate>
 cat &lt;&lt; '<span class="Constant">EOF</span>' &gt; file-name.rim
 <span class="Statement">%%</span> /file-name<span class="Identifier"> public</span>
 <span class="Statement">    silent-header</span> <span class="Comment">// don't output HTTP header</span>
@@ -350,26 +350,26 @@ cat &lt;&lt; '<span class="Constant">EOF</span>' &gt; file-name.rim
 <span class="Statement">    print-out</span> res
 <span class="Statement">%%</span>
 <span class="Constant">EOF</span></pre>
-<span id=rimstone_copied_324 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_324' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_324, code_324, rimstone_copied_324)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_331 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_331' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_331, code_331, rimstone_copied_331)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Compile it and run again:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_328' class=notranslate>
+<pre id='code_335' class=notranslate>
 rim <span class="Special">-q</span>
 rim <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/file-name/fname=nonexistant</span><span class="Statement">&quot;</span> <span class="Special">--exec</span></pre>
-<span id=rimstone_copied_328 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_328' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_328, code_328, rimstone_copied_328)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_335 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_335' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_335, code_335, rimstone_copied_335)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 And the result is:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_326' class=notranslate>
+<pre id='code_333' class=notranslate>
 Sorry, cannot open file noexistant!</pre>
-<span id=rimstone_copied_326 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_326' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_326, code_326, rimstone_copied_326)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_333 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_333' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_333, code_333, rimstone_copied_333)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 So now you can see how useful the automatic "static checking" feature is. It prevented unsafe execution (logic-wise) from moving forward, and provided you with a clear clue as to how to fix the issue.<br/>
 <!--ENDVDOC90-->

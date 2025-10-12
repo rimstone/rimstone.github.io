@@ -235,13 +235,13 @@ function googleTranslateElementInit() {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>String number</div><hr/><span style="font-weight:bold;">Purpose</span>: Convert string to number.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1070' class=notranslate>
+<pre id='code_1077' class=notranslate>
 <span class="Statement">string-number</span> &lt;string&gt; [<span class="Type"> to</span> &lt;number&gt; ] \
     [<span class="Identifier"> base</span> &lt;base&gt; ] \
     [<span class="Type"> status</span> &lt;status&gt; ]</pre>
-<span id=rimstone_copied_1070 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1070' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1070, code_1070, rimstone_copied_1070)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1077 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1077' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1077, code_1077, rimstone_copied_1077)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 &lt;string&gt; is converted to &lt;number&gt; in "to" clause, using &lt;base&gt; in "base" clause, where &lt;base&gt; is by default either 10, or 16 (if number is prefixed with "0x" or "0X", excluding any leading minus or plus sign) or 8 (if number is prefixed with "0", excluding any leading minus or plus sign). <br/>
 <br/>
@@ -251,44 +251,44 @@ function googleTranslateElementInit() {
 <div class="vsub"><a id="Shortcut"></a>Shortcut</div>
 For convenience, you can use a shortcut for converting a string to a number, by prepending a "#" sign to the variable name, for example:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1071' class=notranslate>
+<pre id='code_1078' class=notranslate>
 <span class="Statement">set-string</span> s = <span class="Constant">&quot;-10&quot;</span>
 <span class="Statement">set-number</span> n = #s + <span class="Constant">10</span></pre>
-<span id=rimstone_copied_1071 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1071' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1071, code_1071, rimstone_copied_1071)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1078 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1078' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1078, code_1078, rimstone_copied_1078)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The above is the same as:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1072' class=notranslate>
+<pre id='code_1079' class=notranslate>
 <span class="Statement">set-string</span> s = <span class="Constant">&quot;-10&quot;</span>
 <span class="Statement">string-number</span> s<span class="Type"> to</span> val
 <span class="Statement">set-number</span> n = val + <span class="Constant">10</span></pre>
-<span id=rimstone_copied_1072 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1072' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1072, code_1072, rimstone_copied_1072)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1079 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1079' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1079, code_1079, rimstone_copied_1079)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Effectively, # in front of a string variable is the same as string-number that converts it to a number with the base being the default (see above). If a string cannot be converted to a number, your program will <a href='https://rimstone-lang.com/error-handling.html'>error out</a>. To check values with a status, use string-number.<br/>
 <br/>
 You can use # for an expression, in which case the expression must be within parenthesis:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1073' class=notranslate>
+<pre id='code_1080' class=notranslate>
 <span class="Statement">set-string</span> s1 = <span class="Constant">&quot;-10&quot;</span>
 <span class="Statement">set-string</span> s2 = <span class="Constant">&quot;2&quot;</span>
 <span class="Statement">set-number</span> n = #(s1+s2) + <span class="Constant">10</span></pre>
-<span id=rimstone_copied_1073 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1073' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1073, code_1073, rimstone_copied_1073)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1080 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1080' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1080, code_1080, rimstone_copied_1080)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In this case number "n" will have value of -92, because strings "s1" and "s2" concatenate to produce "-102", which is then converted to a number and finally 10 added to it, producing -92.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 In this example, number "n" would be 49 and status "st" would be RIM_OKAY:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1074' class=notranslate>
+<pre id='code_1081' class=notranslate>
 <span class="Statement">string-number</span> <span class="Constant">&quot;49&quot;</span><span class="Type"> to</span> n<span class="Identifier"> base</span> <span class="Constant">10</span><span class="Type"> status</span> st</pre>
-<span id=rimstone_copied_1074 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1074' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1074, code_1074, rimstone_copied_1074)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1081 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1081' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1081, code_1081, rimstone_copied_1081)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Numbers'></a><span style="font-weight:bold;">Numbers</span><br/>
