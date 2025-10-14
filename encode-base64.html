@@ -235,12 +235,12 @@ function googleTranslateElementInit() {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Encode base64</div><hr/><span style="font-weight:bold;">Purpose</span>: Base64 encode.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_594' class=notranslate>
+<pre id='code_595' class=notranslate>
 <span class="Statement">encode-base64</span> &lt;data&gt;<span class="Type"> to</span> &lt;output data&gt; \
     [<span class="Identifier"> input-length</span> &lt;input length&gt; ]</pre>
-<span id=rimstone_copied_594 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_594' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_594, code_594, rimstone_copied_594)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_595 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_595' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_595, code_595, rimstone_copied_595)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 encode-base64 will encode string &lt;data&gt; into base64 string &lt;output data&gt;.<br/>
 <br/>
@@ -252,7 +252,7 @@ Base64-encoded strings are often used where binary data needs to be in a format 
 <div class="vsub"><a id="Examples"></a>Examples</div>
 An example that encodes a string, decodes, and finally checks if they match:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_595' class=notranslate>
+<pre id='code_596' class=notranslate>
 <span class="Comment">// Original string, generally this would be binary data in most cases</span>
 <span class="Statement">set-string</span> dt =<span class="Constant">&quot;  oh well  &quot;</span>
 
@@ -266,13 +266,13 @@ An example that encodes a string, decodes, and finally checks if they match:<br/
 <span class="Statement">else-if</span>
 <span class="Statement">    @</span>Failure!
 <span class="Statement">end-if</span></pre>
-<span id=rimstone_copied_595 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_595' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_595, code_595, rimstone_copied_595)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_596 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_596' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_596, code_596, rimstone_copied_596)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In the next example, "input-length" clause is used, and only a partial of the input string is encoded, then later compared to the original:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_596' class=notranslate>
+<pre id='code_597' class=notranslate>
 <span class="Comment">// Original string, generally this would be binary data in most cases</span>
 <span class="Statement">set-string</span> dt =<span class="Constant">&quot;  oh well  &quot;</span>
 
@@ -295,9 +295,9 @@ In the next example, "input-length" clause is used, and only a partial of the in
 <span class="Statement">else-if</span>
 <span class="Statement">    @</span>Failure! [<span class="Statement">&lt;&lt;print-out</span> dt<span class="Statement">&gt;&gt;</span>] [<span class="Statement">&lt;&lt;print-out</span> new_dt<span class="Statement">&gt;&gt;</span>]
 <span class="Statement">end-if</span></pre>
-<span id=rimstone_copied_596 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_596' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_596, code_596, rimstone_copied_596)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_597 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_597' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_597, code_597, rimstone_copied_597)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Base64'></a><span style="font-weight:bold;">Base64</span><br/>

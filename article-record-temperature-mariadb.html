@@ -239,17 +239,17 @@ What if you wanted to record temperatures in any given zip code, and compute ave
 <br/>
 First, create a new directory for your application, and create a new application "climate":<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_217' class=notranslate>
+<pre id='code_214' class=notranslate>
 <span class="Statement">mkdir</span> temps
 <span class="Statement">cd</span> temps
 rim <span class="Special">-k</span> climate</pre>
-<span id=rimstone_copied_217 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_217' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_217, code_217, rimstone_copied_217)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_214 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_214' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_214, code_214, rimstone_copied_214)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Here's the database setup. We'll use a little "cat" trick with EOF so we can write directly to files. So in this case, all the lines between "cat &lt;&lt; 'EOF'..." and "EOF" are written to file "setup.sql", which is the database setup. We use MariaDB here; you can use other databases too:<br/>
 <div class='sqlcode' style='position:relative;padding-right:16px;'>
-<pre id='code_218' class=notranslate>
+<pre id='code_215' class=notranslate>
 cat &lt;&lt; <span class="Special">'</span><span class="Constant">EOF</span><span class="Special">'</span> &gt; setup.sql
 <span class="Statement">create</span> <span class="Identifier">user</span> weather;
 <span class="Statement">create</span> database weather_journal;
@@ -258,21 +258,21 @@ use weather_journal;
 <span class="Statement">create</span> <span class="Special">table</span> <span class="Special">if</span> <span class="Statement">not</span> <span class="Statement">exists</span> temperature_history (zip <span class="Type">varchar</span>(<span class="Constant">10</span>), temp <span class="Type">int</span>, curr_date <span class="Type">date</span>, curr_time time);
 <span class="Statement">create</span> <span class="Special">table</span> <span class="Special">if</span> <span class="Statement">not</span> <span class="Statement">exists</span> climate_avg (zip <span class="Type">varchar</span>(<span class="Constant">10</span>) primary key, average_temp <span class="Type">int</span>, <span class="Identifier">count</span> <span class="Type">int</span>);
 EOF</pre>
-<span id=rimstone_copied_218 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_218' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_218, code_218, rimstone_copied_218)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_215 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_215' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_215, code_215, rimstone_copied_215)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Run the database setup:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_220' class=notranslate>
+<pre id='code_217' class=notranslate>
 sudo mysql <span class="Statement">&lt;</span> setup.sql</pre>
-<span id=rimstone_copied_220 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_220' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_220, code_220, rimstone_copied_220)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_217 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_217' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_217, code_217, rimstone_copied_217)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 This file ("weather_db") is the <a href='https://rimstone-lang.com/database-config-file.html'>database-config-file</a>. It describes your database the way your database needs it, i.e. natively. So if you'd use PostgreSQL you'd use Postgres format. If you'd use SQLite, you'd use SQLite format. This makes it easy, since there's no new database config file format to learn:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_221' class=notranslate>
+<pre id='code_218' class=notranslate>
 <span class="Statement">cat</span> <span class="Statement">&lt;&lt; 'EOF'</span><span class="Constant"> &gt; weather_db</span>
 <span class="Constant">[client]</span>
 <span class="Constant">user=weather</span>
@@ -280,9 +280,9 @@ This file ("weather_db") is the <a href='https://rimstone-lang.com/database-conf
 <span class="Constant">database=weather_journal</span>
 <span class="Constant">socket=/run/mysqld/mysqld.sock</span>
 <span class="Statement">EOF</span></pre>
-<span id=rimstone_copied_221 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_221' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_221, code_221, rimstone_copied_221)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_218 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_218' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_218, code_218, rimstone_copied_218)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Here's the actual code. It's a RimStone file "weather.rim", which contains two services, "/weather/insert" (to insert new temperature data) and &nbsp;"/weather/get-agv" (to get historical data and averages). The code is really quite self-explanatory. In RimStone, every statements always starts with the new line (watch out for "\" at end of the line, which continues the line). So you can get documentation for <a href='https://rimstone-lang.com/get-param.html'>get-param</a> (to get input parameter), or <a href='https://rimstone-lang.com/run-query.html'>run-query</a> (to run a database query), etc. <br/>
 <br/>
@@ -290,7 +290,7 @@ In this case, for instance, for "/weather/insert" service, you need to provide "
 <br/>
 Here's the code:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_216' class=notranslate>
+<pre id='code_213' class=notranslate>
 cat &lt;&lt; '<span class="Constant">EOF</span>' &gt; weather.rim
 <span class="Statement">%%</span> /weather/insert<span class="Identifier"> public</span>
 <span class="Statement">    get-param</span> zip_code
@@ -328,56 +328,56 @@ cat &lt;&lt; '<span class="Constant">EOF</span>' &gt; weather.rim
 <span class="Statement">    end-query</span>
 <span class="Statement">%%</span>
 <span class="Constant">EOF</span></pre>
-<span id=rimstone_copied_216 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_216' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_216, code_216, rimstone_copied_216)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_213 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_213' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_213, code_213, rimstone_copied_213)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Make the application:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_222' class=notranslate>
+<pre id='code_219' class=notranslate>
 rim <span class="Special">-q</span> <span class="Special">--db</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">mariadb:weather_db</span><span class="Statement">&quot;</span></pre>
-<span id=rimstone_copied_222 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_222' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_222, code_222, rimstone_copied_222)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_219 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_219' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_219, code_219, rimstone_copied_219)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Insert the data. Note we're using <a href='https://rimstone-lang.com/rim.html'>rim</a> utility. You can skip the "--exec" here, and see the bash code to run your native application directly from command line. <br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_223' class=notranslate>
+<pre id='code_220' class=notranslate>
 rim <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/weather/insert/zip_code=11111/temperature=82</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--silent-header</span>
 rim <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/weather/insert/zip_code=11111/temperature=102</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--silent-header</span>
 rim <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/weather/insert/zip_code=11111/temperature=91</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--silent-header</span></pre>
-<span id=rimstone_copied_223 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_223' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_223, code_223, rimstone_copied_223)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_220 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_220' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_220, code_220, rimstone_copied_220)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The result is:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_215' class=notranslate>
+<pre id='code_212' class=notranslate>
 Data stored and average updated.
 Data stored and average updated.
 Data stored and average updated.</pre>
-<span id=rimstone_copied_215 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_215' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_215, code_215, rimstone_copied_215)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_212 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_212' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_212, code_212, rimstone_copied_212)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 And now you can query the data:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_224' class=notranslate>
+<pre id='code_221' class=notranslate>
 rim <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/weather/get-avg/zip_code=11111</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--silent-header</span></pre>
-<span id=rimstone_copied_224 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_224' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_224, code_224, rimstone_copied_224)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_221 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_221' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_221, code_221, rimstone_copied_221)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 With the result like:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_219' class=notranslate>
+<pre id='code_216' class=notranslate>
 Temp [  82] Date [2025-09-07 09:47:42]
 Temp [ 102] Date [2025-09-07 09:47:42]
 Temp [  91] Date [2025-09-07 09:47:42]
 Average is [92] from the total of [3] sample</pre>
-<span id=rimstone_copied_219 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_219' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_219, code_219, rimstone_copied_219)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_216 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_216' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_216, code_216, rimstone_copied_216)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 That's the application! You can run it from <a href='https://rimstone-lang.com/command-line.html'>command-line</a> or as a web <a href='https://rimstone-lang.com/service.html'>service</a> (see <a href='https://rimstone-lang.com/article-tree-web.html'>article-tree-web</a> for an example of a setup).<br/>
 <!--ENDVDOC90-->

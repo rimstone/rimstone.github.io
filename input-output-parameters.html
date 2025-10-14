@@ -7,11 +7,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 
-<title>After handler</title>
+<title>Input output parameters</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="canonical" href="https://rimstone-lang.com/after-handler.html" />
+<link rel="canonical" href="https://rimstone-lang.com/input-output-parameters.html" />
 <style>
 
 
@@ -232,32 +232,43 @@ function googleTranslateElementInit() {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>After handler</div><hr/><span style="font-weight:bold;">Purpose</span>: Execute your code after a request is handled.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Input output parameters</div><hr/><div class="vsub"><a id="Input and output parameters to request handlers"></a>Input and output parameters to request handlers</div>
+<a href='https://rimstone-lang.com/get-param.html'>get-param</a> (either as a standalone statement or as a clause in <a href='https://rimstone-lang.com/call-handler.html'>call-handler</a> and <a href='https://rimstone-lang.com/begin-handler.html'>begin-handler</a>) can be used to get <br/>
+<ul><li>handler's input parameters into its local variables, and <br/>
+</li><li>handler's output parameters into caller's local variables.</li></ul>
+Similarly, <a href='https://rimstone-lang.com/set-param.html'>set-param</a> (either as a standalone statement or as a clause in <a href='https://rimstone-lang.com/call-handler.html'>call-handler</a>) can be used to set<br/>
+<ul><li>handler's input parameters in the caller, and<br/>
+</li><li>handler's output parameters.</li></ul>
+These are serving as a functional equivalent of an "input/output parameter" notion. Note that parameters are of global scope within a single request; however, once obtained with "get-param" in a handler they are stored in local variables which makes them the same as a typical input parameter in many languages (see Types discussion in <a href='https://rimstone-lang.com/get-param.html'>get-param</a> as to which types are copied by value and which by reference).<br/>
 <br/>
-<div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_20' class=notranslate>
-<span class="Statement">after-handler</span>
-<span class="Statement">.</span>..
-<span class="Statement">end-after-handler</span></pre>
-<span id=rimstone_copied_20 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_20' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_20, code_20, rimstone_copied_20)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-Every RimStone request goes through a request dispatcher (see <a href='https://rimstone-lang.com/request.html'>request</a>()). In order to specify your code to execute after a request is handled, create source file "after-handler.rim" and implement a handler that starts with "after-handler" and ends with "end-after-handler", which will be automatically picked up and compiled with your application. <br/>
+The same parameter (i.e. of the same name) can be used in any number of handlers, assuming the type is the same everywhere. The global nature of parameters means their value can be obtained anywhere during the processing of the same request; their values are reset with each new request.<br/>
 <br/>
-If no request executes (for example if your application does not handle a given <a href='https://rimstone-lang.com/request.html'>request</a>), after-handler handler does not execute either. If you use <a href='https://rimstone-lang.com/exit-handler.html'>exit-handler</a> to exit current request handling, after-handler handler still executes.<br/>
+The reason for this is to both provide the same input/output parameter paradigm that's omnipresent in most programming languages, and at the same time to facilitate simpler and clearer sharing of data anywhere during the request processing (thus alleviating the need for classic global variables). In addition, it provides for the same treatment of input parameters regardless of whether a handler is called locally or remotely across servers.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
-Here is a simple implementation of after-handler handler that just outputs "Hi there!!":<br/>
+In this example, "set-param" is used to set input parameters "pp1" and "pp2" in <a href='https://rimstone-lang.com/call-handler.html'>call-handler</a>, and "get-param" is used to get those input parameters in begin-handler ("%%" for short). Conversely, "set-param" is used to set output parameters "res1" and "res2" in "/req/sub-req" handler implementation, and "get-param" is used to get the those output parameters in <a href='https://rimstone-lang.com/call-handler.html'>call-handler</a>:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_21' class=notranslate>
-<span class="Statement">after-handler</span>
-<span class="Statement">     @</span>Hi there!!
-<span class="Statement">end-after-handler</span></pre>
-<span id=rimstone_copied_21 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_21' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_21, code_21, rimstone_copied_21)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_718' class=notranslate>
+<span class="Statement">%%</span> /req/sub-req<span class="Identifier"> get-param</span> pp1<span class="Identifier"> type number</span>, pp2<span class="Identifier"> type number</span>
+<span class="Statement">    print-out</span> <span class="Constant">&quot;Input is &quot;</span>, pp1, <span class="Constant">&quot;, &quot;</span>, pp2<span class="Identifier"> new-line</span>
+<span class="Statement">    set-param</span> res1=pp1+pp2, res2=pp1*pp2
+<span class="Statement">%%</span>
+
+<span class="Comment">// Call the above /req/sub-req request handler </span>
+<span class="Statement">%%</span> /req<span class="Identifier"> public</span>
+<span class="Statement">    call-handler</span> <span class="Constant">&quot;/req/sub-req&quot;</span><span class="Identifier"> set-param</span> pp1=<span class="Constant">10</span>, pp2=<span class="Constant">20</span><span class="Identifier"> get-param</span> res1<span class="Identifier"> type number</span>, res2<span class="Identifier"> type number</span>
+<span class="Statement">    print-out</span> <span class="Constant">&quot;Result is &quot;</span>, res1, <span class="Constant">&quot; and &quot;</span>, res2<span class="Identifier"> new-line</span>
+<span class="Statement">%%</span></pre>
+<span id=rimstone_copied_718 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_718' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_718, code_718, rimstone_copied_718)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
+The result in "/req" will be 30 for "res1" variable, and 200 for "res2".<br/>
 <div class="vsub"><a id="See also"></a>See also</div>
+ <a name='Request data'></a><span style="font-weight:bold;">Request data</span><br/>
+<a href='https://rimstone-lang.com/get-param.html'>get-param</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/input-output-parameters.html'>input-output-parameters</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/request-body.html'>request-body</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/set-param.html'>set-param</a> &nbsp; <br/>
  <a name='Service processing'></a><span style="font-weight:bold;">Service processing</span><br/>
 <a href='https://rimstone-lang.com/after-handler.html'>after-handler</a> &nbsp;<br/>
 <a href='https://rimstone-lang.com/before-handler.html'>before-handler</a> &nbsp;<br/>

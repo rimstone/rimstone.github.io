@@ -237,24 +237,24 @@ This example shows how to send email with RimStone. The web service you'll creat
 <br/>
 Create directory for your application:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_272' class=notranslate>
+<pre id='code_269' class=notranslate>
 <span class="Statement">mkdir</span> <span class="Special">-p</span> mail
 <span class="Statement">cd</span> mail</pre>
-<span id=rimstone_copied_272 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_272' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_272, code_272, rimstone_copied_272)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_269 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_269' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_269, code_269, rimstone_copied_269)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Create "mail-sender" application:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_274' class=notranslate>
+<pre id='code_271' class=notranslate>
 rim <span class="Special">-k</span> mail-sender</pre>
-<span id=rimstone_copied_274 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_274' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_274, code_274, rimstone_copied_274)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_271 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_271' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_271, code_271, rimstone_copied_271)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Here's the code save to file "mail.rim":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_271' class=notranslate>
+<pre id='code_268' class=notranslate>
 cat &lt;&lt; '<span class="Constant">EOF</span>' &gt; mail.rim
 <span class="Statement">begin-handler</span> /mail<span class="Identifier"> public</span>
     <span class="Comment">// Get URL parameter</span>
@@ -305,61 +305,61 @@ cat &lt;&lt; '<span class="Constant">EOF</span>' &gt; mail.rim
 <span class="Statement">    end-if</span>
 <span class="Statement">end-handler</span>
 <span class="Constant">EOF</span></pre>
-<span id=rimstone_copied_271 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_271' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_271, code_271, rimstone_copied_271)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_268 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_268' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_268, code_268, rimstone_copied_268)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The example uses <a href='https://rimstone-lang.com/exec-program.html'>exec-program</a> to invoke a MTA (Mail Transfer Agent), in this case postfix or sendmail, but you can use any other that you like!<br/>
 <br/>
 Build your application server as a native executable:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_275' class=notranslate>
+<pre id='code_272' class=notranslate>
 rim <span class="Special">-q</span></pre>
+<span id=rimstone_copied_272 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_272' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_272, code_272, rimstone_copied_272)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Run the application server using RimStone's application server manager, called <a href='https://rimstone-lang.com/mrim.html'>mrim</a>:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_273' class=notranslate>
+mrim mail-sender</pre>
+<span id=rimstone_copied_273 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_273' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_273, code_273, rimstone_copied_273)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+You may or may not have MTA (Mail Transfer Agent) installed on your system. Install it anyway, for Ubuntu and Debian:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_274' class=notranslate>
+sudo apt install postfix
+sudo systemctl start postfix</pre>
+<span id=rimstone_copied_274 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_274' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_274, code_274, rimstone_copied_274)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+and on RedHat and Fedora systems:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_275' class=notranslate>
+sudo dnf install postfix
+sudo systemctl start postfix</pre>
 <span id=rimstone_copied_275 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='rimstonet_275' style='position: absolute;left: -500%;'></textarea>
 <img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_275, code_275, rimstone_copied_275)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Run the application server using RimStone's application server manager, called <a href='https://rimstone-lang.com/mrim.html'>mrim</a>:<br/>
-<div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_276' class=notranslate>
-mrim mail-sender</pre>
-<span id=rimstone_copied_276 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_276' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_276, code_276, rimstone_copied_276)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-You may or may not have MTA (Mail Transfer Agent) installed on your system. Install it anyway, for Ubuntu and Debian:<br/>
-<div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_277' class=notranslate>
-sudo apt install postfix
-sudo systemctl start postfix</pre>
-<span id=rimstone_copied_277 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_277' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_277, code_277, rimstone_copied_277)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-and on RedHat and Fedora systems:<br/>
-<div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_278' class=notranslate>
-sudo dnf install postfix
-sudo systemctl start postfix</pre>
-<span id=rimstone_copied_278 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_278' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_278, code_278, rimstone_copied_278)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
 Now, since this application server will be accessed via web server, we'll need to setup a web server (aka "reverse proxy"). We'll use Apache, so follow the instructions to <a href='https://rimstone-lang.com/connect-apache-unix-socket.html'>set up Apache</a>, with &lt;app path&gt; being your application name, which is "mail-sender", and the "ProxyPass" directive in Step 3 will be (replace "your-user" with the name of your OS user):<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_270' class=notranslate>
+<pre id='code_267' class=notranslate>
 ProxyPass &quot;/mail-sender/&quot; unix:///home/your-user/.rimstone/apps/mail-sender/sock/.sock|fcgi://localhost/mail-sender</pre>
-<span id=rimstone_copied_270 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_270' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_270, code_270, rimstone_copied_270)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_267 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_267' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_267, code_267, rimstone_copied_267)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Once you've restarted Apache web server, go to your browser and try it. In this case, everything is happening locally on your computer. If your server were running on the Internet, then you would use that server's name instead of "127.0.0.1", and email would be with an actual provider instead of a local user name. To get the form that sends email:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_273' class=notranslate>
+<pre id='code_270' class=notranslate>
 http://127.0.0.1/mail-sender/mail/action=show_form</pre>
-<span id=rimstone_copied_273 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_273' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_273, code_273, rimstone_copied_273)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_270 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_270' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_270, code_270, rimstone_copied_270)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In this case local user name we're sending email to is "bear", but you'd put your own user name:<br/>
 <br/><div class='vimg'><img class='imgs' src='send-mail.png' alt='RimStone'></img>

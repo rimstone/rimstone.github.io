@@ -7,11 +7,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 
-<title>Set bool</title>
+<title>RimStone 4.1.0 released</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="canonical" href="https://rimstone-lang.com/set-bool.html" />
+<link rel="canonical" href="https://rimstone-lang.com/blog-2025-10-13-new-rimstone-release.html" />
 <style>
 
 
@@ -232,46 +232,12 @@ function googleTranslateElementInit() {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Set bool</div><hr/><span style="font-weight:bold;">Purpose</span>: Set value of a boolean variable.<br/>
-<br/>
-<div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1006' class=notranslate>
-<span class="Statement">set-bool</span> &lt;variable&gt; [ = &lt;boolean expression&gt; | &lt;comparison&gt; ] [<span class="Identifier"> process-scope</span> ]</pre>
-<span id=rimstone_copied_1006 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1006' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1006, code_1006, rimstone_copied_1006)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-If equal sign (=) is not used, the boolean variable &lt;variable&gt; is assign "false".<br/>
-<br/>
-If &lt;boolean expression&gt; is specified (see <a href='https://rimstone-lang.com/boolean-expressions.html'>boolean-expressions</a>), then &lt;variable&gt; is assigned its computed value.<br/>
-<br/>
-If &lt;comparison&gt; is specified (see "comparison" definition in <a href='https://rimstone-lang.com/if-true.html'>if-true</a>), then &lt;variable&gt; is assigned true if &lt;comparison&gt; evaluates to "true" and false if it evaluates to "false".<br/>
-<br/>
-If "process-scope" clause is used, then boolean is of process scope, meaning its value will persist from one request to another for the life of the process; in the statement where &lt;variable&gt; is created, the assignment will take place only once. This clause can only be used if &lt;variable&gt; did not already exist.<br/>
-<div class="vsub"><a id="Examples"></a>Examples</div>
-Assign "true" value to boolean variable "my_bool":<br/>
-<div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1007' class=notranslate>
-<span class="Statement">set-bool</span> my_bool = <span class="Constant">true</span></pre>
-<span id=rimstone_copied_1007 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1007' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1007, code_1007, rimstone_copied_1007)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-Assign boolean value based on comparison:<br/>
-<div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1008' class=notranslate>
-<span class="Statement">.</span>..
-<span class="Statement">set-bool</span> my_bool = num1<span class="Identifier"> equal</span> num2<span class="Identifier"> or</span> str1<span class="Identifier"> not-equal</span> str2</pre>
-<span id=rimstone_copied_1008 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1008' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1008, code_1008, rimstone_copied_1008)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-<div class="vsub"><a id="See also"></a>See also</div>
- <a name='Booleans'></a><span style="font-weight:bold;">Booleans</span><br/>
-<a href='https://rimstone-lang.com/boolean-expressions.html'>boolean-expressions</a> &nbsp;<br/>
-<a href='https://rimstone-lang.com/set-bool.html'>set-bool</a> &nbsp; <br/>
-<span style="font-weight:bold;">See all</span> <br/>
-<a href='https://rimstone-lang.com/documentation.html'>documentation</a><br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>RimStone 4.1.0 released</div><hr/><br/>
+This release makes usability improvements, specifically better semantics and shorter code for calling handlers locally within an application with respect to input and output parameters.<br/>
+<ul><li><a href='https://rimstone-lang.com/call-handler.html'>call-handler</a> now has "set-param" and "get-param" clauses to set input parameters and obtain output parameters in a local call.<br/>
+</li><li><a href='https://rimstone-lang.com/begin-handler.html'>begin-handler</a> (or %% for short) now has "get-param" clause to obtain input parameters in the request declaration.<br/>
+</li><li>"return-value" clause in <a href='https://rimstone-lang.com/call-handler.html'>call-handler</a> is renamed to "return-code" to better reflect its purpose; note that for backward compatibility "return-value" will still work until the next major release.<br/>
+</li><li>A new documentation item (<a href='https://rimstone-lang.com/input-output-parameters.html'>input-output-parameters</a>) has been added to provide more information and an example on passing information into and out of local handler calls.</li></ul>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
