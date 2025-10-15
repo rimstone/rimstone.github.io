@@ -235,7 +235,7 @@ function googleTranslateElementInit() {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Json doc</div><hr/><span style="font-weight:bold;">Purpose</span>: Parse JSON text.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_735' class=notranslate>
+<pre id='code_746' class=notranslate>
 <span class="Statement">json-doc</span> &lt;text&gt;<span class="Type"> to</span> &lt;json&gt; \
     [<span class="Type"> status</span> &lt;status&gt; ] [<span class="Identifier"> length</span> &lt;length&gt; ] [<span class="Identifier"> noencode</span> ] [<span class="Identifier"> no-enum</span> ] \
     [<span class="Type"> error-text</span> &lt;error text&gt; ] \
@@ -244,9 +244,9 @@ function googleTranslateElementInit() {
         [<span class="Type"> error-char</span> &lt;<span class="Type">char</span>&gt; ]
 
 <span class="Statement">json-doc</span> <span class="Identifier"> delete</span> &lt;json&gt;</pre>
-<span id=rimstone_copied_735 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_735' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_735, code_735, rimstone_copied_735)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_746 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_746' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_746, code_746, rimstone_copied_746)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 json-doc will parse JSON &lt;text&gt; into &lt;json&gt; variable, which can be used with <a href='https://rimstone-lang.com/read-json.html'>read-json</a> to get the data.<br/>
 <br/>
@@ -266,7 +266,7 @@ JSON uses surrogate UTF8 pairs to represent the full 32-bit UTF characters. In g
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Parse the following JSON document and display all keys and values from it. You can use them as they come along, or store them into <a href='https://rimstone-lang.com/new-hash.html'>new-hash</a> or <a href='https://rimstone-lang.com/new-tree.html'>new-tree</a> for instance for searching of large documents. This also demonstrates usage of UTF8 characters (\uD834\uDD1E for a G Clef symbol):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_736' class=notranslate>
+<pre id='code_747' class=notranslate>
 
 <span class="Comment">// JSON to parse</span>
 <span class="Statement">set-string</span> jd<span class="Identifier"> unquoted</span> = {<span class="Constant">&quot;menu&quot;</span>:\
@@ -307,13 +307,13 @@ Parse the following JSON document and display all keys and values from it. You c
 
 <span class="Comment">// Delete JSON document</span>
 <span class="Statement">json-doc</span><span class="Identifier"> delete</span> nj</pre>
-<span id=rimstone_copied_736 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_736' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_736, code_736, rimstone_copied_736)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_747 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_747' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_747, code_747, rimstone_copied_747)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The output would be:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_734' class=notranslate>
+<pre id='code_745' class=notranslate>
 Key [&quot;menu&quot;.&quot;id&quot;]
 Value [file]
 Type [0]
@@ -350,9 +350,9 @@ Key [&quot;menu&quot;.&quot;popup&quot;.&quot;menuitem&quot;[2].&quot;onclick&qu
 Value [𝄞CloseDoc()]
 Type [0]
 --------</pre>
-<span id=rimstone_copied_734 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_734' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_734, code_734, rimstone_copied_734)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_745 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_745' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_745, code_745, rimstone_copied_745)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Note that if "no-enum" were used in json-doc, then all keys with arrays would not have "[..]", for instance the very last key above would be "menu"."popup"."menuitem"."onclick", i.e. there would be no indexing of arrays.<br/>
 <div class="vsub"><a id="See also"></a>See also</div>

@@ -235,14 +235,14 @@ function googleTranslateElementInit() {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Write array</div><hr/><span style="font-weight:bold;">Purpose</span>: Store value into an array.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1112' class=notranslate>
+<pre id='code_1123' class=notranslate>
 <span class="Statement">write-array</span> &lt;array&gt; \
    <span class="Identifier"> key</span> &lt;key&gt; \
    <span class="Identifier"> value</span> &lt;value&gt; \
     [<span class="Type"> old-value</span> &lt;old value&gt; ]</pre>
-<span id=rimstone_copied_1112 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1112' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1112, code_1112, rimstone_copied_1112)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1123 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1123' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1123, code_1123, rimstone_copied_1123)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 write-array will store a &lt;value&gt; (in "value" clause) under index &lt;key&gt; (in "key" clause) into &lt;array&gt;, which must be created with <a href='https://rimstone-lang.com/new-array.html'>new-array</a>. &lt;key&gt; is a number from 0 up to (excluding) the currently allocated array size (see <a href='https://rimstone-lang.com/new-array.html'>new-array</a>). The type of &lt;value&gt; is determined when &lt;array&gt; is created (see "type" clause), and can be either a string, number, double or a boolean.<br/>
 <br/>
@@ -254,25 +254,25 @@ If an &lt;array&gt; was created with "process-scope" clause (see <a href='https:
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Writing data to an array:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1114' class=notranslate>
+<pre id='code_1125' class=notranslate>
 <span class="Statement">new-array</span> arr
 <span class="Statement">write-array</span> arr<span class="Identifier"> key</span> <span class="Constant">100</span><span class="Identifier"> value</span> <span class="Constant">&quot;some data&quot;</span></pre>
-<span id=rimstone_copied_1114 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1114' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1114, code_1114, rimstone_copied_1114)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1125 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1125' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1125, code_1125, rimstone_copied_1125)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Writing new value with the same key index and obtaining the previous value (which is "some data"):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1116' class=notranslate>
+<pre id='code_1127' class=notranslate>
 <span class="Statement">write-array</span> arr<span class="Identifier"> key</span> <span class="Constant">100</span><span class="Identifier"> value</span> <span class="Constant">&quot;new data&quot;</span><span class="Type"> old-value</span> od
 <span class="Statement">@</span>Previous value for this key index is <span class="Statement">&lt;&lt;print-out</span> od<span class="Statement">&gt;&gt;</span></pre>
-<span id=rimstone_copied_1116 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1116' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1116, code_1116, rimstone_copied_1116)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1127 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1127' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1127, code_1127, rimstone_copied_1127)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The following is an array service, where a process-scoped array is created. It provides inserting, deleting and querying indexed keys. Maximum number of keys it holds is 10,000,000 (indexed from 0 to 9,999,999). Such a service process can run indefinitely. Create file arrsrv.rim:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1117' class=notranslate>
+<pre id='code_1128' class=notranslate>
 <span class="Statement">%%</span> /arrsrv<span class="Identifier"> public</span>
 <span class="Statement">    do-once</span>
 <span class="Statement">    new-array</span> arr<span class="Identifier"> max-size</span> <span class="Constant">10000000</span><span class="Identifier"> process-scope type string</span>
@@ -298,35 +298,35 @@ The following is an array service, where a process-scoped array is created. It p
 <span class="Statement">        @</span>Value [<span class="Statement">&lt;&lt;print-out</span> val<span class="Statement">&gt;&gt;</span>]
 <span class="Statement">    end-if</span>
 <span class="Statement">%%</span></pre>
-<span id=rimstone_copied_1117 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1117' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1117, code_1117, rimstone_copied_1117)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1128 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1128' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1128, code_1128, rimstone_copied_1128)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Create and make the application, then run it as service:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_1113' class=notranslate>
+<pre id='code_1124' class=notranslate>
 <span class="Comment"># Create application</span>
 rim <span class="Special">-k</span> arr
 <span class="Comment"># Make application</span>
 rim <span class="Special">-q</span>
 <span class="Comment"># Start application (single process key service)</span>
 mrim <span class="Special">-w</span> <span class="Constant">1</span> arr</pre>
-<span id=rimstone_copied_1113 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1113' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1113, code_1113, rimstone_copied_1113)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1124 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1124' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1124, code_1124, rimstone_copied_1124)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Try it from a command line client (see <a href='https://rimstone-lang.com/rim.html'>rim</a>):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_1115' class=notranslate>
+<pre id='code_1126' class=notranslate>
 <span class="Comment"># Add data</span>
 rim <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/arrsrv/op=add/key=15/data=15</span><span class="Statement">&quot;</span> <span class="Special">--service</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/arr</span><span class="Statement">&quot;</span> <span class="Special">--exec</span>
 <span class="Comment"># Query data</span>
 rim <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/arrsrv/op=query/key=15</span><span class="Statement">&quot;</span> <span class="Special">--service</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/arr</span><span class="Statement">&quot;</span> <span class="Special">--exec</span>
 <span class="Comment"># Delete data</span>
 rim <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/arrsrv/op=delete/key=15</span><span class="Statement">&quot;</span> <span class="Special">--service</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/arr</span><span class="Statement">&quot;</span> <span class="Special">--exec</span></pre>
-<span id=rimstone_copied_1115 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1115' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1115, code_1115, rimstone_copied_1115)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1126 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1126' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1126, code_1126, rimstone_copied_1126)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 See <a href='https://rimstone-lang.com/read-array.html'>read-array</a> for more examples.<br/>
 <div class="vsub"><a id="See also"></a>See also</div>

@@ -235,14 +235,14 @@ function googleTranslateElementInit() {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Stat file</div><hr/><span style="font-weight:bold;">Purpose</span>: Get information about a file.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1063' class=notranslate>
+<pre id='code_1074' class=notranslate>
 <span class="Statement">stat-file</span> &lt;file&gt; \
     [<span class="Type"> size</span> &lt;size&gt; ] [<span class="Type"> type</span> &lt;type&gt; ] \
     [<span class="Type"> path</span> &lt;path&gt; ] [<span class="Type"> name</span> &lt;name&gt; ] \
     [<span class="Type"> mode</span> &lt;mode&gt; ]</pre>
-<span id=rimstone_copied_1063 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1063' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1063, code_1063, rimstone_copied_1063)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1074 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1074' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1074, code_1074, rimstone_copied_1074)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 stat-file obtains information about &lt;file&gt;, which is a string that is an absolute or relative path.<br/>
 <br/>
@@ -256,15 +256,15 @@ Clause "mode" will store file's permission mode to number &lt;mode&gt;, see <a h
 <div class="vsub"><a id="Examples"></a>Examples</div>
 To get file size in variable "sz", which is created here:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1064' class=notranslate>
+<pre id='code_1075' class=notranslate>
 <span class="Statement">stat-file</span> <span class="Constant">&quot;/home/user/file&quot;</span><span class="Type"> size</span> sz</pre>
-<span id=rimstone_copied_1064 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1064' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1064, code_1064, rimstone_copied_1064)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1075 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1075' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1075, code_1075, rimstone_copied_1075)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 To determine if the object is a file or a directory:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1065' class=notranslate>
+<pre id='code_1076' class=notranslate>
 <span class="Statement">stat-file</span> <span class="Constant">&quot;/home/user/some_name&quot;</span><span class="Type"> type</span> what
 <span class="Statement">if-true</span> what<span class="Identifier"> equal</span> RIM_FILE
 <span class="Statement">   @</span>It's a file!
@@ -273,17 +273,17 @@ To determine if the object is a file or a directory:<br/>
 <span class="Statement">else-if</span>
 <span class="Statement">   @</span>Doesn't exist!
 <span class="Statement">end-if</span></pre>
-<span id=rimstone_copied_1065 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1065' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1065, code_1065, rimstone_copied_1065)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1076 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1076' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1076, code_1076, rimstone_copied_1076)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Get the fully resolved path of a file to string variable "fp" and the name of the file:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1066' class=notranslate>
+<pre id='code_1077' class=notranslate>
 <span class="Statement">stat-file</span> <span class="Constant">&quot;../file&quot;</span><span class="Type"> path</span> fp<span class="Type"> name</span> fn</pre>
-<span id=rimstone_copied_1066 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1066' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1066, code_1066, rimstone_copied_1066)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1077 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1077' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1077, code_1077, rimstone_copied_1077)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Files'></a><span style="font-weight:bold;">Files</span><br/>
