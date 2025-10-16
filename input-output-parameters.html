@@ -241,9 +241,12 @@ Parameters are name/value pairs that are global in scope within a request. The v
 Similarly, <a href='https://rimstone-lang.com/set-param.html'>set-param</a> (either as a standalone statement or as a clause in <a href='https://rimstone-lang.com/call-handler.html'>call-handler</a>) can be used to set<br/>
 <ul><li>handler's input parameters in the caller, and<br/>
 </li><li>handler's output parameters.</li></ul>
-These are serving as a functional equivalent of an "input/output parameter" notion. Note that parameters are of global scope within a single request; however, once obtained with "get-param" in a handler they are stored in local variables which makes them the same as a typical input parameter in many languages (see Types discussion in <a href='https://rimstone-lang.com/get-param.html'>get-param</a> as to which types are copied by value and which by reference).<br/>
+<div class="vsub"><a id="Global nature with local data"></a>Global nature with local data</div>
+The parameters can serve as a functional equivalent of an "input/output parameter" notion. Note that parameters are of global scope within a single request; however, once obtained with "get-param" in a handler they are stored in local variables which makes them the same as a typical input parameter in many languages (see Types discussion in <a href='https://rimstone-lang.com/get-param.html'>get-param</a> as to which types are copied by value and which by reference).<br/>
 <br/>
 The same parameter (i.e. of the same name) can be used in any number of handlers, assuming the type is the same everywhere. The global nature of parameters means their value can be obtained anywhere during the processing of the same request; their values are reset with each new request.<br/>
+<div class="vsub"><a id="Seamless sharing of data"></a>Seamless sharing of data</div>
+This approach makes the data sharing within a single request seamless. For instance, using some value several handler calls down no longer necessitates passing this value down via parameters; it can be simply used by name and delivered to a local variable and either changed without affecting the original or update the original. This approach uses the best of enapsulation and data sharing, with less code and more clarity.<br/>
 <br/>
 The reason for this is to both provide the same input/output parameter paradigm that's omnipresent in most programming languages, and at the same time to facilitate simpler and clearer sharing of data anywhere during the request processing (thus alleviating the need for classic global variables). In addition, it provides for the same treatment of input parameters regardless of whether a handler is called locally or remotely across servers.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
@@ -267,7 +270,7 @@ In this example, "set-param" is used to set input parameters "pp1" and "pp2" in 
 The result in "/req" will be 30 for "res1" variable, and 200 for "res2".<br/>
 <br/>
 <span style="font-weight:bold;">- Getting and setting parameters anywhere</span><br/>
-One of the advantages of parameters mentioned is the ability to use them anywhere, even when "skipping" encapsulation layers. For example, in this example, the main handler ("/req") is calling subhandler ("/req/sub-req"), which is calling sub-subhandler ("/req/sub/sub-req"), and the input and output parameters can be obtained and set in the sub-subhandler, completely bypassing the subhandler. This illustrates the semantics of parameters - they are not global variables but rather global parameters:<br/>
+One of the advantages of parameters mentioned above, is the ability to use them anywhere, even when "skipping" encapsulation layers. For example, in this example, the main handler ("/req") is calling subhandler ("/req/sub-req"), which is calling sub-subhandler ("/req/sub/sub-req"), and the input and output parameters can be obtained and set in the sub-subhandler, completely bypassing the subhandler. This illustrates the semantics of parameters - they are not global variables but rather global parameters:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_729' class=notranslate>
 <span class="Statement">%%</span> /req/sub/sub-req<span class="Identifier"> get-param</span> pp1<span class="Identifier"> type number</span>, pp2<span class="Identifier"> type number</span>
