@@ -235,14 +235,14 @@ function googleTranslateElementInit() {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Call remote</div><hr/><span style="font-weight:bold;">Purpose</span>: Make a remote service call.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_420' class=notranslate>
+<pre id='code_421' class=notranslate>
 <span class="Statement">call-remote</span> &lt;service&gt; [ ,... ]   \
     [<span class="Type"> status</span> &lt;status&gt; ]  \
     [<span class="Type"> started</span> &lt;started&gt; ] \
     [<span class="Type"> finished-okay</span> &lt;finished okay&gt; ]</pre>
-<span id=rimstone_copied_420 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_420' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_420, code_420, rimstone_copied_420)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_421 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_421' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_421, code_421, rimstone_copied_421)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 call-remote will make service call(s) as described in a single &lt;service&gt; or a list of &lt;service&gt;s. Unless only a single &lt;service&gt; is specified, each call will execute in parallel with others (as multiple threads). call-remote finishes when all &lt;service&gt; calls do. Each &lt;service&gt; must have beed created with <a href='https://rimstone-lang.com/new-remote.html'>new-remote</a>.<br/>
 <br/>
@@ -272,7 +272,7 @@ call-remote is faster than <a href='https://rimstone-lang.com/call-web.html'>cal
 <div class="vsub"><a id="Examples"></a>Examples</div>
 This example will connect to local Unix socket file "$HOME/.rimstone/app_name/sock/sock" (a RimStone application named "app_name"), and make a request named "server" (i.e. it will be processed by source code file "server.rim") with URL path of "/op=add/key=2" (meaning with input parameters "op=add" and "key=2"). Then, service reply is read and displayed.<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_421' class=notranslate>
+<pre id='code_422' class=notranslate>
 <span class="Statement">get-app</span><span class="Identifier"> user-directory</span><span class="Type"> to</span> user_dir
 <span class="Comment">// Create single call</span>
 <span class="Statement">new-remote</span> srv<span class="Identifier"> location</span> user_dir+<span class="Constant">&quot;/app_name/sock/sock&quot;</span> \
@@ -284,19 +284,19 @@ This example will connect to local Unix socket file "$HOME/.rimstone/app_name/so
 <span class="Statement">read-remote</span> srv<span class="Identifier"> data</span> rdata
 <span class="Comment">// Display results</span>
 <span class="Statement">@</span>Data from service is <span class="Statement">&lt;&lt;print-out</span> rdata<span class="Statement">&gt;&gt;</span></pre>
-<span id=rimstone_copied_421 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_421' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_421, code_421, rimstone_copied_421)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-If you are connecting to a service via TCP (and not with a Unix socket like in the example above), the "location" clause in <a href='https://rimstone-lang.com/new-remote.html'>new-remote</a> might be:<br/>
-<div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_422' class=notranslate>
-<span class="Statement">new-remote</span> srv<span class="Identifier"> location</span> <span class="Constant">&quot;192.168.0.28:2400&quot;</span> \
-   <span class="Identifier"> method</span> <span class="Constant">&quot;GET&quot;</span><span class="Identifier"> app-path</span> <span class="Constant">&quot;/app_name&quot;</span><span class="Identifier"> request-path</span> <span class="Constant">&quot;/server&quot;</span> \
-   <span class="Identifier"> url-params</span> <span class="Constant">&quot;/op=add/key=2&quot;</span></pre>
 <span id=rimstone_copied_422 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='rimstonet_422' style='position: absolute;left: -500%;'></textarea>
 <img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_422, code_422, rimstone_copied_422)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+If you are connecting to a service via TCP (and not with a Unix socket like in the example above), the "location" clause in <a href='https://rimstone-lang.com/new-remote.html'>new-remote</a> might be:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_423' class=notranslate>
+<span class="Statement">new-remote</span> srv<span class="Identifier"> location</span> <span class="Constant">&quot;192.168.0.28:2400&quot;</span> \
+   <span class="Identifier"> method</span> <span class="Constant">&quot;GET&quot;</span><span class="Identifier"> app-path</span> <span class="Constant">&quot;/app_name&quot;</span><span class="Identifier"> request-path</span> <span class="Constant">&quot;/server&quot;</span> \
+   <span class="Identifier"> url-params</span> <span class="Constant">&quot;/op=add/key=2&quot;</span></pre>
+<span id=rimstone_copied_423 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_423' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_423, code_423, rimstone_copied_423)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In this case, you are connecting to another service (running on IP "192.168.0.28") on port 2400. See <a href='https://rimstone-lang.com/mrim.html'>mrim</a> on how to start a service that listens on a TCP port. You would likely use TCP connectivity only if a service you're connecting to is on a different computer.<br/>
 <br/>

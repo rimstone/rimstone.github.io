@@ -235,13 +235,13 @@ function googleTranslateElementInit() {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Scan string</div><hr/><span style="font-weight:bold;">Purpose</span>: Scans string for another string or a character.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_991' class=notranslate>
+<pre id='code_992' class=notranslate>
 <span class="Statement">scan-string</span> &lt;string&gt; [<span class="Identifier"> start-with</span> &lt;start with&gt; ] [<span class="Identifier"> length</span> &lt;length&gt; ] \
    <span class="Identifier"> for</span> &lt;for string&gt; \
    <span class="Type"> status</span> &lt;status&gt;</pre>
-<span id=rimstone_copied_991 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_991' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_991, code_991, rimstone_copied_991)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_992 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_992' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_992, code_992, rimstone_copied_992)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 scan-string will search &lt;string&gt; for &lt;for string&gt; (which can be a string or character such as 'A' for instance) specified in "for" clause.<br/>
 <br/>
@@ -253,27 +253,27 @@ If "length" clause is used, then only the &lt;length&gt; bytes are scanned, star
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Getting the byte position of a string:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_992' class=notranslate>
+<pre id='code_993' class=notranslate>
 <span class="Statement">set-string</span> s = <span class="Constant">&quot;wow this is a string!&quot;</span>
 <span class="Statement">scan-string</span> s<span class="Identifier"> start-with</span> <span class="Constant">3</span><span class="Identifier"> length</span> <span class="Constant">13</span><span class="Identifier"> for</span> <span class="Constant">&quot;this&quot;</span><span class="Type"> status</span> pos
 <span class="Statement">if-true</span> pos<span class="Identifier"> equal</span> <span class="Constant">4</span>
 <span class="Statement">    @</span>Found string where it should be!
 <span class="Statement">end-if</span></pre>
-<span id=rimstone_copied_992 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_992' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_992, code_992, rimstone_copied_992)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_993 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_993' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_993, code_993, rimstone_copied_993)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Getting the byte position of a character:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_993' class=notranslate>
+<pre id='code_994' class=notranslate>
 <span class="Statement">set-string</span> s = <span class="Constant">&quot;wow this is a string!&quot;</span>
 <span class="Statement">scan-string</span> s<span class="Identifier"> for</span> 'g'<span class="Type"> status</span> pos
 <span class="Statement">if-true</span> pos<span class="Identifier"> equal</span> <span class="Constant">19</span>
 <span class="Statement">    @</span>Found character where it should be!
 <span class="Statement">end-if</span></pre>
-<span id=rimstone_copied_993 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_993' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_993, code_993, rimstone_copied_993)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_994 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_994' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_994, code_994, rimstone_copied_994)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Strings'></a><span style="font-weight:bold;">Strings</span><br/>

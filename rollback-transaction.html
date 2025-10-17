@@ -235,14 +235,14 @@ function googleTranslateElementInit() {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Rollback transaction</div><hr/><span style="font-weight:bold;">Purpose</span>: Rollbacks a SQL transaction.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_978' class=notranslate>
+<pre id='code_979' class=notranslate>
 <span class="Statement">rollback-transaction</span> [ @&lt;database&gt; ] \
     [<span class="Identifier"> on-error-continue</span> |<span class="Identifier"> on-error-exit</span> ] \
     [<span class="Type"> error</span> &lt;error&gt; ] [<span class="Type"> error-text</span> &lt;error text&gt; ] \
     [<span class="Identifier"> options</span> &lt;options&gt; ]</pre>
-<span id=rimstone_copied_978 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_978' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_978, code_978, rimstone_copied_978)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_979 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_979' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_979, code_979, rimstone_copied_979)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 rollback-transaction will roll back a transaction started with <a href='https://rimstone-lang.com/begin-transaction.html'>begin-transaction</a>. <br/>
 <br/>
@@ -261,14 +261,14 @@ The error code is available in &lt;error&gt; variable in "error" clause - this c
 Note that if database connection was lost, and could not be reestablished, the request will error out (see <a href='https://rimstone-lang.com/error-handling.html'>error-handling</a>).<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_979' class=notranslate>
+<pre id='code_980' class=notranslate>
 <span class="Statement">begin-transaction</span> @mydb
 <span class="Statement">run-query</span> @mydb=<span class="Constant">&quot;insert into employee (name, dateOfHire) values ('Terry', now())&quot;</span>
 <span class="Statement">run-query</span> @mydb=<span class="Constant">&quot;insert into payroll (name, salary) values ('Terry', 100000)&quot;</span>
 <span class="Statement">rollback-transaction</span> @mydb</pre>
-<span id=rimstone_copied_979 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_979' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_979, code_979, rimstone_copied_979)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_980 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_980' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_980, code_980, rimstone_copied_980)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Database'></a><span style="font-weight:bold;">Database</span><br/>

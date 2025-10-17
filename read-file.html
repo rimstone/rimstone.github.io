@@ -235,16 +235,16 @@ function googleTranslateElementInit() {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Read file</div><hr/><span style="font-weight:bold;">Purpose</span>: Read file into a string variable.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_909' class=notranslate>
+<pre id='code_910' class=notranslate>
 <span class="Statement">read-file</span> &lt;file&gt; | (<span class="Identifier"> file-id</span> &lt;file id&gt; ) \
    <span class="Type"> to</span> &lt;content&gt; \
     [<span class="Identifier"> position</span> &lt;position&gt; ] \
     [<span class="Identifier"> length</span> &lt;length&gt; ] \
     [<span class="Type"> status</span> &lt;status&gt; ] \
     [<span class="Type"> end-of-file</span> &lt;eof&gt; ]</pre>
-<span id=rimstone_copied_909 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_909' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_909, code_909, rimstone_copied_909)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_910 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_910' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_910, code_910, rimstone_copied_910)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Without file-id"></a>Without file-id</div>
 This is a simple method of reading a file. File named &lt;file&gt; is opened, data read, and file is closed. <br/>
@@ -275,7 +275,7 @@ If "status" clause is used, then the number of bytes read is stored to &lt;statu
 <div class="vsub"><a id="Examples"></a>Examples</div>
 To read the entire file and create both the variable that holds its content and the status variable:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_910' class=notranslate>
+<pre id='code_911' class=notranslate>
 <span class="Statement">read-file</span> <span class="Constant">&quot;/home/user/some_file&quot;</span><span class="Type"> to</span> file_content<span class="Type"> status</span> st
 <span class="Statement">if-true</span> st<span class="Identifier"> greater-than</span> <span class="Constant">0</span>
 <span class="Statement">    @</span>Read:
@@ -285,17 +285,17 @@ To read the entire file and create both the variable that holds its content and 
 <span class="Statement">else-if</span>
 <span class="Statement">    @</span>Could not read (<span class="Statement">&lt;&lt;print-format</span> <span class="Constant">&quot;</span><span class="Special">%ld</span><span class="Constant">&quot;</span>, st<span class="Statement">&gt;&gt;</span>)
 <span class="Statement">end-if</span></pre>
-<span id=rimstone_copied_910 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_910' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_910, code_910, rimstone_copied_910)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-To read 10 bytes starting at position 20 (with position 0 being the first byte):<br/>
-<div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_911' class=notranslate>
-<span class="Statement">read-file</span> <span class="Constant">&quot;/home/user/some_file&quot;</span><span class="Type"> to</span> file_content<span class="Identifier"> position</span> <span class="Constant">20</span><span class="Identifier"> length</span> <span class="Constant">10</span></pre>
 <span id=rimstone_copied_911 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='rimstonet_911' style='position: absolute;left: -500%;'></textarea>
 <img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_911, code_911, rimstone_copied_911)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+To read 10 bytes starting at position 20 (with position 0 being the first byte):<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_912' class=notranslate>
+<span class="Statement">read-file</span> <span class="Constant">&quot;/home/user/some_file&quot;</span><span class="Type"> to</span> file_content<span class="Identifier"> position</span> <span class="Constant">20</span><span class="Identifier"> length</span> <span class="Constant">10</span></pre>
+<span id=rimstone_copied_912 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_912' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_912, code_912, rimstone_copied_912)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 See <a href='https://rimstone-lang.com/open-file.html'>open-file</a> for an example with "file-id" clause.<br/>
 <div class="vsub"><a id="See also"></a>See also</div>

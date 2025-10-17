@@ -235,15 +235,15 @@ function googleTranslateElementInit() {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Read xml</div><hr/><span style="font-weight:bold;">Purpose</span>: Read data elements from XML document.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_930' class=notranslate>
+<pre id='code_931' class=notranslate>
 <span class="Statement">read-xml</span> &lt;xml&gt; \
     [<span class="Type"> key</span> &lt;key&gt; ] \
     [<span class="Type"> value</span> &lt;value&gt; ] \
     [<span class="Type"> status</span> &lt;status&gt; ] \
     [<span class="Identifier"> next</span> ]</pre>
-<span id=rimstone_copied_930 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_930' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_930, code_930, rimstone_copied_930)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_931 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_931' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_931, code_931, rimstone_copied_931)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 read-xml reads data elements from &lt;xml&gt; variable, which is created with <a href='https://rimstone-lang.com/xml-doc.html'>xml-doc</a>. A data element is a string &lt;key&gt;/&lt;value&gt; pair, where key (in "key" clause) is a normalized key name, which is the current name preceded with the names of all elements leading up to it, separated by a forward slash ("/"). Node that attribute elements end with "@".<br/>
 <br/>
@@ -253,19 +253,19 @@ Use "next" clause to move to the next sequential key/value pair in the document,
 <br/>
 &lt;key&gt; in "key" clause is a normalized name of any given element in XML text. This means every non-leaf element is included, separated by a forward slash ("/"), and arguments end with "@". An example would be, if "onclick" is a element of "menuitem":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_931' class=notranslate>
-menu/popup/menuitem/onclick</pre>
-<span id=rimstone_copied_931 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_931' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_931, code_931, rimstone_copied_931)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-or if "onclick" is an attribute of "menuitem":<br/>
-<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_932' class=notranslate>
-menu/popup/menuitem/onclick/@</pre>
+menu/popup/menuitem/onclick</pre>
 <span id=rimstone_copied_932 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='rimstonet_932' style='position: absolute;left: -500%;'></textarea>
 <img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_932, code_932, rimstone_copied_932)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+or if "onclick" is an attribute of "menuitem":<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_933' class=notranslate>
+menu/popup/menuitem/onclick/@</pre>
+<span id=rimstone_copied_933 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_933' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_933, code_933, rimstone_copied_933)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 See <a href='https://rimstone-lang.com/xml-doc.html'>xml-doc</a>.<br/>

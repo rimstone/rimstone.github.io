@@ -235,12 +235,12 @@ function googleTranslateElementInit() {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Decode hex</div><hr/><span style="font-weight:bold;">Purpose</span>: Decode hexadecimal string into data.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_561' class=notranslate>
+<pre id='code_562' class=notranslate>
 <span class="Statement">decode-hex</span> &lt;data&gt;<span class="Type"> to</span> &lt;output&gt; \
     [<span class="Identifier"> input-length</span> &lt;input length&gt; ]</pre>
-<span id=rimstone_copied_561 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_561' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_561, code_561, rimstone_copied_561)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_562 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_562' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_562, code_562, rimstone_copied_562)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 decode-hex will decode hexadecimal string &lt;data&gt; to string &lt;output&gt; given in "to" clause. <br/>
 <br/>
@@ -248,20 +248,20 @@ decode-hex will decode hexadecimal string &lt;data&gt; to string &lt;output&gt; 
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Get the original binary data from a hexadecimal string "hexdata". The output string "binout" is created:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_562' class=notranslate>
+<pre id='code_563' class=notranslate>
 <span class="Statement">set-string</span> hexdata = <span class="Constant">&quot;0041000F414200&quot;</span>
 <span class="Statement">decode-hex</span> hexdata<span class="Type"> to</span> binout</pre>
-<span id=rimstone_copied_562 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_562' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_562, code_562, rimstone_copied_562)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-The value of "binout" will be binary data equal to this C literal:<br/>
-<div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_563' class=notranslate>
-<span class="Constant">&quot;</span><span class="Special">\x00</span><span class="Constant">&quot;&quot;A&quot;&quot;</span><span class="Special">\x00</span><span class="Constant">&quot;&quot;</span><span class="Special">\x0F</span><span class="Constant">&quot;&quot;AB&quot;&quot;</span><span class="Special">\x00</span><span class="Constant">&quot;&quot;</span><span class="Special">\x04</span><span class="Constant">&quot;</span></pre>
 <span id=rimstone_copied_563 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='rimstonet_563' style='position: absolute;left: -500%;'></textarea>
 <img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_563, code_563, rimstone_copied_563)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+The value of "binout" will be binary data equal to this C literal:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_564' class=notranslate>
+<span class="Constant">&quot;</span><span class="Special">\x00</span><span class="Constant">&quot;&quot;A&quot;&quot;</span><span class="Special">\x00</span><span class="Constant">&quot;&quot;</span><span class="Special">\x0F</span><span class="Constant">&quot;&quot;AB&quot;&quot;</span><span class="Special">\x00</span><span class="Constant">&quot;&quot;</span><span class="Special">\x04</span><span class="Constant">&quot;</span></pre>
+<span id=rimstone_copied_564 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_564' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_564, code_564, rimstone_copied_564)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Hex encoding'></a><span style="font-weight:bold;">Hex encoding</span><br/>
