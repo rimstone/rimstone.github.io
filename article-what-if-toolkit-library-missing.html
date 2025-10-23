@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!--__RIM_REDIRECT__-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+<title>What if toolkit library is missing?</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="HandheldFriendly" content="True"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="canonical" href="https://rimstone-lang.com/article-what-if-toolkit-library-missing.html" />
+<style>
+
+
+body, html {
+    font-family: Quicksand,monospace,Helvetica, Arial, sans-serif;
+    line-height: 150%;
+    font-size:16px;
+}
+
+body {
+    padding-left:1vw;
+    padding-right:1vw;
+}
+    
+.ncode {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:8px;
+    margin-top:8px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.shcode {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:8px;
+    margin-top:8px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.sqlcode {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:8px;
+    margin-top:8px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.htmlcode {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:8px;
+    margin-top:8px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.code {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:8px;
+    margin-top:8px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+/*Just like h1 but for pdf conversion it would be indented this way it's not*/
+.vhub {
+    display: block;
+   font-size: 1.6em;
+   margin-top: 0.63em;
+   margin-bottom: 0.63em;
+   margin-left: 0;
+   margin-right: 0;
+   font-weight: bold;
+}
+
+/*Just like h2 but for pdf conversion it would be indented this way it's not*/
+.vsub {
+    display: block;
+   font-size: 1.25em;
+   margin-top: 0.53em;
+   margin-bottom: 0.53em;
+   margin-left: 0;
+   margin-right: 0;
+   font-weight: bold;
+}
+
+ul {
+  margin-left: 0.75vw;
+  padding-left: 0;
+}
+li {
+  margin-left: 0.75vw;
+  padding-left: 0;
+}
+
+/* this must be last, as it overrides previous settings, for mobile */
+@media (hover: none) {
+a {
+   display: inline-block;
+   padding-top: 3px;
+   padding-bottom: 2px;
+}
+body {
+    padding-left:2vw;
+    padding-right:2vw;
+    letter-spacing: 1px;
+}
+}
+
+/*The following is for code snippets that are highlighted by 2html vim*/
+pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
+.Identifier { color: #008b8b; }
+.Statement { color: #af5f00; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
+/*end of highlighted snippets*/
+
+a {
+    text-decoration:none;
+    padding-bottom: 0px; 
+    color:inherit;
+    border-bottom: 2px solid #6cb8f0;
+}
+a:hover {
+    text-decoration: none;
+    color:black;
+    border-bottom: 1px solid red;
+}
+/*do not underline links nor should they be active*/
+pre a {
+    text-decoration:none;
+    color:black;
+    border-bottom: none;
+    pointer-events: none;
+    cursor: default;
+}
+
+
+.golfSnippet {display:none;}
+
+ul {
+  list-style-type:square;
+  list-style-position: outside;
+}
+
+</style>
+
+
+</head>
+<body>
+<div id="google_translate_element" style='float:right'></div>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script>
+function rim_copy(gt, eid, gc) {
+  gt.textContent = eid.textContent;
+  gt.select();
+  document.execCommand("copy");
+  gc.style.visibility="visible"
+  setTimeout(()=>{ gc.style.visibility="hidden"; }, 1000);
+}
+function googleTranslateElementInit() {
+   new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+
+</script>
+
+<!--RIMMENU13-->
+
+<!--RIMENDMENU13-->
+
+
+
+<!--BEGVDOC90-->
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>What if toolkit library is missing?</div><hr/><br/>
+You can choose to not install any toolkit libraries when you setup RimStone (see <a href='https://rimstone-lang.com/install-rimstone.html'>install-rimstone</a>). So what happens when at some point you write code that requires one of those libraries?<br/>
+<br/>
+The answer is simple: RimStone will tell you that the library is missing and even show you the installation instructions to install it!<br/>
+<br/>
+Here's an example of what that looks like in practicality.<br/>
+<br/>
+Suppose you have a service that fetches Google web page (like in this <a href='https://rimstone-lang.com/article-fetch-web-page.html'>article</a>):<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_383' class=notranslate>
+cat &lt;&lt; '<span class="Constant">EOF</span>' &gt; fetch.rim
+<span class="Statement">begin-handler</span> /fetch<span class="Identifier"> public</span>
+<span class="Statement">    call-web</span> <span class="Constant">&quot;<a href="https://google.com">https://google.com</a>&quot;</span><span class="Type"> response</span> text<span class="Type"> response-headers</span> head
+<span class="Statement">    print-out</span> head<span class="Identifier"> new-line</span>
+<span class="Statement">    print-out</span> text<span class="Identifier"> new-line</span>
+<span class="Statement">end-handler</span>
+<span class="Constant">EOF</span></pre>
+<span id=rimstone_copied_383 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_383' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_383, code_383, rimstone_copied_383)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Now, since you didn't install the toolkit libraries, you may not have the "libcurl" library, which is a standard library used for things like fetching web pages. If you try to make your application:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_384' class=notranslate>
+rim <span class="Special">-k</span> get-page <span class="Special">-q</span></pre>
+<span id=rimstone_copied_384 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_384' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_384, code_384, rimstone_copied_384)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+You will get:<br/>
+<div class='ncode' style='position:relative;padding-right:16px;'>
+<pre id='code_382' class=notranslate>
+RimStone: Required library [libcurl4-openssl-dev] is not installed. You can install it from command line with:
+RimStone: sudo apt -y install  libcurl4-openssl-dev
+RimStone: Please install it and try again, reading file [fetch.rim], line [5].
+There are errors in making your application (complete log at /home/user/.rimstone/apps/web/.bld/.make.output).</pre>
+<span id=rimstone_copied_382 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_382' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_382, code_382, rimstone_copied_382)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+So, like I mentioned above, you will get a clear message as to what the problem is, and even how to remedy it, so if you do as suggested (this is for Ubuntu, the exact name of the library may be different for you):<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_386' class=notranslate>
+sudo apt <span class="Special">-y</span> install  libcurl4-openssl-dev</pre>
+<span id=rimstone_copied_386 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_386' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_386, code_386, rimstone_copied_386)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Now you can try again:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_387' class=notranslate>
+rim <span class="Special">-k</span> get-page <span class="Special">-q</span></pre>
+<span id=rimstone_copied_387 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_387' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_387, code_387, rimstone_copied_387)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+RimStone will detect that a new library was installed, and it will:<br/>
+<ul><li>Recompile RimStone itself. This is because RimStone operates as a high-performance system and always uses LTO (Link Time Optimizations), which it applies not just to your code, but to itself as well!<br/>
+</li><li>After that, it will make your application.</li></ul>
+So, here's what you might see:<br/>
+<div class='ncode' style='position:relative;padding-right:16px;'>
+<pre id='code_385' class=notranslate>
+Recompiling RimStone objects due to change in installed libraries; this happens only when libraries used by RimStone are installed or removed. Please wait for it to complete.
+Cleaning up RimStone for build.
+..............................................................Built RimStone binaries (devel)
+..............................................................Built RimStone binaries (release)
+Built RimStone binaries (devel)
+Creating RimStone directories (devel)
+Copying RimStone binaries (devel)
+Built RimStone binaries (release)
+Creating RimStone directories (release)
+Copying RimStone binaries (release)
+RimStone objects recompiled, continuing.</pre>
+<span id=rimstone_copied_385 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_385' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_385, code_385, rimstone_copied_385)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+And voila, your application is now ready, just run it:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_388' class=notranslate>
+rim <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/fetch</span><span class="Statement">&quot;</span> <span class="Special">--exec</span></pre>
+<span id=rimstone_copied_388 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_388' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_388, code_388, rimstone_copied_388)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+You will see the source code for Google web page.<br/>
+<br/>
+Regardless of which exact library (or libraries) you're missing, the process described above is the same. RimStone will guide you through it until done!<br/>
+<!--ENDVDOC90-->
+<br/><div style='width:100%;clear:both;'>
+<hr/>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://rimstone-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+</div><br/></body></html>
+
+

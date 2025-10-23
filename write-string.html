@@ -235,70 +235,70 @@ function googleTranslateElementInit() {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Write string</div><hr/><span style="font-weight:bold;">Purpose</span>: Create complex strings.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1158' class=notranslate>
+<pre id='code_1165' class=notranslate>
 <span class="Statement">write-string</span> &lt;string&gt;
 
 &lt;any code&gt;
 
 <span class="Statement">end-write-string</span> [<span class="Identifier"> notrim</span> ]</pre>
-<span id=rimstone_copied_1158 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1158' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1158, code_1158, rimstone_copied_1158)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1165 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1165' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1165, code_1165, rimstone_copied_1165)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Output of any RimStone code can be written into &lt;string&gt; with write-string. In between write-string and end-write-string you can write &lt;any RimStone code&gt;. For instance you can use database queries, comparison statements etc., just as you would for any other RimStone code. <br/>
 <div class="vsub"><a id="Shortcut code"></a>Shortcut code</div>
 Note that instead of write-string you can also use a shortcut "((" &nbsp;(and instead of end-write-string you can use "))" &nbsp;), for example here a string "fname" holds a full path of a file named "config-install.rim" under the application home directory (see <a href='https://rimstone-lang.com/directories.html'>directories</a>):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1160' class=notranslate>
+<pre id='code_1167' class=notranslate>
 <span class="Statement">get-app</span><span class="Identifier"> directory</span><span class="Type"> to</span> home_dir
 <span class="Statement">((</span> fname
 <span class="Statement">@</span><span class="Statement">&lt;&lt;print-out</span> home_dir<span class="Statement">&gt;&gt;</span>/config-install.rim
 <span class="Statement">))</span></pre>
-<span id=rimstone_copied_1160 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1160' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1160, code_1160, rimstone_copied_1160)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1167 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1167' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1167, code_1167, rimstone_copied_1167)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Trimming"></a>Trimming</div>
 Just like with all other RimStone code, the text of every statement is trimmed both on left and write, so this:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1162' class=notranslate>
+<pre id='code_1169' class=notranslate>
 <span class="Statement">((</span> mystr
 <span class="Statement">@</span>Some string
 <span class="Statement">))</span></pre>
-<span id=rimstone_copied_1162 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1162' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1162, code_1162, rimstone_copied_1162)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1169 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1169' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1169, code_1169, rimstone_copied_1169)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 is the same as:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1164' class=notranslate>
+<pre id='code_1171' class=notranslate>
 <span class="Statement">((</span> mystr
 <span class="Statement">        @</span>Some string &lt;whitespaces&gt;
 <span class="Statement">))</span></pre>
-<span id=rimstone_copied_1164 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1164' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1164, code_1164, rimstone_copied_1164)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1171 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1171' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1171, code_1171, rimstone_copied_1171)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 write-string (or "((") statement must always be on a line by itself (and so does end-write-string, or "))" statement). The string being built starts with the line following write-string, and ends with the line immediately prior to end-write-string. <br/>
 <br/>
 All trailing whitespaces (including new lines) are removed, for example:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1166' class=notranslate>
+<pre id='code_1173' class=notranslate>
 <span class="Statement">((</span> mystr
 <span class="Statement">        @</span>My string
 <span class="Statement">        @</span>
 <span class="Statement">        @</span>
 <span class="Statement">))</span></pre>
-<span id=rimstone_copied_1166 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1166' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1166, code_1166, rimstone_copied_1166)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1173 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1173' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1173, code_1173, rimstone_copied_1173)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 the above string would have two trailing empty lines, however they will be removed. If you want to skip trimming the trailing whitespaces, use "notrim" clause in end-write-string.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 <span style="font-weight:bold;">- Simple</span><br/>
 A simple example:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1168' class=notranslate>
+<pre id='code_1175' class=notranslate>
 <span class="Statement">set-string</span> my_str=<span class="Constant">&quot;world&quot;</span>
 <span class="Statement">set-string</span> my_str1=<span class="Constant">&quot;and have a nice day too!&quot;</span>
 
@@ -307,23 +307,23 @@ A simple example:<br/>
 <span class="Statement">end-write-string</span>
 
 <span class="Statement">print-out</span> result_str</pre>
-<span id=rimstone_copied_1168 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1168' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1168, code_1168, rimstone_copied_1168)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1175 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1175' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1175, code_1175, rimstone_copied_1175)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The output is <br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_1157' class=notranslate>
+<pre id='code_1164' class=notranslate>
 Hello world (and have a nice day too!)</pre>
-<span id=rimstone_copied_1157 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1157' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1157, code_1157, rimstone_copied_1157)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1164 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1164' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1164, code_1164, rimstone_copied_1164)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <br/>
 <span style="font-weight:bold;">- Using code inside</span><br/>
 Here is using RimStone code inside write-string, including database query and comparison statements to produce different strings at run-time:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1170' class=notranslate>
+<pre id='code_1177' class=notranslate>
 <span class="Statement">get-param</span> selector
 
 <span class="Statement">set-string</span> my_str=<span class="Constant">&quot;world&quot;</span>
@@ -342,97 +342,97 @@ Here is using RimStone code inside write-string, including database query and co
 <span class="Statement">end-write-string</span>
 
 <span class="Statement">print-out</span> result_str</pre>
+<span id=rimstone_copied_1177 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1177' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1177, code_1177, rimstone_copied_1177)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+If selector variable is "simple", as in URL <br/>
+<div class='ncode' style='position:relative;padding-right:16px;'>
+<pre id='code_1166' class=notranslate>
+https://mysite.com/&lt;app name&gt;/some-service?selector=simple</pre>
+<span id=rimstone_copied_1166 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1166' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1166, code_1166, rimstone_copied_1166)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+the result is <br/>
+<div class='ncode' style='position:relative;padding-right:16px;'>
+<pre id='code_1168' class=notranslate>
+Hello world (and have a nice day too!)</pre>
+<span id=rimstone_copied_1168 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1168' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1168, code_1168, rimstone_copied_1168)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+If selector variable is "database", as in URL <br/>
+<div class='ncode' style='position:relative;padding-right:16px;'>
+<pre id='code_1170' class=notranslate>
+https://mysite.com/&lt;app name&gt;/some-service?selector=database</pre>
 <span id=rimstone_copied_1170 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='rimstonet_1170' style='position: absolute;left: -500%;'></textarea>
 <img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1170, code_1170, rimstone_copied_1170)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-If selector variable is "simple", as in URL <br/>
-<div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_1159' class=notranslate>
-https://mysite.com/&lt;app name&gt;/some-service?selector=simple</pre>
-<span id=rimstone_copied_1159 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1159' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1159, code_1159, rimstone_copied_1159)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-the result is <br/>
-<div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_1161' class=notranslate>
-Hello world (and have a nice day too!)</pre>
-<span id=rimstone_copied_1161 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1161' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1161, code_1161, rimstone_copied_1161)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-If selector variable is "database", as in URL <br/>
-<div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_1163' class=notranslate>
-https://mysite.com/&lt;app name&gt;/some-service?selector=database</pre>
-<span id=rimstone_copied_1163 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1163' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1163, code_1163, rimstone_copied_1163)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
 the result may be (assuming "Linda" and "John" are the two employees selected):<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_1165' class=notranslate>
+<pre id='code_1172' class=notranslate>
 Hello Linda
 &lt;br/&gt;
 Hello John
 &lt;br/&gt;</pre>
-<span id=rimstone_copied_1165 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1165' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1165, code_1165, rimstone_copied_1165)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1172 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1172' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1172, code_1172, rimstone_copied_1172)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 If selector variable is anything else, as in URL <br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_1167' class=notranslate>
+<pre id='code_1174' class=notranslate>
 https://mysite.com/&lt;app name&gt;/some-service?selector=something_else</pre>
-<span id=rimstone_copied_1167 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1167' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1167, code_1167, rimstone_copied_1167)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1174 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1174' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1174, code_1174, rimstone_copied_1174)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 the result is <br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_1169' class=notranslate>
+<pre id='code_1176' class=notranslate>
 No message</pre>
-<span id=rimstone_copied_1169 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1169' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1169, code_1169, rimstone_copied_1169)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1176 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1176' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1176, code_1176, rimstone_copied_1176)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <span style="font-weight:bold;">- Using call-handlers calls inside</span><br/>
 The following uses a call-handler inside write-string:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1172' class=notranslate>
+<pre id='code_1179' class=notranslate>
 <span class="Statement">set-string</span> result_str=<span class="Constant">&quot;&quot;</span>
 <span class="Statement">write-string</span> result_str
 <span class="Statement">    @</span><span class="Statement">&lt;&lt;print-out</span> <span class="Constant">&quot;Result from other-service&quot;</span><span class="Statement">&gt;&gt;</span> is <span class="Statement">&lt;&lt;call-handler</span> <span class="Constant">&quot;/other-service&quot;</span><span class="Statement">&gt;&gt;</span>
 <span class="Statement">end-write-string</span>
 <span class="Statement">print-out</span> result_str</pre>
-<span id=rimstone_copied_1172 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1172' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1172, code_1172, rimstone_copied_1172)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1179 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1179' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1179, code_1179, rimstone_copied_1179)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The "other-service" may be:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1174' class=notranslate>
+<pre id='code_1181' class=notranslate>
 <span class="Statement">begin-handler</span> /other-service<span class="Identifier"> public</span>
 <span class="Statement">    @</span>&quot;Hello from other service&quot;
 <span class="Statement">end-handler</span></pre>
-<span id=rimstone_copied_1174 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1174' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1174, code_1174, rimstone_copied_1174)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1181 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1181' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1181, code_1181, rimstone_copied_1181)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The output:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_1171' class=notranslate>
+<pre id='code_1178' class=notranslate>
 Result from other-service is Hello from other service</pre>
-<span id=rimstone_copied_1171 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1171' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1171, code_1171, rimstone_copied_1171)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1178 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1178' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1178, code_1178, rimstone_copied_1178)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <br/>
 <span style="font-weight:bold;">- Nesting</span><br/>
 An example to nest write-strings:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1156' class=notranslate>
+<pre id='code_1163' class=notranslate>
 <span class="Statement">write-string</span> str1
 <span class="Statement">    @</span>Hi!
 <span class="Statement">    write-string</span> str2
@@ -441,18 +441,18 @@ An example to nest write-strings:<br/>
 <span class="Statement">   print-out</span> str2
 <span class="Statement">end-write-string</span>
 <span class="Statement">print-out</span> str1</pre>
-<span id=rimstone_copied_1156 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1156' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1156, code_1156, rimstone_copied_1156)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1163 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1163' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1163, code_1163, rimstone_copied_1163)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The result is <br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_1173' class=notranslate>
+<pre id='code_1180' class=notranslate>
 Hi!
 Hi Again!</pre>
-<span id=rimstone_copied_1173 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1173' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1173, code_1173, rimstone_copied_1173)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1180 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1180' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1180, code_1180, rimstone_copied_1180)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Strings'></a><span style="font-weight:bold;">Strings</span><br/>

@@ -235,13 +235,13 @@ function googleTranslateElementInit() {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Output statement</div><hr/><span style="font-weight:bold;">Purpose</span>: Output text.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_846' class=notranslate>
+<pre id='code_853' class=notranslate>
 <span class="Statement">@</span>&lt;text&gt;
 
 <span class="Statement">!</span>&lt;verbatim text&gt;</pre>
-<span id=rimstone_copied_846 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_846' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_846, code_846, rimstone_copied_846)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_853 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_853' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_853, code_853, rimstone_copied_853)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Outputting free form text is done by starting the line with "@" or "!". The text is output unencoded with a new line appended.<br/>
 <br/>
@@ -255,53 +255,53 @@ Note that all characters are output as they are written, including the escape ch
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Outputting "Hello there": <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_848' class=notranslate>
+<pre id='code_855' class=notranslate>
 <span class="Statement">@</span>Hello there</pre>
-<span id=rimstone_copied_848 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_848' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_848, code_848, rimstone_copied_848)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_855 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_855' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_855, code_855, rimstone_copied_855)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 You can use other RimStone statements inlined and mixed with the text you are outputting:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_849' class=notranslate>
+<pre id='code_856' class=notranslate>
 <span class="Statement">set-string</span> weatherType=<span class="Constant">&quot;sunny&quot;</span>
 <span class="Statement">@</span>Today's weather is <span class="Statement">&lt;&lt;print-out</span> weatherType<span class="Statement">&gt;&gt;</span></pre>
-<span id=rimstone_copied_849 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_849' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_849, code_849, rimstone_copied_849)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_856 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_856' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_856, code_856, rimstone_copied_856)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 which would output <br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_845' class=notranslate>
+<pre id='code_852' class=notranslate>
 Today&apos;s weather is sunny</pre>
-<span id=rimstone_copied_845 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_845' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_845, code_845, rimstone_copied_845)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_852 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_852' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_852, code_852, rimstone_copied_852)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 With "!" statement, the text is also output, and this example produces the same "Hello there" output as "@":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_850' class=notranslate>
+<pre id='code_857' class=notranslate>
 <span class="Statement">!</span>Hello there</pre>
-<span id=rimstone_copied_850 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_850' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_850, code_850, rimstone_copied_850)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_857 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_857' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_857, code_857, rimstone_copied_857)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In contrast to "@" statement, "!" statement outputs all texts verbatim &nbsp;and does not execute any inline code:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_851' class=notranslate>
+<pre id='code_858' class=notranslate>
 <span class="Statement">set-string</span> weatherType=<span class="Constant">&quot;sunny&quot;</span>
 <span class="Statement">!</span>Today's weather is &lt;&lt;print-out weatherType&gt;&gt;</pre>
-<span id=rimstone_copied_851 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_851' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_851, code_851, rimstone_copied_851)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_858 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_858' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_858, code_858, rimstone_copied_858)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 which would output <br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_847' class=notranslate>
+<pre id='code_854' class=notranslate>
 Today&apos;s weather is &lt;&lt;print-out weatherType&gt;&gt;</pre>
-<span id=rimstone_copied_847 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_847' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_847, code_847, rimstone_copied_847)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_854 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_854' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_854, code_854, rimstone_copied_854)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Output'></a><span style="font-weight:bold;">Output</span><br/>

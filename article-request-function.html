@@ -260,7 +260,7 @@ Let's start with a simple service that provides current time based on a timezone
 <pre id='code_265' class=notranslate>
 cat &lt;&lt; '<span class="Constant">EOF</span>' &gt; local.rim
 <span class="Statement">begin-handler</span> /local/time
-<span class="Statement">    get-param</span> tzone<span class="Identifier"> default-value</span> <span class="Constant">&quot;MST&quot;</span> <span class="Comment">// get time zone as input parameter (i.e. </span><span class="Constant">&quot;EST&quot;</span><span class="Comment">, </span><span class="Constant">&quot;MST&quot;</span><span class="Comment">, </span><span class="Constant">&quot;PST&quot;</span><span class="Comment"> etc.)</span>
+<span class="Statement">    get-param</span> tzone<span class="Identifier"> default-value</span> <span class="Constant">&quot;MST&quot;</span> <span class="Comment">// get time zone as input parameter (i.e. &quot;EST&quot;, &quot;MST&quot;, &quot;PST&quot; etc.)</span>
 <span class="Statement">    get-time</span><span class="Type"> to</span> curr_time<span class="Identifier"> timezone</span> tzone
 <span class="Statement">    @</span>&lt;div&gt;Current time is <span class="Statement">&lt;&lt;print-out</span> curr_time<span class="Statement">&gt;&gt;</span>&lt;/div&gt;
 <span class="Statement">end-handler</span>
