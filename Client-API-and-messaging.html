@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!--__RIM_REDIRECT__-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+<title>Client API and messaging</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="HandheldFriendly" content="True"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="canonical" href="https://rimstone-lang.com/Client-API-and-messaging.html" />
+<style>
+
+
+body, html {
+    font-family: Quicksand,monospace,Helvetica, Arial, sans-serif;
+    line-height: 150%;
+    font-size:16px;
+}
+
+body {
+    padding-left:1vw;
+    padding-right:1vw;
+}
+    
+.ncode {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:8px;
+    margin-top:8px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.shcode {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:8px;
+    margin-top:8px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.sqlcode {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:8px;
+    margin-top:8px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.htmlcode {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:8px;
+    margin-top:8px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.code {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:8px;
+    margin-top:8px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+/*Just like h1 but for pdf conversion it would be indented this way it's not*/
+.vhub {
+    display: block;
+   font-size: 1.6em;
+   margin-top: 0.63em;
+   margin-bottom: 0.63em;
+   margin-left: 0;
+   margin-right: 0;
+   font-weight: bold;
+}
+
+/*Just like h2 but for pdf conversion it would be indented this way it's not*/
+.vsub {
+    display: block;
+   font-size: 1.25em;
+   margin-top: 0.53em;
+   margin-bottom: 0.53em;
+   margin-left: 0;
+   margin-right: 0;
+   font-weight: bold;
+}
+
+ul {
+  margin-left: 0.75vw;
+  padding-left: 0;
+}
+li {
+  margin-left: 0.75vw;
+  padding-left: 0;
+}
+
+/* this must be last, as it overrides previous settings, for mobile */
+@media (hover: none) {
+a {
+   display: inline-block;
+   padding-top: 3px;
+   padding-bottom: 2px;
+}
+body {
+    padding-left:2vw;
+    padding-right:2vw;
+    letter-spacing: 1px;
+}
+}
+
+/*The following is for code snippets that are highlighted by 2html vim*/
+pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
+.Identifier { color: #008b8b; }
+.Statement { color: #af5f00; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
+/*end of highlighted snippets*/
+
+a {
+    text-decoration:none;
+    padding-bottom: 0px; 
+    color:inherit;
+    border-bottom: 2px solid #6cb8f0;
+}
+a:hover {
+    text-decoration: none;
+    color:black;
+    border-bottom: 1px solid red;
+}
+/*do not underline links nor should they be active*/
+pre a {
+    text-decoration:none;
+    color:black;
+    border-bottom: none;
+    pointer-events: none;
+    cursor: default;
+}
+
+
+.golfSnippet {display:none;}
+
+ul {
+  list-style-type:square;
+  list-style-position: outside;
+}
+
+</style>
+
+
+</head>
+<body>
+<div id="google_translate_element" style='float:right'></div>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script>
+function rim_copy(gt, eid, gc) {
+  gt.textContent = eid.textContent;
+  gt.select();
+  document.execCommand("copy");
+  gc.style.visibility="visible"
+  setTimeout(()=>{ gc.style.visibility="hidden"; }, 1000);
+}
+function googleTranslateElementInit() {
+   new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+
+</script>
+
+<!--RIMMENU13-->
+
+<!--RIMENDMENU13-->
+
+
+
+<!--BEGVDOC90-->
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Client API and messaging</div><hr/>RimStone provides <a href='https://rimstone-lang.com/SEMI.html'>SEMI</a> messaging API for a C client (see <a href='https://rimstone-lang.com/Client-API.html'>Client-API</a>). It means you can read sets of key/value pairs sent by the server, and also create sets of key/value pairs and send them to the server (or read to/write from a file etc.).<br/>
+<br/>
+This API is binary-compatible with <a href='https://rimstone-lang.com/new-message.html'>new-message</a>, <a href='https://rimstone-lang.com/write-message.html'>write-message</a>, <a href='https://rimstone-lang.com/read-message.html'>read-message</a> etc.<br/>
+<br/>
+The following C API is provided:<br/>
+<ul><li><span style="font-weight:bold;">rim_msg * rim_new_msg (char *from, rim_num from_len);</span><br/>
+Create a new message, which is a pointer to a variable of type "rim_msg". <br/>
+<br/>
+If this is a new empty message (i.e. with no data), then use NULL for "from" and 0 from "from_len". Typically, this is what you'd use when building a new message you intend to send to the server, write into a file etc.<br/>
+<br/>
+If you're creating a new message from an existing one, then "from" is the message body and "from_len" is its length (see rim_get_msg() and rim_get_msg_len() to get them, respectively). Typically, this is what you'd do if you received a message from the server, read it from a file etc.<br/>
+<br/>
+</li><li><span style="font-weight:bold;">void rim_write_msg(rim_msg *msg, char *key, char *val, rim_num val_len);</span><br/>
+Write data to a message.<br/>
+<br/>
+"msg" is a message created with rim_new_msg(). <br/>
+<br/>
+Data written is key "key" and value "val" of length "val_len". See <a href='https://rimstone-lang.com/SEMI.html'>SEMI</a> on details as to what the key can be, while value can be any binary data. Note that both key and value are copied into a message, and thus can go out of scope or be freed after the call.<br/>
+<br/>
+</li><li><span style="font-weight:bold;">rim_num rim_read_msg(rim_msg *msg, char **key, char **val, rim_num *val_len);</span><br/>
+Read data from a message.<br/>
+<br/>
+"msg" is a message created with rim_new_msg(). <br/>
+<br/>
+"key" is the key read, and "val" is the value read, while "val_len" is the length of value read.<br/>
+<br/>
+The return value is RIM_OKAY if message is read, RIM_ERR_LENGTH if trying to read beyond the end of message and RIM_ERR_FORMAT if the message is not in <a href='https://rimstone-lang.com/SEMI.html'>SEMI</a> format.<br/>
+<br/>
+Note that "val" is not allocated and should not be freed (it is a part of the message data), while "key" is allocated and should be freed when not needed. For this reason, you should not free the message data (see rim_get_msg()), nor the message itself if the value is still needed (see Example below).<br/>
+<br/>
+</li><li><span style="font-weight:bold;">char *rim_get_msg(rim_msg *msg);</span><br/>
+Get the message data.<br/>
+<br/>
+"msg" is a message created with rim_new_msg(). <br/>
+<br/>
+Return value is the message data, which is the data you can send to server, or the data you would receive from server. It consists of all key/value pairs that make up the message, whether it's produced somewhere else or you created it rim_write_msg().<br/>
+<br/>
+</li><li><span style="font-weight:bold;">rim_num rim_get_len (rim_msg *msg);</span><br/>
+Get the length of message data.<br/>
+<br/>
+"msg" is a message created with rim_new_msg(). <br/>
+<br/>
+Return value is the length of message data, which can be binary. You can use this length when sending data to server, writing it to a file etc.</li></ul>
+<div class="vsub"><a id="Examples"></a>Examples</div>
+Here's the sample code illustrating use of the API:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_480' class=notranslate>
+<span class="PreProc">#include </span><span class="Constant">&quot;rcli.h&quot;</span> <span class="Comment">// include C API header file</span>
+
+<span class="Statement">.</span>..
+
+rim_msg *msg; <span class="Comment">// message type variable</span>
+
+<span class="Comment">// Create new message</span>
+msg = rim_new_msg (<span class="Constant">NULL</span>, <span class="Constant">0</span>);
+
+<span class="Statement">.</span>..
+
+<span class="Comment">// Write key/value (assuming value is a zero-bound string)</span>
+<span class="Type">char</span> key[<span class="Constant">100</span>], value[<span class="Constant">100</span>];
+strcpy (key, <span class="Constant">&quot;some key&quot;</span>);
+strcpy (value, <span class="Constant">&quot;some key&quot;</span>);
+rim_write_msg (msg, key, value, strlen(value));
+
+<span class="Statement">.</span>..
+
+<span class="Comment">// Read key/value from the message</span>
+<span class="Type">char</span> *k, *v;
+rim_num len;
+rim_read_msg (msg, &amp;k, &amp;v, &amp;len);
+
+<span class="Statement">.</span>..
+
+<span class="Comment">// Free the message data</span>
+free (rim_get_msg(msg));
+<span class="Comment">// Free the message</span>
+free (msg);</pre>
+<span id=rimstone_copied_480 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_480' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_480, code_480, rimstone_copied_480)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+<div class="vsub"><a id="See also"></a>See also</div>
+ <a name='API'></a><span style="font-weight:bold;">API</span><br/>
+<a href='https://rimstone-lang.com/Client-API.html'>Client-API</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/Client-API-and-messaging.html'>Client-API-and-messaging</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/Server-API.html'>Server-API</a> &nbsp; <br/>
+<span style="font-weight:bold;">See all</span> <br/>
+<a href='https://rimstone-lang.com/documentation.html'>documentation</a><br/>
+<!--ENDVDOC90-->
+<br/><div style='width:100%;clear:both;'>
+<hr/>
+<!--GOLFFOOT77--><span style='font-size:80%'><a href="https://rimstone-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+</div><br/></body></html>
+
+

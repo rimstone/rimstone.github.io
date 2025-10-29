@@ -237,7 +237,8 @@ function googleTranslateElementInit() {
 </li><li>There is only a single data type used, which is "rim_cli" and it is used to specify a request and its options, as well as to retrieve results.<br/>
 </li><li>There is a single include file ("rcli.h"). <br/>
 </li><li>When building your client executable, you can either specify build flags by using the result of "rim -i" (if you have RimStone installed), or use self-contained source files directly.<br/>
-</li><li>It is MT-safe, so you can use it in multi-threaded applications, such as to make many requests in parallel.</li></ul>
+</li><li>It is MT-safe, so you can use it in multi-threaded applications, such as to make many requests in parallel.<br/>
+</li><li>It comes with messaging API (see <a href='https://rimstone-lang.com/Client-API-and-messaging.html'>Client-API-and-messaging</a>).</li></ul>
 See Examples section below for detailed examples.<br/>
 <div class="vsub"><a id="Sending a request to RimStone service"></a>Sending a request to RimStone service</div>
 The following function is used to make a call using C API:<br/>
@@ -789,6 +790,7 @@ The output shows service exit code (82, see <a href='https://rimstone-lang.com/e
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='API'></a><span style="font-weight:bold;">API</span><br/>
 <a href='https://rimstone-lang.com/Client-API.html'>Client-API</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/Client-API-and-messaging.html'>Client-API-and-messaging</a> &nbsp;<br/>
 <a href='https://rimstone-lang.com/Server-API.html'>Server-API</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
 <a href='https://rimstone-lang.com/documentation.html'>documentation</a><br/>

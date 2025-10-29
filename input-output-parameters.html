@@ -252,7 +252,7 @@ The reason for this is to both provide the same input/output parameter paradigm 
 <div class="vsub"><a id="Examples"></a>Examples</div>
 In this example, "set-param" is used to set input parameters "pp1" and "pp2" in <a href='https://rimstone-lang.com/call-handler.html'>call-handler</a>, and "get-param" is used to get those input parameters in begin-handler ("%%" for short). Conversely, "set-param" is used to set output parameters "res1" and "res2" in "/req/sub-req" handler implementation, and "get-param" is used to get the those output parameters in <a href='https://rimstone-lang.com/call-handler.html'>call-handler</a>:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_736' class=notranslate>
+<pre id='code_737' class=notranslate>
 <span class="Statement">%%</span> /req/sub-req<span class="Identifier"> get-param</span> pp1<span class="Identifier"> type number</span>, pp2<span class="Identifier"> type number</span>
 <span class="Statement">    print-out</span> <span class="Constant">&quot;Input is &quot;</span>, pp1, <span class="Constant">&quot;, &quot;</span>, pp2<span class="Identifier"> new-line</span>
 <span class="Statement">    set-param</span> res1=pp1+pp2, res2=pp1*pp2
@@ -263,16 +263,16 @@ In this example, "set-param" is used to set input parameters "pp1" and "pp2" in 
 <span class="Statement">    call-handler</span> <span class="Constant">&quot;/req/sub-req&quot;</span><span class="Identifier"> set-param</span> pp1=<span class="Constant">10</span>, pp2=<span class="Constant">20</span><span class="Identifier"> get-param</span> res1<span class="Identifier"> type number</span>, res2<span class="Identifier"> type number</span>
 <span class="Statement">    print-out</span> <span class="Constant">&quot;Result is &quot;</span>, res1, <span class="Constant">&quot; and &quot;</span>, res2<span class="Identifier"> new-line</span>
 <span class="Statement">%%</span></pre>
-<span id=rimstone_copied_736 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_736' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_736, code_736, rimstone_copied_736)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_737 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_737' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_737, code_737, rimstone_copied_737)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The result in "/req" will be 30 for "res1" variable, and 200 for "res2".<br/>
 <br/>
 <span style="font-weight:bold;">- Getting and setting parameters anywhere</span><br/>
 One of the advantages of parameters mentioned above, is the ability to use them anywhere, even when "skipping" encapsulation layers. For example, in this example, the main handler ("/req") is calling subhandler ("/req/sub-req"), which is calling sub-subhandler ("/req/sub/sub-req"), and the input and output parameters can be obtained and set in the sub-subhandler, completely bypassing the subhandler. This illustrates the semantics of parameters - they are not global variables but rather global parameters:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_737' class=notranslate>
+<pre id='code_738' class=notranslate>
 <span class="Statement">%%</span> /req/sub/sub-req<span class="Identifier"> get-param</span> pp1<span class="Identifier"> type number</span>, pp2<span class="Identifier"> type number</span>
 <span class="Statement">    print-out</span> <span class="Constant">&quot;Input is &quot;</span>, pp1, <span class="Constant">&quot;, &quot;</span>, pp2<span class="Identifier"> new-line</span>
 <span class="Statement">    set-param</span> res1=pp1+pp2, res2=pp1*pp2
@@ -287,9 +287,9 @@ One of the advantages of parameters mentioned above, is the ability to use them 
 <span class="Statement">    call-handler</span> <span class="Constant">&quot;/req/sub-req&quot;</span><span class="Identifier"> set-param</span> pp1=<span class="Constant">10</span>, pp2=<span class="Constant">20</span><span class="Identifier"> get-param</span> res1<span class="Identifier"> type number</span>, res2<span class="Identifier"> type number</span>
 <span class="Statement">    print-out</span> <span class="Constant">&quot;Result is &quot;</span>, res1, <span class="Constant">&quot; and &quot;</span>, res2<span class="Identifier"> new-line</span>
 <span class="Statement">%%</span></pre>
-<span id=rimstone_copied_737 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_737' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_737, code_737, rimstone_copied_737)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_738 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_738' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_738, code_738, rimstone_copied_738)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Request data'></a><span style="font-weight:bold;">Request data</span><br/>
