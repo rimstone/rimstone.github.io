@@ -234,54 +234,54 @@ function googleTranslateElementInit() {
 <!--BEGVDOC90-->
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Number expressions</div><hr/>A number expression uses operators plus (+), minus (-), multiply (*), divide (/), modulus (%), bitwise operators (&amp; for and, | for or, ^ for xor and ~ for negation), parenthesis () and <a href='https://rimstone-lang.com/math-functions.html'>math-functions</a> that return a number. For example:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_832' class=notranslate>
+<pre id='code_842' class=notranslate>
 <span class="Statement">set-number</span> n1 = <span class="Constant">10</span>+(<span class="Constant">4</span>*n2-<span class="Constant">5</span>)%<span class="Constant">3</span></pre>
-<span id=rimstone_copied_832 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_832' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_832, code_832, rimstone_copied_832)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_842 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_842' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_842, code_842, rimstone_copied_842)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 You can use number expressions anywhere number is expected as an input to any statement.<br/>
 <br/>
 Note that character constants (such as 'A', 'z' etc.) are considered numbers with the value equal to their single-byte ASCII equivalent (i.e. unsigned numbers 0-255), for example this will assign 65 to "n":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_833' class=notranslate>
+<pre id='code_843' class=notranslate>
 <span class="Statement">set-number</span> n = 'A'</pre>
-<span id=rimstone_copied_833 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_833' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_833, code_833, rimstone_copied_833)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_843 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_843' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_843, code_843, rimstone_copied_843)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Any subscripted string is also considered a number, for instance "n" would be 117 (since 's' is 115):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_834' class=notranslate>
+<pre id='code_844' class=notranslate>
 <span class="Statement">set-string</span> str = 'some'
 <span class="Statement">set-number</span> n = str[<span class="Constant">0</span>] + <span class="Constant">2</span></pre>
-<span id=rimstone_copied_834 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_834' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_834, code_834, rimstone_copied_834)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_844 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_844' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_844, code_844, rimstone_copied_844)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Other than decimals and character constants, you can also use hexadecimal numbers (such as 0xffaa), and octal numbers (such as 0710).<br/>
 <div class="vsub"><a id="String subscription"></a>String subscription</div>
 You can access each byte of a string as an unsigned 8-bit number:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_835' class=notranslate>
+<pre id='code_845' class=notranslate>
 <span class="Statement">set-string</span> str = <span class="Constant">&quot;GOAT&quot;</span>
 <span class="Statement">set-string</span> n = <span class="Constant">10</span>+str[<span class="Constant">2</span>]</pre>
-<span id=rimstone_copied_835 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_835' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_835, code_835, rimstone_copied_835)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_845 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_845' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_845, code_845, rimstone_copied_845)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Variable "n" will have a value of 75 (10+'A' or 10+65).<br/>
 <div class="vsub"><a id="Subscription shortcut"></a>Subscription shortcut</div>
 You can reference number arrays elements (see <a href='https://rimstone-lang.com/new-array.html'>new-array</a>) by using subscription operator ([]), for instance:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_836' class=notranslate>
+<pre id='code_846' class=notranslate>
 <span class="Statement">new-array</span> narr<span class="Identifier"> type number</span>
 <span class="Statement">write-array</span> narr<span class="Identifier"> key</span> <span class="Constant">0</span><span class="Identifier"> value</span> <span class="Constant">10</span>
 <span class="Statement">write-array</span> narr<span class="Identifier"> key</span> <span class="Constant">1</span><span class="Identifier"> value</span> narr[<span class="Constant">0</span>]
 <span class="Statement">set-number</span> n = <span class="Constant">1</span> + narr[<span class="Constant">1</span>] * <span class="Constant">2</span></pre>
-<span id=rimstone_copied_836 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_836' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_836, code_836, rimstone_copied_836)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_846 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_846' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_846, code_846, rimstone_copied_846)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Read about <a href='https://rimstone-lang.com/mixing-doubles-and-numbers.html'>mixing-doubles-and-numbers</a>.<br/>
 <br/>

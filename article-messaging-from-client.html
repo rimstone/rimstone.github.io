@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!--__RIM_REDIRECT__-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+<title>Messaging between C client and server</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="HandheldFriendly" content="True"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="canonical" href="https://rimstone-lang.com/article-messaging-from-client.html" />
+<style>
+
+
+body, html {
+    font-family: Quicksand,monospace,Helvetica, Arial, sans-serif;
+    line-height: 150%;
+    font-size:16px;
+}
+
+body {
+    padding-left:1vw;
+    padding-right:1vw;
+}
+    
+.ncode {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:8px;
+    margin-top:8px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.shcode {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:8px;
+    margin-top:8px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.sqlcode {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:8px;
+    margin-top:8px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.htmlcode {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:8px;
+    margin-top:8px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.code {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:8px;
+    margin-top:8px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+/*Just like h1 but for pdf conversion it would be indented this way it's not*/
+.vhub {
+    display: block;
+   font-size: 1.6em;
+   margin-top: 0.63em;
+   margin-bottom: 0.63em;
+   margin-left: 0;
+   margin-right: 0;
+   font-weight: bold;
+}
+
+/*Just like h2 but for pdf conversion it would be indented this way it's not*/
+.vsub {
+    display: block;
+   font-size: 1.25em;
+   margin-top: 0.53em;
+   margin-bottom: 0.53em;
+   margin-left: 0;
+   margin-right: 0;
+   font-weight: bold;
+}
+
+ul {
+  margin-left: 0.75vw;
+  padding-left: 0;
+}
+li {
+  margin-left: 0.75vw;
+  padding-left: 0;
+}
+
+/* this must be last, as it overrides previous settings, for mobile */
+@media (hover: none) {
+a {
+   display: inline-block;
+   padding-top: 3px;
+   padding-bottom: 2px;
+}
+body {
+    padding-left:2vw;
+    padding-right:2vw;
+    letter-spacing: 1px;
+}
+}
+
+/*The following is for code snippets that are highlighted by 2html vim*/
+pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
+.Identifier { color: #008b8b; }
+.Statement { color: #af5f00; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
+/*end of highlighted snippets*/
+
+a {
+    text-decoration:none;
+    padding-bottom: 0px; 
+    color:inherit;
+    border-bottom: 2px solid #6cb8f0;
+}
+a:hover {
+    text-decoration: none;
+    color:black;
+    border-bottom: 1px solid red;
+}
+/*do not underline links nor should they be active*/
+pre a {
+    text-decoration:none;
+    color:black;
+    border-bottom: none;
+    pointer-events: none;
+    cursor: default;
+}
+
+
+.golfSnippet {display:none;}
+
+ul {
+  list-style-type:square;
+  list-style-position: outside;
+}
+
+</style>
+
+
+</head>
+<body>
+<div id="google_translate_element" style='float:right'></div>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script>
+function rim_copy(gt, eid, gc) {
+  gt.textContent = eid.textContent;
+  gt.select();
+  document.execCommand("copy");
+  gc.style.visibility="visible"
+  setTimeout(()=>{ gc.style.visibility="hidden"; }, 1000);
+}
+function googleTranslateElementInit() {
+   new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+
+</script>
+
+<!--RIMMENU13-->
+
+<!--RIMENDMENU13-->
+
+
+
+<!--BEGVDOC90-->
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Messaging between C client and server</div><hr/><br/>
+This example shows how to exchange messages between RimStone server and a C API client (see <a href='https://rimstone-lang.com/Client-API.html'>Client-API</a>). The client uses FastCGI binary protocol to communicate with the server. <a href='https://rimstone-lang.com/SEMI.html'>SEMI</a> messaging is used as a format of messages. In this example, a client sends 10 variable length message to the server (meaning each has a different number of key/value pairs); the server then gets each key/value and replies in kind. The client displays the result.<br/>
+<br/>
+Note that status checking is not performed for simplicity here.<br/>
+<div class="vsub"><a id="Create a server and start it"></a>Create a server and start it</div>
+To get started, create a directory for this example and position in it:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_186' class=notranslate>
+<span class="Statement">mkdir</span> <span class="Special">-p</span> msgapi
+<span class="Statement">cd</span> msgapi</pre>
+<span id=rimstone_copied_186 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_186' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_186, code_186, rimstone_copied_186)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Create file "srv.rim":<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_185' class=notranslate>
+cat &lt;&lt; '<span class="Constant">EOF</span>' &gt; srv.rim
+<span class="Statement">begin-handler</span> /srv<span class="Identifier"> public</span>
+<span class="Statement">    silent-header</span>
+
+<span class="Statement">    request-body</span> msg <span class="Comment">// get the message sent by client</span>
+
+<span class="Statement">    new-message</span> m<span class="Identifier"> from</span> msg <span class="Comment">// parse into key/value pairs </span>
+
+<span class="Statement">    new-message</span> r <span class="Comment">// create new reply message</span>
+
+<span class="Statement">    read-message</span> m<span class="Type"> key</span> k<span class="Type"> value</span> v <span class="Comment">// read how many key/value pairs are there, that's</span>
+                                 <span class="Comment">// the how the client packed the data</span>
+
+<span class="Statement">    write-message</span> r<span class="Identifier"> key</span> <span class="Constant">&quot;reply&quot;</span><span class="Identifier"> value</span> v <span class="Comment">// write into reply message how many key/value pairs</span>
+                                        <span class="Comment">// we're sending back</span>
+
+<span class="Statement">    start-loop</span><span class="Identifier"> repeat</span> #v<span class="Type"> use</span> i<span class="Identifier"> start-with</span> <span class="Constant">1</span>
+<span class="Statement">        read-message</span> m<span class="Type"> key</span> k<span class="Type"> value</span> v <span class="Comment">// get key/value pair from client</span>
+        <span class="Comment">// write key/value pair to go back to the client</span>
+<span class="Statement">        write-message</span> r<span class="Identifier"> key</span> $i<span class="Identifier"> value</span> <span class="Constant">&quot;Reply is &quot;</span> + $i + <span class="Constant">&quot; (from &quot;</span>+v+<span class="Constant">&quot;)&quot;</span>
+<span class="Statement">    end-loop</span>
+
+<span class="Statement">    get-message</span> r<span class="Type"> to</span> rm <span class="Comment">// get the binary representation of the message</span>
+<span class="Statement">    print-out</span> rm <span class="Comment">// send it back to client</span>
+
+<span class="Statement">end-handler</span>
+<span class="Constant">EOF</span></pre>
+<span id=rimstone_copied_185 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_185' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_185, code_185, rimstone_copied_185)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Create "msgapi" application ("-k"):<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_188' class=notranslate>
+rim <span class="Special">-k</span> msgapi</pre>
+<span id=rimstone_copied_188 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_188' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_188, code_188, rimstone_copied_188)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Compile the server - this also demonstrates excluding directories from compilation (since RimStone will by default try to compile the RimStone and C code in all subdirectories). In this case, we're excluding subdirectory "c-api", which we will create in just a sec and place a C client program in it:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_189' class=notranslate>
+rim <span class="Special">-q</span> <span class="Special">--exclude-dir</span><span class="Statement">=</span>c-api</pre>
+<span id=rimstone_copied_189 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_189' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_189, code_189, rimstone_copied_189)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Start the server, with a single server process running:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_190' class=notranslate>
+mrim <span class="Special">-w</span> <span class="Constant">1</span> msgapi</pre>
+<span id=rimstone_copied_190 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_190' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_190, code_190, rimstone_copied_190)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+<div class="vsub"><a id="Create a client in C"></a>Create a client in C</div>
+Create directory for a C API client, and switch to it:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_191' class=notranslate>
+<span class="Statement">mkdir</span> c-api
+<span class="Statement">cd</span> c-api</pre>
+<span id=rimstone_copied_191 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_191' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_191, code_191, rimstone_copied_191)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Next is the C code for your client. It sends a message to the server (comprised of key/value pairs), gets the reply back, and prints out key/value pairs in it. Create file "client.c" with this:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_187' class=notranslate>
+cat &lt;&lt; '<span class="Constant">EOF</span>' &gt; client.c
+<span class="PreProc">#include </span><span class="Constant">&quot;rcli.h&quot;</span>
+
+<span class="Type">int</span> rim_client (rim_cli *req, <span class="Type">char</span> *connection, <span class="Type">char</span> *method, <span class="Type">char</span> *app_path, <span class="Type">char</span> *request, <span class="Type">char</span> *url_params, <span class="Type">char</span> *body, <span class="Type">int</span> body_len);
+
+<span class="Comment">// Send a request to RimStone server, see the example of use below</span>
+<span class="Type">int</span> rim_client (rim_cli *req, <span class="Type">char</span> *connection, <span class="Type">char</span> *method, <span class="Type">char</span> *app_path, <span class="Type">char</span> *request, <span class="Type">char</span> *url_params, <span class="Type">char</span> *body, <span class="Type">int</span> body_len)
+<span class="Statement">{</span>
+    memset ((<span class="Type">char</span>*)req, <span class="Constant">0</span>, <span class="Statement">sizeof</span>(rim_cli));
+    req-&gt;server = connection;
+    req-&gt;req_method = method;
+    req-&gt;app_path = app_path;
+    req-&gt;req = request;
+    req-&gt;url_params = url_params;
+    req-&gt;req_body = body;
+    req-&gt;content_type = <span class="Constant">&quot;application/rim&quot;</span>;
+    req-&gt;content_len = body_len;
+
+    <span class="Statement">return</span> rim_cli_request (req);
+<span class="Statement">}</span>
+
+<span class="Type">void</span> main ()
+<span class="Statement">{</span>
+    <span class="Type">int</span> i;
+    <span class="Comment">// Get the path of Unix socket file to communicate with the server</span>
+    <span class="Type">char</span> dir[RIM_MAX_OS_UDIR_LEN];
+    rim_dir (RIM_DIR_SOCKFILE, dir, <span class="Statement">sizeof</span>(dir), <span class="Constant">&quot;msgapi&quot;</span>, <span class="Constant">NULL</span>);
+
+    <span class="Comment">// Make /srv request to msgapi application server </span><span class="Constant">10</span><span class="Comment"> times</span>
+    <span class="Statement">for</span> (i = <span class="Constant">1</span>; i &lt; <span class="Constant">10</span>; i++)
+<span class="Statement">    {</span>
+        rim_cli req; <span class="Comment">// Client C API request</span>
+        rim_msg *msg; <span class="Comment">// Message for client</span>
+        msg = rim_new_msg (<span class="Constant">NULL</span>, <span class="Constant">0</span>); <span class="Comment">// Make a new message</span>
+        <span class="Type">char</span> key[<span class="Constant">100</span>], value[<span class="Constant">100</span>], count[<span class="Constant">100</span>]; <span class="Comment">// alloc for message key/value pairs</span>
+        snprintf (count, <span class="Statement">sizeof</span>(count), <span class="Constant">&quot;</span><span class="Special">%d</span><span class="Constant">&quot;</span>, i); <span class="Comment">// the count (how many key/value pairs)</span>
+        rim_write_msg (msg, <span class="Constant">&quot;count&quot;</span>, count, strlen(count)); <span class="Comment">// write the count into the message</span>
+        <span class="Type">int</span> j;
+        <span class="Statement">for</span> (j = <span class="Constant">1</span>; j &lt;= i; j++) <span class="Comment">// pack different number of key/value pairs, so for the first messasge</span>
+                                 <span class="Comment">// pack only one, for the second message pack </span><span class="Constant">2</span><span class="Comment"> pairs, for the third message</span>
+                                 <span class="Comment">// pack </span><span class="Constant">3</span><span class="Comment"> pairs etc. Just to make it interesting.</span>
+<span class="Statement">        {</span>
+            <span class="Comment">// write key/value into a message</span>
+            snprintf (key, <span class="Statement">sizeof</span>(key), <span class="Constant">&quot;</span><span class="Special">%d</span><span class="Constant">&quot;</span>, j);
+            snprintf (value, <span class="Statement">sizeof</span>(value), <span class="Constant">&quot;message </span><span class="Special">%d</span><span class="Constant">&quot;</span>, j);
+            rim_write_msg (msg, key, value, strlen(value));
+<span class="Statement">        }</span>
+        <span class="Comment">// send message to RimStone server</span>
+        <span class="Type">int</span> res = rim_client (&amp;req, dir, <span class="Constant">&quot;POST&quot;</span>, <span class="Constant">&quot;/msgapi&quot;</span>, <span class="Constant">&quot;/srv&quot;</span>, <span class="Constant">&quot;/&quot;</span>, rim_get_msg (msg), rim_get_msg_len (msg));
+        <span class="Statement">if</span> (res == RIM_OKAY)
+<span class="Statement">        {</span>
+            <span class="Comment">// Create a message from reply, since the server packed key/value pairs and sent them back as a message</span>
+            rim_msg *rep = rim_new_msg (rim_cli_data(&amp;req), req.data_len);
+            <span class="Type">char</span> *k, *v;
+            rim_num len;
+            <span class="Comment">// Read the number of key/value pairs in the message, as it's the first piece of information we packed in srv.rim</span>
+            rim_read_msg (rep, &amp;k, &amp;v, &amp;len);
+            rim_num tmess = atol (v);
+            free (k);
+            <span class="Type">int</span> j;
+            <span class="Comment">// read key/value pairs from the message sent back from the server</span>
+            <span class="Statement">for</span> (j = <span class="Constant">1</span>; j &lt;= tmess; j++)
+<span class="Statement">            {</span>
+                rim_read_msg (rep, &amp;k, &amp;v, &amp;len);
+                printf(<span class="Constant">&quot;</span><span class="Special">%s</span><span class="Special">\n</span><span class="Constant">&quot;</span>, v); <span class="Comment">// display value</span>
+                free (k);
+<span class="Statement">            }</span>
+            free (rep);
+<span class="Statement">        }</span>
+        <span class="Comment">// free up resources</span>
+        rim_cli_delete(&amp;req);
+        free (rim_get_msg(msg));
+        free (msg);
+<span class="Statement">    }</span>
+<span class="Statement">}</span>
+<span class="Constant">EOF</span></pre>
+<span id=rimstone_copied_187 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_187' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_187, code_187, rimstone_copied_187)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Compile C program:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_192' class=notranslate>
+gcc <span class="Special">-o</span> client client.c <span class="PreProc">$(</span><span class="Special">rim </span><span class="Special">-i</span><span class="PreProc">)</span></pre>
+<span id=rimstone_copied_192 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_192' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_192, code_192, rimstone_copied_192)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+<div class="vsub"><a id="Run your C client"></a>Run your C client</div>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_193' class=notranslate>
+./client</pre>
+<span id=rimstone_copied_193 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_193' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_193, code_193, rimstone_copied_193)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+The result is:<br/>
+<div class='ncode' style='position:relative;padding-right:16px;'>
+<pre id='code_184' class=notranslate>
+Reply is 1 (from message 1)
+Reply is 1 (from message 1)
+Reply is 2 (from message 2)
+Reply is 1 (from message 1)
+Reply is 2 (from message 2)
+Reply is 3 (from message 3)
+Reply is 1 (from message 1)
+Reply is 2 (from message 2)
+Reply is 3 (from message 3)
+Reply is 4 (from message 4)
+Reply is 1 (from message 1)
+Reply is 2 (from message 2)
+Reply is 3 (from message 3)
+Reply is 4 (from message 4)
+Reply is 5 (from message 5)
+Reply is 1 (from message 1)
+Reply is 2 (from message 2)
+Reply is 3 (from message 3)
+Reply is 4 (from message 4)
+Reply is 5 (from message 5)
+Reply is 6 (from message 6)
+Reply is 1 (from message 1)
+Reply is 2 (from message 2)
+Reply is 3 (from message 3)
+Reply is 4 (from message 4)
+Reply is 5 (from message 5)
+Reply is 6 (from message 6)
+Reply is 7 (from message 7)
+Reply is 1 (from message 1)
+Reply is 2 (from message 2)
+Reply is 3 (from message 3)
+Reply is 4 (from message 4)
+Reply is 5 (from message 5)
+Reply is 6 (from message 6)
+Reply is 7 (from message 7)
+Reply is 8 (from message 8)
+Reply is 1 (from message 1)
+Reply is 2 (from message 2)
+Reply is 3 (from message 3)
+Reply is 4 (from message 4)
+Reply is 5 (from message 5)
+Reply is 6 (from message 6)
+Reply is 7 (from message 7)
+Reply is 8 (from message 8)
+Reply is 9 (from message 9)</pre>
+<span id=rimstone_copied_184 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_184' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_184, code_184, rimstone_copied_184)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+<!--ENDVDOC90-->
+<br/><div style='width:100%;clear:both;'>
+<hr/>
+<!--RIMFOOT77--><span style='font-size:80%'><a href="https://rimstone-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+</div><br/></body></html>
+
+

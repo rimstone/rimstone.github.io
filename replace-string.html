@@ -235,14 +235,14 @@ function googleTranslateElementInit() {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Replace string</div><hr/><span style="font-weight:bold;">Purpose</span>: Replaces part of string.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_945' class=notranslate>
+<pre id='code_955' class=notranslate>
 <span class="Statement">replace-string</span> &lt;string&gt; \
     (<span class="Identifier"> copy</span> &lt;replacement&gt; ) | (<span class="Identifier"> copy-end</span> &lt;replacement&gt; ) \
     [<span class="Identifier"> start-with</span> &lt;start with&gt; ] \
     [<span class="Identifier"> length</span> &lt;length&gt; ]</pre>
-<span id=rimstone_copied_945 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_945' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_945, code_945, rimstone_copied_945)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_955 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_955' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_955, code_955, rimstone_copied_955)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 replace-string will replace part of &lt;string&gt; with &lt;replacement&gt; string. "copy" clause will make a replacement in the leading part of &lt;string&gt;, while "copy-end" will make a replacement in the trailing part of &lt;string&gt;.<br/>
 <br/>
@@ -256,43 +256,43 @@ If either "start-with" or "length" is negative, it's the same as if not specifie
 <div class="vsub"><a id="Examples"></a>Examples</div>
 After replace-string below, string "a" will be "none string is here":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_946' class=notranslate>
+<pre id='code_956' class=notranslate>
 <span class="Statement">set-string</span> b=<span class="Constant">&quot;none&quot;</span>
 <span class="Statement">set-string</span> a=<span class="Constant">&quot;some string is here&quot;</span>
 <span class="Statement">replace-string</span> a<span class="Identifier"> copy</span> b</pre>
-<span id=rimstone_copied_946 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_946' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_946, code_946, rimstone_copied_946)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_956 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_956' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_956, code_956, rimstone_copied_956)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 After replace-string below, string "a" will be "some string is none":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_947' class=notranslate>
+<pre id='code_957' class=notranslate>
 <span class="Statement">set-string</span> b=<span class="Constant">&quot;none&quot;</span>
 <span class="Statement">set-string</span> a=<span class="Constant">&quot;some string is here&quot;</span>
 <span class="Statement">replace-string</span> a<span class="Identifier"> copy-end</span> b</pre>
-<span id=rimstone_copied_947 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_947' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_947, code_947, rimstone_copied_947)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_957 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_957' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_957, code_957, rimstone_copied_957)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In this example, "a" will be "somnontring is here":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_948' class=notranslate>
+<pre id='code_958' class=notranslate>
 <span class="Statement">set-string</span> b=<span class="Constant">&quot;none&quot;</span>
 <span class="Statement">set-string</span> a=<span class="Constant">&quot;some string is here&quot;</span>
 <span class="Statement">replace-string</span> a<span class="Identifier"> copy</span> b<span class="Identifier"> start-with</span> <span class="Constant">3</span><span class="Identifier"> length</span> <span class="Constant">3</span></pre>
-<span id=rimstone_copied_948 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_948' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_948, code_948, rimstone_copied_948)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_958 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_958' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_958, code_958, rimstone_copied_958)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In the following example, "a" will be "some string inohere":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_949' class=notranslate>
+<pre id='code_959' class=notranslate>
 <span class="Statement">set-string</span> b=<span class="Constant">&quot;none&quot;</span>
 <span class="Statement">set-string</span> a=<span class="Constant">&quot;some string is here&quot;</span>
 <span class="Statement">replace-string</span> a<span class="Identifier"> copy-end</span> b<span class="Identifier"> start-with</span> <span class="Constant">6</span><span class="Identifier"> length</span> <span class="Constant">2</span></pre>
-<span id=rimstone_copied_949 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_949' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_949, code_949, rimstone_copied_949)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_959 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_959' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_959, code_959, rimstone_copied_959)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Strings'></a><span style="font-weight:bold;">Strings</span><br/>

@@ -235,12 +235,12 @@ function googleTranslateElementInit() {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>String double</div><hr/><span style="font-weight:bold;">Purpose</span>: Convert string to double.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1087' class=notranslate>
+<pre id='code_1097' class=notranslate>
 <span class="Statement">string-double</span> &lt;string&gt; [<span class="Type"> to</span> &lt;<span class="Type">double</span>&gt; ] \
     [<span class="Type"> status</span> &lt;status&gt; ]</pre>
-<span id=rimstone_copied_1087 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1087' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1087, code_1087, rimstone_copied_1087)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1097 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1097' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1097, code_1097, rimstone_copied_1097)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 &lt;string&gt; is converted to &lt;double&gt; in "to" clause.<br/>
 <br/>
@@ -248,44 +248,44 @@ function googleTranslateElementInit() {
 <div class="vsub"><a id="Shortcut"></a>Shortcut</div>
 For convenience, you can use a shortcut for converting a string to a double, by prepending "##" to the variable name, for example:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1088' class=notranslate>
+<pre id='code_1098' class=notranslate>
 <span class="Statement">set-string</span> s = <span class="Constant">&quot;-10.31&quot;</span>
 <span class="Statement">set-double</span> n = ##s + <span class="Constant">10</span></pre>
-<span id=rimstone_copied_1088 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1088' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1088, code_1088, rimstone_copied_1088)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1098 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1098' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1098, code_1098, rimstone_copied_1098)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The above is the same as:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1089' class=notranslate>
+<pre id='code_1099' class=notranslate>
 <span class="Statement">set-string</span> s = <span class="Constant">&quot;-10.31&quot;</span>
 <span class="Statement">string-double</span> s<span class="Type"> to</span> val
 <span class="Statement">set-double</span> n = val + <span class="Constant">10</span></pre>
-<span id=rimstone_copied_1089 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1089' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1089, code_1089, rimstone_copied_1089)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1099 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1099' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1099, code_1099, rimstone_copied_1099)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Effectively, ## in front of a string variable is the same as string-double that converts it to a double. If a string cannot be converted to a double, your program will <a href='https://rimstone-lang.com/error-handling.html'>error out</a>. To check values with a status, use string-double.<br/>
 <br/>
 You can use ## for an expression, in which case the expression must be within parenthesis:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1090' class=notranslate>
+<pre id='code_1100' class=notranslate>
 <span class="Statement">set-string</span> s1 = <span class="Constant">&quot;-10.31&quot;</span>
 <span class="Statement">set-string</span> s2 = <span class="Constant">&quot;2&quot;</span>
 <span class="Statement">set-double</span> n = ##(s1+s2) + <span class="Constant">10</span></pre>
-<span id=rimstone_copied_1090 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1090' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1090, code_1090, rimstone_copied_1090)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1100 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1100' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1100, code_1100, rimstone_copied_1100)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In this case double "n" will have value of -0.312, because strings "s1" and "s2" concatenate to produce "-10.312", which is then converted to a double and finally 10 added to it, producing -0.312.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 In this example, double "n" would be 49.11 and status "st" would be RIM_OKAY:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1091' class=notranslate>
+<pre id='code_1101' class=notranslate>
 <span class="Statement">string-double</span> <span class="Constant">&quot;49.11&quot;</span><span class="Type"> to</span> n<span class="Type"> status</span> st</pre>
-<span id=rimstone_copied_1091 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1091' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1091, code_1091, rimstone_copied_1091)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1101 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1101' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1101, code_1101, rimstone_copied_1101)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Doubles'></a><span style="font-weight:bold;">Doubles</span><br/>

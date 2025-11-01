@@ -235,13 +235,13 @@ function googleTranslateElementInit() {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Open file</div><hr/><span style="font-weight:bold;">Purpose</span>: Open file for reading and writing.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_844' class=notranslate>
+<pre id='code_854' class=notranslate>
 <span class="Statement">open-file</span> &lt;file name&gt;<span class="Type"> file-id</span> &lt;file id&gt; \
     [<span class="Identifier"> new-truncate</span> ] \
     [<span class="Type"> status</span> &lt;status&gt; ]</pre>
-<span id=rimstone_copied_844 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_844' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_844, code_844, rimstone_copied_844)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_854 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_854' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_854, code_854, rimstone_copied_854)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Opens file given by &lt;file name&gt; for reading and writing and creates an open file variable identified by &lt;file id&gt;.<br/>
 <br/>
@@ -253,12 +253,12 @@ If "new-truncate" clause is used, a new file is created if it doesn't exist, or 
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Create a file (or truncate an existing one), write 25,000 rows and the read back those rows and display them, then close file:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_845' class=notranslate>
+<pre id='code_855' class=notranslate>
 <span class="Statement">%%</span> /ofile<span class="Identifier"> public</span>
     <span class="Comment">// Create new file, or truncate an old file if it exists</span>
 <span class="Statement">    open-file</span> <span class="Constant">&quot;testwrite&quot;</span><span class="Type"> file-id</span> nf<span class="Identifier"> new-truncate</span>
 
-    <span class="Comment">// Write 25000 rows</span>
+    <span class="Comment">// Write </span><span class="Constant">25000</span><span class="Comment"> rows</span>
 <span class="Statement">    start-loop</span><span class="Identifier"> repeat</span> <span class="Constant">25000</span><span class="Type"> use</span> i
 <span class="Statement">       ((</span> line
 <span class="Statement">       @</span>some text in line <span class="Statement">&lt;&lt;print-out</span> i<span class="Statement">&gt;&gt;</span>
@@ -270,16 +270,16 @@ Create a file (or truncate an existing one), write 25,000 rows and the read back
     <span class="Comment">// Rewind back to the beginning</span>
 <span class="Statement">    file-position</span><span class="Identifier"> set</span> <span class="Constant">0</span><span class="Identifier"> file-id</span> nf
 
-    <span class="Comment">// Read all 25000 rows back, and print them out</span>
+    <span class="Comment">// Read all </span><span class="Constant">25000</span><span class="Comment"> rows back, and print them out</span>
 <span class="Statement">    read-file</span><span class="Identifier"> file-id</span> nf <span class="Type"> to</span> whole_file
 <span class="Statement">    print-out</span> whole_file
 
     <span class="Comment">// Close the file</span>
 <span class="Statement">    close-file</span><span class="Identifier"> file-id</span> nf
 <span class="Statement">%%</span></pre>
-<span id=rimstone_copied_845 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_845' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_845, code_845, rimstone_copied_845)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_855 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_855' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_855, code_855, rimstone_copied_855)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Files'></a><span style="font-weight:bold;">Files</span><br/>

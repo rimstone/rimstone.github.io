@@ -233,8 +233,12 @@ function googleTranslateElementInit() {
 
 <!--BEGVDOC90-->
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Official RimStone blog</div><hr/><br/>
-Updated on 2025-10-29<br/>
+Updated on 2025-11-01<br/>
 <ul><br/>
+<li><span style="font-weight:bold;">C API example of messaging with RimStone server</span> (2025-11-01) (<span style="font-weight:bold;"><a href='https://rimstone-lang.com/blog-2025-11-01-c-api-messaging.html'>read full article</a></span>)<br/>
+RimStone server can do a lot of things, such as act as a database layer, cache server, backbone for distributed computing, middleware for pretty much any purpose etc. Regardless, an external client can access it and exchange messages with it in a very simple and straighforward manner.<br/>
+<a href='https://rimstone-lang.com/article-messaging-from-client.html'>This example</a> shows an example of doing just that. The C client will use the API to create a message made up of bunch of key/value pairs and send it to the server. In turn, server will get these key/value pairs and construct a bunch of its own and send them back to the client. The client will print the value out. ... </li>
+<br/>
 <li><span style="font-weight:bold;">RimStone 4.3.1 released</span> (2025-10-29) (<span style="font-weight:bold;"><a href='https://rimstone-lang.com/blog-2025-10-29-new-rimstone-release.html'>read full article</a></span>)<br/>
 This release adds message manipulation capability to Client API for C programs, as well as some minor improvements for Debian package building.<br/>
 In other words, your C programs can now use <a href='https://rimstone-lang.com/SEMI.html'>SEMI</a> messages, which are essentially key/value pairs packed into a single binary message. <br/>

@@ -238,59 +238,59 @@ The opposite is not true; doubles would generally lose precision when promoted t
 <div class="vsub"><a id="Using numbers in double expressions is fine"></a>Using numbers in double expressions is fine</div>
 For example, the following is valid, because a number (3) is promoted to a double:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_787' class=notranslate>
+<pre id='code_797' class=notranslate>
 <span class="Statement">set-double</span> d = <span class="Constant">4</span><span class="Constant">.5</span> + <span class="Constant">3</span></pre>
-<span id=rimstone_copied_787 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_787' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_787, code_787, rimstone_copied_787)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_797 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_797' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_797, code_797, rimstone_copied_797)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Using doubles in number expressions is not, however..."></a>Using doubles in number expressions is not, however...</div>
 In general, a double cannot be automatically promoted to a number without loss. In some languages, there is an automatic promotion of this kind, however it is a bad idea and a source of potential bugs since the method of demotion can vary and often the developer isn't aware of it:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_788' class=notranslate>
+<pre id='code_798' class=notranslate>
 <span class="Statement">set-number</span> n = <span class="Constant">3</span> + <span class="Constant">4</span><span class="Constant">.5</span>  <span class="Comment">// this won't work</span></pre>
-<span id=rimstone_copied_788 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_788' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_788, code_788, rimstone_copied_788)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_798 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_798' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_798, code_798, rimstone_copied_798)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Instead you can use functions like num(), round(), ceil(), floor() etc. (see <a href='https://rimstone-lang.com/math-functions.html'>math-functions</a>):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_789' class=notranslate>
+<pre id='code_799' class=notranslate>
 <span class="Statement">set-number</span> n = <span class="Constant">3</span> + round(<span class="Constant">4</span><span class="Constant">.5</span>)</pre>
-<span id=rimstone_copied_789 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_789' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_789, code_789, rimstone_copied_789)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_799 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_799' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_799, code_799, rimstone_copied_799)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Comparisions"></a>Comparisions</div>
 When it comes to comparisons, the type determination is performed from left to right. So the following works:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_790' class=notranslate>
+<pre id='code_800' class=notranslate>
 <span class="Statement">if-true</span> <span class="Constant">3</span><span class="Constant">.5</span> &gt; <span class="Constant">3</span>
 <span class="Statement">    @</span>Yes
 <span class="Statement">end-if</span></pre>
-<span id=rimstone_copied_790 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_790' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_790, code_790, rimstone_copied_790)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_800 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_800' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_800, code_800, rimstone_copied_800)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 because a double (3.5) comes first and then a number (3) is promoted to a double. However, this will not compile:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_791' class=notranslate>
+<pre id='code_801' class=notranslate>
 <span class="Statement">if-true</span> <span class="Constant">3</span> &lt; <span class="Constant">3</span><span class="Constant">.5</span>
 <span class="Statement">    @</span>Yes
 <span class="Statement">end-if</span></pre>
-<span id=rimstone_copied_791 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_791' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_791, code_791, rimstone_copied_791)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_801 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_801' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_801, code_801, rimstone_copied_801)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 because a number (3) comes first and then a double (3.5) cannot be automatically promoted to a number. When writing comparisons between the two, either use the appropriate conversion functions, or write double expressions first. For instance you can use dbl() function (see <a href='https://rimstone-lang.com/math-functions.html'>math-functions</a>):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_792' class=notranslate>
+<pre id='code_802' class=notranslate>
 <span class="Statement">if-true</span> dbl(<span class="Constant">3</span>) &lt; <span class="Constant">3</span><span class="Constant">.5</span>
 <span class="Statement">    @</span>Yes
 <span class="Statement">end-if</span></pre>
-<span id=rimstone_copied_792 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_792' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_792, code_792, rimstone_copied_792)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_802 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_802' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_802, code_802, rimstone_copied_802)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Doubles'></a><span style="font-weight:bold;">Doubles</span><br/>

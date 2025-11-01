@@ -235,13 +235,13 @@ function googleTranslateElementInit() {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Call handler</div><hr/><span style="font-weight:bold;">Purpose</span>: Call another handler within the same process.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_421' class=notranslate>
+<pre id='code_431' class=notranslate>
 <span class="Statement">call-handler</span> &lt;request path&gt; [<span class="Type"> return-code</span>  &lt;return code&gt; ] \
     [<span class="Identifier"> set-param</span> ( &lt;name&gt; [ = &lt;value&gt; ] )<span class="Identifier"> ,</span> ... ] \
     [<span class="Identifier"> get-param</span> ( &lt;name&gt; [<span class="Identifier"> type</span> &lt;type&gt; ] [<span class="Identifier"> default-value</span> &lt;value&gt; ] )<span class="Identifier"> ,</span> ... ]</pre>
-<span id=rimstone_copied_421 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_421' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_421, code_421, rimstone_copied_421)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_431 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_431' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_431, code_431, rimstone_copied_431)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Calls another handler within the same request in the same process. You can call any handler within the same application. "Calling a handler" means executing it solely within the context of the top handler currently running; no before-handler or after-handler will execute for the called handler.<br/>
 <br/>
@@ -255,21 +255,21 @@ call-handler uses the same high-performance hash table used by a <a href='https:
 <div class="vsub"><a id="Parameters"></a>Parameters</div>
 You can set parameters before call-handler executes using "set-param" clause, which behaves the same way as if those parameters were set just before call-handler; see <a href='https://rimstone-lang.com/set-param.html'>set-param</a> for more details. You can also get parameters after call-handler executes using "get-param" clause, which behave the same way as if those parameters were to be obtained just after call-handler; see <a href='https://rimstone-lang.com/get-param.html'>get-param</a> for more details. For example:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_423' class=notranslate>
+<pre id='code_433' class=notranslate>
 <span class="Statement">call-handler</span> <span class="Constant">&quot;/handler&quot;</span><span class="Identifier"> set-param</span> inp=<span class="Constant">1</span>, var=<span class="Constant">&quot;some data&quot;</span><span class="Identifier"> get-param</span> out, new_var<span class="Identifier"> type number</span></pre>
-<span id=rimstone_copied_423 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_423' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_423, code_423, rimstone_copied_423)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_433 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_433' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_433, code_433, rimstone_copied_433)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 is the same as:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_425' class=notranslate>
+<pre id='code_435' class=notranslate>
 <span class="Statement">set-param</span> inp=<span class="Constant">1</span>, var=<span class="Constant">&quot;some data&quot;</span>
 <span class="Statement">call-handler</span> <span class="Constant">&quot;/handler&quot;</span>
 <span class="Statement">get-param</span> out, new_var<span class="Identifier"> type number</span></pre>
-<span id=rimstone_copied_425 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_425' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_425, code_425, rimstone_copied_425)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_435 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_435' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_435, code_435, rimstone_copied_435)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Call depth"></a>Call depth</div>
 There is a limit on the call depth, including recursion in order to prevent application and system stability issues. See <a href='https://rimstone-lang.com/get-app.html'>get-app</a> and <a href='https://rimstone-lang.com/set-app.html'>set-app</a> with "stack-depth" clause for details and on how to change the defaults.<br/>
@@ -278,7 +278,7 @@ The following example demonstrate calling a call-handler twice, and also using i
 <br/>
 Copy to file "callsub.rim":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_426' class=notranslate>
+<pre id='code_436' class=notranslate>
 <span class="Statement">%%</span> /callsub<span class="Identifier"> public</span>
     <span class="Comment">//</span>
     <span class="Comment">// First call to call-handler</span>
@@ -304,13 +304,13 @@ Copy to file "callsub.rim":<br/>
 <span class="Statement">    get-param</span> out<span class="Identifier"> type string</span>
 <span class="Statement">    @</span><span class="Statement">&lt;&lt;print-out</span> s<span class="Statement">&gt;&gt;</span> with output [<span class="Statement">&lt;&lt;print-out</span> out<span class="Statement">&gt;&gt;</span>]
 <span class="Statement">%%</span></pre>
-<span id=rimstone_copied_426 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_426' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_426, code_426, rimstone_copied_426)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_436 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_436' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_436, code_436, rimstone_copied_436)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 And in "sub/service.rim" file (meaning file "service.rim" in subdirectory "sub"):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_427' class=notranslate>
+<pre id='code_437' class=notranslate>
 <span class="Statement">%%</span> /sub/service<span class="Identifier"> private</span>
 <span class="Statement">    @</span>This is sub!
 <span class="Statement">    get-param</span> inp
@@ -319,35 +319,35 @@ And in "sub/service.rim" file (meaning file "service.rim" in subdirectory "sub")
 <span class="Statement">    ))</span>
 <span class="Statement">    set-param</span> out = out
 <span class="Statement">%%</span></pre>
-<span id=rimstone_copied_427 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_427' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_427, code_427, rimstone_copied_427)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_437 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_437' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_437, code_437, rimstone_copied_437)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Create and build an application:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_422' class=notranslate>
+<pre id='code_432' class=notranslate>
 rim <span class="Special">-k</span> subhandler
 rim <span class="Special">-q</span></pre>
-<span id=rimstone_copied_422 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_422' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_422, code_422, rimstone_copied_422)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_432 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_432' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_432, code_432, rimstone_copied_432)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Run it:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_424' class=notranslate>
+<pre id='code_434' class=notranslate>
 rim <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/callsub</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--silent-header</span></pre>
-<span id=rimstone_copied_424 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_424' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_424, code_424, rimstone_copied_424)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_434 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_434' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_434, code_434, rimstone_copied_434)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The output:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_420' class=notranslate>
+<pre id='code_430' class=notranslate>
 This is sub! with output [got input: some string]
 Output: This is sub! with output [got input: new string]</pre>
-<span id=rimstone_copied_420 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_420' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_420, code_420, rimstone_copied_420)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_430 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_430' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_430, code_430, rimstone_copied_430)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Program flow'></a><span style="font-weight:bold;">Program flow</span><br/>

@@ -235,11 +235,11 @@ function googleTranslateElementInit() {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Change dir</div><hr/><span style="font-weight:bold;">Purpose</span>: Change current working directory.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_447' class=notranslate>
+<pre id='code_457' class=notranslate>
 <span class="Statement">change-dir</span> [ &lt;directory&gt;  |<span class="Identifier"> home</span> |<span class="Identifier"> run-dir</span> ] [<span class="Type"> status</span> &lt;status&gt; ]</pre>
-<span id=rimstone_copied_447 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_447' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_447, code_447, rimstone_copied_447)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_457 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_457' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_457, code_457, rimstone_copied_457)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 change-dir will change current working directory to &lt;directory&gt; (which is a string that can be an absolute or relative path), or to application home directory (see <a href='https://rimstone-lang.com/directories.html'>directories</a>) if "home" clause is used.<br/>
 <br/>
@@ -250,7 +250,7 @@ If "status" clause is used, then number &lt;status&gt; is RIM_OKAY if change-dir
 Note that if you change current working directory with <a href='https://rimstone-lang.com/call-extended.html'>call-extended</a>, then you must set RimStone internal boolean variable "rim_path_changed" to true.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_448' class=notranslate>
+<pre id='code_458' class=notranslate>
 <span class="Statement">change-dir</span> <span class="Constant">&quot;/home/user/new_dir&quot;</span><span class="Type"> status</span> s
 <span class="Statement">if-true</span> s<span class="Identifier"> equal</span> RIM_OKAY
 <span class="Statement">    @</span>Directory changed
@@ -258,25 +258,25 @@ Note that if you change current working directory with <a href='https://rimstone
 <span class="Statement">    get-req</span><span class="Identifier"> errno</span><span class="Type"> to</span> eno
 <span class="Statement">    @</span>Error <span class="Statement">&lt;&lt;print-out</span> eno<span class="Statement">&gt;&gt;</span>
 <span class="Statement">end-if</span></pre>
-<span id=rimstone_copied_448 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_448' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_448, code_448, rimstone_copied_448)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_458 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_458' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_458, code_458, rimstone_copied_458)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Use relative path:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_449' class=notranslate>
+<pre id='code_459' class=notranslate>
 <span class="Statement">change-dir</span> <span class="Constant">&quot;./new_dir&quot;</span></pre>
-<span id=rimstone_copied_449 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_449' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_449, code_449, rimstone_copied_449)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_459 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_459' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_459, code_459, rimstone_copied_459)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Go back to application home directory:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_450' class=notranslate>
+<pre id='code_460' class=notranslate>
 <span class="Statement">change-dir</span><span class="Identifier"> home</span></pre>
-<span id=rimstone_copied_450 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_450' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_450, code_450, rimstone_copied_450)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_460 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_460' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_460, code_460, rimstone_copied_460)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Directories'></a><span style="font-weight:bold;">Directories</span><br/>
