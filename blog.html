@@ -235,6 +235,11 @@ function googleTranslateElementInit() {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Official RimStone blog</div><hr/><br/>
 Updated on 2025-11-01<br/>
 <ul><br/>
+<li><span style="font-weight:bold;">RimStone in the Cloud</span> (2025-11-01) (<span style="font-weight:bold;"><a href='https://rimstone-lang.com/blog-2025-11-01-rimstone-cloud.html'>read full article</a></span>)<br/>
+RimStone is well-suited for cloud applications, as it is lightweight, scalable, it's easy to Docker-ize, and it has a wide range of middleware capabilities.<br/>
+Being compiled from C code directly into native executable, and with only the necessary support libraries, it's lightweight by design. The number of actual server processes will vary with the load, providing great scalability features. It's very architecture, which is request-based HTTP service model, fits nicely with the native cloud design.<br/>
+A good example of this is <a href='https://rimstone-lang.com/article-notes-postgres.html'>multi-tenant SaaS application</a> in 200 lines of code; it shows it doesn't take much to write cloud-based software and it's easy to maintain. ... </li>
+<br/>
 <li><span style="font-weight:bold;">C API example of messaging with RimStone server</span> (2025-11-01) (<span style="font-weight:bold;"><a href='https://rimstone-lang.com/blog-2025-11-01-c-api-messaging.html'>read full article</a></span>)<br/>
 RimStone server can do a lot of things, such as act as a database layer, cache server, backbone for distributed computing, middleware for pretty much any purpose etc. Regardless, an external client can access it and exchange messages with it in a very simple and straighforward manner.<br/>
 <a href='https://rimstone-lang.com/article-messaging-from-client.html'>This example</a> shows an example of doing just that. The C client will use the API to create a message made up of bunch of key/value pairs and send it to the server. In turn, server will get these key/value pairs and construct a bunch of its own and send them back to the client. The client will print the value out. ... </li>
