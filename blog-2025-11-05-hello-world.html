@@ -7,11 +7,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 
-<title>Web service Hello World</title>
+<title>Hello World in RimStone</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="canonical" href="https://rimstone-lang.com/article-hello-world-service-web.html" />
+<link rel="canonical" href="https://rimstone-lang.com/blog-2025-11-05-hello-world.html" />
 <style>
 
 
@@ -232,54 +232,15 @@ function googleTranslateElementInit() {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Web service Hello World</div><hr/><br/>
-To access a RimStone service on the web, you need to have a web server or load balancer (think Apache, Nginx, HAProxy etc.).<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Hello World in RimStone</div><hr/><br/>
+You write the same code to make command-line and service applications in RimStone (including local and web service). You can test your service in any way you like - this is neat since you have a single code base for all.<br/>
 <br/>
-This assumes you have completed the <a href='https://rimstone-lang.com/article-hello-world-service.html'>article-hello-world-service</a>, with a service built and tested via command line.<br/>
+Here's a Hello World for each:<br/>
+<ul><li>The simplest is from the command line. This will take only a minute. Just follow <a href='https://rimstone-lang.com/article-hello-world.html'>these instructions</a>.<br/>
 <br/>
-In this example, Nginx web server is used; edit its configuration file. For Ubuntu and similar:<br/>
-<div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_151' class=notranslate>
-sudo vi /etc/nginx/sites-enabled/default</pre>
-<span id=rimstone_copied_151 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_151' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_151, code_151, rimstone_copied_151)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-while on Fedora and other systems it might be:<br/>
-<div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_152' class=notranslate>
-sudo vi /etc/nginx/nginx.conf</pre>
-<span id=rimstone_copied_152 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_152' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_152, code_152, rimstone_copied_152)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-Add the following in the "server {}" section (substitute "your-user" for your OS user name):<br/>
-<div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_153' class=notranslate>
-location /hello/ <span class="Special">{</span> include /etc/nginx/fastcgi_params<span class="Statement">;</span> fastcgi_pass  unix:///home/your-user/.rimstone/apps/hello/sock/.sock<span class="Statement">;</span> <span class="Special">}</span></pre>
-<span id=rimstone_copied_153 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_153' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_153, code_153, rimstone_copied_153)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-"hello" refers to your Hello World application. Finally, restart Nginx:<br/>
-<div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_154' class=notranslate>
-sudo systemctl restart nginx</pre>
-<span id=rimstone_copied_154 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_154' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_154, code_154, rimstone_copied_154)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-Now you can call your web service, from the web. In this case it's probably a local server (127.0.0.1) if you're doing this on your own computer. The URL would be:<br/>
-<div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_150' class=notranslate>
-http://127.0.0.1/hello/hello-world/name=Mike</pre>
-<span id=rimstone_copied_150 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_150' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_150, code_150, rimstone_copied_150)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-Note the URL <a href='https://rimstone-lang.com/request.html'>request</a> structure: first comes the application path ("/hello") followed by request path ("/hello-world") followed by URL parameters ("/name=Mike"). The result:<br/>
-<br/><div class='vimg'><img class='imgs' src='hello-world-web.png' alt='RimStone'></img>
-</div><br/>
+</li><li>Next is to start a service, which runs in the background. You can then test it from command line. <a href='https://rimstone-lang.com/article-hello-world-service.html'>Here's how you do it</a> in two short commands.<br/>
+<br/>
+</li><li>Finally, you can use the same service over the web. In this case we're using Nginx, but you can use Apache, HAProxy etc. Here's the <a href='https://rimstone-lang.com/article-hello-world-service-web.html'>hello world on the web</a>.</li></ul>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>
