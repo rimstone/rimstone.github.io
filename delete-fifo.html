@@ -235,18 +235,18 @@ function googleTranslateElementInit() {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Delete fifo</div><hr/><span style="font-weight:bold;">Purpose</span>: Delete FIFO list elements up to the last one read, including.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_592' class=notranslate>
+<pre id='code_593' class=notranslate>
 <span class="Statement">delete-fifo</span> &lt;list&gt;</pre>
-<span id=rimstone_copied_592 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_592' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_592, code_592, rimstone_copied_592)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_593 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_593' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_593, code_593, rimstone_copied_593)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 delete-fifo will delete all leading elements from the FIFO &lt;list&gt; up to the last one read, including. &lt;list&gt; was created by <a href='https://rimstone-lang.com/new-fifo.html'>new-fifo</a>. <br/>
 <br/>
 Right after <a href='https://rimstone-lang.com/rewind-fifo.html'>rewind-fifo</a>, no element was read yet, and delete-fifo will have no effect. After any <a href='https://rimstone-lang.com/read-fifo.html'>read-fifo</a>, delete-fifo wil delete all elements up to the element read, including that element.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_593' class=notranslate>
+<pre id='code_594' class=notranslate>
 <span class="Statement">new-fifo</span> mylist
 
 <span class="Comment">// Add data to the list</span>
@@ -256,11 +256,11 @@ Right after <a href='https://rimstone-lang.com/rewind-fifo.html'>rewind-fifo</a>
 <span class="Comment">// Get first data from the list</span>
 <span class="Statement">read-fifo</span> mylist<span class="Type"> key</span> k<span class="Type"> value</span> v
 
-<span class="Comment">// Delete first element from the list, so list will have only </span><span class="Constant">&quot;some2&quot;</span><span class="Comment"> key</span>
+<span class="Comment">// Delete first element from the list, so list will have only &quot;some2&quot; key</span>
 <span class="Statement">delete-fifo</span> mylist</pre>
-<span id=rimstone_copied_593 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_593' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_593, code_593, rimstone_copied_593)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_594 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_594' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_594, code_594, rimstone_copied_594)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='FIFO'></a><span style="font-weight:bold;">FIFO</span><br/>

@@ -246,29 +246,29 @@ If you use Apache, you need to connect it to your application, see <a href='http
 <div class="vsub"><a id="Starting RimStone server processes"></a>Starting RimStone server processes</div>
 Use <a href='https://rimstone-lang.com/mrim.html'>mrim</a>, for example:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_1032' class=notranslate>
+<pre id='code_1036' class=notranslate>
 mrim <span class="Statement">&lt;</span>app name<span class="Statement">&gt;</span></pre>
-<span id=rimstone_copied_1032 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1032' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1032, code_1032, rimstone_copied_1032)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1036 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1036' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1036, code_1036, rimstone_copied_1036)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 which in general will (based on the request load) start zero or more background resident process(es) (daemons) that process requests in parallel, or for instance:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_1033' class=notranslate>
+<pre id='code_1037' class=notranslate>
 mrim <span class="Special">-w</span> <span class="Constant">20</span> <span class="Statement">&lt;</span>app name<span class="Statement">&gt;</span></pre>
-<span id=rimstone_copied_1033 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1033' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1033, code_1033, rimstone_copied_1033)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1037 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1037' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1037, code_1037, rimstone_copied_1037)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 which will start 20 processes.<br/>
 <div class="vsub"><a id="Connection timeout"></a>Connection timeout</div>
 In a heavy-load environment, a client's connection may be rejected by the server. This may happen if the client runs very slowly due to swapping perhaps. Once a client establishes a connection, it has up to 5 seconds by default to send data; if it doesn't, the server will close the connection. Typically, clients send data right away, but due to a heavy load, this time may be longer. To set the connection timeout in seconds, use "--client-timeout" option in rim when making the application:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_1034' class=notranslate>
+<pre id='code_1038' class=notranslate>
 rim <span class="Special">-q</span> <span class="Special">--client-timeout</span><span class="Statement">=</span><span class="Constant">8</span></pre>
-<span id=rimstone_copied_1034 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1034' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1034, code_1034, rimstone_copied_1034)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1038 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1038' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1038, code_1038, rimstone_copied_1038)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In this case, the timeout is set to 8 seconds.<br/>
 <div class="vsub"><a id="See also"></a>See also</div>

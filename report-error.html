@@ -235,11 +235,11 @@ function googleTranslateElementInit() {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Report error</div><hr/><span style="font-weight:bold;">Purpose</span>: Reports a fatal error.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_960' class=notranslate>
+<pre id='code_964' class=notranslate>
 <span class="Statement">report-error</span> &lt;format&gt;, &lt;variable&gt; [<span class="Identifier"> ,</span> ... ]</pre>
-<span id=rimstone_copied_960 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_960' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_960, code_960, rimstone_copied_960)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_964 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_964' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_964, code_964, rimstone_copied_964)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 report-error will report a fatal error. It will format an error message according to the &lt;format&gt; string and a list of &lt;variable&gt;s and then &nbsp;write it to the standard error output; no HTTP header is output specifically for report-error. <br/>
 <br/>
@@ -263,11 +263,11 @@ See <a href='https://rimstone-lang.com/error-handling.html'>error-handling</a> w
 </li><li>%&lt;width&gt;f for a double output in fixed-point notation, with the 6 digits after decimal point ("format-floating" clause in <a href='https://rimstone-lang.com/double-string.html'>double-string</a>); %&lt;width&gt;e for scientific notation with one digit before the decimal point, along with the exponent ("format-scientific" clause in <a href='https://rimstone-lang.com/double-string.html'>double-string</a>); %&lt;width&gt;g displays either %f or %e format based on which is more compact ("format-compact" clause in <a href='https://rimstone-lang.com/double-string.html'>double-string</a>); in any case &lt;width&gt; represents the width of at least &lt;width&gt; bytes output. You can also use &lt;widith&gt;.&lt;precision&gt; to specify both width and precision, or ".&lt;precision&gt;" for just precision; for instance, "%10f" or "%12.4e" etc.</li></ul>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_961' class=notranslate>
+<pre id='code_965' class=notranslate>
 <span class="Statement">report-error</span> <span class="Constant">&quot;Too many input parameters for </span><span class="Special">%s</span><span class="Constant">, encountered total of [</span><span class="Special">%ld</span><span class="Constant">]&quot;</span>, <span class="Constant">&quot;customer&quot;</span>, num_count</pre>
-<span id=rimstone_copied_961 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_961' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_961, code_961, rimstone_copied_961)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_965 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_965' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_965, code_965, rimstone_copied_965)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Error handling'></a><span style="font-weight:bold;">Error handling</span><br/>

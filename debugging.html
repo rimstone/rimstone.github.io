@@ -237,39 +237,39 @@ If there is an error in a RimStone program (such as trying to access invalid mem
 <div class="vsub"><a id="View stack traces"></a>View stack traces</div>
 To see errors reported by RimStone (such as trying to access invalid memory, or crashes; but not those from <a href='https://rimstone-lang.com/report-error.html'>report-error</a>), use -e option of <a href='https://rimstone-lang.com/rim.html'>rim</a> to check the stack trace files, which contain the stack along with file names, function names and line numbers. For example, to see the last 3 errors reported:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_572' class=notranslate>
+<pre id='code_573' class=notranslate>
 rim <span class="Special">-e</span> <span class="Constant">3</span></pre>
-<span id=rimstone_copied_572 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_572' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_572, code_572, rimstone_copied_572)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_573 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_573' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_573, code_573, rimstone_copied_573)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Note that function names are decorated; meaning if a request name has a hyphen ("-"), then it is substituted with an underscore ("_") in a function name; if it has a forward slash ("/"), then it is substituted with a double underscore ("__"). For instance, request "request/sub-request" will be internally represented as function "request__sub_request" and will show up like that in a stack trace.<br/>
 <div class="vsub"><a id="Output from RimStone service without a web server"></a>Output from RimStone service without a web server</div>
 Use <a href='https://rimstone-lang.com/rim.html'>rim</a> (see -r option) to send a request from command line, and receive reply from your <a href='https://rimstone-lang.com/service.html'>service</a>s. This is useful in debugging issues and automating tests. For instance, the following will issue a request and receive a reply from your service:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_571' class=notranslate>
+<pre id='code_572' class=notranslate>
 rim -r --req=<span class="Constant">&quot;/my-service&quot;</span> --service --exec</pre>
-<span id=rimstone_copied_571 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_571' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_571, code_571, rimstone_copied_571)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_572 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_572' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_572, code_572, rimstone_copied_572)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Issues in starting mrim"></a>Issues in starting mrim</div>
 <a href='https://rimstone-lang.com/mrim.html'>mrim</a> starts your <a href='https://rimstone-lang.com/service.html'>service</a> process(es). If you're having issues with mrim, check out its log. Assuming your application name is "app-name", the log file is:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_570' class=notranslate>
+<pre id='code_571' class=notranslate>
 $HOME/.rimstone/apps/app-name/.mrimlog</pre>
-<span id=rimstone_copied_570 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_570' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_570, code_570, rimstone_copied_570)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_571 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_571' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_571, code_571, rimstone_copied_571)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Web server error log"></a>Web server error log</div>
 If you are using a web server as a reverse proxy, check its error log, which would store the error messages emitted. Typically, such files are in the following location:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_573' class=notranslate>
+<pre id='code_574' class=notranslate>
 /var/log/&lt;web server&gt;</pre>
-<span id=rimstone_copied_573 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_573' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_573, code_573, rimstone_copied_573)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_574 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_574' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_574, code_574, rimstone_copied_574)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 (for example /var/log/apache2), but the location may vary - consult your web server's documentation.<br/>
 <div class="vsub"><a id="Using gdb debugger"></a>Using gdb debugger</div>
@@ -277,45 +277,45 @@ In order to use gdb debugger, you don't need to do anything special. RimStone it
 <br/>
 Ultimately, you can attach a debugger to a running RimStone process. If your application name is "app-name", first find the PID (process ID) of its process(es):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_574' class=notranslate>
+<pre id='code_575' class=notranslate>
 ps <span class="Special">-ef</span>|<span class="Statement">grep</span> app-name.srvc</pre>
-<span id=rimstone_copied_574 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_574' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_574, code_574, rimstone_copied_574)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_575 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_575' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_575, code_575, rimstone_copied_575)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Note that you can control the number of worker processes started, and thus have only a single worker process (or the minimum necessary), which will make attaching to the process that actually processes a request easier (see <a href='https://rimstone-lang.com/rim.html'>rim</a>).<br/>
 <br/>
 Use gdb to load your program:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_576' class=notranslate>
-sudo gdb <span class="PreProc">$HOME</span>/.rimstone/apps/app-name/.bld/app-name.srvc</pre>
-<span id=rimstone_copied_576 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_576' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_576, code_576, rimstone_copied_576)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-and then attach to the process (&lt;PID&gt; is the process ID you obtained above):<br/>
-<div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_575' class=notranslate>
-att &lt;PID&gt;</pre>
-<span id=rimstone_copied_575 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_575' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_575, code_575, rimstone_copied_575)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-Once attached, you can break in the request you're debugging:<br/>
-<div class='ncode' style='position:relative;padding-right:16px;'>
 <pre id='code_577' class=notranslate>
-br &lt;request name&gt;</pre>
+sudo gdb <span class="PreProc">$HOME</span>/.rimstone/apps/app-name/.bld/app-name.srvc</pre>
 <span id=rimstone_copied_577 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='rimstonet_577' style='position: absolute;left: -500%;'></textarea>
 <img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_577, code_577, rimstone_copied_577)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-or in general RimStone request dispatcher:<br/>
+and then attach to the process (&lt;PID&gt; is the process ID you obtained above):<br/>
+<div class='ncode' style='position:relative;padding-right:16px;'>
+<pre id='code_576' class=notranslate>
+att &lt;PID&gt;</pre>
+<span id=rimstone_copied_576 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_576' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_576, code_576, rimstone_copied_576)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Once attached, you can break in the request you're debugging:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
 <pre id='code_578' class=notranslate>
-br rim_dispatch_request</pre>
+br &lt;request name&gt;</pre>
 <span id=rimstone_copied_578 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='rimstonet_578' style='position: absolute;left: -500%;'></textarea>
 <img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_578, code_578, rimstone_copied_578)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+or in general RimStone request dispatcher:<br/>
+<div class='ncode' style='position:relative;padding-right:16px;'>
+<pre id='code_579' class=notranslate>
+br rim_dispatch_request</pre>
+<span id=rimstone_copied_579 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_579' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_579, code_579, rimstone_copied_579)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 which would handle any request to your application. Request names are decorated to become function names (see above).<br/>
 <br/>
