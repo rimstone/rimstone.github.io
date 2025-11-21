@@ -235,11 +235,11 @@ function googleTranslateElementInit() {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Set double</div><hr/><span style="font-weight:bold;">Purpose</span>: Set value of a double (floating point) variable.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1047' class=notranslate>
+<pre id='code_1055' class=notranslate>
 <span class="Statement">set-double</span> &lt;variable&gt; [ = &lt;<span class="Type">double</span>&gt; ]  [<span class="Identifier"> process-scope</span> ]</pre>
-<span id=rimstone_copied_1047 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1047' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1047, code_1047, rimstone_copied_1047)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1055 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1055' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1055, code_1055, rimstone_copied_1055)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Double variable &lt;variable&gt; is either assigned value &lt;double&gt; with "=" clause, or it is assigned 0.0 if equal clause ("=") is omitted. A number is a signed 64-bit floating point value (double precision) with a range of approximately +/- 1.7*10E-308 to 1.7*10E308.<br/>
 <br/>
@@ -247,35 +247,35 @@ If "process-scope" clause is used, then double is of process scope, meaning its 
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Initialize double "my_dbl" to 0.0 and the value of this variable, however it changes, will persist through any number of requests in the same process:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1048' class=notranslate>
+<pre id='code_1056' class=notranslate>
 <span class="Statement">set-double</span> my_dbl<span class="Identifier"> process-scope</span></pre>
-<span id=rimstone_copied_1048 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1048' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1048, code_1048, rimstone_copied_1048)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1056 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1056' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1056, code_1056, rimstone_copied_1056)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Initialize number "my_dbl" to 101.34:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1049' class=notranslate>
+<pre id='code_1057' class=notranslate>
 <span class="Statement">set-number</span> my_dbl = <span class="Constant">101</span><span class="Constant">.34</span></pre>
-<span id=rimstone_copied_1049 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1049' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1049, code_1049, rimstone_copied_1049)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1057 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1057' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1057, code_1057, rimstone_copied_1057)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Subtract 5:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1050' class=notranslate>
+<pre id='code_1058' class=notranslate>
 <span class="Statement">set-double</span> my_dbl = my_dbl-<span class="Constant">5</span></pre>
-<span id=rimstone_copied_1050 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1050' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1050, code_1050, rimstone_copied_1050)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1058 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1058' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1058, code_1058, rimstone_copied_1058)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Assign an expression:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1051' class=notranslate>
+<pre id='code_1059' class=notranslate>
 <span class="Statement">set-double</span> my_dbl = (some_dbl*<span class="Constant">3</span><span class="Constant">.4</span>+<span class="Constant">1</span>)/<span class="Constant">5</span></pre>
-<span id=rimstone_copied_1051 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1051' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1051, code_1051, rimstone_copied_1051)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1059 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1059' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1059, code_1059, rimstone_copied_1059)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Doubles'></a><span style="font-weight:bold;">Doubles</span><br/>

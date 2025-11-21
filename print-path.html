@@ -235,41 +235,41 @@ function googleTranslateElementInit() {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Print path</div><hr/><span style="font-weight:bold;">Purpose</span>: Print out URL that leads to a request handler.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_906' class=notranslate>
+<pre id='code_914' class=notranslate>
 <span class="Statement">print-path</span> &lt;request path&gt; [<span class="Identifier"> new-line</span> ]</pre>
-<span id=rimstone_copied_906 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_906' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_906, code_906, rimstone_copied_906)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_914 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_914' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_914, code_914, rimstone_copied_914)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 print-path outputs URL application path of a URL that called this <a href='https://rimstone-lang.com/request.html'>request</a> handler, followed by string &lt;request path&gt;.<br/>
 <br/>
 If no "--path" option in <a href='https://rimstone-lang.com/rim.html'>rim</a> is used to specify URL application path, then it is the same as application name prepended with a forward slash, followed by "/&lt;request path&gt;":<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_905' class=notranslate>
+<pre id='code_913' class=notranslate>
 /&lt;app name&gt;/&lt;request path&gt;</pre>
-<span id=rimstone_copied_905 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_905' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_905, code_905, rimstone_copied_905)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_913 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_913' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_913, code_913, rimstone_copied_913)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 print-path is used in construction of URLs or HTML forms (either for HTML or API) to refer back to the same application. Use it to create the absolute URL path to refer back to a service of yours so you can issue <a href='https://rimstone-lang.com/request.html'>request</a>s to it. <br/>
 <br/>
 For example, this is a link that specifies request to service "/show-notes":<br/>
 <div class='htmlcode' style='position:relative;padding-right:16px;'>
-<pre id='code_904' class=notranslate>
+<pre id='code_912' class=notranslate>
 @<span class="Identifier">&lt;</span><span class="Statement">a</span><span class="Identifier"> </span><span class="Type">href</span><span class="Identifier">=</span><span class="Constant">&quot;&lt;&lt;print-path &quot;</span><span class="Identifier">/show-notes</span><span class="Constant">&quot;&gt;&gt;?date=yesterday&quot;</span><span class="Identifier">&gt;</span><span class="Underlined">Show Notes</span><span class="Identifier">&lt;/</span><span class="Statement">a</span><span class="Identifier">&gt;</span></pre>
-<span id=rimstone_copied_904 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_904' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_904, code_904, rimstone_copied_904)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_912 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_912' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_912, code_912, rimstone_copied_912)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 If you are building HTML forms, you can add a note with:<br/>
 <div class='htmlcode' style='position:relative;padding-right:16px;'>
-<pre id='code_907' class=notranslate>
+<pre id='code_915' class=notranslate>
 @<span class="Identifier">&lt;</span><span class="Statement">form</span><span class="Identifier"> </span><span class="Type">action</span><span class="Identifier">=</span><span class="Constant">'&lt;&lt;print-path &quot;/add-note&quot;&gt;&gt;'</span><span class="Identifier"> </span><span class="Type">method</span><span class="Identifier">=</span><span class="Constant">&quot;POST&quot;</span><span class="Identifier">&gt;</span>
 @<span class="Identifier">&lt;</span><span class="Statement">input</span><span class="Identifier"> </span><span class="Type">type</span><span class="Identifier">=</span><span class="Constant">&quot;text&quot;</span><span class="Identifier"> </span><span class="Type">name</span><span class="Identifier">=</span><span class="Constant">&quot;note&quot;</span><span class="Identifier"> </span><span class="Type">value</span><span class="Identifier">=</span><span class="Constant">&quot;&quot;</span><span class="Identifier">&gt;</span>
 @<span class="Identifier">&lt;/</span><span class="Statement">form</span><span class="Identifier">&gt;</span></pre>
-<span id=rimstone_copied_907 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_907' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_907, code_907, rimstone_copied_907)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_915 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_915' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_915, code_915, rimstone_copied_915)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 See <a href='https://rimstone-lang.com/request.html'>request</a> for more on URL structure.<br/>
 <br/>

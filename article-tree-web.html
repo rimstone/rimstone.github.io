@@ -237,116 +237,116 @@ This example shows Apache as the front-end (or "reverse proxy") for <a href='htt
 <ol><li><span style="font-weight:bold;">Enable FastCGI proxy</span> used to communicate with RimStone services - this is one time only:<br/>
 <ul><li>If you use Ubuntu and similar:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_362' class=notranslate>
+<pre id='code_370' class=notranslate>
 sudo a2enmod proxy
 sudo a2enmod proxy_fcgi</pre>
-<span id=rimstone_copied_362 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_362' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_362, code_362, rimstone_copied_362)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_370 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_370' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_370, code_370, rimstone_copied_370)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li><li>If you use Fedora and similar:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_364' class=notranslate>
+<pre id='code_372' class=notranslate>
 sudo vi /etc/httpd/conf/httpd.conf</pre>
-<span id=rimstone_copied_364 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_364' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_364, code_364, rimstone_copied_364)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_372 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_372' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_372, code_372, rimstone_copied_372)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 and if you use OpenSUSE:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_366' class=notranslate>
+<pre id='code_374' class=notranslate>
 sudo vi /etc/httpd/conf/httpd.conf</pre>
-<span id=rimstone_copied_366 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_366' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_366, code_366, rimstone_copied_366)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_374 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_374' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_374, code_374, rimstone_copied_374)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Add the following at the end of httpd.conf:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_368' class=notranslate>
+<pre id='code_376' class=notranslate>
 LoadModule proxy_module modules/mod_proxy.so
 LoadModule proxy_fcgi_module modules/mod_proxy_fcgi.so</pre>
-<span id=rimstone_copied_368 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_368' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_368, code_368, rimstone_copied_368)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_376 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_376' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_376, code_376, rimstone_copied_376)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li></ul>
 </li><li><span style="font-weight:bold;">Edit Apache configuration file:</span><br/>
 <ul><li>If you use Debian (such as Ubuntu):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_369' class=notranslate>
+<pre id='code_377' class=notranslate>
 sudo vi /etc/apache2/apache2.conf</pre>
-<span id=rimstone_copied_369 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_369' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_369, code_369, rimstone_copied_369)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_377 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_377' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_377, code_377, rimstone_copied_377)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li>
 <li>If you use Fedora (such as RedHat), Archlinux:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_370' class=notranslate>
+<pre id='code_378' class=notranslate>
 sudo vi /etc/httpd/conf/httpd.conf</pre>
-<span id=rimstone_copied_370 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_370' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_370, code_370, rimstone_copied_370)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_378 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_378' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_378, code_378, rimstone_copied_378)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li>
 <li>If you use OpenSUSE:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_371' class=notranslate>
+<pre id='code_379' class=notranslate>
 sudo vi /etc/apache2/httpd.conf</pre>
-<span id=rimstone_copied_371 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_371' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_371, code_371, rimstone_copied_371)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_379 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_379' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_379, code_379, rimstone_copied_379)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li></ul>
 Add this to the end of the configuration file - note "tree" is the application name you created in the above example (replace "your-user" with your OS user name):<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_361' class=notranslate>
+<pre id='code_369' class=notranslate>
 ProxyPass &quot;/tree/&quot; unix:///home/your-user/.rimstone/apps/tree/sock/.sock|fcgi://localhost/tree</pre>
-<span id=rimstone_copied_361 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_361' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_361, code_361, rimstone_copied_361)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_369 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_369' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_369, code_369, rimstone_copied_369)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li><li><span style="font-weight:bold;">Restart Apache</span>. <br/>
 <ul><li>On Debian systems (like Ubuntu) or OpenSUSE:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_372' class=notranslate>
+<pre id='code_380' class=notranslate>
 sudo systemctl restart apache2</pre>
-<span id=rimstone_copied_372 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_372' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_372, code_372, rimstone_copied_372)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_380 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_380' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_380, code_380, rimstone_copied_380)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li><li>On Fedora systems (like RedHat) and Arch Linux:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_373' class=notranslate>
+<pre id='code_381' class=notranslate>
 sudo systemctl restart httpd</pre>
-<span id=rimstone_copied_373 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_373' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_373, code_373, rimstone_copied_373)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_381 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_381' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_381, code_381, rimstone_copied_381)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li></ul>
 </li></ol><span style="font-weight:bold;">- Test web service</span><br/>
 <br/>
 Now you can call your web service, from the web. In this case it's probably a local server (127.0.0.1) if you're doing this on your own computer. The URLs would be, for example to add, query and delete a key/value pair:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_363' class=notranslate>
+<pre id='code_371' class=notranslate>
 http://127.0.0.1/tree/srv/op=add/key=1/data=d_1</pre>
-<span id=rimstone_copied_363 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_363' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_363, code_363, rimstone_copied_363)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_371 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_371' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_371, code_371, rimstone_copied_371)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_365' class=notranslate>
+<pre id='code_373' class=notranslate>
 http://127.0.0.1/tree/srv/op=query/key=1</pre>
-<span id=rimstone_copied_365 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_365' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_365, code_365, rimstone_copied_365)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_373 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_373' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_373, code_373, rimstone_copied_373)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_367' class=notranslate>
+<pre id='code_375' class=notranslate>
 http://127.0.0.1/tree/srv/op=delete/key=1</pre>
-<span id=rimstone_copied_367 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_367' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_367, code_367, rimstone_copied_367)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_375 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_375' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_375, code_375, rimstone_copied_375)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Note the URL <a href='https://rimstone-lang.com/request.html'>request</a> structure: first comes the application path ("/tree") followed by request path ("/srv") followed by URL parameters (such as "/op=add/key=1/data=d_1"). The result in web browser are messages informing you that the key was added, queried or deleted.<br/>
 <!--ENDVDOC90-->

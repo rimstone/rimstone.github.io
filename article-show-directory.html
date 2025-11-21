@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!--__RIM_REDIRECT__-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+<title>Show all files and subdirectories with recursive open-dir</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="HandheldFriendly" content="True"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="canonical" href="https://rimstone-lang.com/article-show-directory.html" />
+<style>
+
+
+body, html {
+    font-family: Quicksand,monospace,Helvetica, Arial, sans-serif;
+    line-height: 150%;
+    font-size:16px;
+}
+
+body {
+    padding-left:1vw;
+    padding-right:1vw;
+}
+    
+.ncode {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:8px;
+    margin-top:8px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.shcode {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:8px;
+    margin-top:8px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.sqlcode {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:8px;
+    margin-top:8px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.htmlcode {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:8px;
+    margin-top:8px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.code {
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-size:83%;
+    display:inline-block;
+    max-width:99%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:8px;
+    margin-top:8px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+/*Just like h1 but for pdf conversion it would be indented this way it's not*/
+.vhub {
+    display: block;
+   font-size: 1.6em;
+   margin-top: 0.63em;
+   margin-bottom: 0.63em;
+   margin-left: 0;
+   margin-right: 0;
+   font-weight: bold;
+}
+
+/*Just like h2 but for pdf conversion it would be indented this way it's not*/
+.vsub {
+    display: block;
+   font-size: 1.25em;
+   margin-top: 0.53em;
+   margin-bottom: 0.53em;
+   margin-left: 0;
+   margin-right: 0;
+   font-weight: bold;
+}
+
+ul {
+  margin-left: 0.75vw;
+  padding-left: 0;
+}
+li {
+  margin-left: 0.75vw;
+  padding-left: 0;
+}
+
+/* this must be last, as it overrides previous settings, for mobile */
+@media (hover: none) {
+a {
+   display: inline-block;
+   padding-top: 3px;
+   padding-bottom: 2px;
+}
+body {
+    padding-left:2vw;
+    padding-right:2vw;
+    letter-spacing: 1px;
+}
+}
+
+/*The following is for code snippets that are highlighted by 2html vim*/
+pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
+.Identifier { color: #008b8b; }
+.Statement { color: #af5f00; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
+/*end of highlighted snippets*/
+
+a {
+    text-decoration:none;
+    padding-bottom: 0px; 
+    color:inherit;
+    border-bottom: 2px solid #6cb8f0;
+}
+a:hover {
+    text-decoration: none;
+    color:black;
+    border-bottom: 1px solid red;
+}
+/*do not underline links nor should they be active*/
+pre a {
+    text-decoration:none;
+    color:black;
+    border-bottom: none;
+    pointer-events: none;
+    cursor: default;
+}
+
+
+.golfSnippet {display:none;}
+
+ul {
+  list-style-type:square;
+  list-style-position: outside;
+}
+
+</style>
+
+
+</head>
+<body>
+<div id="google_translate_element" style='float:right'></div>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script>
+function rim_copy(gt, eid, gc) {
+  gt.textContent = eid.textContent;
+  gt.select();
+  document.execCommand("copy");
+  gc.style.visibility="visible"
+  setTimeout(()=>{ gc.style.visibility="hidden"; }, 1000);
+}
+function googleTranslateElementInit() {
+   new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+
+</script>
+
+<!--RIMMENU13-->
+
+<!--RIMENDMENU13-->
+
+
+
+<!--BEGVDOC90-->
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Show all files and subdirectories with recursive open-dir</div><hr/><br/>
+This example will show recursive use of <a href='https://rimstone-lang.com/open-dir.html'>open-dir</a> to get all the files and subdirectories, and all the files and subdirectories within each subdirectory and so on.<br/>
+<br/>
+First create a directory for this application (no need to do that of course if this is a part of larger application!):<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_333' class=notranslate>
+<span class="Statement">mkdir</span> <span class="Special">-p</span> dir
+<span class="Statement">cd</span> dir</pre>
+<span id=rimstone_copied_333 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_333' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_333, code_333, rimstone_copied_333)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Create "lsdir" application:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_334' class=notranslate>
+rim <span class="Special">-k</span> lsdir</pre>
+<span id=rimstone_copied_334 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_334' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_334, code_334, rimstone_copied_334)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Here's the code to save to file "dir.rim". It's quite simple: "path" is the directory path to list (relative to current directory), "indent" is the number of spaces to print before each entry in it (by default 0). The service will use <a href='https://rimstone-lang.com/read-dir.html'>read-dir</a> to obtain each directory entry, and if it's a directory, it will call the service recursively. That's it:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_332' class=notranslate>
+cat &lt;&lt; '<span class="Constant">EOF</span>' &gt; dir.rim
+<span class="Statement">begin-handler</span> /dir<span class="Identifier"> public get-param</span> path<span class="Identifier"> type string</span>, indent<span class="Identifier"> type number default-value</span> <span class="Constant">0</span>
+    <span class="Comment">// Get current directory where command-line program executes</span>
+<span class="Statement">    get-sys</span><span class="Identifier"> directory</span><span class="Type"> to</span> cdir
+    <span class="Comment">// Add the path to it where we want to list directory entries, and open directory </span>
+<span class="Statement">    open-dir</span> cdir+<span class="Constant">&quot;/&quot;</span>+path<span class="Type"> dir-id</span> d
+    <span class="Comment">// In a loop, read all directory entries</span>
+<span class="Statement">    start-loop</span>
+<span class="Statement">        read-dir</span> d  <span class="Type"> to</span> e<span class="Type"> status</span> s<span class="Type"> type</span> t
+<span class="Statement">        if-true</span> s<span class="Identifier"> not-equal</span> RIM_OKAY
+<span class="Statement">            break-loop</span> <span class="Comment">// exit the loop if no more</span>
+<span class="Statement">        end-if</span>
+<span class="Statement">        if-true</span> t<span class="Identifier"> not-equal</span> RIM_UNKNOWN
+            <span class="Comment">// Skip . and .. </span>
+<span class="Statement">            if-true</span> e<span class="Identifier"> not-equal</span> <span class="Constant">&quot;.&quot;</span><span class="Identifier"> and</span> e<span class="Identifier"> not-equal</span> <span class="Constant">&quot;..&quot;</span>
+                <span class="Comment">// Print space indentation for a nicer output</span>
+<span class="Statement">                call-handler</span> <span class="Constant">&quot;/dir/show-indent&quot;</span><span class="Identifier"> set-param</span> indent
+                <span class="Comment">// Print the entry (file, directory, etc.)</span>
+<span class="Statement">                if-true</span> t<span class="Identifier"> equal</span> RIM_FILE
+<span class="Statement">                    print-out</span> <span class="Constant">&quot;File: &quot;</span>+e<span class="Identifier"> new-line</span>
+<span class="Statement">                else-if</span> t<span class="Identifier"> equal</span> RIM_DIR
+<span class="Statement">                    print-out</span> <span class="Constant">&quot;Dir: &quot;</span>+e<span class="Identifier"> new-line</span>
+                    <span class="Comment">// If directory, call this service again with the path, and </span>
+                    <span class="Comment">// make it indented</span>
+<span class="Statement">                    call-handler</span> <span class="Constant">&quot;/dir&quot;</span><span class="Identifier"> set-param</span> path=path+<span class="Constant">&quot;/&quot;</span>+e, indent=indent+<span class="Constant">4</span>
+<span class="Statement">                else-if</span>
+<span class="Statement">                    print-out</span> <span class="Constant">&quot;Other:&quot;</span>+e<span class="Identifier"> new-line</span>
+<span class="Statement">                end-if</span>
+<span class="Statement">            end-if</span>
+<span class="Statement">        end-if</span>
+<span class="Statement">    end-loop</span>
+<span class="Statement">    close-dir</span> d <span class="Comment">// close each directory (without it, RimStone would do it automatically)</span>
+<span class="Statement">end-handler</span>
+
+<span class="Comment">// A very simple service to output a number of spaces</span>
+<span class="Statement">begin-handler</span> /dir/show-indent<span class="Identifier"> get-param</span> indent<span class="Identifier"> type number</span>
+<span class="Statement">    start-loop</span><span class="Identifier"> repeat</span> indent
+<span class="Statement">        print-out</span> <span class="Constant">&quot; &quot;</span>
+<span class="Statement">    end-loop</span>
+<span class="Statement">end-handler</span>
+<span class="Constant">EOF</span></pre>
+<span id=rimstone_copied_332 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_332' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_332, code_332, rimstone_copied_332)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Build your application as a native executable:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_335' class=notranslate>
+rim <span class="Special">-q</span></pre>
+<span id=rimstone_copied_335 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_335' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_335, code_335, rimstone_copied_335)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Create a test directory here, with subdirectories and some files:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_336' class=notranslate>
+<span class="Statement">mkdir</span> <span class="Special">-p</span> dirtest
+<span class="Statement">mkdir</span> <span class="Special">-p</span> dirtest/dir1
+<span class="Statement">mkdir</span> <span class="Special">-p</span> dirtest/dir2
+<span class="Statement">mkdir</span> <span class="Special">-p</span> dirtest/dir2/dir3
+<span class="Statement">echo</span><span class="Constant"> </span><span class="Statement">&quot;</span><span class="Constant">hi</span><span class="Statement">&quot;</span><span class="Statement">&gt;</span> dirtest/dir2/dir3/file3
+<span class="Statement">echo</span><span class="Constant"> </span><span class="Statement">&quot;</span><span class="Constant">hi</span><span class="Statement">&quot;</span><span class="Statement">&gt;</span> dirtest/dir2/file2
+<span class="Statement">echo</span><span class="Constant"> </span><span class="Statement">&quot;</span><span class="Constant">hi</span><span class="Statement">&quot;</span><span class="Statement">&gt;</span> dirtest/file</pre>
+<span id=rimstone_copied_336 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_336' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_336, code_336, rimstone_copied_336)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Run it from command line:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_337' class=notranslate>
+rim <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/dir/path=dirtest</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--silent-header</span></pre>
+<span id=rimstone_copied_337 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_337' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_337, code_337, rimstone_copied_337)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+The result is:<br/>
+<div class='ncode' style='position:relative;padding-right:16px;'>
+<pre id='code_331' class=notranslate>
+File: file
+Dir: dir1
+Dir: dir2
+    Dir: dir3
+        File: file3
+    File: file2</pre>
+<span id=rimstone_copied_331 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_331' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_331, code_331, rimstone_copied_331)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+You can specify any relative path by using %2F (a URL encoding for forward slash), for instance to list the parent directory (which is "../" or "..%2F" in URL encoding):<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_338' class=notranslate>
+rim <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/dir/path=..%2F</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--silent-header</span></pre>
+<span id=rimstone_copied_338 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_338' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_338, code_338, rimstone_copied_338)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+This example shows how to traverse directories programmatically. Of course, you can examine each entry for its type (such as sockets, fifo files, devices etc.) - this example shows how to deal with them as well.<br/>
+<!--ENDVDOC90-->
+<br/><div style='width:100%;clear:both;'>
+<hr/>
+<!--RIMFOOT77--><span style='font-size:80%'><a href="https://rimstone-lang.com/copyright.html">Copyright</a> (c) 2019-2025 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+</div><br/></body></html>
+
+

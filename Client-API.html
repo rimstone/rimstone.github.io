@@ -243,15 +243,15 @@ See Examples section below for detailed examples.<br/>
 <div class="vsub"><a id="Sending a request to RimStone service"></a>Sending a request to RimStone service</div>
 The following function is used to make a call using C API:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_474' class=notranslate>
+<pre id='code_482' class=notranslate>
 <span class="Type">int</span> rim_cli_request (rim_cli *req);</pre>
-<span id=rimstone_copied_474 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_474' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_474, code_474, rimstone_copied_474)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_482 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_482' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_482, code_482, rimstone_copied_482)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 All input and output is contained in a single variable of type "rim_cli", the pointer to which is passed to "rim_cli_request()" function that sends a request to the service. A variable of type "rim_cli" must be initialized to zero before using it (such as with {0} initialization, "memset()" or "calloc()"), or otherwise some of its members may have random values:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_477' class=notranslate>
+<pre id='code_485' class=notranslate>
 <span class="Comment">// Define and initialize request variable</span>
 rim_cli req = {<span class="Constant">0</span>};
 <span class="Comment">// You could also do:</span>
@@ -261,13 +261,13 @@ rim_cli req = {<span class="Constant">0</span>};
 <span class="Statement">.</span>..
 <span class="Comment">// Make a call</span>
 <span class="Type">int</span> result = rim_cli_request (&amp;req);</pre>
-<span id=rimstone_copied_477 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_477' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_477, code_477, rimstone_copied_477)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_485 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_485' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_485, code_485, rimstone_copied_485)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Type "rim_cli" is defined as (i.e. public members of it):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_479' class=notranslate>
+<pre id='code_487' class=notranslate>
 <span class="Type">typedef</span> <span class="Type">struct</span> {
     <span class="Type">const</span> <span class="Type">char</span> *server; <span class="Comment">// the IP:port/socket_path to server</span>
     <span class="Type">const</span> <span class="Type">char</span> *req_method; <span class="Comment">// request method</span>
@@ -290,9 +290,9 @@ Type "rim_cli" is defined as (i.e. public members of it):<br/>
     <span class="Type">volatile</span> <span class="Type">char</span> done; <span class="Comment">// indicator that the request has completed</span>
     <span class="Type">int</span> return_code; <span class="Comment">// the return code from rim_cli_request()</span>
 <span class="Statement">}</span> rim_cli;</pre>
-<span id=rimstone_copied_479 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_479' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_479, code_479, rimstone_copied_479)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_487 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_487' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_487, code_487, rimstone_copied_487)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <br/>
 <span style="font-weight:bold;">- Mandatory input</span><br/>
@@ -306,20 +306,20 @@ The following members of "rim_cli" type must be supplied in order to make a call
 <span style="font-weight:bold;">- Get Unix socket file</span><br/>
 To get Unix socket file path, use rim_dir() function, where "type" is the type of RimStone's file or directory, "dir" is the string buffer for the path, "dir_size" is its size, "app" is the application name, and "user" is Operating System user name who owns the application (NULL if your own):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_481' class=notranslate>
+<pre id='code_489' class=notranslate>
 <span class="Type">size_t</span> rim_dir (<span class="Type">int</span> type, <span class="Type">char</span> *dir, <span class="Type">size_t</span> dir_size, <span class="Type">char</span> *app, <span class="Type">char</span> *user);</pre>
-<span id=rimstone_copied_481 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_481' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_481, code_481, rimstone_copied_481)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_489 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_489' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_489, code_489, rimstone_copied_489)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Specifically to get the Unix socket file path, use RIM_DIR_SOCKFILE for "type" parameter, and with "app-name" being the application name owned by you:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_483' class=notranslate>
+<pre id='code_491' class=notranslate>
 <span class="Type">char</span> dir[RIM_MAX_OS_UDIR_LEN];
 rim_dir (RIM_DIR_SOCKFILE, dir, <span class="Statement">sizeof</span>(dir), <span class="Constant">&quot;app-name&quot;</span>, <span class="Constant">NULL</span>);</pre>
-<span id=rimstone_copied_483 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_483' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_483, code_483, rimstone_copied_483)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_491 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_491' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_491, code_491, rimstone_copied_491)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Note that you can use RIM_DIR_USER to get user base directory (where all RimStone files are for a given user), RIM_DIR_APPS to get the directory under which all applications are, RIM_DIR_APP to get the directory under which all application files are, RIM_DIR_FILE to get the file directory, RIM_DIR_TRACE to get the directory where stack trace files are, and RIM_DIR_BLD to get the directory where RimStone application executables are (see <a href='https://rimstone-lang.com/directories.html'>directories</a>). <br/>
 <br/>
@@ -332,16 +332,16 @@ Note that you can use RIM_DIR_USER to get user base directory (where all RimSton
 <span style="font-weight:bold;">- Passing environment to service</span><br/>
 "env" is any environment variables that should be passed along to the service. You can access those in RimStone via "environment" clause of <a href='https://rimstone-lang.com/get-sys.html'>get-sys</a> statement. This is an array of strings, where name/value pairs are specified one after the other, and which always must end with NULL. For example, if you want to use variable "REMOTE_USER" with value "John" and variable "MY_VARIABLE" with value "8000", then it might look like this:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_485' class=notranslate>
+<pre id='code_493' class=notranslate>
 <span class="Type">char</span> *env[<span class="Constant">5</span>];
 env[<span class="Constant">0</span>] = <span class="Constant">&quot;REMOTE_USER&quot;</span>;
 env[<span class="Constant">1</span>] = <span class="Constant">&quot;John&quot;</span>
 env[<span class="Constant">2</span>] = <span class="Constant">&quot;MY_VARIABLE&quot;</span>;
 env[<span class="Constant">3</span>] = <span class="Constant">&quot;8000&quot;</span>
 env[<span class="Constant">4</span>] = <span class="Constant">NULL</span>;</pre>
-<span id=rimstone_copied_485 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_485' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_485, code_485, rimstone_copied_485)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_493 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_493' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_493, code_493, rimstone_copied_493)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Thus, if you are passing N environment variables to the service, you must size "env" as "char*" array with 2*N+1 elements. <br/>
 <br/>
@@ -386,7 +386,7 @@ You can obtain service reply when it's ready in its entirety (likely most often 
 <div class="vsub"><a id="Getting data reply (stdout)"></a>Getting data reply (stdout)</div>
 Data returned from a request is valid only if "rim_cli_request()" returned RIM_OKAY (or if "return_code" is RIM_OKAY for multi-threaded programs). In that case, use "rim_cli_data()" function, for example:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_487' class=notranslate>
+<pre id='code_495' class=notranslate>
 <span class="Comment">// Declare and initialize request variable</span>
 rim_cli req = {<span class="Constant">0</span>};
 <span class="Comment">// Setup the req variable</span>
@@ -396,9 +396,9 @@ rim_cli req = {<span class="Constant">0</span>};
     <span class="Type">char</span> *data = rim_cli_data (req); <span class="Comment">// data response</span>
     <span class="Type">int</span> data_len = req-&gt;data_len; <span class="Comment">// length of data response in bytes</span>
 <span class="Statement">}</span></pre>
-<span id=rimstone_copied_487 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_487' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_487, code_487, rimstone_copied_487)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_495 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_495' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_495, code_495, rimstone_copied_495)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 "data_len" member of "rim_cli" type will have the length of data response in bytes. The reply is always null-terminated as a courtesy, and "data_len" does not include the terminating null byte.<br/>
 <br/>
@@ -406,7 +406,7 @@ rim_cli req = {<span class="Constant">0</span>};
 <div class="vsub"><a id="Getting error reply (stderr)"></a>Getting error reply (stderr)</div>
 An error reply returned from a service is valid only if "rim_cli_request()" returned RIM_OKAY (or if "return_code" is RIM_OKAY for multi-threaded programs). In that case, use "rim_cli_error()" function, for example:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_488' class=notranslate>
+<pre id='code_496' class=notranslate>
 <span class="Comment">// Declare and initialize request variable</span>
 rim_cli req = {<span class="Constant">0</span>};
 <span class="Comment">// Setup the req variable</span>
@@ -416,9 +416,9 @@ rim_cli req = {<span class="Constant">0</span>};
     <span class="Type">char</span> *err = rim_cli_error (req); <span class="Comment">// error response</span>
     <span class="Type">int</span> err_len = req-&gt;error_len; <span class="Comment">// length of error response in bytes</span>
 <span class="Statement">}</span></pre>
-<span id=rimstone_copied_488 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_488' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_488, code_488, rimstone_copied_488)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_496 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_496' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_496, code_496, rimstone_copied_496)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 "rim_cli_error()" returns any error messages from a service response, i.e. data passed to "error" stream. It is comprised of any service output when "to-error" clause is used in <a href='https://rimstone-lang.com/print-format.html'>print-format</a>, as well as any output from <a href='https://rimstone-lang.com/report-error.html'>report-error</a>. <br/>
 <br/>
@@ -426,7 +426,7 @@ rim_cli req = {<span class="Constant">0</span>};
 <div class="vsub"><a id="Freeing the result of a request"></a>Freeing the result of a request</div>
 Once you have obtained the result of a request, and when no longer needed, you should free it by using "rim_cli_delete()":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_489' class=notranslate>
+<pre id='code_497' class=notranslate>
 <span class="Comment">// Declare and initialize request variable</span>
 rim_cli req = {<span class="Constant">0</span>};
 <span class="Comment">// Setup the req variable</span>
@@ -436,9 +436,9 @@ rim_cli_request (&amp;req);
 <span class="Comment">// .. Use the result ..</span>
 <span class="Comment">// Free request output (data and error streams)</span>
 rim_cli_delete (&amp;req);</pre>
-<span id=rimstone_copied_489 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_489' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_489, code_489, rimstone_copied_489)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_497 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_497' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_497, code_497, rimstone_copied_497)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 If you do not free the result, your program may experience a memory leak. If your program exits right after issuing any request(s), you may skip freeing results as that is automatically done on exit by the Operating System. <br/>
 <br/>
@@ -446,11 +446,11 @@ You can use "rim_cli_delete()" regardless of whether "rim_cli_request()" returne
 <div class="vsub"><a id="Completion hook"></a>Completion hook</div>
 A function you wrote can be called when a request has completed. This is useful in multithreaded invocations, where you may want to receive complete request's results as they are available. To specify a completion hook, you must write a C function with the following signature and assign it to "done_hook" member of "rim_cli" typed variable:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_463' class=notranslate>
+<pre id='code_471' class=notranslate>
 <span class="Type">typedef</span> <span class="Type">void</span> (*rim_cli_done_hook)(<span class="Type">char</span> *recv, <span class="Type">int</span> recv_len, <span class="Type">char</span> *err, <span class="Type">int</span> err_len, rim_cli *req);</pre>
-<span id=rimstone_copied_463 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_463' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_463, code_463, rimstone_copied_463)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_471 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_471' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_471, code_471, rimstone_copied_471)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 "recv" is the request's data output, "recv_len" is its length in bytes, "err" is the request's error output, and "err_len" is its length in bytes. "req" is the request itself which you can use to obtain any other information about the request. In a single threaded environment, these are available as members of the request variable of "rim_cli" type used in the request, and there is not much use for a completion hook. <br/>
 <br/>
@@ -460,21 +460,21 @@ You can obtain the service's reply as it arrives by specifying read hooks. This 
 <br/>
 To specify a hook for data output (i.e. from stdout), you must write a C function with the following signature and assign it to "out_hook":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_464' class=notranslate>
+<pre id='code_472' class=notranslate>
 <span class="Type">typedef</span> <span class="Type">void</span> (*rim_cli_out_hook)(<span class="Type">char</span> *recv, <span class="Type">int</span> recv_len, rim_cli *req);</pre>
-<span id=rimstone_copied_464 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_464' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_464, code_464, rimstone_copied_464)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_472 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_472' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_472, code_472, rimstone_copied_472)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 "recv" is the data received and "recv_len" is its length.<br/>
 <br/>
 To specify a hook for error output (i.e. from stderr), you must write a C function with the following signature and assign it to "err_hook":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_465' class=notranslate>
+<pre id='code_473' class=notranslate>
 <span class="Type">typedef</span> <span class="Type">void</span> (*rim_cli_err_hook)(<span class="Type">char</span> *err, <span class="Type">int</span> err_len, rim_cli *req);</pre>
-<span id=rimstone_copied_465 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_465' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_465, code_465, rimstone_copied_465)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_473 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_473' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_473, code_473, rimstone_copied_473)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 "err" is the error received and "err_len" is its length.<br/>
 <br/>
@@ -484,7 +484,7 @@ To register these functions with "rim_cli_request()" function, assign their poin
 <br/>
 For example, functions "get_output()" and "get_err()" will capture data as it arrives and print it out, and get_complete() will print the final result:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_466' class=notranslate>
+<pre id='code_474' class=notranslate>
 <span class="Comment">// Output hook</span>
 <span class="Type">void</span> get_output(<span class="Type">char</span> *d, <span class="Type">int</span> l, rim_cli *req)
 <span class="Statement">{</span>
@@ -511,9 +511,9 @@ rim_cli req = {<span class="Constant">0</span>};
 req.out_hook = &amp;get_output;
 req.err_hook = &amp;get_err;
 req.done_hook = &amp;get_complete;</pre>
-<span id=rimstone_copied_466 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_466' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_466, code_466, rimstone_copied_466)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_474 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_474' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_474, code_474, rimstone_copied_474)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Multithreading"></a>Multithreading</div>
 The RimStone client is MT-safe, meaning you can use it both in single-threaded and multi-threaded programs. Note that each thread must have its own copy of "rim_cli" request variable, since it provides both input and output parameters to a request call and as such cannot be shared between the threads.<br/>
@@ -523,7 +523,7 @@ Do not use this API directly with RimStone - use <a href='https://rimstone-lang.
 <div class="vsub"><a id="Simple example"></a>Simple example</div>
 The following example is a simple demonstration, with minimum of options used. Copy the C code to file "cli.c" in a directory of its own:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_467' class=notranslate>
+<pre id='code_475' class=notranslate>
 <span class="PreProc">#include </span><span class="Constant">&quot;rcli.h&quot;</span>
 
 <span class="Type">void</span> main ()
@@ -551,62 +551,62 @@ The following example is a simple demonstration, with minimum of options used. C
     <span class="Comment">// Free up resources so there are no memory leaks</span>
     rim_cli_delete(&amp;req);
 <span class="Statement">}</span></pre>
-<span id=rimstone_copied_467 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_467' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_467, code_467, rimstone_copied_467)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-To make this client application:<br/>
-<div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_475' class=notranslate>
-gcc <span class="Special">-o</span> cli cli.c <span class="PreProc">$(</span><span class="Special">rim </span><span class="Special">-i</span><span class="PreProc">)</span></pre>
 <span id=rimstone_copied_475 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='rimstonet_475' style='position: absolute;left: -500%;'></textarea>
 <img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_475, code_475, rimstone_copied_475)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
+To make this client application:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_483' class=notranslate>
+gcc <span class="Special">-o</span> cli cli.c <span class="PreProc">$(</span><span class="Special">rim </span><span class="Special">-i</span><span class="PreProc">)</span></pre>
+<span id=rimstone_copied_483 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_483' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_483, code_483, rimstone_copied_483)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
 In this case, you're using a Unix socket to communicate with the RimStone service. To test with a RimStone service handler, copy the following code to "hello_simple.rim" file in a separate directory:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_468' class=notranslate>
+<pre id='code_476' class=notranslate>
 <span class="Statement">begin-handler</span> /hello_simple<span class="Identifier"> public</span>
 <span class="Statement">   silent-header</span>
 <span class="Statement">   @</span>Hi there!
 <span class="Statement">end-handler</span></pre>
-<span id=rimstone_copied_468 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_468' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_468, code_468, rimstone_copied_468)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_476 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_476' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_476, code_476, rimstone_copied_476)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Create and make the RimStone application and run it via local Unix socket:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_478' class=notranslate>
+<pre id='code_486' class=notranslate>
 rim <span class="Special">-k</span> helloworld
 rim <span class="Special">-q</span>
 mrim <span class="Special">-m</span> quit helloworld
 mrim <span class="Special">-w</span> <span class="Constant">1</span> helloworld</pre>
-<span id=rimstone_copied_478 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_478' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_478, code_478, rimstone_copied_478)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_486 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_486' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_486, code_486, rimstone_copied_486)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Run the client:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_480' class=notranslate>
+<pre id='code_488' class=notranslate>
 ./cli</pre>
-<span id=rimstone_copied_480 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_480' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_480, code_480, rimstone_copied_480)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_488 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_488' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_488, code_488, rimstone_copied_488)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The output is, as expected:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_469' class=notranslate>
+<pre id='code_477' class=notranslate>
 Hi there!</pre>
-<span id=rimstone_copied_469 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_469' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_469, code_469, rimstone_copied_469)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_477 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_477' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_477, code_477, rimstone_copied_477)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Example with more options"></a>Example with more options</div>
 This example demonstrates using multiple options, including using TCP sockets connecting to a host and port number, environment variables, query string, request body and request execution timeout. It will also show the separation of "data" and "error" (i.e. stdout and stderr) streams from the service.<br/>
 <br/>
 Copy this to file "cli1.c" in a directory of its own - note that in this example a server will run on localhost (127.0.0.1) and TCP port 2301:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_470' class=notranslate>
+<pre id='code_478' class=notranslate>
 <span class="PreProc">#include </span><span class="Constant">&quot;rcli.h&quot;</span>
 
 <span class="Type">void</span> main ()
@@ -664,37 +664,37 @@ Copy this to file "cli1.c" in a directory of its own - note that in this example
     <span class="Comment">// Free up resources so there are no memory leaks</span>
     rim_cli_delete(&amp;req);
 <span class="Statement">}</span></pre>
-<span id=rimstone_copied_470 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_470' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_470, code_470, rimstone_copied_470)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_478 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_478' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_478, code_478, rimstone_copied_478)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Note that the URL parameters (i.e. "req.url_params") could have been written as a combination of a path segment and query string (see <a href='https://rimstone-lang.com/request.html'>request</a>):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_471' class=notranslate>
+<pre id='code_479' class=notranslate>
 req.url_params = <span class="Constant">&quot;/par1/val1?par2=91&quot;</span>;</pre>
-<span id=rimstone_copied_471 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_471' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_471, code_471, rimstone_copied_471)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_479 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_479' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_479, code_479, rimstone_copied_479)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 or just as a path segment:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_472' class=notranslate>
+<pre id='code_480' class=notranslate>
 req.url_params = <span class="Constant">&quot;/par1=val1/par2=91&quot;</span>;</pre>
-<span id=rimstone_copied_472 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_472' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_472, code_472, rimstone_copied_472)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_480 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_480' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_480, code_480, rimstone_copied_480)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 To make this client application:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_482' class=notranslate>
+<pre id='code_490' class=notranslate>
 gcc <span class="Special">-o</span> cli1 cli1.c <span class="PreProc">$(</span><span class="Special">rim </span><span class="Special">-i</span><span class="PreProc">)</span></pre>
-<span id=rimstone_copied_482 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_482' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_482, code_482, rimstone_copied_482)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_490 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_490' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_490, code_490, rimstone_copied_490)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 To test it, you can create a RimStone application. Copy this to "hello.rim" file in a separate directory:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_476' class=notranslate>
+<pre id='code_484' class=notranslate>
 <span class="Statement">begin-handler</span> /hello<span class="Identifier"> public</span>
 <span class="Statement">    silent-header</span>
 
@@ -730,32 +730,32 @@ To test it, you can create a RimStone application. Copy this to "hello.rim" file
 <span class="Statement">        end-if</span>
 <span class="Statement">    end-loop</span>
 <span class="Statement">end-handler</span></pre>
-<span id=rimstone_copied_476 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_476' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_476, code_476, rimstone_copied_476)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-Create and make the RimStone application and run it on local TCP port 2301 to match the client above:<br/>
-<div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_484' class=notranslate>
-rim <span class="Special">-k</span> helloworld
-rim <span class="Special">-q</span>
-mrim <span class="Special">-m</span> quit helloworld
-mrim <span class="Special">-w</span> <span class="Constant">1</span> <span class="Special">-p</span> <span class="Constant">2301</span> helloworld</pre>
 <span id=rimstone_copied_484 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='rimstonet_484' style='position: absolute;left: -500%;'></textarea>
 <img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_484, code_484, rimstone_copied_484)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
+Create and make the RimStone application and run it on local TCP port 2301 to match the client above:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_492' class=notranslate>
+rim <span class="Special">-k</span> helloworld
+rim <span class="Special">-q</span>
+mrim <span class="Special">-m</span> quit helloworld
+mrim <span class="Special">-w</span> <span class="Constant">1</span> <span class="Special">-p</span> <span class="Constant">2301</span> helloworld</pre>
+<span id=rimstone_copied_492 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_492' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_492, code_492, rimstone_copied_492)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
 Run the client:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_486' class=notranslate>
+<pre id='code_494' class=notranslate>
 ./cli1</pre>
-<span id=rimstone_copied_486 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_486' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_486, code_486, rimstone_copied_486)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_494 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_494' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_494, code_494, rimstone_copied_494)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The output:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_473' class=notranslate>
+<pre id='code_481' class=notranslate>
 Server status 82
 Len of data 78530
 Len of error 35
@@ -782,9 +782,9 @@ Output line #4419
 Error [Line 1419 has an error
 Some error!
 ]</pre>
-<span id=rimstone_copied_473 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_473' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_473, code_473, rimstone_copied_473)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_481 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_481' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_481, code_481, rimstone_copied_481)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The output shows service exit code (82, see <a href='https://rimstone-lang.com/exit-status.html'>exit-status</a> in the RimStone code above), length of data output, and other information which includes environment variables passed to the service from the client, the PID of server process, the request body from the client, and then the error output. Note that the data output (stdout) and the error output (stderr) are separated, since the protocol does use separate streams over the same connection. This makes working with the output easy, while the data transfer is fast at the same time.<br/>
 <div class="vsub"><a id="See also"></a>See also</div>

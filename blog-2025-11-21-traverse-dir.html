@@ -7,11 +7,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 
-<title>Round</title>
+<title>Traversing directories programmatically</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="canonical" href="https://rimstone-lang.com/round.html" />
+<link rel="canonical" href="https://rimstone-lang.com/blog-2025-11-21-traverse-dir.html" />
 <style>
 
 
@@ -232,68 +232,14 @@ function googleTranslateElementInit() {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Round</div><hr/><span style="font-weight:bold;">Purpose</span>: Round function.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Traversing directories programmatically</div><hr/><br/>
+Here's a new example on how to use <a href='https://rimstone-lang.com/read-dir.html'>read-dir</a> to traverse directories.<br/>
 <br/>
-<div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1011' class=notranslate>
-round( &lt;var&gt; )</pre>
-<span id=rimstone_copied_1011 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1011' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1011, code_1011, rimstone_copied_1011)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-round returns the rounded value of &lt;var&gt;, where "rounded" means to the nearest number. When &lt;var&gt; is half way between numbers, round() moves away from zero. &lt;var&gt; is a number or a double and the result is a double.<br/>
-<div class="vsub"><a id="Examples"></a>Examples</div>
-<div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1012' class=notranslate>
-<span class="Statement">set-double</span> d = round(<span class="Constant">1</span>) + <span class="Constant">1</span></pre>
-<span id=rimstone_copied_1012 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1012' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1012, code_1012, rimstone_copied_1012)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-<div class="vsub"><a id="See also"></a>See also</div>
- <a name='Math functions'></a><span style="font-weight:bold;">Math functions</span><br/>
-<a href='https://rimstone-lang.com/abd.html'>abd</a> &nbsp;<br/>
-<a href='https://rimstone-lang.com/abn.html'>abn</a> &nbsp;<br/>
-<a href='https://rimstone-lang.com/acos.html'>acos</a> &nbsp;<br/>
-<a href='https://rimstone-lang.com/acosh.html'>acosh</a> &nbsp;<br/>
-<a href='https://rimstone-lang.com/asin.html'>asin</a> &nbsp;<br/>
-<a href='https://rimstone-lang.com/asinh.html'>asinh</a> &nbsp;<br/>
-<a href='https://rimstone-lang.com/atan.html'>atan</a> &nbsp;<br/>
-<a href='https://rimstone-lang.com/atan2.html'>atan2</a> &nbsp;<br/>
-<a href='https://rimstone-lang.com/atanh.html'>atanh</a> &nbsp;<br/>
-<a href='https://rimstone-lang.com/cbrt.html'>cbrt</a> &nbsp;<br/>
-<a href='https://rimstone-lang.com/ceil.html'>ceil</a> &nbsp;<br/>
-<a href='https://rimstone-lang.com/copysign.html'>copysign</a> &nbsp;<br/>
-<a href='https://rimstone-lang.com/cos.html'>cos</a> &nbsp;<br/>
-<a href='https://rimstone-lang.com/cosh.html'>cosh</a> &nbsp;<br/>
-<a href='https://rimstone-lang.com/dbl.html'>dbl</a> &nbsp;<br/>
-<a href='https://rimstone-lang.com/erf.html'>erf</a> &nbsp;<br/>
-<a href='https://rimstone-lang.com/erfc.html'>erfc</a> &nbsp;<br/>
-<a href='https://rimstone-lang.com/exp.html'>exp</a> &nbsp;<br/>
-<a href='https://rimstone-lang.com/exp2.html'>exp2</a> &nbsp;<br/>
-<a href='https://rimstone-lang.com/floor.html'>floor</a> &nbsp;<br/>
-<a href='https://rimstone-lang.com/fmod.html'>fmod</a> &nbsp;<br/>
-<a href='https://rimstone-lang.com/hypot.html'>hypot</a> &nbsp;<br/>
-<a href='https://rimstone-lang.com/isinf.html'>isinf</a> &nbsp;<br/>
-<a href='https://rimstone-lang.com/isnan.html'>isnan</a> &nbsp;<br/>
-<a href='https://rimstone-lang.com/ldexp.html'>ldexp</a> &nbsp;<br/>
-<a href='https://rimstone-lang.com/lgamma.html'>lgamma</a> &nbsp;<br/>
-<a href='https://rimstone-lang.com/log.html'>log</a> &nbsp;<br/>
-<a href='https://rimstone-lang.com/log10.html'>log10</a> &nbsp;<br/>
-<a href='https://rimstone-lang.com/log2.html'>log2</a> &nbsp;<br/>
-<a href='https://rimstone-lang.com/math-functions.html'>math-functions</a> &nbsp;<br/>
-<a href='https://rimstone-lang.com/nextafter.html'>nextafter</a> &nbsp;<br/>
-<a href='https://rimstone-lang.com/num.html'>num</a> &nbsp;<br/>
-<a href='https://rimstone-lang.com/pow.html'>pow</a> &nbsp;<br/>
-<a href='https://rimstone-lang.com/round.html'>round</a> &nbsp;<br/>
-<a href='https://rimstone-lang.com/sin.html'>sin</a> &nbsp;<br/>
-<a href='https://rimstone-lang.com/sinh.html'>sinh</a> &nbsp;<br/>
-<a href='https://rimstone-lang.com/sqrt.html'>sqrt</a> &nbsp;<br/>
-<a href='https://rimstone-lang.com/tan.html'>tan</a> &nbsp;<br/>
-<a href='https://rimstone-lang.com/tanh.html'>tanh</a> &nbsp;<br/>
-<a href='https://rimstone-lang.com/trunc.html'>trunc</a> &nbsp; <br/>
-<span style="font-weight:bold;">See all</span> <br/>
-<a href='https://rimstone-lang.com/documentation.html'>documentation</a><br/>
+You can check file types (such as file, directory, socket, fifo etc.) and also recursively find out all the files and subdirectories.<br/>
+<br/>
+Then you can use <a href='https://rimstone-lang.com/stat-file.html'>stat-file</a> to obtain more details about each directory entry.<br/>
+<br/>
+The example with source code and instructions can be <a href='https://rimstone-lang.com/article-show-directory.html'>found here</a>.<br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>

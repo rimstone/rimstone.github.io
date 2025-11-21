@@ -238,7 +238,7 @@ One use of HAProxy is to balance the load between different web servers, which i
 <br/>
 However, when you want HAProxy to directly communicate with your RimStone application servers, you may use configuration similar to this (shown is just a bare-bone setup needed to accomplish the goal, note sections "frontend", "fcgi-app" and "backend" that are relevant to RimStone). The HAProxy configuration file is typically in "/etc/haproxy/haproxy.cfg":<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_526' class=notranslate>
+<pre id='code_534' class=notranslate>
 global
     user haproxy
     group haproxy
@@ -273,17 +273,17 @@ backend backend_servers
     filter fcgi-app RimStone-fcgi
     use-fcgi-app RimStone-fcgi
     server s1 127.0.0.1:3000 proto fcgi</pre>
-<span id=rimstone_copied_526 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_526' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_526, code_526, rimstone_copied_526)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_534 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_534' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_534, code_534, rimstone_copied_534)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Restart HAProxy:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_527' class=notranslate>
+<pre id='code_535' class=notranslate>
 sudo systemctl restart haproxy</pre>
-<span id=rimstone_copied_527 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_527' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_527, code_527, rimstone_copied_527)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_535 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_535' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_535, code_535, rimstone_copied_535)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Note that RimStone application path is "/&lt;your RimStone app name&gt;" (and the application name may or may not be the same, see <a href='https://rimstone-lang.com/request.html'>request</a>). The TCP port of the application is "3000" (could be any port number you choose that's greater than 1000 and lower than 65535). <br/>
 <br/>
@@ -291,11 +291,11 @@ HAProxy itself is bound to port 90 in this example (see "frontend" section above
 <br/>
 A RimStone application (named "&lt;your RimStone app name&gt;") would have been started with (using the same application name "&lt;your RimStone app name&gt;" and TCP port "3000"):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_528' class=notranslate>
+<pre id='code_536' class=notranslate>
 mrim <span class="Special">-p</span> <span class="Constant">3000</span> <span class="Statement">&lt;</span>your RimStone app name<span class="Statement">&gt;</span></pre>
-<span id=rimstone_copied_528 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_528' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_528, code_528, rimstone_copied_528)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_536 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_536' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_536, code_536, rimstone_copied_536)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Now you should be able to connect and load-balance your RimStone application servers directly from HAProxy (which in this example listens on port 90, so you'd refer to it with https://your-web-server:90/&lt;your RimStone app name&gt;/...).<br/>
 <div class="vsub"><a id="See also"></a>See also</div>

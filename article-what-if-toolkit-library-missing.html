@@ -241,7 +241,7 @@ Here's an example of what that looks like in practicality.<br/>
 <br/>
 Suppose you have a service that fetches Google web page (like in this <a href='https://rimstone-lang.com/article-fetch-web-page.html'>article</a>):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_393' class=notranslate>
+<pre id='code_401' class=notranslate>
 cat &lt;&lt; '<span class="Constant">EOF</span>' &gt; fetch.rim
 <span class="Statement">begin-handler</span> /fetch<span class="Identifier"> public</span>
 <span class="Statement">    call-web</span> <span class="Constant">&quot;<a href="https://google.com">https://google.com</a>&quot;</span><span class="Type"> response</span> text<span class="Type"> response-headers</span> head
@@ -249,51 +249,51 @@ cat &lt;&lt; '<span class="Constant">EOF</span>' &gt; fetch.rim
 <span class="Statement">    print-out</span> text<span class="Identifier"> new-line</span>
 <span class="Statement">end-handler</span>
 <span class="Constant">EOF</span></pre>
-<span id=rimstone_copied_393 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_393' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_393, code_393, rimstone_copied_393)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_401 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_401' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_401, code_401, rimstone_copied_401)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Now, since you didn't install the toolkit libraries, you may not have the "libcurl" library, which is a standard library used for things like fetching web pages. If you try to make your application:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_394' class=notranslate>
+<pre id='code_402' class=notranslate>
 rim <span class="Special">-k</span> get-page <span class="Special">-q</span></pre>
-<span id=rimstone_copied_394 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_394' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_394, code_394, rimstone_copied_394)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_402 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_402' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_402, code_402, rimstone_copied_402)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 You will get:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_392' class=notranslate>
+<pre id='code_400' class=notranslate>
 RimStone: Required library [libcurl4-openssl-dev] is not installed. You can install it from command line with:
 RimStone: sudo apt -y install  libcurl4-openssl-dev
 RimStone: Please install it and try again, reading file [fetch.rim], line [5].
 There are errors in making your application (complete log at /home/user/.rimstone/apps/web/.bld/.make.output).</pre>
-<span id=rimstone_copied_392 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_392' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_392, code_392, rimstone_copied_392)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_400 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_400' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_400, code_400, rimstone_copied_400)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 So, like I mentioned above, you will get a clear message as to what the problem is, and even how to remedy it, so if you do as suggested (this is for Ubuntu, the exact name of the library may be different for you):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_396' class=notranslate>
+<pre id='code_404' class=notranslate>
 sudo apt <span class="Special">-y</span> install  libcurl4-openssl-dev</pre>
-<span id=rimstone_copied_396 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_396' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_396, code_396, rimstone_copied_396)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_404 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_404' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_404, code_404, rimstone_copied_404)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Now you can try again:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_397' class=notranslate>
+<pre id='code_405' class=notranslate>
 rim <span class="Special">-k</span> get-page <span class="Special">-q</span></pre>
-<span id=rimstone_copied_397 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_397' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_397, code_397, rimstone_copied_397)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_405 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_405' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_405, code_405, rimstone_copied_405)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 RimStone will detect that a new library was installed, and it will:<br/>
 <ul><li>Recompile RimStone itself. This is because RimStone operates as a high-performance system and always uses LTO (Link Time Optimizations), which it applies not just to your code, but to itself as well!<br/>
 </li><li>After that, it will make your application.</li></ul>
 So, here's what you might see:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_395' class=notranslate>
+<pre id='code_403' class=notranslate>
 Recompiling RimStone objects due to change in installed libraries; this happens only when libraries used by RimStone are installed or removed. Please wait for it to complete.
 Cleaning up RimStone for build.
 ..............................................................Built RimStone binaries (devel)
@@ -305,17 +305,17 @@ Built RimStone binaries (release)
 Creating RimStone directories (release)
 Copying RimStone binaries (release)
 RimStone objects recompiled, continuing.</pre>
-<span id=rimstone_copied_395 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_395' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_395, code_395, rimstone_copied_395)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_403 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_403' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_403, code_403, rimstone_copied_403)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 And voila, your application is now ready, just run it:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_398' class=notranslate>
+<pre id='code_406' class=notranslate>
 rim <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/fetch</span><span class="Statement">&quot;</span> <span class="Special">--exec</span></pre>
-<span id=rimstone_copied_398 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_398' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_398, code_398, rimstone_copied_398)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_406 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_406' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_406, code_406, rimstone_copied_406)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 You will see the source code for Google web page.<br/>
 <br/>
