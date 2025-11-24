@@ -247,7 +247,7 @@ Here's the output from a typical "riminst.sh" run. It's all a single installatio
 <br/>
 This is done on a "bare bone" server Linux system, which doesn't have the gcc toolchain or any of the toolkit libraries. It's a Fedora system, so you can see how's SELinux installation handled too. First you'll be asked to install the gcc toolchain. If you don't want riminst.sh to do it, you can copy and paste the instructions below (i.e. the sudo dnf ...) and execute them yourself first, and then come back and run installation again. Since it checks if those are installed, you won't be asked again to install them:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_157' class=notranslate>
+<pre id='code_199' class=notranslate>
 $ ./riminst.sh
 *** Some required base packages are not installed. Here is how to install them:
 
@@ -265,13 +265,13 @@ sudo dnf -y install  tar
 Installing [tar]...
 sudo dnf -y install  policycoreutils policycoreutils-devel libselinux-utils
 Installing [SELinux-devel]...</pre>
-<span id=rimstone_copied_157 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_157' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_157, code_157, rimstone_copied_157)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_199 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_199' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_199, code_199, rimstone_copied_199)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Now riminst.sh will ask you if you wish to install the toolkit libraries. You can say no (by pressing N) and install them when you need them. RimStone will alert you when they are needed, and show you the instructions like below (i.e. the sudo dnf ...). You can also cancel the installation (by pressing Ctrl-C) and copy and paste those instructions and install them yourself, and then run installation again, so you won't be asked this. Finally, you can let riminst.sh to install these for you, which is what's shown below:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_158' class=notranslate>
+<pre id='code_200' class=notranslate>
 *** Some toolkit packages are not installed. Here is how to install them:
 
 sudo dnf -y install  libpq-devel
@@ -296,13 +296,13 @@ sudo dnf -y install  libcurl-devel
 Installing [libcurl-devel]...
 sudo dnf -y install  pcre2-devel
 Installing [pcre2-devel]...</pre>
-<span id=rimstone_copied_158 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_158' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_158, code_158, rimstone_copied_158)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_200 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_200' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_200, code_200, rimstone_copied_200)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Next, RimStone will build itself. It will create LTO modules, which allow RimStone code to link with your application in a way that increases performance, as I described above (with LTO):<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_159' class=notranslate>
+<pre id='code_201' class=notranslate>
 Making RimStone binaries and libraries, please wait...
 ..............................................................Built RimStone binaries (devel)
 Creating RimStone directories (devel)
@@ -310,13 +310,13 @@ Copying RimStone binaries (devel)
 ..............................................................Built RimStone binaries (release)
 Creating RimStone directories (release)
 Copying RimStone binaries (release)</pre>
-<span id=rimstone_copied_159 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_159' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_159, code_159, rimstone_copied_159)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_201 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_201' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_201, code_201, rimstone_copied_201)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Next, the SELinux modules are compiled (they are distributed as source too, see files below):<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_160' class=notranslate>
+<pre id='code_202' class=notranslate>
 Setting up SELinux...
 Since you have SELinux enabled, you must setup SELinux for RimStone. sudo privilege is required by the Operating System to complete this. The script [sudo /home/dasoftver/.rimstone/lib/selinux/selinux.setup] will run next. Press Enter to continue.
 Compiling targeted rim module
@@ -324,13 +324,13 @@ Creating targeted rr.pp policy package
 rm tmp/rim.mod tmp/rim.mod.fc
 Setting environment variables...
 Setting permissions...</pre>
-<span id=rimstone_copied_160 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_160' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_160, code_160, rimstone_copied_160)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_202 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_202' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_202, code_202, rimstone_copied_202)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Finally, help man pages are installed, so you can get help (i.e. "man read-file" from command line to get help on statement <a href='https://rimstone-lang.com/read-file.html'>read-file</a>). Of course, you can always use the RimStone's web site and it's documentation (it's the same documentation), but in a pinch it's useful to quickly get help from command line:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_161' class=notranslate>
+<pre id='code_203' class=notranslate>
 /usr/bin/mandb
 Setting man pages...
 mandb: warning: $MANPATH set, appending /etc/man_db.conf
@@ -341,17 +341,17 @@ Processing manual pages under /home/dasoftver/.rimstone/man/cat2...
 1 man subdirectory contained newer manual pages.
 245 manual pages were added.
 0 stray cats were added.</pre>
-<span id=rimstone_copied_161 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_161' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_161, code_161, rimstone_copied_161)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_203 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_203' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_203, code_203, rimstone_copied_203)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Next, just run .bashrc to set up RimStone's PATH variables:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_162' class=notranslate>
+<pre id='code_204' class=notranslate>
 $ . $HOME/.bashrc</pre>
-<span id=rimstone_copied_162 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_162' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_162, code_162, rimstone_copied_162)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_204 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_204' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_204, code_204, rimstone_copied_204)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 And you have installed RimStone! You can now try the examples, or start writing your applications!<br/>
 <br/>

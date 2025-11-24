@@ -240,88 +240,88 @@ A "request URL" is a URL that an outside caller (such as a web browser) uses to 
 </li><li>URL parameters.</li></ul>
 Here's a breakdown of URL structure:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_974' class=notranslate>
+<pre id='code_991' class=notranslate>
 &lt;scheme&gt;://&lt;domain&gt;[:&lt;port&gt;]&lt;application path&gt;&lt;request path&gt;&lt;parameters&gt;</pre>
-<span id=rimstone_copied_974 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_974' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_974, code_974, rimstone_copied_974)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_991 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_991' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_991, code_991, rimstone_copied_991)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 For example, in the following URL:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_977' class=notranslate>
+<pre id='code_994' class=notranslate>
 https://your.website.com/my-app/my-request/par1=val1/par2=val2</pre>
-<span id=rimstone_copied_977 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_977' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_977, code_977, rimstone_copied_977)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_994 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_994' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_994, code_994, rimstone_copied_994)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 "/my-app" is application path, "/my-request" is request path and "/par1=val1/par2=val2" are parameters "par1" and "par2" with values "val1" and "val2". Together, application path and request path are called URL path.<br/>
 <div class="vsub"><a id="Application path"></a>Application path</div>
 The leading part of URL's path is called "application path". By default, application path is the application name (see <a href='https://rimstone-lang.com/mrim.html'>mrim</a> with "-i" option) preceded by forward slash ("/"); if it's "shopping", then the default application path is:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_979' class=notranslate>
+<pre id='code_996' class=notranslate>
 /shopping</pre>
-<span id=rimstone_copied_979 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_979' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_979, code_979, rimstone_copied_979)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_996 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_996' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_996, code_996, rimstone_copied_996)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Application name can contain alphanumerical characters and hyphens.<br/>
 <br/>
 <span style="font-weight:bold;">- Customizing application path</span><br/>
 You can change the application path by specifying it with "--path" parameter in <a href='https://rimstone-lang.com/rim.html'>rim</a> when building; each application must have its own unique path. Note that whatever it may be, the application name must always be its last path segment. For example, if your application name is "shopping", then the application path may be:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_981' class=notranslate>
+<pre id='code_998' class=notranslate>
 /api/v2/shopping</pre>
-<span id=rimstone_copied_981 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_981' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_981, code_981, rimstone_copied_981)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_998 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_998' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_998, code_998, rimstone_copied_998)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 An example of specifying the custom application path:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_976' class=notranslate>
+<pre id='code_993' class=notranslate>
 rim <span class="Special">-q</span> <span class="Special">--path</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/api/v2/shopping</span><span class="Statement">&quot;</span></pre>
-<span id=rimstone_copied_976 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_976' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_976, code_976, rimstone_copied_976)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_993 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_993' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_993, code_993, rimstone_copied_993)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Request path"></a>Request path</div>
 Request path follows the application path, for instance:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_983' class=notranslate>
+<pre id='code_1000' class=notranslate>
 https://some.web.site/shopping/buy-item</pre>
-<span id=rimstone_copied_983 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_983' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_983, code_983, rimstone_copied_983)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1000 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1000' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1000, code_1000, rimstone_copied_1000)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In this case the application path is "/shopping" and the request path is "/buy-item". It means that file "buy-item.rim" handles request "/buy-item" by implementing a <a href='https://rimstone-lang.com/begin-handler.html'>begin-handler</a> "/buy-item" in it. As another example, file "services/manage-home.rim" (meaning "manage-home.rim" file in subdirectory "services") handles request "/services/manage-home" etc.<br/>
 <br/>
 The request path must match (fully or partially) the path of the file name that implements it, with source directory being the root ("/"). Here is an example of implementing a request "/buy-item" in file "buy-item.rim":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_975' class=notranslate>
+<pre id='code_992' class=notranslate>
 <span class="Statement">begin-handler</span> /buy-item<span class="Identifier"> public</span>
 <span class="Statement">    get-param</span> some_param
 <span class="Statement">    @</span>Bought item: <span class="Statement">&lt;&lt;print-out</span> some_param<span class="Statement">&gt;&gt;</span>
 <span class="Statement">end-handler</span></pre>
-<span id=rimstone_copied_975 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_975' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_975, code_975, rimstone_copied_975)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_992 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_992' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_992, code_992, rimstone_copied_992)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 As an example of a path hierarchy, such as for example a hierarchy of resources, methods etc, <a href='https://rimstone-lang.com/begin-handler.html'>begin-handler</a> may be:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_978' class=notranslate>
+<pre id='code_995' class=notranslate>
 <span class="Statement">begin-handler</span> /items/wine-collection/red-wine/buy-item<span class="Identifier"> public</span>
 <span class="Statement">    .</span>..
 <span class="Statement">end-handler</span></pre>
-<span id=rimstone_copied_978 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_978' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_978, code_978, rimstone_copied_978)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_995 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_995' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_995, code_995, rimstone_copied_995)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 then the URL to call it would be:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_984' class=notranslate>
+<pre id='code_1001' class=notranslate>
 https://some.web.site/shopping/items/wine-collection/red-wine/buy-item</pre>
-<span id=rimstone_copied_984 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_984' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_984, code_984, rimstone_copied_984)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1001 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1001' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1001, code_1001, rimstone_copied_1001)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 and might be implemented in file "items/wine-collection/red-wine/buy-item.rim", meaning under subdirectory "items", then subdirectory "wine-collection", then subdirectory "red-wine", then file "buy-item.rim".<br/>
 <br/>
@@ -343,11 +343,11 @@ The actual input parameters follow after the request path, and can be specified 
 <span style="font-weight:bold;">- Path segments</span><br/>
 A common way is to specify name and value separated by an equal sign within a single path segment:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_985' class=notranslate>
+<pre id='code_1002' class=notranslate>
 https://some.web.site/shopping/buy-item/sku=4811/price=600/</pre>
-<span id=rimstone_copied_985 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_985' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_985, code_985, rimstone_copied_985)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1002 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1002' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1002, code_1002, rimstone_copied_1002)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 This way, you have a readable representation of parameter names and values, while still maintaining the hierarchical form which conveys how are the parameters structured.<br/>
 <br/>
@@ -356,27 +356,27 @@ Here, the required request path is "/buy-item" and there are two input parameter
 <span style="font-weight:bold;">- Query string</span><br/>
 Parameters can be specified after a question mark in a "name=value" form. For example, the full URL (with the same parameter values as above) may be:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_986' class=notranslate>
+<pre id='code_1003' class=notranslate>
 https://some.web.site/shopping/buy-item?sku=4811&amp;price=600</pre>
-<span id=rimstone_copied_986 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_986' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_986, code_986, rimstone_copied_986)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1003 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1003' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1003, code_1003, rimstone_copied_1003)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <span style="font-weight:bold;">- Mixed</span><br/>
 You can specify a mix of the above ways to write parameters, for instance the above URL can be written as:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_987' class=notranslate>
+<pre id='code_1004' class=notranslate>
 https://some.web.site/shopping/buy-item/sku=4811?price=600</pre>
-<span id=rimstone_copied_987 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_987' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_987, code_987, rimstone_copied_987)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1004 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1004' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1004, code_1004, rimstone_copied_1004)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <span style="font-weight:bold;">- Parameters</span><br/>
 A parameter name can be comprised of alphanumeric characters, hyphens and underscores, and it must start with an alphabet character. Any hyphens are converted to underscores for the purpose of obtaining parameter value, see <a href='https://rimstone-lang.com/get-param.html'>get-param</a>. Do not use double underscore ("__") in parameter names. <br/>
 <br/>
 Structuring your parameters, i.e. the order in a query path or path segments, and which ones (if any) are in a query string, is determined by you. Regardless of your choices, the code that handles a request is the same. In the example used here, you can obtain the parameters in request handler source file "buy-item.rim":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_980' class=notranslate>
+<pre id='code_997' class=notranslate>
 <span class="Statement">begin-handler</span> /buy-item<span class="Identifier"> public</span>
 <span class="Statement">    get-param</span> sku
 <span class="Statement">    get-param</span> price
@@ -384,22 +384,22 @@ Structuring your parameters, i.e. the order in a query path or path segments, an
 <span class="Statement">    run-query</span> @mydb = <span class="Constant">&quot;update wine_items set price='</span><span class="Special">%s</span><span class="Constant">' where sku='</span><span class="Special">%s</span><span class="Constant">'&quot;</span><span class="Identifier"> :</span> price, sku<span class="Identifier"> no-loop</span>
 <span class="Statement">    @</span>OKAY
 <span class="Statement">end-handler</span></pre>
-<span id=rimstone_copied_980 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_980' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_980, code_980, rimstone_copied_980)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_997 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_997' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_997, code_997, rimstone_copied_997)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 For a hierarchical URL path, you would write the same:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_982' class=notranslate>
+<pre id='code_999' class=notranslate>
 <span class="Statement">begin-handler</span> /items/wine-collection/red-wine/buy-item<span class="Identifier"> public</span>
 <span class="Statement">    get-param</span> sku
 <span class="Statement">    get-param</span> price
 
 <span class="Statement">    run-query</span> @mydb = <span class="Constant">&quot;update wine_items set price='</span><span class="Special">%s</span><span class="Constant">' where sku='</span><span class="Special">%s</span><span class="Constant">'&quot;</span><span class="Identifier"> :</span> price, sku<span class="Identifier"> no-loop</span>
 <span class="Statement">end-handler</span></pre>
-<span id=rimstone_copied_982 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_982' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_982, code_982, rimstone_copied_982)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_999 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_999' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_999, code_999, rimstone_copied_999)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Note that each parameter name must be unique; your program will <a href='https://rimstone-lang.com/error-handling.html'>error out</a> if you have duplicate parameter names.<br/>
 <div class="vsub"><a id="Maximum length"></a>Maximum length</div>

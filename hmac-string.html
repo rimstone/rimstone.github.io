@@ -235,23 +235,23 @@ function googleTranslateElementInit() {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Hmac string</div><hr/><span style="font-weight:bold;">Purpose</span>: Create HMAC.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_730' class=notranslate>
+<pre id='code_745' class=notranslate>
 <span class="Statement">hmac-string</span> &lt;string&gt;<span class="Type"> to</span> &lt;result&gt; \
    <span class="Identifier"> key</span> &lt;key&gt; \
     [<span class="Identifier"> binary</span> [ &lt;binary&gt; ] \
     [<span class="Identifier"> digest</span> &lt;digest algorithm&gt; ]</pre>
-<span id=rimstone_copied_730 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_730' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_730, code_730, rimstone_copied_730)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_745 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_745' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_745, code_745, rimstone_copied_745)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 hmac-string produces by default a SHA256-based HMAC (Hash Message Authentication Code) of &lt;string&gt; (if "digest" clause is not used) using secret &lt;key&gt;, and stores the result into &lt;result&gt;. &nbsp;You can use a different &lt;digest algorithm&gt; in "digest" clause (for example "SHA3-256"). To see a list of available digests:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_731' class=notranslate>
+<pre id='code_746' class=notranslate>
 <span class="Comment">#get digests</span>
 openssl list <span class="Special">-digest-algorithms</span></pre>
-<span id=rimstone_copied_731 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_731' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_731, code_731, rimstone_copied_731)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_746 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_746' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_746, code_746, rimstone_copied_746)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 If "binary" clause is used without boolean variable &lt;binary&gt;, or if &lt;binary&gt; evaluates to true, then the &lt;result&gt; is a binary string that may contain null-characters. With the default SHA256, it is 32 bytes in length, while for instance with SHA3-384 it is 48 bytes in length, etc. <br/>
 <br/>
@@ -259,28 +259,28 @@ Without "binary" clause, or if &lt;binary&gt; evaluates to false, each binary by
 <div class="vsub"><a id="Examples"></a>Examples</div>
 String "result" will have a HMAC value of a given string, an example of which might look like "2d948cc89148ef96fa4f1876e74af4ce984423d355beb12f7fdba5383143bee0"<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_732' class=notranslate>
+<pre id='code_747' class=notranslate>
 <span class="Statement">hmac-string</span> <span class="Constant">&quot;some data&quot;</span><span class="Identifier"> key</span> <span class="Constant">&quot;mykey&quot;</span><span class="Type"> to</span> result</pre>
-<span id=rimstone_copied_732 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_732' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_732, code_732, rimstone_copied_732)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_747 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_747' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_747, code_747, rimstone_copied_747)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Using a different digest:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_733' class=notranslate>
+<pre id='code_748' class=notranslate>
 <span class="Statement">hmac-string</span> <span class="Constant">&quot;some data&quot;</span><span class="Identifier"> key</span> <span class="Constant">&quot;mykey&quot;</span><span class="Type"> to</span> result<span class="Identifier"> digest</span> <span class="Constant">&quot;sha3-384&quot;</span></pre>
-<span id=rimstone_copied_733 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_733' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_733, code_733, rimstone_copied_733)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_748 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_748' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_748, code_748, rimstone_copied_748)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Producing a binary value instead of a null-terminated hexadecimal string, and then making a Base64 string out of it:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_734' class=notranslate>
+<pre id='code_749' class=notranslate>
 <span class="Statement">hmac-string</span> <span class="Constant">&quot;some data&quot;</span><span class="Identifier"> key</span> <span class="Constant">&quot;mykey&quot;</span><span class="Identifier"> digest</span> <span class="Constant">&quot;SHA256&quot;</span><span class="Type"> to</span> result<span class="Identifier"> binary</span>
 <span class="Statement">encode-base64</span> result<span class="Type"> to</span> bresult</pre>
-<span id=rimstone_copied_734 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_734' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_734, code_734, rimstone_copied_734)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_749 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_749' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_749, code_749, rimstone_copied_749)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Encryption'></a><span style="font-weight:bold;">Encryption</span><br/>

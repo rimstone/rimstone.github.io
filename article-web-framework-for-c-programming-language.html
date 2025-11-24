@@ -240,24 +240,24 @@ In extended mode, RimStone is effectively a <a href='https://rimstone-lang.com/w
 Here's the example of using RimStone as a web framework for C. In this case it's a simple C function to calculate the factorial of a a number. Then we'll expose this functionality in an equally simple web application. <br/>
 <div class="vsub"><a id="Create the RimStone application"></a>Create the RimStone application</div>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_387' class=notranslate>
+<pre id='code_429' class=notranslate>
 <span class="Statement">mkdir</span> <span class="Special">-p</span> c-for-web
 <span class="Statement">cd</span> c-for-web</pre>
-<span id=rimstone_copied_387 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_387' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_387, code_387, rimstone_copied_387)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_429 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_429' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_429, code_429, rimstone_copied_429)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Create "fact" application ("-k"):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_390' class=notranslate>
+<pre id='code_432' class=notranslate>
 rim <span class="Special">-k</span> fact</pre>
-<span id=rimstone_copied_390 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_390' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_390, code_390, rimstone_copied_390)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_432 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_432' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_432, code_432, rimstone_copied_432)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The following file "calc-fact.rim" has the web service which will interact with web clients (such as browsers); it will also call the C function we'll create a bit further below:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_386' class=notranslate>
+<pre id='code_428' class=notranslate>
 cat &lt;&lt; '<span class="Constant">EOF</span>' &gt; calc-fact.rim
 <span class="Statement">extended-mode</span> <span class="Comment">// extended mode in order to call C code</span>
 
@@ -269,14 +269,14 @@ cat &lt;&lt; '<span class="Constant">EOF</span>' &gt; calc-fact.rim
 <span class="Statement">    @</span>Factorial of <span class="Statement">&lt;&lt;print-out</span> n<span class="Statement">&gt;&gt;</span> is <span class="Statement">&lt;&lt;print-out</span> result<span class="Statement">&gt;&gt;</span>
 <span class="Statement">%%</span>
 <span class="Constant">EOF</span></pre>
-<span id=rimstone_copied_386 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_386' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_386, code_386, rimstone_copied_386)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_428 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_428' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_428, code_428, rimstone_copied_428)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Add C code to RimStone application"></a>Add C code to RimStone application</div>
 Next is C file "factorial.c". This is the C function we're calling from RimStone code above:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_389' class=notranslate>
+<pre id='code_431' class=notranslate>
 cat &lt;&lt; '<span class="Constant">EOF</span>' &gt; factorial.c
 <span class="PreProc">#include </span><span class="Constant">&quot;rim.h&quot;</span>
 
@@ -290,58 +290,58 @@ cat &lt;&lt; '<span class="Constant">EOF</span>' &gt; factorial.c
 <span class="Statement">    }</span>
 <span class="Statement">}</span>
 <span class="Constant">EOF</span></pre>
-<span id=rimstone_copied_389 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_389' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_389, code_389, rimstone_copied_389)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_431 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_431' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_431, code_431, rimstone_copied_431)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 And an include file "factorial.h" to declare any function(s) we will use in RimStone code:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_392' class=notranslate>
+<pre id='code_434' class=notranslate>
 cat &lt;&lt; '<span class="Constant">EOF</span>' &gt; factorial.h
 <span class="Type">void</span> factorial(rim_num f, rim_num *res);
 <span class="Constant">EOF</span></pre>
-<span id=rimstone_copied_392 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_392' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_392, code_392, rimstone_copied_392)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_434 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_434' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_434, code_434, rimstone_copied_434)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Compile and start the server"></a>Compile and start the server</div>
 RimStone will pick up all .rim as well as all .c and .h file and make them into an application:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_393' class=notranslate>
+<pre id='code_435' class=notranslate>
 rim <span class="Special">-q</span></pre>
-<span id=rimstone_copied_393 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_393' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_393, code_393, rimstone_copied_393)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_435 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_435' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_435, code_435, rimstone_copied_435)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Start the server:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_395' class=notranslate>
+<pre id='code_437' class=notranslate>
 mrim fact</pre>
-<span id=rimstone_copied_395 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_395' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_395, code_395, rimstone_copied_395)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_437 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_437' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_437, code_437, rimstone_copied_437)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Test the server from command line"></a>Test the server from command line</div>
 You can test this web application from command line (note --service flag!). This is useful because you can develop web applications just from command line:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_396' class=notranslate>
+<pre id='code_438' class=notranslate>
 rim <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span>/calc-fact/<span class="Identifier">n</span>=<span class="Constant">12</span> <span class="Special">--exec</span> <span class="Special">--service</span></pre>
-<span id=rimstone_copied_396 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_396' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_396, code_396, rimstone_copied_396)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_438 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_438' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_438, code_438, rimstone_copied_438)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The result is:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_385' class=notranslate>
+<pre id='code_427' class=notranslate>
 Content-Type: text/html;charset=utf-8
 Cache-Control: max-age=0, no-cache
 Pragma: no-cache
 Status: 200 OK
 
 Factorial of 12 is 479001600</pre>
-<span id=rimstone_copied_385 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_385' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_385, code_385, rimstone_copied_385)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_427 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_427' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_427, code_427, rimstone_copied_427)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 This is the exact data that would be sent to an actual web client. <br/>
 <div class="vsub"><a id="Test the server with web browser"></a>Test the server with web browser</div>
@@ -349,57 +349,57 @@ Let's test on an actual web server. In this case we'll use Nginx. Also, we'll do
 <br/>
 First, edit Nginx config file, which for Ubuntu/Debian is at:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_397' class=notranslate>
+<pre id='code_439' class=notranslate>
 /etc/nginx/sites-enabled/default</pre>
-<span id=rimstone_copied_397 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_397' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_397, code_397, rimstone_copied_397)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_439 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_439' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_439, code_439, rimstone_copied_439)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 and on Fedora/RedHat is at:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_398' class=notranslate>
+<pre id='code_440' class=notranslate>
 /etc/nginx/nginx.conf</pre>
-<span id=rimstone_copied_398 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_398' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_398, code_398, rimstone_copied_398)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_440 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_440' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_440, code_440, rimstone_copied_440)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Note you might have to use "sudo" to edit these files as they're generally not writable by ordinary users.<br/>
 <br/>
 Find the "server" section, and add this inside it (replace "your-user" with your OS user name):<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_388' class=notranslate>
+<pre id='code_430' class=notranslate>
 location /fact/ { include /etc/nginx/fastcgi_params; fastcgi_pass  unix:///home/your-user/.rimstone/apps/fact/sock/.sock; }</pre>
-<span id=rimstone_copied_388 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_388' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_388, code_388, rimstone_copied_388)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_430 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_430' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_430, code_430, rimstone_copied_430)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 This will connect Nginx with the "fact" server you started above. Any requests with a URL path that start with "/fact/" will be delivered to your server, and the reply will go in reverse, ultimately being delivered to the client (such as web browser).<br/>
 <br/>
 Restart Nginx server for this to take effect:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_399' class=notranslate>
+<pre id='code_441' class=notranslate>
 sudo systemctl restart nginx</pre>
-<span id=rimstone_copied_399 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_399' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_399, code_399, rimstone_copied_399)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_441 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_441' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_441, code_441, rimstone_copied_441)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Try it from web browser with this URL:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_391' class=notranslate>
+<pre id='code_433' class=notranslate>
 http://127.0.0.1/fact/calc-fact/n=8</pre>
-<span id=rimstone_copied_391 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_391' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_391, code_391, rimstone_copied_391)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_433 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_433' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_433, code_433, rimstone_copied_433)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 If your Nginx runs on another port, specify it, for instance if it runs on port 81, use "127.0.0.1:81" instead.<br/>
 <br/>
 The result is:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_394' class=notranslate>
+<pre id='code_436' class=notranslate>
 Factorial of 8 is 40320</pre>
-<span id=rimstone_copied_394 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_394' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_394, code_394, rimstone_copied_394)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_436 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_436' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_436, code_436, rimstone_copied_436)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Of course, if you have a server on the web, just substitute "127.0.0.1" for your server's web address.<br/>
 <!--ENDVDOC90-->

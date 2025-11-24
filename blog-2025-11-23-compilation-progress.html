@@ -7,11 +7,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 
-<title>Delete dir</title>
+<title>How to see compilation progress?</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="canonical" href="https://rimstone-lang.com/delete-dir.html" />
+<link rel="canonical" href="https://rimstone-lang.com/blog-2025-11-23-compilation-progress.html" />
 <style>
 
 
@@ -232,38 +232,48 @@ function googleTranslateElementInit() {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Delete dir</div><hr/><span style="font-weight:bold;">Purpose</span>: Delete directory.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>How to see compilation progress?</div><hr/><br/>
+If you're compiling a large application (say with hundreds of source files), you may want to see the progress of compilation as it goes along.<br/>
 <br/>
-<div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_614' class=notranslate>
-<span class="Statement">delete-dir</span> &lt;directory&gt; [<span class="Type"> status</span> &lt;status&gt; ]</pre>
-<span id=rimstone_copied_614 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_614' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_614, code_614, rimstone_copied_614)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+To do that, simply add "--verbose" option to rim compiler:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_471' class=notranslate>
+rim <span class="Special">-q</span> <span class="Special">--verbose</span></pre>
+<span id=rimstone_copied_471 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_471' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_471, code_471, rimstone_copied_471)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-delete-dir will delete &lt;directory&gt;, which is a string that may be an absolute or relative path. <br/>
-<br/>
-If "status" clause is used, then number &lt;status&gt; is RIM_OKAY if succeeded, RIM_ERR_EXIST if directory is not empty, or RIM_ERR_FAILED for other errors (in which case you can use "errno" clause in <a href='https://rimstone-lang.com/get-req.html'>get-req</a> to find the specific reason why).<br/>
-<div class="vsub"><a id="Examples"></a>Examples</div>
-<div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_615' class=notranslate>
-<span class="Statement">delete-dir</span> <span class="Constant">&quot;/home/user/some_dir&quot;</span></pre>
-<span id=rimstone_copied_615 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_615' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_615, code_615, rimstone_copied_615)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+The result may be something like this, i.e. showing the steps (such as analyzing source files in the beginning and Making the executable at the end, as well as each individual source file):<br/>
+<div class='ncode' style='position:relative;padding-right:16px;'>
+<pre id='code_470' class=notranslate>
+RimStone: Gathering source files.
+RimStone: Analyzing source files.
+RimStone: Making aff-rows.rim
+RimStone: Making after-handler.rim
+RimStone: Making arr.rim
+RimStone: Making arrsrv.rim
+RimStone: Making arun.rim
+RimStone: Making b64.rim
+RimStone: Making before-handler.rim
+RimStone: Making begin.rim
+RimStone: Making books/library.rim
+RimStone: Making brstr.rim
+RimStone: Making callh.rim
+RimStone: Making callsub.rim
+RimStone: Making cbool.rim
+RimStone: Making cdir.rim
+RimStone: Making check-hyphen/def-var.rim
+RimStone: Making cont.rim
+...
+RimStone: Making somef.c
+RimStone: Making str.c
+RimStone: Making command-line executable
+RimStone: Making server executable
+RimStone: Made DEVEL executables</pre>
+<span id=rimstone_copied_470 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_470' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_470, code_470, rimstone_copied_470)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-<div class="vsub"><a id="See also"></a>See also</div>
- <a name='Directories'></a><span style="font-weight:bold;">Directories</span><br/>
-<a href='https://rimstone-lang.com/change-dir.html'>change-dir</a> &nbsp;<br/>
-<a href='https://rimstone-lang.com/change-mode.html'>change-mode</a> &nbsp;<br/>
-<a href='https://rimstone-lang.com/close-dir.html'>close-dir</a> &nbsp;<br/>
-<a href='https://rimstone-lang.com/delete-dir.html'>delete-dir</a> &nbsp;<br/>
-<a href='https://rimstone-lang.com/directories.html'>directories</a> &nbsp;<br/>
-<a href='https://rimstone-lang.com/new-dir.html'>new-dir</a> &nbsp;<br/>
-<a href='https://rimstone-lang.com/open-dir.html'>open-dir</a> &nbsp;<br/>
-<a href='https://rimstone-lang.com/read-dir.html'>read-dir</a> &nbsp; <br/>
-<span style="font-weight:bold;">See all</span> <br/>
-<a href='https://rimstone-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>

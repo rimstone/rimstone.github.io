@@ -235,15 +235,15 @@ function googleTranslateElementInit() {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Begin handler</div><hr/><span style="font-weight:bold;">Purpose</span>: Define a request handler.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_419' class=notranslate>
+<pre id='code_461' class=notranslate>
 <span class="Statement">begin-handler</span> &lt;request path&gt; [<span class="Identifier"> private</span> |<span class="Identifier"> public</span> ] \
     [<span class="Identifier"> get-param</span> ( &lt;name&gt; [<span class="Identifier"> type</span> &lt;type&gt; ] [<span class="Identifier"> default-value</span> &lt;value&gt; ] )<span class="Identifier"> ,</span> ... ]
 
     &lt;any code&gt;
 <span class="Statement">end-handler</span></pre>
-<span id=rimstone_copied_419 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_419' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_419, code_419, rimstone_copied_419)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_461 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_461' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_461, code_461, rimstone_copied_461)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 begin-handler starts the implementation of a <a href='https://rimstone-lang.com/request.html'>request</a> handler for &lt;request path&gt; (see <a href='https://rimstone-lang.com/request.html'>request</a>), which is &lt;any code&gt; up to end-handler. &lt;request path&gt; is not quoted.<br/>
 <br/>
@@ -267,47 +267,47 @@ You can change this default behavior with "--public" option in <a href='https://
 <br/>
 For instance:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_420' class=notranslate>
+<pre id='code_462' class=notranslate>
 <span class="Statement">begin-handler</span> /my-handler<span class="Identifier"> get-param</span> p1
 <span class="Statement">    .</span>..
 <span class="Statement">end-handler</span></pre>
-<span id=rimstone_copied_420 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_420' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_420, code_420, rimstone_copied_420)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_462 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_462' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_462, code_462, rimstone_copied_462)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 is the same as:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_421' class=notranslate>
+<pre id='code_463' class=notranslate>
 <span class="Statement">begin-handler</span> /my-handler
 <span class="Statement">    get-param</span> p1
 <span class="Statement">    .</span>..
 <span class="Statement">end-handler</span></pre>
-<span id=rimstone_copied_421 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_421' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_421, code_421, rimstone_copied_421)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_463 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_463' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_463, code_463, rimstone_copied_463)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Input and output parameters to request handlers"></a>Input and output parameters to request handlers</div>
 Read more at <a href='https://rimstone-lang.com/input-output-parameters.html'>input-output-parameters</a>.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 The following begin-handler is implemented in file "items/wines/red-wine.rim":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_422' class=notranslate>
+<pre id='code_464' class=notranslate>
 <span class="Statement">begin-handler</span>  /items/wines/red-wine<span class="Identifier"> public</span>
 <span class="Statement">    @</span>This is a request handler to display a list of red wines!
 <span class="Statement">end-handler</span></pre>
-<span id=rimstone_copied_422 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_422' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_422, code_422, rimstone_copied_422)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_464 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_464' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_464, code_464, rimstone_copied_464)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Another way to write this is:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_423' class=notranslate>
+<pre id='code_465' class=notranslate>
 <span class="Statement">%%</span>  /items/wines/red-wine<span class="Identifier"> public</span>
 <span class="Statement">    @</span>This is a request handler to display a list of red wines!
 <span class="Statement">%%</span></pre>
-<span id=rimstone_copied_423 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_423' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_423, code_423, rimstone_copied_423)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_465 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_465' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_465, code_465, rimstone_copied_465)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Service processing'></a><span style="font-weight:bold;">Service processing</span><br/>

@@ -235,11 +235,11 @@ function googleTranslateElementInit() {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>String expressions</div><hr/><span style="font-weight:bold;">Purpose</span>: Add strings using a plus ("+") sign.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1114' class=notranslate>
+<pre id='code_1116' class=notranslate>
 &lt;string&gt; + &lt;string&gt; [ + ... ]</pre>
-<span id=rimstone_copied_1114 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1114' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1114, code_1114, rimstone_copied_1114)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1116 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1116' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1116, code_1116, rimstone_copied_1116)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 String variables and literals can produce a new string by concatenation, using plus ("+") clause.<br/>
 <br/>
@@ -249,15 +249,15 @@ Note that you can concatenate binary strings too, i.e. strings that do not end w
 <div class="vsub"><a id="Subscription shortcut"></a>Subscription shortcut</div>
 You can reference string arrays and hash elements (see <a href='https://rimstone-lang.com/new-array.html'>new-array</a> and <a href='https://rimstone-lang.com/new-hash.html'>new-hash</a>) by using subscription operator ([]), for instance:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1115' class=notranslate>
+<pre id='code_1117' class=notranslate>
 <span class="Statement">new-array</span> sarr<span class="Identifier"> type string</span>
 <span class="Statement">new-hash</span> h
 <span class="Statement">write-array</span> sarr<span class="Identifier"> key</span> <span class="Constant">0</span><span class="Identifier"> value</span> <span class="Constant">&quot;some string&quot;</span>
 <span class="Statement">write-hash</span> h<span class="Identifier"> key</span> <span class="Constant">&quot;one&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;uno&quot;</span>
 <span class="Statement">set-string</span> str = sarr[<span class="Constant">0</span>] + <span class="Constant">&quot; another string&quot;</span> + h[<span class="Constant">&quot;one&quot;</span>]</pre>
-<span id=rimstone_copied_1115 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1115' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1115, code_1115, rimstone_copied_1115)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1117 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1117' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1117, code_1117, rimstone_copied_1117)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Number to string shortcut"></a>Number to string shortcut</div>
 You can use "#" in front of a number expression to convert it to a string; see Shortcut in <a href='https://rimstone-lang.com/number-string.html'>number-string</a>.<br/>
@@ -266,23 +266,23 @@ You can use "@" to extract a substring and use it as a &lt;string&gt; in additio
 <div class="vsub"><a id="Examples"></a>Examples</div>
 For instance, here we'll concatenate two string constants and a variable "var":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1116' class=notranslate>
+<pre id='code_1118' class=notranslate>
 <span class="Statement">set-string</span> var = <span class="Constant">&quot;day&quot;</span>
 <span class="Statement">set-string</span> newstr = <span class="Constant">&quot;nice &quot;</span> + var + <span class="Constant">&quot; it is!&quot;</span>
 <span class="Statement">print-out</span> newstr<span class="Identifier"> new-line</span></pre>
-<span id=rimstone_copied_1116 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1116' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1116, code_1116, rimstone_copied_1116)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1118 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1118' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1118, code_1118, rimstone_copied_1118)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The result will be "nice day it is!". <br/>
 <br/>
 In the following case, directory (variable "dir") is concatenated with a forward slash ("/") and then file name (variable "file") to produce full path of a file to read:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1117' class=notranslate>
+<pre id='code_1119' class=notranslate>
 <span class="Statement">read-file</span> dir+<span class="Constant">&quot;/&quot;</span>+file<span class="Type"> to</span> content</pre>
-<span id=rimstone_copied_1117 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1117' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1117, code_1117, rimstone_copied_1117)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1119 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1119' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1119, code_1119, rimstone_copied_1119)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Strings'></a><span style="font-weight:bold;">Strings</span><br/>

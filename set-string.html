@@ -235,15 +235,15 @@ function googleTranslateElementInit() {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Set string</div><hr/><span style="font-weight:bold;">Purpose</span>: Set value of a string variable.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1072' class=notranslate>
+<pre id='code_1074' class=notranslate>
 <span class="Statement">set-string</span> &lt;variable&gt; [<span class="Identifier"> unquoted</span> ] [ = &lt;string&gt; ] [<span class="Identifier"> process-scope</span> ]
 
 <span class="Statement">set-string</span> &lt;variable&gt; [ &lt;index&gt; ] = &lt;number&gt;
 
 <span class="Statement">set-string</span> &lt;variable&gt;<span class="Identifier"> length</span> &lt;length&gt;</pre>
-<span id=rimstone_copied_1072 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1072' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1072, code_1072, rimstone_copied_1072)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1074 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1074' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1074, code_1074, rimstone_copied_1074)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 String variable &lt;variable&gt; will be assigned a value of &lt;string&gt; if clause "=" is present; otherwise &lt;variable&gt; is assigned an empty string. If "process-scope" clause is used, then &lt;string&gt; is assigned only the first time set-string executes.<br/>
 <div class="vsub"><a id="With process-scope clause"></a>With process-scope clause</div>
@@ -253,80 +253,80 @@ If "length" clause is used, then the length of string &lt;variable&gt; is set to
 <div class="vsub"><a id="With unquoted clause"></a>With unquoted clause</div>
 If "unquoted" clause is used, then &lt;string&gt; literal is unquoted, and everything from equal clause ("=") to the rest of the line is a &lt;string&gt;; in this case there is no need to escape double quotes or backslashes. Note that in this case, "unquoted" and any other clause must appear prior to equal clause ("=") and after variable, because they wouldn't otherwise be recognized. For instance:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1073' class=notranslate>
-<span class="Statement">set-string</span> my_string<span class="Identifier"> unquoted</span> = this is <span class="Constant">&quot;some&quot;</span> string where escape characters like \n do <span class="Constant">&quot;not work&quot;</span></pre>
-<span id=rimstone_copied_1073 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1073' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1073, code_1073, rimstone_copied_1073)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-This is the same as:<br/>
-<div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1074' class=notranslate>
-<span class="Statement">set-string</span> my_string = <span class="Constant">&quot;this is </span><span class="Special">\&quot;</span><span class="Constant">some</span><span class="Special">\&quot;</span><span class="Constant"> string where escape characters like </span><span class="Special">\n</span><span class="Constant"> do </span><span class="Special">\&quot;</span><span class="Constant">not work</span><span class="Special">\&quot;</span><span class="Constant">&quot;</span></pre>
-<span id=rimstone_copied_1074 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1074' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1074, code_1074, rimstone_copied_1074)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-"unquoted" clause is useful when writing string literals that would otherwise need lots of escaping. You can use double backslash at the end of the line to split the line with new line in between:<br/>
-<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_1075' class=notranslate>
-<span class="Statement">set-string</span> unq1<span class="Identifier"> unquoted</span> =This is one line\
-        second line and\
-        third!</pre>
+<span class="Statement">set-string</span> my_string<span class="Identifier"> unquoted</span> = this is <span class="Constant">&quot;some&quot;</span> string where escape characters like \n do <span class="Constant">&quot;not work&quot;</span></pre>
 <span id=rimstone_copied_1075 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='rimstonet_1075' style='position: absolute;left: -500%;'></textarea>
 <img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1075, code_1075, rimstone_copied_1075)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-The above will create a string:<br/>
-<div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_1071' class=notranslate>
-This is one line
-second line and
-third!</pre>
-<span id=rimstone_copied_1071 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1071' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1071, code_1071, rimstone_copied_1071)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-<div class="vsub"><a id="Concatenating string literals"></a>Concatenating string literals</div>
-A string can be represented as a concatenation of string literals; this is useful when you want to preserve spaces, for instance:<br/>
+This is the same as:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_1076' class=notranslate>
-<span class="Statement">set-string</span> a=<span class="Constant">&quot;something is &quot;</span> \
-    <span class="Constant">&quot;  very good &quot;</span> \
-    <span class="Constant">&quot; with spaces!! &quot;</span>
-<span class="Comment">// string is &quot;something is   very good  with spaces!! &quot;</span></pre>
+<span class="Statement">set-string</span> my_string = <span class="Constant">&quot;this is </span><span class="Special">\&quot;</span><span class="Constant">some</span><span class="Special">\&quot;</span><span class="Constant"> string where escape characters like </span><span class="Special">\n</span><span class="Constant"> do </span><span class="Special">\&quot;</span><span class="Constant">not work</span><span class="Special">\&quot;</span><span class="Constant">&quot;</span></pre>
 <span id=rimstone_copied_1076 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='rimstonet_1076' style='position: absolute;left: -500%;'></textarea>
 <img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1076, code_1076, rimstone_copied_1076)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-<div class="vsub"><a id="Set a byte in a string"></a>Set a byte in a string</div>
-You can also use set-string to set a byte in it; in this case &lt;index&gt; byte in &lt;variable&gt; string is set to &lt;number&gt;. &lt;index&gt; starts with 0 for the first byte. For instance, the resulting "str" will be "Aome string" since 65 is a number representation of 'A':<br/>
+"unquoted" clause is useful when writing string literals that would otherwise need lots of escaping. You can use double backslash at the end of the line to split the line with new line in between:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_1077' class=notranslate>
-<span class="Statement">set-string</span> str = <span class="Constant">&quot;some string&quot;</span>
-<span class="Statement">set-string</span> str[<span class="Constant">0</span>] = <span class="Constant">65</span>
-<span class="Comment">// or using a character constant as a number, to the same effect</span>
-<span class="Statement">set-string</span> str[<span class="Constant">0</span>] = 'A'</pre>
+<span class="Statement">set-string</span> unq1<span class="Identifier"> unquoted</span> =This is one line\
+        second line and\
+        third!</pre>
 <span id=rimstone_copied_1077 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='rimstonet_1077' style='position: absolute;left: -500%;'></textarea>
 <img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1077, code_1077, rimstone_copied_1077)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-<div class="vsub"><a id="Examples"></a>Examples</div>
-Initialize "my_string" variable to "":<br/>
+The above will create a string:<br/>
+<div class='ncode' style='position:relative;padding-right:16px;'>
+<pre id='code_1073' class=notranslate>
+This is one line
+second line and
+third!</pre>
+<span id=rimstone_copied_1073 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1073' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1073, code_1073, rimstone_copied_1073)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+<div class="vsub"><a id="Concatenating string literals"></a>Concatenating string literals</div>
+A string can be represented as a concatenation of string literals; this is useful when you want to preserve spaces, for instance:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_1078' class=notranslate>
-<span class="Statement">set-string</span> my_string</pre>
+<span class="Statement">set-string</span> a=<span class="Constant">&quot;something is &quot;</span> \
+    <span class="Constant">&quot;  very good &quot;</span> \
+    <span class="Constant">&quot; with spaces!! &quot;</span>
+<span class="Comment">// string is </span><span class="Constant">&quot;something is   very good  with spaces!! &quot;</span></pre>
 <span id=rimstone_copied_1078 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='rimstonet_1078' style='position: absolute;left: -500%;'></textarea>
 <img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1078, code_1078, rimstone_copied_1078)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Initialize "my_string" variable to "abc":<br/>
+<div class="vsub"><a id="Set a byte in a string"></a>Set a byte in a string</div>
+You can also use set-string to set a byte in it; in this case &lt;index&gt; byte in &lt;variable&gt; string is set to &lt;number&gt;. &lt;index&gt; starts with 0 for the first byte. For instance, the resulting "str" will be "Aome string" since 65 is a number representation of 'A':<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_1079' class=notranslate>
-<span class="Statement">set-string</span> my_string = <span class="Constant">&quot;abc&quot;</span></pre>
+<span class="Statement">set-string</span> str = <span class="Constant">&quot;some string&quot;</span>
+<span class="Statement">set-string</span> str[<span class="Constant">0</span>] = <span class="Constant">65</span>
+<span class="Comment">// or using a character constant as a number, to the same effect</span>
+<span class="Statement">set-string</span> str[<span class="Constant">0</span>] = 'A'</pre>
 <span id=rimstone_copied_1079 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='rimstonet_1079' style='position: absolute;left: -500%;'></textarea>
 <img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1079, code_1079, rimstone_copied_1079)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+<div class="vsub"><a id="Examples"></a>Examples</div>
+Initialize "my_string" variable to "":<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_1080' class=notranslate>
+<span class="Statement">set-string</span> my_string</pre>
+<span id=rimstone_copied_1080 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1080' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1080, code_1080, rimstone_copied_1080)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Initialize "my_string" variable to "abc":<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_1081' class=notranslate>
+<span class="Statement">set-string</span> my_string = <span class="Constant">&quot;abc&quot;</span></pre>
+<span id=rimstone_copied_1081 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1081' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1081, code_1081, rimstone_copied_1081)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Strings'></a><span style="font-weight:bold;">Strings</span><br/>

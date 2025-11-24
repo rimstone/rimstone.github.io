@@ -235,11 +235,11 @@ function googleTranslateElementInit() {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Exit handler</div><hr/><span style="font-weight:bold;">Purpose</span>: Exit current request processing.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_661' class=notranslate>
+<pre id='code_676' class=notranslate>
 <span class="Statement">exit-handler</span> [ &lt;request status&gt; ]</pre>
-<span id=rimstone_copied_661 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_661' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_661, code_661, rimstone_copied_661)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_676 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_676' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_676, code_676, rimstone_copied_676)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Exits current request by transferring control directly after the top-level <a href='https://rimstone-lang.com/request.html'>request</a> dispatcher. If there is an <a href='https://rimstone-lang.com/after-handler.html'>after-handler</a>, it will still execute, unless exit-handler is called from <a href='https://rimstone-lang.com/before-handler.html'>before-handler</a>.<br/>
 <br/>
@@ -247,7 +247,7 @@ Exits current request by transferring control directly after the top-level <a hr
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Returning status of 20:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_662' class=notranslate>
+<pre id='code_677' class=notranslate>
 <span class="Statement">begin-handler</span> /req-handler<span class="Identifier"> public</span>
 <span class="Statement">    .</span>..
 <span class="Statement">    exit-status</span> <span class="Constant">20</span>
@@ -255,33 +255,33 @@ Returning status of 20:<br/>
 <span class="Statement">    exit-handler</span>
 <span class="Statement">    .</span>..
 <span class="Statement">end-handler</span></pre>
-<span id=rimstone_copied_662 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_662' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_662, code_662, rimstone_copied_662)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_677 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_677' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_677, code_677, rimstone_copied_677)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Returning status of 0:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_663' class=notranslate>
+<pre id='code_678' class=notranslate>
 <span class="Statement">begin-handler</span> /req-handler<span class="Identifier"> public</span>
 <span class="Statement">    .</span>..
 <span class="Statement">    exit-handler</span>
 <span class="Statement">    .</span>..
 <span class="Statement">end-handler</span></pre>
-<span id=rimstone_copied_663 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_663' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_663, code_663, rimstone_copied_663)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_678 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_678' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_678, code_678, rimstone_copied_678)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Returning status of 10:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_664' class=notranslate>
+<pre id='code_679' class=notranslate>
 <span class="Statement">begin-handler</span> /req-handler<span class="Identifier"> public</span>
 <span class="Statement">    .</span>..
 <span class="Statement">    exit-handler</span> <span class="Constant">10</span>
 <span class="Statement">    .</span>..
 <span class="Statement">end-handler</span></pre>
-<span id=rimstone_copied_664 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_664' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_664, code_664, rimstone_copied_664)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_679 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_679' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_679, code_679, rimstone_copied_679)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Program flow'></a><span style="font-weight:bold;">Program flow</span><br/>

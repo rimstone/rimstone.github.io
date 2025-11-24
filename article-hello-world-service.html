@@ -239,50 +239,50 @@ For that reason, create first <a href='https://rimstone-lang.com/article-hello-w
 <br/>
 The only thing to do afterwards is to start up Hello World as application server:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_146' class=notranslate>
+<pre id='code_187' class=notranslate>
 mrim hello</pre>
-<span id=rimstone_copied_146 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_146' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_146, code_146, rimstone_copied_146)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_187 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_187' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_187, code_187, rimstone_copied_187)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Now there's a number of resident processes running, expecting clients requests. You can see those processes:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_148' class=notranslate>
+<pre id='code_189' class=notranslate>
 ps <span class="Special">-ef</span>|<span class="Statement">grep</span> hello</pre>
-<span id=rimstone_copied_148 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_148' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_148, code_148, rimstone_copied_148)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_189 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_189' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_189, code_189, rimstone_copied_189)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The result:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_145' class=notranslate>
+<pre id='code_186' class=notranslate>
 bear       25772    2311  0 13:04 ?        00:00:00 mrim hello
 bear       25773   25772  0 13:04 ?        00:00:00 /home/user/.rimstone/apps/hello/.bld/hello.srvc
 bear       25774   25772  0 13:04 ?        00:00:00 /home/user/.rimstone/apps/hello/.bld/hello.srvc
 bear       25775   25772  0 13:04 ?        00:00:00 /home/user/.rimstone/apps/hello/.bld/hello.srvc
 bear       25776   25772  0 13:04 ?        00:00:00 /home/user/.rimstone/apps/hello/.bld/hello.srvc
 bear       25777   25772  0 13:04 ?        00:00:00 /home/user/.rimstone/apps/hello/.bld/hello.srvc</pre>
-<span id=rimstone_copied_145 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_145' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_145, code_145, rimstone_copied_145)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_186 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_186' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_186, code_186, rimstone_copied_186)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 "mrim hello" runs the RimStone process manager for application "hello". A number of ".../hello.srvc" processes are server processes that will handle service request sent to application "hello".<br/>
 <br/>
 Now, to test your service, you can send a request to the server from command line (by using "--service" option):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_149' class=notranslate>
+<pre id='code_190' class=notranslate>
 rim <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/hello-world/name=Mike</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--silent-header</span> <span class="Special">--service</span></pre>
-<span id=rimstone_copied_149 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_149' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_149, code_149, rimstone_copied_149)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_190 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_190' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_190, code_190, rimstone_copied_190)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The above will make a request to one of the processes above, which will then reply:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_147' class=notranslate>
+<pre id='code_188' class=notranslate>
 This is Hello World from Mike</pre>
-<span id=rimstone_copied_147 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_147' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_147, code_147, rimstone_copied_147)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_188 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_188' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_188, code_188, rimstone_copied_188)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>

@@ -237,24 +237,24 @@ This example will show recursive use of <a href='https://rimstone-lang.com/open-
 <br/>
 First create a directory for this application (no need to do that of course if this is a part of larger application!):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_333' class=notranslate>
+<pre id='code_375' class=notranslate>
 <span class="Statement">mkdir</span> <span class="Special">-p</span> dir
 <span class="Statement">cd</span> dir</pre>
-<span id=rimstone_copied_333 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_333' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_333, code_333, rimstone_copied_333)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_375 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_375' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_375, code_375, rimstone_copied_375)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Create "lsdir" application:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_334' class=notranslate>
+<pre id='code_376' class=notranslate>
 rim <span class="Special">-k</span> lsdir</pre>
-<span id=rimstone_copied_334 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_334' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_334, code_334, rimstone_copied_334)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_376 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_376' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_376, code_376, rimstone_copied_376)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Here's the code to save to file "dir.rim". It's quite simple: "path" is the directory path to list (relative to current directory), "indent" is the number of spaces to print before each entry in it (by default 0). The service will use <a href='https://rimstone-lang.com/read-dir.html'>read-dir</a> to obtain each directory entry, and if it's a directory, it will call the service recursively. That's it:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_332' class=notranslate>
+<pre id='code_374' class=notranslate>
 cat &lt;&lt; '<span class="Constant">EOF</span>' &gt; dir.rim
 <span class="Statement">begin-handler</span> /dir<span class="Identifier"> public get-param</span> path<span class="Identifier"> type string</span>, indent<span class="Identifier"> type number default-value</span> <span class="Constant">0</span>
     <span class="Comment">// Get current directory where command-line program executes</span>
@@ -296,21 +296,21 @@ cat &lt;&lt; '<span class="Constant">EOF</span>' &gt; dir.rim
 <span class="Statement">    end-loop</span>
 <span class="Statement">end-handler</span>
 <span class="Constant">EOF</span></pre>
-<span id=rimstone_copied_332 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_332' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_332, code_332, rimstone_copied_332)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_374 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_374' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_374, code_374, rimstone_copied_374)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Build your application as a native executable:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_335' class=notranslate>
+<pre id='code_377' class=notranslate>
 rim <span class="Special">-q</span></pre>
-<span id=rimstone_copied_335 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_335' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_335, code_335, rimstone_copied_335)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_377 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_377' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_377, code_377, rimstone_copied_377)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Create a test directory here, with subdirectories and some files:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_336' class=notranslate>
+<pre id='code_378' class=notranslate>
 <span class="Statement">mkdir</span> <span class="Special">-p</span> dirtest
 <span class="Statement">mkdir</span> <span class="Special">-p</span> dirtest/dir1
 <span class="Statement">mkdir</span> <span class="Special">-p</span> dirtest/dir2
@@ -318,38 +318,38 @@ Create a test directory here, with subdirectories and some files:<br/>
 <span class="Statement">echo</span><span class="Constant"> </span><span class="Statement">&quot;</span><span class="Constant">hi</span><span class="Statement">&quot;</span><span class="Statement">&gt;</span> dirtest/dir2/dir3/file3
 <span class="Statement">echo</span><span class="Constant"> </span><span class="Statement">&quot;</span><span class="Constant">hi</span><span class="Statement">&quot;</span><span class="Statement">&gt;</span> dirtest/dir2/file2
 <span class="Statement">echo</span><span class="Constant"> </span><span class="Statement">&quot;</span><span class="Constant">hi</span><span class="Statement">&quot;</span><span class="Statement">&gt;</span> dirtest/file</pre>
-<span id=rimstone_copied_336 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_336' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_336, code_336, rimstone_copied_336)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_378 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_378' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_378, code_378, rimstone_copied_378)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Run it from command line:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_337' class=notranslate>
+<pre id='code_379' class=notranslate>
 rim <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/dir/path=dirtest</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--silent-header</span></pre>
-<span id=rimstone_copied_337 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_337' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_337, code_337, rimstone_copied_337)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_379 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_379' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_379, code_379, rimstone_copied_379)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The result is:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_331' class=notranslate>
+<pre id='code_373' class=notranslate>
 File: file
 Dir: dir1
 Dir: dir2
     Dir: dir3
         File: file3
     File: file2</pre>
-<span id=rimstone_copied_331 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_331' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_331, code_331, rimstone_copied_331)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_373 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_373' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_373, code_373, rimstone_copied_373)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 You can specify any relative path by using %2F (a URL encoding for forward slash), for instance to list the parent directory (which is "../" or "..%2F" in URL encoding):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_338' class=notranslate>
+<pre id='code_380' class=notranslate>
 rim <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/dir/path=..%2F</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--silent-header</span></pre>
-<span id=rimstone_copied_338 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_338' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_338, code_338, rimstone_copied_338)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_380 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_380' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_380, code_380, rimstone_copied_380)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 This example shows how to traverse directories programmatically. Of course, you can examine each entry for its type (such as sockets, fifo files, devices etc.) - this example shows how to deal with them as well.<br/>
 <!--ENDVDOC90-->

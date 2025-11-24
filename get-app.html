@@ -235,7 +235,7 @@ function googleTranslateElementInit() {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Get app</div><hr/><span style="font-weight:bold;">Purpose</span>: Obtain data that describes the application.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_684' class=notranslate>
+<pre id='code_699' class=notranslate>
 <span class="Statement">get-app</span> \
        <span class="Identifier"> name</span> |<span class="Identifier"> directory</span> |<span class="Identifier"> file-directory</span> | \
         (<span class="Identifier"> user-directory</span> [<span class="Identifier"> user</span> &lt;user&gt; ] ) | \
@@ -243,9 +243,9 @@ function googleTranslateElementInit() {
         |<span class="Identifier"> db-vendor</span> &lt;database configuration&gt; |<span class="Identifier"> upload-size</span> \
         |<span class="Identifier"> path</span> |<span class="Identifier"> is-service</span> |<span class="Identifier"> stack-depth</span> \
    <span class="Type"> to</span> &lt;variable&gt;</pre>
-<span id=rimstone_copied_684 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_684' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_684, code_684, rimstone_copied_684)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_699 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_699' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_699, code_699, rimstone_copied_699)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Application-related variables can be obtained with get-app statement. The following application variables can be obtained (they are all strings unless indicated otherwise):<br/>
 <ul><li>"name" returns the name of your application, as specified when created (see <a href='https://rimstone-lang.com/mrim.html'>mrim</a>). <br/>
@@ -261,22 +261,22 @@ Application-related variables can be obtained with get-app statement. The follow
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Get the name of RimStone application:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_685' class=notranslate>
+<pre id='code_700' class=notranslate>
 <span class="Statement">get-app</span><span class="Identifier"> name</span><span class="Type"> to</span> appname</pre>
-<span id=rimstone_copied_685 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_685' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_685, code_685, rimstone_copied_685)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_700 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_700' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_700, code_700, rimstone_copied_700)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Get the vendor of database db:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_686' class=notranslate>
+<pre id='code_701' class=notranslate>
 <span class="Statement">get-app</span><span class="Identifier"> db-vendor</span> db<span class="Type"> to</span> dbv
 <span class="Statement">if-true</span> dbv<span class="Identifier"> equal</span> RIM_POSTGRES
     <span class="Comment">// do something Postgres specific</span>
 <span class="Statement">end-if</span></pre>
-<span id=rimstone_copied_686 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_686' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_686, code_686, rimstone_copied_686)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_701 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_701' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_701, code_701, rimstone_copied_701)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Application information'></a><span style="font-weight:bold;">Application information</span><br/>

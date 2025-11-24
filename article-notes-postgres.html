@@ -237,71 +237,71 @@ This is a complete SaaS example (Software-as-a-Service) using PostgreSQL as a da
 <br/>
 First create a directory for your application, where the source code will be:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_207' class=notranslate>
+<pre id='code_245' class=notranslate>
 <span class="Statement">mkdir</span> <span class="Special">-p</span> notes
 <span class="Statement">cd</span> notes</pre>
-<span id=rimstone_copied_207 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_207' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_207, code_207, rimstone_copied_207)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_245 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_245' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_245, code_245, rimstone_copied_245)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Setup Postgres database"></a>Setup Postgres database</div>
 Create PostgreSQL user (with the same name as your logged on Linux user, so no password needed), and the database "db_app":<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_209' class=notranslate>
+<pre id='code_251' class=notranslate>
 <span class="Statement">echo</span><span class="Constant"> </span><span class="Statement">&quot;</span><span class="Constant">create user </span><span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span><span class="Constant">;</span>
 <span class="Constant">create database db_app with owner=</span><span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span><span class="Constant">;</span>
 <span class="Constant">grant all on database db_app to </span><span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span><span class="Constant">;</span>
 <span class="Constant">\q</span><span class="Statement">&quot;</span><span class="Constant">  </span>| sudo <span class="Special">-u</span> postgres psql</pre>
-<span id=rimstone_copied_209 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_209' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_209, code_209, rimstone_copied_209)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_251 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_251' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_251, code_251, rimstone_copied_251)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Create a database configuration file to describe your PostgreSQL database above:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_211' class=notranslate>
+<pre id='code_253' class=notranslate>
 <span class="Statement">echo</span><span class="Constant"> </span><span class="Statement">&quot;</span><span class="Constant">user=</span><span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span><span class="Constant"> dbname=db_app</span><span class="Statement">&quot;</span><span class="Constant"> </span><span class="Statement">&gt;</span> db_app</pre>
-<span id=rimstone_copied_211 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_211' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_211, code_211, rimstone_copied_211)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_253 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_253' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_253, code_253, rimstone_copied_253)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Create database objects we'll need - users table for application users, and notes table to hold their notes:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_212' class=notranslate>
+<pre id='code_254' class=notranslate>
 <span class="Statement">echo</span><span class="Constant"> </span><span class="Statement">&quot;</span><span class="Constant">create table if not exists notes (dateOf timestamp, noteId bigserial primary key, userId bigint, note varchar(1000));</span>
 <span class="Constant">create table if not exists users (userId bigserial primary key, email varchar(100), hashed_pwd varchar(100), verified smallint, verify_token varchar(30), session varchar(100));</span>
 <span class="Constant">create unique index if not exists users1 on users (email);</span><span class="Statement">&quot;</span><span class="Constant"> </span>| psql <span class="Special">-d</span> db_app</pre>
-<span id=rimstone_copied_212 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_212' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_212, code_212, rimstone_copied_212)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_254 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_254' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_254, code_254, rimstone_copied_254)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Create RimStone application"></a>Create RimStone application</div>
 Create application "notes" owned by your Linux user:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_213' class=notranslate>
+<pre id='code_255' class=notranslate>
 rim <span class="Special">-k</span> notes</pre>
-<span id=rimstone_copied_213 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_213' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_213, code_213, rimstone_copied_213)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_255 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_255' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_255, code_255, rimstone_copied_255)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Source code"></a>Source code</div>
 This executes before any other handler in an application, making sure all requests are authorized, file "before-handler.rim":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_206' class=notranslate>
+<pre id='code_244' class=notranslate>
 cat &lt;&lt; '<span class="Constant">EOF</span>' &gt; before-handler.rim
 <span class="Statement">before-handler</span>
 <span class="Statement">    call-handler</span> <span class="Constant">&quot;/session/check&quot;</span><span class="Identifier"> set-param</span> displayed_logout = <span class="Constant">false</span>, is_logged_in = <span class="Constant">false</span>
 <span class="Statement">end-before-handler</span>
 <span class="Constant">EOF</span></pre>
-<span id=rimstone_copied_206 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_206' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_206, code_206, rimstone_copied_206)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_244 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_244' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_244, code_244, rimstone_copied_244)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <br/>
 <span style="font-weight:bold;">- Signup users, login, logout</span><br/>
 <br/>
 This is a generic session management web service that handles user creation, verification, login and logout. The file is "session.rim":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_208' class=notranslate>
+<pre id='code_250' class=notranslate>
 cat &lt;&lt; '<span class="Constant">EOF</span>' &gt; session.rim
 <span class="Comment">// Display link to login or signup</span>
 <span class="Statement">%%</span> /session/login-or-signup<span class="Identifier"> private</span>
@@ -459,15 +459,15 @@ cat &lt;&lt; '<span class="Constant">EOF</span>' &gt; session.rim
 <span class="Statement">    @</span>&lt;/form&gt;
 <span class="Statement">%%</span>
 <span class="Constant">EOF</span></pre>
-<span id=rimstone_copied_208 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_208' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_208, code_208, rimstone_copied_208)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_250 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_250' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_250, code_250, rimstone_copied_250)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <span style="font-weight:bold;">- Notes application</span><br/>
 <br/>
 This is the actual application that uses above session management services in file "notes.rim":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_210' class=notranslate>
+<pre id='code_252' class=notranslate>
 cat &lt;&lt; '<span class="Constant">EOF</span>' &gt; notes.rim
 <span class="Comment">// Delete a note</span>
 <span class="Statement">%%</span> /notes/delete<span class="Identifier"> public</span>
@@ -537,86 +537,90 @@ cat &lt;&lt; '<span class="Constant">EOF</span>' &gt; notes.rim
 <span class="Statement">    @</span>&lt;a href=&quot;<span class="Statement">&lt;&lt;print-path</span> <span class="Constant">&quot;/notes/form-add&quot;</span><span class="Statement">&gt;&gt;</span>&quot;&gt;Add Note&lt;/a&gt; &lt;a href=&quot;<span class="Statement">&lt;&lt;print-path</span> <span class="Constant">&quot;/notes/list&quot;</span><span class="Statement">&gt;&gt;</span>&quot;&gt;List Notes&lt;/a&gt;&lt;hr/&gt;
 <span class="Statement">%%</span>
 <span class="Constant">EOF</span></pre>
-<span id=rimstone_copied_210 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_210' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_210, code_210, rimstone_copied_210)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_252 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_252' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_252, code_252, rimstone_copied_252)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Build application"></a>Build application</div>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_214' class=notranslate>
+<pre id='code_256' class=notranslate>
 rim <span class="Special">-q</span> <span class="Special">--db</span><span class="Statement">=</span>postgres:db_app</pre>
-<span id=rimstone_copied_214 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_214' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_214, code_214, rimstone_copied_214)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_256 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_256' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_256, code_256, rimstone_copied_256)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Run web services application server"></a>Run web services application server</div>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_215' class=notranslate>
+<pre id='code_257' class=notranslate>
 mrim notes</pre>
-<span id=rimstone_copied_215 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_215' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_215, code_215, rimstone_copied_215)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_257 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_257' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_257, code_257, rimstone_copied_257)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Emailing"></a>Emailing</div>
 In order to use this example, you need to be able to email local users, which means email addresses such as \"myuser@localhost\". To do that, install postfix (or sendmail). On Debian systems (like Ubuntu):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_216' class=notranslate>
+<pre id='code_258' class=notranslate>
 sudo apt install postfix
 sudo systemctl start postfix</pre>
-<span id=rimstone_copied_216 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_216' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_216, code_216, rimstone_copied_216)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_258 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_258' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_258, code_258, rimstone_copied_258)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 and on Fedora systems (like RedHat):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_217' class=notranslate>
+<pre id='code_259' class=notranslate>
 sudo dnf install postfix
 sudo systemctl start postfix</pre>
-<span id=rimstone_copied_217 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_217' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_217, code_217, rimstone_copied_217)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_259 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_259' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_259, code_259, rimstone_copied_259)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 When the application sends an email to a local user, such as &lt;OS user&gt;@localhost, then you can see the email sent at:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_201' class=notranslate>
-sudo vi /var/mail/<span class="Statement">&lt;</span>OS user<span class="Statement">&gt;</span></pre>
-<span id=rimstone_copied_201 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_201' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_201, code_201, rimstone_copied_201)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_245' class=notranslate>
+<span class="Statement">mkdir</span> <span class="Special">-p</span> notes
+<span class="Statement">cd</span> notes</pre>
+<span id=rimstone_copied_245 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_245' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_245, code_245, rimstone_copied_245)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Setup Nginx"></a>Setup Nginx</div>
 A web server sits in front of RimStone application server, so it needs to be setup. This example is for Ubuntu, so edit Nginx config file there:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_202' class=notranslate>
-sudo vi /etc/nginx/sites-enabled/default</pre>
-<span id=rimstone_copied_202 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_202' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_202, code_202, rimstone_copied_202)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_245' class=notranslate>
+<span class="Statement">mkdir</span> <span class="Special">-p</span> notes
+<span class="Statement">cd</span> notes</pre>
+<span id=rimstone_copied_245 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_245' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_245, code_245, rimstone_copied_245)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Add this in "server {}" section (replace "your-user" with your OS user name):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_203' class=notranslate>
-location /notes/ <span class="Special">{</span> include /etc/nginx/fastcgi_params<span class="Statement">;</span> fastcgi_pass  unix:///home/your-user/.rimstone/apps/notes/sock/.sock<span class="Statement">;</span> <span class="Special">}</span></pre>
-<span id=rimstone_copied_203 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_203' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_203, code_203, rimstone_copied_203)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_245' class=notranslate>
+<span class="Statement">mkdir</span> <span class="Special">-p</span> notes
+<span class="Statement">cd</span> notes</pre>
+<span id=rimstone_copied_245 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_245' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_245, code_245, rimstone_copied_245)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Restart Nginx:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_204' class=notranslate>
-sudo systemctl restart nginx</pre>
-<span id=rimstone_copied_204 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_204' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_204, code_204, rimstone_copied_204)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_245' class=notranslate>
+<span class="Statement">mkdir</span> <span class="Special">-p</span> notes
+<span class="Statement">cd</span> notes</pre>
+<span id=rimstone_copied_245 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_245' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_245, code_245, rimstone_copied_245)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="You're done, run it!"></a>You're done, run it!</div>
 Go to your web browser, and enter:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_205' class=notranslate>
+<pre id='code_243' class=notranslate>
 http://127.0.0.1/notes/session/start</pre>
-<span id=rimstone_copied_205 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_205' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_205, code_205, rimstone_copied_205)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_243 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_243' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_243, code_243, rimstone_copied_243)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
