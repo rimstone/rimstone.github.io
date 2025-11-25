@@ -234,29 +234,29 @@ function googleTranslateElementInit() {
 <!--BEGVDOC90-->
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Devel versus release</div><hr/>By default, when you make your application, a "devel" (or development) version is built, for instance:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_632' class=notranslate>
-rim <span class="Special">-q</span></pre>
-<span id=rimstone_copied_632 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_632' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_632, code_632, rimstone_copied_632)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-You can also explicitly specify this:<br/>
-<div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_633' class=notranslate>
-rim <span class="Special">-q</span> <span class="Special">--devel</span></pre>
+rim <span class="Special">-q</span></pre>
 <span id=rimstone_copied_633 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='rimstonet_633' style='position: absolute;left: -500%;'></textarea>
 <img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_633, code_633, rimstone_copied_633)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+You can also explicitly specify this:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_634' class=notranslate>
+rim <span class="Special">-q</span> <span class="Special">--devel</span></pre>
+<span id=rimstone_copied_634 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_634' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_634, code_634, rimstone_copied_634)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The development version of your application will not use all the compiler optimizations and it will not use the Link Time Optimizations (LTO), sometimes also referred to as "whole program optimization". So this version will exhibit lower run-time performance. However, it is also much faster to build and it includes additional debugging symbols as well.<br/>
 <br/>
 When you wish to produce a release executable, use "--release" option, for instance:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_634' class=notranslate>
+<pre id='code_635' class=notranslate>
 rim <span class="Special">-q</span> <span class="Special">--release</span></pre>
-<span id=rimstone_copied_634 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_634' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_634, code_634, rimstone_copied_634)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_635 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_635' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_635, code_635, rimstone_copied_635)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 This will include all the compiler optimizations as well as LTO; it will also include the minimal necessary debugging information. Release executables can be significantly faster than development ones; use them for releases as well as when you wish to do performance testing. Note however that making release executables will take significantly longer, so you probably do not want to do it while developing your application.<br/>
 <br/>

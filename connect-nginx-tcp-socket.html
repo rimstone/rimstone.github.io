@@ -237,37 +237,37 @@ function googleTranslateElementInit() {
 <span style="font-weight:bold;">- Step 1</span>:<br/>
 You will need to edit the Nginx configuration file. For Ubuntu and similar:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_553' class=notranslate>
-sudo vi /etc/nginx/sites-enabled/default</pre>
-<span id=rimstone_copied_553 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_553' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_553, code_553, rimstone_copied_553)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-while on Fedora and other systems it might be at:<br/>
-<div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_554' class=notranslate>
-sudo vi /etc/nginx/nginx.conf</pre>
+sudo vi /etc/nginx/sites-enabled/default</pre>
 <span id=rimstone_copied_554 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='rimstonet_554' style='position: absolute;left: -500%;'></textarea>
 <img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_554, code_554, rimstone_copied_554)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
+while on Fedora and other systems it might be at:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_555' class=notranslate>
+sudo vi /etc/nginx/nginx.conf</pre>
+<span id=rimstone_copied_555 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_555' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_555, code_555, rimstone_copied_555)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
 <br/>
 Add the following in the "server {}" section ("/&lt;app path&gt;" is the application path, see <a href='https://rimstone-lang.com/request.html'>request</a>):<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_552' class=notranslate>
+<pre id='code_553' class=notranslate>
 location /&lt;app path&gt;/ { include /etc/nginx/fastcgi_params; fastcgi_pass  127.0.0.1:&lt;port number&gt;; }</pre>
-<span id=rimstone_copied_552 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_552' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_552, code_552, rimstone_copied_552)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_553 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_553' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_553, code_553, rimstone_copied_553)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <span style="font-weight:bold;">- Step 2</span>:<br/>
 Finally, restart Nginx:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_555' class=notranslate>
+<pre id='code_556' class=notranslate>
 sudo systemctl restart nginx</pre>
-<span id=rimstone_copied_555 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_555' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_555, code_555, rimstone_copied_555)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_556 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_556' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_556, code_556, rimstone_copied_556)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Note: you must not have any other URL resource that starts with "/&lt;app path&gt;/" (such as for example "/&lt;app path&gt;/something") as the web server will attempt to pass them as a reverse proxy request, and they will likely not work. If you need to, you can change the application path to be different from "/&lt;app path&gt;", see <a href='https://rimstone-lang.com/request.html'>request</a>.<br/>
 <div class="vsub"><a id="See also"></a>See also</div>

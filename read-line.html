@@ -235,15 +235,15 @@ function googleTranslateElementInit() {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Read line</div><hr/><span style="font-weight:bold;">Purpose</span>: Read text file line by line in a loop.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_966' class=notranslate>
+<pre id='code_967' class=notranslate>
 <span class="Statement">read-line</span> &lt;file&gt;<span class="Type"> to</span> &lt;line content&gt; [<span class="Type"> status</span> &lt;status&gt; ] [<span class="Identifier"> delimiter</span> &lt;delimiter&gt; ]
 
 &lt;any code&gt;
 
 <span class="Statement">end-read-line</span></pre>
-<span id=rimstone_copied_966 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_966' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_966, code_966, rimstone_copied_966)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_967 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_967' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_967, code_967, rimstone_copied_967)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 read-line starts the loop in which a text &lt;file&gt; is read line by line into string &lt;line content&gt;, with end-read-line ending this loop. Once the end of &lt;file&gt; has been reached, or an error occurs, the loop exits. <br/>
 <br/>
@@ -262,7 +262,7 @@ Use <a href='https://rimstone-lang.com/break-loop.html'>break-loop</a> and <a hr
 <div class="vsub"><a id="Examples"></a>Examples</div>
 To read a text file line by line, and display as a web page with line breaks:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_967' class=notranslate>
+<pre id='code_968' class=notranslate>
 <span class="Statement">read-line</span> <span class="Constant">&quot;/home/bear/tmp/ll/filexx&quot;</span><span class="Type"> to</span> one_line<span class="Type"> status</span> st
 <span class="Statement">    string-length</span> one_line<span class="Type"> to</span> line_len
 <span class="Statement">    @</span>Line length is <span class="Statement">&lt;&lt;print-out</span> line_len<span class="Statement">&gt;&gt;</span>, line is <span class="Statement">&lt;&lt;print-out</span> one_line<span class="Statement"> web-encode&gt;&gt;</span> status <span class="Statement">&lt;&lt;print-out</span> st<span class="Statement">&gt;&gt;</span>&lt;br/&gt;
@@ -271,18 +271,18 @@ To read a text file line by line, and display as a web page with line breaks:<br
 <span class="Statement">    get-req</span><span class="Identifier"> error</span><span class="Type"> to</span> err
 <span class="Statement">    @</span>Error in reading, error [<span class="Statement">&lt;&lt;print-out</span> err<span class="Statement">&gt;&gt;</span>]
 <span class="Statement">end-if</span></pre>
-<span id=rimstone_copied_967 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_967' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_967, code_967, rimstone_copied_967)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-To read a text file delimited by "|" character:<br/>
-<div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_968' class=notranslate>
-<span class="Statement">read-line</span> <span class="Constant">&quot;/home/user/dir/file&quot;</span><span class="Type"> to</span> one_line<span class="Type"> status</span> len<span class="Identifier"> delimiter</span> '|'
-<span class="Statement">.</span>..</pre>
 <span id=rimstone_copied_968 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='rimstonet_968' style='position: absolute;left: -500%;'></textarea>
 <img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_968, code_968, rimstone_copied_968)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+To read a text file delimited by "|" character:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_969' class=notranslate>
+<span class="Statement">read-line</span> <span class="Constant">&quot;/home/user/dir/file&quot;</span><span class="Type"> to</span> one_line<span class="Type"> status</span> len<span class="Identifier"> delimiter</span> '|'
+<span class="Statement">.</span>..</pre>
+<span id=rimstone_copied_969 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_969' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_969, code_969, rimstone_copied_969)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Files'></a><span style="font-weight:bold;">Files</span><br/>

@@ -235,7 +235,7 @@ function googleTranslateElementInit() {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Run remote</div><hr/><span style="font-weight:bold;">Purpose</span>: Call a remote service in a single statement.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1035' class=notranslate>
+<pre id='code_1036' class=notranslate>
 <span class="Statement">run-remote</span> &lt;service&gt; \
     (<span class="Identifier"> local</span> &lt;app name&gt; ) | (<span class="Identifier"> location</span> &lt;location&gt; ) \
    <span class="Identifier"> url-path</span> &lt;service URL&gt; |
@@ -258,9 +258,9 @@ function googleTranslateElementInit() {
     [<span class="Type"> status</span> &lt;status&gt; ] \
     [<span class="Identifier"> status-text</span> &lt;status text&gt; ] \
     [<span class="Identifier"> exit-status</span> &lt;service status&gt; ]</pre>
-<span id=rimstone_copied_1035 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1035' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1035, code_1035, rimstone_copied_1035)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1036 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1036' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1036, code_1036, rimstone_copied_1036)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <br/>
 run-remote is a combination of <a href='https://rimstone-lang.com/new-remote.html'>new-remote</a>, <a href='https://rimstone-lang.com/call-remote.html'>call-remote</a> and <a href='https://rimstone-lang.com/read-remote.html'>read-remote</a> in one. Clauses for each of those can be specified in any order. Only a single &lt;service&gt; can be used. If a call to &lt;service&gt; succeeds, its results are read. Use either:<br/>
@@ -269,7 +269,7 @@ run-remote is a combination of <a href='https://rimstone-lang.com/new-remote.htm
 See details for each clause in <a href='https://rimstone-lang.com/new-remote.html'>new-remote</a> (for "local" through "timeout" clauses), <a href='https://rimstone-lang.com/call-remote.html'>call-remote</a> (for "status" through "finished-okay" clauses) and <a href='https://rimstone-lang.com/read-remote.html'>read-remote</a> (for "data" through "exit-status" clauses).<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1036' class=notranslate>
+<pre id='code_1037' class=notranslate>
 <span class="Statement">begin-handler</span> /serv<span class="Identifier"> public</span>
 <span class="Statement">    run-remote</span> nf<span class="Identifier"> local</span> <span class="Constant">&quot;hash-server-yey&quot;</span> \
        <span class="Identifier"> url-path</span> <span class="Constant">&quot;/hash-server-yey/server/op=add/key=sb_XYZ/data=sdb_123&quot;</span> \
@@ -283,9 +283,9 @@ See details for each clause in <a href='https://rimstone-lang.com/new-remote.htm
 <span class="Statement">    end-if</span>
 
 <span class="Statement">end-handler</span></pre>
-<span id=rimstone_copied_1036 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1036' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1036, code_1036, rimstone_copied_1036)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1037 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1037' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1037, code_1037, rimstone_copied_1037)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Distributed computing'></a><span style="font-weight:bold;">Distributed computing</span><br/>

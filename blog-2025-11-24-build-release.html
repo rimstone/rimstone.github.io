@@ -7,11 +7,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 
-<title>Write fifo</title>
+<title>Building a release executable</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="canonical" href="https://rimstone-lang.com/write-fifo.html" />
+<link rel="canonical" href="https://rimstone-lang.com/blog-2025-11-24-build-release.html" />
 <style>
 
 
@@ -232,39 +232,22 @@ function googleTranslateElementInit() {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Write fifo</div><hr/><span style="font-weight:bold;">Purpose</span>: Write key/value pair into a FIFO list.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Building a release executable</div><hr/><br/>
+When a RimStone application is built, by default it is a development build. It does not have optimizations included in a release build, including the LTO (Link Time Optimization). In order to include all these optimizations, you must create a release build.<br/>
 <br/>
-<div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1166' class=notranslate>
-<span class="Statement">write-fifo</span> &lt;list&gt; \
-   <span class="Identifier"> key</span> &lt;key&gt; \
-   <span class="Identifier"> value</span> &lt;value&gt;</pre>
-<span id=rimstone_copied_1166 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1166' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1166, code_1166, rimstone_copied_1166)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-write-fifo adds a pair of key/value pointers to the FIFO &lt;list&gt;, specified with strings &lt;key&gt; and &lt;value&gt; (in "key" and "value" clauses, collectively called an "element"). <br/>
+The LTO essentially treats your application source code as one with all the RimStone's source code, and optimizes it all together as if they are in a single source code. Well, it's a bit more complicated than that, but the end result is very much like that - meaning faster performance, sometimes 2x and even more. <br/>
 <br/>
-It always adds elements to the end of the list. <br/>
-<div class="vsub"><a id="Examples"></a>Examples</div>
-<div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1167' class=notranslate>
-<span class="Statement">new-fifo</span> nf
-<span class="Statement">write-fifo</span> nf<span class="Identifier"> key</span> <span class="Constant">&quot;mykey&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;myvalue&quot;</span></pre>
-<span id=rimstone_copied_1167 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1167' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1167, code_1167, rimstone_copied_1167)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+To &nbsp;make a release build, use "--release" with rim:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_472' class=notranslate>
+rim <span class="Special">-q</span> <span class="Special">--release</span></pre>
+<span id=rimstone_copied_472 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_472' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_472, code_472, rimstone_copied_472)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-<div class="vsub"><a id="See also"></a>See also</div>
- <a name='FIFO'></a><span style="font-weight:bold;">FIFO</span><br/>
-<a href='https://rimstone-lang.com/delete-fifo.html'>delete-fifo</a> &nbsp;<br/>
-<a href='https://rimstone-lang.com/new-fifo.html'>new-fifo</a> &nbsp;<br/>
-<a href='https://rimstone-lang.com/purge-fifo.html'>purge-fifo</a> &nbsp;<br/>
-<a href='https://rimstone-lang.com/read-fifo.html'>read-fifo</a> &nbsp;<br/>
-<a href='https://rimstone-lang.com/rewind-fifo.html'>rewind-fifo</a> &nbsp;<br/>
-<a href='https://rimstone-lang.com/write-fifo.html'>write-fifo</a> &nbsp; <br/>
-<span style="font-weight:bold;">See all</span> <br/>
-<a href='https://rimstone-lang.com/documentation.html'>documentation</a><br/>
+Note that both release and development build have debugging information in them; release has the minimum amount and debugging has a lot. That's a good thing because this information in general doesn't affect performance but can be very useful when there's a problem. To be sure, RimStone provides built-in signal interceptor that will give you a full source-code stack when there's an issue, so using gdb for debugging info is more as a backup in case you can't figure it out based on the information provided.<br/>
+<br/>
+One more thing: release build takes a lot longer to build than the development one. Working in all possible optimizations, including LTO, is a big job, but worth it when you need a final performant product. But when developing your application day-in day-out, don't use a release build - do it only when ready for production or peformance testing.<br/>
 <!--ENDVDOC90-->
 <br/><div style='width:100%;clear:both;'>
 <hr/>

@@ -236,39 +236,39 @@ function googleTranslateElementInit() {
 There are three ways to install RimStone, pick one that works for you:<br/>
 <ul><li>From a zipped file (.tar.gz):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_779' class=notranslate>
+<pre id='code_780' class=notranslate>
 wget <span class="Statement">&quot;</span><span class="Constant"><a href="https://github.com/rimstone/rimstone/archive/refs/heads/main.tar.gz">https://github.com/rimstone/rimstone/archive/refs/heads/main.tar.gz</a></span><span class="Statement">&quot;</span> <span class="Special">-O</span> main.tar.gz
 tar xvfz main.tar.gz
 <span class="Statement">cd</span> rimstone-main
-./riminst.sh
-<span class="Statement">. </span><span class="PreProc">$HOME</span>/.bashrc</pre>
-<span id=rimstone_copied_779 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_779' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_779, code_779, rimstone_copied_779)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-</li>
-<li>If you use git, from its official GitHub repo (depth is 1 for performance and to save space):<br/>
-<div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_780' class=notranslate>
-git clone <span class="Special">--depth</span> <span class="Constant">1</span> <a href="https://github.com/rimstone/rimstone.git">https://github.com/rimstone/rimstone.git</a>
-<span class="Statement">cd</span> rimstone
 ./riminst.sh
 <span class="Statement">. </span><span class="PreProc">$HOME</span>/.bashrc</pre>
 <span id=rimstone_copied_780 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='rimstonet_780' style='position: absolute;left: -500%;'></textarea>
 <img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_780, code_780, rimstone_copied_780)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-</li><li>If there's a RimStone package installed on your system, from a package. First, <a href='https://rimstone-lang.com/install-package.html'>install-package</a>, then:<br/>
+</li>
+<li>If you use git, from its official GitHub repo (depth is 1 for performance and to save space):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_781' class=notranslate>
-<span class="Statement">cp</span> /usr/share/rimstone/rimstone.tar.gz .
-tar xvfz rimstone.tar.gz
+git clone <span class="Special">--depth</span> <span class="Constant">1</span> <a href="https://github.com/rimstone/rimstone.git">https://github.com/rimstone/rimstone.git</a>
 <span class="Statement">cd</span> rimstone
 ./riminst.sh
 <span class="Statement">. </span><span class="PreProc">$HOME</span>/.bashrc</pre>
 <span id=rimstone_copied_781 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='rimstonet_781' style='position: absolute;left: -500%;'></textarea>
 <img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_781, code_781, rimstone_copied_781)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+</li><li>If there's a RimStone package installed on your system, from a package. First, <a href='https://rimstone-lang.com/install-package.html'>install-package</a>, then:<br/>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_782' class=notranslate>
+<span class="Statement">cp</span> /usr/share/rimstone/rimstone.tar.gz .
+tar xvfz rimstone.tar.gz
+<span class="Statement">cd</span> rimstone
+./riminst.sh
+<span class="Statement">. </span><span class="PreProc">$HOME</span>/.bashrc</pre>
+<span id=rimstone_copied_782 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_782' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_782, code_782, rimstone_copied_782)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li>
 </ul>
@@ -283,11 +283,11 @@ RimStone itself does not require sudo as it installs in a local ".rimstone" fold
 <span style="font-weight:bold;">- Installing toolkit libraries</span><br/>
 The default installation (above) will ask you if you'd like to install the above toolkit packages, You can install them if and when you need them, or you can install them now; you will need sudo privilege to do that. If you'd like to install all base and toolkit packages automatically now, then use the following (instead of just ./riminst.sh above):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_782' class=notranslate>
+<pre id='code_783' class=notranslate>
 ./riminst.sh all</pre>
-<span id=rimstone_copied_782 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_782' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_782, code_782, rimstone_copied_782)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_783 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_783' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_783, code_783, rimstone_copied_783)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <br/>
 <span style="font-weight:bold;">- SELinux</span><br/>
@@ -295,11 +295,11 @@ If you have SELinux enabled then you'll need to install SELinux support for RimS
 <br/>
 If you don't want or need SELinux support, you can set permissive mode before installing RimStone with:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_783' class=notranslate>
+<pre id='code_784' class=notranslate>
 sudo setenforce <span class="Constant">0</span></pre>
-<span id=rimstone_copied_783 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_783' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_783, code_783, rimstone_copied_783)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_784 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_784' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_784, code_784, rimstone_copied_784)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 in which case you won't need to install SELinux support.<br/>
 <br/>

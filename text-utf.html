@@ -235,13 +235,13 @@ function googleTranslateElementInit() {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Text utf</div><hr/><span style="font-weight:bold;">Purpose</span>: Convert text to UTF-8 string. <br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1139' class=notranslate>
+<pre id='code_1140' class=notranslate>
 <span class="Statement">text-utf</span> &lt;text&gt; \
     [<span class="Type"> status</span> &lt;status&gt; ] \
     [<span class="Type"> error-text</span> &lt;error text&gt; ]</pre>
-<span id=rimstone_copied_1139 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1139' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1139, code_1139, rimstone_copied_1139)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1140 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1140' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1140, code_1140, rimstone_copied_1140)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 text-utf will convert string value &lt;text&gt; to UTF-8. &lt;text&gt; itself will hold the resulting UTF-8 string. If you don't wish &lt;text&gt; to be modified, make a copy of it first (see <a href='https://rimstone-lang.com/copy-string.html'>copy-string</a>). See <a href='https://rimstone-lang.com/utf-text.html'>utf-text</a> for the reverse conversion and data standards information.<br/>
 <br/>
@@ -250,7 +250,7 @@ You can obtain &lt;status&gt; in "status" clause. &lt;status&gt; number is RIM_O
 Note that text-utf will process normal "\u..." and "\U..." UTF-8 characters, and in addition will also process surrogate "\u...\u..." characters (as used in JSON text). This is useful, as many languages and parsers won't do both (technically JSON's surrogate extension is not really UTF-8 but rather a historical throwback to UTF-16).<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1140' class=notranslate>
+<pre id='code_1141' class=notranslate>
 <span class="Comment">// Unicode value to encode to UTF-8 (including surrogate characters for JSON, for instance \uD834\uDD1E for G Clef symbol):</span>
 <span class="Statement">set-string</span> txt = <span class="Constant">&quot;</span><span class="Special">\u0459\\\&quot;</span><span class="Constant">Doc</span><span class="Special">\\\&quot;\\</span><span class="Constant">n</span><span class="Special">\\</span><span class="Constant">t</span><span class="Special">\\</span><span class="Constant">b</span><span class="Special">\\</span><span class="Constant">f</span><span class="Special">\\</span><span class="Constant">r</span><span class="Special">\\</span><span class="Constant">t</span><span class="Special">\u21d7\u21d8\\</span><span class="Constant">t</span><span class="Special">\u25b7\u25ee\uD834\uDD1E\u13eb\u2ca0\u0448\\</span><span class="Constant">n</span><span class="Special">\\</span><span class="Constant">/</span><span class="Special">\\\&quot;</span><span class="Constant">()</span><span class="Special">\\</span><span class="Constant">t</span><span class="Special">\U0001d11e</span><span class="Constant">&quot;</span>
 
@@ -264,9 +264,9 @@ Note that text-utf will process normal "\u..." and "\U..." UTF-8 characters, and
 <span class="Statement">if-true</span> utf<span class="Identifier"> not-equal</span> txt<span class="Identifier"> or</span> txt_status<span class="Identifier"> not-equal</span> RIM_OKAY<span class="Identifier"> or</span> txt_error<span class="Identifier"> not-equal</span> <span class="Constant">&quot;&quot;</span>
 <span class="Statement">    @</span>Error in converting string to UTF
 <span class="Statement">end-if</span></pre>
-<span id=rimstone_copied_1140 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1140' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1140, code_1140, rimstone_copied_1140)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1141 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1141' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1141, code_1141, rimstone_copied_1141)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='UTF'></a><span style="font-weight:bold;">UTF</span><br/>
