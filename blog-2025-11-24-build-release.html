@@ -233,7 +233,7 @@ function googleTranslateElementInit() {
 
 <!--BEGVDOC90-->
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Building a release executable</div><hr/><br/>
-When a RimStone application is built, by default it is a development build. It does not have optimizations included in a release build, including the LTO (Link Time Optimization). In order to include all these optimizations, you must create a release build.<br/>
+When a RimStone application is built, by default it is a development build. It does not have optimizations (which are included in a release build), including the LTO (Link Time Optimization). In order to include all these optimizations, you must create a release build.<br/>
 <br/>
 The LTO essentially treats your application source code as one with all the RimStone's source code, and optimizes it all together as if they are in a single source code. Well, it's a bit more complicated than that, but the end result is very much like that - meaning faster performance, sometimes 2x and even more. <br/>
 <br/>
