@@ -235,11 +235,11 @@ function googleTranslateElementInit() {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>String length</div><hr/><span style="font-weight:bold;">Purpose</span>: Get string length.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1121' class=notranslate>
+<pre id='code_1123' class=notranslate>
 <span class="Statement">string-length</span> &lt;string&gt;<span class="Type"> to</span> &lt;length&gt;</pre>
-<span id=rimstone_copied_1121 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1121' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1121, code_1121, rimstone_copied_1121)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1123 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1123' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1123, code_1123, rimstone_copied_1123)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 string-length will place the number of bytes in &lt;string&gt; into number &lt;length&gt;.<br/>
 <br/>
@@ -249,53 +249,53 @@ Note that length of the string is not calculated; rather it is kept in a pre-fet
 <div class="vsub"><a id="String length as a function"></a>String length as a function</div>
 You can also use "strlen()" function to obtain string length as a number. You can use it in number or double expressions. The following two are equivalent:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1122' class=notranslate>
+<pre id='code_1124' class=notranslate>
 <span class="Statement">set-string</span> s = <span class="Constant">&quot;string&quot;</span>
 <span class="Statement">string-length</span> s<span class="Type"> to</span> len
 <span class="Statement">print-out</span> <span class="Constant">&quot;Half of length is &quot;</span>, len/<span class="Constant">2</span><span class="Identifier"> new-line</span></pre>
-<span id=rimstone_copied_1122 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1122' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1122, code_1122, rimstone_copied_1122)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1124 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1124' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1124, code_1124, rimstone_copied_1124)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 and<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1123' class=notranslate>
+<pre id='code_1125' class=notranslate>
 <span class="Statement">set-string</span> s = <span class="Constant">&quot;string&quot;</span>
 <span class="Statement">print-out</span> <span class="Constant">&quot;Half of length is &quot;</span>, strlen(s)/<span class="Constant">2</span><span class="Identifier"> new-line</span></pre>
-<span id=rimstone_copied_1123 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1123' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1123, code_1123, rimstone_copied_1123)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1125 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1125' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1125, code_1125, rimstone_copied_1125)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 which would yield "3".<br/>
 <br/>
 An example in expression:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1124' class=notranslate>
+<pre id='code_1126' class=notranslate>
 <span class="Statement">set-string</span> s = <span class="Constant">&quot;other string&quot;</span>
 <span class="Statement">set-number</span> n = strlen(<span class="Constant">&quot;some string&quot;</span>) + strlen (s) -<span class="Constant">1</span></pre>
-<span id=rimstone_copied_1124 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1124' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1124, code_1124, rimstone_copied_1124)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1126 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1126' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1126, code_1126, rimstone_copied_1126)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The result for "n" would be 22.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Variable "len" will be 6:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1125' class=notranslate>
+<pre id='code_1127' class=notranslate>
 <span class="Statement">set-string</span> str = <span class="Constant">&quot;string&quot;</span>
 <span class="Statement">string-length</span> str<span class="Type"> to</span> len</pre>
-<span id=rimstone_copied_1125 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1125' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1125, code_1125, rimstone_copied_1125)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1127 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1127' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1127, code_1127, rimstone_copied_1127)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Variable "len2" will be 18 - the string has a null character in the middle of it:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_1126' class=notranslate>
+<pre id='code_1128' class=notranslate>
 <span class="Statement">set-string</span> str2 = <span class="Constant">&quot;string&quot;</span> <span class="Constant">&quot;</span><span class="Special">\x00</span><span class="Constant"> after null&quot;</span>
 <span class="Statement">string-length</span> str2<span class="Type"> to</span> len2</pre>
-<span id=rimstone_copied_1126 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='rimstonet_1126' style='position: absolute;left: -500%;'></textarea>
-<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1126, code_1126, rimstone_copied_1126)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=rimstone_copied_1128 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1128' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1128, code_1128, rimstone_copied_1128)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
  <a name='Strings'></a><span style="font-weight:bold;">Strings</span><br/>

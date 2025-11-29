@@ -7,11 +7,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 
-<title>Rimstone license</title>
+<title>Sort array</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="canonical" href="https://rimstone-lang.com/rimstone-license.html" />
+<link rel="canonical" href="https://rimstone-lang.com/sort-array.html" />
 <style>
 
 
@@ -232,34 +232,56 @@ function googleTranslateElementInit() {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Rimstone license</div><hr/><div class="vsub"><a id="Licensing and copyright"></a>Licensing and copyright</div>
-RimStone is Free Open Source software licensed under <a href='https://www.apache.org/licenses/LICENSE-2.0'>Apache License 2</a>. <br/>
-<div class="vsub"><a id="Discussion"></a>Discussion</div>
-The following discussion is not legal advice. <br/>
-<div class="vsub"><a id="Copyright"></a>Copyright</div>
-RimStone is copyright (c) 2019-2025 Gliim LLC. RimStone uses the following Free Open Source libraries; their licenses are stated below and they are copyright by their respective owners. <br/>
-<div class="vsub"><a id="Dynamically linked libraries"></a>Dynamically linked libraries</div>
-RimStone makes use of the following dynamically-linked libraries (with copyright by their respective owners), and only if your application actually uses them:<br/>
-<ul><li><a href='https://spdx.org/licenses/LGPL-2.1-or-later.html'>LGPL-licensed</a> MariaDB C connector (<a href='https://mariadb.com/kb/en/mariadb-connector-c/'>https://mariadb.com/kb/en/mariadb-connector-c/</a>),<br/>
-</li><li><a href='https://spdx.org/licenses/PostgreSQL.html'>Postgres-licensed</a> Postgres C library (<a href='https://www.postgresql.org/docs/current/libpq.html'>https://www.postgresql.org/docs/current/libpq.html</a>),<br/>
-</li><li><a href='https://www.sqlite.org/copyright.html'>SQLite (public domain)</a> SQLite C library (<a href='https://www.sqlite.org/docs.html'>https://www.sqlite.org/docs.html</a>),<br/>
-</li><li><a href='https://spdx.org/licenses/curl.html'>Curl-licensed</a> Curl library (<a href='https://curl.se/'>https://curl.se/</a>),<br/>
-</li><li><a href='https://www.pcre.org/original/license.txt'>BSD-licensed</a> PCRE2 (regex) library (<a href='https://www.pcre.org/'>https://www.pcre.org/</a>),<br/>
-</li><li><a href='https://gitlab.gnome.org/GNOME/libxml2'>MIT-licensed</a> libXML2 library (<a href='https://gitlab.gnome.org/GNOME/libxml2'>https://gitlab.gnome.org/GNOME/libxml2</a>),<br/>
-</li><li><a href='https://spdx.org/licenses/OpenSSL.html'>OpenSSL-licensed</a> OpenSSL/crypto library (<a href='https://www.openssl.org/'>https://www.openssl.org/</a>).</li></ul>
-You would install these libraries yourself (they are not distributed with RimStone) as dependencies for compiling the source code. <br/>
-<div class="vsub"><a id="Included libraries"></a>Included libraries</div>
-RimStone incorporates the source code of the following libraries:<br/>
-<ul><li><a href='https://spdx.org/licenses/BSD-3-Clause.html'>BSD 3 Clause Licensed</a> libbacktrace (<a href='https://github.com/ianlancetaylor/libbacktrace'>https://github.com/ianlancetaylor/libbacktrace/</a>). See btrace subdirectory for its LICENSE file with the copyright notice.<br/>
-</li><li><a href='https://github.com/swenson/sort/blob/main/LICENSE.md'>MIT-licensed</a> template sorting code (Timsort, Quicksort etc. at <a href='https://github.com/swenson/sort/'>https://github.com/swenson/sort/</a>). See libsort subdirectory for its LICENSE.md and CONTRIBUTORS.md files with the copyright notice.<br/>
-</li><li><a href='https://spdx.org/licenses/preview/OML.html'>Open Market Licensed</a> FastCGI library (<a href='https://fastcgi-archives.github.io/FastCGI_Developers_Kit_FastCGI.html'>https://fastcgi-archives.github.io/FastCGI_Developers_Kit_FastCGI.html</a>). See fcgi subdirectory for its LICENSE file with the copyright notice.</li></ul>
-<div class="vsub"><a id="Algorithms"></a>Algorithms</div>
-RimStone uses FNV-1a hash function, which is released in the public domain (see <a href='https://en.wikipedia.org/wiki/Fowler%E2%80%93Noll%E2%80%93Vo_hash_function'>wikipedia page</a>) and is not patented (see <a href='http://www.isthe.com/chongo/tech/comp/fnv/index.html'>Landon Noll's</a> web page).<br/>
-<div class="vsub"><a id="Copyright in RimStone source code"></a>Copyright in RimStone source code</div>
-RimStone source code uses <a href='https://spdx.dev/'>SPDX</a>, an open ISO standard for communicating software bill of material information (such as licenses), to improve on open source licensing compliance for companies and communities.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:left;background-color:white;'><a href='https://rimstone-lang.com' style='border-bottom:0px'><img src='https://rimstone-lang.com/rimstone.png' style='width:180px;height:auto'/></a></div><div class='vhub' style='margin-top:10px;'>Sort array</div><hr/><span style="font-weight:bold;">Purpose</span>: Sort array.<br/>
+<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_1090' class=notranslate>
+<span class="Statement">sort-array</span> &lt;array&gt; [<span class="Identifier"> algorithm</span> &lt;algorithm&gt; ] [<span class="Identifier"> descending</span> ]</pre>
+<span id=rimstone_copied_1090 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1090' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1090, code_1090, rimstone_copied_1090)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+sort-array will sort &lt;array&gt;, which was created with <a href='https://rimstone-lang.com/new-array.html'>new-array</a> and must of type "string", "number" or "double". By default the "quick_sort" algorithm is used.<br/>
+<div class="vsub"><a id="Algorithm"></a>Algorithm</div>
+You can specify the algorithm to use with &lt;algorithm&gt; (in "algorithm" clause), which can be a string constant:<br/>
+<ul><li>"quick_sort"<br/>
+</li><li>"tim_sort"<br/>
+</li><li>"merge_sort_in_place"<br/>
+</li><li>"heap_sort"<br/>
+</li><li>"merge_sort"<br/>
+</li><li>"shell_sort"<br/>
+</li><li>"binary_insertion_sort"<br/>
+</li><li>"selection_sort'<br/>
+</li><li>"grail_sort"<br/>
+</li><li>"sqrt_sort"<br/>
+</li><li>"bubble_sort"</li></ul>
+Each algorithm has its own strengths, weaknesses and use cases, but in general the fastest are "quick_sort", "tim_sort", "heap_sort", "merge_sort_in_place" etc. For instance, "tim_sort" is generally guaranteed to have complexity of less than O(N log(N) and in the best case O(N), however it would generally use more memory than quick sort. You can experiment which algorithm best suites your real-world data, as actual performance may vary.<br/>
+<div class="vsub"><a id="Order"></a>Order</div>
+By default, sorting is in the ascending order. To produce a descending sort, use "descending" clause.<br/>
+<div class="vsub"><a id="Examples"></a>Examples</div>
+The array here will have values of "Z", D" and "A"; the sorted array will be "A", "D" and "Z":<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_1091' class=notranslate>
+<span class="Statement">new-array</span> arr
+
+<span class="Statement">write-array</span> arr<span class="Identifier"> key</span> <span class="Constant">0</span><span class="Identifier"> value</span> <span class="Constant">&quot;Z&quot;</span>
+<span class="Statement">write-array</span> arr<span class="Identifier"> key</span> <span class="Constant">1</span><span class="Identifier"> value</span> <span class="Constant">&quot;D&quot;</span>
+<span class="Statement">write-array</span> arr<span class="Identifier"> key</span> <span class="Constant">2</span><span class="Identifier"> value</span> <span class="Constant">&quot;A&quot;</span>
+
+<span class="Statement">sort-array</span> arr<span class="Identifier"> algorithm</span> <span class="Constant">&quot;tim_sort&quot;</span>
+
+<span class="Statement">print-out</span> arr[<span class="Constant">0</span>], <span class="Constant">&quot; &quot;</span>, arr[<span class="Constant">1</span>], <span class="Constant">&quot; &quot;</span>, arr[<span class="Constant">2</span>]<span class="Identifier"> new-line</span></pre>
+<span id=rimstone_copied_1091 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='rimstonet_1091' style='position: absolute;left: -500%;'></textarea>
+<img src='https://rimstone-lang.com/rimstone-copy-small-1.png' id='rimstoneb' onclick='rim_copy(rimstonet_1091, code_1091, rimstone_copied_1091)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
 <div class="vsub"><a id="See also"></a>See also</div>
- <a name='License'></a><span style="font-weight:bold;">License</span><br/>
-<a href='https://rimstone-lang.com/rimstone-license.html'>rimstone-license</a> &nbsp; <br/>
+ <a name='Array'></a><span style="font-weight:bold;">Array</span><br/>
+<a href='https://rimstone-lang.com/new-array.html'>new-array</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/purge-array.html'>purge-array</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/read-array.html'>read-array</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/sort-array.html'>sort-array</a> &nbsp;<br/>
+<a href='https://rimstone-lang.com/write-array.html'>write-array</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
 <a href='https://rimstone-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
